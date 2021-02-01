@@ -1,89 +1,89 @@
 {
-  "name": "cli",
-  "version": "0.0.0",
-  "author": "Salesforce",
-  "bin": {
-    "sf": "./bin/run"
-  },
-  "bugs": "https://github.com/salesforcecli/cli/issues",
-  "dependencies": {
-    "@oclif/core": "^0.3.0",
-    "@oclif/plugin-help": "^3",
-    "tslib": "^1"
-  },
-  "pinnedDependencies": [],
-  "devDependencies": {
-    "@oclif/test": "^1",
-    "@salesforce/dev-config": "^2.1.0",
-    "@salesforce/dev-scripts": "^0.7.0",
-    "@salesforce/prettier-config": "^0.0.1",
-    "@typescript-eslint/eslint-plugin": "^4.2.0",
-    "@typescript-eslint/parser": "^4.2.0",
-    "chai": "^4.2.0",
-    "eslint": "^6.8.0",
-    "eslint-config-oclif": "^3.1",
-    "eslint-config-oclif-typescript": "^0.1",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-config-salesforce": "^0.1.0",
-    "eslint-config-salesforce-license": "^0.1.0",
-    "eslint-config-salesforce-typescript": "^0.2.0",
-    "eslint-plugin-header": "^3.0.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jsdoc": "^27.0.3",
-    "eslint-plugin-prettier": "^3.1.3",
-    "globby": "^10",
-    "husky": "^4.2.5",
-    "mocha": "^7.2.0",
-    "nyc": "^15.1.0",
-    "oclif": "^1.16.1",
-    "prettier": "^2.0.5",
-    "pretty-quick": "^2.0.1",
-    "sinon": "^9.0.2",
-    "ts-node": "^8.10.2",
-    "typescript": "^4.1.3"
-  },
-  "engines": {
-    "node": ">=12.0.0"
-  },
-  "files": [
-    "/bin",
-    "/lib",
-    "/oclif.manifest.json"
-  ],
-  "homepage": "https://github.com/salesforcecli/cli",
-  "keywords": [
-    "oclif"
-  ],
-  "license": "BSD-3-Clause",
-  "main": "lib/index.js",
-  "oclif": {
-    "commands": "./lib/commands",
-    "bin": "sf",
-    "plugins": [
-      "@oclif/plugin-help"
-    ]
-  },
-  "repository": "salesforcecli/cli",
-  "scripts": {
-    "build": "sf-build",
-    "clean": "sf-clean",
-    "clean-all": "-clean all",
-    "compile": "sf-compile",
-    "docs": "sf-docs",
-    "format": "sf-format",
-    "lint": "sf-lint",
-    "postpack": "rm -f oclif.manifest.json",
-    "prepack": "yarn build && oclif-dev manifest && oclif-dev readme",
-    "pretest": "sf-compile-test",
-    "test": "echo disable # sf-test",
-    "version": "oclif-dev readme && git add README.md"
-  },
-  "types": "lib/index.d.ts",
-  "husky": {
-    "hooks": {
-      "commit-msg": "sf-husky-commit-msg",
-      "pre-commit": "sf-husky-pre-commit",
-      "pre-push": "sf-husky-pre-push"
+    "name": "cli",
+    "version": "0.0.0",
+    "author": "Salesforce",
+    "bin": {
+        "sf": "./bin/run"
+    },
+    "bugs": "https://github.com/salesforcecli/cli/issues",
+    "dependencies": {
+        "@oclif/core": "^0.3.0",
+        "@oclif/plugin-help": "^3",
+        "tslib": "^1"
+    },
+    "pinnedDependencies": [],
+    "devDependencies": {
+        "@oclif/test": "^1",
+        "@salesforce/dev-config": "^2.1.0",
+        "@salesforce/dev-scripts": "^0.7.0",
+        "@salesforce/prettier-config": "^0.0.1",
+        "@typescript-eslint/eslint-plugin": "^4.2.0",
+        "@typescript-eslint/parser": "^4.2.0",
+        "chai": "^4.2.0",
+        "eslint": "^6.8.0",
+        "eslint-config-oclif": "^3.1",
+        "eslint-config-oclif-typescript": "^0.1",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-config-salesforce": "^0.1.0",
+        "eslint-config-salesforce-license": "^0.1.0",
+        "eslint-config-salesforce-typescript": "^0.2.0",
+        "eslint-plugin-header": "^3.0.0",
+        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-jsdoc": "^27.0.3",
+        "eslint-plugin-prettier": "^3.1.3",
+        "globby": "^10",
+        "husky": "^4.2.5",
+        "mocha": "^7.2.0",
+        "nyc": "^15.1.0",
+        "oclif": "^1.16.1",
+        "prettier": "^2.0.5",
+        "pretty-quick": "^2.0.1",
+        "sinon": "^9.0.2",
+        "ts-node": "^8.10.2",
+        "typescript": "^4.1.3"
+    },
+    "engines": {
+        "node": ">=12.0.0"
+    },
+    "files": [
+        "/bin",
+        "/lib",
+        "/oclif.manifest.json"
+    ],
+    "homepage": "https://github.com/salesforcecli/cli",
+    "keywords": [
+        "oclif"
+    ],
+    "license": "BSD-3-Clause",
+    "main": "lib/index.js",
+    "oclif": {
+        "commands": "./lib/commands",
+        "bin": "sf",
+        "plugins": [
+            "@oclif/plugin-help"
+        ]
+    },
+    "repository": "salesforcecli/cli",
+    "scripts": {
+        "build": "sf-build",
+        "clean": "sf-clean",
+        "clean-all": "-clean all",
+        "compile": "sf-compile",
+        "docs": "sf-docs",
+        "format": "sf-format",
+        "lint": "sf-lint",
+        "postpack": "rm -f oclif.manifest.json",
+        "prepack": "yarn build && oclif-dev manifest && oclif-dev readme",
+        "pretest": "sf-compile-test",
+        "test": "echo disable # sf-test",
+        "version": "oclif-dev readme && git add README.md"
+    },
+    "types": "lib/index.d.ts",
+    "husky": {
+        "hooks": {
+            "commit-msg": "sf-husky-commit-msg",
+            "pre-commit": "sf-husky-pre-commit",
+            "pre-push": "sf-husky-pre-push"
+        }
     }
-  }
 }
