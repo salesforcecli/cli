@@ -1,0 +1,6 @@
+{
+  "script": {
+    "test": "echo disable # sf-test",
+    "prepack": "yarn clean && yarn build && oclif-dev manifest && oclif-dev readme"
+  }
+}

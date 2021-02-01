@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+require('ts-node').register()
+
+require('@oclif/core').run()
+.then(require('@oclif/core/flush'))
+.catch(require('@oclif/core/handle'))

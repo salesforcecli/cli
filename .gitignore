@@ -1,0 +1,36 @@
+# -- CLEAN
+
+# use yarn by default, so ignore npm
+package-lock.json
+
+# never checkin npm config
+.npmrc
+
+# debug logs
+*-error.log
+*-debug.log
+
+# compile source
+lib
+dist
+tmp
+
+# test artifacts
+*xunit.xml
+*checkstyle.xml
+*unitcoverage
+.nyc_output
+coverage
+
+# generated docs
+docs
+
+# -- CLEAN ALL
+node_modules
+
+# --
+# put files here you don't want cleaned with sf-clean
+
+# os specific files
+.DS_Store
+.idea
