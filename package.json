@@ -7,7 +7,7 @@
   },
   "bugs": "https://github.com/salesforcecli/cli/issues",
   "dependencies": {
-    "@oclif/core": "^0.2.0",
+    "@oclif/core": "^0.3.0",
     "@oclif/plugin-help": "^3",
     "tslib": "^1"
   },
@@ -73,7 +73,7 @@
     "format": "sf-format",
     "lint": "sf-lint",
     "postpack": "rm -f oclif.manifest.json",
-    "prepack": "yarn clean && yarn build && oclif-dev manifest && oclif-dev readme",
+    "prepack": "yarn build && oclif-dev manifest && oclif-dev readme",
     "pretest": "sf-compile-test",
     "test": "echo disable # sf-test",
     "version": "oclif-dev readme && git add README.md"
