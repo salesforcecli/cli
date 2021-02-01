@@ -6,6 +6,8 @@ cli
 [![Downloads/week](https://img.shields.io/npm/dw/cli.svg)](https://npmjs.org/package/@salesforce/cli)
 [![License](https://img.shields.io/npm/l/cli.svg)](https://github.com/salesforcecli/cli/blob/master/package.json)
 
+**[EXPERIMENT]: This Salesforce CLI the focuses on a cleaner user experience for ALL Salesforce functionality. It is in heavy development will be changing rapidly. More information will be added to this repository in the near-future.**
+
 <!-- toc -->
 * [Usage](#usage)
 * [Commands](#commands)
