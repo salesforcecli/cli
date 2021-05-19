@@ -4,7 +4,7 @@ orbs:
   release-management: salesforce/npm-release-management@4
 
 workflows:
-  version: 2.1
+  version: 2
   test-and-release:
     jobs:
       - release-management/validate-pr:
@@ -19,10 +19,11 @@ workflows:
       - release-management/test-package:
           name: node-12
       - release-management/release-package:
+          node_version: '14'
           tag: canary
           filters:
             branches:
               only: main
           pre-job-steps:
             - release-management/pin-dependencies:
-                tag: canary    
+                tag: canary
