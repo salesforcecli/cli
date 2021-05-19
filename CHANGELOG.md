@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/salesforcecli/cli/compare/v0.0.1...v0.0.2) (2021-05-19)
+
+
+### Features
+
+* add login and env commands ([b2d7e73](https://github.com/salesforcecli/cli/commit/b2d7e73bcf134a78a18c60854f5e307e15eeeaee))
+
+
+### Bug Fixes
+
+* remove oclif.settings from dev ([907b2ad](https://github.com/salesforcecli/cli/commit/907b2ad22b62187d17773c79e6c56653bde2cdbb))
+
 ### [0.0.1](https://github.com/salesforcecli/cli/compare/v0.0.0...v0.0.1) (2021-02-01)
 
 

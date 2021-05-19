@@ -8,37 +8,34 @@
 **[EXPERIMENT]: This Salesforce CLI the focuses on a cleaner user experience for ALL Salesforce functionality. It is in heavy development will be changing rapidly. More information will be added to this repository in the near-future.**
 
 <!-- toc -->
-
-- [Usage](#usage)
-- [Commands](#commands)
+* [cli](#cli)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (-v|--version|version)
-@salesforce/cli/0.0.1 win32-x64 node-v16.0.0
+@salesforce/cli/0.0.1 linux-x64 node-v14.17.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`sf env:connect`](#sf-envconnect)
-- [`sf env:list`](#sf-envlist)
-- [`sf help [COMMAND]`](#sf-help-command)
-- [`sf login`](#sf-login)
+* [`sf env:connect`](#sf-envconnect)
+* [`sf env:list`](#sf-envlist)
+* [`sf help [COMMAND]`](#sf-help-command)
+* [`sf login`](#sf-login)
 
 ## `sf env:connect`
 
@@ -117,5 +114,4 @@ EXAMPLE
 ```
 
 _See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.1/src/commands/login/index.ts)_
-
 <!-- commandsstop -->
