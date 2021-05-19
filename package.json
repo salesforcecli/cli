@@ -10,15 +10,18 @@
     "@oclif/core": "^0.5.3",
     "@oclif/plugin-help": "^3",
     "@oclif/plugin-not-found": "^2",
+    "@salesforce/plugin-env": "^0.0.1",
+    "@salesforce/plugin-login": "^0.0.1",
     "tslib": "^1"
   },
   "pinnedDependencies": [],
   "devDependencies": {
     "@oclif/dev-cli": "^1.26.0",
+    "@oclif/plugin-command-snapshot": "^2.0.0",
     "@oclif/test": "^1",
     "@salesforce/dev-config": "^2.1.0",
     "@salesforce/dev-scripts": "^0.7.0",
-    "@salesforce/prettier-config": "^0.0.1",
+    "@salesforce/prettier-config": "^0.0.2",
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
     "chai": "^4.2.0",
@@ -59,11 +62,17 @@
   "license": "BSD-3-Clause",
   "main": "lib/index.js",
   "oclif": {
-    "commands": "./lib/commands",
     "bin": "sf",
+    "scope": "salesforce",
+    "commands": "./lib/commands",
     "plugins": [
       "@oclif/plugin-help",
-      "@oclif/plugin-not-found"
+      "@oclif/plugin-not-found",
+      "@salesforce/plugin-env",
+      "@salesforce/plugin-login"
+    ],
+    "devPlugins": [
+      "@oclif/plugin-command-snapshot"
     ]
   },
   "repository": "salesforcecli/cli",
