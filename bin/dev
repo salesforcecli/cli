@@ -2,10 +2,6 @@
 
 const oclif = require('@oclif/core');
 
-// In dev mode, always show stack traces
-oclif.settings.tsnodeEnabled = true;
-
-
 require('ts-node').register()
 
 oclif.run()
