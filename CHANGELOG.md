@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/salesforcecli/cli/compare/v0.0.2...v0.0.3) (2021-05-20)
+
+
+### Bug Fixes
+
+* add topicSeparator to oclif config ([f4e9662](https://github.com/salesforcecli/cli/commit/f4e96626a86a579c39302694c272c0f2ee13782f))
+
 ### [0.0.2](https://github.com/salesforcecli/cli/compare/v0.0.1...v0.0.2) (2021-05-19)
 
 
