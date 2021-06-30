@@ -1,21 +1,23 @@
 # cli
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/cli.svg)](https://npmjs.org/package/@salesforce/cli)
-[![Downloads/week](https://img.shields.io/npm/dw/cli.svg)](https://npmjs.org/package/@salesforce/cli)
-[![License](https://img.shields.io/npm/l/cli.svg)](https://github.com/salesforcecli/cli/blob/master/package.json)
+[![Version](https://img.shields.io/npm/v/@salesforce/cli.svg)](https://npmjs.org/package/@salesforce/cli)
+[![Downloads/week](https://img.shields.io/npm/dw/@salesforce/cli.svg)](https://npmjs.org/package/@salesforce/cli)
+[![License](https://img.shields.io/npm/l/@salesforce/cli.svg)](https://github.com/salesforcecli/cli/blob/master/package.json)
 
 **[EXPERIMENT]: This Salesforce CLI the focuses on a cleaner user experience for ALL Salesforce functionality. It is in heavy development will be changing rapidly. More information will be added to this repository in the near-future.**
 
 <!-- toc -->
-* [cli](#cli)
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [cli](#cli)
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g @salesforce/cli
 $ sf COMMAND
@@ -27,15 +29,17 @@ USAGE
   $ sf COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`sf env:connect`](#sf-envconnect)
-* [`sf env:list`](#sf-envlist)
-* [`sf help [COMMAND]`](#sf-help-command)
-* [`sf login`](#sf-login)
+
+- [`sf env:connect`](#sf-envconnect)
+- [`sf env:list`](#sf-envlist)
+- [`sf help [COMMAND]`](#sf-help-command)
+- [`sf login`](#sf-login)
 
 ## `sf env:connect`
 
@@ -114,4 +118,5 @@ EXAMPLE
 ```
 
 _See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.1/src/commands/login/index.ts)_
+
 <!-- commandsstop -->
