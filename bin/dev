@@ -2,8 +2,8 @@
 
 const oclif = require('@oclif/core');
 
-require('ts-node').register()
+require('ts-node').register();
 
-oclif.run()
-.then(require('@oclif/core/flush'))
-.catch(require('@oclif/core/handle'))
+oclif.settings.tsnodeEnabled = true;
+
+oclif.run().then(require('@oclif/core/flush')).catch(require('@oclif/core/handle'));
