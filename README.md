@@ -21,7 +21,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (-v|--version|version)
-@salesforce/cli/0.0.6 linux-x64 node-v14.17.3
+@salesforce/cli/0.0.7 darwin-x64 node-v14.15.4
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -103,45 +103,49 @@ _See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugi
 
 ## `sf env:display`
 
-display details for an environment
+Display details about a specific environment
 
 ```
 USAGE
   $ sf env:display
 
 OPTIONS
-  -e, --environment=environment  (required) environment name
+  -e, --environment=environment  Environment name or alias to display.
   --json                         format output as json
-  --verbose                      verbose display output
 
-EXAMPLE
-  $ sfdx env:display --environment=billingApp-Scratch1
+EXAMPLES
+  sf env display -e my-scratch-org
+  sf env display -e user@name.com
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/env/display.ts)_
+_See code: [@salesforce/plugin-env](https://github.com/salesforcecli/plugin-env/blob/v0.0.7/src/commands/env/display.ts)_
 
 ## `sf env:list`
 
-List all environments by type
+List the environments you’ve created or logged into.
 
 ```
 USAGE
   $ sf env:list
 
 OPTIONS
-  -j, --json                                     output list in JSON format
-  -t, --environment-type=org|scratchorg|compute  filter by one or more environment types (org, scratchorg, compute)
-
-  --all                                          show all available envs instead of scoping to active orgs and their
-                                                 connected compute envs
+  -a, --all               Show all environments, including inactive orgs.
+  -x, --extended          show extra columns
+  --columns=columns       only show provided columns (comma-separated)
+  --csv                   output is csv format [alias: --output=csv]
+  --filter=filter         filter property by partial string matching, ex: name=foo
+  --json                  format output as json
+  --no-header             hide table header from output
+  --no-truncate           do not truncate output to fit screen
+  --output=csv|json|yaml  output in a more machine friendly format
+  --sort=sort             property to sort by (prepend '-' for descending)
 
 EXAMPLES
-  $ sfdx env:list
-  $ sfdx env:list --all
-  $ sfdx env:list --environment-type org --environment-type compute
+  sf env list
+  sf env list --all
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/env/list.ts)_
+_See code: [@salesforce/plugin-env](https://github.com/salesforcecli/plugin-env/blob/v0.0.7/src/commands/env/list.ts)_
 
 ## `sf env:log:tail`
 
