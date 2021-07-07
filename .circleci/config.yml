@@ -27,3 +27,7 @@ workflows:
           pre-job-steps:
             - release-management/pin-dependencies:
                 tag: canary
+          requires:
+            - node-latest
+            - node-14
+            - node-12
