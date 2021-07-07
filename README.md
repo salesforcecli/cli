@@ -21,7 +21,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (-v|--version|version)
-@salesforce/cli/0.0.5 linux-x64 node-v14.17.2
+@salesforce/cli/0.0.6 linux-x64 node-v14.17.3
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -58,6 +58,7 @@ USAGE
 * [`sf project:deploy:org`](#sf-projectdeployorg)
 * [`sf run:function`](#sf-runfunction)
 * [`sf run:function:start`](#sf-runfunctionstart)
+* [`sf whoami:functions`](#sf-whoamifunctions)
 
 ## `sf env:create:compute`
 
@@ -70,6 +71,7 @@ USAGE
 OPTIONS
   -a, --setalias=setalias            alias for the created environment
   -o, --connected-org=connected-org  username or alias for the org that the compute environment should be connected to
+  --json                             format output as json
 
 EXAMPLES
   $ sfdx env:create:compute
@@ -77,7 +79,7 @@ EXAMPLES
   $ sfdx env:create:compute --connected-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/env/create/compute.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/env/create/compute.ts)_
 
 ## `sf env:delete`
 
@@ -90,13 +92,14 @@ USAGE
 OPTIONS
   -c, --confirm=name             confirmation name
   -e, --environment=environment  (required) environment name
+  --json                         format output as json
 
 EXAMPLES
   $ sfdx env:delete --environment=billingApp-Scratch1
   $ sfdx env:delete --environment=billingApp-Scratch1 --confirm=billingApp-Scratch1
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/env/delete.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/env/delete.ts)_
 
 ## `sf env:display`
 
@@ -108,13 +111,14 @@ USAGE
 
 OPTIONS
   -e, --environment=environment  (required) environment name
+  --json                         format output as json
   --verbose                      verbose display output
 
 EXAMPLE
   $ sfdx env:display --environment=billingApp-Scratch1
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/env/display.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/env/display.ts)_
 
 ## `sf env:list`
 
@@ -137,7 +141,7 @@ EXAMPLES
   $ sfdx env:list --environment-type org --environment-type compute
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/env/list.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/env/list.ts)_
 
 ## `sf env:log:tail`
 
@@ -149,12 +153,13 @@ USAGE
 
 OPTIONS
   -e, --environment=environment  (required) environment name to retrieve logs
+  --json                         format output as json
 
 EXAMPLE
   sfdx env:log:tail --environment=billingApp-Scratch1
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/env/log/tail.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/env/log/tail.ts)_
 
 ## `sf env:logdrain:add`
 
@@ -167,12 +172,13 @@ USAGE
 OPTIONS
   -e, --environment=environment  (required) environment name
   -u, --url=url                  (required) endpoint that will receive sent logs
+  --json                         format output as json
 
 EXAMPLE
   $ sfdx env:logdrain:add --environment=billingApp-Sandbox --url=https://example.com/drain
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/env/logdrain/add.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/env/logdrain/add.ts)_
 
 ## `sf env:logdrain:list`
 
@@ -190,7 +196,7 @@ EXAMPLE
   $ sfdx env:logdrain:list --environment=billingApp-Sandbox
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/env/logdrain/list.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/env/logdrain/list.ts)_
 
 ## `sf env:logdrain:remove`
 
@@ -203,12 +209,13 @@ USAGE
 OPTIONS
   -e, --environment=environment  (required) environment name
   -u, --url=url                  (required) logdrain url to remove
+  --json                         format output as json
 
 EXAMPLE
   $ sfdx env:logdrain:remove --environment=billingApp-Sandbox --url=syslog://syslog-a.logdna.com:11137
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/env/logdrain/remove.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/env/logdrain/remove.ts)_
 
 ## `sf env:open`
 
@@ -271,12 +278,13 @@ USAGE
 
 OPTIONS
   -e, --environment=environment  (required) environment name
+  --json                         format output as json
 
 EXAMPLE
   $ sfdx env:var:get foo --environment=my-environment
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/env/var/get.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/env/var/get.ts)_
 
 ## `sf env:var:list`
 
@@ -288,12 +296,13 @@ USAGE
 
 OPTIONS
   -e, --environment=environment  (required) environment name
+  --json                         format output as json
 
 EXAMPLE
   $ sfdx env:var:list --environment=my-environment
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/env/var/list.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/env/var/list.ts)_
 
 ## `sf env:var:set`
 
@@ -305,12 +314,13 @@ USAGE
 
 OPTIONS
   -e, --environment=environment  (required) environment name
+  --json                         format output as json
 
 EXAMPLE
   $ sfdx env:var:set foo=bar --environment=my-environment
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/env/var/set.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/env/var/set.ts)_
 
 ## `sf env:var:unset`
 
@@ -322,12 +332,13 @@ USAGE
 
 OPTIONS
   -e, --environment=environment  (required) environment name
+  --json                         format output as json
 
 EXAMPLE
   $ sfdx env:var:unset foo --environment=my-environment
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/env/var/unset.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/env/var/unset.ts)_
 
 ## `sf generate:function`
 
@@ -340,6 +351,7 @@ USAGE
 OPTIONS
   -l, --language=(javascript|typescript|java)  (required) language
   -n, --name=name                              (required) function name
+  --json                                       format output as json
 
 ALIASES
   $ sf evergreen:function:init
@@ -348,7 +360,7 @@ EXAMPLE
   $ sfdx evergreen:function:create MyFunction --language=javascript
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/generate/function.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/generate/function.ts)_
 
 ## `sf generate:project`
 
@@ -358,9 +370,10 @@ USAGE
 
 OPTIONS
   -n, --name=name  (required) name of the generated project
+  --json           format output as json
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/generate/project.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/generate/project.ts)_
 
 ## `sf help [COMMAND]`
 
@@ -405,7 +418,7 @@ EXAMPLE
   $ sfdx login:functions
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/login/functions.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/login/functions.ts)_
 
 ## `sf login:org`
 
@@ -499,7 +512,7 @@ EXAMPLE
   sf project:deploy
 ```
 
-_See code: [@salesforce/plugin-project](https://github.com/salesforcecli/plugin-project/blob/v0.0.4/src/commands/project/deploy.ts)_
+_See code: [@salesforce/plugin-project](https://github.com/salesforcecli/plugin-project/blob/v0.0.5/src/commands/project/deploy.ts)_
 
 ## `sf project:deploy:functions`
 
@@ -516,9 +529,11 @@ OPTIONS
   -q, --quiet                        limit the amount of output displayed from the deploy process
 
   --force                            ignore warnings and overwrite remote repository (not allowed in production)
+
+  --json                             format output as json
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/project/deploy/functions.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/project/deploy/functions.ts)_
 
 ## `sf project:deploy:org`
 
@@ -578,6 +593,7 @@ OPTIONS
   -o, --connected-org=connected-org  username or alias for the target org; overrides default target org
   -p, --payload=payload              set the payload of the cloudevent. also accepts @file.txt format
   -s, --structured                   set the cloudevent to be emitted as a structured cloudevent (json)
+  --json                             format output as json
 
 EXAMPLE
 
@@ -587,7 +603,7 @@ EXAMPLE
        $ sfdx run:function -l http://localhost:8080 -p '{"id": 12345}' --structured
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/run/function.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/run/function.ts)_
 
 ## `sf run:function:start`
 
@@ -603,6 +619,7 @@ OPTIONS
   -p, --port=port              [default: 8080] port for running the function
   -v, --verbose                output additional logs
   --clear-cache                clear associated cache before executing.
+  --json                       format output as json
 
   --network=network            Connect and build containers to a network. This can be useful to build containers which
                                require a local resource.
@@ -616,5 +633,22 @@ EXAMPLE
        $ sfdx run:function:start --network host --no-pull --clear-cache --debug-port 9000 --port 5000
 ```
 
-_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.13/src/commands/run/function/start.ts)_
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/run/function/start.ts)_
+
+## `sf whoami:functions`
+
+show information on your account
+
+```
+USAGE
+  $ sf whoami:functions
+
+OPTIONS
+  --json  format output as json
+
+EXAMPLE
+  $ sf whoami:functions
+```
+
+_See code: [@salesforce/plugin-functions](https://github.com/salesforcecli/plugin-functions/blob/v0.2.16/src/commands/whoami/functions.ts)_
 <!-- commandsstop -->
