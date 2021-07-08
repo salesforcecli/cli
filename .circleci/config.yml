@@ -47,7 +47,7 @@ jobs:
       - run: |
           VERSION=$(node -p -e "require('./package.json').version")
           SHA=$(git rev-parse --short HEAD)
-          yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300
+          yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --indexes
 
   pack-and-upload-macos-installer:
     macos:
