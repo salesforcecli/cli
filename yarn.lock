@@ -728,7 +728,7 @@
     widest-line "^3.1.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/dev-cli@^1", "@oclif/dev-cli@^1.26.0":
+"@oclif/dev-cli@^1":
   version "1.26.0"
   resolved "https://registry.yarnpkg.com/@oclif/dev-cli/-/dev-cli-1.26.0.tgz#e3ec294b362c010ffc8948003d3770955c7951fd"
   integrity sha512-272udZP+bG4qahoAcpWcMTJKiA+V42kRMqQM7n4tgW35brYb2UP5kK+p08PpF8sgSfRTV8MoJVJG9ax5kY82PA==
@@ -1142,10 +1142,10 @@
   resolved "https://registry.yarnpkg.com/@salesforce/dev-config/-/dev-config-2.1.2.tgz#b4e206f860e87065d068bf8ba3994a032389ad81"
   integrity sha512-1swy07rynHoTRk8lj6nuC0JceRBo300OuWnovQe2OMvLpQM5Dh1SUnv1SE8012PsrK9BC1WqGXp4BUyMo04x7w==
 
-"@salesforce/dev-scripts@^0.9.15":
-  version "0.9.15"
-  resolved "https://registry.yarnpkg.com/@salesforce/dev-scripts/-/dev-scripts-0.9.15.tgz#91dda26142d5a61e5d0bc7601c62b1a4b3832475"
-  integrity sha512-uoWzMN/aU1IaRtJ1RjImzh7SxPTXYRhxXLN6QJCDE5G+zkpQ9yfKLqThu4M+j5SbkAMrqAK7drv5LauZi9Vh4A==
+"@salesforce/dev-scripts@^0.9.16":
+  version "0.9.16"
+  resolved "https://registry.npmjs.org/@salesforce/dev-scripts/-/dev-scripts-0.9.16.tgz#421ab5c9a95fcdba94b4ce885f24e92a24d0d756"
+  integrity sha512-MCR3oPvx44IaigP4cXW9GV2p9wb+Y6GbPkwy6tDioBHVawZBnDWu2lQ6g1e95WUXmmgCCcB8VdxTzYAJDSFX7w==
   dependencies:
     "@commitlint/cli" "^12.1.4"
     "@commitlint/config-conventional" "^10.0.0"
@@ -7785,13 +7785,14 @@ object.values@^1.1.3:
     define-properties "^1.1.3"
     es-abstract "^1.18.2"
 
-oclif@^1.18.0:
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/oclif/-/oclif-1.18.0.tgz#2d042ea50e7b8dfbef94f7c0f0693f42ef7cc47f"
-  integrity sha512-GLnwhESkPqM2cElRSZ9KwoUJ9OPiQEFaUM8xbBQDcygapuYcTIpcCj6hCsDhnLzSJj2DDgqDjmQlNeT29LUr0g==
+oclif@^2.0.0-main.0:
+  version "2.0.0-main.0"
+  resolved "https://registry.npmjs.org/oclif/-/oclif-2.0.0-main.0.tgz#bd35fd957a189882793cd3aa9464d82f85987b58"
+  integrity sha512-65rYx/b4lRlQY+//vl4MDyPtL/4P0elTUoEy2RznjJxrMUt00MRRZ4kov2959oImOYHWWLrb6ajf5svTlZ2tzA==
   dependencies:
     "@oclif/command" "^1.6"
     "@oclif/config" "^1.12.6"
+    "@oclif/core" "^0.5.19"
     "@oclif/errors" "^1.2.2"
     "@oclif/fixpack" "^2.3.0"
     "@oclif/plugin-help" "^3"

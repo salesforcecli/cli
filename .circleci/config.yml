@@ -117,22 +117,13 @@ workflows:
           filters:
             branches:
               ignore: main # test the pack on PRs, but main will do pack-and-upload-tarballs
-      - approval:
-          type: approval
-          requires:
-            - release-management/test-package
-            # - release-management/test-plugin-inclusion
-            - test-pack-tarballs
-          filters:
-            branches:
-              only:
-                - main
       - release-management/release-package:
           node_version: '14'
           tag: latest
           github-release: true
           requires:
-            - approval
+            - release-management/test-package
+            # - release-management/test-plugin-inclusion
           filters:
             branches:
               only: main

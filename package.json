@@ -93,7 +93,7 @@
     "pack:win": "oclif pack:win",
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "yarn test:deprecation-policy",
-    "prepack": "yarn build && oclif-dev manifest && oclif-dev readme",
+    "prepack": "sf-prepack",
     "prepare": "yarn compile && yarn lint",
     "pretarball": "./bin/dev cli:tarballs:prepare --types",
     "pretest": "sf-compile-test",
@@ -106,7 +106,7 @@
     "upload:macos": "oclif upload:macos",
     "upload:tarballs": "oclif upload:tarballs",
     "upload:win": "oclif upload:win",
-    "version": "oclif-dev readme && git add README.md"
+    "version": "oclif readme"
   },
   "types": "lib/index.d.ts",
   "husky": {
@@ -117,11 +117,10 @@
     }
   },
   "devDependencies": {
-    "@oclif/dev-cli": "^1.26.0",
     "@oclif/plugin-command-snapshot": "^2.1.2",
     "@oclif/test": "^1",
     "@salesforce/dev-config": "^2.1.2",
-    "@salesforce/dev-scripts": "^0.9.15",
+    "@salesforce/dev-scripts": "^0.9.16",
     "@salesforce/plugin-release-management": "^1.14.0",
     "@salesforce/prettier-config": "^0.0.2",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
@@ -143,7 +142,7 @@
     "husky": "^4.2.5",
     "mocha": "^9.0.1",
     "nyc": "^15.1.0",
-    "oclif": "^1.18.0",
+    "oclif": "^2.0.0-main.0",
     "prettier": "^2.3.2",
     "pretty-quick": "^3.1.1",
     "sinon": "^11.1.1",
