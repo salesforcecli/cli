@@ -3,6 +3,87 @@ version: 2.1
 orbs:
   release-management: salesforce/npm-release-management@4
 
+jobs:
+  # There are two pack jobs:
+  # - test-pack-tarballs to run on every branch *other than main*
+  # - pack-and-upload-tarballs to run only on main
+  # The persist_to_workspace feature would allow use to have a
+  # pack-tarballs and an upload-tarballs job, but the perf gains
+  # is minimal since the workspace is almost a GB to attach.
+  test-pack-tarballs:
+    docker:
+      - image: node:lts
+    resource_class: xlarge
+    steps:
+      - checkout
+      - run: |
+          apt-get update
+          apt-get install -y p7zip-full
+      - restore_cache:
+          keys:
+            - v3-npm-{{checksum "yarn.lock"}}
+      - run: yarn install
+      - run: yarn pack:tarballs
+      - run: yarn pack:verify
+      - run: yarn test:smoke-unix
+
+  pack-and-upload-tarballs: &pack-and-upload-tarballs
+    docker:
+      - image: node:lts
+    resource_class: xlarge
+    steps:
+      - checkout
+      - run: |
+          apt-get update
+          apt-get install -y p7zip-full
+      - restore_cache:
+          keys:
+            - v3-npm-{{checksum "yarn.lock"}}
+      - run: yarn install
+      - run: yarn pack:tarballs
+      - run: yarn pack:verify
+      - run: yarn test:smoke-unix
+      - run: yarn upload:tarballs
+      - run: |
+          VERSION=$(node -p -e "require('./package.json').version")
+          SHA=$(git rev-parse --short HEAD)
+          yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300
+
+  pack-and-upload-macos-installer:
+    macos:
+      xcode: 11.7.0
+    steps:
+      - checkout
+      - run: yarn install
+      - run: yarn pack:macos
+      - run: yarn upload:macos
+      - run: |
+          VERSION=$(node -p -e "require('./package.json').version")
+          SHA=$(git rev-parse --short HEAD)
+          yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --macos
+
+  pack-and-upload-windows-installer:
+    <<: *pack-and-upload-tarballs
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v3-npm-{{checksum "yarn.lock"}}
+      - run: |
+          apt-get update
+          apt-get install -y p7zip-full \
+            osslsigncode \
+            nsis
+      - run: yarn install
+      - run: |
+          echo $WINDOWS_SIGNING_KEY | base64 --decode > /tmp/windows-signing.pfx
+      - run: yarn pack:win
+      - run: yarn upload:win
+      - run: |
+          VERSION=$(node -p -e "require('./package.json').version")
+          SHA=$(git rev-parse --short HEAD)
+          yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --win
+
 workflows:
   version: 2
   test-and-release:
@@ -12,22 +93,72 @@ workflows:
             branches:
               ignore: main
       - release-management/test-package:
-          name: node-latest
-          node_version: latest
-      - release-management/test-package:
-          name: node-14
-      - release-management/test-package:
-          name: node-12
+          matrix:
+            parameters:
+              os:
+                - linux
+                - windows
+              node_version:
+                - latest
+                - lts
+                - maintenance
+            exclude:
+              - os: windows
+                node_version: lts
+              - os: windows
+                node_version: maintenance
+      # TODO: add this back once we're ready to include sf in sfdx
+      # - release-management/test-plugin-inclusion
+      - test-pack-tarballs:
+          # no point to pack if the test fail, and we only care to test the pack with the node version
+          # we ship (specified in package.json.oclif.node)
+          requires:
+            - release-management/test-package
+          filters:
+            branches:
+              ignore: main # test the pack on PRs, but main will do pack-and-upload-tarballs
+      - approval:
+          type: approval
+          requires:
+            - release-management/test-package
+            # - release-management/test-plugin-inclusion
+            - test-pack-tarballs
+          filters:
+            branches:
+              only:
+                - main
       - release-management/release-package:
           node_version: '14'
-          tag: canary
+          tag: latest
+          github-release: true
+          requires:
+            - approval
           filters:
             branches:
               only: main
           pre-job-steps:
             - release-management/pin-dependencies:
-                tag: canary
+                tag: latest
+      - pack-and-upload-tarballs:
+          filters:
+            branches:
+              only:
+                - main
           requires:
-            - node-latest
-            - node-14
-            - node-12
+            - release-management/release-package
+      - pack-and-upload-macos-installer:
+          filters:
+            branches:
+              only:
+                - main
+          requires:
+            - release-management/release-package
+            - pack-and-upload-tarballs
+      - pack-and-upload-windows-installer:
+          filters:
+            branches:
+              only:
+                - main
+          requires:
+            - release-management/release-package
+            - pack-and-upload-tarballs

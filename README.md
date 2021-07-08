@@ -21,7 +21,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (-v|--version|version)
-@salesforce/cli/0.0.6 linux-x64 node-v14.17.3
+@salesforce/cli/0.0.7 darwin-x64 node-v14.15.4
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -53,6 +53,12 @@ USAGE
 * [`sf login:org`](#sf-loginorg)
 * [`sf login:org:jwt`](#sf-loginorgjwt)
 * [`sf logout`](#sf-logout)
+* [`sf plugins`](#sf-plugins)
+* [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
+* [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
+* [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
+* [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
+* [`sf plugins:update`](#sf-pluginsupdate)
 * [`sf project:deploy`](#sf-projectdeploy)
 * [`sf project:deploy:functions`](#sf-projectdeployfunctions)
 * [`sf project:deploy:org`](#sf-projectdeployorg)
@@ -479,6 +485,144 @@ EXAMPLE
 ```
 
 _See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.4/src/commands/logout.ts)_
+
+## `sf plugins`
+
+list installed plugins
+
+```
+USAGE
+  $ sf plugins
+
+OPTIONS
+  --core  show core plugins
+
+EXAMPLE
+  $ sf plugins
+```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.10.1/src/commands/plugins/index.ts)_
+
+## `sf plugins:inspect PLUGIN...`
+
+displays installation properties of a plugin
+
+```
+USAGE
+  $ sf plugins:inspect PLUGIN...
+
+ARGUMENTS
+  PLUGIN  [default: .] plugin to inspect
+
+OPTIONS
+  -h, --help     show CLI help
+  -v, --verbose
+
+EXAMPLE
+  $ sf plugins:inspect myplugin
+```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.10.1/src/commands/plugins/inspect.ts)_
+
+## `sf plugins:install PLUGIN...`
+
+installs a plugin into the CLI
+
+```
+USAGE
+  $ sf plugins:install PLUGIN...
+
+ARGUMENTS
+  PLUGIN  plugin to install
+
+OPTIONS
+  -f, --force    yarn install with force flag
+  -h, --help     show CLI help
+  -v, --verbose
+
+DESCRIPTION
+  Can be installed from npm or a git url.
+
+  Installation of a user-installed plugin will override a core plugin.
+
+  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command 
+  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in 
+  the CLI without the need to patch and update the whole CLI.
+
+ALIASES
+  $ sf plugins:add
+
+EXAMPLES
+  $ sf plugins:install myplugin 
+  $ sf plugins:install https://github.com/someuser/someplugin
+  $ sf plugins:install someuser/someplugin
+```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.10.1/src/commands/plugins/install.ts)_
+
+## `sf plugins:link PLUGIN`
+
+links a plugin into the CLI for development
+
+```
+USAGE
+  $ sf plugins:link PLUGIN
+
+ARGUMENTS
+  PATH  [default: .] path to plugin
+
+OPTIONS
+  -h, --help     show CLI help
+  -v, --verbose
+
+DESCRIPTION
+  Installation of a linked plugin will override a user-installed or core plugin.
+
+  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello' 
+  command will override the user-installed or core plugin implementation. This is useful for development work.
+
+EXAMPLE
+  $ sf plugins:link myplugin
+```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.10.1/src/commands/plugins/link.ts)_
+
+## `sf plugins:uninstall PLUGIN...`
+
+removes a plugin from the CLI
+
+```
+USAGE
+  $ sf plugins:uninstall PLUGIN...
+
+ARGUMENTS
+  PLUGIN  plugin to uninstall
+
+OPTIONS
+  -h, --help     show CLI help
+  -v, --verbose
+
+ALIASES
+  $ sf plugins:unlink
+  $ sf plugins:remove
+```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.10.1/src/commands/plugins/uninstall.ts)_
+
+## `sf plugins:update`
+
+update installed plugins
+
+```
+USAGE
+  $ sf plugins:update
+
+OPTIONS
+  -h, --help     show CLI help
+  -v, --verbose
+```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.10.1/src/commands/plugins/update.ts)_
 
 ## `sf project:deploy`
 

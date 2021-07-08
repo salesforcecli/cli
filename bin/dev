@@ -5,5 +5,6 @@ const oclif = require('@oclif/core');
 require('ts-node').register();
 
 oclif.settings.tsnodeEnabled = true;
+process.env.NODE_ENV = 'development';
 
 oclif.run().then(require('@oclif/core/flush')).catch(require('@oclif/core/handle'));
