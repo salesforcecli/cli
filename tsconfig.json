@@ -1,7 +1,7 @@
 {
   "extends": "@salesforce/dev-config/tsconfig",
   "compilerOptions": {
-    "outDir": "lib",
+    "outDir": "dist",
     "skipLibCheck": true
   },
   "include": ["./src/**/*.ts"]

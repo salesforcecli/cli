@@ -25,6 +25,7 @@ jobs:
       - run: yarn install
       - run: yarn pack:tarballs
       - run: yarn pack:verify
+      - run: yarn test:smoke-unix
 
   pack-and-upload-tarballs: &pack-and-upload-tarballs
     docker:
@@ -41,6 +42,7 @@ jobs:
       - run: yarn install
       - run: yarn pack:tarballs
       - run: yarn pack:verify
+      - run: yarn test:smoke-unix
       - run: yarn upload:tarballs
       - run: |
           VERSION=$(node -p -e "require('./package.json').version")
@@ -97,7 +99,8 @@ workflows:
           name: node-14
       - release-management/test-package:
           name: node-12
-      - release-management/test-plugin-inclusion
+      # TODO: add this back once we're ready to include sf in sfdx
+      # - release-management/test-plugin-inclusion
       - test-pack-tarballs:
           # no point to pack if the test fail, and we only care to test the pack with the node version
           # we ship (specified in package.json.oclif.node)
@@ -112,7 +115,7 @@ workflows:
             - node-latest
             - node-14
             - node-12
-            - release-management/test-plugin-inclusion
+            # - release-management/test-plugin-inclusion
             - test-pack-tarballs
           filters:
             branches:
