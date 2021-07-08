@@ -44,10 +44,12 @@ jobs:
       - run: yarn pack:verify
       - run: yarn test:smoke-unix
       - run: yarn upload:tarballs
-      - run: |
-          VERSION=$(node -p -e "require('./package.json').version")
-          SHA=$(git rev-parse --short HEAD)
-          yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --indexes
+      - setp:
+          name: Promote to stable channel
+          run: |
+            VERSION=$(node -p -e "require('./package.json').version")
+            SHA=$(git rev-parse --short HEAD)
+            yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --indexes
 
   pack-and-upload-macos-installer:
     macos:
@@ -57,10 +59,12 @@ jobs:
       - run: yarn install
       - run: yarn pack:macos
       - run: yarn upload:macos
-      - run: |
-          VERSION=$(node -p -e "require('./package.json').version")
-          SHA=$(git rev-parse --short HEAD)
-          yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --macos
+      - step:
+          name: Promote macos installer to stable channel
+          run: |
+            VERSION=$(node -p -e "require('./package.json').version")
+            SHA=$(git rev-parse --short HEAD)
+            yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --macos
 
   pack-and-upload-windows-installer:
     <<: *pack-and-upload-tarballs
@@ -79,10 +83,12 @@ jobs:
           echo $WINDOWS_SIGNING_KEY | base64 --decode > /tmp/windows-signing.pfx
       - run: yarn pack:win
       - run: yarn upload:win
-      - run: |
-          VERSION=$(node -p -e "require('./package.json').version")
-          SHA=$(git rev-parse --short HEAD)
-          yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --win
+      - step:
+          name: Promote windows installer to stable channel
+          run: |
+            VERSION=$(node -p -e "require('./package.json').version")
+            SHA=$(git rev-parse --short HEAD)
+            yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --win
 
 workflows:
   version: 2
