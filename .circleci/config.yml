@@ -90,13 +90,13 @@ jobs:
             SHA=$(git rev-parse --short HEAD)
             yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --win
 
-    promote-verify:
-      docker:
-        - image: node:latest
-      steps:
-        - checkout
-        - run: yarn install
-        - run: yarn promote:verify
+  promote-verify:
+    docker:
+      - image: node:latest
+    steps:
+      - checkout
+      - run: yarn install
+      - run: yarn promote:verify
 
 workflows:
   version: 2
