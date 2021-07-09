@@ -108,7 +108,7 @@
     "upload:win": "oclif upload:win",
     "version": "oclif readme"
   },
-  "types": "lib/index.d.ts",
+  "types": "dist/index.d.ts",
   "husky": {
     "hooks": {
       "commit-msg": "sf-husky-commit-msg",
