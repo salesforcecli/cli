@@ -17,7 +17,9 @@
     "/oclif.manifest.json"
   ],
   "keywords": [
-    "oclif"
+    "oclif",
+    "salesforce",
+    "sf"
   ],
   "license": "BSD-3-Clause",
   "main": "dist/index.js",
@@ -30,11 +32,11 @@
       "@oclif/plugin-help",
       "@oclif/plugin-not-found",
       "@oclif/plugin-plugins",
-      "@salesforce/plugin-env",
-      "@salesforce/plugin-functions",
-      "@salesforce/plugin-login",
-      "@salesforce/plugin-project-org",
-      "@salesforce/plugin-project"
+      "@sf/env",
+      "@sf/func",
+      "@sf/login",
+      "@sf/project",
+      "@sf/proj-org"
     ],
     "devPlugins": [
       "@oclif/plugin-command-snapshot",
@@ -58,23 +60,23 @@
     }
   },
   "dependencies": {
-    "@oclif/core": "^0.5.20",
+    "@oclif/core": "^0.5.21",
     "@oclif/plugin-help": "^3.2.2",
-    "@oclif/plugin-not-found": "^2.1.0",
+    "@oclif/plugin-not-found": "^2.1.1",
     "@oclif/plugin-plugins": "^1.10.1",
-    "@salesforce/plugin-env": "0.0.7",
-    "@salesforce/plugin-functions": "0.2.16",
-    "@salesforce/plugin-login": "0.0.4",
-    "@salesforce/plugin-project": "0.0.5",
-    "@salesforce/plugin-project-org": "0.0.2",
+    "@sf/env": "npm:@salesforce/plugin-env@0.0.8",
+    "@sf/func": "npm:@salesforce/plugin-functions@0.2.18",
+    "@sf/login": "npm:@salesforce/plugin-login@0.0.5",
+    "@sf/project": "npm:@salesforce/plugin-project@0.0.6",
+    "@sf/proj-org": "npm:@salesforce/plugin-project-org@0.0.4",
     "tslib": "^2.3.0"
   },
   "pinnedDependencies": [
-    "@salesforce/plugin-env",
-    "@salesforce/plugin-functions",
-    "@salesforce/plugin-login",
-    "@salesforce/plugin-project",
-    "@salesforce/plugin-project-org"
+    "@sf/env",
+    "@sf/func",
+    "@sf/login",
+    "@sf/project",
+    "@sf/proj-org"
   ],
   "repository": "salesforcecli/cli",
   "scripts": {
@@ -89,7 +91,7 @@
     "pack:deb": "oclif pack:deb",
     "pack:macos": "oclif pack:macos",
     "pack:tarballs": "oclif pack:tarballs",
-    "pack:verify": "./bin/dev cli:tarballs:verify --cli sf",
+    "pack:verify": "./bin/dev cli:tarballs:verify --cli sf --windows-username-buffer 36",
     "pack:win": "oclif pack:win",
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "yarn test:deprecation-policy",
@@ -117,11 +119,11 @@
     }
   },
   "devDependencies": {
-    "@oclif/plugin-command-snapshot": "^2.1.2",
+    "@oclif/plugin-command-snapshot": "^2.2.2",
     "@oclif/test": "^1",
     "@salesforce/dev-config": "^2.1.2",
-    "@salesforce/dev-scripts": "^0.9.17",
-    "@salesforce/plugin-release-management": "^1.14.0",
+    "@salesforce/dev-scripts": "^0.9.18",
+    "@salesforce/plugin-release-management": "^1.16.1",
     "@salesforce/prettier-config": "^0.0.2",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
@@ -142,7 +144,7 @@
     "husky": "^4.2.5",
     "mocha": "^9.0.1",
     "nyc": "^15.1.0",
-    "oclif": "^2.0.0-main.0",
+    "oclif": "^2.0.0-main.1",
     "prettier": "^2.3.2",
     "pretty-quick": "^3.1.1",
     "sinon": "^11.1.1",
