@@ -36,7 +36,8 @@
       "@sf/func",
       "@sf/login",
       "@sf/project",
-      "@sf/proj-org"
+      "@sf/proj-org",
+      "@sf/telemetry"
     ],
     "devPlugins": [
       "@oclif/plugin-command-snapshot",
@@ -69,6 +70,7 @@
     "@sf/login": "npm:@salesforce/plugin-login@0.0.5",
     "@sf/project": "npm:@salesforce/plugin-project@0.0.6",
     "@sf/proj-org": "npm:@salesforce/plugin-project-org@0.0.4",
+    "@sf/telemetry": "npm:@salesforce/plugin-telemetry@1.2.3",
     "tslib": "^2.3.0"
   },
   "pinnedDependencies": [
@@ -76,7 +78,8 @@
     "@sf/func",
     "@sf/login",
     "@sf/project",
-    "@sf/proj-org"
+    "@sf/proj-org",
+    "@sf/telemetry"
   ],
   "repository": "salesforcecli/cli",
   "scripts": {
