@@ -36,7 +36,8 @@
       "@sf/func",
       "@sf/login",
       "@sf/project",
-      "@sf/proj-org"
+      "@sf/proj-org",
+      "@sf/telemetry"
     ],
     "devPlugins": [
       "@oclif/plugin-command-snapshot",
@@ -69,6 +70,7 @@
     "@sf/login": "npm:@salesforce/plugin-login@0.0.5",
     "@sf/project": "npm:@salesforce/plugin-project@0.0.6",
     "@sf/proj-org": "npm:@salesforce/plugin-project-org@0.0.4",
+    "@sf/telemetry": "npm:@salesforce/plugin-telemetry@1.2.3",
     "tslib": "^2.3.0"
   },
   "pinnedDependencies": [
@@ -76,7 +78,8 @@
     "@sf/func",
     "@sf/login",
     "@sf/project",
-    "@sf/proj-org"
+    "@sf/proj-org",
+    "@sf/telemetry"
   ],
   "repository": "salesforcecli/cli",
   "scripts": {
@@ -100,7 +103,7 @@
     "pretarball": "./bin/dev cli:tarballs:prepare --types",
     "pretest": "sf-compile-test",
     "promote": "oclif promote",
-    "promote:verify": "./bin/dev cli:versions:inspect --channel stable --location archive --cli sf",
+    "promote:verify": "./bin/dev cli:versions:inspect --channels stable --locations archive --cli sf",
     "test:smoke-unix": "./tmp/sf/bin/sf --version && ./tmp/sf/bin/sf help && ./tmp/sf/bin/sf plugins --core",
     "test:deprecation-policy": "./bin/dev snapshot:compare",
     "test": "echo disable # sf-test",
@@ -123,7 +126,7 @@
     "@oclif/test": "^1",
     "@salesforce/dev-config": "^2.1.2",
     "@salesforce/dev-scripts": "^0.9.18",
-    "@salesforce/plugin-release-management": "^1.16.1",
+    "@salesforce/plugin-release-management": "^1.16.2",
     "@salesforce/prettier-config": "^0.0.2",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
