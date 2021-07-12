@@ -33,6 +33,7 @@ jobs:
     resource_class: xlarge
     steps:
       - checkout
+      - run: git fetch origin && git pull
       - run: |
           apt-get update
           apt-get install -y p7zip-full
