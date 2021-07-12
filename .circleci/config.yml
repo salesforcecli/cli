@@ -121,9 +121,9 @@ workflows:
                 node_version: lts
               - os: windows
                 node_version: maintenance
-      - release-management/test-sf-inclusion:
-          sfdx_branch: mdonnalley/include-sf
-          name: test-include-sf-in-sdx
+      # - release-management/test-sf-inclusion:
+      #     sfdx_branch: mdonnalley/include-sf
+      #     name: test-include-sf-in-sdx
       - test-pack-tarballs:
           # no point to pack if the test fail, and we only care to test the pack with the node version
           # we ship (specified in package.json.oclif.node)
@@ -138,7 +138,7 @@ workflows:
           github-release: true
           requires:
             - release-management/test-package
-            - test-include-sf-in-sdx
+            # - test-include-sf-in-sdx
           filters:
             branches:
               only: main
