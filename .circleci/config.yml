@@ -121,8 +121,9 @@ workflows:
                 node_version: lts
               - os: windows
                 node_version: maintenance
-      # TODO: add this back once we're ready to include sf in sfdx
-      # - release-management/test-plugin-inclusion
+      # - release-management/test-sf-inclusion:
+      #     sfdx_branch: mdonnalley/include-sf
+      #     name: test-include-sf-in-sdx
       - test-pack-tarballs:
           # no point to pack if the test fail, and we only care to test the pack with the node version
           # we ship (specified in package.json.oclif.node)
@@ -137,7 +138,7 @@ workflows:
           github-release: true
           requires:
             - release-management/test-package
-            # - release-management/test-plugin-inclusion
+            # - test-include-sf-in-sdx
           filters:
             branches:
               only: main
@@ -172,3 +173,14 @@ workflows:
             - pack-and-upload-tarballs
             - pack-and-upload-macos-installer
             - pack-and-upload-windows-installer
+  test-pack-and-include:
+    triggers:
+      - schedule:
+          cron: 0 0 * * *
+          filters:
+            branches:
+              only:
+                - main
+    jobs:
+      - release-management/test-sf-inclusion
+      - test-pack-tarballs
