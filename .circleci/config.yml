@@ -57,6 +57,7 @@ jobs:
       xcode: 11.7.0
     steps:
       - checkout
+      - run: git fetch origin && git pull
       - run: yarn install
       - run: yarn pack:macos
       - run: yarn upload:macos
@@ -71,6 +72,7 @@ jobs:
     <<: *pack-and-upload-tarballs
     steps:
       - checkout
+      - run: git fetch origin && git pull
       - restore_cache:
           keys:
             - v3-npm-{{checksum "yarn.lock"}}
