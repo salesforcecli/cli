@@ -54,7 +54,7 @@ jobs:
 
   pack-and-upload-macos-installer:
     macos:
-      xcode: 11.7.0
+      xcode: 12.15.1
     steps:
       - checkout
       - run: git fetch origin && git pull
