@@ -109,29 +109,10 @@ workflows:
           filters:
             branches:
               ignore: main
-      - release-management/test-package:
-          matrix:
-            parameters:
-              os:
-                - linux
-                - windows
-              node_version:
-                - latest
-                - lts
-                - maintenance
-            exclude:
-              - os: windows
-                node_version: lts
-              - os: windows
-                node_version: maintenance
       - release-management/test-sf-inclusion:
           sfdx_branch: mdonnalley/include-sf
           name: test-include-sf-in-sdx
       - test-pack-tarballs:
-          # no point to pack if the test fail, and we only care to test the pack with the node version
-          # we ship (specified in package.json.oclif.node)
-          requires:
-            - release-management/test-package
           filters:
             branches:
               ignore: main # test the pack on PRs, but main will do pack-and-upload-tarballs
@@ -140,7 +121,6 @@ workflows:
           tag: latest
           github-release: true
           requires:
-            - release-management/test-package
             - test-include-sf-in-sdx
           filters:
             branches:
