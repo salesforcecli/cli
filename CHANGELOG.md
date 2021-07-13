@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.17](https://github.com/salesforcecli/cli/compare/v0.0.16...v0.0.17) (2021-07-13)
+
+
+### Bug Fixes
+
+* pack tarballs with node 14.17.1 ([8ccf77f](https://github.com/salesforcecli/cli/commit/8ccf77f46c380015d585243f48623dc05b2c554d))
+
 ### [0.0.16](https://github.com/salesforcecli/cli/compare/v0.0.15...v0.0.16) (2021-07-13)
 
 ### [0.0.15](https://github.com/salesforcecli/cli/compare/v0.0.14...v0.0.15) (2021-07-12)
