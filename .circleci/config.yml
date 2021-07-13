@@ -66,7 +66,7 @@ jobs:
           command: |
             VERSION=$(node -p -e "require('./package.json').version")
             SHA=$(git rev-parse --short HEAD)
-            yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --macos
+            yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --macos --indexes
 
   pack-and-upload-windows-installer:
     <<: *pack-and-upload-tarballs
@@ -91,7 +91,7 @@ jobs:
           command: |
             VERSION=$(node -p -e "require('./package.json').version")
             SHA=$(git rev-parse --short HEAD)
-            yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --win
+            yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --win --indexes
 
   promote-verify:
     docker:
