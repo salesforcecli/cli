@@ -29,7 +29,7 @@ jobs:
 
   pack-and-upload-tarballs: &pack-and-upload-tarballs
     docker:
-      - image: node:lts
+      - image: node:14.17.1
     resource_class: xlarge
     steps:
       - checkout
