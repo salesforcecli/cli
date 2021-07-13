@@ -21,7 +21,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (-v|--version|version)
-@salesforce/cli/0.0.15 linux-x64 node-v14.17.3
+@salesforce/cli/0.0.16 linux-x64 node-v14.17.3
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -77,7 +77,9 @@ USAGE
 FLAGS
   -a, --setalias=<value>       alias for the created environment
   -o, --connected-org=<value>  username or alias for the org that the compute environment should be connected to
-  --json                       format output as json
+
+GLOBAL FLAGS
+  --json  format output as json
 
 DESCRIPTION
   create a compute environment for use with Salesforce Functions
@@ -99,9 +101,11 @@ USAGE
   $ sf env delete -e <value> [--json] [-c <value>]
 
 FLAGS
-  -c, --confirm=name         confirmation name
+  -c, --confirm=name...      confirmation name
   -e, --environment=<value>  (required) environment name
-  --json                     format output as json
+
+GLOBAL FLAGS
+  --json  format output as json
 
 DESCRIPTION
   delete an environment
@@ -122,8 +126,10 @@ USAGE
 
 FLAGS
   -e, --environment=<value>  (required) environment name
-  --json                     format output as json
   --verbose                  verbose display output
+
+GLOBAL FLAGS
+  --json  format output as json
 
 DESCRIPTION
   display details for an environment
@@ -141,13 +147,13 @@ USAGE
   $ sf env list [-j] [--all] [-t org|scratchorg|compute]
 
 FLAGS
-  -j, --json                       output list in JSON format
+  -j, --json                          output list in JSON format
 
-  -t, --environment-type=<option>  filter by one or more environment types (org, scratchorg, compute)
-                                   <options: org|scratchorg|compute>
+  -t, --environment-type=<option>...  filter by one or more environment types (org, scratchorg, compute)
+                                      <options: org|scratchorg|compute>
 
-  --all                            show all available envs instead of scoping to active orgs and their connected compute
-                                   envs
+  --all                               show all available envs instead of scoping to active orgs and their connected
+                                      compute envs
 
 DESCRIPTION
   List all environments by type
@@ -170,7 +176,9 @@ USAGE
 
 FLAGS
   -e, --environment=<value>  (required) environment name to retrieve logs
-  --json                     format output as json
+
+GLOBAL FLAGS
+  --json  format output as json
 
 DESCRIPTION
   stream log output for an environment
@@ -190,7 +198,9 @@ USAGE
 FLAGS
   -e, --environment=<value>  (required) environment name
   -u, --url=<value>          (required) endpoint that will receive sent logs
-  --json                     format output as json
+
+GLOBAL FLAGS
+  --json  format output as json
 
 DESCRIPTION
   Add log drain to a specified environment
@@ -229,7 +239,9 @@ USAGE
 FLAGS
   -e, --environment=<value>  (required) environment name
   -u, --url=<value>          (required) logdrain url to remove
-  --json                     format output as json
+
+GLOBAL FLAGS
+  --json  format output as json
 
 DESCRIPTION
   Remove log drain from a specified environment.
@@ -311,7 +323,9 @@ USAGE
 
 FLAGS
   -e, --environment=<value>  (required) environment name
-  --json                     format output as json
+
+GLOBAL FLAGS
+  --json  format output as json
 
 DESCRIPTION
   display a single config value for an environment
@@ -330,7 +344,9 @@ USAGE
 
 FLAGS
   -e, --environment=<value>  (required) environment name
-  --json                     format output as json
+
+GLOBAL FLAGS
+  --json  format output as json
 
 DESCRIPTION
   list your config vars in a table
@@ -349,7 +365,9 @@ USAGE
 
 FLAGS
   -e, --environment=<value>  (required) environment name
-  --json                     format output as json
+
+GLOBAL FLAGS
+  --json  format output as json
 
 DESCRIPTION
   sets a single config value for an environment
@@ -368,7 +386,9 @@ USAGE
 
 FLAGS
   -e, --environment=<value>  (required) environment name
-  --json                     format output as json
+
+GLOBAL FLAGS
+  --json  format output as json
 
 DESCRIPTION
   unset a single config value for an environment
@@ -388,7 +408,9 @@ USAGE
 FLAGS
   -l, --language=(javascript|typescript|java)  (required) language
   -n, --name=<value>                           (required) function name
-  --json                                       format output as json
+
+GLOBAL FLAGS
+  --json  format output as json
 
 DESCRIPTION
   create a function with basic scaffolding specific to a given language
@@ -408,7 +430,9 @@ USAGE
 
 FLAGS
   -n, --name=<value>  (required) name of the generated project
-  --json              format output as json
+
+GLOBAL FLAGS
+  --json  format output as json
 ```
 
 ## `sf help [COMMAND]`
@@ -433,20 +457,31 @@ _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.2
 
 ## `sf login`
 
-Log in interactively to Salesforce orgs and other services.
+Logging into an environment authorizes the CLI to run other commands that connect to that environment, such as deploying or retrieving a project to and from an org.
 
 ```
 USAGE
   $ sf login
 
 DESCRIPTION
-  Log in interactively to Salesforce orgs and other services.
+  Logging into an environment authorizes the CLI to run other commands that connect to that environment, such as
+  deploying or retrieving a project to and from an org.
+
+  The command first prompts you to choose an environment from a list of available ones. It then opens a browser to the
+  appropriate login URL, such as https://login.salesforce.com for an org. Then, depending on the environment you choose,
+  the command prompts for other actions, such as giving the environment an alias or setting it as your default.
+
+  This command is fully interactive and has no flags other than displaying the command-line help. Each environment has
+  its own specific login command, such as "sf login org", which usually provide more flags than this interactive one.
+  For more information about the interactive prompts from this command, see the help for the environment-specific
+  command, such as "sf login org --help".
 
 EXAMPLES
-  $ sf login
+  - Log in interactively:
+   sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.5/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.6/src/commands/login.ts)_
 
 ## `sf login functions`
 
@@ -465,67 +500,157 @@ EXAMPLES
 
 ## `sf login org`
 
-Allows you to login to a Salesforce org using either the default https://login.salesforce.com portal or a specific instance URL as defined with a flag.
+Opens a Salesforce instance URL in a web browser so you can enter your credentials and log in to your org. After you log in, you can close the browser window.
 
 ```
 USAGE
   $ sf login org [--json] [-a <value>] [-b <value>] [-i <value>] [-l <value>] [-d]
 
 FLAGS
-  -a, --alias=<value>         Set an alias for the account or environment
-  -b, --browser=<value>       Override system default browser with the specified browser.
-  -d, --set-default           Set the org as the default org after login
-  -i, --clientid=<value>      OAuth client ID (sometimes called the consumer key)
-  -l, --instance-url=<value>  [default: https://login.salesforce.com] The login url
+  -a, --alias=<value>         Alias for the org.
+  -b, --browser=<value>       Browser in which to open the org.
+  -d, --set-default           Set the org as the default that all org-related commands run against.
+  -i, --clientid=<value>      OAuth client id (also called consumer key) of your custom connected app.
+
+  -l, --instance-url=<value>  [default: https://login.salesforce.com] URL of the instance that the org lives on.
+                              (defaults to https://login.salesforce.com)
 
 GLOBAL FLAGS
   --json  format output as json
 
 DESCRIPTION
-  Login to your Salesforce orgs.
+  Log in to a Salesforce org using the web server flow.
 
-  Allows you to login to a Salesforce org using either the default https://login.salesforce.com portal or a specific
-  instance URL as defined with a flag.
+  Opens a Salesforce instance URL in a web browser so you can enter your credentials and log in to your org. After you
+  log in, you can close the browser window.
+
+  Logging into an org authorizes the CLI to run other commands that connect to that org, such as deploying or retrieving
+  a project. You can log into many types of orgs, such as sandboxes, Dev Hubs, Env Hubs, production orgs, and scratch
+  orgs.
+
+
+
+  We recommend that you set an alias when you log into an org. Aliases make it easy to later reference this org when
+  running commands that require it. If you don’t set an alias, you use the username that you specified when you logged
+  in to the org. If you run multiple commands that reference the same org, consider setting the org as your default.
+
+  By default, this command uses the global out-of-the-box connected app in your org. If you need more security or
+  control, such as setting the refresh token timeout or specifying IP ranges, create your own connected app using a
+  digital certificate. Make note of the consumer key (also called cliend id) that’s generated for you. Then specify the
+  consumer key with the --clientid flag.
 
 EXAMPLES
-  Login to an org.
+  Run the command with no flags to open the default Salesforce login page (https://login.salesforce.com):
 
     $ sf login org
 
-  Login to an org and set an alias.
+  Log in to your Dev Hub org and set an alias that you reference later when you create a scratch org:
 
-    $ sf login org --alias MyHub
+    $ sf login org --alias dev-hub
+
+  Log in to a sandbox and set it as your default org:
+
+    $ sf login org --instance-url https://test.salesforce.com --set-default
+
+  Use --browser to specify a specific browser, such as Google Chrome:
+
+    $ sf login org --instance-url https://test.salesforce.com --set-default --browser chrome
+
+  Use your own connected app by specifying its consumer key (also called client ID):
+
+    $ sf login org --instance-url https://test.salesforce.com --set-default --browser chrome --clientid \
+      04580y4051234051
+
+FLAG DESCRIPTIONS
+  -l, --instance-url=<value>  URL of the instance that the org lives on. (defaults to https://login.salesforce.com)
+
+    If you specify --instance-url, the value overrides the sfdcLoginUrl value in your sfdx-project.json file.
+
+    To specify a My Domain URL, use the format https://yourcompanyname.my.salesforce.com.
+
+    To specify a sandbox, set --instance-url to https://test.salesforce.com.
 ```
 
 ## `sf login org jwt`
 
-Log in to your Salesforce orgs using a JSON web token
+Use this command in automated environments where you can’t interactively log in with a browser, such as in CI/CD scripts.
 
 ```
 USAGE
   $ sf login org jwt [--json] [-a <value>] [-l <value>] [-f <value> -u <value> -i <value>] [-d]
 
 FLAGS
-  -a, --alias=<value>         Set an alias for the account or environment
-  -d, --set-default           Set the org as the default org after login
-  -f, --jwt-key-file=<value>  Path to a file containing the private key
-  -i, --clientid=<value>      OAuth client ID (sometimes called the consumer key)
-  -l, --instance-url=<value>  [default: https://login.salesforce.com] The login url
-  -u, --username=<value>      Authentication username
+  -a, --alias=<value>         Alias for the org.
+  -d, --set-default           Set the org as the default that all org-related commands run against.
+  -f, --jwt-key-file=<value>  Path to a file containing the private key.
+  -i, --clientid=<value>      OAuth client id (also called consumer key) of your custom connected app.
+
+  -l, --instance-url=<value>  [default: https://login.salesforce.com] URL of the instance that the org lives on.
+                              (defaults to https://login.salesforce.com)
+
+  -u, --username=<value>      Username of the user logging in.
 
 GLOBAL FLAGS
   --json  format output as json
 
 DESCRIPTION
-  Log in to your Salesforce orgs using a JSON web token
+  Log in to a Salesforce org using a JSON web token (JWT).
+
+  Use this command in automated environments where you can’t interactively log in with a browser, such as in CI/CD
+  scripts.
+
+  Logging into an org authorizes the CLI to run other commands that connect to that org, such as deploying or retrieving
+  a project. You can log into many types of orgs, such as sandboxes, Dev Hubs, Env Hubs, production orgs, and scratch
+  orgs.
+
+  Complete these steps before you run this command:
+
+  1. Create a digital certificate (also called digital signature) and the private key to sign the certificate. You can
+  use your own key and certificate issued by a certification authority. Or use OpenSSL to create a key and a self-signed
+  digital certificate.
+
+  2. Store the private key in a file on your computer. When you run this command, you set the --jwt-key-file flag to
+  this file.
+
+  3. Create a custom connected app in your org using the digital certificate. Make note of the consumer key (also called
+  cliend id) that’s generated for you. Be sure the username of the user logging in is approved to use the connected app.
+  When you run this command, you set the --clientid flag to the consumer key.
+
+
+
+  We recommend that you set an alias when you log into an org. Aliases make it easy to later reference this org when
+  running commands that require it. If you don’t set an alias, you use the username that you specified when you logged
+  in to the org. If you run multiple commands that reference the same org, consider setting the org as your default.
 
 EXAMPLES
-  $ sf login org jwt --jwt-key-file myorg.key --username me@salesforce.com --clientid XXXX
+  Log into an org with username jdoe@example.org and on the default instance URL (https://login.salesforce.org). The
+  private key is stored in the file /Users/jdoe/JWT/server.key and the command uses the connected app with consumer
+  key (client id) 04580y4051234051.
+
+    $ sf login org jwt --username jdoe@example.org --jwt-key-file /Users/jdoe/JWT/server.key --clientid \
+      04580y4051234051
+
+  Set the org as the default and gives it an alias:
+
+    $ sf login org jwt --username jdoe@example.org --jwt-key-file /Users/jdoe/JWT/server.key --clientid \
+      04580y4051234051 --alias ci-org --set-default
+
+  Log in to a sandbox using URL https://test.salesforce.com:
+
+    $ sf login org jwt --username jdoe@example.org --jwt-key-file /Users/jdoe/JWT/server.key --clientid \
+      04580y4051234051 --alias ci-org --set-default --instance-url https://test.salesforce.com
+
+FLAG DESCRIPTIONS
+  -l, --instance-url=<value>  URL of the instance that the org lives on. (defaults to https://login.salesforce.com)
+
+    If you specify an --instance-url value, this value overrides the sfdcLoginUrl value in your sfdx-project.json file.
+
+    To specify a My Domain URL, use the format https://yourcompanyname.my.salesforce.com.
+
+    To specify a sandbox, set --instance-url to https://test.salesforce.com.
 ```
 
 ## `sf logout`
-
-Log out of all Salesforce orgs and environments.
 
 ```
 USAGE
@@ -534,14 +659,12 @@ USAGE
 GLOBAL FLAGS
   --json  format output as json
 
-DESCRIPTION
-  Log out of all Salesforce orgs and environments.
-
 EXAMPLES
-  $ sf logout
+  - Log out of all environments:
+   sf logout
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.5/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.6/src/commands/logout.ts)_
 
 ## `sf plugins`
 
@@ -743,7 +866,8 @@ FLAGS
 
   --force                      ignore warnings and overwrite remote repository (not allowed in production)
 
-  --json                       format output as json
+GLOBAL FLAGS
+  --json  format output as json
 ```
 
 ## `sf project deploy org`
@@ -848,12 +972,14 @@ USAGE
   $ sf run function -l <value> [--json] [-H <value>] [-p <value>] [-s] [-o <value>]
 
 FLAGS
-  -H, --headers=<value>        set headers
+  -H, --headers=<value>...     set headers
   -l, --url=<value>            (required) url of the function to run
   -o, --connected-org=<value>  username or alias for the target org; overrides default target org
   -p, --payload=<value>        set the payload of the cloudevent. also accepts @file.txt format
   -s, --structured             set the cloudevent to be emitted as a structured cloudevent (json)
-  --json                       format output as json
+
+GLOBAL FLAGS
+  --json  format output as json
 
 DESCRIPTION
   send a cloudevent to a function
@@ -876,16 +1002,18 @@ USAGE
 
 FLAGS
   -d, --debug-port=<value>  [default: 9229] port for remote debugging
-  -e, --env=<value>         set environment variables (provided during build and run)
+  -e, --env=<value>...      set environment variables (provided during build and run)
   -p, --port=<value>        [default: 8080] port for running the function
   -v, --verbose             output additional logs
   --clear-cache             clear associated cache before executing.
-  --json                    format output as json
 
   --network=<value>         Connect and build containers to a network. This can be useful to build containers which
                             require a local resource.
 
   --no-pull                 skip pulling builder image before use
+
+GLOBAL FLAGS
+  --json  format output as json
 
 DESCRIPTION
   build and run function image locally
@@ -904,7 +1032,7 @@ show information on your account
 USAGE
   $ sf whoami functions [--json]
 
-FLAGS
+GLOBAL FLAGS
   --json  format output as json
 
 DESCRIPTION
