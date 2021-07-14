@@ -21,7 +21,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (-v|--version|version)
-@salesforce/cli/0.0.19 linux-x64 node-v14.17.3
+@salesforce/cli/0.0.20 linux-x64 node-v14.17.3
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -32,24 +32,11 @@ USAGE
 # Commands
 
 <!-- commands -->
-* [`sf env create compute`](#sf-env-create-compute)
-* [`sf env delete`](#sf-env-delete)
 * [`sf env display`](#sf-env-display)
 * [`sf env list`](#sf-env-list)
-* [`sf env log tail`](#sf-env-log-tail)
-* [`sf env logdrain add`](#sf-env-logdrain-add)
-* [`sf env logdrain list`](#sf-env-logdrain-list)
-* [`sf env logdrain remove`](#sf-env-logdrain-remove)
 * [`sf env open`](#sf-env-open)
-* [`sf env var get KEY`](#sf-env-var-get-key)
-* [`sf env var list`](#sf-env-var-list)
-* [`sf env var set`](#sf-env-var-set)
-* [`sf env var unset`](#sf-env-var-unset)
-* [`sf generate function`](#sf-generate-function)
-* [`sf generate project`](#sf-generate-project)
 * [`sf help [COMMAND]`](#sf-help-command)
 * [`sf login`](#sf-login)
-* [`sf login functions`](#sf-login-functions)
 * [`sf login org`](#sf-login-org)
 * [`sf login org jwt`](#sf-login-org-jwt)
 * [`sf logout`](#sf-logout)
@@ -60,194 +47,99 @@ USAGE
 * [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
 * [`sf plugins update`](#sf-plugins-update)
 * [`sf project deploy`](#sf-project-deploy)
-* [`sf project deploy functions`](#sf-project-deploy-functions)
 * [`sf project deploy org`](#sf-project-deploy-org)
-* [`sf run function`](#sf-run-function)
-* [`sf run function start`](#sf-run-function-start)
-* [`sf whoami functions`](#sf-whoami-functions)
-
-## `sf env create compute`
-
-create a compute environment for use with Salesforce Functions
-
-```
-USAGE
-  $ sf env create compute [--json] [-o <value>] [-a <value>]
-
-FLAGS
-  -a, --setalias=<value>       alias for the created environment
-  -o, --connected-org=<value>  username or alias for the org that the compute environment should be connected to
-
-GLOBAL FLAGS
-  --json  format output as json
-
-DESCRIPTION
-  create a compute environment for use with Salesforce Functions
-
-EXAMPLES
-  $ sfdx env:create:compute
-
-  $ sfdx env:create:compute --setalias my-compute-environment
-
-  $ sfdx env:create:compute --connected-org my-scratch-org
-```
-
-## `sf env delete`
-
-delete an environment
-
-```
-USAGE
-  $ sf env delete -e <value> [--json] [-c <value>]
-
-FLAGS
-  -c, --confirm=name...      confirmation name
-  -e, --environment=<value>  (required) environment name
-
-GLOBAL FLAGS
-  --json  format output as json
-
-DESCRIPTION
-  delete an environment
-
-EXAMPLES
-  $ sfdx env:delete --environment=billingApp-Scratch1
-
-  $ sfdx env:delete --environment=billingApp-Scratch1 --confirm=billingApp-Scratch1
-```
+* [`sf project retrieve org`](#sf-project-retrieve-org)
 
 ## `sf env display`
 
-display details for an environment
+Specify an environment with either the username you used when you ran the "sf login" command or the environment's alias. Run "sf env list" to view all your environments and their aliases.
 
 ```
 USAGE
-  $ sf env display -e <value> [--json] [--verbose]
+  $ sf env display [--json] [-e <value>]
 
 FLAGS
-  -e, --environment=<value>  (required) environment name
-  --verbose                  verbose display output
+  -e, --environment=<value>  Environment alias or login user.
 
 GLOBAL FLAGS
   --json  format output as json
 
 DESCRIPTION
-  display details for an environment
+  Specify an environment with either the username you used when you ran the "sf login" command or the environment's
+  alias. Run "sf env list" to view all your environments and their aliases.
+
+  Output depends on the type of environment. For example, scratch org details include the access token, alias, username
+  of the associated Dev Hub, the creation and expiration date, the generated scratch org username, and more.  Compute
+  environment details include the associated orgs, the list of functions, the project name, and more.
 
 EXAMPLES
-  $ sfdx env:display --environment=billingApp-Scratch1
+  - Display details about a scratch org with alias my-scratch-org:
+   sf env display --environment=my-scratch-org
+  - Specify a username instead of an alias:
+   sf env display --environment=test-123456-abcdefg@example.com
+  - Specify JSON format and redirect output into a file:
+   sf env display --environment=my-scratch-org --json > tmp/MyOrdDesc.json
 ```
 
 ## `sf env list`
 
-List all environments by type
+By default, the command displays only active environments. For orgs, active means unexpired scratch orgs and orgs you’re currently logged into. For compute environments, active means the environments connected to orgs you’re currently logged into. Use the --all flag to list expired or deleted scratch orgs and compute environments that aren’t connected to logged-in orgs. Warning: the latter list could be very long.
 
 ```
 USAGE
-  $ sf env list [-j] [--all] [-t org|scratchorg|compute]
+  $ sf env list [--json] [-a] [--columns <value> | -x] [--sort <value>] [--filter <value>] [--output
+    csv|json|yaml |  | [--csv | --no-truncate]] [--no-header | ]
 
 FLAGS
-  -j, --json                          output list in JSON format
+  -a, --all          Show all environments, even inactive ones.
+  -x, --extended     show extra columns
+  --columns=<value>  only show provided columns (comma-separated)
+  --csv              output is csv format [alias: --output=csv]
+  --filter=<value>   filter property by partial string matching, ex: name=foo
+  --no-header        hide table header from output
+  --no-truncate      do not truncate output to fit screen
 
-  -t, --environment-type=<option>...  filter by one or more environment types (org, scratchorg, compute)
-                                      <options: org|scratchorg|compute>
+  --output=<option>  output in a more machine friendly format
+                     <options: csv|json|yaml>
 
-  --all                               show all available envs instead of scoping to active orgs and their connected
-                                      compute envs
-
-DESCRIPTION
-  List all environments by type
-
-EXAMPLES
-  $ sfdx env:list
-
-  $ sfdx env:list --all
-
-  $ sfdx env:list --environment-type org --environment-type compute
-```
-
-## `sf env log tail`
-
-stream log output for an environment
-
-```
-USAGE
-  $ sf env log tail -e <value> [--json]
-
-FLAGS
-  -e, --environment=<value>  (required) environment name to retrieve logs
+  --sort=<value>     property to sort by (prepend '-' for descending)
 
 GLOBAL FLAGS
   --json  format output as json
 
 DESCRIPTION
-  stream log output for an environment
+  By default, the command displays only active environments. For orgs, active means unexpired scratch orgs and orgs
+  you’re currently logged into. For compute environments, active means the environments connected to orgs you’re
+  currently logged into. Use the --all flag to list expired or deleted scratch orgs and compute environments that aren’t
+  connected to logged-in orgs. Warning: the latter list could be very long.
+
+  Output is displayed in multiple tables, one for each environment type.  For example, the Salesforce Orgs table lists
+  the non-scratch orgs you’re logged into, such as sandboxes, Dev Hubs, production orgs, and so on. Scratch orgs and
+  compute environments get their own tables.
+
+  For non-scratch orgs, the Username column refers to the user you logged into the org with. For scratch orgs it refers
+  to the username that was generated for you when you created the scratch org. The first column indicates the default
+  environment for each type.
+
+  Run "sf env display" to view details about a specific environment.
 
 EXAMPLES
-  $ sfdx env:log:tail --environment=billingApp-Scratch1
-```
+  List all environments:
 
-## `sf env logdrain add`
+    $ sf env list --all
 
-Add log drain to a specified environment
+  Filter the output to list only connected orgs. Rows from only the Salesforce Orgs table are displayed because it’s
+  the only table with a "Status" column.
 
-```
-USAGE
-  $ sf env logdrain add -e <value> -u <value> [--json]
+    $ sf env list --filter "Status=Connected"
 
-FLAGS
-  -e, --environment=<value>  (required) environment name
-  -u, --url=<value>          (required) endpoint that will receive sent logs
+  List only scratch orgs that expire after May 30, 2021:
 
-GLOBAL FLAGS
-  --json  format output as json
+    $ sf env list --filter "Expiration>2021-05-30"
 
-DESCRIPTION
-  Add log drain to a specified environment
+  Display only the Alias column and sort the aliases in descending order:
 
-EXAMPLES
-  $ sfdx env:logdrain:add --environment=billingApp-Sandbox --url=https://example.com/drain
-```
-
-## `sf env logdrain list`
-
-List log drains connected to a specified environment
-
-```
-USAGE
-  $ sf env logdrain list -e <value> [--json]
-
-FLAGS
-  -e, --environment=<value>  (required) environment name
-  --json                     output result in json
-
-DESCRIPTION
-  List log drains connected to a specified environment
-
-EXAMPLES
-  $ sfdx env:logdrain:list --environment=billingApp-Sandbox
-```
-
-## `sf env logdrain remove`
-
-Remove log drain from a specified environment.
-
-```
-USAGE
-  $ sf env logdrain remove -e <value> -u <value> [--json]
-
-FLAGS
-  -e, --environment=<value>  (required) environment name
-  -u, --url=<value>          (required) logdrain url to remove
-
-GLOBAL FLAGS
-  --json  format output as json
-
-DESCRIPTION
-  Remove log drain from a specified environment.
-
-EXAMPLES
-  $ sfdx env:logdrain:remove --environment=billingApp-Sandbox --url=syslog://syslog-a.logdna.com:11137
+    $ sf env list --sort "-Alias" --columns "Alias"
 ```
 
 ## `sf env open`
@@ -313,128 +205,6 @@ FLAG DESCRIPTIONS
     Windows Edge. If you don’t specify --browser, the environment opens in your default browser.
 ```
 
-## `sf env var get KEY`
-
-display a single config value for an environment
-
-```
-USAGE
-  $ sf env var get [KEY] -e <value> [--json]
-
-FLAGS
-  -e, --environment=<value>  (required) environment name
-
-GLOBAL FLAGS
-  --json  format output as json
-
-DESCRIPTION
-  display a single config value for an environment
-
-EXAMPLES
-  $ sfdx env:var:get foo --environment=my-environment
-```
-
-## `sf env var list`
-
-list your config vars in a table
-
-```
-USAGE
-  $ sf env var list -e <value> [--json]
-
-FLAGS
-  -e, --environment=<value>  (required) environment name
-
-GLOBAL FLAGS
-  --json  format output as json
-
-DESCRIPTION
-  list your config vars in a table
-
-EXAMPLES
-  $ sfdx env:var:list --environment=my-environment
-```
-
-## `sf env var set`
-
-sets a single config value for an environment
-
-```
-USAGE
-  $ sf env var set -e <value> [--json]
-
-FLAGS
-  -e, --environment=<value>  (required) environment name
-
-GLOBAL FLAGS
-  --json  format output as json
-
-DESCRIPTION
-  sets a single config value for an environment
-
-EXAMPLES
-  $ sfdx env:var:set foo=bar --environment=my-environment
-```
-
-## `sf env var unset`
-
-unset a single config value for an environment
-
-```
-USAGE
-  $ sf env var unset -e <value> [--json]
-
-FLAGS
-  -e, --environment=<value>  (required) environment name
-
-GLOBAL FLAGS
-  --json  format output as json
-
-DESCRIPTION
-  unset a single config value for an environment
-
-EXAMPLES
-  $ sfdx env:var:unset foo --environment=my-environment
-```
-
-## `sf generate function`
-
-create a function with basic scaffolding specific to a given language
-
-```
-USAGE
-  $ sf generate function -n <value> -l javascript|typescript|java [--json]
-
-FLAGS
-  -l, --language=(javascript|typescript|java)  (required) language
-  -n, --name=<value>                           (required) function name
-
-GLOBAL FLAGS
-  --json  format output as json
-
-DESCRIPTION
-  create a function with basic scaffolding specific to a given language
-
-ALIASES
-  $ sf evergreen function init
-
-EXAMPLES
-  $ sfdx evergreen:function:create MyFunction --language=javascript
-```
-
-## `sf generate project`
-
-```
-USAGE
-  $ sf generate project -n <value> [--json]
-
-FLAGS
-  -n, --name=<value>  (required) name of the generated project
-
-GLOBAL FLAGS
-  --json  format output as json
-```
-
 ## `sf help [COMMAND]`
 
 display help for sf
@@ -482,21 +252,6 @@ EXAMPLES
 ```
 
 _See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.6/src/commands/login.ts)_
-
-## `sf login functions`
-
-log into your account
-
-```
-USAGE
-  $ sf login functions
-
-DESCRIPTION
-  log into your account
-
-EXAMPLES
-  $ sfdx login:functions
-```
 
 ## `sf login org`
 
@@ -850,26 +605,6 @@ EXAMPLES
   $ sf project deploy
 ```
 
-## `sf project deploy functions`
-
-```
-USAGE
-  $ sf project deploy functions -o <value> [--json] [-b <value>] [--force] [-q]
-
-FLAGS
-  -b, --branch=<value>         deploy the latest commit from a branch different from the currently active branch
-
-  -o, --connected-org=<value>  (required) username or alias for the org that the compute environment should be connected
-                               to
-
-  -q, --quiet                  limit the amount of output displayed from the deploy process
-
-  --force                      ignore warnings and overwrite remote repository (not allowed in production)
-
-GLOBAL FLAGS
-  --json  format output as json
-```
-
 ## `sf project deploy org`
 
 You must run this command from wihin a project.
@@ -963,82 +698,76 @@ FLAG DESCRIPTIONS
     Default is 33 minutes.
 ```
 
-## `sf run function`
+## `sf project retrieve org`
 
-send a cloudevent to a function
+The source you retrieve overwrites the corresponding source files in your local project . This command doesn’t attempt to merge the source from your org with your local source files. If the command detects a conflict, it displays the conflicts but doesn’t complete the process. After reviewing the conflict, rerun the command with the --force-overwrite flag to overwrite your local files.
 
 ```
 USAGE
-  $ sf run function -l <value> [--json] [-H <value>] [-p <value>] [-s] [-o <value>]
+  $ sf project retrieve org [--json] [-a <value>] [-n <value>] [-d <value> | [-x <value> | -m <value> | ] | ] [-t <value>]
+    [-w <value>]
 
 FLAGS
-  -H, --headers=<value>...     set headers
-  -l, --url=<value>            (required) url of the function to run
-  -o, --connected-org=<value>  username or alias for the target org; overrides default target org
-  -p, --payload=<value>        set the payload of the cloudevent. also accepts @file.txt format
-  -s, --structured             set the cloudevent to be emitted as a structured cloudevent (json)
+  -a, --api-version=<value>      target API version for the retrieve
+  -d, --source-dir=<value>...    source dir to use instead of the default package dir in sfdx-project.json
+  -m, --metadata=<value>...      comma-separated list of metadata component names
+  -n, --package-name=<value>...  a comma-separated list of packages to retrieve
+  -t, --target-org=<value>       Username or alias of the org you want to retrieve from
+  -w, --wait=<value>             [default: 33] wait time for command to finish in minutes
+  -x, --manifest=<value>         file path for manifest (package.xml) of components to deploy
 
 GLOBAL FLAGS
   --json  format output as json
 
 DESCRIPTION
-  send a cloudevent to a function
+  Retrieve source from an org.
+
+  The source you retrieve overwrites the corresponding source files in your local project . This command doesn’t attempt
+  to merge the source from your org with your local source files. If the command detects a conflict, it displays the
+  conflicts but doesn’t complete the process. After reviewing the conflict, rerun the command with the --force-overwrite
+  flag to overwrite your local files.
+
+  If the comma-separated list you’re supplying contains spaces, enclose the entire comma-separated list in one set of
+  double quotes. On Windows, if the list contains commas, also enclose the entire list in one set of double quotes.
+
+  You must run this command from wihin a project.
 
 EXAMPLES
-      $ sfdx run:function -l http://localhost:8080 -p '{"id": 12345}'
-      $ sfdx run:function -l http://localhost:8080 -p '@file.json'
-      $ echo '{"id": 12345}' | sfdx run:function -l http://localhost:8080
-      $ sfdx run:function -l http://localhost:8080 -p '{"id": 12345}' --structured
-```
+  Retrieve the source files in a directory:
 
-## `sf run function start`
+    $ sf project retrieve org --source-path path/to/source
 
-build and run function image locally
+  Retrieve a specific Apex class and the objects whose source is in a directory:
 
-```
-USAGE
-  $ sf run function start [--json] [-p <value>] [-d <value>] [--clear-cache] [--no-pull] [-e <value>] [--network
-    <value>] [-v]
+    $ sf project retrieve org --source-path "path/to/apex/classes/MyClass.cls,path/to/source/objects"
 
-FLAGS
-  -d, --debug-port=<value>  [default: 9229] port for remote debugging
-  -e, --env=<value>...      set environment variables (provided during build and run)
-  -p, --port=<value>        [default: 8080] port for running the function
-  -v, --verbose             output additional logs
-  --clear-cache             clear associated cache before executing.
+  Retrieve source files in a comma-separated list that contains spaces:
 
-  --network=<value>         Connect and build containers to a network. This can be useful to build containers which
-                            require a local resource.
+    $ sf project retrieve org --source-path "path/to/objects/MyCustomObject/fields/MyField.field-meta.xml, \
+      path/to/apex/classes"
 
-  --no-pull                 skip pulling builder image before use
+  Retrieve all Apex classes:
 
-GLOBAL FLAGS
-  --json  format output as json
+    $ sf project retrieve org --metadata ApexClass
 
-DESCRIPTION
-  build and run function image locally
+  Retrieve a specific Apex class:
 
-EXAMPLES
-      $ sfdx run:function:start
-      $ sfdx run:function:start -e VAR=VALUE
-      $ sfdx run:function:start --network host --no-pull --clear-cache --debug-port 9000 --port 5000
-```
+    $ sf project retrieve org --metadata ApexClass:MyApexClass
 
-## `sf whoami functions`
+  Retrieve all custom objects and Apex classes:
 
-show information on your account
+    $ sf project retrieve org --metadata "CustomObject,ApexClass"
 
-```
-USAGE
-  $ sf whoami functions [--json]
+  Retrieve all metadata components listed in a manifest:
 
-GLOBAL FLAGS
-  --json  format output as json
+    $ sf project retrieve org --manifest path/to/package.xml
 
-DESCRIPTION
-  show information on your account
+  Retrieve metadata from a package:
 
-EXAMPLES
-  $ sf whoami functions
+    $ sf project retrieve org --package-names MyPackageName
+
+  Retrieve metadata from multiple packages:
+
+    $ sf project retrieve org --package-names "Package1, PackageName With Spaces, Package3"
 ```
 <!-- commandsstop -->

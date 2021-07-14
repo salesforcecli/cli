@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.21](https://github.com/salesforcecli/cli/compare/v0.0.20...v0.0.21) (2021-07-14)
+
+
+### Bug Fixes
+
+* remove @salesforce/plugin-functions ([1b59fc2](https://github.com/salesforcecli/cli/commit/1b59fc2be51c62eddc66cfa1d0403bd9174cd799))
+
 ### [0.0.20](https://github.com/salesforcecli/cli/compare/v0.0.19...v0.0.20) (2021-07-14)
 
 
