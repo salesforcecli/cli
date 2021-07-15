@@ -857,10 +857,20 @@
     "@salesforce/ts-types" "^1.5.20"
     tslib "^2.2.0"
 
-"@salesforce/plugin-project-utils@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.npmjs.org/@salesforce/plugin-project-utils/-/plugin-project-utils-0.0.7.tgz#e7b1427b7579255d54bdbf0e8795292e5e6e1e6e"
-  integrity sha512-sMEFpOELbZ2RP+zaYlasGgdVV/lorx8eh3j6lgJVVzXoxJntSEA188Ejnx2o8F0qTwIpwzgltkoeXlWiFbJqkQ==
+"@salesforce/plugin-deploy-retrieve-utils@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.npmjs.org/@salesforce/plugin-deploy-retrieve-utils/-/plugin-deploy-retrieve-utils-0.0.8.tgz#866ba43f02f011f6501377240d13da48788edf4b"
+  integrity sha512-QyjjcqP4P73azL9VwxLhO/9vS3aoBTVqk77gN+gMkp3mlFksbLZYyQqRxSuoF1m5NqIf9Wu0ARGMfoSuEN9kZw==
+  dependencies:
+    "@salesforce/kit" "^1.5.8"
+    "@salesforce/ts-types" "^1.5.13"
+    cli-ux "^5.6.2"
+    inquirer "^8.1.1"
+
+"@salesforce/plugin-deploy-retrieve-utils@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.npmjs.org/@salesforce/plugin-deploy-retrieve-utils/-/plugin-deploy-retrieve-utils-0.0.9.tgz#b663d8f2653ce5ee0f37c34ea3dcd226c4daba36"
+  integrity sha512-hZ5zjht94Ttnie8FirGkYf5/qE0QHKhi0fzeCsdwHOuqkpdQcuxAgSuOx9GLg1XaWPAYJYlukYwRqBLA+FsQgg==
   dependencies:
     "@salesforce/kit" "^1.5.8"
     "@salesforce/ts-types" "^1.5.13"
@@ -940,6 +950,29 @@
   dependencies:
     tslib "^2.2.0"
 
+"@sf/deploy-retrieve@npm:@salesforce/plugin-deploy-retrieve@0.0.7":
+  version "0.0.7"
+  resolved "https://registry.npmjs.org/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-0.0.7.tgz#ca163531d65cfb49852e78e6e8e8bc5e60391743"
+  integrity sha512-Lg1Bwq0Uq1PB1U86kKxQSqqtlVz+TBc4mC+b0loymq7DTSUJks/BqA1Ibat4XiOmM0CZM+dk7Mluv3tvCtqp9w==
+  dependencies:
+    "@oclif/core" "^0.5.21"
+    "@salesforce/core" "^3.1.1-v3.1"
+    "@salesforce/plugin-deploy-retrieve-utils" "^0.0.8"
+    tslib "^2"
+
+"@sf/dr-metadata@npm:@salesforce/plugin-deploy-retrieve-metadata@0.0.7":
+  version "0.0.7"
+  resolved "https://registry.npmjs.org/@salesforce/plugin-deploy-retrieve-metadata/-/plugin-deploy-retrieve-metadata-0.0.7.tgz#357c9bde5835b17e80d3e7e93d513f744f7c7d92"
+  integrity sha512-uL05Vb4R3tkaI2FeDq5nNMET0ENbXTmx9IF/pbAa081e/bsD3ary7K7dhWOoX1ZmX21XW57oD3M/UCUbFjixNA==
+  dependencies:
+    "@oclif/core" "^0.5.21"
+    "@salesforce/core" "^3.1.1-v3.2"
+    "@salesforce/plugin-deploy-retrieve-utils" "^0.0.9"
+    "@salesforce/source-deploy-retrieve" "^3.1.1"
+    chalk "^4.1.1"
+    cli-ux "^5.5.1"
+    tslib "^2"
+
 "@sf/env@npm:@salesforce/plugin-env@0.0.9":
   version "0.0.9"
   resolved "https://registry.yarnpkg.com/@salesforce/plugin-env/-/plugin-env-0.0.9.tgz#4d6dab8441bfab31238b1691351754aa5d630005"
@@ -959,29 +992,6 @@
     "@salesforce/core" "^3.1.1-v3.2"
     inquirer "^8.0.0"
     open "^8.0.6"
-    tslib "^2"
-
-"@sf/proj-org@npm:@salesforce/plugin-project-org@0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-project-org/-/plugin-project-org-0.0.6.tgz#b3cc81384a05520eedf2626ad7ba9f1726316a1c"
-  integrity sha512-GYvWWvBlaVdnLYpDe4/PrvDzJs8yGa80cxOfnJ6eXWrceRbC2jwne4C26Zue0fyJNHgigKOvKKRG7/kAkOS3iA==
-  dependencies:
-    "@oclif/core" "^0.5.21"
-    "@salesforce/core" "^3.1.1-v3.2"
-    "@salesforce/plugin-project-utils" "^0.0.7"
-    "@salesforce/source-deploy-retrieve" "^3.1.1"
-    chalk "^4.1.1"
-    cli-ux "^5.5.1"
-    tslib "^2"
-
-"@sf/project@npm:@salesforce/plugin-project@0.0.6":
-  version "0.0.6"
-  resolved "https://registry.npmjs.org/@salesforce/plugin-project/-/plugin-project-0.0.6.tgz#ba58cfaea6eab6cd36b5a09dbfdf56313bc44d40"
-  integrity sha512-PdflreK3W9lIzfmbThVqHg+ueHEvSVWEyQg0a6keGUlCJskOpiORnz2eRRYXFh6KE1ZLZVQM3tOBr7R9WRpz8A==
-  dependencies:
-    "@oclif/core" "^0.5.21"
-    "@salesforce/core" "^3.1.1-v3.1"
-    "@salesforce/plugin-project-utils" "^0.0.7"
     tslib "^2"
 
 "@sf/telemetry@npm:@salesforce/plugin-telemetry@1.2.3":
