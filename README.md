@@ -32,6 +32,8 @@ USAGE
 # Commands
 
 <!-- commands -->
+* [`sf deploy`](#sf-deploy)
+* [`sf deploy metadata`](#sf-deploy-metadata)
 * [`sf env display`](#sf-env-display)
 * [`sf env list`](#sf-env-list)
 * [`sf env open`](#sf-env-open)
@@ -46,9 +48,140 @@ USAGE
 * [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
 * [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
 * [`sf plugins update`](#sf-plugins-update)
-* [`sf project deploy`](#sf-project-deploy)
-* [`sf project deploy org`](#sf-project-deploy-org)
-* [`sf project retrieve org`](#sf-project-retrieve-org)
+* [`sf retrieve metadata`](#sf-retrieve-metadata)
+
+## `sf deploy`
+
+The command first analyzes your project, active or logged-into environments, and local defaults to determine what to deploy and where. The command then prompts you for information about this particular deployment and provides intelligent choices based on its analysis.
+
+```
+USAGE
+  $ sf deploy [--interactive]
+
+FLAGS
+  --interactive  Force the CLI to prompt for all deployment inputs.
+
+DESCRIPTION
+  Deploy a project interactively to any Salesforce environment.
+
+  The command first analyzes your project, active or logged-into environments, and local defaults to determine what to
+  deploy and where. The command then prompts you for information about this particular deployment and provides
+  intelligent choices based on its analysis.
+
+  For example, if your local project contains a package directory with metadata source files, the command asks if you
+  want to deploy that Salesforce app to an org. The command lists your connected orgs and asks which one you want to
+  deploy to. If the command finds Apex tests, it asks if you want to run them and at which level.
+
+  Similarly, if the command finds a local functions directory, the command prompts if you want to deploy it and to which
+  compute environment. The command prompts and connects you to a compute environment of your choice if you’re not
+  currently connected to any.
+
+  This command must be run from within a project.
+
+  The command stores your responses in a local file and uses them as defaults when you rerun the command. Specify
+  --interactive to force the command to reprompt.
+
+  Use this command for quick and simple deploys. For more complicated deployments, use the environment-specific
+  commands, such as "sf project deploy org", that provide additional flags.
+
+EXAMPLES
+  $ sf deploy
+```
+
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.8/src/commands/deploy.ts)_
+
+## `sf deploy metadata`
+
+You must run this command from wihin a project.
+
+```
+USAGE
+  $ sf deploy metadata [--json] [-m <value>] [-x <value>] [-d <value>] [--target-org <value>] [-l
+    NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [--wait <value>]
+
+FLAGS
+  -d, --deploy-dir=<value>...  Root of local directory tree of files to deploy.
+
+  -l, --test-level=<option>    [default: NoTestRun] Deployment Apex testing level.
+                               <options: NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg>
+
+  -m, --metadata=<value>...    List of metadata component names to deploy.
+
+  -x, --manifest=<value>       Full file path for manifest (package.xml) of components to deploy.
+
+  --target-org=<value>         Username or alias of the org you want to deploy to
+
+  --wait=<value>               [default: 33] Number of minutes to wait for command to complete.
+
+GLOBAL FLAGS
+  --json  format output as json
+
+DESCRIPTION
+  Deploy source to an org.
+
+  You must run this command from wihin a project.
+
+  The source you deploy overwrites the corresponding metadata in your org. This command doesn’t attempt to merge your
+  source with the versions in your org.
+
+  If the comma-separated list you’re supplying contains spaces, enclose the entire comma-separated list in one set of
+  double quotes. On Windows, if the list contains commas, also enclose the entire list in one set of double quotes.
+
+EXAMPLES
+  Deploy the source files in a directory:
+
+    $ sf deploy metadata --deploy-dir path/to/source
+
+  Deploy a specific Apex class and the objects whose source is in a directory:
+
+    $ sf deploy metadata --deploy-dir "path/to/apex/classes/MyClass.cls,path/to/source/objects"
+
+  Deploy source files in a comma-separated list that contains spaces:
+
+    $ sf deploy metadata --deploy-dir "path/to/objects/MyCustomObject/fields/MyField.field-meta.xml, \
+      path/to/apex/classes"
+
+  Deploy all Apex classes:
+
+    $ sf deploy metadata --metadata ApexClass
+
+  Deploy a specific Apex class:
+
+    $ sf deploy metadata --metadata ApexClass:MyApexClass
+
+  Deploy all custom objects and Apex classes:
+
+    $ sf deploy metadata --metadata "CustomObject,ApexClass"
+
+  Deploy all Apex classes and two specific profiles (one of which has a space in its name):
+
+    $ sf deploy metadata --metadata "ApexClass, Profile:My Profile, Profile: AnotherProfile"
+
+  Deploy all components listed in a manifest:
+
+    $ sf deploy metadata --manifest path/to/package.xml
+
+FLAG DESCRIPTIONS
+  -d, --deploy-dir=<value>...  Root of local directory tree of files to deploy.
+
+    Root of local directory tree of files to deploy.
+
+  -l, --test-level=NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg  Deployment Apex testing level.
+
+    Deployment Apex testing level.
+
+  -m, --metadata=<value>...  List of metadata component names to deploy.
+
+    List of metadata component names to deploy.
+
+  -x, --manifest=<value>  Full file path for manifest (package.xml) of components to deploy.
+
+    Full file path for manifest (package.xml) of components to deploy.
+
+  --wait=<value>  Number of minutes to wait for command to complete.
+
+    Default is 33 minutes.
+```
 
 ## `sf env display`
 
@@ -567,145 +700,14 @@ DESCRIPTION
   update installed plugins
 ```
 
-## `sf project deploy`
-
-The command first analyzes your project, active or logged-into environments, and local defaults to determine what to deploy and where. The command then prompts you for information about this particular deployment and provides intelligent choices based on its analysis.
-
-```
-USAGE
-  $ sf project deploy [--interactive]
-
-FLAGS
-  --interactive  Force the CLI to prompt for all deployment inputs.
-
-DESCRIPTION
-  Deploy a project interactively to any Salesforce environment.
-
-  The command first analyzes your project, active or logged-into environments, and local defaults to determine what to
-  deploy and where. The command then prompts you for information about this particular deployment and provides
-  intelligent choices based on its analysis.
-
-  For example, if your local project contains a package directory with metadata source files, the command asks if you
-  want to deploy that Salesforce app to an org. The command lists your connected orgs and asks which one you want to
-  deploy to.  If the command finds Apex tests, it asks if you want to run them and at which level.
-
-  Similarly, if the command finds a local functions directory, the command prompts if you want to deploy it and to which
-  compute environment. The command prompts and connects you to a compute environment of your choice if you’re not
-  currently connected to any.
-
-  This command must be run from within a project.
-
-  The command stores your responses in a local file and uses them as defaults when you rerun the command. Specify
-  --interactive to force the command to reprompt.
-
-  Use this command for quick and simple deploys. For more complicated deployments, use the environment-specific
-  commands, such as "sf project deploy org", that provide additional flags.
-
-EXAMPLES
-  $ sf project deploy
-```
-
-## `sf project deploy org`
-
-You must run this command from wihin a project.
-
-```
-USAGE
-  $ sf project deploy org [--json] [-m <value>] [-x <value>] [-d <value>] [--target-org <value>] [-l
-    NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [--wait <value>]
-
-FLAGS
-  -d, --deploy-dir=<value>...  Root of local directory tree of files to deploy.
-
-  -l, --test-level=<option>    [default: NoTestRun] Deployment Apex testing level.
-                               <options: NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg>
-
-  -m, --metadata=<value>...    List of metadata component names to deploy.
-
-  -x, --manifest=<value>       Full file path for manifest (package.xml) of components to deploy.
-
-  --target-org=<value>         Username or alias of the org you want to deploy to
-
-  --wait=<value>               [default: 33] Number of minutes to wait for command to complete.
-
-GLOBAL FLAGS
-  --json  format output as json
-
-DESCRIPTION
-  Deploy source to an org.
-
-  You must run this command from wihin a project.
-
-  The source you deploy overwrites the corresponding metadata in your org. This command doesn’t attempt to merge your
-  source with the versions in your org.
-
-  If the comma-separated list you’re supplying contains spaces, enclose the entire comma-separated list in one set of
-  double quotes. On Windows, if the list contains commas, also enclose the entire list in one set of double quotes.
-
-EXAMPLES
-  Deploy the source files in a directory:
-
-    $ sf project deploy org --deploy-dir path/to/source
-
-  Deploy a specific Apex class and the objects whose source is in a directory:
-
-    $ sf project deploy org --deploy-dir "path/to/apex/classes/MyClass.cls,path/to/source/objects"
-
-  Deploy source files in a comma-separated list that contains spaces:
-
-    $ sf project deploy org --deploy-dir "path/to/objects/MyCustomObject/fields/MyField.field-meta.xml, \
-      path/to/apex/classes"
-
-  Deploy all Apex classes:
-
-    $ sf project deploy org --metadata ApexClass
-
-  Deploy a specific Apex class:
-
-    $ sf project deploy org --metadata ApexClass:MyApexClass
-
-  Deploy all custom objects and Apex classes:
-
-    $ sf project deploy org --metadata "CustomObject,ApexClass"
-
-  Deploy all Apex classes and two specific profiles (one of which has a space in its name):
-
-    $ sf project deploy org --metadata "ApexClass, Profile:My Profile, Profile: AnotherProfile"
-
-  Deploy all components listed in a manifest:
-
-    $ sf project deploy org --manifest path/to/package.xml
-
-FLAG DESCRIPTIONS
-  -d, --deploy-dir=<value>...  Root of local directory tree of files to deploy.
-
-    Root of local directory tree of files to deploy.
-
-  -l, --test-level=NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg  Deployment Apex testing level.
-
-    Deployment Apex testing level.
-
-  -m, --metadata=<value>...  List of metadata component names to deploy.
-
-    List of metadata component names to deploy.
-
-  -x, --manifest=<value>  Full file path for manifest (package.xml) of components to deploy.
-
-    Full file path for manifest (package.xml) of components to deploy.
-
-  --wait=<value>  Number of minutes to wait for command to complete.
-
-    Default is 33 minutes.
-```
-
-## `sf project retrieve org`
+## `sf retrieve metadata`
 
 The source you retrieve overwrites the corresponding source files in your local project . This command doesn’t attempt to merge the source from your org with your local source files. If the command detects a conflict, it displays the conflicts but doesn’t complete the process. After reviewing the conflict, rerun the command with the --force-overwrite flag to overwrite your local files.
 
 ```
 USAGE
-  $ sf project retrieve org [--json] [-a <value>] [-n <value>] [-d <value> | [-x <value> | -m <value> | ] | ] [-t <value>]
-    [-w <value>]
+  $ sf retrieve metadata [--json] [-a <value>] [-x <value> | -m <value> | -d <value>] [-n <value>] [-t <value>] [-w
+    <value>]
 
 FLAGS
   -a, --api-version=<value>      target API version for the retrieve
