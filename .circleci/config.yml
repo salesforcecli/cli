@@ -4,6 +4,13 @@ orbs:
   release-management: salesforce/npm-release-management@4
 
 jobs:
+  change-case-start:
+    docker:
+      - image: node:latest
+    steps:
+      - release-management/install-change-case-mgmt
+      - release-management/change-case-create
+
   # There are two pack jobs:
   # - test-pack-tarballs to run on every branch *other than main*
   # - pack-and-upload-tarballs to run only on main
@@ -101,6 +108,30 @@ jobs:
       - run: yarn install
       - run: yarn promote:verify
 
+  close-CTC:
+    docker:
+      - image: node:latest
+    steps:
+      - release-management/install-change-case-mgmt
+      - run:
+          when: on_fail
+          name: Close CTC case as Not Implemented
+          command: |
+            if [ -z "${SF_CHANGE_CASE_SFDX_AUTH_URL}" ] || [ -z "${SF_CHANGE_CASE_TEMPLATE_ID}" ] || [ -z "${SF_CHANGE_CASE_SCHEDULE_BUILD}" ]; then
+                echo "Environment not configured for CTC"
+            else
+                sfchangecase close --location "https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME" --status "Not Implemented"
+            fi
+      - run:
+          name: All Good! Close CTC case/implementations
+          when: on_success
+          command: |
+            if [ -z "${SF_CHANGE_CASE_SFDX_AUTH_URL}" ] || [ -z "${SF_CHANGE_CASE_TEMPLATE_ID}" ] || [ -z "${SF_CHANGE_CASE_SCHEDULE_BUILD}" ]; then
+                echo "Environment not configured for CTC"
+            else
+                sfchangecase close --location "https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME"
+            fi
+
 workflows:
   version: 2
   test-and-release:
@@ -116,11 +147,19 @@ workflows:
           filters:
             branches:
               ignore: main # test the pack on PRs, but main will do pack-and-upload-tarballs
+      - change-case-start:
+          context: CLI_CTC
+          requires:
+            - test-include-sf-in-sdx
+          filters:
+            branches:
+              only: main
       - release-management/release-package:
           node_version: '14'
           tag: latest
           github-release: true
           requires:
+            - change-case-start
             - test-include-sf-in-sdx
           filters:
             branches:
@@ -156,6 +195,10 @@ workflows:
             - pack-and-upload-tarballs
             - pack-and-upload-macos-installer
             - pack-and-upload-windows-installer
+      - close-CTC:
+          context: CLI_CTC
+          requires:
+            - promote-verify
   test-pack-and-include:
     triggers:
       - schedule:
