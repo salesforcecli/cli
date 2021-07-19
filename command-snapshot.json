@@ -1,5 +1,15 @@
 [
   {
+    "command": "deploy",
+    "plugin": "@salesforce/plugin-deploy-retrieve",
+    "flags": ["interactive"]
+  },
+  {
+    "command": "deploy:metadata",
+    "plugin": "@salesforce/plugin-deploy-retrieve-metadata",
+    "flags": ["deploy-dir", "json", "manifest", "metadata", "target-org", "test-level", "wait"]
+  },
+  {
     "command": "env:display",
     "plugin": "@salesforce/plugin-env",
     "flags": ["environment", "json"]
@@ -70,14 +80,9 @@
     "flags": ["help", "verbose"]
   },
   {
-    "command": "project:deploy",
-    "plugin": "@salesforce/plugin-project",
-    "flags": ["interactive"]
-  },
-  {
-    "command": "project:deploy:org",
-    "plugin": "@salesforce/plugin-project-org",
-    "flags": ["deploy-dir", "json", "manifest", "metadata", "target-org", "test-level", "wait"]
+    "command": "retrieve:metadata",
+    "plugin": "@salesforce/plugin-deploy-retrieve-metadata",
+    "flags": ["api-version", "json", "manifest", "metadata", "package-name", "source-dir", "target-org", "wait"]
   },
   {
     "command": "telemetry",

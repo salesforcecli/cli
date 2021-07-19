@@ -496,6 +496,29 @@
     widest-line "^3.1.0"
     wrap-ansi "^7.0.0"
 
+"@oclif/core@^0.5.23":
+  version "0.5.23"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-0.5.23.tgz#7cd14c9bb7ab9415228e38895310cfefcbea536f"
+  integrity sha512-VpoXCu4w+rtw4q5EgBCWhtf+zau6d3U6pjyF9RJpAwMUrypnShFqdy11qSdD5LvH5oC3cNGfR9RIwJSkUMG/Bw==
+  dependencies:
+    "@oclif/linewrap" "^1.0.0"
+    chalk "^4.1.0"
+    clean-stack "^3.0.0"
+    cli-ux "^5.1.0"
+    debug "^4.1.1"
+    fs-extra "^9.0.1"
+    get-package-type "^0.1.0"
+    globby "^11.0.1"
+    indent-string "^4.0.0"
+    is-wsl "^2.1.1"
+    lodash.template "^4.4.0"
+    semver "^7.3.2"
+    string-width "^4.2.0"
+    strip-ansi "^6.0.0"
+    tslib "^2.0.0"
+    widest-line "^3.1.0"
+    wrap-ansi "^7.0.0"
+
 "@oclif/dev-cli@^1":
   version "1.26.0"
   resolved "https://registry.npmjs.org/@oclif/dev-cli/-/dev-cli-1.26.0.tgz#e3ec294b362c010ffc8948003d3770955c7951fd"
@@ -940,20 +963,20 @@
   dependencies:
     tslib "^2.2.0"
 
-"@sf/deploy-retrieve@npm:@salesforce/plugin-deploy-retrieve@0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-0.0.8.tgz#8ed89b11e290c9f2770b9050a8d135d670183f13"
-  integrity sha512-jFrAHyG43wcFVKoBui/oWPMC7d41yU/ygHJ1hqprvsPCFw2H4ZzD77pnQTLkIJJj+KJv/3mYvG+aC38sYKfbAw==
+"@sf/deploy-retrieve@npm:@salesforce/plugin-deploy-retrieve@0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-0.0.9.tgz#067b0609eb760e1690c58e23c4663705ad53015c"
+  integrity sha512-BCd12dBxmlCrtdGcWZJlmBv8q9tYPictj5F4ijhof0yCcPGlwgbAxXm1nKHMEi983X5ilK+aSsLhrX0cCiZ/xQ==
   dependencies:
     "@oclif/core" "^0.5.21"
     "@salesforce/core" "^3.1.1-v3.1"
     "@salesforce/plugin-deploy-retrieve-utils" "^0.0.9"
     tslib "^2"
 
-"@sf/dr-metadata@npm:@salesforce/plugin-deploy-retrieve-metadata@0.0.7":
-  version "0.0.7"
-  resolved "https://registry.npmjs.org/@salesforce/plugin-deploy-retrieve-metadata/-/plugin-deploy-retrieve-metadata-0.0.7.tgz#357c9bde5835b17e80d3e7e93d513f744f7c7d92"
-  integrity sha512-uL05Vb4R3tkaI2FeDq5nNMET0ENbXTmx9IF/pbAa081e/bsD3ary7K7dhWOoX1ZmX21XW57oD3M/UCUbFjixNA==
+"@sf/dr-metadata@npm:@salesforce/plugin-deploy-retrieve-metadata@0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve-metadata/-/plugin-deploy-retrieve-metadata-0.0.8.tgz#b6fba8103862d99feea89c65579b7fe362ce93ed"
+  integrity sha512-tAC+W+ahyqhSMYv2Y1ciLvwk4ZF9XuDjsosVONSDdtvbJtz/DkeMhafGgP3mG4Ut7qk/3IKHLUvCaDc57SpuQQ==
   dependencies:
     "@oclif/core" "^0.5.21"
     "@salesforce/core" "^3.1.1-v3.2"
@@ -963,20 +986,20 @@
     cli-ux "^5.5.1"
     tslib "^2"
 
-"@sf/env@npm:@salesforce/plugin-env@0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-env/-/plugin-env-0.0.9.tgz#4d6dab8441bfab31238b1691351754aa5d630005"
-  integrity sha512-kPIwlAxObtRCcx3/C80wK4yKPxVyk5FwnVxh3yNwHyZZScO2eWsEXOuMQQNpRYUYx4Pv5hLdeEJHDkkrNAlGwQ==
+"@sf/env@npm:@salesforce/plugin-env@0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-env/-/plugin-env-0.0.10.tgz#79947022d6d5ea9a7b7d77f1d93d36fa53d0ca64"
+  integrity sha512-e28tnkstLB9pSuhedwSHfkR6a7j6XwrHdvSYlVbcDN21t/Q/N6TvC9O8QYaL8Yx7BKUeRKk29fVWB5o0oCuPHg==
   dependencies:
     "@oclif/core" "^0.5.21"
     "@salesforce/core" "^3.1.1-v3.2"
     open "^8.2.0"
     tslib "^2"
 
-"@sf/login@npm:@salesforce/plugin-login@0.0.6":
-  version "0.0.6"
-  resolved "https://registry.npmjs.org/@salesforce/plugin-login/-/plugin-login-0.0.6.tgz#21371a6dcb92a6a307cb051cd6d62a9e0b00a6be"
-  integrity sha512-HVpf+m9vCq91b8951SzPkjOOrvzkMzebcM/5Y5iKaCLKC/j84QXiXHkSflGPbjJmoyPwqQ6UuaevS7DFu0j7rA==
+"@sf/login@npm:@salesforce/plugin-login@0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-login/-/plugin-login-0.0.7.tgz#9f3a97cc34294767edd7d6e9eda1269d8a086b3b"
+  integrity sha512-6xOkiZtvIs2pdwLQnY/GWTQ3dMOkgB0SPSxV/BAxkqGMCaGMzKkF6QoSTSGelG0XgCneTAInSXr7Q8VC1qmswA==
   dependencies:
     "@oclif/core" "^0.5.21"
     "@salesforce/core" "^3.1.1-v3.2"
