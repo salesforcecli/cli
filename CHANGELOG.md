@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.24](https://github.com/salesforcecli/cli/compare/v0.0.23...v0.0.24) (2021-07-19)
+
+
+### Bug Fixes
+
+* bump deps ([bd7fd0b](https://github.com/salesforcecli/cli/commit/bd7fd0b3fcf5f811939ab3669f64dfadf9529cfd))
+
 ### [0.0.23](https://github.com/salesforcecli/cli/compare/v0.0.22...v0.0.23) (2021-07-15)
 
 
