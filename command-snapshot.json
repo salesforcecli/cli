@@ -1,5 +1,22 @@
 [
   {
+    "command": "commands",
+    "plugin": "@oclif/plugin-commands",
+    "flags": [
+      "columns",
+      "csv",
+      "extended",
+      "filter",
+      "help",
+      "hidden",
+      "json",
+      "no-header",
+      "no-truncate",
+      "output",
+      "sort"
+    ]
+  },
+  {
     "command": "deploy",
     "plugin": "@salesforce/plugin-deploy-retrieve",
     "flags": ["interactive"]
@@ -12,12 +29,12 @@
   {
     "command": "env:display",
     "plugin": "@salesforce/plugin-env",
-    "flags": ["environment", "json"]
+    "flags": ["json", "target-env"]
   },
   {
     "command": "env:list",
     "plugin": "@salesforce/plugin-env",
-    "flags": ["all", "columns", "csv", "extended", "filter", "json", "no-header", "no-truncate", "output", "sort"]
+    "flags": ["columns", "csv", "extended", "filter", "json", "no-header", "no-truncate", "output", "sort"]
   },
   {
     "command": "env:open",
