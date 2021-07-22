@@ -891,6 +891,27 @@
     sfdx-faye "^1.0.9"
     ts-retry-promise "^0.6.0"
 
+"@salesforce/core@v3-beta":
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.3.3.tgz#8c0acdf0268d3c634e48c54c2caf6b883f1e7059"
+  integrity sha512-eUbkLO+40o5B9EmrAReaS8jJLY2OkrZZlaVzDOXb4VpnsCOLjvI2aZHrDoIoghm99u7/8Usggkvfo4o1N4Ga9w==
+  dependencies:
+    "@salesforce/bunyan" "^2.0.0"
+    "@salesforce/kit" "^1.5.8"
+    "@salesforce/schemas" "^1.0.1"
+    "@salesforce/ts-types" "^1.5.13"
+    "@types/graceful-fs" "^4.1.5"
+    "@types/jsforce" "^1.9.29"
+    "@types/mkdirp" "^1.0.1"
+    debug "^3.1.0"
+    graceful-fs "^4.2.4"
+    jsen "0.6.6"
+    jsforce "^1.10.1"
+    jsonwebtoken "8.5.0"
+    mkdirp "1.0.4"
+    sfdx-faye "^1.0.9"
+    ts-retry-promise "^0.6.0"
+
 "@salesforce/dev-config@^2.1.2":
   version "2.1.2"
   resolved "https://registry.npmjs.org/@salesforce/dev-config/-/dev-config-2.1.2.tgz#b4e206f860e87065d068bf8ba3994a032389ad81"
@@ -1051,13 +1072,13 @@
     cli-ux "^5.5.1"
     tslib "^2"
 
-"@sf/env@npm:@salesforce/plugin-env@0.0.12":
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-env/-/plugin-env-0.0.12.tgz#f0cfce44284cf25688d1b252574178e5f083d785"
-  integrity sha512-LTDOD6DZf+NJM9n/yRlKU17MGZ32Z58LNV83+MaJ5PZTySrmZ51eIEK/hZu4K60MfjXCZDsvtUZLyWYe34pRNA==
+"@sf/env@npm:@salesforce/plugin-env@0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-env/-/plugin-env-0.0.13.tgz#e15e4ef1cb4312652c88b43c74fc8f8c8589112d"
+  integrity sha512-6K8DMLMXTs22XPWiaMyouL145yId2zB/BE/CrntMcVbd+X7RRZ7QpzF2OVCGAbTnpdS6vaM7y11aS6GkETG1yQ==
   dependencies:
     "@oclif/core" "^0.5.21"
-    "@salesforce/core" "^3.1.1-v3.2"
+    "@salesforce/core" v3-beta
     open "^8.2.0"
     tslib "^2"
 

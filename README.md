@@ -21,7 +21,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (-v|--version|version)
-@salesforce/cli/0.0.24 linux-x64 node-v14.17.3
+@salesforce/cli/0.0.26 linux-x64 node-v14.17.3
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -94,7 +94,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.9/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.10/src/commands/deploy.ts)_
 
 ## `sf deploy metadata`
 
