@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run"
@@ -64,7 +64,7 @@
     "@oclif/plugin-help": "^3.2.2",
     "@oclif/plugin-not-found": "^2.1.1",
     "@oclif/plugin-plugins": "^1.10.1",
-    "@sf/deploy-retrieve": "npm:@salesforce/plugin-deploy-retrieve@0.0.9",
+    "@sf/deploy-retrieve": "npm:@salesforce/plugin-deploy-retrieve@0.0.10",
     "@sf/dr-metadata": "npm:@salesforce/plugin-deploy-retrieve-metadata@0.0.8",
     "@sf/env": "npm:@salesforce/plugin-env@0.0.12",
     "@sf/login": "npm:@salesforce/plugin-login@0.0.7",
