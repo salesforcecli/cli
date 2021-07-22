@@ -1,22 +1,5 @@
 [
   {
-    "command": "commands",
-    "plugin": "@oclif/plugin-commands",
-    "flags": [
-      "columns",
-      "csv",
-      "extended",
-      "filter",
-      "help",
-      "hidden",
-      "json",
-      "no-header",
-      "no-truncate",
-      "output",
-      "sort"
-    ]
-  },
-  {
     "command": "deploy",
     "plugin": "@salesforce/plugin-deploy-retrieve",
     "flags": ["interactive"]
