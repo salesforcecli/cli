@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run"
@@ -32,6 +32,7 @@
       "@oclif/plugin-help",
       "@oclif/plugin-not-found",
       "@oclif/plugin-plugins",
+      "@sf/config",
       "@sf/env",
       "@sf/login",
       "@sf/deploy-retrieve",
@@ -64,6 +65,7 @@
     "@oclif/plugin-help": "^3.2.2",
     "@oclif/plugin-not-found": "^2.1.1",
     "@oclif/plugin-plugins": "^1.10.1",
+    "@sf/config": "npm:@salesforce/plugin-config@2.0.4",
     "@sf/deploy-retrieve": "npm:@salesforce/plugin-deploy-retrieve@0.0.10",
     "@sf/dr-metadata": "npm:@salesforce/plugin-deploy-retrieve-metadata@0.0.8",
     "@sf/env": "npm:@salesforce/plugin-env@0.0.13",
@@ -72,6 +74,7 @@
     "tslib": "^2.3.0"
   },
   "pinnedDependencies": [
+    "@sf/config@sf",
     "@sf/env",
     "@sf/login",
     "@sf/deploy-retrieve",
