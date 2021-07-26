@@ -21,7 +21,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (-v|--version|version)
-@salesforce/cli/0.0.26 linux-x64 node-v14.17.3
+@salesforce/cli/0.0.27 linux-x64 node-v14.17.3
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -32,6 +32,10 @@ USAGE
 # Commands
 
 <!-- commands -->
+* [`sf config get`](#sf-config-get)
+* [`sf config list`](#sf-config-list)
+* [`sf config set`](#sf-config-set)
+* [`sf config unset`](#sf-config-unset)
 * [`sf deploy`](#sf-deploy)
 * [`sf deploy metadata`](#sf-deploy-metadata)
 * [`sf env display`](#sf-env-display)
@@ -49,6 +53,127 @@ USAGE
 * [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
 * [`sf plugins update`](#sf-plugins-update)
 * [`sf retrieve metadata`](#sf-retrieve-metadata)
+
+## `sf config get`
+
+Run "sf config list" to see all the configuration variables you've set. Global configuration variable are always displayed; local ones are displayed if you run the command in a project directory.
+
+```
+USAGE
+  $ sf config get [--json] [--verbose]
+
+FLAGS
+  --json     format output as json
+  --verbose
+
+DESCRIPTION
+  Run "sf config list" to see all the configuration variables you've set. Global configuration variable are always
+  displayed; local ones are displayed if you run the command in a project directory.
+
+EXAMPLES
+  Get the value of the "target-org" configuration variable.
+
+    $ sf config get target-org
+
+  Get multiple configuration variables and display whether they're set locally or globally:
+
+    $ sf config get target-org api-version --verbose
+```
+
+## `sf config list`
+
+Global configuration variables apply to any directory and are always displayed. If you run this command from a project directory, local configuration variables are also displayed.
+
+```
+USAGE
+  $ sf config list [--json]
+
+FLAGS
+  --json  format output as json
+
+DESCRIPTION
+  Global configuration variables apply to any directory and are always displayed. If you run this command from a project
+  directory, local configuration variables are also displayed.
+
+EXAMPLES
+  List both global configuration variables and those local to your project:
+
+    $ sf config list
+```
+
+## `sf config set`
+
+Use configuration variables to set CLI defaults, such as your default environment or the API version you want the CLI to use. For example, if you set the "target-org" configuration variable, you don't need to specify it as a "sf deploy metadata" flag if you're deploying to your default org.
+
+```
+USAGE
+  $ sf config set [--json] [-g]
+
+FLAGS
+  -g, --global
+  --json        format output as json
+
+DESCRIPTION
+  Use configuration variables to set CLI defaults, such as your default environment or the API version you want the CLI
+  to use. For example, if you set the "target-org" configuration variable, you don't need to specify it as a "sf deploy
+  metadata" flag if you're deploying to your default org.
+
+  Local configuration variables apply only to your current project. Global variables, specified with the --global flag,
+  apply in any directory.
+
+  The resolution order if you've set a flag value in multiple ways is as follows:
+
+  1. Flag value specified at the command line.
+
+  2. Local (project-level) configuration variable.
+
+  3. Global configuration variable.
+
+  Run "sf <command> --help" to get a list of configuration variables used by that command. Run "sf config list" to see
+  the configuration variables you've already set and their level (local or global).
+
+  If you set a configuration variable and then run a command that uses it, the command output displays this information
+  at runtime.
+
+EXAMPLES
+  Set the local target-org configuration variable to an org username:
+
+    $ sf config set target-org=me@my.org
+
+  Set the local target-org configuration variable to an alias:
+
+    $ sf config set target-org=my-scratch-org
+
+  Set the global target-org configuration variable:
+
+    $ sf config set --global target-org=my-scratch-org
+```
+
+## `sf config unset`
+
+Local configuration variables apply only to your current project. Global configuration variables apply in any directory.
+
+```
+USAGE
+  $ sf config unset [--json] [-g]
+
+FLAGS
+  -g, --global
+  --json        format output as json
+
+DESCRIPTION
+  Local configuration variables apply only to your current project. Global configuration variables apply in any
+  directory.
+
+EXAMPLES
+  Unset the local "target-org" configuration variable:
+
+    $ sf config unset target-org
+
+  Unset multiple configuration variables globally:
+
+    $ sf config unset target-org api-version --global
+```
 
 ## `sf deploy`
 
@@ -422,7 +547,7 @@ EXAMPLES
    sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.7/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.8/src/commands/login.ts)_
 
 ## `sf login org`
 
@@ -430,7 +555,7 @@ Opens a Salesforce instance URL in a web browser so you can enter your credentia
 
 ```
 USAGE
-  $ sf login org [--json] [-a <value>] [-b <value>] [-i <value>] [-l <value>] [-d]
+  $ sf login org [--json] [-a <value>] [-b <value>] [-i <value>] [-l <value>] [-d] [-v]
 
 FLAGS
   -a, --alias=<value>         Alias for the org.
@@ -440,6 +565,8 @@ FLAGS
 
   -l, --instance-url=<value>  [default: https://login.salesforce.com] URL of the instance that the org lives on.
                               (defaults to https://login.salesforce.com)
+
+  -v, --set-default-dev-hub   Set the org as the default Dev Hub for scratch org creation.
 
 GLOBAL FLAGS
   --json  format output as json
@@ -454,11 +581,10 @@ DESCRIPTION
   a project. You can log into many types of orgs, such as sandboxes, Dev Hubs, Env Hubs, production orgs, and scratch
   orgs.
 
-
-
   We recommend that you set an alias when you log into an org. Aliases make it easy to later reference this org when
   running commands that require it. If you don’t set an alias, you use the username that you specified when you logged
-  in to the org. If you run multiple commands that reference the same org, consider setting the org as your default.
+  in to the org. If you run multiple commands that reference the same org, consider setting the org as your default. Use
+  --set-default for your default scratch org or sandbox, or --set-default-dev-hub for your default Dev Hub.
 
   By default, this command uses the global out-of-the-box connected app in your org. If you need more security or
   control, such as setting the refresh token timeout or specifying IP ranges, create your own connected app using a
@@ -470,9 +596,10 @@ EXAMPLES
 
     $ sf login org
 
-  Log in to your Dev Hub org and set an alias that you reference later when you create a scratch org:
+  Log in to your Dev Hub, set it as your default Dev Hub, and set an alias that you reference later when you create a
+  scratch org:
 
-    $ sf login org --alias dev-hub
+    $ sf login org --set-default-dev-hub --alias dev-hub
 
   Log in to a sandbox and set it as your default org:
 
@@ -503,7 +630,7 @@ Use this command in automated environments where you can’t interactively log i
 
 ```
 USAGE
-  $ sf login org jwt [--json] [-a <value>] [-l <value>] [-f <value> -u <value> -i <value>] [-d]
+  $ sf login org jwt [--json] [-a <value>] [-l <value>] [-f <value> -u <value> -i <value>] [-d] [-v]
 
 FLAGS
   -a, --alias=<value>         Alias for the org.
@@ -515,6 +642,8 @@ FLAGS
                               (defaults to https://login.salesforce.com)
 
   -u, --username=<value>      Username of the user logging in.
+
+  -v, --set-default-dev-hub   Set the org as the default Dev Hub for scratch org creation.
 
 GLOBAL FLAGS
   --json  format output as json
@@ -542,11 +671,10 @@ DESCRIPTION
   cliend id) that’s generated for you. Be sure the username of the user logging in is approved to use the connected app.
   When you run this command, you set the --clientid flag to the consumer key.
 
-
-
   We recommend that you set an alias when you log into an org. Aliases make it easy to later reference this org when
   running commands that require it. If you don’t set an alias, you use the username that you specified when you logged
   in to the org. If you run multiple commands that reference the same org, consider setting the org as your default.
+  Use --set-default for your default scratch org or sandbox, or --set-default-dev-hub for your default Dev Hub.
 
 EXAMPLES
   Log into an org with username jdoe@example.org and on the default instance URL (https://login.salesforce.org). The
@@ -556,10 +684,15 @@ EXAMPLES
     $ sf login org jwt --username jdoe@example.org --jwt-key-file /Users/jdoe/JWT/server.key --clientid \
       04580y4051234051
 
-  Set the org as the default and gives it an alias:
+  Set the org as the default and give it an alias:
 
     $ sf login org jwt --username jdoe@example.org --jwt-key-file /Users/jdoe/JWT/server.key --clientid \
       04580y4051234051 --alias ci-org --set-default
+
+  Set the org as the default Dev Hub and give it an alias:
+
+    $ sf login org jwt --username jdoe@example.org --jwt-key-file /Users/jdoe/JWT/server.key --clientid \
+      04580y4051234051 --alias ci-dev-hub --set-default-dev-hub
 
   Log in to a sandbox using URL https://test.salesforce.com:
 
@@ -578,19 +711,32 @@ FLAG DESCRIPTIONS
 
 ## `sf logout`
 
+By default, the command prompts you to confirm that you want to log out of all environments. You can't log out of selected environments, only all of them. Use --noprompt to not be prompted.
+
 ```
 USAGE
-  $ sf logout [--json]
+  $ sf logout [--json] [--noprompt]
+
+FLAGS
+  --noprompt  Don't prompt for confirmation.
 
 GLOBAL FLAGS
   --json  format output as json
 
+DESCRIPTION
+  Log out of all environments, such as Salesforce orgs and compute environments.
+
+  By default, the command prompts you to confirm that you want to log out of all environments. You can't log out of
+  selected environments, only all of them. Use --noprompt to not be prompted.
+
 EXAMPLES
   - Log out of all environments:
-   sf logout
+  $ sf logout
+  - Log out of all environments with no confirmation prompt:
+  $ sf logout --noprompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.7/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.8/src/commands/logout.ts)_
 
 ## `sf plugins`
 
