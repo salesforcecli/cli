@@ -21,7 +21,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (-v|--version|version)
-@salesforce/cli/0.0.28 linux-x64 node-v14.17.3
+@salesforce/cli/0.0.29 linux-x64 node-v14.17.3
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -213,15 +213,11 @@ DESCRIPTION
   if you want to deploy that Salesforce app to an org. The command lists your connected orgs and asks which one you want
   to deploy to. If the command finds Apex tests, it asks if you want to run them and at which level.
 
-  Similarly, if the command finds a local functions directory, the command prompts if you want to deploy it and to which
-  compute environment. The command prompts and connects you to a compute environment of your choice if you’re not
-  currently connected to any.
-
   The command stores your responses in a local file and uses them as defaults when you rerun the command. Specify
   --interactive to force the command to reprompt.
 
   Use this command for quick and simple deploys. For more complicated deployments, use the environment-specific
-  commands, such as "sf project deploy org", that provide additional flags.
+  commands, such as "sf deploy metadata", that provide additional flags.
 
 EXAMPLES
   Deploy a project and use stored values from a previous command run:
@@ -233,7 +229,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.10/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.12/src/commands/deploy.ts)_
 
 ## `sf deploy metadata`
 
@@ -539,7 +535,7 @@ _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.2
 
 ## `sf login`
 
-Logging into an environment authorizes the CLI to run other commands that connect to that environment, such as deploying or retrieving a project to and from an org.
+Logging into an environment authorizes the CLI to run other commands that connect to that environment, such as deploying or retrieving metadata to and from an org.
 
 ```
 USAGE
@@ -549,7 +545,7 @@ DESCRIPTION
   Log interactively into an environment, such as a Salesforce org.
 
   Logging into an environment authorizes the CLI to run other commands that connect to that environment, such as
-  deploying or retrieving a project to and from an org.
+  deploying or retrieving metadata to and from an org.
 
   The command first prompts you to choose an environment from a list of available ones. It then opens a browser to the
   appropriate login URL, such as https://login.salesforce.com for an org. Then, depending on the environment you choose,
@@ -561,11 +557,12 @@ DESCRIPTION
   command, such as "sf login org --help".
 
 EXAMPLES
-  - Log in interactively:
-   sf login
+  Log in interactively:
+
+    $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.8/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.11/src/commands/login.ts)_
 
 ## `sf login org`
 
@@ -691,8 +688,8 @@ DESCRIPTION
 
   We recommend that you set an alias when you log into an org. Aliases make it easy to later reference this org when
   running commands that require it. If you don’t set an alias, you use the username that you specified when you logged
-  in to the org. If you run multiple commands that reference the same org, consider setting the org as your default.
-  Use --set-default for your default scratch org or sandbox, or --set-default-dev-hub for your default Dev Hub.
+  in to the org. If you run multiple commands that reference the same org, consider setting the org as your default. Use
+  --set-default for your default scratch org or sandbox, or --set-default-dev-hub for your default Dev Hub.
 
 EXAMPLES
   Log into an org with username jdoe@example.org and on the default instance URL (https://login.salesforce.org). The
@@ -748,13 +745,16 @@ DESCRIPTION
   selected environments, only all of them. Use --noprompt to not be prompted.
 
 EXAMPLES
-  - Log out of all environments:
-  $ sf logout
-  - Log out of all environments with no confirmation prompt:
-  $ sf logout --noprompt
+  Log out of all environments:
+
+    $ sf logout
+
+  Log out of all environments with no confirmation prompt:
+
+    $ sf logout --noprompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.8/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.11/src/commands/logout.ts)_
 
 ## `sf plugins`
 
@@ -970,5 +970,28 @@ EXAMPLES
   Retrieve metadata from multiple packages, one of which has a space in its name (both examples are equivalent):
   $ sf retrieve metadata --package-name Package1 "PackageName With Spaces" Package3
   $ sf retrieve metadata --package-name Package1 --package-name "PackageName With Spaces" --package-name Package3
+
+FLAG DESCRIPTIONS
+  -a, --api-version=<value>  Target API version for the retrieve.
+
+    Use this flag to override the default API version, which is the latest version supported the CLI, with the API
+    version in your package.xml file.
+
+  -d, --source-dir=<value>...  File paths for source to retrieve from the org.
+
+    The supplied paths can be to a single file (in which case the operation is applied to only one file) or to a folder
+    (in which case the operation is applied to all source files in the directory and its subdirectories).
+
+  -t, --target-org=<value>  Login username or alias for the target org.
+
+    Overrides your default org.
+
+  -w, --wait=<value>  Number of minutes to wait for the command to complete and display results to the terminal window.
+
+    If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
+
+  -x, --manifest=<value>  File path for the manifest (package.xml) that specifies the components to retrieve.
+
+    If you specify this parameter, don’t specify --metadata or --source-dir.
 ```
 <!-- commandsstop -->
