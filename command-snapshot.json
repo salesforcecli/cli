@@ -1,112 +1,201 @@
 [
-  {
-    "command": "config:get",
-    "plugin": "@salesforce/plugin-config",
-    "flags": ["json", "verbose"]
-  },
-  {
-    "command": "config:list",
-    "plugin": "@salesforce/plugin-config",
-    "flags": ["json"]
-  },
-  {
-    "command": "config:set",
-    "plugin": "@salesforce/plugin-config",
-    "flags": ["global", "json"]
-  },
-  {
-    "command": "config:unset",
-    "plugin": "@salesforce/plugin-config",
-    "flags": ["global", "json"]
-  },
-  {
-    "command": "deploy",
-    "plugin": "@salesforce/plugin-deploy-retrieve",
-    "flags": ["interactive"]
-  },
-  {
-    "command": "deploy:metadata",
-    "plugin": "@salesforce/plugin-deploy-retrieve-metadata",
-    "flags": ["deploy-dir", "json", "manifest", "metadata", "target-org", "test-level", "wait"]
-  },
-  {
-    "command": "env:display",
-    "plugin": "@salesforce/plugin-env",
-    "flags": ["json", "target-env"]
-  },
-  {
-    "command": "env:list",
-    "plugin": "@salesforce/plugin-env",
-    "flags": ["columns", "csv", "extended", "filter", "json", "no-header", "no-truncate", "output", "sort"]
-  },
-  {
-    "command": "env:open",
-    "plugin": "@salesforce/plugin-env",
-    "flags": ["browser", "json", "path", "target-env", "url-only"]
-  },
-  {
-    "command": "help",
-    "plugin": "@oclif/plugin-help",
-    "flags": ["all"]
-  },
-  {
-    "command": "login",
-    "plugin": "@salesforce/plugin-login",
-    "flags": []
-  },
-  {
-    "command": "login:org",
-    "plugin": "@salesforce/plugin-login",
-    "flags": ["alias", "browser", "clientid", "instance-url", "json", "set-default"]
-  },
-  {
-    "command": "login:org:jwt",
-    "plugin": "@salesforce/plugin-login",
-    "flags": ["alias", "clientid", "instance-url", "json", "jwt-key-file", "set-default", "username"]
-  },
-  {
-    "command": "logout",
-    "plugin": "@salesforce/plugin-login",
-    "flags": ["json"]
-  },
-  {
-    "command": "plugins",
-    "plugin": "@oclif/plugin-plugins",
-    "flags": ["core"]
-  },
-  {
-    "command": "plugins:inspect",
-    "plugin": "@oclif/plugin-plugins",
-    "flags": ["help", "verbose"]
-  },
-  {
-    "command": "plugins:install",
-    "plugin": "@oclif/plugin-plugins",
-    "flags": ["force", "help", "verbose"]
-  },
-  {
-    "command": "plugins:link",
-    "plugin": "@oclif/plugin-plugins",
-    "flags": ["help", "verbose"]
-  },
-  {
-    "command": "plugins:uninstall",
-    "plugin": "@oclif/plugin-plugins",
-    "flags": ["help", "verbose"]
-  },
-  {
-    "command": "plugins:update",
-    "plugin": "@oclif/plugin-plugins",
-    "flags": ["help", "verbose"]
-  },
-  {
-    "command": "retrieve:metadata",
-    "plugin": "@salesforce/plugin-deploy-retrieve-metadata",
-    "flags": ["api-version", "json", "manifest", "metadata", "package-name", "source-dir", "target-org", "wait"]
-  },
-  {
-    "command": "telemetry",
-    "plugin": "@salesforce/plugin-telemetry",
-    "flags": []
-  }
+    {
+        "command": "config:get",
+        "plugin": "@salesforce/plugin-config",
+        "flags": [
+            "json",
+            "verbose"
+        ]
+    },
+    {
+        "command": "config:list",
+        "plugin": "@salesforce/plugin-config",
+        "flags": [
+            "json"
+        ]
+    },
+    {
+        "command": "config:set",
+        "plugin": "@salesforce/plugin-config",
+        "flags": [
+            "global",
+            "json"
+        ]
+    },
+    {
+        "command": "config:unset",
+        "plugin": "@salesforce/plugin-config",
+        "flags": [
+            "global",
+            "json"
+        ]
+    },
+    {
+        "command": "deploy",
+        "plugin": "@salesforce/plugin-deploy-retrieve",
+        "flags": [
+            "interactive"
+        ]
+    },
+    {
+        "command": "deploy:metadata",
+        "plugin": "@salesforce/plugin-deploy-retrieve-metadata",
+        "flags": [
+            "deploy-dir",
+            "json",
+            "manifest",
+            "metadata",
+            "target-org",
+            "test-level",
+            "wait"
+        ]
+    },
+    {
+        "command": "env:display",
+        "plugin": "@salesforce/plugin-env",
+        "flags": [
+            "json",
+            "target-env"
+        ]
+    },
+    {
+        "command": "env:list",
+        "plugin": "@salesforce/plugin-env",
+        "flags": [
+            "columns",
+            "csv",
+            "extended",
+            "filter",
+            "json",
+            "no-header",
+            "no-truncate",
+            "output",
+            "sort"
+        ]
+    },
+    {
+        "command": "env:open",
+        "plugin": "@salesforce/plugin-env",
+        "flags": [
+            "browser",
+            "json",
+            "path",
+            "target-env",
+            "url-only"
+        ]
+    },
+    {
+        "command": "help",
+        "plugin": "@oclif/plugin-help",
+        "flags": [
+            "all"
+        ]
+    },
+    {
+        "command": "login",
+        "plugin": "@salesforce/plugin-login",
+        "flags": []
+    },
+    {
+        "command": "login:org",
+        "plugin": "@salesforce/plugin-login",
+        "flags": [
+            "alias",
+            "browser",
+            "clientid",
+            "instance-url",
+            "json",
+            "set-default",
+            "set-default-dev-hub"
+        ]
+    },
+    {
+        "command": "login:org:jwt",
+        "plugin": "@salesforce/plugin-login",
+        "flags": [
+            "alias",
+            "clientid",
+            "instance-url",
+            "json",
+            "jwt-key-file",
+            "set-default",
+            "set-default-dev-hub",
+            "username"
+        ]
+    },
+    {
+        "command": "logout",
+        "plugin": "@salesforce/plugin-login",
+        "flags": [
+            "json",
+            "noprompt"
+        ]
+    },
+    {
+        "command": "plugins",
+        "plugin": "@oclif/plugin-plugins",
+        "flags": [
+            "core"
+        ]
+    },
+    {
+        "command": "plugins:inspect",
+        "plugin": "@oclif/plugin-plugins",
+        "flags": [
+            "help",
+            "verbose"
+        ]
+    },
+    {
+        "command": "plugins:install",
+        "plugin": "@oclif/plugin-plugins",
+        "flags": [
+            "force",
+            "help",
+            "verbose"
+        ]
+    },
+    {
+        "command": "plugins:link",
+        "plugin": "@oclif/plugin-plugins",
+        "flags": [
+            "help",
+            "verbose"
+        ]
+    },
+    {
+        "command": "plugins:uninstall",
+        "plugin": "@oclif/plugin-plugins",
+        "flags": [
+            "help",
+            "verbose"
+        ]
+    },
+    {
+        "command": "plugins:update",
+        "plugin": "@oclif/plugin-plugins",
+        "flags": [
+            "help",
+            "verbose"
+        ]
+    },
+    {
+        "command": "retrieve:metadata",
+        "plugin": "@salesforce/plugin-deploy-retrieve-metadata",
+        "flags": [
+            "api-version",
+            "json",
+            "manifest",
+            "metadata",
+            "package-name",
+            "source-dir",
+            "target-org",
+            "wait"
+        ]
+    },
+    {
+        "command": "telemetry",
+        "plugin": "@salesforce/plugin-telemetry",
+        "flags": []
+    }
 ]
