@@ -59,7 +59,14 @@
     "windows": {
       "name": "Salesforce CLI",
       "keypath": "/tmp/windows-signing.pfx"
-    }
+    },
+    "additionalVersionFlags": [
+      "version",
+      "-v"
+    ],
+    "additionalHelpFlags": [
+      "-h"
+    ]
   },
   "dependencies": {
     "@oclif/core": "^0.5.28",

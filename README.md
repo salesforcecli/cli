@@ -8,14 +8,16 @@
 **[EXPERIMENT]: This Salesforce CLI the focuses on a cleaner user experience for ALL Salesforce functionality. It is in heavy development will be changing rapidly. More information will be added to this repository in the near-future.**
 
 <!-- toc -->
-* [cli](#cli)
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [cli](#cli)
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g @salesforce/cli
 $ sf COMMAND
@@ -27,32 +29,34 @@ USAGE
   $ sf COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`sf config get`](#sf-config-get)
-* [`sf config list`](#sf-config-list)
-* [`sf config set`](#sf-config-set)
-* [`sf config unset`](#sf-config-unset)
-* [`sf deploy`](#sf-deploy)
-* [`sf deploy metadata`](#sf-deploy-metadata)
-* [`sf env display`](#sf-env-display)
-* [`sf env list`](#sf-env-list)
-* [`sf env open`](#sf-env-open)
-* [`sf help [COMMAND]`](#sf-help-command)
-* [`sf login`](#sf-login)
-* [`sf login org`](#sf-login-org)
-* [`sf login org jwt`](#sf-login-org-jwt)
-* [`sf logout`](#sf-logout)
-* [`sf plugins`](#sf-plugins)
-* [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
-* [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
-* [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
-* [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
-* [`sf plugins update`](#sf-plugins-update)
-* [`sf retrieve metadata`](#sf-retrieve-metadata)
+
+- [`sf config get`](#sf-config-get)
+- [`sf config list`](#sf-config-list)
+- [`sf config set`](#sf-config-set)
+- [`sf config unset`](#sf-config-unset)
+- [`sf deploy`](#sf-deploy)
+- [`sf deploy metadata`](#sf-deploy-metadata)
+- [`sf env display`](#sf-env-display)
+- [`sf env list`](#sf-env-list)
+- [`sf env open`](#sf-env-open)
+- [`sf help [COMMAND]`](#sf-help-command)
+- [`sf login`](#sf-login)
+- [`sf login org`](#sf-login-org)
+- [`sf login org jwt`](#sf-login-org-jwt)
+- [`sf logout`](#sf-logout)
+- [`sf plugins`](#sf-plugins)
+- [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
+- [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
+- [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
+- [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
+- [`sf plugins update`](#sf-plugins-update)
+- [`sf retrieve metadata`](#sf-retrieve-metadata)
 
 ## `sf config get`
 
@@ -386,7 +390,7 @@ EXAMPLES
 
 ## `sf env list`
 
-The command displays only active environments. For orgs, active means unexpired scratch orgs and orgs you’re currently logged into. 
+The command displays only active environments. For orgs, active means unexpired scratch orgs and orgs you’re currently logged into.
 
 ```
 USAGE
@@ -831,7 +835,7 @@ ALIASES
   $ sf plugins add
 
 EXAMPLES
-  $ sf plugins:install myplugin 
+  $ sf plugins:install myplugin
 
   $ sf plugins:install https://github.com/someuser/someplugin
 
@@ -996,4 +1000,5 @@ FLAG DESCRIPTIONS
 
     If you specify this parameter, don’t specify --metadata or --source-dir.
 ```
+
 <!-- commandsstop -->
