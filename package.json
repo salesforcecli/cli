@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run"
@@ -26,6 +26,7 @@
   "oclif": {
     "bin": "sf",
     "scope": "salesforce",
+    "state": "beta",
     "topicSeparator": " ",
     "commands": "./dist/commands",
     "plugins": [
@@ -68,15 +69,15 @@
     ]
   },
   "dependencies": {
-    "@oclif/core": "^0.5.27",
+    "@oclif/core": "^0.5.28",
     "@oclif/plugin-help": "^3.2.2",
     "@oclif/plugin-not-found": "^2.1.1",
     "@oclif/plugin-plugins": "^1.10.1",
     "@sf/config": "npm:@salesforce/plugin-config@2.0.7",
-    "@sf/deploy-retrieve": "npm:@salesforce/plugin-deploy-retrieve@0.0.12",
-    "@sf/dr-metadata": "npm:@salesforce/plugin-deploy-retrieve-metadata@0.0.12",
-    "@sf/env": "npm:@salesforce/plugin-env@0.0.16",
-    "@sf/login": "npm:@salesforce/plugin-login@0.0.11",
+    "@sf/deploy-retrieve": "npm:@salesforce/plugin-deploy-retrieve@0.0.14",
+    "@sf/dr-metadata": "npm:@salesforce/plugin-deploy-retrieve-metadata@0.0.14",
+    "@sf/env": "npm:@salesforce/plugin-env@0.0.18",
+    "@sf/login": "npm:@salesforce/plugin-login@0.0.12",
     "@sf/telemetry": "npm:@salesforce/plugin-telemetry@1.2.3",
     "tslib": "^2.3.0"
   },

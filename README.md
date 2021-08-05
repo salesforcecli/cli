@@ -8,51 +8,55 @@
 **[EXPERIMENT]: This Salesforce CLI the focuses on a cleaner user experience for ALL Salesforce functionality. It is in heavy development will be changing rapidly. More information will be added to this repository in the near-future.**
 
 <!-- toc -->
-* [cli](#cli)
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [cli](#cli)
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (-v|--version|version)
-@salesforce/cli/0.0.29 linux-x64 node-v14.17.3
+@salesforce/cli/0.0.29 linux-x64 node-v14.17.4
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`sf config get`](#sf-config-get)
-* [`sf config list`](#sf-config-list)
-* [`sf config set`](#sf-config-set)
-* [`sf config unset`](#sf-config-unset)
-* [`sf deploy`](#sf-deploy)
-* [`sf deploy metadata`](#sf-deploy-metadata)
-* [`sf env display`](#sf-env-display)
-* [`sf env list`](#sf-env-list)
-* [`sf env open`](#sf-env-open)
-* [`sf help [COMMAND]`](#sf-help-command)
-* [`sf login`](#sf-login)
-* [`sf login org`](#sf-login-org)
-* [`sf login org jwt`](#sf-login-org-jwt)
-* [`sf logout`](#sf-logout)
-* [`sf plugins`](#sf-plugins)
-* [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
-* [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
-* [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
-* [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
-* [`sf plugins update`](#sf-plugins-update)
-* [`sf retrieve metadata`](#sf-retrieve-metadata)
+
+- [`sf config get`](#sf-config-get)
+- [`sf config list`](#sf-config-list)
+- [`sf config set`](#sf-config-set)
+- [`sf config unset`](#sf-config-unset)
+- [`sf deploy`](#sf-deploy)
+- [`sf deploy metadata`](#sf-deploy-metadata)
+- [`sf env display`](#sf-env-display)
+- [`sf env list`](#sf-env-list)
+- [`sf env open`](#sf-env-open)
+- [`sf help [COMMAND]`](#sf-help-command)
+- [`sf login`](#sf-login)
+- [`sf login org`](#sf-login-org)
+- [`sf login org jwt`](#sf-login-org-jwt)
+- [`sf logout`](#sf-logout)
+- [`sf plugins`](#sf-plugins)
+- [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
+- [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
+- [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
+- [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
+- [`sf plugins update`](#sf-plugins-update)
+- [`sf retrieve metadata`](#sf-retrieve-metadata)
 
 ## `sf config get`
 
@@ -213,8 +217,8 @@ DESCRIPTION
   if you want to deploy that Salesforce app to an org. The command lists your connected orgs and asks which one you want
   to deploy to. If the command finds Apex tests, it asks if you want to run them and at which level.
 
-  The command stores your responses in a local file and uses them as defaults when you rerun the command. Specify
-  --interactive to force the command to reprompt.
+  The command stores your responses in the "deploy-options.json" file in your local project directory and uses them as
+  defaults when you rerun the command. Specify --interactive to force the command to reprompt.
 
   Use this command for quick and simple deploys. For more complicated deployments, use the environment-specific
   commands, such as "sf deploy metadata", that provide additional flags.
@@ -229,7 +233,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.12/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.14/src/commands/deploy.ts)_
 
 ## `sf deploy metadata`
 
@@ -237,8 +241,8 @@ You must run this command from within a project.
 
 ```
 USAGE
-  $ sf deploy metadata [--json] [-m <value>] [-x <value>] [-d <value>] [--target-org <value>] [-l
-    NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [--wait <value>]
+  $ sf deploy metadata [--json] [-m <value>] [-x <value>] [-d <value>] [-t <value>] [-l
+    NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [-w <value>]
 
 FLAGS
   -d, --deploy-dir=<value>...  Path to the local source files to deploy.
@@ -248,11 +252,11 @@ FLAGS
 
   -m, --metadata=<value>...    Metadata component names to deploy.
 
+  -t, --target-org=<value>     Login username or alias for the target org.
+
+  -w, --wait=<value>           [default: 33] Number of minutes to wait for command to complete and display results.
+
   -x, --manifest=<value>       Full file path for manifest (package.xml) of components to deploy.
-
-  --target-org=<value>         Login username or alias for the target org.
-
-  --wait=<value>               [default: 33] Number of minutes to wait for command to complete and display results.
 
 GLOBAL FLAGS
   --json  format output as json
@@ -333,17 +337,17 @@ FLAG DESCRIPTIONS
     If you don’t specify a test level, the default behavior depends on the contents of your deployment package. For more
     information, see “Running Tests in a Deployment” in the Metadata API Developer Guide.
 
-  -x, --manifest=<value>  Full file path for manifest (package.xml) of components to deploy.
-
-    All child components are included. If you specify this flag, don’t specify --metadata or --deploy-dir.
-
-  --target-org=<value>  Login username or alias for the target org.
+  -t, --target-org=<value>  Login username or alias for the target org.
 
     Overrides your default org.
 
-  --wait=<value>  Number of minutes to wait for command to complete and display results.
+  -w, --wait=<value>  Number of minutes to wait for command to complete and display results.
 
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
+
+  -x, --manifest=<value>  Full file path for manifest (package.xml) of components to deploy.
+
+    All child components are included. If you specify this flag, don’t specify --metadata or --deploy-dir.
 ```
 
 ## `sf env display`
@@ -386,15 +390,14 @@ EXAMPLES
 
 ## `sf env list`
 
-The command displays only active environments. For orgs, active means unexpired scratch orgs and orgs you’re currently logged into. 
+The command displays only active environments. For orgs, active means unexpired scratch orgs and orgs you’re currently logged into.
 
 ```
 USAGE
-  $ sf env list [--json] [-x] [--columns <value>] [--csv] [--filter <value>] [--no-header] [--no-truncate]
+  $ sf env list [--json] [--columns <value>] [--csv] [--filter <value>] [--no-header] [--no-truncate]
     [--output csv|json|yaml] [--sort <value>]
 
 FLAGS
-  -x, --extended        Show extra columns.
   --columns=<value>...  List of columns to display.
   --csv                 Output in csv format [alias: --output=csv]
   --filter=<value>      Filter property by partial string matching.
@@ -562,7 +565,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.11/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.12/src/commands/login.ts)_
 
 ## `sf login org`
 
@@ -686,6 +689,9 @@ DESCRIPTION
   cliend id) that’s generated for you. Be sure the username of the user logging in is approved to use the connected app.
   When you run this command, you set the --clientid flag to the consumer key.
 
+  See https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm for more
+  information.
+
   We recommend that you set an alias when you log into an org. Aliases make it easy to later reference this org when
   running commands that require it. If you don’t set an alias, you use the username that you specified when you logged
   in to the org. If you run multiple commands that reference the same org, consider setting the org as your default. Use
@@ -754,7 +760,7 @@ EXAMPLES
     $ sf logout --noprompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.11/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.12/src/commands/logout.ts)_
 
 ## `sf plugins`
 
@@ -829,7 +835,7 @@ ALIASES
   $ sf plugins add
 
 EXAMPLES
-  $ sf plugins:install myplugin 
+  $ sf plugins:install myplugin
 
   $ sf plugins:install https://github.com/someuser/someplugin
 
@@ -994,4 +1000,5 @@ FLAG DESCRIPTIONS
 
     If you specify this parameter, don’t specify --metadata or --source-dir.
 ```
+
 <!-- commandsstop -->
