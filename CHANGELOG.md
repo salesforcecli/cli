@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.31](https://github.com/salesforcecli/cli/compare/v0.0.30...v0.0.31) (2021-08-05)
+
+
+### Bug Fixes
+
+* restore short flag names for help and version ([4b9465d](https://github.com/salesforcecli/cli/commit/4b9465d65b9b4662a7ae66ee7cd49a64958ecbf8))
+
 ### [0.0.30](https://github.com/salesforcecli/cli/compare/v0.0.29...v0.0.30) (2021-08-03)
 
 ### Bug Fixes

@@ -8,55 +8,51 @@
 **[EXPERIMENT]: This Salesforce CLI the focuses on a cleaner user experience for ALL Salesforce functionality. It is in heavy development will be changing rapidly. More information will be added to this repository in the near-future.**
 
 <!-- toc -->
-
-- [cli](#cli)
-- [Usage](#usage)
-- [Commands](#commands)
+* [cli](#cli)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (-v|--version|version)
-@salesforce/cli/0.0.29 linux-x64 node-v14.17.4
+@salesforce/cli/0.0.30 linux-x64 node-v14.17.4
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`sf config get`](#sf-config-get)
-- [`sf config list`](#sf-config-list)
-- [`sf config set`](#sf-config-set)
-- [`sf config unset`](#sf-config-unset)
-- [`sf deploy`](#sf-deploy)
-- [`sf deploy metadata`](#sf-deploy-metadata)
-- [`sf env display`](#sf-env-display)
-- [`sf env list`](#sf-env-list)
-- [`sf env open`](#sf-env-open)
-- [`sf help [COMMAND]`](#sf-help-command)
-- [`sf login`](#sf-login)
-- [`sf login org`](#sf-login-org)
-- [`sf login org jwt`](#sf-login-org-jwt)
-- [`sf logout`](#sf-logout)
-- [`sf plugins`](#sf-plugins)
-- [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
-- [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
-- [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
-- [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
-- [`sf plugins update`](#sf-plugins-update)
-- [`sf retrieve metadata`](#sf-retrieve-metadata)
+* [`sf config get`](#sf-config-get)
+* [`sf config list`](#sf-config-list)
+* [`sf config set`](#sf-config-set)
+* [`sf config unset`](#sf-config-unset)
+* [`sf deploy`](#sf-deploy)
+* [`sf deploy metadata`](#sf-deploy-metadata)
+* [`sf env display`](#sf-env-display)
+* [`sf env list`](#sf-env-list)
+* [`sf env open`](#sf-env-open)
+* [`sf help [COMMAND]`](#sf-help-command)
+* [`sf login`](#sf-login)
+* [`sf login org`](#sf-login-org)
+* [`sf login org jwt`](#sf-login-org-jwt)
+* [`sf logout`](#sf-logout)
+* [`sf plugins`](#sf-plugins)
+* [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
+* [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
+* [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
+* [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
+* [`sf plugins update`](#sf-plugins-update)
+* [`sf retrieve metadata`](#sf-retrieve-metadata)
 
 ## `sf config get`
 
@@ -233,7 +229,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.14/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.15/src/commands/deploy.ts)_
 
 ## `sf deploy metadata`
 
@@ -390,7 +386,7 @@ EXAMPLES
 
 ## `sf env list`
 
-The command displays only active environments. For orgs, active means unexpired scratch orgs and orgs you’re currently logged into.
+The command displays only active environments. For orgs, active means unexpired scratch orgs and orgs you’re currently logged into. 
 
 ```
 USAGE
@@ -565,7 +561,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.12/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.13/src/commands/login.ts)_
 
 ## `sf login org`
 
@@ -760,7 +756,7 @@ EXAMPLES
     $ sf logout --noprompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.12/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.13/src/commands/logout.ts)_
 
 ## `sf plugins`
 
@@ -835,7 +831,7 @@ ALIASES
   $ sf plugins add
 
 EXAMPLES
-  $ sf plugins:install myplugin
+  $ sf plugins:install myplugin 
 
   $ sf plugins:install https://github.com/someuser/someplugin
 
@@ -1000,5 +996,4 @@ FLAG DESCRIPTIONS
 
     If you specify this parameter, don’t specify --metadata or --source-dir.
 ```
-
 <!-- commandsstop -->
