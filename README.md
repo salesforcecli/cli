@@ -21,7 +21,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (-v|--version|version)
-@salesforce/cli/0.0.30 linux-x64 node-v14.17.4
+@salesforce/cli/0.0.31 linux-x64 node-v14.17.5
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -46,6 +46,7 @@ USAGE
 * [`sf login org`](#sf-login-org)
 * [`sf login org jwt`](#sf-login-org-jwt)
 * [`sf logout`](#sf-logout)
+* [`sf logout org`](#sf-logout-org)
 * [`sf plugins`](#sf-plugins)
 * [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
 * [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
@@ -237,25 +238,25 @@ You must run this command from within a project.
 
 ```
 USAGE
-  $ sf deploy metadata [--json] [-m <value>] [-x <value>] [-d <value>] [-t <value>] [-l
+  $ sf deploy metadata [--json] [-m <value> | -x <value> | -d <value>] [-o <value>] [-l
     NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [-w <value>]
 
 FLAGS
-  -d, --deploy-dir=<value>...  Path to the local source files to deploy.
+  -d, --source-dir=<value>...  Path to the local source files to deploy.
 
   -l, --test-level=<option>    [default: NoTestRun] Deployment Apex testing level.
                                <options: NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg>
 
   -m, --metadata=<value>...    Metadata component names to deploy.
 
-  -t, --target-org=<value>     Login username or alias for the target org.
+  -o, --target-org=<value>     Login username or alias for the target org.
 
   -w, --wait=<value>           [default: 33] Number of minutes to wait for command to complete and display results.
 
   -x, --manifest=<value>       Full file path for manifest (package.xml) of components to deploy.
 
 GLOBAL FLAGS
-  --json  format output as json
+  --json  Format output as json.
 
 DESCRIPTION
   Deploy metadata in source format to an org from your local project.
@@ -270,16 +271,16 @@ DESCRIPTION
 
   To deploy multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with
   multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax
-  applies to --manifest and --deploy-dir.
+  applies to --manifest and --source-dir.
 
 EXAMPLES
   Deploy the source files in a directory:
 
-    $ sf deploy metadata  --deploy-dir path/to/source
+    $ sf deploy metadata  --source-dir path/to/source
 
   Deploy a specific Apex class and the objects whose source is in a directory (both examples are equivalent):
-  $ sf deploy metadata --deploy-dir path/to/apex/classes/MyClass.cls path/to/source/objects
-  $ sf deploy metadata --deploy-dir path/to/apex/classes/MyClass.cls --deploy-dir path/to/source/objects
+  $ sf deploy metadata --source-dir path/to/apex/classes/MyClass.cls path/to/source/objects
+  $ sf deploy metadata --source-dir path/to/apex/classes/MyClass.cls --source-dir path/to/source/objects
 
   Deploy all Apex classes:
 
@@ -306,7 +307,7 @@ EXAMPLES
     $ sf deploy metadata --metadata ApexClass --test-level RunLocalTests
 
 FLAG DESCRIPTIONS
-  -d, --deploy-dir=<value>...  Path to the local source files to deploy.
+  -d, --source-dir=<value>...  Path to the local source files to deploy.
 
     The supplied path can be to a single file (in which case the operation is applied to only one file) or to a folder
     (in which case the operation is applied to all metadata types in the directory and its subdirectories).
@@ -333,7 +334,7 @@ FLAG DESCRIPTIONS
     If you don’t specify a test level, the default behavior depends on the contents of your deployment package. For more
     information, see “Running Tests in a Deployment” in the Metadata API Developer Guide.
 
-  -t, --target-org=<value>  Login username or alias for the target org.
+  -o, --target-org=<value>  Login username or alias for the target org.
 
     Overrides your default org.
 
@@ -343,7 +344,7 @@ FLAG DESCRIPTIONS
 
   -x, --manifest=<value>  Full file path for manifest (package.xml) of components to deploy.
 
-    All child components are included. If you specify this flag, don’t specify --metadata or --deploy-dir.
+    All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
 ## `sf env display`
@@ -358,7 +359,7 @@ FLAGS
   -e, --target-env=<value>  Environment alias or login user.
 
 GLOBAL FLAGS
-  --json  format output as json
+  --json  Format output as json.
 
 DESCRIPTION
   Display details about an environment.
@@ -386,14 +387,15 @@ EXAMPLES
 
 ## `sf env list`
 
-The command displays only active environments. For orgs, active means unexpired scratch orgs and orgs you’re currently logged into. 
+The command displays only active environments. For orgs, active means unexpired scratch orgs and orgs you’re currently logged into.
 
 ```
 USAGE
-  $ sf env list [--json] [--columns <value>] [--csv] [--filter <value>] [--no-header] [--no-truncate]
+  $ sf env list [--json] [-a] [--columns <value>] [--csv] [--filter <value>] [--no-header] [--no-truncate]
     [--output csv|json|yaml] [--sort <value>]
 
 FLAGS
+  -a, --all             Show all environments, even inactive ones.
   --columns=<value>...  List of columns to display.
   --csv                 Output in csv format [alias: --output=csv]
   --filter=<value>      Filter property by partial string matching.
@@ -406,7 +408,7 @@ FLAGS
   --sort=<value>        Column to sort by (prepend '-' for descending).
 
 GLOBAL FLAGS
-  --json  format output as json
+  --json  Format output as json.
 
 DESCRIPTION
   List the environments you’ve created or logged into.
@@ -431,6 +433,10 @@ EXAMPLES
   List all active environments:
 
     $ sf env list
+
+  List all environments:
+
+    $ sf env list --all
 
   Filter the output to list only orgs you authorized using a web browser; "OAuth Method" is the name of a column:
 
@@ -464,7 +470,7 @@ FLAGS
   --browser=<value>         Browser in which to open the environment.
 
 GLOBAL FLAGS
-  --json  format output as json
+  --json  Format output as json.
 
 DESCRIPTION
   Open an environment in your web browser.
@@ -561,7 +567,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.13/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.15/src/commands/login.ts)_
 
 ## `sf login org`
 
@@ -583,7 +589,7 @@ FLAGS
   -v, --set-default-dev-hub   Set the org as the default Dev Hub for scratch org creation.
 
 GLOBAL FLAGS
-  --json  format output as json
+  --json  Format output as json.
 
 DESCRIPTION
   Log in to a Salesforce org using the web server flow.
@@ -660,7 +666,7 @@ FLAGS
   -v, --set-default-dev-hub   Set the org as the default Dev Hub for scratch org creation.
 
 GLOBAL FLAGS
-  --json  format output as json
+  --json  Format output as json.
 
 DESCRIPTION
   Log in to a Salesforce org using a JSON web token (JWT).
@@ -728,23 +734,23 @@ FLAG DESCRIPTIONS
 
 ## `sf logout`
 
-By default, the command prompts you to confirm that you want to log out of all environments. You can't log out of selected environments, only all of them. Use --noprompt to not be prompted.
+By default, the command prompts you to select which environments you want to log out of. Use --no-prompt to not be prompted and log out of all environments.
 
 ```
 USAGE
-  $ sf logout [--json] [--noprompt]
+  $ sf logout [--json] [--no-prompt]
 
 FLAGS
-  --noprompt  Don't prompt for confirmation.
+  --no-prompt  Don't prompt for confirmation.
 
 GLOBAL FLAGS
-  --json  format output as json
+  --json  Format output as json.
 
 DESCRIPTION
   Log out of all environments, such as Salesforce orgs and compute environments.
 
-  By default, the command prompts you to confirm that you want to log out of all environments. You can't log out of
-  selected environments, only all of them. Use --noprompt to not be prompted.
+  By default, the command prompts you to select which environments you want to log out of. Use --no-prompt to not be
+  prompted and log out of all environments.
 
 EXAMPLES
   Log out of all environments:
@@ -756,7 +762,38 @@ EXAMPLES
     $ sf logout --noprompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.13/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.15/src/commands/logout.ts)_
+
+## `sf logout org`
+
+By default, the command prompts you to confirm that you want to log out of the specified org. Use --no-prompt to not be prompted.
+
+```
+USAGE
+  $ sf logout org -o <value> [--json] [--no-prompt]
+
+FLAGS
+  -o, --target-org=<value>  (required) Org alias or username to log out of.
+  --no-prompt               Don't prompt for confirmation.
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Log out of a specified Salesforce org.
+
+  By default, the command prompts you to confirm that you want to log out of the specified org. Use --no-prompt to not
+  be prompted.
+
+EXAMPLES
+  Log out of an org with alias "ci-org":
+
+    $ sf logout org --target-org ci-org
+
+  If your org doesn’t have an alias, specify the username that you used when you logged into it:
+
+    $ sf logout org --target-org jdoe@example.org
+```
 
 ## `sf plugins`
 
@@ -910,7 +947,7 @@ You must run this command from within a project.
 
 ```
 USAGE
-  $ sf retrieve metadata [--json] [-a <value>] [-x <value> | -m <value> | -d <value>] [-n <value>] [-t <value>] [-w
+  $ sf retrieve metadata [--json] [-a <value>] [-x <value> | -m <value> | -d <value>] [-n <value>] [-o <value>] [-w
     <value>]
 
 FLAGS
@@ -918,7 +955,7 @@ FLAGS
   -d, --source-dir=<value>...    File paths for source to retrieve from the org.
   -m, --metadata=<value>...      Metadata component names to retrieve.
   -n, --package-name=<value>...  Package names to retrieve.
-  -t, --target-org=<value>       Login username or alias for the target org.
+  -o, --target-org=<value>       Login username or alias for the target org.
 
   -w, --wait=<value>             [default: 33] Number of minutes to wait for the command to complete and display results
                                  to the terminal window.
@@ -926,7 +963,7 @@ FLAGS
   -x, --manifest=<value>         File path for the manifest (package.xml) that specifies the components to retrieve.
 
 GLOBAL FLAGS
-  --json  format output as json
+  --json  Format output as json.
 
 DESCRIPTION
   Retrieve metadata in source format from an org to your local project.
@@ -984,7 +1021,7 @@ FLAG DESCRIPTIONS
     The supplied paths can be to a single file (in which case the operation is applied to only one file) or to a folder
     (in which case the operation is applied to all source files in the directory and its subdirectories).
 
-  -t, --target-org=<value>  Login username or alias for the target org.
+  -o, --target-org=<value>  Login username or alias for the target org.
 
     Overrides your default org.
 
