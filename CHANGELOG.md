@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.33](https://github.com/salesforcecli/cli/compare/v0.0.32...v0.0.33) (2021-08-12)
+
+
+### Bug Fixes
+
+* force release ([2c22de9](https://github.com/salesforcecli/cli/commit/2c22de9996a023159e62c19932cf1775db5a4a4c))
+
 ### [0.0.32](https://github.com/salesforcecli/cli/compare/v0.0.31...v0.0.32) (2021-08-11)
 
 ### [0.0.31](https://github.com/salesforcecli/cli/compare/v0.0.30...v0.0.31) (2021-08-05)

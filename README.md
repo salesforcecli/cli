@@ -21,7 +21,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (-v|--version|version)
-@salesforce/cli/0.0.31 linux-x64 node-v14.17.5
+@salesforce/cli/0.0.33 linux-x64 node-v14.17.5
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -67,7 +67,7 @@ FLAGS
   --verbose  Display whether the configuration variables are set locally or globally.
 
 GLOBAL FLAGS
-  --json  format output as json
+  --json  Format output as json.
 
 DESCRIPTION
   Get the value of a configuration variable.
@@ -94,7 +94,7 @@ USAGE
   $ sf config list [--json]
 
 GLOBAL FLAGS
-  --json  format output as json
+  --json  Format output as json.
 
 DESCRIPTION
   List the configuration variables that you've previously set.
@@ -120,7 +120,7 @@ FLAGS
   -g, --global  Set the configuration variables globally, so they can be used from any directory.
 
 GLOBAL FLAGS
-  --json  format output as json
+  --json  Format output as json.
 
 DESCRIPTION
   Set one or more configuration variables, such as your default environment.
@@ -172,7 +172,7 @@ FLAGS
   -g, --global  Unset the configuration variables globally, so they can no longer be used from any directory.
 
 GLOBAL FLAGS
-  --json  format output as json
+  --json  Format output as json.
 
 DESCRIPTION
   Unset local or global configuration variables.
@@ -230,7 +230,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.15/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.16/src/commands/deploy.ts)_
 
 ## `sf deploy metadata`
 
@@ -567,7 +567,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.15/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.16/src/commands/login.ts)_
 
 ## `sf login org`
 
@@ -762,7 +762,7 @@ EXAMPLES
     $ sf logout --noprompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.15/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.16/src/commands/logout.ts)_
 
 ## `sf logout org`
 
