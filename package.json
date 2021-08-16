@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run"
@@ -69,8 +69,8 @@
     ]
   },
   "dependencies": {
-    "@oclif/core": "^0.5.29",
-    "@oclif/plugin-help": "^4",
+    "@oclif/core": "^0.5.30",
+    "@oclif/plugin-help": "^4.0.1",
     "@oclif/plugin-not-found": "^2.1.1",
     "@oclif/plugin-plugins": "^1.10.1",
     "@sf/config": "npm:@salesforce/plugin-config@2.1.1",
