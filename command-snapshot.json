@@ -37,7 +37,7 @@
   {
     "command": "env:list",
     "plugin": "@salesforce/plugin-env",
-    "flags": ["columns", "csv", "extended", "filter", "json", "no-header", "no-truncate", "output", "sort"]
+    "flags": ["all", "columns", "csv", "extended", "filter", "json", "no-header", "no-truncate", "output", "sort"]
   },
   {
     "command": "env:open",
@@ -76,7 +76,12 @@
   {
     "command": "logout",
     "plugin": "@salesforce/plugin-login",
-    "flags": ["json", "noprompt"]
+    "flags": ["json", "no-prompt"]
+  },
+  {
+    "command": "logout:org",
+    "plugin": "@salesforce/plugin-login",
+    "flags": ["json", "no-prompt", "target-org"]
   },
   {
     "command": "plugins",
