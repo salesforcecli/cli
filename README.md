@@ -21,7 +21,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (-v|--version|version)
-@salesforce/cli/0.0.33 linux-x64 node-v14.17.5
+@salesforce/cli/0.0.35 linux-x64 node-v14.17.5
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -32,7 +32,6 @@ USAGE
 # Commands
 
 <!-- commands -->
-* [`sf commands help [COMMAND]`](#sf-commands-help-command)
 * [`sf config get`](#sf-config-get)
 * [`sf config list`](#sf-config-list)
 * [`sf config set`](#sf-config-set)
@@ -42,6 +41,7 @@ USAGE
 * [`sf env display`](#sf-env-display)
 * [`sf env list`](#sf-env-list)
 * [`sf env open`](#sf-env-open)
+* [`sf help [COMMAND]`](#sf-help-command)
 * [`sf login`](#sf-login)
 * [`sf login org`](#sf-login-org)
 * [`sf login org jwt`](#sf-login-org-jwt)
@@ -54,25 +54,6 @@ USAGE
 * [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
 * [`sf plugins update`](#sf-plugins-update)
 * [`sf retrieve metadata`](#sf-retrieve-metadata)
-
-## `sf commands help [COMMAND]`
-
-display help for sf
-
-```
-USAGE
-  $ sf commands help [COMMAND] [--json] [--all]
-
-ARGUMENTS
-  COMMAND  command to show help for
-
-FLAGS
-  --all   see all commands in CLI
-  --json  Format output as json.
-
-DESCRIPTION
-  display help for sf
-```
 
 ## `sf config get`
 
@@ -536,6 +517,27 @@ FLAG DESCRIPTIONS
     You can specify that the environment open in one of the following browsers: Firefox, Safari, Google Chrome, or
     Windows Edge. If you don’t specify --browser, the environment opens in your default browser.
 ```
+
+## `sf help [COMMAND]`
+
+display help for sf
+
+```
+USAGE
+  $ sf help [COMMAND] [--json] [--all]
+
+ARGUMENTS
+  COMMAND  command to show help for
+
+FLAGS
+  --all   see all commands in CLI
+  --json  Format output as json.
+
+DESCRIPTION
+  display help for sf
+```
+
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v4.0.1/src/commands/help.ts)_
 
 ## `sf login`
 
