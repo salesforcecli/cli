@@ -1,22 +1,5 @@
 [
   {
-    "command": "commands",
-    "plugin": "@oclif/plugin-commands",
-    "flags": [
-      "columns",
-      "csv",
-      "extended",
-      "filter",
-      "help",
-      "hidden",
-      "json",
-      "no-header",
-      "no-truncate",
-      "output",
-      "sort"
-    ]
-  },
-  {
     "command": "config:get",
     "plugin": "@salesforce/plugin-config",
     "flags": ["json", "verbose"]
@@ -138,11 +121,6 @@
   {
     "command": "telemetry",
     "plugin": "@salesforce/plugin-telemetry",
-    "flags": []
-  },
-  {
-    "command": "which",
-    "plugin": "@oclif/plugin-which",
     "flags": []
   }
 ]
