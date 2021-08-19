@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.37](https://github.com/salesforcecli/cli/compare/v0.0.36...v0.0.37) (2021-08-19)
+
+
+### Bug Fixes
+
+* dont alias plugin-telemetry ([6e0c835](https://github.com/salesforcecli/cli/commit/6e0c8358baca184d45afe8a4b9985d7de4b524cf))
+
 ### [0.0.36](https://github.com/salesforcecli/cli/compare/v0.0.35...v0.0.36) (2021-08-19)
 
 
