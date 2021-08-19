@@ -972,6 +972,17 @@
     standard-version "^9.0.0"
     tslib "^2"
 
+"@salesforce/plugin-telemetry@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.npmjs.org/@salesforce/plugin-telemetry/-/plugin-telemetry-1.2.3.tgz#da392538da57ef53eb3ee33d6ef6469ea1a65ac9"
+  integrity sha512-cBlNRjg96fGaZNP1+C03RSz+M09onLr0XDSVu5XdpIeLR0LeL4U+MxRleOSaew9g50ExFqaFdy/oO1WX4tBpDw==
+  dependencies:
+    "@oclif/config" "^1"
+    "@salesforce/command" "^3.0.3"
+    "@salesforce/core" "^2.24.0"
+    "@salesforce/telemetry" "^2.0.4"
+    tslib "^2"
+
 "@salesforce/prettier-config@^0.0.2":
   version "0.0.2"
   resolved "https://registry.npmjs.org/@salesforce/prettier-config/-/prettier-config-0.0.2.tgz#ded39bf7cb75238edc9db6dd093649111350f8bc"
@@ -1070,17 +1081,6 @@
     chalk "^4.1.2"
     inquirer "^8.1.2"
     open "^8.0.6"
-    tslib "^2"
-
-"@sf/telemetry@npm:@salesforce/plugin-telemetry@1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-1.2.3.tgz#da392538da57ef53eb3ee33d6ef6469ea1a65ac9"
-  integrity sha512-cBlNRjg96fGaZNP1+C03RSz+M09onLr0XDSVu5XdpIeLR0LeL4U+MxRleOSaew9g50ExFqaFdy/oO1WX4tBpDw==
-  dependencies:
-    "@oclif/config" "^1"
-    "@salesforce/command" "^3.0.3"
-    "@salesforce/core" "^2.24.0"
-    "@salesforce/telemetry" "^2.0.4"
     tslib "^2"
 
 "@sindresorhus/is@^4.0.0":

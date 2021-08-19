@@ -38,7 +38,7 @@
       "@sf/login",
       "@sf/deploy-retrieve",
       "@sf/dr-metadata",
-      "@sf/telemetry"
+      "@salesforce/plugin-telemetry"
     ],
     "devPlugins": [
       "@oclif/plugin-command-snapshot",
@@ -78,7 +78,7 @@
     "@sf/dr-metadata": "npm:@salesforce/plugin-deploy-retrieve-metadata@0.0.23",
     "@sf/env": "npm:@salesforce/plugin-env@0.0.25",
     "@sf/login": "npm:@salesforce/plugin-login@0.0.18",
-    "@sf/telemetry": "npm:@salesforce/plugin-telemetry@1.2.3",
+    "@salesforce/plugin-telemetry": "^1.2.3",
     "tslib": "^2.3.0"
   },
   "pinnedDependencies": [
@@ -87,7 +87,7 @@
     "@sf/login",
     "@sf/deploy-retrieve",
     "@sf/dr-metadata",
-    "@sf/telemetry"
+    "@salesforce/plugin-telemetry"
   ],
   "repository": "salesforcecli/cli",
   "scripts": {
