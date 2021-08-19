@@ -57,7 +57,7 @@ USAGE
 
 ## `sf config get`
 
-Run "sf config list" to see all the configuration variables you've set. Global configuration variable are always displayed; local ones are displayed if you run the command in a project directory.
+Run "sf config list" to see all the configuration variables you've set. Global configuration variable are always displayed; local ones are displayed if you run the command in a project directory. Run "sf config set" to set a configuration variable.
 
 ```
 USAGE
@@ -73,7 +73,8 @@ DESCRIPTION
   Get the value of a configuration variable.
 
   Run "sf config list" to see all the configuration variables you've set. Global configuration variable are always
-  displayed; local ones are displayed if you run the command in a project directory.
+  displayed; local ones are displayed if you run the command in a project directory. Run "sf config set" to set a
+  configuration variable.
 
 EXAMPLES
   Get the value of the "target-org" configuration variable.
@@ -110,7 +111,7 @@ EXAMPLES
 
 ## `sf config set`
 
-Use configuration variables to set CLI defaults, such as your default environment or the API version you want the CLI to use. For example, if you set the "target-org" configuration variable, you don't need to specify it as a "sf deploy metadata" flag if you're deploying to your default org.
+Use configuration variables to set CLI defaults, such as your default org or the API version you want the CLI to use. For example, if you set the "target-org" configuration variable, you don't need to specify it as a "sf deploy metadata" flag if you're deploying to your default org.
 
 ```
 USAGE
@@ -123,10 +124,10 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Set one or more configuration variables, such as your default environment.
+  Set one or more configuration variables, such as your default org.
 
-  Use configuration variables to set CLI defaults, such as your default environment or the API version you want the CLI
-  to use. For example, if you set the "target-org" configuration variable, you don't need to specify it as a "sf deploy
+  Use configuration variables to set CLI defaults, such as your default org or the API version you want the CLI to use.
+  For example, if you set the "target-org" configuration variable, you don't need to specify it as a "sf deploy
   metadata" flag if you're deploying to your default org.
 
   Local configuration variables apply only to your current project. Global variables, specified with the --global flag,
@@ -140,11 +141,7 @@ DESCRIPTION
 
   3. Global configuration variable.
 
-  Run "sf <command> --help" to get a list of configuration variables used by that command. Run "sf config list" to see
-  the configuration variables you've already set and their level (local or global).
-
-  If you set a configuration variable and then run a command that uses it, the command output displays this information
-  at runtime.
+  Run "sf config list" to see the configuration variables you've already set and their level (local or global).
 
 EXAMPLES
   Set the local target-org configuration variable to an org username:
@@ -212,7 +209,9 @@ DESCRIPTION
 
   For example, if your local project contains a source directory with metadata files in source format, the command asks
   if you want to deploy that Salesforce app to an org. The command lists your connected orgs and asks which one you want
-  to deploy to. If the command finds Apex tests, it asks if you want to run them and at which level.
+  to deploy to. The list of orgs starts with scratch orgs, ordered by expiration date with the most recently created one
+  first, and then Dev Hub and production orgs ordered by name. If the command finds Apex tests, it asks if you want to
+  run them and at which level.
 
   The command stores your responses in the "deploy-options.json" file in your local project directory and uses them as
   defaults when you rerun the command. Specify --interactive to force the command to reprompt.
@@ -230,7 +229,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.16/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.18/src/commands/deploy.ts)_
 
 ## `sf deploy metadata`
 
@@ -267,7 +266,7 @@ DESCRIPTION
   source with the versions in your org.
 
   To run the command asynchronously, set --wait to 0, which immediately returns the job ID. This way, you can continue
-  to use the CLI. By default the command waits to finish no matter how long the deployment takes.
+  to use the CLI.
 
   To deploy multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with
   multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax
@@ -332,7 +331,9 @@ FLAG DESCRIPTIONS
     - RunAllTestsInOrg — All tests in your org are run, including tests of managed packages.
 
     If you don’t specify a test level, the default behavior depends on the contents of your deployment package. For more
-    information, see “Running Tests in a Deployment” in the Metadata API Developer Guide.
+    information, see [Running Tests in a
+    Deployment](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_deploy_running_tests.htm)
+    in the "Metadata API Developer Guide".
 
   -o, --target-org=<value>  Login username or alias for the target org.
 
@@ -387,7 +388,7 @@ EXAMPLES
 
 ## `sf env list`
 
-The command displays only active environments. For orgs, active means unexpired scratch orgs and orgs you’re currently logged into.
+By default, the command displays active environments. For orgs, active means unexpired scratch orgs and orgs you’re currently logged into.
 
 ```
 USAGE
@@ -413,19 +414,20 @@ GLOBAL FLAGS
 DESCRIPTION
   List the environments you’ve created or logged into.
 
-  The command displays only active environments. For orgs, active means unexpired scratch orgs and orgs you’re currently
-  logged into.
+  By default, the command displays active environments. For orgs, active means unexpired scratch orgs and orgs you’re
+  currently logged into.
 
   Output is displayed in multiple tables, one for each environment type. For example, the Salesforce Orgs table lists
   the non-scratch orgs you’re logged into, such as sandboxes, Dev Hubs, production orgs, and so on. Scratch orgs get
   their own table.
 
   For non-scratch orgs, the Username column refers to the user you logged into the org with. For scratch orgs it refers
-  to the username that was generated for you when you created the scratch org. The table also displays the default
-  environment for each type, the instance URL, and how you authorized (logged into) the org, either using a web browser
-  or JWT.
+  to the username that was generated for you when you created the scratch org. The table also displays the local alias
+  for the org, the org's ID, the instance URL that hosts the org, and how you authorized (logged into) the org, either
+  using a web browser or JWT. The Config column indicates your default scratch org or Dev Hub org with the target-org or
+  target-dev-hub variable, respectively.
 
-  Use the table-manipulation flags, such as --filter and --sort, to change how the data is displayed.
+  Use the table manipulation flags, such as --filter and --sort, to change how the data is displayed.
 
   Run "sf env display" to view details about a specific environment.
 
@@ -434,19 +436,19 @@ EXAMPLES
 
     $ sf env list
 
-  List all environments:
+  List both active and inactive environments:
 
     $ sf env list --all
 
-  Filter the output to list only orgs you authorized using a web browser; "OAuth Method" is the name of a column:
+  Filter the output to list only orgs you authorized using a web browser; "Auth Method" is the name of a column:
 
-    $ sf env list --filter "OAuth Method=web"
+    $ sf env list --filter "Auth Method=web"
 
-  Display only the Alias column and sort the aliases in descending order:
+  Display only the Aliases column and sort the aliases in descending order:
 
-    $ sf env list --sort "-Alias" --columns "Alias"
+    $ sf env list --sort "-Aliases" --columns "Aliases"
 
-  Don't truncate the displayed output:
+  Don't truncate the displayed output and instead wrap text that's wider than your terminal:
 
     $ sf env list --no-truncate
 
@@ -457,14 +459,14 @@ EXAMPLES
 
 ## `sf env open`
 
-You can open the following types of environments in a web browser: scratch orgs, sandboxes, Dev Hubs, and production orgs.
+You can open the following types of environments in a web browser: scratch orgs, sandboxes, Dev Hubs, and production orgs. Run "sf env list" to view your environments and their aliases and login usernames.
 
 ```
 USAGE
   $ sf env open [--json] [-p <value>] [-r] [-e <value>] [--browser <value>]
 
 FLAGS
-  -e, --target-env=<value>  Environment login user or alias to open.
+  -e, --target-env=<value>  Login user or alias of the environment to open.
   -p, --path=<value>        Path to append to the end of the login URL.
   -r, --url-only            Display the URL, but don’t launch it in a browser.
   --browser=<value>         Browser in which to open the environment.
@@ -473,23 +475,16 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Open an environment in your web browser.
+  Open an environment in a web browser.
 
   You can open the following types of environments in a web browser: scratch orgs, sandboxes, Dev Hubs, and production
-  orgs.
-
-  If you run the command without flags, it attempts to open your default environment in your default web browser. Run
-  "sf env list" to view your default environment.
+  orgs. Run "sf env list" to view your environments and their aliases and login usernames.
 
   Each of your environments is associated with an instance URL, such as https://login.salesforce.com. To open a specific
   web page, specify the portion of the URL after "<URL>/" with the --path flag, such as /apex/YourPage to open a
   Visualforce page.
 
 EXAMPLES
-  Open your default environment:
-
-    $ sf env open
-
   Open the Visualforce page /apex/StartHere in a scratch org with alias test-org:
 
     $ sf env open --target-env test-org --path /apex/StartHere
@@ -503,7 +498,7 @@ EXAMPLES
     $ sf env open --target-env test-org --path /apex/StartHere --browser chrome
 
 FLAG DESCRIPTIONS
-  -e, --target-env=<value>  Environment login user or alias to open.
+  -e, --target-env=<value>  Login user or alias of the environment to open.
 
     Specify the login user or alias that’s associated with the environment. For scratch orgs, the login user is
     generated by the command that created the scratch org. You can also set an alias for the scratch org when you create
@@ -515,7 +510,8 @@ FLAG DESCRIPTIONS
   --browser=<value>  Browser in which to open the environment.
 
     You can specify that the environment open in one of the following browsers: Firefox, Safari, Google Chrome, or
-    Windows Edge. If you don’t specify --browser, the environment opens in your default browser.
+    Windows Edge. If you don’t specify --browser, the environment opens in your default browser. The exact names of the
+    browser applications differ depending on the operating system you're on; check your documentation for details.
 ```
 
 ## `sf help [COMMAND]`
@@ -537,7 +533,7 @@ DESCRIPTION
   display help for sf
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v4.0.1/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v4.0.3/src/commands/help.ts)_
 
 ## `sf login`
 
@@ -568,7 +564,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.16/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.18/src/commands/login.ts)_
 
 ## `sf login org`
 
@@ -636,6 +632,12 @@ EXAMPLES
       04580y4051234051
 
 FLAG DESCRIPTIONS
+  -b, --browser=<value>  Browser in which to open the org.
+
+    You can log in to an org with one of the following browsers: Firefox, Safari, Google Chrome, or Windows Edge. If you
+    don’t specify --browser, the command uses your default browser. The exact names of the browser applications differ
+    depending on the operating system you're on; check your documentation for details.
+
   -l, --instance-url=<value>  URL of the instance that the org lives on. (defaults to https://login.salesforce.com)
 
     If you specify --instance-url, the value overrides the sfdcLoginUrl value in your sfdx-project.json file.
@@ -658,12 +660,8 @@ FLAGS
   -d, --set-default           Set the org as the default that all org-related commands run against.
   -f, --jwt-key-file=<value>  Path to a file containing the private key.
   -i, --clientid=<value>      OAuth client id (also called consumer key) of your custom connected app.
-
   -l, --instance-url=<value>  [default: https://login.salesforce.com] URL of the instance that the org lives on.
-                              (defaults to https://login.salesforce.com)
-
   -u, --username=<value>      Username of the user logging in.
-
   -v, --set-default-dev-hub   Set the org as the default Dev Hub for scratch org creation.
 
 GLOBAL FLAGS
@@ -689,7 +687,7 @@ DESCRIPTION
   this file.
 
   3. Create a custom connected app in your org using the digital certificate. Make note of the consumer key (also called
-  cliend id) that’s generated for you. Be sure the username of the user logging in is approved to use the connected app.
+  client id) that’s generated for you. Be sure the username of the user logging in is approved to use the connected app.
   When you run this command, you set the --clientid flag to the consumer key.
 
   See https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm for more
@@ -724,7 +722,7 @@ EXAMPLES
       04580y4051234051 --alias ci-org --set-default --instance-url https://test.salesforce.com
 
 FLAG DESCRIPTIONS
-  -l, --instance-url=<value>  URL of the instance that the org lives on. (defaults to https://login.salesforce.com)
+  -l, --instance-url=<value>  URL of the instance that the org lives on.
 
     If you specify an --instance-url value, this value overrides the sfdcLoginUrl value in your sfdx-project.json file.
 
@@ -753,17 +751,20 @@ DESCRIPTION
   By default, the command prompts you to select which environments you want to log out of. Use --no-prompt to not be
   prompted and log out of all environments.
 
+  Be careful! If you log out of a scratch org without having access to its password, you can't access the scratch org
+  again, either through the CLI or the Salesforce UI.
+
 EXAMPLES
   Log out of all environments:
 
     $ sf logout
 
-  Log out of all environments with no confirmation prompt:
+  Log out of all environments with no prompt:
 
-    $ sf logout --noprompt
+    $ sf logout --no-prompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.16/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.18/src/commands/logout.ts)_
 
 ## `sf logout org`
 
@@ -785,6 +786,9 @@ DESCRIPTION
 
   By default, the command prompts you to confirm that you want to log out of the specified org. Use --no-prompt to not
   be prompted.
+
+  Be careful! If you log out of a scratch org without having access to its password, you can't access the scratch org
+  again, either through the CLI or the Salesforce UI.
 
 EXAMPLES
   Log out of an org with alias "ci-org":
