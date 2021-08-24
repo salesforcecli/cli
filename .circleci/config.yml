@@ -141,7 +141,6 @@ workflows:
             branches:
               ignore: main
       - release-management/test-sf-inclusion:
-          sfdx_branch: mdonnalley/include-sf
           name: test-include-sf-in-sdx
       - test-pack-tarballs:
           filters:
