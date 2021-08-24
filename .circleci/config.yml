@@ -208,6 +208,5 @@ workflows:
               only:
                 - main
     jobs:
-      - release-management/test-sf-inclusion:
-          sfdx_branch: mdonnalley/include-sf
+      - release-management/test-sf-inclusion
       - test-pack-tarballs
