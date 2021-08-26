@@ -473,76 +473,7 @@
     is-wsl "^2.1.1"
     tslib "^2.0.0"
 
-"@oclif/core@^0.5.19":
-  version "0.5.21"
-  resolved "https://registry.npmjs.org/@oclif/core/-/core-0.5.21.tgz#9686b899fb8431275f3aa357ff110f8e6f2c968d"
-  integrity sha512-bfwh2ow3XeTgYXjV0h2dn5mq9261WZ/iaY0p2wL2lvRfMAFvGc1AbN5Wfd5s2hDhvU+dMP7fbHB1ymbTBJM5Ig==
-  dependencies:
-    "@oclif/linewrap" "^1.0.0"
-    chalk "^4.1.0"
-    clean-stack "^3.0.0"
-    cli-ux "^5.1.0"
-    debug "^4.1.1"
-    fs-extra "^9.0.1"
-    get-package-type "^0.1.0"
-    globby "^11.0.1"
-    indent-string "^4.0.0"
-    is-wsl "^2.1.1"
-    lodash.template "^4.4.0"
-    semver "^7.3.2"
-    string-width "^4.2.0"
-    strip-ansi "^6.0.0"
-    tslib "^2.0.0"
-    widest-line "^3.1.0"
-    wrap-ansi "^7.0.0"
-
-"@oclif/core@^0.5.21":
-  version "0.5.23"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-0.5.23.tgz#7cd14c9bb7ab9415228e38895310cfefcbea536f"
-  integrity sha512-VpoXCu4w+rtw4q5EgBCWhtf+zau6d3U6pjyF9RJpAwMUrypnShFqdy11qSdD5LvH5oC3cNGfR9RIwJSkUMG/Bw==
-  dependencies:
-    "@oclif/linewrap" "^1.0.0"
-    chalk "^4.1.0"
-    clean-stack "^3.0.0"
-    cli-ux "^5.1.0"
-    debug "^4.1.1"
-    fs-extra "^9.0.1"
-    get-package-type "^0.1.0"
-    globby "^11.0.1"
-    indent-string "^4.0.0"
-    is-wsl "^2.1.1"
-    lodash.template "^4.4.0"
-    semver "^7.3.2"
-    string-width "^4.2.0"
-    strip-ansi "^6.0.0"
-    tslib "^2.0.0"
-    widest-line "^3.1.0"
-    wrap-ansi "^7.0.0"
-
-"@oclif/core@^0.5.31":
-  version "0.5.31"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-0.5.31.tgz#2f2b4d0b0dad4056d65fae4803a429633deb0452"
-  integrity sha512-VPWOR8RORgVlmuulcx/aft1nBhTjT7YiwCeZB/bAiNgqCQ4YncoeIIPJPJs/A0a0dIeOYACfxlp1Xw7vznpISg==
-  dependencies:
-    "@oclif/linewrap" "^1.0.0"
-    chalk "^4.1.0"
-    clean-stack "^3.0.0"
-    cli-ux "^5.1.0"
-    debug "^4.1.1"
-    fs-extra "^9.0.1"
-    get-package-type "^0.1.0"
-    globby "^11.0.1"
-    indent-string "^4.0.0"
-    is-wsl "^2.1.1"
-    lodash.template "^4.4.0"
-    semver "^7.3.2"
-    string-width "^4.2.0"
-    strip-ansi "^6.0.0"
-    tslib "^2.0.0"
-    widest-line "^3.1.0"
-    wrap-ansi "^7.0.0"
-
-"@oclif/core@^0.5.32":
+"@oclif/core@^0.5.19", "@oclif/core@^0.5.21", "@oclif/core@^0.5.31", "@oclif/core@^0.5.32":
   version "0.5.32"
   resolved "https://registry.npmjs.org/@oclif/core/-/core-0.5.32.tgz#9ca91b07ba0238131e4b05a78075a0505f509034"
   integrity sha512-ZRGh/9IccLT/iyJ9FiTK2KdqPmxewkCkdFXkNhTVgtzQXI3ZFhDba3pFjxfI+nbhbrVRLfGzTnHXV6c4rka6pw==
@@ -683,9 +614,9 @@
     lodash "^4.17.13"
 
 "@oclif/plugin-not-found@^2.1.1":
-  version "2.1.1"
-  resolved "https://registry.npmjs.org/@oclif/plugin-not-found/-/plugin-not-found-2.1.1.tgz#37b6cfd7f18e282f4b723e8475796aa0061dbd31"
-  integrity sha512-ndWXdmHTNQuiSTfASUOWfgPlorv5nO4W7IwdovRLTWSLwZYsmBIgVGdEbicC8Xp6L3f8YnbxvuFgti1ejpQlAA==
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-2.1.2.tgz#d8af60cfa6ab82cfe31f4bf45d29a17c38f8557b"
+  integrity sha512-KjHcqg1bvV6OyFD/AaKEJn0MLVEbU4vY751psI/WEbdbP1HTalma9jwPGxj8hxRxgUoxHJrvUEtYtRWGIOwT2w==
   dependencies:
     "@oclif/color" "^0.x"
     "@oclif/core" "^0.5.21"
