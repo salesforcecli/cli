@@ -1,17 +1,25 @@
-# cli
+# @salesforce/cli
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/@salesforce/cli.svg)](https://npmjs.org/package/@salesforce/cli)
 [![Downloads/week](https://img.shields.io/npm/dw/@salesforce/cli.svg)](https://npmjs.org/package/@salesforce/cli)
 [![License](https://img.shields.io/npm/l/@salesforce/cli.svg)](https://github.com/salesforcecli/cli/blob/master/package.json)
 
-**[EXPERIMENT]: This Salesforce CLI the focuses on a cleaner user experience for ALL Salesforce functionality. It is in heavy development will be changing rapidly. More information will be added to this repository in the near-future.**
-
 <!-- toc -->
-* [cli](#cli)
+* [@salesforce/cli](#salesforcecli)
+* [Getting Started](#getting-started)
+* [Feedback](#feedback)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+
+# Getting Started
+
+Please read the [Getting Started Guide](https://github.com/salesforcecli/cli/wiki) to learn about the new `sf` executable.
+
+# Feedback
+
+To provide feedback, use the issues tab in this repository.
 
 # Usage
 
@@ -873,7 +881,7 @@ ALIASES
   $ sf plugins add
 
 EXAMPLES
-  $ sf plugins:install myplugin 
+  $ sf plugins:install myplugin
 
   $ sf plugins:install https://github.com/someuser/someplugin
 
