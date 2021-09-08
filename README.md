@@ -29,7 +29,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (-v|--version|version)
-@salesforce/cli/0.0.38 linux-x64 node-v14.17.5
+@salesforce/cli/0.0.39 linux-x64 node-v14.17.6
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -237,7 +237,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.18/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.20/src/commands/deploy.ts)_
 
 ## `sf deploy metadata`
 
@@ -270,8 +270,8 @@ DESCRIPTION
 
   You must run this command from within a project.
 
-  The source you deploy overwrites the corresponding metadata in your org. This command doesn’t attempt to merge your
-  source with the versions in your org.
+  This command doesn't support source-tracking. The source you deploy overwrites the corresponding metadata in your org.
+  This command doesn’t attempt to merge your source with the versions in your org.
 
   To run the command asynchronously, set --wait to 0, which immediately returns the job ID. This way, you can continue
   to use the CLI.
@@ -572,7 +572,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.18/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.19/src/commands/login.ts)_
 
 ## `sf login org`
 
@@ -772,7 +772,7 @@ EXAMPLES
     $ sf logout --no-prompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.18/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.19/src/commands/logout.ts)_
 
 ## `sf logout org`
 
@@ -983,8 +983,8 @@ DESCRIPTION
 
   You must run this command from within a project.
 
-  The source you retrieve overwrites the corresponding source files in your local project. This command doesn’t attempt
-  to merge the source from your org with your local source files.
+  This command doesn't support source-tracking. The source you retrieve overwrites the corresponding source files in
+  your local project. This command doesn’t attempt to merge the source from your org with your local source files.
 
   To retrieve multiple metadata components, either use multiple --metadata <name> flags or use a single --metadata flag
   with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same
