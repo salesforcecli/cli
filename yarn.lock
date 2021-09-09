@@ -838,6 +838,23 @@
     chalk "^2.4.2"
     cli-ux "^4.9.3"
 
+"@salesforce/command@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/command/-/command-4.1.0.tgz#0522d2a6f98ecda2ab7f3431fa6fdb053cd4d78a"
+  integrity sha512-zfLEoY6cLT21luSNFISQ21yWxi7hAAtGLAGeV0ciJ9tSF+Fy+twZAciSWR47GCRBa54sFQwZbHoVUAx2KPXi2Q==
+  dependencies:
+    "@oclif/command" "^1.5.17"
+    "@oclif/core" "^0.5.34"
+    "@oclif/errors" "^1.2.2"
+    "@oclif/parser" "^3.8.3"
+    "@oclif/plugin-help" "^2.2.0"
+    "@oclif/test" "^1.2.4"
+    "@salesforce/core" "^2.23.4"
+    "@salesforce/kit" "^1.2.2"
+    "@salesforce/ts-types" "^1.2.0"
+    chalk "^2.4.2"
+    cli-ux "^4.9.3"
+
 "@salesforce/core@2.25.1", "@salesforce/core@^2.23.2":
   version "2.25.1"
   resolved "https://registry.npmjs.org/@salesforce/core/-/core-2.25.1.tgz#2be78b4fc824bfb69537174a0440ba35d19d8fa4"
