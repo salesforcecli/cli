@@ -855,7 +855,7 @@
     chalk "^2.4.2"
     cli-ux "^4.9.3"
 
-"@salesforce/core@2.25.1", "@salesforce/core@^2.23.2":
+"@salesforce/core@2.25.1":
   version "2.25.1"
   resolved "https://registry.npmjs.org/@salesforce/core/-/core-2.25.1.tgz#2be78b4fc824bfb69537174a0440ba35d19d8fa4"
   integrity sha512-kRo1Uce8sFFXNBEu3odJ4zsFkvja+s/cmj7ICI6EvCsgwMHSLCw4P7zhqAsOJnBUim3M2qb4p0HpVtkQ4Cz3Kg==
@@ -939,7 +939,7 @@
     sfdx-faye "^1.0.9"
     ts-retry-promise "^0.6.0"
 
-"@salesforce/core@^2.15.2", "@salesforce/core@^2.23.4", "@salesforce/core@^2.24.0":
+"@salesforce/core@^2.15.2", "@salesforce/core@^2.23.2", "@salesforce/core@^2.23.4", "@salesforce/core@^2.24.0":
   version "2.26.1"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-2.26.1.tgz#00ecf0d989308786dcee648da231c528e6346c09"
   integrity sha512-Ltswt8HWqIOS0NKZ7ggsYXD8X/nq/6uYO8REzj7g7HdZR+/GIrFUzRdJZ9ACjVGZpjkYLNN6E7ncyoy/Uudiww==
@@ -1015,9 +1015,9 @@
     tslib "^2.2.0"
 
 "@salesforce/plugin-release-management@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/@salesforce/plugin-release-management/-/plugin-release-management-2.0.0.tgz#edbc6c5baa3ddcd1a55dc00cfb8b3f0125991da7"
-  integrity sha512-ZSIkl4RQlONWuvBNgfaeBuOLdhdGxM5OkZmR7fJLW8d1qYejln5JBQ43vDGPVAI3RbLzqHlFh369AfRtiyltwg==
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-2.0.4.tgz#45825662a84a6fbf49caf3b22ccb0f6730d5bd07"
+  integrity sha512-naNAGVcz6xTB2FzMdM8WfdwRCuOfW2rdgsR6OuKKcE6VbTDtbM+aDFkKrPNZfvLYTsMnQM+VhpbbaQ5i1QEnsA==
   dependencies:
     "@oclif/config" "^1"
     "@octokit/core" "^3.4.0"
@@ -2303,15 +2303,7 @@ chalk@^3.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.1.tgz#c80b3fab28bf6371e6863325eee67e618b77e6ad"
-  integrity sha512-diHzdDKxcU+bAsUboHLPEDQiw0qEe0qd7SYUn3HgcFlWgbDcfLGswOHYeGrHKzG9z6UYf01d9VFMfZxPM1xZSg==
-  dependencies:
-    ansi-styles "^4.1.0"
-    supports-color "^7.1.0"
-
-chalk@^4.1.2:
+chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.1, chalk@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
   integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
