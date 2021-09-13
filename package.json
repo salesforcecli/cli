@@ -91,6 +91,9 @@
     "@sf/drm",
     "@salesforce/plugin-telemetry"
   ],
+  "resolutions": {
+    "@oclif/core": "^0.5.35"
+  },
   "repository": "salesforcecli/cli",
   "scripts": {
     "build": "sf-build",
