@@ -29,7 +29,7 @@ export class SfCommandHelp extends CommandHelp {
   protected sections(): SectionType[] {
     const sections = super.sections();
     if (this.shortHelp) {
-      return sections.filter(({ header }) => ['SUMMARY', 'USAGE', 'ARGUMENTS', 'FLAGS'].includes(header));
+      return sections.filter(({ header }) => ['USAGE', 'ARGUMENTS', 'FLAGS'].includes(header));
     }
     const additionaSfSections: SectionType[] = [
       {
