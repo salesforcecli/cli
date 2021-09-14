@@ -74,6 +74,7 @@
     "@oclif/plugin-help": "^4.0.3",
     "@oclif/plugin-not-found": "^2.1.3",
     "@oclif/plugin-plugins": "^1.10.1",
+    "@sf/cmd": "npm:@salesforce/command@^4.1.1",
     "@salesforce/plugin-telemetry": "1.2.3",
     "@sf/config": "npm:@salesforce/plugin-config@2.2.1",
     "@sf/deploy-retrieve": "npm:@salesforce/plugin-deploy-retrieve@0.0.21",
@@ -91,7 +92,8 @@
     "@salesforce/plugin-telemetry"
   ],
   "resolutions": {
-    "@oclif/core": "^0.5.36"
+    "@oclif/core": "^0.5.36",
+    "cli-ux": "^5.1.6"
   },
   "repository": "salesforcecli/cli",
   "scripts": {
