@@ -9,7 +9,7 @@ import { SfCommandInterface } from '@salesforce/command';
 type SectionType = { header: string; generate: HelpSectionRenderer };
 
 export class SfCommandHelp extends CommandHelp {
-  private argv: string[];
+  private shortHelp = false;
   public constructor(
     public command: Interfaces.Command,
     public config: Interfaces.Config,
@@ -18,13 +18,17 @@ export class SfCommandHelp extends CommandHelp {
     super(command, config, opts);
   }
 
-  public setArgv(argv: string[]): void {
-    this.argv = argv;
+  public get showShortHelp(): boolean {
+    return this.shortHelp;
+  }
+
+  public set showShortHelp(shortHelp: boolean) {
+    this.shortHelp = shortHelp;
   }
 
   protected sections(): SectionType[] {
     const sections = super.sections();
-    if (this.argv.includes('-h')) {
+    if (this.shortHelp) {
       return sections.filter(({ header }) => ['SUMMARY', 'USAGE', 'ARGUMENTS', 'FLAGS'].includes(header));
     }
     const additionaSfSections: SectionType[] = [

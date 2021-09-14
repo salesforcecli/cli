@@ -10,16 +10,16 @@ import { SfCommandHelp } from './sfCommandHelp';
 export default class SfHelp extends Help {
   protected CommandHelpClass: typeof CommandHelp = SfCommandHelp;
   protected commandHelpClass: SfCommandHelp;
-  private argv: string[];
+  private showShortHelp = false;
 
-  public showHelp(argv: string[]): Promise<void> {
-    this.argv = argv;
-    return super.showHelp(argv);
+  public async showHelp(argv: string[]): Promise<void> {
+    this.showShortHelp = argv.includes('-h');
+    return await super.showHelp(argv);
   }
 
   protected getCommandHelpClass(command: Interfaces.Command): CommandHelp {
     this.commandHelpClass = super.getCommandHelpClass(command) as SfCommandHelp;
-    this.commandHelpClass.setArgv(this.argv);
+    this.commandHelpClass.showShortHelp = this.showShortHelp;
     return this.commandHelpClass;
   }
 }
