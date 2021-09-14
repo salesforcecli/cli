@@ -5,7 +5,7 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 import { CommandHelp, HelpSection, HelpSectionRenderer, Interfaces } from '@oclif/core';
-import { SfCommandInterface } from '@sf/cmd';
+import { SfCommandInterface } from '@salesforce/command';
 type SectionType = { header: string; generate: HelpSectionRenderer };
 
 export class SfCommandHelp extends CommandHelp {
