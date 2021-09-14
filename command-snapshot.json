@@ -62,16 +62,7 @@
   {
     "command": "login:org:jwt",
     "plugin": "@salesforce/plugin-login",
-    "flags": [
-      "alias",
-      "clientid",
-      "instance-url",
-      "json",
-      "jwt-key-file",
-      "set-default",
-      "set-default-dev-hub",
-      "username"
-    ]
+    "flags": ["alias", "clientid", "instance-url", "json", "keyfile", "set-default", "set-default-dev-hub", "username"]
   },
   {
     "command": "logout",
