@@ -5,10 +5,11 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 import { CommandHelp, HelpSection, HelpSectionRenderer, Interfaces } from '@oclif/core';
-import { SfCommandInterface } from '@salesforce/command';
+import { SfCommandInterface } from '@salesforce/sf-plugins-core';
 type SectionType = { header: string; generate: HelpSectionRenderer };
 
 export class SfCommandHelp extends CommandHelp {
+  private shortHelp = false;
   public constructor(
     public command: Interfaces.Command,
     public config: Interfaces.Config,
@@ -17,8 +18,19 @@ export class SfCommandHelp extends CommandHelp {
     super(command, config, opts);
   }
 
+  public get showShortHelp(): boolean {
+    return this.shortHelp;
+  }
+
+  public set showShortHelp(shortHelp: boolean) {
+    this.shortHelp = shortHelp;
+  }
+
   protected sections(): SectionType[] {
     const sections = super.sections();
+    if (this.shortHelp) {
+      return sections.filter(({ header }) => ['USAGE', 'ARGUMENTS', 'FLAGS'].includes(header));
+    }
     const additionaSfSections: SectionType[] = [
       {
         header: 'CONFIGURATION VARIABLES',

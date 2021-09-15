@@ -6,11 +6,12 @@
 [![License](https://img.shields.io/npm/l/@salesforce/cli.svg)](https://github.com/salesforcecli/cli/blob/master/package.json)
 
 <!-- toc -->
-* [@salesforce/cli](#salesforcecli)
-* [Getting Started](#getting-started)
-* [Feedback](#feedback)
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [@salesforce/cli](#salesforcecli)
+- [Getting Started](#getting-started)
+- [Feedback](#feedback)
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
 
 # Getting Started
@@ -24,6 +25,7 @@ To provide feedback, use the issues tab in this repository.
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g @salesforce/cli
 $ sf COMMAND
@@ -35,33 +37,35 @@ USAGE
   $ sf COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`sf config get`](#sf-config-get)
-* [`sf config list`](#sf-config-list)
-* [`sf config set`](#sf-config-set)
-* [`sf config unset`](#sf-config-unset)
-* [`sf deploy`](#sf-deploy)
-* [`sf deploy metadata`](#sf-deploy-metadata)
-* [`sf env display`](#sf-env-display)
-* [`sf env list`](#sf-env-list)
-* [`sf env open`](#sf-env-open)
-* [`sf help [COMMAND]`](#sf-help-command)
-* [`sf login`](#sf-login)
-* [`sf login org`](#sf-login-org)
-* [`sf login org jwt`](#sf-login-org-jwt)
-* [`sf logout`](#sf-logout)
-* [`sf logout org`](#sf-logout-org)
-* [`sf plugins`](#sf-plugins)
-* [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
-* [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
-* [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
-* [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
-* [`sf plugins update`](#sf-plugins-update)
-* [`sf retrieve metadata`](#sf-retrieve-metadata)
+
+- [`sf config get`](#sf-config-get)
+- [`sf config list`](#sf-config-list)
+- [`sf config set`](#sf-config-set)
+- [`sf config unset`](#sf-config-unset)
+- [`sf deploy`](#sf-deploy)
+- [`sf deploy metadata`](#sf-deploy-metadata)
+- [`sf env display`](#sf-env-display)
+- [`sf env list`](#sf-env-list)
+- [`sf env open`](#sf-env-open)
+- [`sf help [COMMAND]`](#sf-help-command)
+- [`sf login`](#sf-login)
+- [`sf login org`](#sf-login-org)
+- [`sf login org jwt`](#sf-login-org-jwt)
+- [`sf logout`](#sf-logout)
+- [`sf logout org`](#sf-logout-org)
+- [`sf plugins`](#sf-plugins)
+- [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
+- [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
+- [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
+- [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
+- [`sf plugins update`](#sf-plugins-update)
+- [`sf retrieve metadata`](#sf-retrieve-metadata)
 
 ## `sf config get`
 
@@ -933,7 +937,7 @@ ALIASES
   $ sf plugins add
 
 EXAMPLES
-  $ sf plugins:install myplugin 
+  $ sf plugins:install myplugin
 
   $ sf plugins:install https://github.com/someuser/someplugin
 
@@ -1107,4 +1111,5 @@ ENVIRONMENT VARIABLES
   SF_TARGET_ORG  Specifies the username of your default target org you don’t have to use the --target-org CLI parameter.
                  Overrides the value of the target-org runtime configuration value.
 ```
+
 <!-- commandsstop -->

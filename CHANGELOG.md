@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.40](https://github.com/salesforcecli/cli/compare/v0.0.39...v0.0.40) (2021-09-15)
 
-
 ### Bug Fixes
 
-* add help class to display additional cmd help ([#52](https://github.com/salesforcecli/cli/issues/52)) ([ea7fe61](https://github.com/salesforcecli/cli/commit/ea7fe61f66ce1b5c64dac9560839e65c06b47340))
+- add help class to display additional cmd help ([#52](https://github.com/salesforcecli/cli/issues/52)) ([ea7fe61](https://github.com/salesforcecli/cli/commit/ea7fe61f66ce1b5c64dac9560839e65c06b47340))
 
 ### [0.0.39](https://github.com/salesforcecli/cli/compare/v0.0.38...v0.0.39) (2021-09-08)
 
@@ -15,42 +14,37 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.37](https://github.com/salesforcecli/cli/compare/v0.0.36...v0.0.37) (2021-08-19)
 
-
 ### Bug Fixes
 
-* dont alias plugin-telemetry ([6e0c835](https://github.com/salesforcecli/cli/commit/6e0c8358baca184d45afe8a4b9985d7de4b524cf))
+- dont alias plugin-telemetry ([6e0c835](https://github.com/salesforcecli/cli/commit/6e0c8358baca184d45afe8a4b9985d7de4b524cf))
 
 ### [0.0.36](https://github.com/salesforcecli/cli/compare/v0.0.35...v0.0.36) (2021-08-19)
 
-
 ### Bug Fixes
 
-* bump oclif/core and @salesforce/core ([#35](https://github.com/salesforcecli/cli/issues/35)) ([fc2e9b8](https://github.com/salesforcecli/cli/commit/fc2e9b8a9c2324364379517ef172b12ea2a8d521))
+- bump oclif/core and @salesforce/core ([#35](https://github.com/salesforcecli/cli/issues/35)) ([fc2e9b8](https://github.com/salesforcecli/cli/commit/fc2e9b8a9c2324364379517ef172b12ea2a8d521))
 
 ### [0.0.35](https://github.com/salesforcecli/cli/compare/v0.0.34...v0.0.35) (2021-08-16)
 
 ### [0.0.34](https://github.com/salesforcecli/cli/compare/v0.0.33...v0.0.34) (2021-08-16)
 
-
 ### Bug Fixes
 
-* bump oclif/core to .59 ([873a83a](https://github.com/salesforcecli/cli/commit/873a83a6074d40ceaedda45ef68556c3a35e1c65))
+- bump oclif/core to .59 ([873a83a](https://github.com/salesforcecli/cli/commit/873a83a6074d40ceaedda45ef68556c3a35e1c65))
 
 ### [0.0.33](https://github.com/salesforcecli/cli/compare/v0.0.32...v0.0.33) (2021-08-12)
 
-
 ### Bug Fixes
 
-* force release ([2c22de9](https://github.com/salesforcecli/cli/commit/2c22de9996a023159e62c19932cf1775db5a4a4c))
+- force release ([2c22de9](https://github.com/salesforcecli/cli/commit/2c22de9996a023159e62c19932cf1775db5a4a4c))
 
 ### [0.0.32](https://github.com/salesforcecli/cli/compare/v0.0.31...v0.0.32) (2021-08-11)
 
 ### [0.0.31](https://github.com/salesforcecli/cli/compare/v0.0.30...v0.0.31) (2021-08-05)
 
-
 ### Bug Fixes
 
-* restore short flag names for help and version ([4b9465d](https://github.com/salesforcecli/cli/commit/4b9465d65b9b4662a7ae66ee7cd49a64958ecbf8))
+- restore short flag names for help and version ([4b9465d](https://github.com/salesforcecli/cli/commit/4b9465d65b9b4662a7ae66ee7cd49a64958ecbf8))
 
 ### [0.0.30](https://github.com/salesforcecli/cli/compare/v0.0.29...v0.0.30) (2021-08-03)
 
