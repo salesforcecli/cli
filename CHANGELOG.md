@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.40](https://github.com/salesforcecli/cli/compare/v0.0.39...v0.0.40) (2021-09-15)
+
+
+### Bug Fixes
+
+* add help class to display additional cmd help ([#52](https://github.com/salesforcecli/cli/issues/52)) ([ea7fe61](https://github.com/salesforcecli/cli/commit/ea7fe61f66ce1b5c64dac9560839e65c06b47340))
+
 ### [0.0.39](https://github.com/salesforcecli/cli/compare/v0.0.38...v0.0.39) (2021-09-08)
 
 ### [0.0.38](https://github.com/salesforcecli/cli/compare/v0.0.37...v0.0.38) (2021-08-26)
