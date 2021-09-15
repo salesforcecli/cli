@@ -6,11 +6,12 @@
 [![License](https://img.shields.io/npm/l/@salesforce/cli.svg)](https://github.com/salesforcecli/cli/blob/master/package.json)
 
 <!-- toc -->
-* [@salesforce/cli](#salesforcecli)
-* [Getting Started](#getting-started)
-* [Feedback](#feedback)
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [@salesforce/cli](#salesforcecli)
+- [Getting Started](#getting-started)
+- [Feedback](#feedback)
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
 
 # Getting Started
@@ -24,6 +25,7 @@ To provide feedback, use the issues tab in this repository.
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g @salesforce/cli
 $ sf COMMAND
@@ -35,33 +37,35 @@ USAGE
   $ sf COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`sf config get`](#sf-config-get)
-* [`sf config list`](#sf-config-list)
-* [`sf config set`](#sf-config-set)
-* [`sf config unset`](#sf-config-unset)
-* [`sf deploy`](#sf-deploy)
-* [`sf deploy metadata`](#sf-deploy-metadata)
-* [`sf env display`](#sf-env-display)
-* [`sf env list`](#sf-env-list)
-* [`sf env open`](#sf-env-open)
-* [`sf help [COMMAND]`](#sf-help-command)
-* [`sf login`](#sf-login)
-* [`sf login org`](#sf-login-org)
-* [`sf login org jwt`](#sf-login-org-jwt)
-* [`sf logout`](#sf-logout)
-* [`sf logout org`](#sf-logout-org)
-* [`sf plugins`](#sf-plugins)
-* [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
-* [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
-* [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
-* [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
-* [`sf plugins update`](#sf-plugins-update)
-* [`sf retrieve metadata`](#sf-retrieve-metadata)
+
+- [`sf config get`](#sf-config-get)
+- [`sf config list`](#sf-config-list)
+- [`sf config set`](#sf-config-set)
+- [`sf config unset`](#sf-config-unset)
+- [`sf deploy`](#sf-deploy)
+- [`sf deploy metadata`](#sf-deploy-metadata)
+- [`sf env display`](#sf-env-display)
+- [`sf env list`](#sf-env-list)
+- [`sf env open`](#sf-env-open)
+- [`sf help [COMMAND]`](#sf-help-command)
+- [`sf login`](#sf-login)
+- [`sf login org`](#sf-login-org)
+- [`sf login org jwt`](#sf-login-org-jwt)
+- [`sf logout`](#sf-logout)
+- [`sf logout org`](#sf-logout-org)
+- [`sf plugins`](#sf-plugins)
+- [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
+- [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
+- [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
+- [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
+- [`sf plugins update`](#sf-plugins-update)
+- [`sf retrieve metadata`](#sf-retrieve-metadata)
 
 ## `sf config get`
 
@@ -92,6 +96,17 @@ EXAMPLES
   Get multiple configuration variables and display whether they're set locally or globally:
 
     $ sf config get target-org api-version --verbose
+
+CONFIGURATION VARIABLES
+  apiVersion        API version to use when making requests to app server
+  disableTelemetry  Disable telemetry
+  instanceUrl       Instance URL to use for a command.
+  isvDebuggerSid    ISV debugger SID
+  isvDebuggerUrl    ISV debugger URL
+  maxQueryLimit     Maximum rows to return for a SOQL query.
+  restDeploy        Boolean that enables deploy via REST API.
+  target-org        The target to be used for any command communicating with an org.
+  target-dev-hub    The target to be used for any command communicating with a dev hub org.
 ```
 
 ## `sf config list`
@@ -163,6 +178,17 @@ EXAMPLES
   Set the global target-org configuration variable:
 
     $ sf config set --global target-org=my-scratch-org
+
+CONFIGURATION VARIABLES
+  apiVersion        API version to use when making requests to app server
+  disableTelemetry  Disable telemetry
+  instanceUrl       Instance URL to use for a command.
+  isvDebuggerSid    ISV debugger SID
+  isvDebuggerUrl    ISV debugger URL
+  maxQueryLimit     Maximum rows to return for a SOQL query.
+  restDeploy        Boolean that enables deploy via REST API.
+  target-org        The target to be used for any command communicating with an org.
+  target-dev-hub    The target to be used for any command communicating with a dev hub org.
 ```
 
 ## `sf config unset`
@@ -193,6 +219,17 @@ EXAMPLES
   Unset multiple configuration variables globally:
 
     $ sf config unset target-org api-version --global
+
+CONFIGURATION VARIABLES
+  apiVersion        API version to use when making requests to app server
+  disableTelemetry  Disable telemetry
+  instanceUrl       Instance URL to use for a command.
+  isvDebuggerSid    ISV debugger SID
+  isvDebuggerUrl    ISV debugger URL
+  maxQueryLimit     Maximum rows to return for a SOQL query.
+  restDeploy        Boolean that enables deploy via REST API.
+  target-org        The target to be used for any command communicating with an org.
+  target-dev-hub    The target to be used for any command communicating with a dev hub org.
 ```
 
 ## `sf deploy`
@@ -237,7 +274,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.20/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.21/src/commands/deploy.ts)_
 
 ## `sf deploy metadata`
 
@@ -250,16 +287,11 @@ USAGE
 
 FLAGS
   -d, --source-dir=<value>...  Path to the local source files to deploy.
-
   -l, --test-level=<option>    [default: NoTestRun] Deployment Apex testing level.
                                <options: NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg>
-
   -m, --metadata=<value>...    Metadata component names to deploy.
-
   -o, --target-org=<value>     Login username or alias for the target org.
-
   -w, --wait=<value>           [default: 33] Number of minutes to wait for command to complete and display results.
-
   -x, --manifest=<value>       Full file path for manifest (package.xml) of components to deploy.
 
 GLOBAL FLAGS
@@ -286,8 +318,9 @@ EXAMPLES
     $ sf deploy metadata  --source-dir path/to/source
 
   Deploy a specific Apex class and the objects whose source is in a directory (both examples are equivalent):
-  $ sf deploy metadata --source-dir path/to/apex/classes/MyClass.cls path/to/source/objects
-  $ sf deploy metadata --source-dir path/to/apex/classes/MyClass.cls --source-dir path/to/source/objects
+
+    $ sf deploy metadata --source-dir path/to/apex/classes/MyClass.cls path/to/source/objects
+    $ sf deploy metadata --source-dir path/to/apex/classes/MyClass.cls --source-dir path/to/source/objects
 
   Deploy all Apex classes:
 
@@ -298,8 +331,9 @@ EXAMPLES
     $ sf deploy metadata --metadata ApexClass:MyApexClass
 
   Deploy all custom objects and Apex classes (both examples are equivalent):
-  $ sf deploy metadata --metadata CustomObject ApexClass
-  $ sf deploy metadata --metadata CustomObject --metadata ApexClass
+
+    $ sf deploy metadata --metadata CustomObject ApexClass
+    $ sf deploy metadata --metadata CustomObject --metadata ApexClass
 
   Deploy all Apex classes and a profile that has a space in its name:
 
@@ -354,6 +388,14 @@ FLAG DESCRIPTIONS
   -x, --manifest=<value>  Full file path for manifest (package.xml) of components to deploy.
 
     All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
+
+CONFIGURATION VARIABLES
+  target-org  The target to be used for any command communicating with an org.
+  apiVersion  API version to use when making requests to app server
+
+ENVIRONMENT VARIABLES
+  SF_TARGET_ORG  Specifies the username of your default target org you don’t have to use the --target-org CLI parameter.
+                 Overrides the value of the target-org runtime configuration value.
 ```
 
 ## `sf env display`
@@ -410,10 +452,8 @@ FLAGS
   --filter=<value>      Filter property by partial string matching.
   --no-header           Hide table header from output.
   --no-truncate         Don't truncate output to fit screen.
-
   --output=<option>     Format in which to display the output.
                         <options: csv|json|yaml>
-
   --sort=<value>        Column to sort by (prepend '-' for descending).
 
 GLOBAL FLAGS
@@ -572,7 +612,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.19/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.21/src/commands/login.ts)_
 
 ## `sf login org`
 
@@ -587,10 +627,8 @@ FLAGS
   -b, --browser=<value>       Browser in which to open the org.
   -d, --set-default           Set the org as the default that all org-related commands run against.
   -i, --clientid=<value>      OAuth client id (also called consumer key) of your custom connected app.
-
   -l, --instance-url=<value>  [default: https://login.salesforce.com] URL of the instance that the org lives on.
                               (defaults to https://login.salesforce.com)
-
   -v, --set-default-dev-hub   Set the org as the default Dev Hub for scratch org creation.
 
 GLOBAL FLAGS
@@ -653,6 +691,13 @@ FLAG DESCRIPTIONS
     To specify a My Domain URL, use the format https://yourcompanyname.my.salesforce.com.
 
     To specify a sandbox, set --instance-url to https://test.salesforce.com.
+
+CONFIGURATION VARIABLES
+  apiVersion   API version to use when making requests to app server
+  instanceUrl  Instance URL to use for a command.
+
+ENVIRONMENT VARIABLES
+  SF_INSTANCE_URL  The URL of the Salesforce instance that is hosting your org.
 ```
 
 ## `sf login org jwt`
@@ -666,7 +711,7 @@ USAGE
 FLAGS
   -a, --alias=<value>         Alias for the org.
   -d, --set-default           Set the org as the default that all org-related commands run against.
-  -f, --jwt-key-file=<value>  Path to a file containing the private key.
+  -f, --keyfile=<value>       Path to a file containing the private key.
   -i, --clientid=<value>      OAuth client id (also called consumer key) of your custom connected app.
   -l, --instance-url=<value>  [default: https://login.salesforce.com] URL of the instance that the org lives on.
   -u, --username=<value>      Username of the user logging in.
@@ -691,8 +736,8 @@ DESCRIPTION
   use your own key and certificate issued by a certification authority. Or use OpenSSL to create a key and a self-signed
   digital certificate.
 
-  2. Store the private key in a file on your computer. When you run this command, you set the --jwt-key-file flag to
-  this file.
+  2. Store the private key in a file on your computer. When you run this command, you set the --keyfile flag to this
+  file.
 
   3. Create a custom connected app in your org using the digital certificate. Make note of the consumer key (also called
   client id) that’s generated for you. Be sure the username of the user logging in is approved to use the connected app.
@@ -711,23 +756,22 @@ EXAMPLES
   private key is stored in the file /Users/jdoe/JWT/server.key and the command uses the connected app with consumer
   key (client id) 04580y4051234051.
 
-    $ sf login org jwt --username jdoe@example.org --jwt-key-file /Users/jdoe/JWT/server.key --clientid \
-      04580y4051234051
+    $ sf login org jwt --username jdoe@example.org --keyfile /Users/jdoe/JWT/server.key --clientid 04580y4051234051
 
   Set the org as the default and give it an alias:
 
-    $ sf login org jwt --username jdoe@example.org --jwt-key-file /Users/jdoe/JWT/server.key --clientid \
-      04580y4051234051 --alias ci-org --set-default
+    $ sf login org jwt --username jdoe@example.org --keyfile /Users/jdoe/JWT/server.key --clientid 04580y4051234051 \
+      --alias ci-org --set-default
 
   Set the org as the default Dev Hub and give it an alias:
 
-    $ sf login org jwt --username jdoe@example.org --jwt-key-file /Users/jdoe/JWT/server.key --clientid \
-      04580y4051234051 --alias ci-dev-hub --set-default-dev-hub
+    $ sf login org jwt --username jdoe@example.org --keyfile /Users/jdoe/JWT/server.key --clientid 04580y4051234051 \
+      --alias ci-dev-hub --set-default-dev-hub
 
   Log in to a sandbox using URL https://test.salesforce.com:
 
-    $ sf login org jwt --username jdoe@example.org --jwt-key-file /Users/jdoe/JWT/server.key --clientid \
-      04580y4051234051 --alias ci-org --set-default --instance-url https://test.salesforce.com
+    $ sf login org jwt --username jdoe@example.org --keyfile /Users/jdoe/JWT/server.key --clientid 04580y4051234051 \
+      --alias ci-org --set-default --instance-url https://test.salesforce.com
 
 FLAG DESCRIPTIONS
   -l, --instance-url=<value>  URL of the instance that the org lives on.
@@ -737,6 +781,13 @@ FLAG DESCRIPTIONS
     To specify a My Domain URL, use the format https://yourcompanyname.my.salesforce.com.
 
     To specify a sandbox, set --instance-url to https://test.salesforce.com.
+
+CONFIGURATION VARIABLES
+  apiVersion   API version to use when making requests to app server
+  instanceUrl  Instance URL to use for a command.
+
+ENVIRONMENT VARIABLES
+  SF_INSTANCE_URL  The URL of the Salesforce instance that is hosting your org.
 ```
 
 ## `sf logout`
@@ -772,7 +823,7 @@ EXAMPLES
     $ sf logout --no-prompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.19/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.21/src/commands/logout.ts)_
 
 ## `sf logout org`
 
@@ -806,6 +857,11 @@ EXAMPLES
   If your org doesn’t have an alias, specify the username that you used when you logged into it:
 
     $ sf logout org --target-org jdoe@example.org
+
+CONFIGURATION VARIABLES
+  apiVersion   API version to use when making requests to app server
+  instanceUrl  Instance URL to use for a command.
+  target-org   The target to be used for any command communicating with an org.
 ```
 
 ## `sf plugins`
@@ -881,7 +937,7 @@ ALIASES
   $ sf plugins add
 
 EXAMPLES
-  $ sf plugins:install myplugin 
+  $ sf plugins:install myplugin
 
   $ sf plugins:install https://github.com/someuser/someplugin
 
@@ -969,10 +1025,8 @@ FLAGS
   -m, --metadata=<value>...      Metadata component names to retrieve.
   -n, --package-name=<value>...  Package names to retrieve.
   -o, --target-org=<value>       Login username or alias for the target org.
-
   -w, --wait=<value>             [default: 33] Number of minutes to wait for the command to complete and display results
                                  to the terminal window.
-
   -x, --manifest=<value>         File path for the manifest (package.xml) that specifies the components to retrieve.
 
 GLOBAL FLAGS
@@ -996,8 +1050,9 @@ EXAMPLES
     $ sf retrieve metadata --source-dir path/to/source
 
   Retrieve a specific Apex class and the objects whose source is in a directory (both examples are equivalent):
-  $ sf retrieve metadata --source-dir path/to/apex/classes/MyClass.cls path/to/source/objects
-  $ sf retrieve metadata --source-dir path/to/apex/classes/MyClass.cls --source-dir path/to/source/objects
+
+    $ sf retrieve metadata --source-dir path/to/apex/classes/MyClass.cls path/to/source/objects
+    $ sf retrieve metadata --source-dir path/to/apex/classes/MyClass.cls --source-dir path/to/source/objects
 
   Retrieve all Apex classes:
 
@@ -1008,8 +1063,9 @@ EXAMPLES
     $ sf retrieve metadata --metadata ApexClass:MyApexClass
 
   Retrieve all custom objects and Apex classes (both examples are equivalent):
-  $ sf retrieve metadata --metadata CustomObject ApexClass
-  $ sf retrieve metadata --metadata CustomObject --metadata ApexClass
+
+    $ sf retrieve metadata --metadata CustomObject ApexClass
+    $ sf retrieve metadata --metadata CustomObject --metadata ApexClass
 
   Retrieve all metadata components listed in a manifest:
 
@@ -1020,8 +1076,9 @@ EXAMPLES
     $ sf retrieve metadata --package-name MyPackageName
 
   Retrieve metadata from multiple packages, one of which has a space in its name (both examples are equivalent):
-  $ sf retrieve metadata --package-name Package1 "PackageName With Spaces" Package3
-  $ sf retrieve metadata --package-name Package1 --package-name "PackageName With Spaces" --package-name Package3
+
+    $ sf retrieve metadata --package-name Package1 "PackageName With Spaces" Package3
+    $ sf retrieve metadata --package-name Package1 --package-name "PackageName With Spaces" --package-name Package3
 
 FLAG DESCRIPTIONS
   -a, --api-version=<value>  Target API version for the retrieve.
@@ -1045,5 +1102,14 @@ FLAG DESCRIPTIONS
   -x, --manifest=<value>  File path for the manifest (package.xml) that specifies the components to retrieve.
 
     If you specify this parameter, don’t specify --metadata or --source-dir.
+
+CONFIGURATION VARIABLES
+  target-org  The target to be used for any command communicating with an org.
+  apiVersion  API version to use when making requests to app server
+
+ENVIRONMENT VARIABLES
+  SF_TARGET_ORG  Specifies the username of your default target org you don’t have to use the --target-org CLI parameter.
+                 Overrides the value of the target-org runtime configuration value.
 ```
+
 <!-- commandsstop -->
