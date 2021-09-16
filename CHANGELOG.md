@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.42](https://github.com/salesforcecli/cli/compare/v0.0.41...v0.0.42) (2021-09-16)
+
+
+### Bug Fixes
+
+* bump oclif/core and sf-plugins-core version ([#59](https://github.com/salesforcecli/cli/issues/59)) ([a31d992](https://github.com/salesforcecli/cli/commit/a31d9929b9fc1b35c6b176faa488a15eb7de6f6f))
+
 ### [0.0.41](https://github.com/salesforcecli/cli/compare/v0.0.40...v0.0.41) (2021-09-15)
 
 
