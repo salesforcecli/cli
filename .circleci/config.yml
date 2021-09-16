@@ -146,6 +146,10 @@ workflows:
           filters:
             branches:
               ignore: main # test the pack on PRs, but main will do pack-and-upload-tarballs
+      - release-management/halt-workflow-if-not-releasable:
+          filters:
+            branches:
+              only: main
       - change-case-start:
           context: CLI_CTC
           requires:
