@@ -357,7 +357,7 @@
   dependencies:
     "@cspotcode/source-map-consumer" "0.8.0"
 
-"@es-joy/jsdoccomment@^0.9.0-alpha.1":
+"@es-joy/jsdoccomment@0.9.0-alpha.1":
   version "0.9.0-alpha.1"
   resolved "https://registry.npmjs.org/@es-joy/jsdoccomment/-/jsdoccomment-0.9.0-alpha.1.tgz#f48bd162e185ec7f9f222273a282d10e52fe52f7"
   integrity sha512-Clxxc0PwpISoYYBibA+1L2qFJ7gvFVhI2Hos87S06K+Q0cXdOhZQJNKWuaQGPAeHjZEuUB/YoWOfwjuF2wirqA==
@@ -3669,11 +3669,11 @@ eslint-plugin-import@^2.23.4:
     tsconfig-paths "^3.11.0"
 
 eslint-plugin-jsdoc@^35.1.2, eslint-plugin-jsdoc@^35.4.1:
-  version "35.4.3"
-  resolved "https://registry.npmjs.org/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-35.4.3.tgz#54deb74b0f53bda4bda5ee1ccfd0deace71c8943"
-  integrity sha512-hBEn+VNjVX0IKoZ2OdZs0Z1fU8CqZkBSzLqD8ZpwZEamrdi2TUgKvujvETe8gXYQ/67hpRtbR5iPFTgmWpRevw==
+  version "35.5.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-35.5.1.tgz#45932ee22669bbe06c97b82b936d56361efad370"
+  integrity sha512-pPYPWtsykwVEue1tYEyoppBj4dgF7XicF67tLLLraY6RQYBq7qMKjUHji19+hfiTtYKKBD0YfeK8hgjPAE5viw==
   dependencies:
-    "@es-joy/jsdoccomment" "^0.9.0-alpha.1"
+    "@es-joy/jsdoccomment" "0.9.0-alpha.1"
     comment-parser "1.1.6-beta.0"
     debug "^4.3.2"
     esquery "^1.4.0"
