@@ -81,7 +81,11 @@
     "@sf/drm": "npm:@salesforce/plugin-deploy-retrieve-metadata@0.0.31",
     "@sf/env": "npm:@salesforce/plugin-env@0.0.32",
     "@sf/login": "npm:@salesforce/plugin-login@0.0.24",
+    "inquirer": "https://github.com/salesforcecli/Inquirer.js/tarball/github_release",
     "tslib": "^2.3.0"
+  },
+  "resolutions": {
+    "inquirer": "https://github.com/salesforcecli/Inquirer.js/tarball/github_release"
   },
   "pinnedDependencies": [
     "@sf/config@sf",
