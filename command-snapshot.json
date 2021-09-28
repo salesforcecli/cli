@@ -45,6 +45,11 @@
     "flags": ["browser", "json", "path", "target-env", "url-only"]
   },
   {
+    "command": "generate:project",
+    "plugin": "@salesforce/plugin-generate",
+    "flags": ["default-package-dir", "json", "login-url", "manifest", "name", "namespace", "output-dir", "template"]
+  },
+  {
     "command": "help",
     "plugin": "@oclif/plugin-help",
     "flags": ["all", "json"]
