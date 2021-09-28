@@ -94,6 +94,9 @@
     "@sf/login",
     "@salesforce/plugin-telemetry"
   ],
+  "resolutions": {
+    "@salesforce/templates": "^52.2.0"
+  },
   "repository": "salesforcecli/cli",
   "scripts": {
     "build": "sf-build",
