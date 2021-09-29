@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.45](https://github.com/salesforcecli/cli/compare/v0.0.44...v0.0.45) (2021-09-29)
+
+
+### Bug Fixes
+
+* install sf-release for maybe-halt ([#64](https://github.com/salesforcecli/cli/issues/64)) ([196ea50](https://github.com/salesforcecli/cli/commit/196ea50f8d37e766fef213d9b947981c37a5308c))
+
 ### [0.0.44](https://github.com/salesforcecli/cli/compare/v0.0.43...v0.0.44) (2021-09-29)
 
 
