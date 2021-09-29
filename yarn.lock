@@ -679,6 +679,29 @@
     widest-line "^3.1.0"
     wrap-ansi "^7.0.0"
 
+"@oclif/core@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.0.0.tgz#d9234f27368c058d9fb835dc9f57f3278af57777"
+  integrity sha512-YBpjahcSMtIsw+rgNkKLlqULc7Ste7EfhJj7d/elukhB3lj+sO0z34byPVGEGSb5zDO3Sk2GxBZw6BM0vjWqMw==
+  dependencies:
+    "@oclif/linewrap" "^1.0.0"
+    chalk "^4.1.0"
+    clean-stack "^3.0.0"
+    cli-ux "^5.1.0"
+    debug "^4.1.1"
+    fs-extra "^9.0.1"
+    get-package-type "^0.1.0"
+    globby "^11.0.1"
+    indent-string "^4.0.0"
+    is-wsl "^2.1.1"
+    lodash.template "^4.4.0"
+    semver "^7.3.2"
+    string-width "^4.2.0"
+    strip-ansi "^6.0.0"
+    tslib "^2.0.0"
+    widest-line "^3.1.0"
+    wrap-ansi "^7.0.0"
+
 "@oclif/dev-cli@^1":
   version "1.26.0"
   resolved "https://registry.yarnpkg.com/@oclif/dev-cli/-/dev-cli-1.26.0.tgz#e3ec294b362c010ffc8948003d3770955c7951fd"
@@ -1031,10 +1054,10 @@
     sfdx-faye "^1.0.9"
     ts-retry-promise "^0.6.0"
 
-"@salesforce/core@3.6.2":
-  version "3.6.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.6.2.tgz#a67f065fc0095e35ff553c7acf7b9f6ac116e4ef"
-  integrity sha512-X3V8Voun/u/B0O3ZeR/DLgUB5IwqTgpn80i+/XRLTVh0U2TH1/pV6948DVxkw3SRQ8NMN7JZCTq/Dq3GhGXf/g==
+"@salesforce/core@3.6.5", "@salesforce/core@^3.6.5":
+  version "3.6.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.6.5.tgz#4c3afa392eb61cd34e2683033c04fbfa4d546850"
+  integrity sha512-EqMZS4Awn/WctCqVWecXOIJKzLUleWw2fvViNP0lVJgt56ZAinZRBetXJFITyKVyslW/WIAhX92NHW7t3AG7Hg==
   dependencies:
     "@salesforce/bunyan" "^2.0.0"
     "@salesforce/kit" "^1.5.8"
@@ -1239,6 +1262,18 @@
     cli-ux "^5.6.3"
     inquirer "^8.1.1"
 
+"@salesforce/sf-plugins-core@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-1.0.0.tgz#0a267560eb73a04b946959c048578131fa8a0a46"
+  integrity sha512-LXKsjTdbWRW8lh1WlqDs6fnWBO+xQMF+JvV7XzpHp4TtNSILVHyWjQHS02aUqdoRWSsb/nKtQ0HGI+dsfZg1LA==
+  dependencies:
+    "@oclif/core" "^1.0.0"
+    "@salesforce/core" "^3.6.5"
+    "@salesforce/kit" "^1.5.17"
+    "@salesforce/ts-types" "^1.5.20"
+    cli-ux "^5.6.3"
+    inquirer "^8.1.1"
+
 "@salesforce/telemetry@^2.0.5":
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-2.0.5.tgz#29475bf832b132dd2f5946a4f1f9d28c439aca2d"
@@ -1269,14 +1304,14 @@
   dependencies:
     tslib "^2.2.0"
 
-"@sf/config@npm:@salesforce/plugin-config@2.2.5":
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-config/-/plugin-config-2.2.5.tgz#b2a4e4dea4b393074ad96e6246cf659d3be45eb0"
-  integrity sha512-wOwuA9QZxlA1OQBLoOvEoz0LpEIU3yeXj7s5SVcCummv1cH/tUEcSViaR20si+21eFisy8/DZrMnBUaQu/n8Cw==
+"@sf/config@npm:@salesforce/plugin-config@2.2.6":
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-config/-/plugin-config-2.2.6.tgz#b584083b17f3f527890f14925742cddd78a9f887"
+  integrity sha512-p0vdw3EASn6zC97uIKQX+b4TfKmod+/RRp3qQ24OoHXojbgSLE+QfIUZlEl26isEVF3Bv3GJLm4BmvX5e4tCUQ==
   dependencies:
-    "@oclif/core" "^0.5.38"
-    "@salesforce/core" "3.6.1"
-    "@salesforce/sf-plugins-core" "^0.0.23"
+    "@oclif/core" "^1.0.0"
+    "@salesforce/core" "3.6.5"
+    "@salesforce/sf-plugins-core" "^1.0.0"
     chalk "^4.1.1"
     cli-ux "^5.6.3"
     tslib "^2"
@@ -1305,14 +1340,14 @@
     cli-ux "^5.6.3"
     tslib "^2"
 
-"@sf/env@npm:@salesforce/plugin-env@0.0.34":
-  version "0.0.34"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-env/-/plugin-env-0.0.34.tgz#2e0a27f47b65969e1076f1e865368630c9ab1e23"
-  integrity sha512-1WEQMoF5nK18bm3OnTW+KpIAtAHQYR8/n6LWgON+1hQD2TiXiGITG7e6CnVMb6/abmnT0ZQBdVwvdKa60tNgTg==
+"@sf/env@npm:@salesforce/plugin-env@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-env/-/plugin-env-1.0.0.tgz#b0c5ef9156e9f918c5d68da4a1e0653996c008b7"
+  integrity sha512-2Km8A+iP7zJ8ZFsxBQBoOyEaQrzr3AzQNxRL4XAE9wjQpCVYY/z27ZH3sGBXM8fSeveSIQH7Sb3g0mVR/9nt/w==
   dependencies:
-    "@oclif/core" "^0.5.39"
-    "@salesforce/core" "3.6.2"
-    "@salesforce/sf-plugins-core" "^0.0.25"
+    "@oclif/core" "^1.0.0"
+    "@salesforce/core" "3.6.5"
+    "@salesforce/sf-plugins-core" "^1.0.0"
     change-case "^4.1.2"
     cli-ux "^5.6.3"
     open "^8.2.0"

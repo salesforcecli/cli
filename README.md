@@ -6,12 +6,11 @@
 [![License](https://img.shields.io/npm/l/@salesforce/cli.svg)](https://github.com/salesforcecli/cli/blob/master/package.json)
 
 <!-- toc -->
-
-- [@salesforce/cli](#salesforcecli)
-- [Getting Started](#getting-started)
-- [Feedback](#feedback)
-- [Usage](#usage)
-- [Commands](#commands)
+* [@salesforce/cli](#salesforcecli)
+* [Getting Started](#getting-started)
+* [Feedback](#feedback)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Getting Started
@@ -25,51 +24,49 @@ To provide feedback, use the issues tab in this repository.
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
-$ sf (-v|--version|version)
-@salesforce/cli/0.0.44 linux-x64 node-v14.18.0
+$ sf (--version|-v|version)
+@salesforce/cli/0.0.45 linux-x64 node-v14.18.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`sf config get`](#sf-config-get)
-- [`sf config list`](#sf-config-list)
-- [`sf config set`](#sf-config-set)
-- [`sf config unset`](#sf-config-unset)
-- [`sf deploy`](#sf-deploy)
-- [`sf deploy metadata`](#sf-deploy-metadata)
-- [`sf env display`](#sf-env-display)
-- [`sf env list`](#sf-env-list)
-- [`sf env open`](#sf-env-open)
-- [`sf help [COMMAND]`](#sf-help-command)
-- [`sf login`](#sf-login)
-- [`sf login org`](#sf-login-org)
-- [`sf login org jwt`](#sf-login-org-jwt)
-- [`sf logout`](#sf-logout)
-- [`sf logout org`](#sf-logout-org)
-- [`sf plugins`](#sf-plugins)
-- [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
-- [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
-- [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
-- [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
-- [`sf plugins update`](#sf-plugins-update)
-- [`sf retrieve metadata`](#sf-retrieve-metadata)
+* [`sf config get`](#sf-config-get)
+* [`sf config list`](#sf-config-list)
+* [`sf config set`](#sf-config-set)
+* [`sf config unset`](#sf-config-unset)
+* [`sf deploy`](#sf-deploy)
+* [`sf deploy metadata`](#sf-deploy-metadata)
+* [`sf env display`](#sf-env-display)
+* [`sf env list`](#sf-env-list)
+* [`sf env open`](#sf-env-open)
+* [`sf generate project`](#sf-generate-project)
+* [`sf help [COMMAND]`](#sf-help-command)
+* [`sf login`](#sf-login)
+* [`sf login org`](#sf-login-org)
+* [`sf login org jwt`](#sf-login-org-jwt)
+* [`sf logout`](#sf-logout)
+* [`sf logout org`](#sf-logout-org)
+* [`sf plugins`](#sf-plugins)
+* [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
+* [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
+* [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
+* [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
+* [`sf plugins update`](#sf-plugins-update)
+* [`sf retrieve metadata`](#sf-retrieve-metadata)
 
 ## `sf config get`
 
-Run "sf config list" to see all the configuration variables you've set. Global configuration variable are always displayed; local ones are displayed if you run the command in a project directory. Run "sf config set" to set a configuration variable.
+Get the value of a configuration variable.
 
 ```
 USAGE
@@ -98,18 +95,18 @@ EXAMPLES
     $ sf config get target-org api-version --verbose
 
 CONFIGURATION VARIABLES
-  apiVersion        API version to use when making requests to app server
-  disableTelemetry  Disable telemetry
-  instanceUrl       Instance URL to use for a command.
-  maxQueryLimit     Maximum rows to return for a SOQL query.
-  restDeploy        Boolean that enables deploy via REST API.
-  target-org        The target to be used for any command communicating with an org.
-  target-dev-hub    The target to be used for any command communicating with a dev hub org.
+  apiVersion        API version of your project. Default: API version of your Dev Hub org.
+  disableTelemetry  Disables the collection of usage and user environment information, etc. Default: true.
+  instanceUrl       URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com.
+  maxQueryLimit     Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
+  restDeploy        Whether deployments use the Metadata REST API (true) or SOAP API (false, default value).
+  target-org        Username or alias of the org that all commands run against by default. (sf only)
+  target-dev-hub    Username or alias of your default Dev Hub org. (sf only)
 ```
 
 ## `sf config list`
 
-Global configuration variables apply to any directory and are always displayed. If you run this command from a project directory, local configuration variables are also displayed.
+List the configuration variables that you've previously set.
 
 ```
 USAGE
@@ -132,7 +129,7 @@ EXAMPLES
 
 ## `sf config set`
 
-Use configuration variables to set CLI defaults, such as your default org or the API version you want the CLI to use. For example, if you set the "target-org" configuration variable, you don't need to specify it as a "sf deploy metadata" flag if you're deploying to your default org.
+Set one or more configuration variables, such as your default org.
 
 ```
 USAGE
@@ -178,18 +175,18 @@ EXAMPLES
     $ sf config set --global target-org=my-scratch-org
 
 CONFIGURATION VARIABLES
-  apiVersion        API version to use when making requests to app server
-  disableTelemetry  Disable telemetry
-  instanceUrl       Instance URL to use for a command.
-  maxQueryLimit     Maximum rows to return for a SOQL query.
-  restDeploy        Boolean that enables deploy via REST API.
-  target-org        The target to be used for any command communicating with an org.
-  target-dev-hub    The target to be used for any command communicating with a dev hub org.
+  apiVersion        API version of your project. Default: API version of your Dev Hub org.
+  disableTelemetry  Disables the collection of usage and user environment information, etc. Default: true.
+  instanceUrl       URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com.
+  maxQueryLimit     Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
+  restDeploy        Whether deployments use the Metadata REST API (true) or SOAP API (false, default value).
+  target-org        Username or alias of the org that all commands run against by default. (sf only)
+  target-dev-hub    Username or alias of your default Dev Hub org. (sf only)
 ```
 
 ## `sf config unset`
 
-Local configuration variables apply only to your current project. Global configuration variables apply in any directory.
+Unset local or global configuration variables.
 
 ```
 USAGE
@@ -217,18 +214,18 @@ EXAMPLES
     $ sf config unset target-org api-version --global
 
 CONFIGURATION VARIABLES
-  apiVersion        API version to use when making requests to app server
-  disableTelemetry  Disable telemetry
-  instanceUrl       Instance URL to use for a command.
-  maxQueryLimit     Maximum rows to return for a SOQL query.
-  restDeploy        Boolean that enables deploy via REST API.
-  target-org        The target to be used for any command communicating with an org.
-  target-dev-hub    The target to be used for any command communicating with a dev hub org.
+  apiVersion        API version of your project. Default: API version of your Dev Hub org.
+  disableTelemetry  Disables the collection of usage and user environment information, etc. Default: true.
+  instanceUrl       URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com.
+  maxQueryLimit     Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
+  restDeploy        Whether deployments use the Metadata REST API (true) or SOAP API (false, default value).
+  target-org        Username or alias of the org that all commands run against by default. (sf only)
+  target-dev-hub    Username or alias of your default Dev Hub org. (sf only)
 ```
 
 ## `sf deploy`
 
-This command must be run from within a project.
+Deploy a project interactively to any Salesforce environment.
 
 ```
 USAGE
@@ -272,7 +269,7 @@ _See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli
 
 ## `sf deploy metadata`
 
-You must run this command from within a project.
+Deploy metadata in source format to an org from your local project.
 
 ```
 USAGE
@@ -398,7 +395,7 @@ ENVIRONMENT VARIABLES
 
 ## `sf env display`
 
-Specify an environment with either the username you used when you logged into the environment with "sf login", or the alias you gave the environment when you created it. Run "sf env list" to view all your environments and their aliases.
+Display details about an environment.
 
 ```
 USAGE
@@ -436,7 +433,7 @@ EXAMPLES
 
 ## `sf env list`
 
-By default, the command displays active environments. For orgs, active means unexpired scratch orgs and orgs you’re currently logged into.
+List the environments you’ve created or logged into.
 
 ```
 USAGE
@@ -507,7 +504,7 @@ EXAMPLES
 
 ## `sf env open`
 
-You can open the following types of environments in a web browser: scratch orgs, sandboxes, Dev Hubs, and production orgs. Run "sf env list" to view your environments and their aliases and login usernames.
+Open an environment in a web browser.
 
 ```
 USAGE
@@ -562,6 +559,132 @@ FLAG DESCRIPTIONS
     browser applications differ depending on the operating system you're on; check your documentation for details.
 ```
 
+## `sf generate project`
+
+​
+
+```
+USAGE
+  $ sf generate project -n <value> [--json] [-p <value>] [-x] [-s <value>] [-d <value>] [-t standard|empty|analytics]
+
+FLAGS
+  -d, --output-dir=<value>           [default: .] ​
+                                     Directory to store the newly created project files.
+                                     ​
+  -n, --name=<value>                 (required) ​
+                                     Name of the generated project.
+                                     ​
+  -p, --default-package-dir=<value>  [default: force-app] Default package directory name.
+  -s, --namespace=<value>            Project associated namespace.
+  -t, --template=<option>            [default: standard] ​
+                                     Template to use to create the project.
+                                     ​
+                                     <options: standard|empty|analytics>
+  -x, --manifest                     Generate a manifest (package.xml) for change-set based development.
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  ​
+
+  Generate a Salesforce DX project.
+
+  ​
+
+  ​
+
+  A Salesforce DX project has a specific structure and a configuration file (sfdx-project.json) that identifies the
+  directory as a Salesforce DX project. This command generates the basic scaffolding to get you started.
+
+  ​
+
+  By default, the generated sfdx-project.json file sets the sourceApiVersion property to the default API version
+  currently used by Salesforce CLI. To specify a different version, set the apiVersion configuration variable. For
+  example:
+
+  ​
+
+  sf config set apiVersion=53.0 --global
+
+  ​
+
+EXAMPLES
+  ​
+  - Generate a project called MyProject:
+    ​
+    sf generate project --name MyProject
+    ​
+  - Generate the minimum number of files and directories:
+    ​
+    sf generate project --name MyProject --template empty
+    ​
+  - Generate the project in /Users/jdoe/sf-projects rather than the current directory:
+    ​
+    sf generate project --name MyProject --template empty --output-dir /Users/jdoe/sf-projects
+    ​
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  ​
+  Directory to store the newly created project files.
+  ​
+
+    ​
+    The location can be an absolute path or relative to the current working directory.
+
+  -n, --name=<value>  ​
+  Name of the generated project.
+  ​
+
+    ​
+    Creates a project directory with this name. Also sets the "name" property in the sfdx-project.json file to this
+    name.
+    ​
+
+  -p, --default-package-dir=<value>  Default package directory name.
+
+    The default package directory name. Metadata items such as classes and Lightning bundles are placed inside this
+    folder.
+
+  -s, --namespace=<value>  Project associated namespace.
+
+    The namespace associated with this project and any connected scratch orgs.
+
+  -t, --template=standard|empty|analytics  ​
+  Template to use to create the project.
+  ​
+
+    ​
+    The template determines the sample configuration files and directories that this command generates. For example, the
+    empty template provides these files and directory to get you started.
+    ​
+
+    - .forceignore
+    - config/project-scratch-def.json
+    - sfdx-project.json
+    - package.json
+    - force-app (basic source directory structure)
+    ​
+    The standard template provides a complete force-app directory structure so you know where to put your source. It
+    also provides additional files and scripts, especially useful when using Salesforce Extensions for VS Code. For
+    example:
+    ​
+    - .gitignore: Use Git for version control.
+    - .prettierrc and .prettierignore: Use Prettier to format your Aura components.
+    - .vscode/extensions.json: When launched, Visual Studio Code, prompts you to install the recommended extensions for
+    your project.
+    - .vscode/launch.json: Configures Replay Debugger.
+    - .vscode/settings.json: Additional configuration settings.
+    ​
+    The analytics template provides similar files and the force-app/main/default/waveTemplates directory.
+    ​
+
+  -x, --manifest  Generate a manifest (package.xml) for change-set based development.
+
+    Generates a default manifest (package.xml) for fetching Apex, Visualforce, Lightning components, and static
+    resources.
+```
+
 ## `sf help [COMMAND]`
 
 display help for sf
@@ -585,7 +708,7 @@ _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v4.0.3
 
 ## `sf login`
 
-Logging into an environment authorizes the CLI to run other commands that connect to that environment, such as deploying or retrieving metadata to and from an org.
+Log interactively into an environment, such as a Salesforce org.
 
 ```
 USAGE
@@ -616,7 +739,7 @@ _See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-lo
 
 ## `sf login org`
 
-Opens a Salesforce instance URL in a web browser so you can enter your credentials and log in to your org. After you log in, you can close the browser window.
+Log in to a Salesforce org using the web server flow.
 
 ```
 USAGE
@@ -702,7 +825,7 @@ ENVIRONMENT VARIABLES
 
 ## `sf login org jwt`
 
-Use this command in automated environments where you can’t interactively log in with a browser, such as in CI/CD scripts.
+Log in to a Salesforce org using a JSON web token (JWT).
 
 ```
 USAGE
@@ -792,7 +915,7 @@ ENVIRONMENT VARIABLES
 
 ## `sf logout`
 
-By default, the command prompts you to select which environments you want to log out of. Use --no-prompt to not be prompted and log out of all environments.
+Log out interactively from environments, such as Salesforce orgs and compute environments.
 
 ```
 USAGE
@@ -827,7 +950,7 @@ _See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-lo
 
 ## `sf logout org`
 
-By default, the command prompts you to confirm that you want to log out of the specified org. Use --no-prompt to not be prompted.
+Log out of a specified Salesforce org.
 
 ```
 USAGE
@@ -937,7 +1060,7 @@ ALIASES
   $ sf plugins add
 
 EXAMPLES
-  $ sf plugins:install myplugin
+  $ sf plugins:install myplugin 
 
   $ sf plugins:install https://github.com/someuser/someplugin
 
@@ -1012,7 +1135,7 @@ DESCRIPTION
 
 ## `sf retrieve metadata`
 
-You must run this command from within a project.
+Retrieve metadata in source format from an org to your local project.
 
 ```
 USAGE
@@ -1115,5 +1238,4 @@ ENVIRONMENT VARIABLES
   SFDX_USE_PROGRESS_BAR  For force:mdapi:deploy, force:source:deploy, and force:source:push, set to false to disable the
                          progress bar.
 ```
-
 <!-- commandsstop -->

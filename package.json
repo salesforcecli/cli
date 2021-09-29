@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "0.0.45",
+  "version": "0.0.46",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run"
@@ -77,10 +77,10 @@
     "@oclif/plugin-plugins": "^1.10.1",
     "@salesforce/plugin-telemetry": "1.2.4",
     "@salesforce/sf-plugins-core": "^0.0.23",
-    "@sf/config": "npm:@salesforce/plugin-config@2.2.5",
+    "@sf/config": "npm:@salesforce/plugin-config@2.2.6",
     "@sf/deploy-retrieve": "npm:@salesforce/plugin-deploy-retrieve@0.0.23",
     "@sf/drm": "npm:@salesforce/plugin-deploy-retrieve-metadata@0.0.31",
-    "@sf/env": "npm:@salesforce/plugin-env@0.0.34",
+    "@sf/env": "npm:@salesforce/plugin-env@1.0.0",
     "@sf/gen": "npm:@salesforce/plugin-generate@0.0.3",
     "@sf/login": "npm:@salesforce/plugin-login@0.0.26",
     "inquirer": "https://github.com/salesforcecli/Inquirer.js/tarball/github_release",
