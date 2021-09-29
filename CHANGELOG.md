@@ -2,21 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.44](https://github.com/salesforcecli/cli/compare/v0.0.43...v0.0.44) (2021-09-29)
+
+### Bug Fixes
+
+- update inquirer dep to our fork ([#62](https://github.com/salesforcecli/cli/issues/62)) ([df6fb84](https://github.com/salesforcecli/cli/commit/df6fb84dfa73ab5cc85b258fbbc34769aea3c629))
+
 ### [0.0.43](https://github.com/salesforcecli/cli/compare/v0.0.42...v0.0.43) (2021-09-16)
 
 ### [0.0.42](https://github.com/salesforcecli/cli/compare/v0.0.41...v0.0.42) (2021-09-16)
 
-
 ### Bug Fixes
 
-* bump oclif/core and sf-plugins-core version ([#59](https://github.com/salesforcecli/cli/issues/59)) ([a31d992](https://github.com/salesforcecli/cli/commit/a31d9929b9fc1b35c6b176faa488a15eb7de6f6f))
+- bump oclif/core and sf-plugins-core version ([#59](https://github.com/salesforcecli/cli/issues/59)) ([a31d992](https://github.com/salesforcecli/cli/commit/a31d9929b9fc1b35c6b176faa488a15eb7de6f6f))
 
 ### [0.0.41](https://github.com/salesforcecli/cli/compare/v0.0.40...v0.0.41) (2021-09-15)
 
-
 ### Bug Fixes
 
-* short help impl ([#55](https://github.com/salesforcecli/cli/issues/55)) ([ee7c90a](https://github.com/salesforcecli/cli/commit/ee7c90a45bdbf509c15774f60d8a62107d78d67b))
+- short help impl ([#55](https://github.com/salesforcecli/cli/issues/55)) ([ee7c90a](https://github.com/salesforcecli/cli/commit/ee7c90a45bdbf509c15774f60d8a62107d78d67b))
 
 ### [0.0.40](https://github.com/salesforcecli/cli/compare/v0.0.39...v0.0.40) (2021-09-15)
 

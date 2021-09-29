@@ -6,11 +6,12 @@
 [![License](https://img.shields.io/npm/l/@salesforce/cli.svg)](https://github.com/salesforcecli/cli/blob/master/package.json)
 
 <!-- toc -->
-* [@salesforce/cli](#salesforcecli)
-* [Getting Started](#getting-started)
-* [Feedback](#feedback)
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [@salesforce/cli](#salesforcecli)
+- [Getting Started](#getting-started)
+- [Feedback](#feedback)
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
 
 # Getting Started
@@ -24,44 +25,47 @@ To provide feedback, use the issues tab in this repository.
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (-v|--version|version)
-@salesforce/cli/0.0.43 linux-x64 node-v14.17.6
+@salesforce/cli/0.0.43 linux-x64 node-v14.18.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`sf config get`](#sf-config-get)
-* [`sf config list`](#sf-config-list)
-* [`sf config set`](#sf-config-set)
-* [`sf config unset`](#sf-config-unset)
-* [`sf deploy`](#sf-deploy)
-* [`sf deploy metadata`](#sf-deploy-metadata)
-* [`sf env display`](#sf-env-display)
-* [`sf env list`](#sf-env-list)
-* [`sf env open`](#sf-env-open)
-* [`sf help [COMMAND]`](#sf-help-command)
-* [`sf login`](#sf-login)
-* [`sf login org`](#sf-login-org)
-* [`sf login org jwt`](#sf-login-org-jwt)
-* [`sf logout`](#sf-logout)
-* [`sf logout org`](#sf-logout-org)
-* [`sf plugins`](#sf-plugins)
-* [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
-* [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
-* [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
-* [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
-* [`sf plugins update`](#sf-plugins-update)
-* [`sf retrieve metadata`](#sf-retrieve-metadata)
+
+- [`sf config get`](#sf-config-get)
+- [`sf config list`](#sf-config-list)
+- [`sf config set`](#sf-config-set)
+- [`sf config unset`](#sf-config-unset)
+- [`sf deploy`](#sf-deploy)
+- [`sf deploy metadata`](#sf-deploy-metadata)
+- [`sf env display`](#sf-env-display)
+- [`sf env list`](#sf-env-list)
+- [`sf env open`](#sf-env-open)
+- [`sf help [COMMAND]`](#sf-help-command)
+- [`sf login`](#sf-login)
+- [`sf login org`](#sf-login-org)
+- [`sf login org jwt`](#sf-login-org-jwt)
+- [`sf logout`](#sf-logout)
+- [`sf logout org`](#sf-logout-org)
+- [`sf plugins`](#sf-plugins)
+- [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
+- [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
+- [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
+- [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
+- [`sf plugins update`](#sf-plugins-update)
+- [`sf retrieve metadata`](#sf-retrieve-metadata)
 
 ## `sf config get`
 
@@ -97,8 +101,6 @@ CONFIGURATION VARIABLES
   apiVersion        API version to use when making requests to app server
   disableTelemetry  Disable telemetry
   instanceUrl       Instance URL to use for a command.
-  isvDebuggerSid    ISV debugger SID
-  isvDebuggerUrl    ISV debugger URL
   maxQueryLimit     Maximum rows to return for a SOQL query.
   restDeploy        Boolean that enables deploy via REST API.
   target-org        The target to be used for any command communicating with an org.
@@ -179,8 +181,6 @@ CONFIGURATION VARIABLES
   apiVersion        API version to use when making requests to app server
   disableTelemetry  Disable telemetry
   instanceUrl       Instance URL to use for a command.
-  isvDebuggerSid    ISV debugger SID
-  isvDebuggerUrl    ISV debugger URL
   maxQueryLimit     Maximum rows to return for a SOQL query.
   restDeploy        Boolean that enables deploy via REST API.
   target-org        The target to be used for any command communicating with an org.
@@ -220,8 +220,6 @@ CONFIGURATION VARIABLES
   apiVersion        API version to use when making requests to app server
   disableTelemetry  Disable telemetry
   instanceUrl       Instance URL to use for a command.
-  isvDebuggerSid    ISV debugger SID
-  isvDebuggerUrl    ISV debugger URL
   maxQueryLimit     Maximum rows to return for a SOQL query.
   restDeploy        Boolean that enables deploy via REST API.
   target-org        The target to be used for any command communicating with an org.
@@ -400,7 +398,7 @@ ENVIRONMENT VARIABLES
 
 ## `sf env display`
 
-Specify an environment with either the username you used when you ran the "sf login" command or the environment's alias. Run "sf env list" to view all your environments and their aliases.
+Specify an environment with either the username you used when you logged into the environment with "sf login", or the alias you gave the environment when you created it. Run "sf env list" to view all your environments and their aliases.
 
 ```
 USAGE
@@ -415,12 +413,12 @@ GLOBAL FLAGS
 DESCRIPTION
   Display details about an environment.
 
-  Specify an environment with either the username you used when you ran the "sf login" command or the environment's
-  alias. Run "sf env list" to view all your environments and their aliases.
+  Specify an environment with either the username you used when you logged into the environment with "sf login", or the
+  alias you gave the environment when you created it. Run "sf env list" to view all your environments and their aliases.
 
   Output depends on the type of environment. For example, scratch org details include the access token, alias, username
   of the associated Dev Hub, the creation and expiration date, the generated scratch org username, and more. Compute
-  environment details include the associated orgs, the list of functions, the project name, and more.
+  environment details include the alias, connected orgs, creation date, project name, and more.
 
 EXAMPLES
   Display details about a scratch org with alias my-scratch-org:
@@ -466,14 +464,16 @@ DESCRIPTION
   currently logged into.
 
   Output is displayed in multiple tables, one for each environment type. For example, the Salesforce Orgs table lists
-  the non-scratch orgs you’re logged into, such as sandboxes, Dev Hubs, production orgs, and so on. Scratch orgs get
-  their own table.
+  the non-scratch orgs you’re logged into, such as sandboxes, Dev Hubs, production orgs, and so on. Scratch orgs and
+  compute environments get their own tables.
 
-  For non-scratch orgs, the Username column refers to the user you logged into the org with. For scratch orgs it refers
-  to the username that was generated for you when you created the scratch org. The table also displays the local alias
-  for the org, the org's ID, the instance URL that hosts the org, and how you authorized (logged into) the org, either
-  using a web browser or JWT. The Config column indicates your default scratch org or Dev Hub org with the target-org or
-  target-dev-hub variable, respectively.
+  The two org tables show similar information, such as aliases, information about the org, and how you authorized
+  (logged into) it, such as with a web browser or JWT. The scratch org table also shows the expiration date. For
+  non-scratch orgs, the Username column refers to the user you logged into the org with. For scratch orgs it refers to
+  the username that was generated for you when you created the scratch org. Your default scratch org or Dev Hub org is
+  indicated with the "target-org" or "target-dev-hub" configuration variable, respectively, in the Config column.
+
+  The compute environment table shows the alias, information about the connected orgs, the project name, and more.
 
   Use the table manipulation flags, such as --filter and --sort, to change how the data is displayed.
 
@@ -612,7 +612,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.24/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.26/src/commands/login.ts)_
 
 ## `sf login org`
 
@@ -799,13 +799,13 @@ USAGE
   $ sf logout [--json] [--no-prompt]
 
 FLAGS
-  --no-prompt  Don't prompt for confirmation.
+  --no-prompt  Don't prompt for confirmation; logs you out of all environments.
 
 GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Log out of all environments, such as Salesforce orgs and compute environments.
+  Log out interactively from environments, such as Salesforce orgs and compute environments.
 
   By default, the command prompts you to select which environments you want to log out of. Use --no-prompt to not be
   prompted and log out of all environments.
@@ -814,16 +814,16 @@ DESCRIPTION
   again, either through the CLI or the Salesforce UI.
 
 EXAMPLES
-  Log out of all environments:
+  Interactively select the environments to log out of:
 
     $ sf logout
 
-  Log out of all environments with no prompt:
+  Log out of all environments, without being prompted:
 
     $ sf logout --no-prompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.24/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.26/src/commands/logout.ts)_
 
 ## `sf logout org`
 
@@ -937,7 +937,7 @@ ALIASES
   $ sf plugins add
 
 EXAMPLES
-  $ sf plugins:install myplugin 
+  $ sf plugins:install myplugin
 
   $ sf plugins:install https://github.com/someuser/someplugin
 
@@ -1115,4 +1115,5 @@ ENVIRONMENT VARIABLES
   SFDX_USE_PROGRESS_BAR  For force:mdapi:deploy, force:source:deploy, and force:source:push, set to false to disable the
                          progress bar.
 ```
+
 <!-- commandsstop -->

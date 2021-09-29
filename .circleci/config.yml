@@ -8,6 +8,7 @@ jobs:
     docker:
       - image: node:latest
     steps:
+      - release-management/install-sf-release
       - release-management/halt-workflow-if-not-releasable
 
   change-case-start:
