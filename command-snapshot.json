@@ -100,6 +100,11 @@
     "flags": ["help", "verbose"]
   },
   {
+    "command": "plugins:trust:verify",
+    "plugin": "@salesforce/plugin-trust",
+    "flags": ["json", "loglevel", "npm", "registry"]
+  },
+  {
     "command": "plugins:uninstall",
     "plugin": "@oclif/plugin-plugins",
     "flags": ["help", "verbose"]
