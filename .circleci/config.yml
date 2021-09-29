@@ -4,13 +4,6 @@ orbs:
   release-management: salesforce/npm-release-management@4
 
 jobs:
-  maybe-halt:
-    docker:
-      - image: node:latest
-    steps:
-      - release-management/install-sf-release
-      - release-management/halt-workflow-if-not-releasable
-
   change-case-start:
     docker:
       - image: node:latest
@@ -153,10 +146,6 @@ workflows:
           filters:
             branches:
               ignore: main # test the pack on PRs, but main will do pack-and-upload-tarballs
-      - maybe-halt:
-          filters:
-            branches:
-              only: main
       - change-case-start:
           context: CLI_CTC
           requires:
