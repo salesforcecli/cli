@@ -83,7 +83,6 @@
     "@sf/env": "npm:@salesforce/plugin-env@0.0.34",
     "@sf/gen": "npm:@salesforce/plugin-generate@0.0.3",
     "@sf/login": "npm:@salesforce/plugin-login@0.0.26",
-    "@sf/tpl": "npm:@salesforce/templates@52.2.0",
     "inquirer": "https://github.com/salesforcecli/Inquirer.js/tarball/github_release",
     "tslib": "^2.3.0"
   },
@@ -97,6 +96,7 @@
     "@salesforce/plugin-telemetry"
   ],
   "resolutions": {
+    "inquirer": "https://github.com/salesforcecli/Inquirer.js/tarball/github_release",
     "@salesforce/templates": "^52.2.0"
   },
   "repository": "salesforcecli/cli",
