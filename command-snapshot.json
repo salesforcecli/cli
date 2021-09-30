@@ -1,10 +1,5 @@
 [
   {
-    "command": "commandreference:generate",
-    "plugin": "@salesforce/plugin-command-reference",
-    "flags": ["ditamap-suffix", "erroronwarnings", "hidden", "json", "outputdir", "plugins"]
-  },
-  {
     "command": "config:get",
     "plugin": "@salesforce/plugin-config",
     "flags": ["json", "verbose"]
