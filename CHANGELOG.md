@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/salesforcecli/cli/compare/v1.0.0...v1.0.1) (2021-09-30)
+
+
+### Bug Fixes
+
+* bump versions for v1 [skip-validate-pr] ([#69](https://github.com/salesforcecli/cli/issues/69)) ([b808dfd](https://github.com/salesforcecli/cli/commit/b808dfdfb37f42d73b4f88d76927ef6019e86890))
+
 ## [1.0.0](https://github.com/salesforcecli/cli/compare/v0.0.47...v1.0.0) (2021-09-30)
 
 ### [0.0.47](https://github.com/salesforcecli/cli/compare/v0.0.46...v0.0.47) (2021-09-30)

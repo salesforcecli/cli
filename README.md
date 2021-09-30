@@ -283,7 +283,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.0.1/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.0.2/src/commands/deploy.ts)_
 
 ## `sf deploy functions`
 
@@ -439,11 +439,17 @@ DESCRIPTION
   Create a compute environment for use with Salesforce Functions.
 
 EXAMPLES
-  $ sfdx env:create:compute
+  Create a compute environment to run Salesforce Functions:
 
-  $ sfdx env:create:compute --alias my-compute-environment
+    $ sf env create compute
 
-  $ sfdx env:create:compute --connected-org my-scratch-org
+  Connect the environment to a specific org:
+
+    $ sf env create compute --connected-org=org-alias
+
+  Create an alias for the compute environment:
+
+    $ sf env create compute --alias environment-alias
 ```
 
 ## `sf env delete`
@@ -462,9 +468,13 @@ DESCRIPTION
   Delete an environment.
 
 EXAMPLES
-  $ sfdx env:delete --target-compute=billingApp-Scratch1
+  Delete a compute environment:
 
-  $ sfdx env:delete --target-compute=billingApp-Scratch1 --confirm=billingApp-Scratch1
+    $ sf env delete --target-compute environment-alias
+
+  Delete without a confirmation step:
+
+    $ sf env delete --target-compute environment-alias --confirm environment-alias
 ```
 
 ## `sf env display`
@@ -585,13 +595,15 @@ USAGE
   $ sf env log tail [-e <value> | ]
 
 FLAGS
-  -e, --target-compute=<value>  Environment name to retrieve logs.
+  -e, --target-compute=<value>  Compute environment name to retrieve logs.
 
 DESCRIPTION
   Stream log output for an environment.
 
 EXAMPLES
-  $ sfdx env:log:tail --target-compute=billingApp-Scratch1
+  Stream log output:
+
+    $ sf env log tail --target-compute environment-alias
 ```
 
 ## `sf env logdrain add`
@@ -610,7 +622,9 @@ DESCRIPTION
   Add log drain to a specified environment.
 
 EXAMPLES
-  $ sfdx env:logdrain:add --target-compute=billingApp-Sandbox --drain-url=https://example.com/drain
+  Add a log drain:
+
+    $ sf env logdrain add --target-compute environment-name --url https://path/to/logdrain
 ```
 
 ## `sf env logdrain list`
@@ -629,7 +643,13 @@ DESCRIPTION
   List log drains connected to a specified environment.
 
 EXAMPLES
-  $ sfdx env:logdrain:list --target-compute=billingApp-Sandbox
+  List log drains:
+
+    $ sf env logdrain list --target-compute environment-alias
+
+  List log drains as json:
+
+    $ sf env logdrain list --target-compute environment-alias --json
 ```
 
 ## `sf env logdrain remove`
@@ -642,13 +662,15 @@ USAGE
 
 FLAGS
   -e, --target-compute=<value>  Environment name.
-  -l, --drain-url=<value>       Logdrain url to remove.
+  -l, --drain-url=<value>       Log drain url to remove.
 
 DESCRIPTION
   Remove log drain from a specified environment.
 
 EXAMPLES
-  $ sfdx env:logdrain:remove --target-compute=billingApp-Sandbox --drain-url=syslog://syslog-a.logdna.com:11137
+  Remove a logdrain:
+
+    $ sf env logdrain remove --target-compute environment-alias --url https://path/to/logdrain
 ```
 
 ## `sf env open`
@@ -710,7 +732,7 @@ FLAG DESCRIPTIONS
 
 ## `sf env var get KEY`
 
-display a single config value for an environment
+Display a single config variable for an environment.
 
 ```
 USAGE
@@ -720,15 +742,17 @@ FLAGS
   -e, --target-compute=<value>  Environment name.
 
 DESCRIPTION
-  display a single config value for an environment
+  Display a single config variable for an environment.
 
 EXAMPLES
-  $ sfdx env:var:get foo --target-compute=my-environment
+  Get a config variable:
+
+    $ sf env var get [KEY] --target-compute environment-alias
 ```
 
 ## `sf env var list`
 
-List your config vars in a table.
+List your environment's config vars in a table.
 
 ```
 USAGE
@@ -739,15 +763,21 @@ FLAGS
   -j, --json                    Output list in JSON format.
 
 DESCRIPTION
-  List your config vars in a table.
+  List your environment's config vars in a table.
 
 EXAMPLES
-  $ sfdx env:var:list --target-compute=my-environment
+  List config vars:
+
+    $ sf env var list --target-compute environment-alias
+
+  List in JSON format:
+
+    $ sf env var list --target-compute environment-alias --json
 ```
 
 ## `sf env var set`
 
-Sets a single config value for an environment.
+Set a single config value for an environment.
 
 ```
 USAGE
@@ -757,10 +787,12 @@ FLAGS
   -e, --target-compute=<value>  Environment name.
 
 DESCRIPTION
-  Sets a single config value for an environment.
+  Set a single config value for an environment.
 
 EXAMPLES
-  $ sfdx env:var:set foo=bar --target-compute=my-environment
+  Set a config value:
+
+    $ sf env var set [KEY]=[VALUE] --target-compute environment-alias
 ```
 
 ## `sf env var unset`
@@ -778,26 +810,30 @@ DESCRIPTION
   Unset a single config value for an environment.
 
 EXAMPLES
-  $ sfdx env:var:unset foo --target-compute=my-environment
+  Unset a value:
+
+    $ sf env var unset --target-compute environment-alias
 ```
 
 ## `sf generate function`
 
-Create a function with basic scaffolding specific to a given language.
+Create a Salesforce Function with basic scaffolding specific to a given language.
 
 ```
 USAGE
   $ sf generate function -l javascript|typescript|java [-n <value> | ]
 
 FLAGS
-  -l, --language=(javascript|typescript|java)  (required) Language.
-  -n, --function-name=<value>                  Function name.
+  -l, --language=(javascript|typescript|java)  (required) Language. Can be one of: javascript, typescript, java.
+  -n, --function-name=<value>                  Function name. Must start with a capital letter.
 
 DESCRIPTION
-  Create a function with basic scaffolding specific to a given language.
+  Create a Salesforce Function with basic scaffolding specific to a given language.
 
 EXAMPLES
-  $ sfdx generate:function --function-name=function-name --language=javascript
+  Create a JavaScript function:
+
+    $ sf generate function --function-name MyFunction --language javascript
 ```
 
 ## `sf generate project`
@@ -949,17 +985,19 @@ _See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-lo
 
 ## `sf login functions`
 
-Log into your account.
+Log in to Salesforce Functions.
 
 ```
 USAGE
   $ sf login functions
 
 DESCRIPTION
-  Log into your account.
+  Log in to Salesforce Functions.
 
 EXAMPLES
-  $ sfdx login:functions
+  Log in to Salesforce Functions:
+
+    $ sf login functions
 ```
 
 ## `sf login functions jwt`
@@ -978,13 +1016,20 @@ FLAGS
   -l, --instance-url=<value>  The login URL of the instance the org lives on.
   -u, --username=<value>      (required) Authentication username.
   -v, --set-default-dev-hub   Set the org as the default Dev Hub for scratch org creation.
-  --json                      format output as json
+  --json                      Format output as JSON.
 
 DESCRIPTION
   Login using JWT instead of default web-based flow. This will authenticate you with both sf and Salesforce Functions.
 
 EXAMPLES
-  $ sfdx login:functions:jwt --username testuser@mycompany.org --keyfile file.key --clientid 123456
+  Log in using JWT:
+
+    $ sf login functions jwt --username example@username.org --keyfile file.key --clientid 123456
+
+  Log in and specify the org alias and URL, set as default org and default Dev Hub, and format output as JSON:
+
+    $ sf login functions jwt --username example@username.org --keyfile file.key --clientid 123456 --alias org-alias \
+      --set-default --set-default-dev-hub --instance-url https://path/to/instance --json
 ```
 
 ## `sf login org`
@@ -1212,7 +1257,9 @@ DESCRIPTION
   Log out of your Salesforce Functions account.
 
 EXAMPLES
-  $ sfdx logout:functions
+  Log out:
+
+    $ sf logout functions
 ```
 
 ## `sf logout org`
@@ -1514,27 +1561,27 @@ USAGE
 
 FLAGS
   -H, --headers=<value>...     Set headers.
-  -l, --function-url=<value>   Url of the function to run.
+  -l, --function-url=<value>   URL of the function to run.
   -o, --connected-org=<value>  Username or alias for the target org; overrides default target org.
-  -p, --payload=<value>        Set the payload of the cloudevent. also accepts @file.txt format.
-  -s, --structured             Set the cloudevent to be emitted as a structured cloudevent (json).
+  -p, --payload=<value>        Set the payload of the cloudevent as a JSON object or a path to a file via @file.json.
+  -s, --structured             Set the cloudevent to be emitted as a structured JSON cloudevent.
 
 DESCRIPTION
   Send a cloudevent to a function.
 
 EXAMPLES
-  $ sfdx run:function -l http://localhost:8080 -p '{"id": 12345}'
+  Run a function:
 
-  $ sfdx run:function -l http://localhost:8080 -p '@file.json'
+    $ sf run function --url http://path/to/function
 
-  $ echo '{"id": 12345}' | sfdx run:function -l http://localhost:8080
+  Run a function with a payload and a JSON response:
 
-  $ sfdx run:function -l http://localhost:8080 -p '{"id": 12345}' --structured
+    $ sf run function --url http://path/to/function --payload '@file.json' --structured
 ```
 
 ## `sf run function start`
 
-Build and run function image locally.
+Build and run a Salesforce Function locally.
 
 ```
 USAGE
@@ -1551,19 +1598,25 @@ FLAGS
   --no-pull                 Skip pulling builder image before use.
 
 DESCRIPTION
-  Build and run function image locally.
+  Build and run a Salesforce Function locally.
 
 EXAMPLES
-  $ sfdx run:function:start
+  Build and run a function:
 
-  $ sfdx run:function:start -e VAR=VALUE
+    $ sf run function start
 
-  $ sfdx run:function:start --network host --no-pull --clear-cache --debug-port 9000 --port 5000
+  Run a function on a specific port with additional logs:
+
+    $ sf run function start --port 5000 --verbose
+
+  Add environment variables and specify a network:
+
+    $ sf run function start --env KEY=VALUE --network host
 ```
 
 ## `sf whoami functions`
 
-Show information on your account.
+Show information on your Salesforce Functions login.
 
 ```
 USAGE
@@ -1573,9 +1626,15 @@ FLAGS
   -j, --json  Output list in JSON format.
 
 DESCRIPTION
-  Show information on your account.
+  Show information on your Salesforce Functions login.
 
 EXAMPLES
-  $ sf whoami functions
+  Get account information:
+
+    $ sf whoami functions
+
+  Show token and output result as JSON:
+
+    $ sf whoami functions --show-token --json
 ```
 <!-- commandsstop -->
