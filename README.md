@@ -29,7 +29,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v|version)
-@salesforce/cli/0.0.45 linux-x64 node-v14.18.0
+@salesforce/cli/0.0.47 linux-x64 node-v14.18.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -45,16 +45,31 @@ USAGE
 * [`sf config set`](#sf-config-set)
 * [`sf config unset`](#sf-config-unset)
 * [`sf deploy`](#sf-deploy)
+* [`sf deploy functions`](#sf-deploy-functions)
 * [`sf deploy metadata`](#sf-deploy-metadata)
+* [`sf env create compute`](#sf-env-create-compute)
+* [`sf env delete`](#sf-env-delete)
 * [`sf env display`](#sf-env-display)
 * [`sf env list`](#sf-env-list)
+* [`sf env log tail`](#sf-env-log-tail)
+* [`sf env logdrain add`](#sf-env-logdrain-add)
+* [`sf env logdrain list`](#sf-env-logdrain-list)
+* [`sf env logdrain remove`](#sf-env-logdrain-remove)
 * [`sf env open`](#sf-env-open)
+* [`sf env var get KEY`](#sf-env-var-get-key)
+* [`sf env var list`](#sf-env-var-list)
+* [`sf env var set`](#sf-env-var-set)
+* [`sf env var unset`](#sf-env-var-unset)
+* [`sf generate function`](#sf-generate-function)
 * [`sf generate project`](#sf-generate-project)
 * [`sf help [COMMAND]`](#sf-help-command)
 * [`sf login`](#sf-login)
+* [`sf login functions`](#sf-login-functions)
+* [`sf login functions jwt`](#sf-login-functions-jwt)
 * [`sf login org`](#sf-login-org)
 * [`sf login org jwt`](#sf-login-org-jwt)
 * [`sf logout`](#sf-logout)
+* [`sf logout functions`](#sf-logout-functions)
 * [`sf logout org`](#sf-logout-org)
 * [`sf plugins`](#sf-plugins)
 * [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
@@ -63,6 +78,9 @@ USAGE
 * [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
 * [`sf plugins update`](#sf-plugins-update)
 * [`sf retrieve metadata`](#sf-retrieve-metadata)
+* [`sf run function`](#sf-run-function)
+* [`sf run function start`](#sf-run-function-start)
+* [`sf whoami functions`](#sf-whoami-functions)
 
 ## `sf config get`
 
@@ -265,7 +283,21 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v0.0.23/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.0.0/src/commands/deploy.ts)_
+
+## `sf deploy functions`
+
+```
+USAGE
+  $ sf deploy functions -o <value> [-b <value>] [--force] [-q]
+
+FLAGS
+  -b, --branch=<value>         Deploy the latest commit from a branch different from the currently active branch.
+  -o, --connected-org=<value>  (required) Username or alias for the org that the compute environment should be connected
+                               to.
+  -q, --quiet                  Limit the amount of output displayed from the deploy process.
+  --force                      Ignore warnings and overwrite remote repository (not allowed in production).
+```
 
 ## `sf deploy metadata`
 
@@ -381,16 +413,58 @@ FLAG DESCRIPTIONS
     All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
 
 CONFIGURATION VARIABLES
-  target-org  The target to be used for any command communicating with an org.
-  apiVersion  API version to use when making requests to app server
+  target-org  Username or alias of the org that all commands run against by default. (sf only)
+  apiVersion  API version of your project. Default: API version of your Dev Hub org.
 
 ENVIRONMENT VARIABLES
-  SF_TARGET_ORG          Specifies the username of your default target org you don’t have to use the --target-org CLI
-                         parameter. Overrides the value of the target-org runtime configuration value.
-  SFDX_DEFAULTUSERNAME   Specifies the username of your default org so you don’t have to use the --targetusername CLI
-                         parameter. Overrides the value of the defaultusername runtime configuration value.
-  SFDX_USE_PROGRESS_BAR  For force:mdapi:deploy, force:source:deploy, and force:source:push, set to false to disable the
-                         progress bar.
+  SF_TARGET_ORG          Username or alias of your default org. Overrides the target-org configuration variable.
+  SFDX_DEFAULTUSERNAME   Username or alias of your default org. Overrides the defaultusername configuration value.
+  SFDX_USE_PROGRESS_BAR  Set to false to disable the progress bar when running force:mdapi:deploy, force:source:deploy,
+                         or force:source:push.
+```
+
+## `sf env create compute`
+
+Create a compute environment for use with Salesforce Functions.
+
+```
+USAGE
+  $ sf env create compute [-o <value>] [-a <value> | ]
+
+FLAGS
+  -a, --alias=<value>          Alias for the created environment.
+  -o, --connected-org=<value>  Username or alias for the org that the compute environment should be connected to.
+
+DESCRIPTION
+  Create a compute environment for use with Salesforce Functions.
+
+EXAMPLES
+  $ sfdx env:create:compute
+
+  $ sfdx env:create:compute --alias my-compute-environment
+
+  $ sfdx env:create:compute --connected-org my-scratch-org
+```
+
+## `sf env delete`
+
+Delete an environment.
+
+```
+USAGE
+  $ sf env delete [-e <value> | ] [--confirm <value>]
+
+FLAGS
+  -e, --target-compute=<value>  Environment name.
+  --confirm=name...             Confirmation name.
+
+DESCRIPTION
+  Delete an environment.
+
+EXAMPLES
+  $ sfdx env:delete --target-compute=billingApp-Scratch1
+
+  $ sfdx env:delete --target-compute=billingApp-Scratch1 --confirm=billingApp-Scratch1
 ```
 
 ## `sf env display`
@@ -502,6 +576,81 @@ EXAMPLES
     $ sf env list --csv --no-header
 ```
 
+## `sf env log tail`
+
+Stream log output for an environment.
+
+```
+USAGE
+  $ sf env log tail [-e <value> | ]
+
+FLAGS
+  -e, --target-compute=<value>  Environment name to retrieve logs.
+
+DESCRIPTION
+  Stream log output for an environment.
+
+EXAMPLES
+  $ sfdx env:log:tail --target-compute=billingApp-Scratch1
+```
+
+## `sf env logdrain add`
+
+Add log drain to a specified environment.
+
+```
+USAGE
+  $ sf env logdrain add [-e <value> | ] [-l <value> | ]
+
+FLAGS
+  -e, --target-compute=<value>  Environment name.
+  -l, --drain-url=<value>       Endpoint that will receive sent logs.
+
+DESCRIPTION
+  Add log drain to a specified environment.
+
+EXAMPLES
+  $ sfdx env:logdrain:add --target-compute=billingApp-Sandbox --drain-url=https://example.com/drain
+```
+
+## `sf env logdrain list`
+
+List log drains connected to a specified environment.
+
+```
+USAGE
+  $ sf env logdrain list [-e <value> | ] [-j]
+
+FLAGS
+  -e, --target-compute=<value>  Environment name.
+  -j, --json                    Output list in JSON format.
+
+DESCRIPTION
+  List log drains connected to a specified environment.
+
+EXAMPLES
+  $ sfdx env:logdrain:list --target-compute=billingApp-Sandbox
+```
+
+## `sf env logdrain remove`
+
+Remove log drain from a specified environment.
+
+```
+USAGE
+  $ sf env logdrain remove [-e <value> | ] [-l <value> | ]
+
+FLAGS
+  -e, --target-compute=<value>  Environment name.
+  -l, --drain-url=<value>       Logdrain url to remove.
+
+DESCRIPTION
+  Remove log drain from a specified environment.
+
+EXAMPLES
+  $ sfdx env:logdrain:remove --target-compute=billingApp-Sandbox --drain-url=syslog://syslog-a.logdna.com:11137
+```
+
 ## `sf env open`
 
 Open an environment in a web browser.
@@ -559,26 +708,112 @@ FLAG DESCRIPTIONS
     browser applications differ depending on the operating system you're on; check your documentation for details.
 ```
 
+## `sf env var get KEY`
+
+display a single config value for an environment
+
+```
+USAGE
+  $ sf env var get [KEY] [-e <value> | ]
+
+FLAGS
+  -e, --target-compute=<value>  Environment name.
+
+DESCRIPTION
+  display a single config value for an environment
+
+EXAMPLES
+  $ sfdx env:var:get foo --target-compute=my-environment
+```
+
+## `sf env var list`
+
+List your config vars in a table.
+
+```
+USAGE
+  $ sf env var list [-e <value> | ] [-j]
+
+FLAGS
+  -e, --target-compute=<value>  Environment name.
+  -j, --json                    Output list in JSON format.
+
+DESCRIPTION
+  List your config vars in a table.
+
+EXAMPLES
+  $ sfdx env:var:list --target-compute=my-environment
+```
+
+## `sf env var set`
+
+Sets a single config value for an environment.
+
+```
+USAGE
+  $ sf env var set [-e <value> | ]
+
+FLAGS
+  -e, --target-compute=<value>  Environment name.
+
+DESCRIPTION
+  Sets a single config value for an environment.
+
+EXAMPLES
+  $ sfdx env:var:set foo=bar --target-compute=my-environment
+```
+
+## `sf env var unset`
+
+Unset a single config value for an environment.
+
+```
+USAGE
+  $ sf env var unset [-e <value> | ]
+
+FLAGS
+  -e, --target-compute=<value>  Environment name.
+
+DESCRIPTION
+  Unset a single config value for an environment.
+
+EXAMPLES
+  $ sfdx env:var:unset foo --target-compute=my-environment
+```
+
+## `sf generate function`
+
+Create a function with basic scaffolding specific to a given language.
+
+```
+USAGE
+  $ sf generate function -l javascript|typescript|java [-n <value> | ]
+
+FLAGS
+  -l, --language=(javascript|typescript|java)  (required) Language.
+  -n, --function-name=<value>                  Function name.
+
+DESCRIPTION
+  Create a function with basic scaffolding specific to a given language.
+
+EXAMPLES
+  $ sfdx generate:function --function-name=function-name --language=javascript
+```
+
 ## `sf generate project`
 
-​
+Generate a Salesforce DX project.
 
 ```
 USAGE
   $ sf generate project -n <value> [--json] [-p <value>] [-x] [-s <value>] [-d <value>] [-t standard|empty|analytics]
 
 FLAGS
-  -d, --output-dir=<value>           [default: .] ​
-                                     Directory to store the newly created project files.
-                                     ​
-  -n, --name=<value>                 (required) ​
-                                     Name of the generated project.
-                                     ​
+  -d, --output-dir=<value>           [default: .] Directory to store the newly created project files.
+  -n, --name=<value>                 (required) Name of the generated project.
   -p, --default-package-dir=<value>  [default: force-app] Default package directory name.
   -s, --namespace=<value>            Project associated namespace.
-  -t, --template=<option>            [default: standard] ​
-                                     Template to use to create the project.
-                                     ​
+  -t, --template=<option>            [default: standard] Template to use to create the project.
                                      <options: standard|empty|analytics>
   -x, --manifest                     Generate a manifest (package.xml) for change-set based development.
 
@@ -586,60 +821,41 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  ​
-
   Generate a Salesforce DX project.
-
-  ​
-
-  ​
 
   A Salesforce DX project has a specific structure and a configuration file (sfdx-project.json) that identifies the
   directory as a Salesforce DX project. This command generates the basic scaffolding to get you started.
-
-  ​
 
   By default, the generated sfdx-project.json file sets the sourceApiVersion property to the default API version
   currently used by Salesforce CLI. To specify a different version, set the apiVersion configuration variable. For
   example:
 
-  ​
-
   sf config set apiVersion=53.0 --global
 
+EXAMPLES
+  Generate a project called MyProject:
+  ​
+  $ sf generate project --name MyProject
   ​
 
-EXAMPLES
+  Generate the minimum number of files and directories:
   ​
-  - Generate a project called MyProject:
-    ​
-    sf generate project --name MyProject
-    ​
-  - Generate the minimum number of files and directories:
-    ​
-    sf generate project --name MyProject --template empty
-    ​
-  - Generate the project in /Users/jdoe/sf-projects rather than the current directory:
-    ​
-    sf generate project --name MyProject --template empty --output-dir /Users/jdoe/sf-projects
-    ​
+  $ sf generate project --name MyProject --template empty
+  ​
+
+  Generate the project in /Users/jdoe/sf-projects rather than the current directory:
+  ​
+  $ sf generate project --name MyProject --template empty --output-dir /Users/jdoe/sf-projects
 
 FLAG DESCRIPTIONS
-  -d, --output-dir=<value>  ​
-  Directory to store the newly created project files.
-  ​
+  -d, --output-dir=<value>  Directory to store the newly created project files.
 
-    ​
     The location can be an absolute path or relative to the current working directory.
 
-  -n, --name=<value>  ​
-  Name of the generated project.
-  ​
+  -n, --name=<value>  Name of the generated project.
 
-    ​
     Creates a project directory with this name. Also sets the "name" property in the sfdx-project.json file to this
     name.
-    ​
 
   -p, --default-package-dir=<value>  Default package directory name.
 
@@ -650,34 +866,29 @@ FLAG DESCRIPTIONS
 
     The namespace associated with this project and any connected scratch orgs.
 
-  -t, --template=standard|empty|analytics  ​
-  Template to use to create the project.
-  ​
+  -t, --template=standard|empty|analytics  Template to use to create the project.
 
-    ​
     The template determines the sample configuration files and directories that this command generates. For example, the
     empty template provides these files and directory to get you started.
-    ​
 
     - .forceignore
     - config/project-scratch-def.json
     - sfdx-project.json
     - package.json
     - force-app (basic source directory structure)
-    ​
+
     The standard template provides a complete force-app directory structure so you know where to put your source. It
     also provides additional files and scripts, especially useful when using Salesforce Extensions for VS Code. For
     example:
-    ​
+
     - .gitignore: Use Git for version control.
     - .prettierrc and .prettierignore: Use Prettier to format your Aura components.
     - .vscode/extensions.json: When launched, Visual Studio Code, prompts you to install the recommended extensions for
     your project.
     - .vscode/launch.json: Configures Replay Debugger.
     - .vscode/settings.json: Additional configuration settings.
-    ​
+
     The analytics template provides similar files and the force-app/main/default/waveTemplates directory.
-    ​
 
   -x, --manifest  Generate a manifest (package.xml) for change-set based development.
 
@@ -687,24 +898,23 @@ FLAG DESCRIPTIONS
 
 ## `sf help [COMMAND]`
 
-display help for sf
+Display help for sf.
 
 ```
 USAGE
-  $ sf help [COMMAND] [--json] [--all]
+  $ sf help [COMMAND] [-n]
 
 ARGUMENTS
-  COMMAND  command to show help for
+  COMMAND  Command to show help for.
 
 FLAGS
-  --all   see all commands in CLI
-  --json  Format output as json.
+  -n, --nested-commands  Include all nested commands in the output.
 
 DESCRIPTION
-  display help for sf
+  Display help for sf.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v4.0.3/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.1/src/commands/help.ts)_
 
 ## `sf login`
 
@@ -735,7 +945,47 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.26/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.0/src/commands/login.ts)_
+
+## `sf login functions`
+
+Log into your account.
+
+```
+USAGE
+  $ sf login functions
+
+DESCRIPTION
+  Log into your account.
+
+EXAMPLES
+  $ sfdx login:functions
+```
+
+## `sf login functions jwt`
+
+Login using JWT instead of default web-based flow. This will authenticate you with both sf and Salesforce Functions.
+
+```
+USAGE
+  $ sf login functions jwt -u <value> -f <value> -i <value> [-l <value> | ] [--json] [-a <value>] [-d] [-v]
+
+FLAGS
+  -a, --alias=<value>         Alias for the org.
+  -d, --set-default           Set the org as the default that all org-related commands run against.
+  -f, --keyfile=<value>       (required) Path to JWT keyfile.
+  -i, --clientid=<value>      (required) OAuth client ID.
+  -l, --instance-url=<value>  The login URL of the instance the org lives on.
+  -u, --username=<value>      (required) Authentication username.
+  -v, --set-default-dev-hub   Set the org as the default Dev Hub for scratch org creation.
+  --json                      format output as json
+
+DESCRIPTION
+  Login using JWT instead of default web-based flow. This will authenticate you with both sf and Salesforce Functions.
+
+EXAMPLES
+  $ sfdx login:functions:jwt --username testuser@mycompany.org --keyfile file.key --clientid 123456
+```
 
 ## `sf login org`
 
@@ -816,11 +1066,12 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://test.salesforce.com.
 
 CONFIGURATION VARIABLES
-  apiVersion   API version to use when making requests to app server
-  instanceUrl  Instance URL to use for a command.
+  apiVersion   API version of your project. Default: API version of your Dev Hub org.
+  instanceUrl  URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com.
 
 ENVIRONMENT VARIABLES
-  SFDX_INSTANCE_URL  The URL of the Salesforce instance that is hosting your org.
+  SFDX_INSTANCE_URL  URL of the Salesforce instance that is hosting your org. Default value is
+                     https://login.salesforce.com. Overrides the instanceUrl configuration value.
 ```
 
 ## `sf login org jwt`
@@ -906,11 +1157,12 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://test.salesforce.com.
 
 CONFIGURATION VARIABLES
-  apiVersion   API version to use when making requests to app server
-  instanceUrl  Instance URL to use for a command.
+  apiVersion   API version of your project. Default: API version of your Dev Hub org.
+  instanceUrl  URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com.
 
 ENVIRONMENT VARIABLES
-  SFDX_INSTANCE_URL  The URL of the Salesforce instance that is hosting your org.
+  SFDX_INSTANCE_URL  URL of the Salesforce instance that is hosting your org. Default value is
+                     https://login.salesforce.com. Overrides the instanceUrl configuration value.
 ```
 
 ## `sf logout`
@@ -946,7 +1198,22 @@ EXAMPLES
     $ sf logout --no-prompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v0.0.26/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.0/src/commands/logout.ts)_
+
+## `sf logout functions`
+
+Log out of your Salesforce Functions account.
+
+```
+USAGE
+  $ sf logout functions
+
+DESCRIPTION
+  Log out of your Salesforce Functions account.
+
+EXAMPLES
+  $ sfdx logout:functions
+```
 
 ## `sf logout org`
 
@@ -982,48 +1249,48 @@ EXAMPLES
     $ sf logout org --target-org jdoe@example.org
 
 CONFIGURATION VARIABLES
-  apiVersion   API version to use when making requests to app server
-  instanceUrl  Instance URL to use for a command.
-  target-org   The target to be used for any command communicating with an org.
+  apiVersion   API version of your project. Default: API version of your Dev Hub org.
+  instanceUrl  URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com.
+  target-org   Username or alias of the org that all commands run against by default. (sf only)
 ```
 
 ## `sf plugins`
 
-list installed plugins
+List installed plugins.
 
 ```
 USAGE
   $ sf plugins [--core]
 
 FLAGS
-  --core  show core plugins
+  --core  Show core plugins.
 
 DESCRIPTION
-  list installed plugins
+  List installed plugins.
 
 EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v1.10.1/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.0.0/src/commands/plugins/index.ts)_
 
 ## `sf plugins:inspect PLUGIN...`
 
-displays installation properties of a plugin
+Displays installation properties of a plugin.
 
 ```
 USAGE
   $ sf plugins:inspect PLUGIN...
 
 ARGUMENTS
-  PLUGIN  [default: .] plugin to inspect
+  PLUGIN  [default: .] Plugin to inspect.
 
 FLAGS
   -h, --help     show CLI help
   -v, --verbose
 
 DESCRIPTION
-  displays installation properties of a plugin
+  Displays installation properties of a plugin.
 
 EXAMPLES
   $ sf plugins:inspect myplugin
@@ -1031,22 +1298,22 @@ EXAMPLES
 
 ## `sf plugins:install PLUGIN...`
 
-installs a plugin into the CLI
+Installs a plugin into the CLI.
 
 ```
 USAGE
   $ sf plugins:install PLUGIN...
 
 ARGUMENTS
-  PLUGIN  plugin to install
+  PLUGIN  Plugin to install.
 
 FLAGS
-  -f, --force    yarn install with force flag
+  -f, --force    Run yarn install with force flag.
   -h, --help     show CLI help
   -v, --verbose
 
 DESCRIPTION
-  installs a plugin into the CLI
+  Installs a plugin into the CLI.
 
   Can be installed from npm or a git url.
 
@@ -1069,7 +1336,7 @@ EXAMPLES
 
 ## `sf plugins:link PLUGIN`
 
-links a plugin into the CLI for development
+Links a plugin into the CLI for development.
 
 ```
 USAGE
@@ -1083,7 +1350,7 @@ FLAGS
   -v, --verbose
 
 DESCRIPTION
-  links a plugin into the CLI for development
+  Links a plugin into the CLI for development.
 
   Installation of a linked plugin will override a user-installed or core plugin.
 
@@ -1096,7 +1363,7 @@ EXAMPLES
 
 ## `sf plugins:uninstall PLUGIN...`
 
-removes a plugin from the CLI
+Removes a plugin from the CLI.
 
 ```
 USAGE
@@ -1110,7 +1377,7 @@ FLAGS
   -v, --verbose
 
 DESCRIPTION
-  removes a plugin from the CLI
+  Removes a plugin from the CLI.
 
 ALIASES
   $ sf plugins unlink
@@ -1119,7 +1386,7 @@ ALIASES
 
 ## `sf plugins update`
 
-update installed plugins
+Update installed plugins.
 
 ```
 USAGE
@@ -1130,7 +1397,7 @@ FLAGS
   -v, --verbose
 
 DESCRIPTION
-  update installed plugins
+  Update installed plugins.
 ```
 
 ## `sf retrieve metadata`
@@ -1227,15 +1494,88 @@ FLAG DESCRIPTIONS
     If you specify this parameter, don’t specify --metadata or --source-dir.
 
 CONFIGURATION VARIABLES
-  target-org  The target to be used for any command communicating with an org.
-  apiVersion  API version to use when making requests to app server
+  target-org  Username or alias of the org that all commands run against by default. (sf only)
+  apiVersion  API version of your project. Default: API version of your Dev Hub org.
 
 ENVIRONMENT VARIABLES
-  SF_TARGET_ORG          Specifies the username of your default target org you don’t have to use the --target-org CLI
-                         parameter. Overrides the value of the target-org runtime configuration value.
-  SFDX_DEFAULTUSERNAME   Specifies the username of your default org so you don’t have to use the --targetusername CLI
-                         parameter. Overrides the value of the defaultusername runtime configuration value.
-  SFDX_USE_PROGRESS_BAR  For force:mdapi:deploy, force:source:deploy, and force:source:push, set to false to disable the
-                         progress bar.
+  SF_TARGET_ORG          Username or alias of your default org. Overrides the target-org configuration variable.
+  SFDX_DEFAULTUSERNAME   Username or alias of your default org. Overrides the defaultusername configuration value.
+  SFDX_USE_PROGRESS_BAR  Set to false to disable the progress bar when running force:mdapi:deploy, force:source:deploy,
+                         or force:source:push.
+```
+
+## `sf run function`
+
+Send a cloudevent to a function.
+
+```
+USAGE
+  $ sf run function [-l <value> | ] [-H <value>] [-p <value>] [-s] [-o <value>]
+
+FLAGS
+  -H, --headers=<value>...     Set headers.
+  -l, --function-url=<value>   Url of the function to run.
+  -o, --connected-org=<value>  Username or alias for the target org; overrides default target org.
+  -p, --payload=<value>        Set the payload of the cloudevent. also accepts @file.txt format.
+  -s, --structured             Set the cloudevent to be emitted as a structured cloudevent (json).
+
+DESCRIPTION
+  Send a cloudevent to a function.
+
+EXAMPLES
+  $ sfdx run:function -l http://localhost:8080 -p '{"id": 12345}'
+
+  $ sfdx run:function -l http://localhost:8080 -p '@file.json'
+
+  $ echo '{"id": 12345}' | sfdx run:function -l http://localhost:8080
+
+  $ sfdx run:function -l http://localhost:8080 -p '{"id": 12345}' --structured
+```
+
+## `sf run function start`
+
+Build and run function image locally.
+
+```
+USAGE
+  $ sf run function start [-p <value>] [-b <value>] [--clear-cache] [--no-pull] [-e <value>] [--network <value>] [-v]
+
+FLAGS
+  -b, --debug-port=<value>  [default: 9229] Port for remote debugging.
+  -e, --env=<value>...      Set environment variables (provided during build and run).
+  -p, --port=<value>        [default: 8080] Port for running the function.
+  -v, --verbose             Output additional logs.
+  --clear-cache             Clear associated cache before executing.
+  --network=<value>         Connect and build containers to a network. This can be useful to build containers which
+                            require a local resource.
+  --no-pull                 Skip pulling builder image before use.
+
+DESCRIPTION
+  Build and run function image locally.
+
+EXAMPLES
+  $ sfdx run:function:start
+
+  $ sfdx run:function:start -e VAR=VALUE
+
+  $ sfdx run:function:start --network host --no-pull --clear-cache --debug-port 9000 --port 5000
+```
+
+## `sf whoami functions`
+
+Show information on your account.
+
+```
+USAGE
+  $ sf whoami functions [-j]
+
+FLAGS
+  -j, --json  Output list in JSON format.
+
+DESCRIPTION
+  Show information on your account.
+
+EXAMPLES
+  $ sf whoami functions
 ```
 <!-- commandsstop -->
