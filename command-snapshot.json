@@ -1,5 +1,10 @@
 [
   {
+    "command": "commandreference:generate",
+    "plugin": "@salesforce/plugin-command-reference",
+    "flags": ["ditamap-suffix", "erroronwarnings", "hidden", "json", "outputdir", "plugins"]
+  },
+  {
     "command": "config:get",
     "plugin": "@salesforce/plugin-config",
     "flags": ["json", "verbose"]
@@ -25,9 +30,24 @@
     "flags": ["interactive"]
   },
   {
+    "command": "deploy:functions",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["branch", "connected-org", "force", "quiet"]
+  },
+  {
     "command": "deploy:metadata",
     "plugin": "@salesforce/plugin-deploy-retrieve-metadata",
     "flags": ["json", "manifest", "metadata", "source-dir", "target-org", "test-level", "wait"]
+  },
+  {
+    "command": "env:create:compute",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["alias", "connected-org", "setalias"]
+  },
+  {
+    "command": "env:delete",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["confirm", "environment", "target-compute"]
   },
   {
     "command": "env:display",
@@ -40,9 +60,54 @@
     "flags": ["all", "columns", "csv", "filter", "json", "no-header", "no-truncate", "output", "sort"]
   },
   {
+    "command": "env:log:tail",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["environment", "target-compute"]
+  },
+  {
+    "command": "env:logdrain:add",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["drain-url", "environment", "target-compute", "url"]
+  },
+  {
+    "command": "env:logdrain:list",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["environment", "json", "target-compute"]
+  },
+  {
+    "command": "env:logdrain:remove",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["drain-url", "environment", "target-compute", "url"]
+  },
+  {
     "command": "env:open",
     "plugin": "@salesforce/plugin-env",
     "flags": ["browser", "json", "path", "target-env", "url-only"]
+  },
+  {
+    "command": "env:var:get",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["environment", "target-compute"]
+  },
+  {
+    "command": "env:var:list",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["environment", "json", "target-compute"]
+  },
+  {
+    "command": "env:var:set",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["environment", "target-compute"]
+  },
+  {
+    "command": "env:var:unset",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["environment", "target-compute"]
+  },
+  {
+    "command": "generate:function",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["function-name", "language", "name"]
   },
   {
     "command": "generate:project",
@@ -52,12 +117,32 @@
   {
     "command": "help",
     "plugin": "@oclif/plugin-help",
-    "flags": ["all", "json"]
+    "flags": ["nested-commands"]
   },
   {
     "command": "login",
     "plugin": "@salesforce/plugin-login",
     "flags": []
+  },
+  {
+    "command": "login:functions",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": []
+  },
+  {
+    "command": "login:functions:jwt",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": [
+      "alias",
+      "clientid",
+      "instance-url",
+      "instanceurl",
+      "json",
+      "keyfile",
+      "set-default",
+      "set-default-dev-hub",
+      "username"
+    ]
   },
   {
     "command": "login:org",
@@ -73,6 +158,11 @@
     "command": "logout",
     "plugin": "@salesforce/plugin-login",
     "flags": ["json", "no-prompt"]
+  },
+  {
+    "command": "logout:functions",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": []
   },
   {
     "command": "logout:org",
@@ -120,8 +210,36 @@
     "flags": ["api-version", "json", "manifest", "metadata", "package-name", "source-dir", "target-org", "wait"]
   },
   {
+    "command": "run:function",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["connected-org", "function-url", "headers", "payload", "structured", "url"]
+  },
+  {
+    "command": "run:function:start",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": [
+      "builder",
+      "clear-cache",
+      "debug-port",
+      "descriptor",
+      "env",
+      "network",
+      "no-build",
+      "no-pull",
+      "no-run",
+      "path",
+      "port",
+      "verbose"
+    ]
+  },
+  {
     "command": "telemetry",
     "plugin": "@salesforce/plugin-telemetry",
     "flags": []
+  },
+  {
+    "command": "whoami:functions",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["json", "show-token"]
   }
 ]
