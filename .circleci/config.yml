@@ -142,6 +142,7 @@ workflows:
               ignore: main
       - release-management/test-sf-inclusion:
           name: test-include-sf-in-sdx
+          sfdx_branch: re/dont-depend-on-sf
       - test-pack-tarballs:
           filters:
             branches:
