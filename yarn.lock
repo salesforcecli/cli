@@ -1258,6 +1258,18 @@
     cli-ux "^5.6.3"
     inquirer "^8.1.1"
 
+"@salesforce/sf-plugins-core@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-1.0.1.tgz#4787cdf5d28addbe3773f6a4f375ae36bbf2f9bd"
+  integrity sha512-7p7PjaHhZJ6/E1MjS29dAWeiEVmucTqmC3wA/LTXn2tq7uXwcW9JrnEShScEs3OJ5tB/jAcGO/V+zbavOLVbZQ==
+  dependencies:
+    "@oclif/core" "^1.0.0"
+    "@salesforce/core" "^3.6.5"
+    "@salesforce/kit" "^1.5.17"
+    "@salesforce/ts-types" "^1.5.20"
+    cli-ux "^5.6.3"
+    inquirer "^8.2.0"
+
 "@salesforce/telemetry@^2.0.5":
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-2.0.5.tgz#29475bf832b132dd2f5946a4f1f9d28c439aca2d"
@@ -1309,10 +1321,10 @@
     cli-ux "^5.6.3"
     tslib "^2"
 
-"@sf/deploy-retrieve@npm:@salesforce/plugin-deploy-retrieve@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.0.2.tgz#f087e85dd543c94c7508af2c27bbfee5ccba78eb"
-  integrity sha512-gw+1VMHVIgAYkCf8hTxO6zGSSjq1Jm92t1Ygs73Qh3Mt0WoHh93MNXNz7RPoSuZu96BQBa+RS1w33mC6zQID7A==
+"@sf/deploy-retrieve@npm:@salesforce/plugin-deploy-retrieve@1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.0.3.tgz#a88def8c6564e67e8ea25fad114a12efb1587d48"
+  integrity sha512-STqM21XwTRKT+gr+wacP920QqxrBBLPEr4dGj+unjp7XIK3QmVtiyQ04lCcpshpNaYCbp2O5uGa111zyWmT9CQ==
   dependencies:
     "@oclif/core" "^1.0.0"
     "@salesforce/core" "3.6.5"
@@ -1392,16 +1404,16 @@
     "@salesforce/templates" "^52.2.0"
     tslib "^2"
 
-"@sf/login@npm:@salesforce/plugin-login@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@salesforce/plugin-login/-/plugin-login-1.0.0.tgz#8659389fbcef9c813fcd54f4aa5442e233db8988"
-  integrity sha512-elf0gvB2h4SD5w2i7+260+CuLIJTQ+BjZ01i3t8/do/6KnDnR057fBfOksa1MhWJWnQDSurwtH07fun/XOZeKg==
+"@sf/login@npm:@salesforce/plugin-login@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-login/-/plugin-login-1.0.1.tgz#ee7d05abf9926ac7a8f3d183cf16b6716992d07b"
+  integrity sha512-7GrBva1jaoi+TEw/qbqA1CLkyBMQ4aVsKf0rl1HP9sMExDyezwb6HB19ZWyEoXD43ltc4ef5RBx/xa/+YVuDjg==
   dependencies:
     "@oclif/core" "^1.0.0"
     "@salesforce/core" "3.6.5"
     "@salesforce/sf-plugins-core" "^1.0.0"
     chalk "^4.1.2"
-    inquirer "^8.1.2"
+    inquirer "^8.2.0"
     open "^8.0.6"
     tslib "^2"
 
@@ -6083,9 +6095,29 @@ inquirer@^7.1.0:
     strip-ansi "^6.0.0"
     through "^2.3.6"
 
-inquirer@^8.0.0, inquirer@^8.1.1, inquirer@^8.1.2:
+inquirer@^8.0.0, inquirer@^8.1.1:
   version "8.1.5"
   resolved "https://github.com/salesforcecli/Inquirer.js/tarball/github_release#4000d262d3c20b2541683cc53fa50d4af82992a1"
+  dependencies:
+    ansi-escapes "^4.2.1"
+    chalk "^4.1.1"
+    cli-cursor "^3.1.0"
+    cli-width "^3.0.0"
+    external-editor "^3.0.3"
+    figures "^3.0.0"
+    lodash "^4.17.21"
+    mute-stream "0.0.8"
+    ora "^5.4.1"
+    run-async "^2.4.0"
+    rxjs "^7.2.0"
+    string-width "^4.1.0"
+    strip-ansi "^6.0.0"
+    through "^2.3.6"
+
+inquirer@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-8.2.0.tgz#f44f008dd344bbfc4b30031f45d984e034a3ac3a"
+  integrity sha512-0crLweprevJ02tTuA6ThpoAERAGyVILC4sS74uib58Xf/zSr1/ZWtmm7D5CI+bSQEaA04f0K7idaHpQbSWgiVQ==
   dependencies:
     ansi-escapes "^4.2.1"
     chalk "^4.1.1"
