@@ -19,7 +19,7 @@ Read the [Get Started with CLI Unification](https://developer.salesforce.com/doc
 
 # Feedback
 
-To provide feedback, use the issues tab in this repository.
+To provide feedback, use create a new issue [here](https://github.com/forcedotcom/cli/issues).
 
 # Usage
 
@@ -1374,7 +1374,7 @@ ALIASES
   $ sf plugins add
 
 EXAMPLES
-  $ sf plugins:install myplugin 
+  $ sf plugins:install myplugin
 
   $ sf plugins:install https://github.com/someuser/someplugin
 
