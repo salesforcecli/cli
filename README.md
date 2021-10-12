@@ -29,7 +29,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v|version)
-@salesforce/cli/1.0.4 linux-x64 node-v14.18.0
+@salesforce/cli/1.0.5 linux-x64 node-v14.18.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -283,7 +283,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.0.3/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.0.4/src/commands/deploy.ts)_
 
 ## `sf deploy functions`
 
@@ -981,7 +981,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.1/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.2/src/commands/login.ts)_
 
 ## `sf login functions`
 
@@ -1243,7 +1243,7 @@ EXAMPLES
     $ sf logout --no-prompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.1/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.2/src/commands/logout.ts)_
 
 ## `sf logout functions`
 
@@ -1374,7 +1374,7 @@ ALIASES
   $ sf plugins add
 
 EXAMPLES
-  $ sf plugins:install myplugin
+  $ sf plugins:install myplugin 
 
   $ sf plugins:install https://github.com/someuser/someplugin
 

@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run"
@@ -76,15 +76,15 @@
     "@oclif/plugin-help": "^5.1.1",
     "@oclif/plugin-not-found": "^2.2.0",
     "@oclif/plugin-plugins": "^2.0.0",
-    "@salesforce/plugin-telemetry": "1.2.6",
+    "@salesforce/plugin-telemetry": "1.2.8",
     "@salesforce/sf-plugins-core": "^1.0.1",
-    "@sf/config": "npm:@salesforce/plugin-config@2.2.6",
-    "@sf/deploy-retrieve": "npm:@salesforce/plugin-deploy-retrieve@1.0.3",
-    "@sf/drm": "npm:@salesforce/plugin-deploy-retrieve-metadata@1.0.2",
-    "@sf/env": "npm:@salesforce/plugin-env@1.0.1",
+    "@sf/config": "npm:@salesforce/plugin-config@2.2.7",
+    "@sf/deploy-retrieve": "npm:@salesforce/plugin-deploy-retrieve@1.0.4",
+    "@sf/drm": "npm:@salesforce/plugin-deploy-retrieve-metadata@1.0.3",
+    "@sf/env": "npm:@salesforce/plugin-env@1.0.2",
     "@sf/functions": "npm:@salesforce/plugin-functions@1.0.3",
-    "@sf/gen": "npm:@salesforce/plugin-generate@1.0.1",
-    "@sf/login": "npm:@salesforce/plugin-login@1.0.1",
+    "@sf/gen": "npm:@salesforce/plugin-generate@1.0.3",
+    "@sf/login": "npm:@salesforce/plugin-login@1.0.2",
     "tslib": "^2.3.1"
   },
   "pinnedDependencies": [
