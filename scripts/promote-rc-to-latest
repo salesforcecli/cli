@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# this script will read from a stable-rc channel to get the sha/version.  You can override them with env vars.
+# make sure you want what's at that url (watch out for caching if you just promoted to stable-rc!)
+set -ex
+
+CHANNEL=stable
+
+CLI_RC_VERSION=${S3_PROMOTE_OVERRIDE_VERSION}
+SHA_SHORT=${S3_PROMOTE_OVERRIDE_SHA}
+MANIFEST_URL="https://developer.salesforce.com/media/salesforce-cli/sf/channels/stable-rc/sf-darwin-x64-buildmanifest"
+
+if [ -z "${S3_PROMOTE_OVERRIDE_VERSION}" ]; then
+  CLI_RC_VERSION=$(curl -s $MANIFEST_URL | jq -cr '.version')
+fi
+echo "version to promote: $CLI_RC_VERSION"
+
+if [ -z "${S3_PROMOTE_OVERRIDE_SHA}" ]; then
+  SHA_SHORT=$(curl -s $MANIFEST_URL | jq -cr '.sha')
+fi
+echo "will use sha of ${SHA_SHORT}"
+
+echo "will run command"
+echo "yarn promote --version $CLI_RC_VERSION --sha $SHA_SHORT --channel $CHANNEL --max-age 300 --macos --win --indexes"
+
+# promote it (runs oclif promote)
+yarn promote --version $CLI_RC_VERSION --sha $SHA_SHORT --channel $CHANNEL --max-age 300 --macos --win --indexes

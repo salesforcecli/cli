@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -ex
+
+channel="stable-rc"
+version=$(node -p -e "require('./package.json').version")
+sha=$(git rev-parse --short HEAD)
+echo "Promoting $version-$sha to channel $channel"
+# 300 = 5 minutes
+yarn promote --version $version --sha $sha --channel $channel --max-age 300

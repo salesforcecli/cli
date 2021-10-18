@@ -52,12 +52,7 @@ jobs:
       - run: yarn pack:verify
       - run: yarn test:smoke-unix
       - run: yarn upload:tarballs
-      - run:
-          name: Promote to stable channel
-          command: |
-            VERSION=$(node -p -e "require('./package.json').version")
-            SHA=$(git rev-parse --short HEAD)
-            yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --indexes
+      - run: ./scripts/promote-stable-rc-tarballs
 
   pack-and-upload-macos-installer:
     macos:
@@ -68,12 +63,7 @@ jobs:
       - run: yarn install
       - run: yarn pack:macos
       - run: yarn upload:macos
-      - run:
-          name: Promote macos installer to stable channel
-          command: |
-            VERSION=$(node -p -e "require('./package.json').version")
-            SHA=$(git rev-parse --short HEAD)
-            yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --macos --indexes
+      - run: ./scripts/promote-stable-rc-mac
 
   pack-and-upload-windows-installer:
     <<: *pack-and-upload-tarballs
@@ -93,12 +83,18 @@ jobs:
           echo $WINDOWS_SIGNING_KEY | base64 --decode > /tmp/windows-signing.pfx
       - run: yarn pack:win
       - run: yarn upload:win
-      - run:
-          name: Promote windows installer to stable channel
-          command: |
-            VERSION=$(node -p -e "require('./package.json').version")
-            SHA=$(git rev-parse --short HEAD)
-            yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --win --indexes
+      - run: ./scripts/promote-stable-rc-win
+  promote-channels:
+    docker:
+      - image: node:lts
+    steps:
+      - checkout
+      - jq/install
+      - restore_cache:
+          keys:
+            - v3-npm-{{checksum "yarn.lock"}}
+      - run: yarn install
+      - run: ./scripts/promote-rc-to-latest
   npm-promotions:
     docker:
       - image: node:latest
