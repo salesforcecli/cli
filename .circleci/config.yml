@@ -162,9 +162,7 @@ workflows:
       - approval:
           type: approval
           requires:
-            # - node-latest
-            - node-lts
-            - node-maintenance
+            - test-pack-tarballs
           filters:
             branches:
               only:
