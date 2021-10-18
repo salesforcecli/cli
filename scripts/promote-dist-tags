@@ -1,0 +1,2 @@
+CLI_RC_VERSION=$(npm show @salesforce/cli@latest-rc version)
+npm dist-tag add @salesforce/cli@${CLI_RC_VERSION} latest

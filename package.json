@@ -121,6 +121,7 @@
     "prepare": "yarn compile && yarn lint",
     "pretarball": "./bin/dev cli:tarballs:prepare --types",
     "promote": "oclif promote",
+    "promote-dist-tags": "./scripts/promote-dist-tags",
     "promote:verify": "./bin/dev cli:versions:inspect --channels stable --locations archive --cli sf",
     "test:smoke-unix": "./tmp/sf/bin/sf --version && ./tmp/sf/bin/sf help && ./tmp/sf/bin/sf plugins --core",
     "test:deprecation-policy": "./bin/dev snapshot:compare",

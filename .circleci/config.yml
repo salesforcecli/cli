@@ -99,6 +99,15 @@ jobs:
             VERSION=$(node -p -e "require('./package.json').version")
             SHA=$(git rev-parse --short HEAD)
             yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --win --indexes
+  npm-promotions:
+    docker:
+      - image: node:latest
+    steps:
+      - checkout
+      - jq/install
+      - run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+        # if you try to use yarn here, it will attempt to use the wrong registry and throw 401s
+      - run: npm run promote-dist-tags
 
   promote-verify:
     docker:
@@ -153,11 +162,22 @@ workflows:
           filters:
             branches:
               only: main
+      - approval:
+          type: approval
+          requires:
+            # - node-latest
+            - node-lts
+            - node-maintenance
+          filters:
+            branches:
+              only:
+                - main
       - release-management/release-package:
           node_version: '14'
-          tag: latest
+          tag: latest-rc
           github-release: true
           requires:
+            - approval
             - change-case-start
             - test-include-sf-in-sdx
           filters:
@@ -165,7 +185,7 @@ workflows:
               only: main
           pre-job-steps:
             - release-management/pin-dependencies:
-                tag: latest
+                tag: latest-rc
       - pack-and-upload-tarballs:
           filters:
             branches:
@@ -220,3 +240,33 @@ workflows:
     jobs:
       - release-management/dependabot-automerge:
           skip-ci: true
+  promote-to-latest:
+    triggers:
+      - schedule:
+          # Wednesday mornings at 10am mountain
+          cron: '0 16 * * 3'
+          filters:
+            branches:
+              only:
+                - main
+    jobs:
+      # start the change case
+      - change-case-start:
+          context: CLI_CTC
+      - promote-channels:
+          requires:
+            - change-case-start
+      - npm-promotions:
+          requires:
+            - change-case-start
+      # close change case
+      - close-CTC:
+          context: CLI_CTC
+          requires:
+            - npm-promotions
+            - promote-channels
+      # verify the npm tags and installers are on the right version
+      - promote-verify:
+          requires:
+            - npm-promotions
+            - promote-channels
