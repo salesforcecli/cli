@@ -2,6 +2,7 @@
 version: 2.1
 orbs:
   release-management: salesforce/npm-release-management@4
+  jq: circleci/jq@2.2
 
 jobs:
   change-case-start:
