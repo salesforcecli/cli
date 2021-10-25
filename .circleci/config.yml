@@ -1,7 +1,7 @@
 ---
 version: 2.1
 orbs:
-  release-management: salesforce/npm-release-management@4
+  release-management: salesforce/npm-release-management@dev:2c044f7
   jq: circleci/jq@2.2
 
 jobs:
@@ -41,7 +41,6 @@ jobs:
     resource_class: xlarge
     steps:
       - checkout
-      - install-sf-release
       - run: git fetch origin && git pull
       - run: |
           apt-get update
@@ -97,7 +96,7 @@ jobs:
             - v3-npm-{{checksum "yarn.lock"}}
       - run: yarn install
       #      - run: ./scripts/promote-rc-to-latest
-      - run yarn channel-promote --candidate stable-rc --target stable --cli sf
+      - run: yarn channel-promote --candidate stable-rc --target stable --cli sf
   npm-promotions:
     docker:
       - image: node:latest
