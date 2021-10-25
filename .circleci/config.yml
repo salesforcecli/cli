@@ -1,7 +1,7 @@
 ---
 version: 2.1
 orbs:
-  release-management: salesforce/npm-release-management@dev:2c044f7
+  release-management: salesforce/npm-release-management@4
   jq: circleci/jq@2.2
 
 jobs:
@@ -30,6 +30,8 @@ jobs:
       - restore_cache:
           keys:
             - v3-npm-{{checksum "yarn.lock"}}
+      - install-sf-release
+      - run: sf-release pin:dependencies --tag latest-rc
       - run: yarn install
       - run: yarn pack:tarballs
       - run: yarn pack:verify
@@ -146,9 +148,6 @@ workflows:
           filters:
             branches:
               ignore: main
-      - release-management/test-sf-inclusion:
-          name: test-include-sf-in-sdx
-          tag: latest-rc
       - test-pack-tarballs:
           filters:
             branches:
