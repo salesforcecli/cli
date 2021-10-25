@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/DeployMetadataResult",
+  "definitions": {
+    "DeployMetadataResult": {
+      "type": "object",
+      "properties": {
+        "files": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FileResponse"
+          }
+        },
+        "tests": {
+          "$ref": "#/definitions/TestResults"
+        }
+      },
+      "required": ["files"],
+      "additionalProperties": false
+    },
+    "FileResponse": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "fullName": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "filePath": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string",
+              "enum": ["Created", "Changed", "Unchanged", "Deleted"]
+            }
+          },
+          "required": ["fullName", "state", "type"],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "fullName": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "filePath": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string",
+              "const": "Failed"
+            },
+            "lineNumber": {
+              "type": "number"
+            },
+            "columnNumber": {
+              "type": "number"
+            },
+            "error": {
+              "type": "string"
+            },
+            "problemType": {
+              "type": "string",
+              "enum": ["Warning", "Error"]
+            }
+          },
+          "required": ["error", "fullName", "problemType", "state", "type"],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "TestResults": {
+      "type": "object",
+      "properties": {
+        "passing": {
+          "type": "number"
+        },
+        "failing": {
+          "type": "number"
+        },
+        "total": {
+          "type": "number"
+        },
+        "time": {
+          "type": "number"
+        }
+      },
+      "required": ["passing", "failing", "total"],
+      "additionalProperties": false
+    }
+  }
+}

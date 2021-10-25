@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/OrgAuthorization",
+  "definitions": {
+    "OrgAuthorization": {
+      "type": "object",
+      "properties": {
+        "orgId": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "oauthMethod": {
+          "type": "string",
+          "enum": ["jwt", "web", "token", "unknown"]
+        },
+        "aliases": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "configs": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "isScratchOrg": {
+          "type": "boolean"
+        },
+        "isDevHub": {
+          "type": "boolean"
+        },
+        "instanceUrl": {
+          "type": "string"
+        },
+        "accessToken": {
+          "type": "string"
+        },
+        "error": {
+          "type": "string"
+        },
+        "isExpired": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "const": "unknown"
+            }
+          ]
+        }
+      },
+      "required": ["orgId", "username", "oauthMethod", "isExpired"],
+      "additionalProperties": false
+    }
+  }
+}

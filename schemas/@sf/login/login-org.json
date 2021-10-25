@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/LoginOrgResult",
+  "definitions": {
+    "LoginOrgResult": {
+      "type": "object",
+      "properties": {
+        "alias": {
+          "type": "string"
+        },
+        "loginUrl": {
+          "type": "string"
+        },
+        "orgId": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        }
+      },
+      "required": ["loginUrl", "orgId", "username"],
+      "additionalProperties": false
+    }
+  }
+}
