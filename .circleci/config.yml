@@ -30,7 +30,7 @@ jobs:
       - restore_cache:
           keys:
             - v3-npm-{{checksum "yarn.lock"}}
-      - install-sf-release
+      - release-management/install-sf-release
       - run: sf-release pin:dependencies --tag latest-rc
       - run: yarn install
       - run: yarn pack:tarballs
@@ -163,7 +163,7 @@ workflows:
       - change-case-start:
           context: CLI_CTC
           requires:
-            - test-include-sf-in-sdx
+            - test-pack-tarballs
             - approval
           filters:
             branches:
@@ -175,7 +175,7 @@ workflows:
           requires:
             - approval
             - change-case-start
-            - test-include-sf-in-sdx
+            - test-pack-tarballs
           filters:
             branches:
               only: main
