@@ -136,7 +136,8 @@
   "husky": {
     "hooks": {
       "commit-msg": "sf-husky-commit-msg",
-      "pre-commit": "sf-husky-pre-commit"
+      "pre-commit": "sf-husky-pre-commit",
+      "pre-push": "sf-husky-pre-push"
     }
   },
   "devDependencies": {
