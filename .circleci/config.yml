@@ -55,7 +55,7 @@ jobs:
       - run: yarn pack:verify
       - run: yarn test:smoke-unix
       - run: yarn upload:tarballs
-      - run: yarn channel:promote --cli sf --sha $CIRCLE_SHA1 --target stable-rc
+      - run: yarn channel:promote --cli sf --sha $CIRCLE_SHA1 --target stable-rc --platform deb
 
   pack-and-upload-macos-installer:
     macos:
@@ -66,7 +66,7 @@ jobs:
       - run: yarn install
       - run: yarn pack:macos
       - run: yarn upload:macos
-      - run: yarn channel:promote --cli sf --sha $CIRCLE_SHA1 --platform macos --target stable-rc
+      - run: yarn channel:promote --cli sf --sha $CIRCLE_SHA1 --target stable-rc --platform macos
 
   pack-and-upload-windows-installer:
     <<: *pack-and-upload-tarballs
@@ -86,7 +86,7 @@ jobs:
           echo $WINDOWS_SIGNING_KEY | base64 --decode > /tmp/windows-signing.pfx
       - run: yarn pack:win
       - run: yarn upload:win
-      - run: yarn channel:promote --cli sf --sha $CIRCLE_SHA1 --platform win --target stable-rc
+      - run: yarn channel:promote --cli sf --sha $CIRCLE_SHA1 --target stable-rc --platform win
   promote-channels:
     docker:
       - image: node:lts
@@ -97,7 +97,7 @@ jobs:
           keys:
             - v3-npm-{{checksum "yarn.lock"}}
       - run: yarn install
-      - run: yarn channel-promote --candidate stable-rc --target stable --cli sf --indexes
+      - run: yarn channel:promote --candidate stable-rc --target stable --cli sf --indexes --platform macos,win,deb
   npm-promotions:
     docker:
       - image: node:latest
@@ -154,8 +154,6 @@ workflows:
               ignore: main # test the pack on PRs, but main will do pack-and-upload-tarballs
       - approval:
           type: approval
-          requires:
-            - test-pack-tarballs
           filters:
             branches:
               only:
@@ -163,7 +161,6 @@ workflows:
       - change-case-start:
           context: CLI_CTC
           requires:
-            - test-pack-tarballs
             - approval
           filters:
             branches:
@@ -175,7 +172,6 @@ workflows:
           requires:
             - approval
             - change-case-start
-            - test-pack-tarballs
           filters:
             branches:
               only: main
