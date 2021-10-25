@@ -95,7 +95,6 @@ jobs:
           keys:
             - v3-npm-{{checksum "yarn.lock"}}
       - run: yarn install
-      #      - run: ./scripts/promote-rc-to-latest
       - run: yarn channel-promote --candidate stable-rc --target stable --cli sf
   npm-promotions:
     docker:
