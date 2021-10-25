@@ -31,7 +31,7 @@ jobs:
           keys:
             - v3-npm-{{checksum "yarn.lock"}}
       - release-management/install-sf-release
-      - run: sf-release pin:dependencies --tag latest-rc
+      - run: sf-release npm:dependencies:pin --tag latest-rc
       - run: yarn install
       - run: yarn pack:tarballs
       - run: yarn pack:verify
