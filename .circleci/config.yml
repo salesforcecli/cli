@@ -41,6 +41,7 @@ jobs:
     resource_class: xlarge
     steps:
       - checkout
+      - install-sf-release
       - run: git fetch origin && git pull
       - run: |
           apt-get update
@@ -53,7 +54,7 @@ jobs:
       - run: yarn pack:verify
       - run: yarn test:smoke-unix
       - run: yarn upload:tarballs
-      - run: ./scripts/promote-stable-rc-tarballs
+      - run: yarn channel:promote --cli sf --sha $CIRCLE_SHA1 --target stable-rc
 
   pack-and-upload-macos-installer:
     macos:
@@ -64,7 +65,7 @@ jobs:
       - run: yarn install
       - run: yarn pack:macos
       - run: yarn upload:macos
-      - run: ./scripts/promote-stable-rc-mac
+      - run: yarn channel:promote --cli sf --sha $CIRCLE_SHA1 --platform macos --target stable-rc
 
   pack-and-upload-windows-installer:
     <<: *pack-and-upload-tarballs
@@ -84,7 +85,7 @@ jobs:
           echo $WINDOWS_SIGNING_KEY | base64 --decode > /tmp/windows-signing.pfx
       - run: yarn pack:win
       - run: yarn upload:win
-      - run: ./scripts/promote-stable-rc-win
+      - run: yarn channel:promote --cli sf --sha $CIRCLE_SHA1 --platform win --target stable-rc
   promote-channels:
     docker:
       - image: node:lts
@@ -95,7 +96,8 @@ jobs:
           keys:
             - v3-npm-{{checksum "yarn.lock"}}
       - run: yarn install
-      - run: ./scripts/promote-rc-to-latest
+      #      - run: ./scripts/promote-rc-to-latest
+      - run yarn channel-promote --candidate stable-rc --target stable --cli sf
   npm-promotions:
     docker:
       - image: node:latest
@@ -148,17 +150,11 @@ workflows:
               ignore: main
       - release-management/test-sf-inclusion:
           name: test-include-sf-in-sdx
+          tag: latest-rc
       - test-pack-tarballs:
           filters:
             branches:
               ignore: main # test the pack on PRs, but main will do pack-and-upload-tarballs
-      - change-case-start:
-          context: CLI_CTC
-          requires:
-            - test-include-sf-in-sdx
-          filters:
-            branches:
-              only: main
       - approval:
           type: approval
           requires:
@@ -167,6 +163,14 @@ workflows:
             branches:
               only:
                 - main
+      - change-case-start:
+          context: CLI_CTC
+          requires:
+            - test-include-sf-in-sdx
+            - approval
+          filters:
+            branches:
+              only: main
       - release-management/release-package:
           node_version: '14'
           tag: latest-rc
@@ -258,8 +262,7 @@ workflows:
       - close-CTC:
           context: CLI_CTC
           requires:
-            - npm-promotions
-            - promote-channels
+            - promote-verify
       # verify the npm tags and installers are on the right version
       - promote-verify:
           requires:

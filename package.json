@@ -103,6 +103,7 @@
   "repository": "salesforcecli/cli",
   "scripts": {
     "build": "sf-build",
+    "channel:promote": "sf-release channel:promote",
     "clean-all": "sf-clean all",
     "clean": "sf-clean",
     "compile": "sf-compile",
@@ -120,7 +121,6 @@
     "prepack": "sf-prepack",
     "prepare": "yarn compile && yarn lint",
     "pretarball": "./bin/dev cli:tarballs:prepare --types",
-    "promote": "oclif promote",
     "promote-dist-tags": "./scripts/promote-dist-tags",
     "promote:verify": "./bin/dev cli:versions:inspect --channels stable --locations archive --cli sf",
     "test:smoke-unix": "./tmp/sf/bin/sf --version && ./tmp/sf/bin/sf help && ./tmp/sf/bin/sf plugins --core",
@@ -136,8 +136,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "sf-husky-commit-msg",
-      "pre-commit": "sf-husky-pre-commit",
-      "pre-push": "sf-husky-pre-push"
+      "pre-commit": "sf-husky-pre-commit"
     }
   },
   "devDependencies": {
