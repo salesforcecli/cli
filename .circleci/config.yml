@@ -2,6 +2,7 @@
 version: 2.1
 orbs:
   release-management: salesforce/npm-release-management@4
+  jq: circleci/jq@2.2
 
 jobs:
   change-case-start:
@@ -29,6 +30,8 @@ jobs:
       - restore_cache:
           keys:
             - v3-npm-{{checksum "yarn.lock"}}
+      - release-management/install-sf-release
+      - run: sf-release npm:dependencies:pin --tag latest-rc
       - run: yarn install
       - run: yarn pack:tarballs
       - run: yarn pack:verify
@@ -52,12 +55,7 @@ jobs:
       - run: yarn pack:verify
       - run: yarn test:smoke-unix
       - run: yarn upload:tarballs
-      - run:
-          name: Promote to stable channel
-          command: |
-            VERSION=$(node -p -e "require('./package.json').version")
-            SHA=$(git rev-parse --short HEAD)
-            yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --indexes
+      - run: yarn channel:promote --cli sf --sha $CIRCLE_SHA1 --target stable-rc --platform deb
 
   pack-and-upload-macos-installer:
     macos:
@@ -68,12 +66,7 @@ jobs:
       - run: yarn install
       - run: yarn pack:macos
       - run: yarn upload:macos
-      - run:
-          name: Promote macos installer to stable channel
-          command: |
-            VERSION=$(node -p -e "require('./package.json').version")
-            SHA=$(git rev-parse --short HEAD)
-            yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --macos --indexes
+      - run: yarn channel:promote --cli sf --sha $CIRCLE_SHA1 --target stable-rc --platform macos
 
   pack-and-upload-windows-installer:
     <<: *pack-and-upload-tarballs
@@ -93,12 +86,27 @@ jobs:
           echo $WINDOWS_SIGNING_KEY | base64 --decode > /tmp/windows-signing.pfx
       - run: yarn pack:win
       - run: yarn upload:win
-      - run:
-          name: Promote windows installer to stable channel
-          command: |
-            VERSION=$(node -p -e "require('./package.json').version")
-            SHA=$(git rev-parse --short HEAD)
-            yarn promote --version $VERSION --sha $SHA --channel stable --max-age 300 --win --indexes
+      - run: yarn channel:promote --cli sf --sha $CIRCLE_SHA1 --target stable-rc --platform win
+  promote-channels:
+    docker:
+      - image: node:lts
+    steps:
+      - checkout
+      - jq/install
+      - restore_cache:
+          keys:
+            - v3-npm-{{checksum "yarn.lock"}}
+      - run: yarn install
+      - run: yarn channel:promote --candidate stable-rc --target stable --cli sf --indexes --platform macos,win,deb
+  npm-promotions:
+    docker:
+      - image: node:latest
+    steps:
+      - checkout
+      - jq/install
+      - run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+        # if you try to use yarn here, it will attempt to use the wrong registry and throw 401s
+      - run: npm run promote-dist-tags
 
   promote-verify:
     docker:
@@ -140,32 +148,36 @@ workflows:
           filters:
             branches:
               ignore: main
-      - release-management/test-sf-inclusion:
-          name: test-include-sf-in-sdx
       - test-pack-tarballs:
           filters:
             branches:
               ignore: main # test the pack on PRs, but main will do pack-and-upload-tarballs
+      - approval:
+          type: approval
+          filters:
+            branches:
+              only:
+                - main
       - change-case-start:
           context: CLI_CTC
           requires:
-            - test-include-sf-in-sdx
+            - approval
           filters:
             branches:
               only: main
       - release-management/release-package:
           node_version: '14'
-          tag: latest
+          tag: latest-rc
           github-release: true
           requires:
+            - approval
             - change-case-start
-            - test-include-sf-in-sdx
           filters:
             branches:
               only: main
           pre-job-steps:
             - release-management/pin-dependencies:
-                tag: latest
+                tag: latest-rc
       - pack-and-upload-tarballs:
           filters:
             branches:
@@ -220,3 +232,32 @@ workflows:
     jobs:
       - release-management/dependabot-automerge:
           skip-ci: true
+  promote-to-latest:
+    triggers:
+      - schedule:
+          # Wednesday mornings at 10am mountain
+          cron: '0 16 * * 3'
+          filters:
+            branches:
+              only:
+                - main
+    jobs:
+      # start the change case
+      - change-case-start:
+          context: CLI_CTC
+      - promote-channels:
+          requires:
+            - change-case-start
+      - npm-promotions:
+          requires:
+            - change-case-start
+      # close change case
+      - close-CTC:
+          context: CLI_CTC
+          requires:
+            - promote-verify
+      # verify the npm tags and installers are on the right version
+      - promote-verify:
+          requires:
+            - npm-promotions
+            - promote-channels
