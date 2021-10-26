@@ -55,7 +55,11 @@ jobs:
       - run: yarn pack:verify
       - run: yarn test:smoke-unix
       - run: yarn upload:tarballs
-      - run: yarn channel:promote --cli sf --sha $CIRCLE_SHA1 --target stable-rc --platform deb
+      - run:
+          name: Promote linux to stable-rc channel
+          command: |
+            VERSION=$(node -p -e "require('./package.json').version")
+            yarn channel:promote --cli sf --version $VERSION --target stable-rc --platform deb
 
   pack-and-upload-macos-installer:
     macos:
@@ -66,7 +70,11 @@ jobs:
       - run: yarn install
       - run: yarn pack:macos
       - run: yarn upload:macos
-      - run: yarn channel:promote --cli sf --sha $CIRCLE_SHA1 --target stable-rc --platform macos
+      - run:
+          name: Promote macos to stable-rc channel
+          command: |
+            VERSION=$(node -p -e "require('./package.json').version")
+            yarn channel:promote --cli sf --version $VERSION --target stable-rc --platform macos
 
   pack-and-upload-windows-installer:
     <<: *pack-and-upload-tarballs
@@ -86,7 +94,11 @@ jobs:
           echo $WINDOWS_SIGNING_KEY | base64 --decode > /tmp/windows-signing.pfx
       - run: yarn pack:win
       - run: yarn upload:win
-      - run: yarn channel:promote --cli sf --sha $CIRCLE_SHA1 --target stable-rc --platform win
+      - run:
+          name: Promote windows to stable-rc channel
+          command: |
+            VERSION=$(node -p -e "require('./package.json').version")
+            yarn channel:promote --cli sf --version $VERSION --target stable-rc --platform win
   promote-channels:
     docker:
       - image: node:lts
