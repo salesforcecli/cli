@@ -2,21 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [1.1.1](https://github.com/salesforcecli/cli/compare/v1.1.0...v1.1.1) (2021-10-26)
+### [1.1.4](https://github.com/salesforcecli/cli/compare/v1.1.3...v1.1.4) (2021-10-26)
 
 
 ### Bug Fixes
 
-* support latest-rc releases ([#78](https://github.com/salesforcecli/cli/issues/78)) ([526f503](https://github.com/salesforcecli/cli/commit/526f503ebf6610eac9ec23448b98f82a29a1b04c))
+* fix wrong version of release management ([#83](https://github.com/salesforcecli/cli/issues/83)) ([d846bc1](https://github.com/salesforcecli/cli/commit/d846bc134daa472ba9335f8d4cebb356221fffc6))
+
+### [1.1.3](https://github.com/salesforcecli/cli/compare/v1.1.2...v1.1.3) (2021-10-26)
+
+
+### Bug Fixes
+
+* tweak parameters to tarball prompt ([#82](https://github.com/salesforcecli/cli/issues/82)) ([60a3fef](https://github.com/salesforcecli/cli/commit/60a3fef1034aec3324e05aea152fcb546bfb5d7a))
+
+### [1.1.2](https://github.com/salesforcecli/cli/compare/v1.1.1...v1.1.2) (2021-10-26)
+
+### Bug Fixes
+
+- capture new version number from package.json ([5229179](https://github.com/salesforcecli/cli/commit/5229179a774bdcd2af1e8fb192310a586407b244))
+
+### [1.1.1](https://github.com/salesforcecli/cli/compare/v1.1.0...v1.1.1) (2021-10-26)
+
+### Bug Fixes
+
+- support latest-rc releases ([#78](https://github.com/salesforcecli/cli/issues/78)) ([526f503](https://github.com/salesforcecli/cli/commit/526f503ebf6610eac9ec23448b98f82a29a1b04c))
 
 ## [1.1.0](https://github.com/salesforcecli/cli/compare/v1.0.7...v1.1.0) (2021-10-20)
 
 ### [1.0.7](https://github.com/salesforcecli/cli/compare/v1.0.6...v1.0.7) (2021-10-14)
 
-
 ### Bug Fixes
 
-* bump deps ([#76](https://github.com/salesforcecli/cli/issues/76)) ([26b59c6](https://github.com/salesforcecli/cli/commit/26b59c638fff4b301f615bdc8c1d21247a14b691))
+- bump deps ([#76](https://github.com/salesforcecli/cli/issues/76)) ([26b59c6](https://github.com/salesforcecli/cli/commit/26b59c638fff4b301f615bdc8c1d21247a14b691))
 
 ### [1.0.6](https://github.com/salesforcecli/cli/compare/v1.0.5...v1.0.6) (2021-10-12)
 
@@ -24,31 +42,27 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.0.4](https://github.com/salesforcecli/cli/compare/v1.0.3...v1.0.4) (2021-10-06)
 
-
 ### Bug Fixes
 
-* bump deps [skip-validate-pr] ([#75](https://github.com/salesforcecli/cli/issues/75)) ([2b8446c](https://github.com/salesforcecli/cli/commit/2b8446ceaabb62711ebc9b5c5c191083deee17fa))
+- bump deps [skip-validate-pr] ([#75](https://github.com/salesforcecli/cli/issues/75)) ([2b8446c](https://github.com/salesforcecli/cli/commit/2b8446ceaabb62711ebc9b5c5c191083deee17fa))
 
 ### [1.0.3](https://github.com/salesforcecli/cli/compare/v1.0.2...v1.0.3) (2021-10-05)
 
-
 ### Bug Fixes
 
-* use dirname in oclif config ([9604e53](https://github.com/salesforcecli/cli/commit/9604e53b0cd9164ad7e4c8b83383b38e393a6d72))
+- use dirname in oclif config ([9604e53](https://github.com/salesforcecli/cli/commit/9604e53b0cd9164ad7e4c8b83383b38e393a6d72))
 
 ### [1.0.2](https://github.com/salesforcecli/cli/compare/v1.0.1...v1.0.2) (2021-10-01)
 
-
 ### Bug Fixes
 
-* revert inquirer dep that references github url ([#72](https://github.com/salesforcecli/cli/issues/72)) ([2d86a0c](https://github.com/salesforcecli/cli/commit/2d86a0ca1112bb95c27de8d2721db98f05192b76))
+- revert inquirer dep that references github url ([#72](https://github.com/salesforcecli/cli/issues/72)) ([2d86a0c](https://github.com/salesforcecli/cli/commit/2d86a0ca1112bb95c27de8d2721db98f05192b76))
 
 ### [1.0.1](https://github.com/salesforcecli/cli/compare/v1.0.0...v1.0.1) (2021-09-30)
 
-
 ### Bug Fixes
 
-* bump versions for v1 [skip-validate-pr] ([#69](https://github.com/salesforcecli/cli/issues/69)) ([b808dfd](https://github.com/salesforcecli/cli/commit/b808dfdfb37f42d73b4f88d76927ef6019e86890))
+- bump versions for v1 [skip-validate-pr] ([#69](https://github.com/salesforcecli/cli/issues/69)) ([b808dfd](https://github.com/salesforcecli/cli/commit/b808dfdfb37f42d73b4f88d76927ef6019e86890))
 
 ## [1.0.0](https://github.com/salesforcecli/cli/compare/v0.0.47...v1.0.0) (2021-09-30)
 
@@ -56,17 +70,15 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.46](https://github.com/salesforcecli/cli/compare/v0.0.45...v0.0.46) (2021-09-29)
 
-
 ### Bug Fixes
 
-* add plugin-generate ([#63](https://github.com/salesforcecli/cli/issues/63)) ([cc4f91d](https://github.com/salesforcecli/cli/commit/cc4f91d66eba9d9cf50e216f4ce39ada4af22e21))
+- add plugin-generate ([#63](https://github.com/salesforcecli/cli/issues/63)) ([cc4f91d](https://github.com/salesforcecli/cli/commit/cc4f91d66eba9d9cf50e216f4ce39ada4af22e21))
 
 ### [0.0.45](https://github.com/salesforcecli/cli/compare/v0.0.44...v0.0.45) (2021-09-29)
 
-
 ### Bug Fixes
 
-* install sf-release for maybe-halt ([#64](https://github.com/salesforcecli/cli/issues/64)) ([196ea50](https://github.com/salesforcecli/cli/commit/196ea50f8d37e766fef213d9b947981c37a5308c))
+- install sf-release for maybe-halt ([#64](https://github.com/salesforcecli/cli/issues/64)) ([196ea50](https://github.com/salesforcecli/cli/commit/196ea50f8d37e766fef213d9b947981c37a5308c))
 
 ### [0.0.44](https://github.com/salesforcecli/cli/compare/v0.0.43...v0.0.44) (2021-09-29)
 
