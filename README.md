@@ -6,12 +6,11 @@
 [![License](https://img.shields.io/npm/l/@salesforce/cli.svg)](https://github.com/salesforcecli/cli/blob/master/package.json)
 
 <!-- toc -->
-
-- [@salesforce/cli](#salesforcecli)
-- [Getting Started](#getting-started)
-- [Feedback](#feedback)
-- [Usage](#usage)
-- [Commands](#commands)
+* [@salesforce/cli](#salesforcecli)
+* [Getting Started](#getting-started)
+* [Feedback](#feedback)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Getting Started
@@ -25,66 +24,63 @@ To provide feedback, use create a new issue [here](https://github.com/forcedotco
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v|version)
-@salesforce/cli/1.1.1 linux-x64 node-v14.18.1
+@salesforce/cli/1.1.2 linux-x64 node-v14.18.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`sf config get`](#sf-config-get)
-- [`sf config list`](#sf-config-list)
-- [`sf config set`](#sf-config-set)
-- [`sf config unset`](#sf-config-unset)
-- [`sf deploy`](#sf-deploy)
-- [`sf deploy functions`](#sf-deploy-functions)
-- [`sf deploy metadata`](#sf-deploy-metadata)
-- [`sf env create compute`](#sf-env-create-compute)
-- [`sf env delete`](#sf-env-delete)
-- [`sf env display`](#sf-env-display)
-- [`sf env list`](#sf-env-list)
-- [`sf env log tail`](#sf-env-log-tail)
-- [`sf env logdrain add`](#sf-env-logdrain-add)
-- [`sf env logdrain list`](#sf-env-logdrain-list)
-- [`sf env logdrain remove`](#sf-env-logdrain-remove)
-- [`sf env open`](#sf-env-open)
-- [`sf env var get KEY`](#sf-env-var-get-key)
-- [`sf env var list`](#sf-env-var-list)
-- [`sf env var set`](#sf-env-var-set)
-- [`sf env var unset`](#sf-env-var-unset)
-- [`sf generate function`](#sf-generate-function)
-- [`sf generate project`](#sf-generate-project)
-- [`sf help [COMMAND]`](#sf-help-command)
-- [`sf login`](#sf-login)
-- [`sf login functions`](#sf-login-functions)
-- [`sf login functions jwt`](#sf-login-functions-jwt)
-- [`sf login org`](#sf-login-org)
-- [`sf login org jwt`](#sf-login-org-jwt)
-- [`sf logout`](#sf-logout)
-- [`sf logout functions`](#sf-logout-functions)
-- [`sf logout org`](#sf-logout-org)
-- [`sf plugins`](#sf-plugins)
-- [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
-- [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
-- [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
-- [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
-- [`sf plugins update`](#sf-plugins-update)
-- [`sf retrieve metadata`](#sf-retrieve-metadata)
-- [`sf run function`](#sf-run-function)
-- [`sf run function start`](#sf-run-function-start)
-- [`sf whoami functions`](#sf-whoami-functions)
+* [`sf config get`](#sf-config-get)
+* [`sf config list`](#sf-config-list)
+* [`sf config set`](#sf-config-set)
+* [`sf config unset`](#sf-config-unset)
+* [`sf deploy`](#sf-deploy)
+* [`sf deploy functions`](#sf-deploy-functions)
+* [`sf deploy metadata`](#sf-deploy-metadata)
+* [`sf env create compute`](#sf-env-create-compute)
+* [`sf env delete`](#sf-env-delete)
+* [`sf env display`](#sf-env-display)
+* [`sf env list`](#sf-env-list)
+* [`sf env log tail`](#sf-env-log-tail)
+* [`sf env logdrain add`](#sf-env-logdrain-add)
+* [`sf env logdrain list`](#sf-env-logdrain-list)
+* [`sf env logdrain remove`](#sf-env-logdrain-remove)
+* [`sf env open`](#sf-env-open)
+* [`sf env var get KEY`](#sf-env-var-get-key)
+* [`sf env var list`](#sf-env-var-list)
+* [`sf env var set`](#sf-env-var-set)
+* [`sf env var unset`](#sf-env-var-unset)
+* [`sf generate function`](#sf-generate-function)
+* [`sf generate project`](#sf-generate-project)
+* [`sf help [COMMAND]`](#sf-help-command)
+* [`sf login`](#sf-login)
+* [`sf login functions`](#sf-login-functions)
+* [`sf login functions jwt`](#sf-login-functions-jwt)
+* [`sf login org`](#sf-login-org)
+* [`sf login org jwt`](#sf-login-org-jwt)
+* [`sf logout`](#sf-logout)
+* [`sf logout functions`](#sf-logout-functions)
+* [`sf logout org`](#sf-logout-org)
+* [`sf plugins`](#sf-plugins)
+* [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
+* [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
+* [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
+* [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
+* [`sf plugins update`](#sf-plugins-update)
+* [`sf retrieve metadata`](#sf-retrieve-metadata)
+* [`sf run function`](#sf-run-function)
+* [`sf run function start`](#sf-run-function-start)
+* [`sf whoami functions`](#sf-whoami-functions)
 
 ## `sf config get`
 
@@ -1378,7 +1374,7 @@ ALIASES
   $ sf plugins add
 
 EXAMPLES
-  $ sf plugins:install myplugin
+  $ sf plugins:install myplugin 
 
   $ sf plugins:install https://github.com/someuser/someplugin
 
@@ -1641,5 +1637,4 @@ EXAMPLES
 
     $ sf whoami functions --show-token --json
 ```
-
 <!-- commandsstop -->
