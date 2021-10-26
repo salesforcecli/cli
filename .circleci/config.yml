@@ -12,6 +12,17 @@ jobs:
       - release-management/install-change-case-mgmt
       - release-management/change-case-create
 
+  verify-no-schema-changes:
+    docker:
+      - image: node:lts
+    resource_class: xlarge
+    steps:
+      - checkout
+      - release-management/install-sf-release
+      - run: sf-release npm:dependencies:pin --tag latest-rc
+      - run: yarn install
+      - run: sf-release cli:schemas:compare
+
   # There are two pack jobs:
   # - test-pack-tarballs to run on every branch *other than main*
   # - pack-and-upload-tarballs to run only on main
@@ -160,6 +171,7 @@ workflows:
           filters:
             branches:
               ignore: main
+      - verify-no-schema-changes
       - test-pack-tarballs:
           filters:
             branches:
@@ -173,6 +185,7 @@ workflows:
       - change-case-start:
           context: CLI_CTC
           requires:
+            - verify-no-schema-changes
             - approval
           filters:
             branches:
@@ -233,6 +246,16 @@ workflows:
     jobs:
       - release-management/test-sf-inclusion
       - test-pack-tarballs
+  test-schema-changes:
+    triggers:
+      - schedule:
+          cron: 0 0 * * *
+          filters:
+            branches:
+              only:
+                - main
+    jobs:
+      - verify-no-schema-changes
   dependabot-automerge:
     triggers:
       - schedule:
