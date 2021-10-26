@@ -59,7 +59,7 @@ jobs:
           name: Promote linux to stable-rc channel
           command: |
             VERSION=$(node -p -e "require('./package.json').version")
-            yarn channel:promote --cli sf --version $VERSION --target stable-rc --platform deb
+            yarn channel:promote --cli sf --version $VERSION --target stable-rc
 
   pack-and-upload-macos-installer:
     macos:

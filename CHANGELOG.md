@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.1.2](https://github.com/salesforcecli/cli/compare/v1.1.1...v1.1.2) (2021-10-26)
 
-
 ### Bug Fixes
 
-* capture new version number from package.json ([5229179](https://github.com/salesforcecli/cli/commit/5229179a774bdcd2af1e8fb192310a586407b244))
+- capture new version number from package.json ([5229179](https://github.com/salesforcecli/cli/commit/5229179a774bdcd2af1e8fb192310a586407b244))
 
 ### [1.1.1](https://github.com/salesforcecli/cli/compare/v1.1.0...v1.1.1) (2021-10-26)
 
