@@ -120,7 +120,7 @@ jobs:
           keys:
             - v3-npm-{{checksum "yarn.lock"}}
       - run: yarn install
-      - run: yarn channel:promote --candidate stable-rc --target stable --cli sf --indexes --platform macos,win,deb
+      - run: yarn channel:promote --candidate stable-rc --target stable --cli sf --indexes --platform macos,win
   npm-promotions:
     docker:
       - image: node:latest
