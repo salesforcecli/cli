@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/salesforcecli/cli/compare/v1.1.5...v1.2.0) (2021-10-28)
+
+
+### Features
+
+* force latest-rc release ([9027e92](https://github.com/salesforcecli/cli/commit/9027e92ab1f248501219a431de3c1e8b308d8774))
+
 ### [1.1.5](https://github.com/salesforcecli/cli/compare/v1.1.4...v1.1.5) (2021-10-26)
 
 ### [1.1.4](https://github.com/salesforcecli/cli/compare/v1.1.3...v1.1.4) (2021-10-26)
