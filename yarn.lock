@@ -1221,10 +1221,10 @@
     open "8.2.1"
     tslib "^2"
 
-"@salesforce/plugin-release-management@^2.5.2":
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-2.5.2.tgz#8a9096561c358b196e6fb8dcadb122b69ca16e25"
-  integrity sha512-Hyg/UldaBCYuPoUuHMgjXO8W1DYOD6UquEylxGtGRCU3Ho4H39KuAfPticPWizB4ki1S7Cs++O7Ab8T0bj3cWg==
+"@salesforce/plugin-release-management@^2.5.3":
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-2.5.3.tgz#cf2e741a63e8b705187985dab1f350b8605e8745"
+  integrity sha512-TeAI6brsAPj3OEcaTlTm+2damOtkKCjspcOSM4Xa6TYoW98lokmmMzEi+22hoHGC/CB9Hpb6nrZ5vg7ZBKzRQg==
   dependencies:
     "@oclif/config" "^1"
     "@octokit/core" "^3.4.0"
@@ -1234,7 +1234,7 @@
     "@salesforce/plugin-trust" "^1.0.9"
     "@salesforce/ts-types" "^1.4.3"
     "@types/semver" "^7.3.6"
-    "@types/sinon" "10.0.2"
+    "@types/sinon" "10.0.6"
     agent-base "^6.0.2"
     aws-sdk "^2.1012.0"
     chalk "^4.1.0"
@@ -1251,7 +1251,7 @@
     semver "^7.3.5"
     shelljs "^0.8.4"
     standard-version "^9.0.0"
-    strip-ansi "6.0.0"
+    strip-ansi "6.0.1"
     tslib "^2"
 
 "@salesforce/plugin-telemetry@1.2.8":
@@ -1388,10 +1388,10 @@
     open "^8.2.0"
     tslib "^2"
 
-"@sf/functions@npm:@salesforce/plugin-functions@1.1.5":
-  version "1.1.5"
-  resolved "https://registry.npmjs.org/@salesforce/plugin-functions/-/plugin-functions-1.1.5.tgz#87a5e60be466e0c574c81f26e249c585a7b05231"
-  integrity sha512-Pj60uV+35Pb7O+yFrKyc1gxsdG3Au47xSIlBJEY0foz3uRI2zsDc3vhR18EHB2Fh7uxnpoeh39nQe3Qhl5h0HA==
+"@sf/functions@npm:@salesforce/plugin-functions@1.1.6":
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.1.6.tgz#166f4d67034b271d9983f7b70ae350a71846744f"
+  integrity sha512-NL+BJTs+zaTfzHfWVkFiWgtFGeT/eAzeaKK/dhomia8Um9gaQYFnxJNt3WOtZaCPpAkCpDrHUL7o/jZ7qB5rCg==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku-cli/schema" "^1.0.25"
@@ -1721,10 +1721,10 @@
   dependencies:
     "@sinonjs/fake-timers" "^7.0.4"
 
-"@types/sinon@10.0.2":
-  version "10.0.2"
-  resolved "https://registry.yarnpkg.com/@types/sinon/-/sinon-10.0.2.tgz#f360d2f189c0fd433d14aeb97b9d705d7e4cc0e4"
-  integrity sha512-BHn8Bpkapj8Wdfxvh2jWIUoaYB/9/XhsL0oOvBfRagJtKlSl9NWPcFOz2lRukI9szwGxFtYZCTejJSqsGDbdmw==
+"@types/sinon@10.0.6":
+  version "10.0.6"
+  resolved "https://registry.yarnpkg.com/@types/sinon/-/sinon-10.0.6.tgz#bc3faff5154e6ecb69b797d311b7cf0c1b523a1d"
+  integrity sha512-6EF+wzMWvBNeGrfP3Nx60hhx+FfwSg1JJBLAAP/IdIUq0EYkqCYf70VT3PhuhPX9eLD+Dp+lNdpb/ZeHG8Yezg==
   dependencies:
     "@sinonjs/fake-timers" "^7.1.0"
 
@@ -1983,7 +1983,7 @@ ansi-regex@^4.1.0:
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-4.1.0.tgz#8b9f8f08cf1acb843756a839ca8c7e3168c51997"
   integrity sha512-1apePfXM1UOSqw0o9IiFAovVz9M5S1Dg+4TrDwfMewQ6p/rmMueb7tWZjQ1rx4Loy1ArBggoqGpfqqdI4rondg==
 
-ansi-regex@^5.0.0, ansi-regex@^5.0.1:
+ansi-regex@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-5.0.1.tgz#082cb2c89c9fe8659a311a53bd6a4dc5301db304"
   integrity sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==
@@ -10508,12 +10508,12 @@ stringify-package@^1.0.1:
   resolved "https://registry.yarnpkg.com/stringify-package/-/stringify-package-1.0.1.tgz#e5aa3643e7f74d0f28628b72f3dad5cecfc3ba85"
   integrity sha512-sa4DUQsYciMP1xhKWGuFM04fB0LG/9DlluZoSVywUMRNvzid6XucHK0/90xGxRoHrAaROrcHK1aPKaijCtSrhg==
 
-strip-ansi@6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.0.tgz#0b1571dd7669ccd4f3e06e14ef1eed26225ae532"
-  integrity sha512-AuvKTrTfQNYNIctbR1K/YGTR1756GycPsg7b9bdV9Duqur4gv6aKqHXah67Z8ImS7WEz5QVcOtlfW2rZEugt6w==
+strip-ansi@6.0.1, strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
+  integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
   dependencies:
-    ansi-regex "^5.0.0"
+    ansi-regex "^5.0.1"
 
 strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   version "3.0.1"
@@ -10535,13 +10535,6 @@ strip-ansi@^5.0.0, strip-ansi@^5.1.0, strip-ansi@^5.2.0:
   integrity sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==
   dependencies:
     ansi-regex "^4.1.0"
-
-strip-ansi@^6.0.0, strip-ansi@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
-  integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
-  dependencies:
-    ansi-regex "^5.0.1"
 
 strip-bom-buf@^1.0.0:
   version "1.0.0"
