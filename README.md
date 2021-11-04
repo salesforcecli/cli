@@ -29,7 +29,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v|version)
-@salesforce/cli/1.2.0 linux-x64 node-v14.18.1
+@salesforce/cli/1.3.0 linux-x64 node-v14.18.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -981,7 +981,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.4/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.5/src/commands/login.ts)_
 
 ## `sf login functions`
 
@@ -1243,7 +1243,7 @@ EXAMPLES
     $ sf logout --no-prompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.4/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.5/src/commands/logout.ts)_
 
 ## `sf logout functions`
 
