@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run"
@@ -123,6 +123,7 @@
     "pretarball": "./bin/dev cli:tarballs:prepare --types",
     "promote-dist-tags": "./scripts/promote-dist-tags",
     "promote:verify": "./bin/dev cli:versions:inspect --channels stable --locations archive --cli sf",
+    "promote:verify-rc": "./bin/dev cli:versions:inspect --channels stable-rc --locations archive --cli sf",
     "test:smoke-unix": "./tmp/sf/bin/sf --version && ./tmp/sf/bin/sf help && ./tmp/sf/bin/sf plugins --core",
     "test:deprecation-policy": "./bin/dev snapshot:compare",
     "test": "echo disable # sf-test",
@@ -145,7 +146,7 @@
     "@oclif/test": "^1",
     "@salesforce/dev-config": "^2.1.2",
     "@salesforce/dev-scripts": "^0.9.18",
-    "@salesforce/plugin-release-management": "^2.6.0",
+    "@salesforce/plugin-release-management": "^2.6.1",
     "@salesforce/prettier-config": "^0.0.2",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",

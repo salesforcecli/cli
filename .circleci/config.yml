@@ -139,6 +139,14 @@ jobs:
       - run: yarn install
       - run: yarn promote:verify
 
+  promote-verify-rc:
+    docker:
+      - image: node:latest
+    steps:
+      - checkout
+      - run: yarn install
+      - run: yarn promote:verify-rc
+
   close-CTC:
     docker:
       - image: node:latest
@@ -226,7 +234,7 @@ workflows:
           requires:
             - release-management/release-package
             - pack-and-upload-tarballs
-      - promote-verify:
+      - promote-verify-rc:
           requires:
             - pack-and-upload-tarballs
             - pack-and-upload-macos-installer
@@ -234,7 +242,7 @@ workflows:
       - close-CTC:
           context: CLI_CTC
           requires:
-            - promote-verify
+            - promote-verify-rc
   test-pack-and-include:
     triggers:
       - schedule:
