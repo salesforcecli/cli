@@ -438,6 +438,10 @@ FLAGS
 DESCRIPTION
   Create a compute environment for use with Salesforce Functions.
 
+  Compute environments must be connected to a Salesforce org. By default the command uses your local environment's
+  connected org. Use the '--connected-org' flag to specify a specific org. Run 'sf env list' to see a list of
+  environments.
+
 EXAMPLES
   Create a compute environment to run Salesforce Functions:
 
@@ -466,6 +470,12 @@ FLAGS
 
 DESCRIPTION
   Delete an environment.
+
+  You must include the name of the environment to delete using '--target-compute'. Run 'sf env list' to see a list of
+  environments.
+
+  Running this command will prompt a confirmation. If you want to skip this confirmation, use the '--confirm' flag and
+  the environment alias to skip confirmation.
 
 EXAMPLES
   Delete a compute environment:
@@ -597,9 +607,6 @@ USAGE
 FLAGS
   -e, --target-compute=<value>  Compute environment name to retrieve logs.
 
-DESCRIPTION
-  Stream log output for an environment.
-
 EXAMPLES
   Stream log output:
 
@@ -621,6 +628,9 @@ FLAGS
 DESCRIPTION
   Add log drain to a specified environment.
 
+  Both '--target-compute' and '--url' are required flags. '--url' should be a HTTP or HTTPS URL that can receive the log
+  drain messages.
+
 EXAMPLES
   Add a log drain:
 
@@ -638,9 +648,6 @@ USAGE
 FLAGS
   -e, --target-compute=<value>  Environment name.
   -j, --json                    Output list in JSON format.
-
-DESCRIPTION
-  List log drains connected to a specified environment.
 
 EXAMPLES
   List log drains:
@@ -666,6 +673,8 @@ FLAGS
 
 DESCRIPTION
   Remove log drain from a specified environment.
+
+  Both '--target-compute' and '--drain-url' are required flags.
 
 EXAMPLES
   Remove a logdrain:
@@ -744,6 +753,8 @@ FLAGS
 DESCRIPTION
   Display a single config variable for an environment.
 
+  You must provide the '--target-compute' flag and the key to retrieve.
+
 EXAMPLES
   Get a config variable:
 
@@ -764,6 +775,8 @@ FLAGS
 
 DESCRIPTION
   List your environment's config vars in a table.
+
+  Use the '--json' flag to return config vars in JSON format.
 
 EXAMPLES
   List config vars:
@@ -786,9 +799,6 @@ USAGE
 FLAGS
   -e, --target-compute=<value>  Environment name.
 
-DESCRIPTION
-  Set a single config value for an environment.
-
 EXAMPLES
   Set a config value:
 
@@ -808,6 +818,8 @@ FLAGS
 
 DESCRIPTION
   Unset a single config value for an environment.
+
+  Run 'sf env var list' to see a list of config values that can be unset.
 
 EXAMPLES
   Unset a value:
@@ -829,6 +841,8 @@ FLAGS
 
 DESCRIPTION
   Create a Salesforce Function with basic scaffolding specific to a given language.
+
+  Both '--language' and '--name' are required flags. Function names must start with a capital letter.
 
 EXAMPLES
   Create a JavaScript function:
@@ -994,6 +1008,8 @@ USAGE
 DESCRIPTION
   Log in to Salesforce Functions.
 
+  This step is required to develop or deploy Salesforce Functions.
+
 EXAMPLES
   Log in to Salesforce Functions:
 
@@ -1020,6 +1036,8 @@ FLAGS
 
 DESCRIPTION
   Login using JWT instead of default web-based flow. This will authenticate you with both sf and Salesforce Functions.
+
+  Use this command when executing from a script.
 
 EXAMPLES
   Log in using JWT:
@@ -1252,9 +1270,6 @@ Log out of your Salesforce Functions account.
 ```
 USAGE
   $ sf logout functions
-
-DESCRIPTION
-  Log out of your Salesforce Functions account.
 
 EXAMPLES
   Log out:
@@ -1566,9 +1581,6 @@ FLAGS
   -p, --payload=<value>        Set the payload of the cloudevent as a JSON object or a path to a file via @file.json.
   -s, --structured             Set the cloudevent to be emitted as a structured JSON cloudevent.
 
-DESCRIPTION
-  Send a cloudevent to a function.
-
 EXAMPLES
   Run a function:
 
@@ -1600,6 +1612,8 @@ FLAGS
 DESCRIPTION
   Build and run a Salesforce Function locally.
 
+  Run this command from the directory of your Salesforce Functions project.
+
 EXAMPLES
   Build and run a function:
 
@@ -1627,6 +1641,8 @@ FLAGS
 
 DESCRIPTION
   Show information on your Salesforce Functions login.
+
+  Returns your email and ID. Use '--show-token' to show your Salesforce Functions token.
 
 EXAMPLES
   Get account information:
