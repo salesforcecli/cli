@@ -1302,17 +1302,17 @@
     open "8.2.1"
     tslib "^2"
 
-"@salesforce/plugin-release-management@^2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-2.6.0.tgz#83f35803ede8e49ce21face8b338b4346883158a"
-  integrity sha512-gv8T1NNnlaRQOm6S7CBADGdpY4Tg8N67z/zSVb/8NVNDnudfQOI8C4WjAEM1a77KmBxcBgOuIbnVO7AC1yb5Ww==
+"@salesforce/plugin-release-management@^2.7.1":
+  version "2.7.1"
+  resolved "https://registry.npmjs.org/@salesforce/plugin-release-management/-/plugin-release-management-2.7.1.tgz#4415da3d8c811391004fbe23bd6f637deec00656"
+  integrity sha512-YGKqLuf0ZF4Ion7d7llCIAcs2U4PlknqwkGtD4Lf1fCBo672McuUPUmqbckr0fvj4f7KgvmWPW1WyU1JokF4hw==
   dependencies:
     "@oclif/config" "^1"
     "@octokit/core" "^3.4.0"
     "@salesforce/command" "^4.1.4"
     "@salesforce/core" "^2.28.1"
     "@salesforce/kit" "^1.5.17"
-    "@salesforce/plugin-trust" "^1.0.9"
+    "@salesforce/plugin-trust" "^1.0.11"
     "@salesforce/ts-types" "^1.4.3"
     "@types/semver" "^7.3.6"
     "@types/sinon" "10.0.6"
@@ -1346,10 +1346,10 @@
     "@salesforce/telemetry" "^2.0.5"
     tslib "^2"
 
-"@salesforce/plugin-trust@^1.0.9":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-1.0.10.tgz#d479a8e238cf7508c1db15f379c177ad8b171b8f"
-  integrity sha512-/XY9tRbxofy8k+1l9rIPspaUEEI+VInMZ7p/+Tl3yyONd74yCBHdz9wVb59PAkUI/G460reI8Vt/M29QyoxSXQ==
+"@salesforce/plugin-trust@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.npmjs.org/@salesforce/plugin-trust/-/plugin-trust-1.0.11.tgz#5a171cbfc364f92ab34b103ae07d074d7b91d541"
+  integrity sha512-smAh1YSznJW1wcJtVLSGPdBsIVmEu6rrHDlRHPnGaHB+iQz1sqlelp7Zsad3wIpYcvuvF0WEcnbD8DDHsdUbSw==
   dependencies:
     "@oclif/config" "^1.17.0"
     "@salesforce/command" "^3.0.5"
