@@ -235,7 +235,7 @@ workflows:
           context: CLI_CTC
           requires:
             - promote-verify
-  test-pack-and-include:
+  test-pack-sf-tarballs:
     triggers:
       - schedule:
           cron: 0 0 * * *
