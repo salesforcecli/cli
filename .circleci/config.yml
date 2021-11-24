@@ -244,7 +244,6 @@ workflows:
               only:
                 - main
     jobs:
-      - release-management/test-sf-inclusion
       - test-pack-tarballs
   test-schema-changes:
     triggers:
