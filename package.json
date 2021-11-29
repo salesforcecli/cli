@@ -42,6 +42,7 @@
       "@sf/functions",
       "@sf/gen",
       "@sf/login",
+      "@salesforce/plugin-info",
       "@salesforce/plugin-telemetry"
     ],
     "devPlugins": [
@@ -55,6 +56,13 @@
         "folder": "media/salesforce-cli/sf",
         "acl": " ",
         "host": "https://developer.salesforce.com"
+      }
+    },
+    "info": {
+      "releasenotes": {
+        "distTagUrl": "https://registry.npmjs.org/-/package/@salesforce/cli/dist-tags",
+        "releaseNotesPath": "https://github.com/forcedotcom/cli/tree/main/releasenotes/sf",
+        "releaseNotesFilename": "README.md"
       }
     },
     "macos": {
@@ -78,6 +86,7 @@
     "@oclif/plugin-not-found": "2.2.0",
     "@oclif/plugin-plugins": "2.0.1",
     "@oclif/plugin-update": "2.0.0",
+    "@salesforce/plugin-info": "^1.1.0",
     "@salesforce/plugin-telemetry": "1.2.8",
     "@salesforce/sf-plugins-core": "1.0.4",
     "@sf/config": "npm:@salesforce/plugin-config@2.2.10",
@@ -97,6 +106,7 @@
     "@sf/functions",
     "@sf/gen",
     "@sf/login",
+    "@salesforce/plugin-info",
     "@salesforce/plugin-telemetry",
     "@oclif/plugin-help",
     "@oclif/plugin-not-found",
