@@ -35,6 +35,7 @@
       "@oclif/plugin-not-found",
       "@oclif/plugin-plugins",
       "@oclif/plugin-update",
+      "@oclif/plugin-version",
       "@sf/config",
       "@sf/deploy-retrieve",
       "@sf/drm",
@@ -65,7 +66,6 @@
       "keypath": "/tmp/windows-signing.pfx"
     },
     "additionalVersionFlags": [
-      "version",
       "-v"
     ],
     "additionalHelpFlags": [
@@ -78,6 +78,7 @@
     "@oclif/plugin-not-found": "2.2.0",
     "@oclif/plugin-plugins": "2.0.2",
     "@oclif/plugin-update": "2.1.0",
+    "@oclif/plugin-version": "1.0.2",
     "@salesforce/plugin-telemetry": "1.4.0",
     "@salesforce/sf-plugins-core": "1.0.4",
     "@sf/config": "npm:@salesforce/plugin-config@2.2.11",
@@ -101,7 +102,8 @@
     "@oclif/plugin-help",
     "@oclif/plugin-not-found",
     "@oclif/plugin-plugins",
-    "@oclif/plugin-update"
+    "@oclif/plugin-update",
+    "@oclif/plugin-version"
   ],
   "resolutions": {
     "@salesforce/templates": "52.6.0",

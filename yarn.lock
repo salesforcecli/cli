@@ -756,7 +756,7 @@
     widest-line "^3.1.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/core@^1.0.0", "@oclif/core@^1.0.1", "@oclif/core@^1.0.2", "@oclif/core@^1.0.4", "@oclif/core@^1.0.5", "@oclif/core@^1.0.7":
+"@oclif/core@^1.0.0", "@oclif/core@^1.0.1", "@oclif/core@^1.0.2", "@oclif/core@^1.0.5", "@oclif/core@^1.0.7":
   version "1.0.7"
   resolved "https://registry.npmjs.org/@oclif/core/-/core-1.0.7.tgz#3f3b38774aecc7c09902beb9f424735149b6b3ba"
   integrity sha512-bIaf3zM9YSo8SJq/fN8dfHjmDmZ6QmC3UCWpoykvl7UH2Prt5aCfdAJH/y3HrXVgWPYi+ByrXdzje1Mwgnq4dQ==
@@ -765,6 +765,29 @@
     chalk "^4.1.2"
     clean-stack "^3.0.1"
     cli-ux "^6.0.3"
+    debug "^4.3.3"
+    fs-extra "^9.1.0"
+    get-package-type "^0.1.0"
+    globby "^11.0.4"
+    indent-string "^4.0.0"
+    is-wsl "^2.2.0"
+    lodash "^4.17.21"
+    semver "^7.3.5"
+    string-width "^4.2.3"
+    strip-ansi "^6.0.1"
+    tslib "^2.3.1"
+    widest-line "^3.1.0"
+    wrap-ansi "^7.0.0"
+
+"@oclif/core@^1.0.4":
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/@oclif/core/-/core-1.0.5.tgz#a0fd253c84227346f692dba8e673364bd1506af6"
+  integrity sha512-90E0FzkC8Xn3JN6dn7NNH9TOsPLUoynt3qQ3HhkfvA+LRf0nYTXY1ZdvCSjXgPuDXO05tTsJdy1b7t1oQvJRmQ==
+  dependencies:
+    "@oclif/linewrap" "^1.0.0"
+    chalk "^4.1.2"
+    clean-stack "^3.0.1"
+    cli-ux "^6.0.1"
     debug "^4.3.3"
     fs-extra "^9.1.0"
     get-package-type "^0.1.0"
@@ -969,6 +992,13 @@
     log-chopper "^1.0.2"
     semver "^7.3.5"
     tar-fs "^2.1.1"
+
+"@oclif/plugin-version@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@oclif/plugin-version/-/plugin-version-1.0.2.tgz#9965f40ae570a4dfecdc0fe70b5a4ba5c41fb376"
+  integrity sha512-gRPgW/NoCNNdktN9Klab3dmlyPvRDRnIcarT0M5ZO3dNVo7aUCSqF9M+pUtWMIB/qTofb9FRjMFp6VLaijVp8w==
+  dependencies:
+    "@oclif/core" "^1.0.7"
 
 "@oclif/plugin-warn-if-update-available@^1.5.4":
   version "1.7.0"
@@ -3086,6 +3116,37 @@ cli-ux@^5.1.0, cli-ux@^5.2.1, cli-ux@^5.5.1, cli-ux@^5.6.2, cli-ux@^5.6.3:
     is-wsl "^2.2.0"
     js-yaml "^3.13.1"
     lodash "^4.17.11"
+    natural-orderby "^2.0.1"
+    object-treeify "^1.1.4"
+    password-prompt "^1.1.2"
+    semver "^7.3.2"
+    string-width "^4.2.0"
+    strip-ansi "^6.0.0"
+    supports-color "^8.1.0"
+    supports-hyperlinks "^2.1.0"
+    tslib "^2.0.0"
+
+cli-ux@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.npmjs.org/cli-ux/-/cli-ux-6.0.1.tgz#e059b3e2cedbb4ccf9c4b534fd8a4578e8c45201"
+  integrity sha512-V2789lD5swG5kwoKO0JUMxhjVEjAFdz7ufTvGE6wYUHV749eQPZm93dhLqkzM7HAM0tHZsY+j54OEcw+Qr1vGg==
+  dependencies:
+    "@oclif/core" "^1.0.4"
+    "@oclif/linewrap" "^1.0.0"
+    "@oclif/screen" "^1.0.3"
+    ansi-escapes "^4.3.0"
+    ansi-styles "^4.2.0"
+    cardinal "^2.1.1"
+    chalk "^4.1.0"
+    clean-stack "^3.0.0"
+    cli-progress "^3.4.0"
+    extract-stack "^2.0.0"
+    fs-extra "^8.1"
+    hyperlinker "^1.0.0"
+    indent-string "^4.0.0"
+    is-wsl "^2.2.0"
+    js-yaml "^3.13.1"
+    lodash "^4.17.21"
     natural-orderby "^2.0.1"
     object-treeify "^1.1.4"
     password-prompt "^1.1.2"
