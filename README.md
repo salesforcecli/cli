@@ -29,7 +29,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v|version)
-@salesforce/cli/1.4.0 linux-x64 node-v14.18.1
+@salesforce/cli/1.5.0 linux-x64 node-v14.18.2
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -80,6 +80,8 @@ USAGE
 * [`sf retrieve metadata`](#sf-retrieve-metadata)
 * [`sf run function`](#sf-run-function)
 * [`sf run function start`](#sf-run-function-start)
+* [`sf run function start local`](#sf-run-function-start-local)
+* [`sf update [CHANNEL]`](#sf-update-channel)
 * [`sf whoami functions`](#sf-whoami-functions)
 
 ## `sf config get`
@@ -995,7 +997,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.5/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.6/src/commands/login.ts)_
 
 ## `sf login functions`
 
@@ -1102,16 +1104,17 @@ EXAMPLES
 
   Log in to a sandbox and set it as your default org:
 
-    $ sf login org --instance-url https://test.salesforce.com --set-default
+    $ sf login org --instance-url https://MyDomainName--SandboxName.sandbox.my.salesforce.com --set-default
 
   Use --browser to specify a specific browser, such as Google Chrome:
 
-    $ sf login org --instance-url https://test.salesforce.com --set-default --browser chrome
+    $ sf login org --instance-url https://MyDomainName--SandboxName.sandbox.my.salesforce.com --set-default \
+      --browser chrome
 
   Use your own connected app by specifying its consumer key (also called client ID):
 
-    $ sf login org --instance-url https://test.salesforce.com --set-default --browser chrome --clientid \
-      04580y4051234051
+    $ sf login org --instance-url https://MyDomainName--SandboxName.sandbox.my.salesforce.com --set-default \
+      --browser chrome --clientid 04580y4051234051
 
 FLAG DESCRIPTIONS
   -b, --browser=<value>  Browser in which to open the org.
@@ -1126,7 +1129,7 @@ FLAG DESCRIPTIONS
 
     To specify a My Domain URL, use the format https://yourcompanyname.my.salesforce.com.
 
-    To specify a sandbox, set --instance-url to https://test.salesforce.com.
+    To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 
 CONFIGURATION VARIABLES
   apiVersion   API version of your project. Default: API version of your Dev Hub org.
@@ -1205,10 +1208,10 @@ EXAMPLES
     $ sf login org jwt --username jdoe@example.org --keyfile /Users/jdoe/JWT/server.key --clientid 04580y4051234051 \
       --alias ci-dev-hub --set-default-dev-hub
 
-  Log in to a sandbox using URL https://test.salesforce.com:
+  Log in to a sandbox using URL https://MyDomainName--SandboxName.sandbox.my.salesforce.com:
 
     $ sf login org jwt --username jdoe@example.org --keyfile /Users/jdoe/JWT/server.key --clientid 04580y4051234051 \
-      --alias ci-org --set-default --instance-url https://test.salesforce.com
+      --alias ci-org --set-default --instance-url https://MyDomainName--SandboxName.sandbox.my.salesforce.com
 
 FLAG DESCRIPTIONS
   -l, --instance-url=<value>  URL of the instance that the org lives on.
@@ -1217,7 +1220,7 @@ FLAG DESCRIPTIONS
 
     To specify a My Domain URL, use the format https://yourcompanyname.my.salesforce.com.
 
-    To specify a sandbox, set --instance-url to https://test.salesforce.com.
+    To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 
 CONFIGURATION VARIABLES
   apiVersion   API version of your project. Default: API version of your Dev Hub org.
@@ -1261,7 +1264,7 @@ EXAMPLES
     $ sf logout --no-prompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.5/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.6/src/commands/logout.ts)_
 
 ## `sf logout functions`
 
@@ -1593,7 +1596,7 @@ EXAMPLES
 
 ## `sf run function start`
 
-Build and run a Salesforce Function locally.
+Build and run a Salesforce Function in a container.
 
 ```
 USAGE
@@ -1610,7 +1613,7 @@ FLAGS
   --no-pull                 Skip pulling builder image before use.
 
 DESCRIPTION
-  Build and run a Salesforce Function locally.
+  Build and run a Salesforce Function in a container.
 
   Run this command from the directory of your Salesforce Functions project.
 
@@ -1627,6 +1630,49 @@ EXAMPLES
 
     $ sf run function start --env KEY=VALUE --network host
 ```
+
+## `sf run function start local`
+
+Build and run a Salesforce Function locally.
+
+```
+USAGE
+  $ sf run function start local [-p <value>] [-b <value>] [-l javascript|typescript|java|auto]
+
+FLAGS
+  -b, --debug-port=<value>                          [default: 9229] Port to use for debbugging the function.
+  -l, --language=(javascript|typescript|java|auto)  [default: auto] The language that the function runs in.
+  -p, --port=<value>                                [default: 8080] Port to bind the invoker to.
+
+DESCRIPTION
+  Build and run a Salesforce Function locally.
+
+EXAMPLES
+  Build a function and start the invoker
+
+    $ sf run function start local
+
+  Start the invoker with a specific language and port
+
+    $ sf run function start local --port 5000 --language javascript
+```
+
+## `sf update [CHANNEL]`
+
+update the sf CLI
+
+```
+USAGE
+  $ sf update [CHANNEL] [--from-local]
+
+FLAGS
+  --from-local  interactively choose an already installed version
+
+DESCRIPTION
+  update the sf CLI
+```
+
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v2.0.0/src/commands/update.ts)_
 
 ## `sf whoami functions`
 
