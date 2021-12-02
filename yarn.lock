@@ -768,7 +768,7 @@
     widest-line "^3.1.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/core@^1.0.0", "@oclif/core@^1.0.2", "@oclif/core@^1.0.4", "@oclif/core@^1.0.5", "@oclif/core@^1.0.7":
+"@oclif/core@^1.0.0", "@oclif/core@^1.0.1", "@oclif/core@^1.0.2", "@oclif/core@^1.0.4", "@oclif/core@^1.0.5", "@oclif/core@^1.0.7":
   version "1.0.7"
   resolved "https://registry.npmjs.org/@oclif/core/-/core-1.0.7.tgz#3f3b38774aecc7c09902beb9f424735149b6b3ba"
   integrity sha512-bIaf3zM9YSo8SJq/fN8dfHjmDmZ6QmC3UCWpoykvl7UH2Prt5aCfdAJH/y3HrXVgWPYi+ByrXdzje1Mwgnq4dQ==
@@ -963,13 +963,13 @@
     tslib "^2.0.0"
     yarn "^1.21.1"
 
-"@oclif/plugin-update@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/@oclif/plugin-update/-/plugin-update-2.0.0.tgz#e7fe06206a819eafbecb60b25d4cf33729056940"
-  integrity sha512-O8SHne58IzH2z0nmmYpsgdSXt8UEBzmlChI3BTH2f00TAiVQeaVXvvdQv/6UrR8bkf3MBqSf8kJT8GNMN1k60g==
+"@oclif/plugin-update@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-2.1.0.tgz#e089a875ecfa818d8240ac0c52b49d58be86c1ad"
+  integrity sha512-aPdbJgiLVzm4ixMqAFbFHeqk7nUFgc1MNpZqYaRU9t4ZadqRTOYkA2lMtv4XxzkR7tZhoQ+rBlvfTnwer008Ig==
   dependencies:
     "@oclif/color" "^0.1.0"
-    "@oclif/core" "^0.5.39"
+    "@oclif/core" "^1.0.1"
     "@types/semver" "^7.3.4"
     cli-ux "^5.5.1"
     cross-spawn "^7.0.3"
