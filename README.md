@@ -29,7 +29,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v|version)
-@salesforce/cli/1.5.0 linux-x64 node-v14.18.2
+@salesforce/cli/1.5.1 linux-x64 node-v14.18.2
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -966,7 +966,7 @@ DESCRIPTION
   Display help for sf.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.1/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.7/src/commands/help.ts)_
 
 ## `sf login`
 
