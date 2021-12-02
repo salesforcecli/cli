@@ -29,7 +29,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v|version)
-@salesforce/cli/1.5.1 linux-x64 node-v14.18.2
+@salesforce/cli/1.5.2 linux-x64 node-v14.18.2
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -1337,7 +1337,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.0.1/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.0.2/src/commands/plugins/index.ts)_
 
 ## `sf plugins:inspect PLUGIN...`
 
@@ -1351,7 +1351,7 @@ ARGUMENTS
   PLUGIN  [default: .] Plugin to inspect.
 
 FLAGS
-  -h, --help     show CLI help
+  -h, --help     Show CLI help.
   -v, --verbose
 
 DESCRIPTION
@@ -1374,7 +1374,7 @@ ARGUMENTS
 
 FLAGS
   -f, --force    Run yarn install with force flag.
-  -h, --help     show CLI help
+  -h, --help     Show CLI help.
   -v, --verbose
 
 DESCRIPTION
@@ -1411,7 +1411,7 @@ ARGUMENTS
   PATH  [default: .] path to plugin
 
 FLAGS
-  -h, --help     show CLI help
+  -h, --help     Show CLI help.
   -v, --verbose
 
 DESCRIPTION
@@ -1438,7 +1438,7 @@ ARGUMENTS
   PLUGIN  plugin to uninstall
 
 FLAGS
-  -h, --help     show CLI help
+  -h, --help     Show CLI help.
   -v, --verbose
 
 DESCRIPTION
@@ -1458,7 +1458,7 @@ USAGE
   $ sf plugins update [-h] [-v]
 
 FLAGS
-  -h, --help     show CLI help
+  -h, --help     Show CLI help.
   -v, --verbose
 
 DESCRIPTION
@@ -1672,7 +1672,7 @@ DESCRIPTION
   update the sf CLI
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v2.0.0/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v2.1.0/src/commands/update.ts)_
 
 ## `sf whoami functions`
 
