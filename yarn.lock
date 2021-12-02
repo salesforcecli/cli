@@ -709,6 +709,17 @@
     supports-color "^5.4.0"
     tslib "^1"
 
+"@oclif/color@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@oclif/color/-/color-1.0.0.tgz#a95a7d6a0731be6eb7a63cca476a787c62290aff"
+  integrity sha512-jSvPCTa3OfwzGUsgGAO6AXam//UMBSIBCHGs6i3iGr+NQoMrBf6kx4UzwED0RzSCTc6nlqCzdhnCD18RSP7VAA==
+  dependencies:
+    ansi-styles "^4.2.1"
+    chalk "^4.1.0"
+    strip-ansi "^6.0.0"
+    supports-color "^8.1.1"
+    tslib "^2"
+
 "@oclif/command@1.8.7", "@oclif/command@^1.5.10", "@oclif/command@^1.5.13", "@oclif/command@^1.5.17", "@oclif/command@^1.5.20", "@oclif/command@^1.6", "@oclif/command@^1.6.0", "@oclif/command@^1.8.0", "@oclif/command@^1.8.1", "@oclif/command@^1.8.6":
   version "1.8.7"
   resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.8.7.tgz#825d34bea8e93cecfaf0cb9bf327f4ab87cd0714"
@@ -765,29 +776,6 @@
     chalk "^4.1.2"
     clean-stack "^3.0.1"
     cli-ux "^6.0.3"
-    debug "^4.3.3"
-    fs-extra "^9.1.0"
-    get-package-type "^0.1.0"
-    globby "^11.0.4"
-    indent-string "^4.0.0"
-    is-wsl "^2.2.0"
-    lodash "^4.17.21"
-    semver "^7.3.5"
-    string-width "^4.2.3"
-    strip-ansi "^6.0.1"
-    tslib "^2.3.1"
-    widest-line "^3.1.0"
-    wrap-ansi "^7.0.0"
-
-"@oclif/core@^1.0.4":
-  version "1.0.5"
-  resolved "https://registry.npmjs.org/@oclif/core/-/core-1.0.5.tgz#a0fd253c84227346f692dba8e673364bd1506af6"
-  integrity sha512-90E0FzkC8Xn3JN6dn7NNH9TOsPLUoynt3qQ3HhkfvA+LRf0nYTXY1ZdvCSjXgPuDXO05tTsJdy1b7t1oQvJRmQ==
-  dependencies:
-    "@oclif/linewrap" "^1.0.0"
-    chalk "^4.1.2"
-    clean-stack "^3.0.1"
-    cli-ux "^6.0.1"
     debug "^4.3.3"
     fs-extra "^9.1.0"
     get-package-type "^0.1.0"
@@ -956,15 +944,15 @@
     fast-levenshtein "^2.0.6"
     lodash "^4.17.13"
 
-"@oclif/plugin-plugins@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-2.0.2.tgz#a978654fb7f76875bed65e28f83ed6c218d56fe4"
-  integrity sha512-z5gy//SPenObCIsjTykyZLruwrhDxfhkEKxes3Q4VmX7WoEwquenmcGlD1/cyKNtnjHTGyIkSmLWQeMFvEfNcg==
+"@oclif/plugin-plugins@2.0.6":
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-2.0.6.tgz#97712e926361a0564b99aac60ff4a6abae78f962"
+  integrity sha512-F8IGG4yTWZ9mmPOndKrc92rKhuHTVet78cPNS5gVm7oVq3uE3P2FQiXrhuL3/uDAs5aseccUSeSlZ+tf8coO0A==
   dependencies:
-    "@oclif/color" "^0.x"
-    "@oclif/core" "^1.0.4"
+    "@oclif/color" "^1.0.0"
+    "@oclif/core" "^1.0.7"
     chalk "^4.1.0"
-    cli-ux "^5.2.1"
+    cli-ux "^6.0.3"
     debug "^4.1.0"
     fs-extra "^9.0"
     http-call "^5.2.2"
@@ -2086,7 +2074,7 @@ ansi-styles@^3.0.0, ansi-styles@^3.2.0, ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-ansi-styles@^4.0.0, ansi-styles@^4.1.0, ansi-styles@^4.2.0, ansi-styles@^4.3.0:
+ansi-styles@^4.0.0, ansi-styles@^4.1.0, ansi-styles@^4.2.0, ansi-styles@^4.2.1, ansi-styles@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-4.3.0.tgz#edd803628ae71c04c85ae7a0906edad34b648937"
   integrity sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==
@@ -3116,37 +3104,6 @@ cli-ux@^5.1.0, cli-ux@^5.2.1, cli-ux@^5.5.1, cli-ux@^5.6.2, cli-ux@^5.6.3:
     is-wsl "^2.2.0"
     js-yaml "^3.13.1"
     lodash "^4.17.11"
-    natural-orderby "^2.0.1"
-    object-treeify "^1.1.4"
-    password-prompt "^1.1.2"
-    semver "^7.3.2"
-    string-width "^4.2.0"
-    strip-ansi "^6.0.0"
-    supports-color "^8.1.0"
-    supports-hyperlinks "^2.1.0"
-    tslib "^2.0.0"
-
-cli-ux@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.npmjs.org/cli-ux/-/cli-ux-6.0.1.tgz#e059b3e2cedbb4ccf9c4b534fd8a4578e8c45201"
-  integrity sha512-V2789lD5swG5kwoKO0JUMxhjVEjAFdz7ufTvGE6wYUHV749eQPZm93dhLqkzM7HAM0tHZsY+j54OEcw+Qr1vGg==
-  dependencies:
-    "@oclif/core" "^1.0.4"
-    "@oclif/linewrap" "^1.0.0"
-    "@oclif/screen" "^1.0.3"
-    ansi-escapes "^4.3.0"
-    ansi-styles "^4.2.0"
-    cardinal "^2.1.1"
-    chalk "^4.1.0"
-    clean-stack "^3.0.0"
-    cli-progress "^3.4.0"
-    extract-stack "^2.0.0"
-    fs-extra "^8.1"
-    hyperlinker "^1.0.0"
-    indent-string "^4.0.0"
-    is-wsl "^2.2.0"
-    js-yaml "^3.13.1"
-    lodash "^4.17.21"
     natural-orderby "^2.0.1"
     object-treeify "^1.1.4"
     password-prompt "^1.1.2"
@@ -10873,7 +10830,7 @@ strnum@^1.0.4:
   resolved "https://registry.yarnpkg.com/strnum/-/strnum-1.0.4.tgz#e97e36a7d6ba9f93d0d6b496b2ed0678d422832b"
   integrity sha512-lMzNMfDpaQOLt4B2mEbfzYS0+T7dvCXeojnlGf6f1AygvWDMcWyXYaLbyICfjVu29sErR8fnRagQfBW/N/hGgw==
 
-supports-color@8.1.1, supports-color@^8.1.0:
+supports-color@8.1.1, supports-color@^8.1.0, supports-color@^8.1.1:
   version "8.1.1"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-8.1.1.tgz#cd6fc17e28500cff56c1b86c0a7fd4a54a73005c"
   integrity sha512-MpUEN2OodtUzxvKQl72cUF7RQ5EiHsGvSsVG0ia9c5RbWGL2CI4C7EpPS8UTBIplnlzZiNuV56w+FuNxy3ty2Q==
