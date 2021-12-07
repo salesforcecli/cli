@@ -5,6 +5,15 @@ orbs:
   jq: circleci/jq@2.2
 
 jobs:
+  build-latest-rc:
+    docker:
+      - image: node:lts
+    steps:
+      - checkout
+      - release-management/configure-github
+      - release-management/install-sf-release
+      - run: sf-release cli:latestrc:build
+
   change-case-start:
     docker:
       - image: node:latest
@@ -295,3 +304,14 @@ workflows:
           requires:
             - npm-promotions
             - promote-channels
+  build-latest-rc:
+    triggers:
+      - schedule:
+          # Wednesday mornings at 10:30am mountain
+          cron: '30 16 * * 3'
+          filters:
+            branches:
+              only:
+                - main
+    jobs:
+      - build-latest-rc
