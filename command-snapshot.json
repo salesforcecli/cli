@@ -233,6 +233,11 @@
     ]
   },
   {
+    "command": "run:function:start:local",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["debug-port", "language", "path", "port"]
+  },
+  {
     "command": "telemetry",
     "plugin": "@salesforce/plugin-telemetry",
     "flags": []
