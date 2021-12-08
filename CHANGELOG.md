@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/salesforcecli/cli/compare/v1.5.2...v1.6.0) (2021-12-08)
+
 ### [1.5.2](https://github.com/salesforcecli/cli/compare/v1.5.1...v1.5.2) (2021-12-02)
 
 ### [1.5.1](https://github.com/salesforcecli/cli/compare/v1.5.0...v1.5.1) (2021-12-02)
@@ -12,40 +14,35 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.3.1](https://github.com/salesforcecli/cli/compare/v1.3.0...v1.3.1) (2021-11-11)
 
-
 ### Bug Fixes
 
-* bump versions ([7983bcc](https://github.com/salesforcecli/cli/commit/7983bcc2bc8ccfdc1123a6dce2548b70e1811d1f))
+- bump versions ([7983bcc](https://github.com/salesforcecli/cli/commit/7983bcc2bc8ccfdc1123a6dce2548b70e1811d1f))
 
 ## [1.3.0](https://github.com/salesforcecli/cli/compare/v1.2.0...v1.3.0) (2021-11-04)
 
-
 ### Bug Fixes
 
-* bump deps for latest-rc ([2d2ffa2](https://github.com/salesforcecli/cli/commit/2d2ffa28d45f1f69554f2233afff182aedbb67a8))
+- bump deps for latest-rc ([2d2ffa2](https://github.com/salesforcecli/cli/commit/2d2ffa28d45f1f69554f2233afff182aedbb67a8))
 
 ## [1.2.0](https://github.com/salesforcecli/cli/compare/v1.1.5...v1.2.0) (2021-10-28)
 
-
 ### Features
 
-* force latest-rc release ([9027e92](https://github.com/salesforcecli/cli/commit/9027e92ab1f248501219a431de3c1e8b308d8774))
+- force latest-rc release ([9027e92](https://github.com/salesforcecli/cli/commit/9027e92ab1f248501219a431de3c1e8b308d8774))
 
 ### [1.1.5](https://github.com/salesforcecli/cli/compare/v1.1.4...v1.1.5) (2021-10-26)
 
 ### [1.1.4](https://github.com/salesforcecli/cli/compare/v1.1.3...v1.1.4) (2021-10-26)
 
-
 ### Bug Fixes
 
-* fix wrong version of release management ([#83](https://github.com/salesforcecli/cli/issues/83)) ([d846bc1](https://github.com/salesforcecli/cli/commit/d846bc134daa472ba9335f8d4cebb356221fffc6))
+- fix wrong version of release management ([#83](https://github.com/salesforcecli/cli/issues/83)) ([d846bc1](https://github.com/salesforcecli/cli/commit/d846bc134daa472ba9335f8d4cebb356221fffc6))
 
 ### [1.1.3](https://github.com/salesforcecli/cli/compare/v1.1.2...v1.1.3) (2021-10-26)
 
-
 ### Bug Fixes
 
-* tweak parameters to tarball prompt ([#82](https://github.com/salesforcecli/cli/issues/82)) ([60a3fef](https://github.com/salesforcecli/cli/commit/60a3fef1034aec3324e05aea152fcb546bfb5d7a))
+- tweak parameters to tarball prompt ([#82](https://github.com/salesforcecli/cli/issues/82)) ([60a3fef](https://github.com/salesforcecli/cli/commit/60a3fef1034aec3324e05aea152fcb546bfb5d7a))
 
 ### [1.1.2](https://github.com/salesforcecli/cli/compare/v1.1.1...v1.1.2) (2021-10-26)
 
