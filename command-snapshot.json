@@ -228,6 +228,11 @@
     ]
   },
   {
+    "command": "run:function:start:local",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["debug-port", "language", "path", "port"]
+  },
+  {
     "command": "telemetry",
     "plugin": "@salesforce/plugin-telemetry",
     "flags": []
@@ -236,6 +241,11 @@
     "command": "update",
     "plugin": "@oclif/plugin-update",
     "flags": ["autoupdate", "from-local"]
+  },
+  {
+    "command": "version",
+    "plugin": "@oclif/plugin-version",
+    "flags": []
   },
   {
     "command": "whoami:functions",
