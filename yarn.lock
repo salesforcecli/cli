@@ -709,7 +709,7 @@
     supports-color "^5.4.0"
     tslib "^1"
 
-"@oclif/command@1.8.9", "@oclif/command@^1.5.10", "@oclif/command@^1.5.13", "@oclif/command@^1.5.17", "@oclif/command@^1.5.20", "@oclif/command@^1.6", "@oclif/command@^1.6.0", "@oclif/command@^1.8.0", "@oclif/command@^1.8.1", "@oclif/command@^1.8.9":
+"@oclif/command@1.8.9", "@oclif/command@^1.5.13", "@oclif/command@^1.5.17", "@oclif/command@^1.6", "@oclif/command@^1.6.0", "@oclif/command@^1.8.0", "@oclif/command@^1.8.1", "@oclif/command@^1.8.6", "@oclif/command@^1.8.9":
   version "1.8.9"
   resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.8.9.tgz#9a3cf897b1b83ef9e116657577324987c2d7f063"
   integrity sha512-lrtLau+rCXlVyE4LWaDyhs5cFOYcI8+PRCshlKoRUuI6bC3wd+gQ6j5SxXtnR9XxOR6eDXnGZg7/0LB3GGGTpw==
@@ -721,7 +721,7 @@
     debug "^4.1.1"
     semver "^7.3.2"
 
-"@oclif/config@1.18.2", "@oclif/config@^1", "@oclif/config@^1.12.6", "@oclif/config@^1.12.8", "@oclif/config@^1.15.1", "@oclif/config@^1.17.0", "@oclif/config@^1.18.2":
+"@oclif/config@1.18.2", "@oclif/config@^1", "@oclif/config@^1.12.6", "@oclif/config@^1.17.0", "@oclif/config@^1.17.1", "@oclif/config@^1.18.2":
   version "1.18.2"
   resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.18.2.tgz#5bfe74a9ba6a8ca3dceb314a81bd9ce2e15ebbfe"
   integrity sha512-cE3qfHWv8hGRCP31j7fIS7BfCflm/BNZ2HNqHexH+fDrdF2f1D5S8VmXWLC77ffv3oDvWyvE9AZeR0RfmHCCaA==
@@ -756,7 +756,7 @@
     widest-line "^3.1.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/core@^1.0.0", "@oclif/core@^1.0.1", "@oclif/core@^1.0.2", "@oclif/core@^1.0.4", "@oclif/core@^1.0.5", "@oclif/core@^1.0.7":
+"@oclif/core@^1.0.1", "@oclif/core@^1.0.2", "@oclif/core@^1.0.4", "@oclif/core@^1.0.5", "@oclif/core@^1.0.7":
   version "1.0.7"
   resolved "https://registry.npmjs.org/@oclif/core/-/core-1.0.7.tgz#3f3b38774aecc7c09902beb9f424735149b6b3ba"
   integrity sha512-bIaf3zM9YSo8SJq/fN8dfHjmDmZ6QmC3UCWpoykvl7UH2Prt5aCfdAJH/y3HrXVgWPYi+ByrXdzje1Mwgnq4dQ==
@@ -798,7 +798,7 @@
     qqjs "^0.3.10"
     tslib "^2.0.3"
 
-"@oclif/errors@^1.2.1", "@oclif/errors@^1.2.2", "@oclif/errors@^1.3.3", "@oclif/errors@^1.3.5":
+"@oclif/errors@^1.2.2", "@oclif/errors@^1.3.3", "@oclif/errors@^1.3.5":
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/@oclif/errors/-/errors-1.3.5.tgz#a1e9694dbeccab10fe2fe15acb7113991bed636c"
   integrity sha512-OivucXPH/eLLlOT7FkCMoZXiaVYf8I/w1eTAM1+gKzfhALwWTusxEx7wBmW0uzvkSg/9ovWLycPaBgJbM3LOCQ==
@@ -879,23 +879,7 @@
     widest-line "^2.0.1"
     wrap-ansi "^4.0.0"
 
-"@oclif/plugin-help@^3", "@oclif/plugin-help@^3.2.0":
-  version "3.2.3"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-3.2.3.tgz#cd24010e7eb326782843d3aa6d6b5a4affebb2c3"
-  integrity sha512-l2Pd0lbOMq4u/7xsl9hqISFqyR9gWEz/8+05xmrXFr67jXyS6EUCQB+mFBa0wepltrmJu0sAFg9AvA2mLaMMqQ==
-  dependencies:
-    "@oclif/command" "^1.5.20"
-    "@oclif/config" "^1.15.1"
-    "@oclif/errors" "^1.2.2"
-    chalk "^4.1.0"
-    indent-string "^4.0.0"
-    lodash.template "^4.4.0"
-    string-width "^4.2.0"
-    strip-ansi "^6.0.0"
-    widest-line "^3.1.0"
-    wrap-ansi "^4.0.0"
-
-"@oclif/plugin-help@^3.2.13":
+"@oclif/plugin-help@^3", "@oclif/plugin-help@^3.2.0", "@oclif/plugin-help@^3.2.13", "@oclif/plugin-help@^3.2.9":
   version "3.2.14"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-3.2.14.tgz#7149eb322d36abc6cbf09f205bad128141e7eba4"
   integrity sha512-NP5qmE2YfcW3MmXjcrxiqKe9Hf3G0uK/qNc0zAMYKU4crFyIsWj7dBfQVFZSb28YXGioOOpjMzG1I7VMxKF38Q==
@@ -970,22 +954,22 @@
     semver "^7.3.5"
     tar-fs "^2.1.1"
 
-"@oclif/plugin-warn-if-update-available@^1.5.4":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-1.7.0.tgz#5a72abe39ce0b831eb4ae81cb64eb4b9f3ea424a"
-  integrity sha512-Nwyz3BJ8RhsfQ+OmFSsJSPIfn5YJqMrCzPh72Zgo2jqIjKIBWD8N9vTTe4kZlpeUUn77SyXFfwlBQbNCL5OEuQ==
+"@oclif/plugin-warn-if-update-available@^1.5.4", "@oclif/plugin-warn-if-update-available@^1.7.3":
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-1.7.3.tgz#efe6676655fabbed2e90cc9e646e9da4c99bc8ae"
+  integrity sha512-q8q0NIneVCwIAJzglUMsl3EbXR/H5aPDk6g+qs7uF0tToxe07SWSONoNaKPzViwRWvYChMPjL77/rXyW1HVn4A==
   dependencies:
-    "@oclif/command" "^1.5.10"
-    "@oclif/config" "^1.12.8"
-    "@oclif/errors" "^1.2.2"
-    chalk "^2.4.1"
+    "@oclif/command" "^1.8.6"
+    "@oclif/config" "^1.17.1"
+    "@oclif/errors" "^1.3.5"
+    chalk "^4.1.0"
     debug "^4.1.0"
-    fs-extra "^7.0.0"
+    fs-extra "^9.0.1"
     http-call "^5.2.2"
-    lodash.template "^4.4.0"
-    semver "^5.6.0"
+    lodash "^4.17.21"
+    semver "^7.3.2"
 
-"@oclif/screen@^1.0.3":
+"@oclif/screen@^1.0.3", "@oclif/screen@^1.0.4":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@oclif/screen/-/screen-1.0.4.tgz#b740f68609dfae8aa71c3a6cab15d816407ba493"
   integrity sha512-60CHpq+eqnTxLZQ4PGHYNwUX572hgpMHGPtTWMjdTMsAvlm69lZV/4ly6O3sAYkomo4NggGcomrDpBe34rxUqw==
@@ -3064,15 +3048,15 @@ cli-ux@^4.9.0, cli-ux@^4.9.3:
     treeify "^1.1.0"
     tslib "^1.9.3"
 
-cli-ux@^5.1.0, cli-ux@^5.2.1, cli-ux@^5.5.1, cli-ux@^5.6.2, cli-ux@^5.6.3:
-  version "5.6.3"
-  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-5.6.3.tgz#eecdb2e0261171f2b28f2be6b18c490291c3a287"
-  integrity sha512-/oDU4v8BiDjX2OKcSunGH0iGDiEtj2rZaGyqNuv9IT4CgcSMyVWAMfn0+rEHaOc4n9ka78B0wo1+N1QX89f7mw==
+cli-ux@^5.1.0, cli-ux@^5.2.1, cli-ux@^5.5.1, cli-ux@^5.6.2, cli-ux@^5.6.3, cli-ux@^5.6.4:
+  version "5.6.6"
+  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-5.6.6.tgz#1424f5a9fbddcd796ad985b867a3de7f5a452090"
+  integrity sha512-4wUB34zoFklcZV0z5YiOM5IqVMMt9c3TK3QYRK3dqyk3XoRC0ybiWDWHfsMDjkKrzsVTw95rXn9NrzSHbae4pg==
   dependencies:
-    "@oclif/command" "^1.6.0"
-    "@oclif/errors" "^1.2.1"
+    "@oclif/command" "^1.8.9"
+    "@oclif/errors" "^1.3.5"
     "@oclif/linewrap" "^1.0.0"
-    "@oclif/screen" "^1.0.3"
+    "@oclif/screen" "^1.0.4"
     ansi-escapes "^4.3.0"
     ansi-styles "^4.2.0"
     cardinal "^2.1.1"
@@ -3085,7 +3069,7 @@ cli-ux@^5.1.0, cli-ux@^5.2.1, cli-ux@^5.5.1, cli-ux@^5.6.2, cli-ux@^5.6.3:
     indent-string "^4.0.0"
     is-wsl "^2.2.0"
     js-yaml "^3.13.1"
-    lodash "^4.17.11"
+    lodash "^4.17.21"
     natural-orderby "^2.0.1"
     object-treeify "^1.1.4"
     password-prompt "^1.1.2"
@@ -8760,28 +8744,30 @@ oclif@^1.18.1:
     yosay "^2.0.2"
 
 oclif@^2.0.0-main.6:
-  version "2.0.0-main.6"
-  resolved "https://registry.yarnpkg.com/oclif/-/oclif-2.0.0-main.6.tgz#f8b03e0135ec8a2e6aa79079c8131aba3dabeb60"
-  integrity sha512-+ojXpxEr+AVZNSskgTfHsTUv4HiAVh5DMOZMLvsnZZl0/9+cyQ9DqAgndBmw++laC0FOoBjBsFgjY2xGS4V7lg==
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/oclif/-/oclif-2.0.0.tgz#8e51806fb65d95a196bfb3e0b643b9b456c9e98c"
+  integrity sha512-SunAZ08oQfaq9rppTEBzd2ZYxDby3AhSZ+jk40Rj/0oyxV908VeVLVYUW8BVHK/3m4NUuF0g7DhA8BwLWPharA==
   dependencies:
-    "@oclif/core" "^1.0.0"
+    "@oclif/command" "^1.8.6"
+    "@oclif/config" "^1.17.1"
+    "@oclif/errors" "^1.3.5"
     "@oclif/fixpack" "^2.3.0"
-    "@oclif/plugin-help" "^3"
+    "@oclif/plugin-help" "^3.2.9"
     "@oclif/plugin-not-found" "^1.2.2"
-    "@oclif/plugin-warn-if-update-available" "^1.5.4"
-    cli-ux "^5.2.1"
+    "@oclif/plugin-warn-if-update-available" "^1.7.3"
+    cli-ux "^5.6.4"
     debug "^4.1.1"
     find-yarn-workspace-root "^2.0.0"
     fs-extra "^8.1"
     github-slugger "^1.2.1"
-    lodash "^4.17.11"
+    lodash "^4.17.21"
     normalize-package-data "^3.0.0"
     nps-utils "^1.7.0"
     qqjs "^0.3.10"
     sort-pjson "^1.0.3"
     tslib "^2.0.0"
-    yeoman-environment "^2.3.4"
-    yeoman-generator "3"
+    yeoman-environment "^2.10.3"
+    yeoman-generator "3.2.0"
     yosay "^2.0.2"
 
 once@^1.3.0, once@^1.3.1, once@^1.4.0:
@@ -11918,7 +11904,7 @@ yeoman-environment@2.4.0:
     text-table "^0.2.0"
     untildify "^3.0.3"
 
-yeoman-environment@^2.0.5, yeoman-environment@^2.3.4, yeoman-environment@^2.9.5:
+yeoman-environment@^2.0.5, yeoman-environment@^2.10.3, yeoman-environment@^2.3.4, yeoman-environment@^2.9.5:
   version "2.10.3"
   resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-2.10.3.tgz#9d8f42b77317414434cc0e51fb006a4bdd54688e"
   integrity sha512-pLIhhU9z/G+kjOXmJ2bPFm3nejfbH+f1fjYRSOteEXDBrv1EoJE/e+kuHixSXfCYfTkxjYsvRaDX+1QykLCnpQ==
@@ -11983,7 +11969,7 @@ yeoman-environment@~3.3.0:
     textextensions "^5.12.0"
     untildify "^4.0.0"
 
-yeoman-generator@3:
+yeoman-generator@3, yeoman-generator@3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/yeoman-generator/-/yeoman-generator-3.2.0.tgz#02077d2d7ff28fedc1ed7dad7f9967fd7c3604cc"
   integrity sha512-iR/qb2je3GdXtSfxgvOXxUW0Cp8+C6LaZaNlK2BAICzFNzwHtM10t/QBwz5Ea9nk6xVDQNj4Q889TjCXGuIv8w==
