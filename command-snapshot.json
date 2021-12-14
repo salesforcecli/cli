@@ -248,6 +248,11 @@
     "flags": ["autoupdate", "from-local"]
   },
   {
+    "command": "version",
+    "plugin": "@oclif/plugin-version",
+    "flags": []
+  },
+  {
     "command": "whoami:functions",
     "plugin": "@salesforce/plugin-functions",
     "flags": ["json", "show-token"]
