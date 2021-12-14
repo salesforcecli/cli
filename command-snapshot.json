@@ -115,6 +115,11 @@
     "flags": ["nested-commands"]
   },
   {
+    "command": "info:releasenotes:display",
+    "plugin": "@salesforce/plugin-info",
+    "flags": ["hook", "json", "loglevel", "version"]
+  },
+  {
     "command": "login",
     "plugin": "@salesforce/plugin-login",
     "flags": []
