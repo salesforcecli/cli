@@ -31,6 +31,7 @@
     "commands": "./dist/commands",
     "helpClass": "./dist/help/sfHelp.js",
     "plugins": [
+      "@oclif/plugin-autocomplete",
       "@oclif/plugin-help",
       "@oclif/plugin-not-found",
       "@oclif/plugin-plugins",
@@ -82,6 +83,7 @@
   },
   "dependencies": {
     "@oclif/core": "^1.0.7",
+    "@oclif/plugin-autocomplete": "^1.0.0",
     "@oclif/plugin-help": "5.1.7",
     "@oclif/plugin-not-found": "2.2.0",
     "@oclif/plugin-plugins": "2.0.6",
@@ -109,6 +111,7 @@
     "@sf/info",
     "@sf/login",
     "@salesforce/plugin-telemetry",
+    "@oclif/plugin-autocomplete",
     "@oclif/plugin-help",
     "@oclif/plugin-not-found",
     "@oclif/plugin-plugins",
@@ -118,7 +121,7 @@
   "resolutions": {
     "@salesforce/templates": "52.6.0",
     "@oclif/config": "1.18.2",
-    "@oclif/command": "1.8.9"
+    "@oclif/command": "1.8.14"
   },
   "repository": "salesforcecli/cli",
   "scripts": {
