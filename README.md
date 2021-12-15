@@ -6,12 +6,11 @@
 [![License](https://img.shields.io/npm/l/@salesforce/cli.svg)](https://github.com/salesforcecli/cli/blob/master/package.json)
 
 <!-- toc -->
-
-- [@salesforce/cli](#salesforcecli)
-- [Getting Started](#getting-started)
-- [Feedback](#feedback)
-- [Usage](#usage)
-- [Commands](#commands)
+* [@salesforce/cli](#salesforcecli)
+* [Getting Started](#getting-started)
+* [Feedback](#feedback)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Getting Started
@@ -25,68 +24,97 @@ To provide feedback, use create a new issue [here](https://github.com/forcedotco
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
-$ sf (--version|-v|version)
-@salesforce/cli/1.6.0 linux-x64 node-v14.18.2
+$ sf (--version|-v)
+@salesforce/cli/1.7.0 linux-x64 node-v14.18.2
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
+* [`sf autocomplete [SHELL]`](#sf-autocomplete-shell)
+* [`sf config get`](#sf-config-get)
+* [`sf config list`](#sf-config-list)
+* [`sf config set`](#sf-config-set)
+* [`sf config unset`](#sf-config-unset)
+* [`sf deploy`](#sf-deploy)
+* [`sf deploy functions`](#sf-deploy-functions)
+* [`sf deploy metadata`](#sf-deploy-metadata)
+* [`sf env create compute`](#sf-env-create-compute)
+* [`sf env delete`](#sf-env-delete)
+* [`sf env display`](#sf-env-display)
+* [`sf env list`](#sf-env-list)
+* [`sf env log tail`](#sf-env-log-tail)
+* [`sf env logdrain add`](#sf-env-logdrain-add)
+* [`sf env logdrain list`](#sf-env-logdrain-list)
+* [`sf env logdrain remove`](#sf-env-logdrain-remove)
+* [`sf env open`](#sf-env-open)
+* [`sf env var get KEY`](#sf-env-var-get-key)
+* [`sf env var list`](#sf-env-var-list)
+* [`sf env var set`](#sf-env-var-set)
+* [`sf env var unset`](#sf-env-var-unset)
+* [`sf generate function`](#sf-generate-function)
+* [`sf generate project`](#sf-generate-project)
+* [`sf help [COMMAND]`](#sf-help-command)
+* [`sf info:releasenotes:display [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sf-inforeleasenotesdisplay--v-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sf login`](#sf-login)
+* [`sf login functions`](#sf-login-functions)
+* [`sf login functions jwt`](#sf-login-functions-jwt)
+* [`sf login org`](#sf-login-org)
+* [`sf login org jwt`](#sf-login-org-jwt)
+* [`sf logout`](#sf-logout)
+* [`sf logout functions`](#sf-logout-functions)
+* [`sf logout org`](#sf-logout-org)
+* [`sf plugins`](#sf-plugins)
+* [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
+* [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
+* [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
+* [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
+* [`sf plugins update`](#sf-plugins-update)
+* [`sf retrieve metadata`](#sf-retrieve-metadata)
+* [`sf run function`](#sf-run-function)
+* [`sf run function start`](#sf-run-function-start)
+* [`sf run function start local`](#sf-run-function-start-local)
+* [`sf update [CHANNEL]`](#sf-update-channel)
+* [`sf version`](#sf-version)
+* [`sf whoami functions`](#sf-whoami-functions)
 
-- [`sf config get`](#sf-config-get)
-- [`sf config list`](#sf-config-list)
-- [`sf config set`](#sf-config-set)
-- [`sf config unset`](#sf-config-unset)
-- [`sf deploy`](#sf-deploy)
-- [`sf deploy functions`](#sf-deploy-functions)
-- [`sf deploy metadata`](#sf-deploy-metadata)
-- [`sf env create compute`](#sf-env-create-compute)
-- [`sf env delete`](#sf-env-delete)
-- [`sf env display`](#sf-env-display)
-- [`sf env list`](#sf-env-list)
-- [`sf env log tail`](#sf-env-log-tail)
-- [`sf env logdrain add`](#sf-env-logdrain-add)
-- [`sf env logdrain list`](#sf-env-logdrain-list)
-- [`sf env logdrain remove`](#sf-env-logdrain-remove)
-- [`sf env open`](#sf-env-open)
-- [`sf env var get KEY`](#sf-env-var-get-key)
-- [`sf env var list`](#sf-env-var-list)
-- [`sf env var set`](#sf-env-var-set)
-- [`sf env var unset`](#sf-env-var-unset)
-- [`sf generate function`](#sf-generate-function)
-- [`sf generate project`](#sf-generate-project)
-- [`sf help [COMMAND]`](#sf-help-command)
-- [`sf login`](#sf-login)
-- [`sf login functions`](#sf-login-functions)
-- [`sf login functions jwt`](#sf-login-functions-jwt)
-- [`sf login org`](#sf-login-org)
-- [`sf login org jwt`](#sf-login-org-jwt)
-- [`sf logout`](#sf-logout)
-- [`sf logout functions`](#sf-logout-functions)
-- [`sf logout org`](#sf-logout-org)
-- [`sf plugins`](#sf-plugins)
-- [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
-- [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
-- [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
-- [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
-- [`sf plugins update`](#sf-plugins-update)
-- [`sf retrieve metadata`](#sf-retrieve-metadata)
-- [`sf run function`](#sf-run-function)
-- [`sf run function start`](#sf-run-function-start)
-- [`sf run function start local`](#sf-run-function-start-local)
-- [`sf update [CHANNEL]`](#sf-update-channel)
-- [`sf whoami functions`](#sf-whoami-functions)
+## `sf autocomplete [SHELL]`
+
+display autocomplete installation instructions
+
+```
+USAGE
+  $ sf autocomplete [SHELL] [-r]
+
+ARGUMENTS
+  SHELL  shell type
+
+FLAGS
+  -r, --refresh-cache  Refresh cache (ignores displaying instructions)
+
+DESCRIPTION
+  display autocomplete installation instructions
+
+EXAMPLES
+  $ sf autocomplete
+
+  $ sf autocomplete bash
+
+  $ sf autocomplete zsh
+
+  $ sf autocomplete --refresh-cache
+```
+
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v1.0.0/src/commands/autocomplete/index.ts)_
 
 ## `sf config get`
 
@@ -970,7 +998,43 @@ DESCRIPTION
   Display help for sf.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.7/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.10/src/commands/help.ts)_
+
+## `sf info:releasenotes:display [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+
+Display Salesforce CLI release notes on the command line.
+
+```
+USAGE
+  $ sf info releasenotes display [-v <string>] [--json] [--loglevel
+    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+FLAGS
+  -v, --version=<value>                                                             CLI version or tag for which to
+                                                                                    display release notes.
+  --json                                                                            format output as json
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
+                                                                                    this command invocation
+
+DESCRIPTION
+  Display Salesforce CLI release notes on the command line.
+
+ALIASES
+  $ sf whatsnew
+
+EXAMPLES
+  Display release notes for the currently installed CLI version:
+
+    sf info releasenotes display
+
+  Display release notes for CLI version 7.120.0:
+
+    sf info releasenotes display --version 7.120.0
+
+  Display release notes for the CLI version that corresponds to a tag (stable, stable-rc, latest, latest-rc, rc):
+
+    sf info releasenotes display --version latest
+```
 
 ## `sf login`
 
@@ -1341,7 +1405,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.0.2/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.0.11/src/commands/plugins/index.ts)_
 
 ## `sf plugins:inspect PLUGIN...`
 
@@ -1396,7 +1460,7 @@ ALIASES
   $ sf plugins add
 
 EXAMPLES
-  $ sf plugins:install myplugin
+  $ sf plugins:install myplugin 
 
   $ sf plugins:install https://github.com/someuser/someplugin
 
@@ -1676,7 +1740,16 @@ DESCRIPTION
   update the sf CLI
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v2.1.0/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v2.1.3/src/commands/update.ts)_
+
+## `sf version`
+
+```
+USAGE
+  $ sf version
+```
+
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v1.0.3/src/commands/version.ts)_
 
 ## `sf whoami functions`
 
@@ -1703,5 +1776,4 @@ EXAMPLES
 
     $ sf whoami functions --show-token --json
 ```
-
 <!-- commandsstop -->
