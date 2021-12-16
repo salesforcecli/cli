@@ -146,6 +146,7 @@
     "pretarball": "sf-release cli:tarballs:prepare --types",
     "promote-dist-tags": "./scripts/promote-dist-tags",
     "promote:verify": "sf-release cli:versions:inspect --channels stable --locations archive --cli sf",
+    "promote:verify-rc": "sf-release cli:versions:inspect --channels stable-rc --locations archive --cli sf",
     "test:smoke-unix": "sf-release cli:tarballs:smoke --cli sf",
     "test:deprecation-policy": "./bin/dev snapshot:compare",
     "test": "echo disable # sf-test",
