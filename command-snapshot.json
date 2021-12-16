@@ -115,6 +115,11 @@
     "flags": ["nested-commands"]
   },
   {
+    "command": "info:releasenotes:display",
+    "plugin": "@salesforce/plugin-info",
+    "flags": ["hook", "json", "loglevel", "version"]
+  },
+  {
     "command": "login",
     "plugin": "@salesforce/plugin-login",
     "flags": []
@@ -228,8 +233,23 @@
     ]
   },
   {
+    "command": "run:function:start:local",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["debug-port", "language", "path", "port"]
+  },
+  {
     "command": "telemetry",
     "plugin": "@salesforce/plugin-telemetry",
+    "flags": []
+  },
+  {
+    "command": "update",
+    "plugin": "@oclif/plugin-update",
+    "flags": ["autoupdate", "from-local"]
+  },
+  {
+    "command": "version",
+    "plugin": "@oclif/plugin-version",
     "flags": []
   },
   {

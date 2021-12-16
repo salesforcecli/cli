@@ -28,8 +28,8 @@ To provide feedback, use create a new issue [here](https://github.com/forcedotco
 $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
-$ sf (--version|-v|version)
-@salesforce/cli/1.3.0 linux-x64 node-v14.18.1
+$ sf (--version|-v)
+@salesforce/cli/1.7.0 linux-x64 node-v14.18.2
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -40,6 +40,7 @@ USAGE
 # Commands
 
 <!-- commands -->
+* [`sf autocomplete [SHELL]`](#sf-autocomplete-shell)
 * [`sf config get`](#sf-config-get)
 * [`sf config list`](#sf-config-list)
 * [`sf config set`](#sf-config-set)
@@ -63,6 +64,7 @@ USAGE
 * [`sf generate function`](#sf-generate-function)
 * [`sf generate project`](#sf-generate-project)
 * [`sf help [COMMAND]`](#sf-help-command)
+* [`sf info:releasenotes:display [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sf-inforeleasenotesdisplay--v-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 * [`sf login`](#sf-login)
 * [`sf login functions`](#sf-login-functions)
 * [`sf login functions jwt`](#sf-login-functions-jwt)
@@ -80,7 +82,39 @@ USAGE
 * [`sf retrieve metadata`](#sf-retrieve-metadata)
 * [`sf run function`](#sf-run-function)
 * [`sf run function start`](#sf-run-function-start)
+* [`sf run function start local`](#sf-run-function-start-local)
+* [`sf update [CHANNEL]`](#sf-update-channel)
+* [`sf version`](#sf-version)
 * [`sf whoami functions`](#sf-whoami-functions)
+
+## `sf autocomplete [SHELL]`
+
+display autocomplete installation instructions
+
+```
+USAGE
+  $ sf autocomplete [SHELL] [-r]
+
+ARGUMENTS
+  SHELL  shell type
+
+FLAGS
+  -r, --refresh-cache  Refresh cache (ignores displaying instructions)
+
+DESCRIPTION
+  display autocomplete installation instructions
+
+EXAMPLES
+  $ sf autocomplete
+
+  $ sf autocomplete bash
+
+  $ sf autocomplete zsh
+
+  $ sf autocomplete --refresh-cache
+```
+
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v1.0.0/src/commands/autocomplete/index.ts)_
 
 ## `sf config get`
 
@@ -964,7 +998,43 @@ DESCRIPTION
   Display help for sf.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.1/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.10/src/commands/help.ts)_
+
+## `sf info:releasenotes:display [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+
+Display Salesforce CLI release notes on the command line.
+
+```
+USAGE
+  $ sf info releasenotes display [-v <string>] [--json] [--loglevel
+    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+FLAGS
+  -v, --version=<value>                                                             CLI version or tag for which to
+                                                                                    display release notes.
+  --json                                                                            format output as json
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
+                                                                                    this command invocation
+
+DESCRIPTION
+  Display Salesforce CLI release notes on the command line.
+
+ALIASES
+  $ sf whatsnew
+
+EXAMPLES
+  Display release notes for the currently installed CLI version:
+
+    sf info releasenotes display
+
+  Display release notes for CLI version 7.120.0:
+
+    sf info releasenotes display --version 7.120.0
+
+  Display release notes for the CLI version that corresponds to a tag (stable, stable-rc, latest, latest-rc, rc):
+
+    sf info releasenotes display --version latest
+```
 
 ## `sf login`
 
@@ -995,7 +1065,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.5/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.6/src/commands/login.ts)_
 
 ## `sf login functions`
 
@@ -1102,16 +1172,17 @@ EXAMPLES
 
   Log in to a sandbox and set it as your default org:
 
-    $ sf login org --instance-url https://test.salesforce.com --set-default
+    $ sf login org --instance-url https://MyDomainName--SandboxName.sandbox.my.salesforce.com --set-default
 
   Use --browser to specify a specific browser, such as Google Chrome:
 
-    $ sf login org --instance-url https://test.salesforce.com --set-default --browser chrome
+    $ sf login org --instance-url https://MyDomainName--SandboxName.sandbox.my.salesforce.com --set-default \
+      --browser chrome
 
   Use your own connected app by specifying its consumer key (also called client ID):
 
-    $ sf login org --instance-url https://test.salesforce.com --set-default --browser chrome --clientid \
-      04580y4051234051
+    $ sf login org --instance-url https://MyDomainName--SandboxName.sandbox.my.salesforce.com --set-default \
+      --browser chrome --clientid 04580y4051234051
 
 FLAG DESCRIPTIONS
   -b, --browser=<value>  Browser in which to open the org.
@@ -1126,7 +1197,7 @@ FLAG DESCRIPTIONS
 
     To specify a My Domain URL, use the format https://yourcompanyname.my.salesforce.com.
 
-    To specify a sandbox, set --instance-url to https://test.salesforce.com.
+    To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 
 CONFIGURATION VARIABLES
   apiVersion   API version of your project. Default: API version of your Dev Hub org.
@@ -1205,10 +1276,10 @@ EXAMPLES
     $ sf login org jwt --username jdoe@example.org --keyfile /Users/jdoe/JWT/server.key --clientid 04580y4051234051 \
       --alias ci-dev-hub --set-default-dev-hub
 
-  Log in to a sandbox using URL https://test.salesforce.com:
+  Log in to a sandbox using URL https://MyDomainName--SandboxName.sandbox.my.salesforce.com:
 
     $ sf login org jwt --username jdoe@example.org --keyfile /Users/jdoe/JWT/server.key --clientid 04580y4051234051 \
-      --alias ci-org --set-default --instance-url https://test.salesforce.com
+      --alias ci-org --set-default --instance-url https://MyDomainName--SandboxName.sandbox.my.salesforce.com
 
 FLAG DESCRIPTIONS
   -l, --instance-url=<value>  URL of the instance that the org lives on.
@@ -1217,7 +1288,7 @@ FLAG DESCRIPTIONS
 
     To specify a My Domain URL, use the format https://yourcompanyname.my.salesforce.com.
 
-    To specify a sandbox, set --instance-url to https://test.salesforce.com.
+    To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 
 CONFIGURATION VARIABLES
   apiVersion   API version of your project. Default: API version of your Dev Hub org.
@@ -1261,7 +1332,7 @@ EXAMPLES
     $ sf logout --no-prompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.5/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.6/src/commands/logout.ts)_
 
 ## `sf logout functions`
 
@@ -1334,7 +1405,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.0.1/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.0.11/src/commands/plugins/index.ts)_
 
 ## `sf plugins:inspect PLUGIN...`
 
@@ -1348,7 +1419,7 @@ ARGUMENTS
   PLUGIN  [default: .] Plugin to inspect.
 
 FLAGS
-  -h, --help     show CLI help
+  -h, --help     Show CLI help.
   -v, --verbose
 
 DESCRIPTION
@@ -1371,7 +1442,7 @@ ARGUMENTS
 
 FLAGS
   -f, --force    Run yarn install with force flag.
-  -h, --help     show CLI help
+  -h, --help     Show CLI help.
   -v, --verbose
 
 DESCRIPTION
@@ -1408,7 +1479,7 @@ ARGUMENTS
   PATH  [default: .] path to plugin
 
 FLAGS
-  -h, --help     show CLI help
+  -h, --help     Show CLI help.
   -v, --verbose
 
 DESCRIPTION
@@ -1435,7 +1506,7 @@ ARGUMENTS
   PLUGIN  plugin to uninstall
 
 FLAGS
-  -h, --help     show CLI help
+  -h, --help     Show CLI help.
   -v, --verbose
 
 DESCRIPTION
@@ -1455,7 +1526,7 @@ USAGE
   $ sf plugins update [-h] [-v]
 
 FLAGS
-  -h, --help     show CLI help
+  -h, --help     Show CLI help.
   -v, --verbose
 
 DESCRIPTION
@@ -1593,7 +1664,7 @@ EXAMPLES
 
 ## `sf run function start`
 
-Build and run a Salesforce Function locally.
+Build and run a Salesforce Function in a container.
 
 ```
 USAGE
@@ -1610,7 +1681,7 @@ FLAGS
   --no-pull                 Skip pulling builder image before use.
 
 DESCRIPTION
-  Build and run a Salesforce Function locally.
+  Build and run a Salesforce Function in a container.
 
   Run this command from the directory of your Salesforce Functions project.
 
@@ -1627,6 +1698,58 @@ EXAMPLES
 
     $ sf run function start --env KEY=VALUE --network host
 ```
+
+## `sf run function start local`
+
+Build and run a Salesforce Function locally.
+
+```
+USAGE
+  $ sf run function start local [-p <value>] [-b <value>] [-l javascript|typescript|java|auto]
+
+FLAGS
+  -b, --debug-port=<value>                          [default: 9229] Port to use for debbugging the function.
+  -l, --language=(javascript|typescript|java|auto)  [default: auto] The language that the function runs in.
+  -p, --port=<value>                                [default: 8080] Port to bind the invoker to.
+
+DESCRIPTION
+  Build and run a Salesforce Function locally.
+
+EXAMPLES
+  Build a function and start the invoker
+
+    $ sf run function start local
+
+  Start the invoker with a specific language and port
+
+    $ sf run function start local --port 5000 --language javascript
+```
+
+## `sf update [CHANNEL]`
+
+update the sf CLI
+
+```
+USAGE
+  $ sf update [CHANNEL] [--from-local]
+
+FLAGS
+  --from-local  interactively choose an already installed version
+
+DESCRIPTION
+  update the sf CLI
+```
+
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v2.1.3/src/commands/update.ts)_
+
+## `sf version`
+
+```
+USAGE
+  $ sf version
+```
+
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v1.0.3/src/commands/version.ts)_
 
 ## `sf whoami functions`
 
