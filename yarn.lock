@@ -704,10 +704,10 @@
     supports-color "^8.1.1"
     tslib "^2"
 
-"@oclif/command@1.8.10", "@oclif/command@1.8.11", "@oclif/command@1.8.15", "@oclif/command@^1.5.13", "@oclif/command@^1.6.0", "@oclif/command@^1.8.1", "@oclif/command@^1.8.6", "@oclif/command@^1.8.9":
-  version "1.8.15"
-  resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.8.15.tgz#0639e5c60e36deba88dd852de4dca231fb29138a"
-  integrity sha512-lMRsr38sm4XBDBt2u88nvGyk3YxMjQenfX1HM140ZckTVqwuvFVZLP4HZ0rSAK9FdJzfryO/tH5hovdiC6bgsw==
+"@oclif/command@1.8.10", "@oclif/command@1.8.11", "@oclif/command@1.8.16", "@oclif/command@^1.5.13", "@oclif/command@^1.6.0", "@oclif/command@^1.8.1", "@oclif/command@^1.8.6", "@oclif/command@^1.8.9":
+  version "1.8.16"
+  resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.8.16.tgz#bea46f81b2061b47e1cda318a0b923e62ca4cc0c"
+  integrity sha512-rmVKYEsKzurfRU0xJz+iHelbi1LGlihIWZ7Qvmb/CBz1EkhL7nOkW4SVXmG2dA5Ce0si2gr88i6q4eBOMRNJ1w==
   dependencies:
     "@oclif/config" "^1.18.2"
     "@oclif/errors" "^1.3.5"
@@ -1433,10 +1433,10 @@
     open "^8.2.0"
     tslib "^2"
 
-"@sf/functions@npm:@salesforce/plugin-functions@1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.2.2.tgz#567df7ae3fe39d40ca1486bdbb44cd87644069a6"
-  integrity sha512-UepG/FOtVbwZZq0N7E4Aqaf7RMyunveYzoiG+unegRcSTsyqrJchGKLYOp71Riif9zlVNBGjqJWKNHI05Gx2Pg==
+"@sf/functions@npm:@salesforce/plugin-functions@1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.3.0.tgz#a640864c227b6740b9c6c416cb35a0c76f6d5e7c"
+  integrity sha512-rxa8pIKfwpjr8lneyYYJ/3HgC6VspIrJcKXmKecWSk96DrVqrkkhAxQp2ht/pLr+6qxYmhvRyeC9jdVI7erV7Q==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku-cli/schema" "^1.0.25"
@@ -1460,6 +1460,7 @@
     fs-extra "^10.0.0"
     global-agent "^3.0.0"
     handlebars "^4.7.7"
+    jsforce "^1.11.0"
     kbpgp "^2.1.15"
     lodash "^4.17.21"
     netrc-parser "^3.1.6"
