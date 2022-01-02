@@ -8420,7 +8420,7 @@ normalize-package-data@^2.3.2, normalize-package-data@^2.3.4, normalize-package-
     semver "2 || 3 || 4 || 5"
     validate-npm-package-license "^3.0.1"
 
-normalize-package-data@^3.0.0, normalize-package-data@^3.0.2:
+normalize-package-data@^3.0.0, normalize-package-data@^3.0.2, normalize-package-data@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/normalize-package-data/-/normalize-package-data-3.0.3.tgz#dbcc3e2da59509a0983422884cd172eefdfa525e"
   integrity sha512-p2W1sgqij3zMMyRC067Dg16bfzVH+w7hyegmpIvZ4JNjqtGOVAIvLmjBx3yP7YTe9vKJgkoNOPjwQGogDoMXFA==
@@ -8803,9 +8803,9 @@ oclif@^1.18.2:
     yosay "^2.0.2"
 
 oclif@^2.0.0-main.6:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/oclif/-/oclif-2.0.1.tgz#0def8f7e98ba5645413e46a0c2ae8656c6ad7b37"
-  integrity sha512-9CzlF5VB7s3dTClBS/QaI2YD1/r/gYhmtQ2qbhhsAShpxbyItRtv46DlqCwCfx/5+amDVNfsRpslFFkWmfKz0g==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/oclif/-/oclif-2.1.0.tgz#bc256aa4b28032b3a776eb5064e01dc49fa22326"
+  integrity sha512-Eo5ufaVFvbovKlDY0K4vBK6nxD0stS+31r4N1ce/52Z08mgEbGgtDcOtEGUKgZNKSgGDxFzmkEm5+ztwLLRW3A==
   dependencies:
     "@oclif/core" "1.0.10"
     "@oclif/fixpack" "^2.3.0"
@@ -8813,17 +8813,17 @@ oclif@^2.0.0-main.6:
     "@oclif/plugin-not-found" "^2.2.2"
     "@oclif/plugin-warn-if-update-available" "^2.0.2"
     cli-ux "6.0.6"
-    debug "^4.1.1"
+    debug "^4.3.3"
     find-yarn-workspace-root "^2.0.0"
     fs-extra "^8.1"
     github-slugger "^1.2.1"
     lodash "^4.17.11"
-    normalize-package-data "^3.0.0"
+    normalize-package-data "^3.0.3"
     nps-utils "^1.7.0"
     qqjs "^0.3.10"
     semver "^7.3.5"
     sort-pjson "^1.0.3"
-    tslib "^2.0.0"
+    tslib "^2.3.1"
     yeoman-environment "^2.3.4"
     yeoman-generator "3"
     yosay "^2.0.2"
