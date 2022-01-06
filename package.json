@@ -45,7 +45,7 @@
       "@sf/gen",
       "@sf/info",
       "@sf/login",
-      "@salesforce/plugin-telemetry"
+      "@sf/telemetry"
     ],
     "devPlugins": [
       "@oclif/plugin-command-snapshot",
@@ -89,7 +89,6 @@
     "@oclif/plugin-plugins": "2.0.12",
     "@oclif/plugin-update": "2.1.4",
     "@oclif/plugin-version": "1.0.4",
-    "@salesforce/plugin-telemetry": "1.4.0",
     "@salesforce/sf-plugins-core": "1.0.5",
     "@sf/config": "npm:@salesforce/plugin-config@2.2.11",
     "@sf/deploy-retrieve": "npm:@salesforce/plugin-deploy-retrieve@1.0.5",
@@ -99,6 +98,7 @@
     "@sf/gen": "npm:@salesforce/plugin-generate@1.0.5",
     "@sf/info": "npm:@salesforce/plugin-info@1.2.0",
     "@sf/login": "npm:@salesforce/plugin-login@1.0.6",
+    "@sf/telemetry": "npm:@salesforce/plugin-telemetry@1.4.0",
     "tslib": "^2.3.1"
   },
   "resolutions": {

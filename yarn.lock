@@ -1390,17 +1390,6 @@
     strip-ansi "6.0.1"
     tslib "^2"
 
-"@salesforce/plugin-telemetry@1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-1.4.0.tgz#0f17334af1085f47a28340bc387c78a633c326fe"
-  integrity sha512-vroDey9dTomc6mMWWufzN2mKXsWzLR067z2263TPEFr3Hgt0qQjE0K4eXa5rjbs0OOpm6dGGwisa9sT6wkoseA==
-  dependencies:
-    "@oclif/config" "^1"
-    "@salesforce/command" "^4.2.0"
-    "@salesforce/core" "^2.31.0"
-    "@salesforce/telemetry" "^3.1.0"
-    tslib "^2"
-
 "@salesforce/plugin-trust@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-1.1.0.tgz#e7127735c2a8e2a502290fdff1fcf97a84b2ac96"
@@ -1613,6 +1602,17 @@
     mime "2.4.6"
     unzipper "0.10.11"
     xmldom-sfdx-encoding "^0.1.29"
+
+"@sf/telemetry@npm:@salesforce/plugin-telemetry@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@salesforce/plugin-telemetry/-/plugin-telemetry-1.4.0.tgz#0f17334af1085f47a28340bc387c78a633c326fe"
+  integrity sha512-vroDey9dTomc6mMWWufzN2mKXsWzLR067z2263TPEFr3Hgt0qQjE0K4eXa5rjbs0OOpm6dGGwisa9sT6wkoseA==
+  dependencies:
+    "@oclif/config" "^1"
+    "@salesforce/command" "^4.2.0"
+    "@salesforce/core" "^2.31.0"
+    "@salesforce/telemetry" "^3.1.0"
+    tslib "^2"
 
 "@sindresorhus/is@^4.0.0":
   version "4.2.0"
