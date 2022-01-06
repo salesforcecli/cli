@@ -728,7 +728,7 @@
     is-wsl "^2.1.1"
     tslib "^2.0.0"
 
-"@oclif/core@1.0.10", "@oclif/core@^1.0.10", "@oclif/core@^1.0.2", "@oclif/core@^1.0.7", "@oclif/core@^1.0.8":
+"@oclif/core@1.0.10", "@oclif/core@^1.0.10", "@oclif/core@^1.0.2", "@oclif/core@^1.0.8":
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.0.10.tgz#5fd01d572e44d372b7279ee0f49b4860e14b6e4e"
   integrity sha512-L+IcNU3NoYxwz5hmHfcUlOJ3dpgHRsIj1kAmI9CKEJHq5gBVKlP44Ot179Jke1jKRKX2g9N42izbmlh0SNpkkw==
@@ -755,6 +755,29 @@
   version "1.1.0"
   resolved "https://registry.npmjs.org/@oclif/core/-/core-1.1.0.tgz#e007f681f4d4bcad91214c1be6ba403e91984da0"
   integrity sha512-lbNS1cvpCa3+yT3zcwiZKXFq9b3bk/Y3URomXvMAm/S+nitQdviA5L8racaJ0Qyd4yHIeePiyGjCcrI10zuNuQ==
+  dependencies:
+    "@oclif/linewrap" "^1.0.0"
+    chalk "^4.1.2"
+    clean-stack "^3.0.1"
+    cli-ux "^6.0.6"
+    debug "^4.3.3"
+    fs-extra "^9.1.0"
+    get-package-type "^0.1.0"
+    globby "^11.0.4"
+    indent-string "^4.0.0"
+    is-wsl "^2.2.0"
+    lodash "^4.17.21"
+    semver "^7.3.5"
+    string-width "^4.2.3"
+    strip-ansi "^6.0.1"
+    tslib "^2.3.1"
+    widest-line "^3.1.0"
+    wrap-ansi "^7.0.0"
+
+"@oclif/core@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/@oclif/core/-/core-1.1.1.tgz#71a91be5af645a7088d4f716a9c83b0adbd1d4a3"
+  integrity sha512-lCn4CT39gMV9oo/P1u99kmBy61RU5lsq0ENocnnvoFtGHrsEZQgOztxR6mTBKMl5QCBK1c6cEy47E8owUQgEGw==
   dependencies:
     "@oclif/linewrap" "^1.0.0"
     chalk "^4.1.2"
@@ -939,7 +962,18 @@
     fast-levenshtein "^3.0.0"
     lodash "^4.17.21"
 
-"@oclif/plugin-not-found@2.2.3", "@oclif/plugin-not-found@^2.2.2":
+"@oclif/plugin-not-found@2.2.4":
+  version "2.2.4"
+  resolved "https://registry.npmjs.org/@oclif/plugin-not-found/-/plugin-not-found-2.2.4.tgz#fdea729face92228c19fc2bf04759909e9a986b1"
+  integrity sha512-ESq4nqgtWXpF2zCjhYC+dOTcStHu9mHttmFjElSvRUPOLqL38TGwqcX07ATzw/OQAsonDVwIaH/neSfq+MmWgA==
+  dependencies:
+    "@oclif/color" "^1.0.0"
+    "@oclif/core" "^1.1.1"
+    cli-ux "^6.0.6"
+    fast-levenshtein "^3.0.0"
+    lodash "^4.17.21"
+
+"@oclif/plugin-not-found@^2.2.2":
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-2.2.3.tgz#146748c75e9a23417b26ce06adba978d7513e27c"
   integrity sha512-HZ1ZlRqOdxoxjnM36T0wfzvmSFT2iO9HrYjSU0ZHuGhCwvgIK5PDjxZu1j44SStfYGSKcIcj08Uz1fRUvgQa9Q==
@@ -950,33 +984,33 @@
     fast-levenshtein "^3.0.0"
     lodash "^4.17.21"
 
-"@oclif/plugin-plugins@2.0.11":
-  version "2.0.11"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-2.0.11.tgz#b45c0299db40c84b3506240f47c24756791f1f21"
-  integrity sha512-GvBawBPRxaAO48aWTtrseClhbPjyLaB6rNSQIHyQcSOL/cg7TLT1JaffZURkCOsD817t5SMm97I+OIbhI4R5zQ==
+"@oclif/plugin-plugins@2.0.12":
+  version "2.0.12"
+  resolved "https://registry.npmjs.org/@oclif/plugin-plugins/-/plugin-plugins-2.0.12.tgz#e4a5610e153b66b6cd2dac1c47bf9c8226344a15"
+  integrity sha512-Lk4dt00EiKZo53VRjfG42C6c2sDQK/+HPOsMY1+NUpleKVSoT7UKV7N/s5CW0VaNn81YSKjYXOYB1u3Ca8uhog==
   dependencies:
     "@oclif/color" "^0.1.2"
-    "@oclif/core" "1.0.10"
+    "@oclif/core" "^1.1.1"
     chalk "^4.1.2"
-    cli-ux "6.0.6"
+    cli-ux "^6.0.6"
     debug "^4.1.0"
     fs-extra "^9.0"
     http-call "^5.2.2"
-    load-json-file "^5.2.0"
+    load-json-file "^5.3.0"
     npm-run-path "^4.0.1"
     semver "^7.3.2"
     tslib "^2.0.0"
-    yarn "^1.21.1"
+    yarn "^1.22.17"
 
-"@oclif/plugin-update@2.1.3":
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-2.1.3.tgz#4be7366ddb5cbca406222482c118d6717b83908c"
-  integrity sha512-FVlRfb6sIgAdjLpaBd2DIG/VWkLUFaA91ZHEvHKd2pkDyLG0p8ahKOwaBUjZFsvfDnf+glznyw0JXYDQY145jQ==
+"@oclif/plugin-update@2.1.4":
+  version "2.1.4"
+  resolved "https://registry.npmjs.org/@oclif/plugin-update/-/plugin-update-2.1.4.tgz#f34cc3de6baeae302f575696f5087fb011513f15"
+  integrity sha512-WMivyk71F9yVvPRHo6vFYo+HMdl6PA9w978INO/ji+wGnincuj+qvrZhbbaup+4csBQosBu/7vpZd8vjHI/O0w==
   dependencies:
     "@oclif/color" "^1.0.0"
-    "@oclif/core" "1.0.10"
+    "@oclif/core" "^1.1.1"
     "@types/semver" "^7.3.4"
-    cli-ux "6.0.6"
+    cli-ux "^6.0.6"
     cross-spawn "^7.0.3"
     debug "^4.3.1"
     filesize "^6.1.0"
@@ -987,12 +1021,12 @@
     semver "^7.3.5"
     tar-fs "^2.1.1"
 
-"@oclif/plugin-version@1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-version/-/plugin-version-1.0.3.tgz#99c6f6d5f60a0de0cbce4fa7c12b8541706ccaba"
-  integrity sha512-dRwsLW5p/ctn8p78Fh2VgZB/f5l3ewU2qqeSP/95v3XZ6qj2nlQlpJseWgfdQi6L9F+9UDKDmrgKuE/aqWUNTw==
+"@oclif/plugin-version@1.0.4":
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/@oclif/plugin-version/-/plugin-version-1.0.4.tgz#5fe1bee4438e7950aac3c8fdeb56939726e90b17"
+  integrity sha512-V9TZQKV4Ql7q0YnLyiebu9RTVvafkgGKM17eqDWyxHF0+qhsze661zcobJBXXRc51ObXUtHUFXamtHoxImO7Tg==
   dependencies:
-    "@oclif/core" "1.0.10"
+    "@oclif/core" "^1.1.1"
 
 "@oclif/plugin-warn-if-update-available@1.7.3":
   version "1.7.3"
@@ -7343,9 +7377,9 @@ load-json-file@^4.0.0:
     pify "^3.0.0"
     strip-bom "^3.0.0"
 
-load-json-file@^5.2.0:
+load-json-file@^5.3.0:
   version "5.3.0"
-  resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-5.3.0.tgz#4d3c1e01fa1c03ea78a60ac7af932c9ce53403f3"
+  resolved "https://registry.npmjs.org/load-json-file/-/load-json-file-5.3.0.tgz#4d3c1e01fa1c03ea78a60ac7af932c9ce53403f3"
   integrity sha512-cJGP40Jc/VXUsp8/OrnyKyTZ1y6v/dphm3bioS+RrKXjK2BB6wHUd6JptZEFDGgGahMT+InnZO5i1Ei9mpC8Bw==
   dependencies:
     graceful-fs "^4.1.15"
@@ -11960,9 +11994,9 @@ yargs@^15.0.2:
     y18n "^4.0.0"
     yargs-parser "^18.1.2"
 
-yarn@^1.21.1:
+yarn@^1.22.17:
   version "1.22.17"
-  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.17.tgz#bf910747d22497b573131f7341c0e1d15c74036c"
+  resolved "https://registry.npmjs.org/yarn/-/yarn-1.22.17.tgz#bf910747d22497b573131f7341c0e1d15c74036c"
   integrity sha512-H0p241BXaH0UN9IeH//RT82tl5PfNraVpSpEoW+ET7lmopNC61eZ+A+IDvU8FM6Go5vx162SncDL8J1ZjRBriQ==
 
 yeoman-environment@2.4.0:
