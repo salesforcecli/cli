@@ -704,7 +704,7 @@
     supports-color "^8.1.1"
     tslib "^2"
 
-"@oclif/command@1.8.10", "@oclif/command@1.8.11", "@oclif/command@1.8.16", "@oclif/command@^1.5.13", "@oclif/command@^1.6.0", "@oclif/command@^1.8.1", "@oclif/command@^1.8.6", "@oclif/command@^1.8.9":
+"@oclif/command@1.8.10", "@oclif/command@1.8.11", "@oclif/command@1.8.16", "@oclif/command@^1.5.13", "@oclif/command@^1.8.1", "@oclif/command@^1.8.6", "@oclif/command@^1.8.9":
   version "1.8.16"
   resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.8.16.tgz#bea46f81b2061b47e1cda318a0b923e62ca4cc0c"
   integrity sha512-rmVKYEsKzurfRU0xJz+iHelbi1LGlihIWZ7Qvmb/CBz1EkhL7nOkW4SVXmG2dA5Ce0si2gr88i6q4eBOMRNJ1w==
@@ -737,6 +737,29 @@
     chalk "^4.1.2"
     clean-stack "^3.0.1"
     cli-ux "6.0.5"
+    debug "^4.3.3"
+    fs-extra "^9.1.0"
+    get-package-type "^0.1.0"
+    globby "^11.0.4"
+    indent-string "^4.0.0"
+    is-wsl "^2.2.0"
+    lodash "^4.17.21"
+    semver "^7.3.5"
+    string-width "^4.2.3"
+    strip-ansi "^6.0.1"
+    tslib "^2.3.1"
+    widest-line "^3.1.0"
+    wrap-ansi "^7.0.0"
+
+"@oclif/core@^1.0.1", "@oclif/core@^1.0.11":
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/@oclif/core/-/core-1.1.0.tgz#e007f681f4d4bcad91214c1be6ba403e91984da0"
+  integrity sha512-lbNS1cvpCa3+yT3zcwiZKXFq9b3bk/Y3URomXvMAm/S+nitQdviA5L8racaJ0Qyd4yHIeePiyGjCcrI10zuNuQ==
+  dependencies:
+    "@oclif/linewrap" "^1.0.0"
+    chalk "^4.1.2"
+    clean-stack "^3.0.1"
+    cli-ux "^6.0.6"
     debug "^4.3.3"
     fs-extra "^9.1.0"
     get-package-type "^0.1.0"
@@ -821,25 +844,23 @@
     chalk "^4.1.0"
     tslib "^2.0.0"
 
-"@oclif/plugin-autocomplete@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-1.0.0.tgz#12456e413d6e14d171672388a0287822227c4c57"
-  integrity sha512-UuuNo1AYTP0n72UAuOlZQ156E+cK71WOrO2Lata01D8BXlvZjiYsZF3B+DfyHEi7gmRNOKBHHLr5st+Lof3EYg==
+"@oclif/plugin-autocomplete@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/@oclif/plugin-autocomplete/-/plugin-autocomplete-1.1.1.tgz#f6c343d81569fc986d38e4950799ccf3e2b677e1"
+  integrity sha512-pbhW8MlgdiF7hNxYVW+d43BwSMtb2WSwuw5hyMFdO15U3J4FDRLynG5sdcz0k1GSBr5tOgZHJ+Dh813amckSAw==
   dependencies:
-    "@oclif/core" "^1.0.10"
+    "@oclif/core" "^1.0.11"
     chalk "^4.1.0"
-    cli-ux "^5.6.6"
+    cli-ux "^6.0.6"
     debug "^4.0.0"
     fs-extra "^9.0.1"
-    moment "^2.22.1"
 
-"@oclif/plugin-command-snapshot@^2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-command-snapshot/-/plugin-command-snapshot-2.2.2.tgz#2da73d06886e8b74c5e95f7369562d795dcfa5a2"
-  integrity sha512-8ujiuGTncfVEbIM4mtOe/PzBaE8m2Bgr13ILxSFf/ZRUVNPs/DSG2DlmxUUf2kpmMhKD7U4lGVqI4em+TJsBiQ==
+"@oclif/plugin-command-snapshot@^3.1.2":
+  version "3.1.2"
+  resolved "https://registry.npmjs.org/@oclif/plugin-command-snapshot/-/plugin-command-snapshot-3.1.2.tgz#8b8abceac56a5c367e2e945becb6ddad3aa725d2"
+  integrity sha512-3jeFbmUkkcbUthEGjzFBGWUTuaQioje7FftYv3csbJfAZr1WsoWfcI92G7f5rPKHxpdzXF51GuxEudiExVOacA==
   dependencies:
-    "@oclif/command" "^1.6.0"
-    "@oclif/config" "^1"
+    "@oclif/core" "^1.0.1"
     chalk "^4.1.1"
     just-diff "^3.1.1"
     semver "^7.3.5"
@@ -8094,7 +8115,7 @@ modify-values@^1.0.0:
   resolved "https://registry.yarnpkg.com/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
   integrity sha512-xV2bxeN6F7oYjZWTe/YPAy6MN2M+sL4u/Rlm2AHCIVGfo2p1yGmBHQ6vHehl4bRTZBdHu3TSkWdYgkwpYzAGSw==
 
-moment@^2.15.1, moment@^2.22.1, moment@^2.24.0:
+moment@^2.15.1, moment@^2.24.0:
   version "2.29.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
   integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
