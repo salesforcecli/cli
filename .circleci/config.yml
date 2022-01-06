@@ -12,7 +12,7 @@ jobs:
       - checkout
       - release-management/configure-github
       - release-management/install-sf-release
-      - run: sf-release cli:latestrc:build
+      - run: sf-release cli:latestrc:build --no-resolutions --no-pinned-deps
 
   change-case-start:
     docker:
