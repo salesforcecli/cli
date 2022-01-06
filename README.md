@@ -29,7 +29,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/1.7.0 linux-x64 node-v14.18.2
+@salesforce/cli/1.8.0 linux-x64 node-v14.18.2
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -114,7 +114,7 @@ EXAMPLES
   $ sf autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v1.0.0/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v1.1.1/src/commands/autocomplete/index.ts)_
 
 ## `sf config get`
 
@@ -998,7 +998,7 @@ DESCRIPTION
   Display help for sf.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.10/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.9/src/commands/help.ts)_
 
 ## `sf info:releasenotes:display [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -1405,7 +1405,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.0.11/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.0.12/src/commands/plugins/index.ts)_
 
 ## `sf plugins:inspect PLUGIN...`
 
@@ -1740,7 +1740,7 @@ DESCRIPTION
   update the sf CLI
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v2.1.3/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v2.1.4/src/commands/update.ts)_
 
 ## `sf version`
 
@@ -1749,7 +1749,7 @@ USAGE
   $ sf version
 ```
 
-_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v1.0.3/src/commands/version.ts)_
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v1.0.4/src/commands/version.ts)_
 
 ## `sf whoami functions`
 

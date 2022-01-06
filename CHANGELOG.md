@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/salesforcecli/cli/compare/v1.7.0...v1.8.0) (2022-01-06)
+
+
+### Features
+
+* verify promote for stable-rc channel ([0678adb](https://github.com/salesforcecli/cli/commit/0678adb1b13a274381a7d9bb92acf46156f5a7c6))
+
 ## [1.7.0](https://github.com/salesforcecli/cli/compare/v1.6.0...v1.7.0) (2021-12-15)
 
 ## [1.6.0](https://github.com/salesforcecli/cli/compare/v1.5.2...v1.6.0) (2021-12-08)

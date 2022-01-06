@@ -1511,10 +1511,10 @@
     "@salesforce/templates" "^52.4.0"
     tslib "^2"
 
-"@sf/info@npm:@salesforce/plugin-info@1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-1.1.4.tgz#7ed26d0634f4855f9e0ac506385d9a113d74f595"
-  integrity sha512-gWKMDg93IihIIyc5trp6TCmxTMfDXujrW4EOkNp7qoy3L8fYMVEr0KXBtwepC6DgKqznZkUnu2QrG4q/b3GQGQ==
+"@sf/info@npm:@salesforce/plugin-info@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-1.2.0.tgz#c56c6367aa73cea76063dfa3fa532a08e1254dd5"
+  integrity sha512-QQQmpxPP7CAYUxILhR/7JEIW2OkVE+VQ0RlQqCnT4iaEwL2wzDyy4QS/Ce/Era/JEvc2wWzvVUXPN9mO7VmEOg==
   dependencies:
     "@oclif/config" "^1"
     "@salesforce/command" "^4.1.5"
@@ -1524,7 +1524,6 @@
     marked "^4.0.1"
     marked-terminal "^4.2.0"
     semver "^7.3.5"
-    sinon-chai "^3.7.0"
     tslib "^2"
 
 "@sf/login@npm:@salesforce/plugin-login@1.0.6":
@@ -10343,11 +10342,6 @@ signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.6.tgz#24e630c4b0f03fea446a2bd299e62b4a6ca8d0af"
   integrity sha512-sDl4qMFpijcGw22U5w63KmD3cZJfBuFlVNbVMKje2keoKML7X2UzWbc4XrmEbDwg0NXJc3yv4/ox7b+JWb57kQ==
-
-sinon-chai@^3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/sinon-chai/-/sinon-chai-3.7.0.tgz#cfb7dec1c50990ed18c153f1840721cf13139783"
-  integrity sha512-mf5NURdUaSdnatJx3uhoBOrY9dtL19fiOtAdT1Azxg3+lNJFiuN0uzaU3xX1LeAfL17kHQhTAJgpsfhbMJMY2g==
 
 sinon@10.0.0:
   version "10.0.0"
