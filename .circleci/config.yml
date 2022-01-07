@@ -12,7 +12,7 @@ jobs:
       - checkout
       - release-management/configure-github
       - release-management/install-sf-release
-      - run: sf-release cli:latestrc:build
+      - run: sf-release cli:latestrc:build --no-resolutions --no-pinned-deps
 
   change-case-start:
     docker:
@@ -27,10 +27,8 @@ jobs:
     resource_class: xlarge
     steps:
       - checkout
-      - release-management/install-sf-release
-      - run: sf-release npm:dependencies:pin --tag latest-rc
       - run: yarn install
-      - run: sf-release cli:schemas:compare
+      - run: yarn test:json-schema
 
   # There are two pack jobs:
   # - test-pack-tarballs to run on every branch *other than main*
@@ -50,8 +48,6 @@ jobs:
       - restore_cache:
           keys:
             - v3-npm-{{checksum "yarn.lock"}}
-      - release-management/install-sf-release
-      - run: sf-release npm:dependencies:pin --tag latest-rc
       - run: yarn install
       - run: yarn pack:tarballs
       - run: yarn pack:verify
@@ -262,16 +258,6 @@ workflows:
                 - main
     jobs:
       - test-pack-tarballs
-  test-schema-changes:
-    triggers:
-      - schedule:
-          cron: 0 0 * * *
-          filters:
-            branches:
-              only:
-                - main
-    jobs:
-      - verify-no-schema-changes
   dependabot-automerge:
     triggers:
       - schedule:
