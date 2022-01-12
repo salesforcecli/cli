@@ -6,11 +6,12 @@
 [![License](https://img.shields.io/npm/l/@salesforce/cli.svg)](https://github.com/salesforcecli/cli/blob/master/package.json)
 
 <!-- toc -->
-* [@salesforce/cli](#salesforcecli)
-* [Getting Started](#getting-started)
-* [Feedback](#feedback)
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [@salesforce/cli](#salesforcecli)
+- [Getting Started](#getting-started)
+- [Feedback](#feedback)
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
 
 # Getting Started
@@ -24,68 +25,72 @@ To provide feedback, use create a new issue [here](https://github.com/forcedotco
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/1.8.0 linux-x64 node-v14.18.2
+@salesforce/cli/1.9.0 linux-x64 node-v14.18.3
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`sf autocomplete [SHELL]`](#sf-autocomplete-shell)
-* [`sf config get`](#sf-config-get)
-* [`sf config list`](#sf-config-list)
-* [`sf config set`](#sf-config-set)
-* [`sf config unset`](#sf-config-unset)
-* [`sf deploy`](#sf-deploy)
-* [`sf deploy functions`](#sf-deploy-functions)
-* [`sf deploy metadata`](#sf-deploy-metadata)
-* [`sf env create compute`](#sf-env-create-compute)
-* [`sf env delete`](#sf-env-delete)
-* [`sf env display`](#sf-env-display)
-* [`sf env list`](#sf-env-list)
-* [`sf env log tail`](#sf-env-log-tail)
-* [`sf env logdrain add`](#sf-env-logdrain-add)
-* [`sf env logdrain list`](#sf-env-logdrain-list)
-* [`sf env logdrain remove`](#sf-env-logdrain-remove)
-* [`sf env open`](#sf-env-open)
-* [`sf env var get KEY`](#sf-env-var-get-key)
-* [`sf env var list`](#sf-env-var-list)
-* [`sf env var set`](#sf-env-var-set)
-* [`sf env var unset`](#sf-env-var-unset)
-* [`sf generate function`](#sf-generate-function)
-* [`sf generate project`](#sf-generate-project)
-* [`sf help [COMMAND]`](#sf-help-command)
-* [`sf info:releasenotes:display [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sf-inforeleasenotesdisplay--v-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sf login`](#sf-login)
-* [`sf login functions`](#sf-login-functions)
-* [`sf login functions jwt`](#sf-login-functions-jwt)
-* [`sf login org`](#sf-login-org)
-* [`sf login org jwt`](#sf-login-org-jwt)
-* [`sf logout`](#sf-logout)
-* [`sf logout functions`](#sf-logout-functions)
-* [`sf logout org`](#sf-logout-org)
-* [`sf plugins`](#sf-plugins)
-* [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
-* [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
-* [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
-* [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
-* [`sf plugins update`](#sf-plugins-update)
-* [`sf retrieve metadata`](#sf-retrieve-metadata)
-* [`sf run function`](#sf-run-function)
-* [`sf run function start`](#sf-run-function-start)
-* [`sf run function start local`](#sf-run-function-start-local)
-* [`sf update [CHANNEL]`](#sf-update-channel)
-* [`sf version`](#sf-version)
-* [`sf whoami functions`](#sf-whoami-functions)
+
+- [`sf autocomplete [SHELL]`](#sf-autocomplete-shell)
+- [`sf config get`](#sf-config-get)
+- [`sf config list`](#sf-config-list)
+- [`sf config set`](#sf-config-set)
+- [`sf config unset`](#sf-config-unset)
+- [`sf deploy`](#sf-deploy)
+- [`sf deploy functions`](#sf-deploy-functions)
+- [`sf deploy metadata`](#sf-deploy-metadata)
+- [`sf env create compute`](#sf-env-create-compute)
+- [`sf env delete`](#sf-env-delete)
+- [`sf env display`](#sf-env-display)
+- [`sf env list`](#sf-env-list)
+- [`sf env log tail`](#sf-env-log-tail)
+- [`sf env logdrain add`](#sf-env-logdrain-add)
+- [`sf env logdrain list`](#sf-env-logdrain-list)
+- [`sf env logdrain remove`](#sf-env-logdrain-remove)
+- [`sf env open`](#sf-env-open)
+- [`sf env var get KEY`](#sf-env-var-get-key)
+- [`sf env var list`](#sf-env-var-list)
+- [`sf env var set`](#sf-env-var-set)
+- [`sf env var unset`](#sf-env-var-unset)
+- [`sf generate function`](#sf-generate-function)
+- [`sf generate project`](#sf-generate-project)
+- [`sf help [COMMAND]`](#sf-help-command)
+- [`sf info:releasenotes:display [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sf-inforeleasenotesdisplay--v-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+- [`sf login`](#sf-login)
+- [`sf login functions`](#sf-login-functions)
+- [`sf login functions jwt`](#sf-login-functions-jwt)
+- [`sf login org`](#sf-login-org)
+- [`sf login org jwt`](#sf-login-org-jwt)
+- [`sf logout`](#sf-logout)
+- [`sf logout functions`](#sf-logout-functions)
+- [`sf logout org`](#sf-logout-org)
+- [`sf plugins`](#sf-plugins)
+- [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
+- [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
+- [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
+- [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
+- [`sf plugins update`](#sf-plugins-update)
+- [`sf retrieve metadata`](#sf-retrieve-metadata)
+- [`sf run function`](#sf-run-function)
+- [`sf run function start`](#sf-run-function-start)
+- [`sf run function start container`](#sf-run-function-start-container)
+- [`sf run function start local`](#sf-run-function-start-local)
+- [`sf update [CHANNEL]`](#sf-update-channel)
+- [`sf version`](#sf-version)
+- [`sf whoami functions`](#sf-whoami-functions)
 
 ## `sf autocomplete [SHELL]`
 
@@ -1460,7 +1465,7 @@ ALIASES
   $ sf plugins add
 
 EXAMPLES
-  $ sf plugins:install myplugin 
+  $ sf plugins:install myplugin
 
   $ sf plugins:install https://github.com/someuser/someplugin
 
@@ -1664,11 +1669,53 @@ EXAMPLES
 
 ## `sf run function start`
 
-Build and run a Salesforce Function in a container.
+Build and run a Salesforce Function.
 
 ```
 USAGE
   $ sf run function start [-p <value>] [-b <value>] [--clear-cache] [--no-pull] [-e <value>] [--network <value>] [-v]
+
+FLAGS
+  -b, --debug-port=<value>  [default: 9229] Port for remote debugging.
+  -e, --env=<value>...      Set environment variables (provided during build and run).
+  -p, --port=<value>        [default: 8080] Port for running the function.
+  -v, --verbose             Output additional logs.
+  --clear-cache             Clear associated cache before executing.
+  --network=<value>         Connect and build containers to a network. This can be useful to build containers which
+                            require a local resource.
+  --no-pull                 Skip pulling builder image before use.
+
+DESCRIPTION
+  Build and run a Salesforce Function.
+
+  Run this command from the directory of your Salesforce Functions project.
+
+  This command will run the target function in a container. In the future, this command will run the target function on
+  the host operating system (locally) instead. If one mode is preferred over the other, consider using the `container`
+  or `local` subcommand instead.
+
+EXAMPLES
+  Build and run a function:
+
+    $ sf run function start
+
+  Run a function on a specific port with additional logs:
+
+    $ sf run function start --port 5000 --verbose
+
+  Add environment variables and specify a network:
+
+    $ sf run function start --env KEY=VALUE --network host
+```
+
+## `sf run function start container`
+
+Build and run a Salesforce Function in a container.
+
+```
+USAGE
+  $ sf run function start container [-p <value>] [-b <value>] [--clear-cache] [--no-pull] [-e <value>] [--network
+  <value>] [-v]
 
 FLAGS
   -b, --debug-port=<value>  [default: 9229] Port for remote debugging.
@@ -1688,15 +1735,15 @@ DESCRIPTION
 EXAMPLES
   Build and run a function:
 
-    $ sf run function start
+    $ sf run function start container
 
   Run a function on a specific port with additional logs:
 
-    $ sf run function start --port 5000 --verbose
+    $ sf run function start container --port 5000 --verbose
 
   Add environment variables and specify a network:
 
-    $ sf run function start --env KEY=VALUE --network host
+    $ sf run function start container --env KEY=VALUE --network host
 ```
 
 ## `sf run function start local`
@@ -1776,4 +1823,5 @@ EXAMPLES
 
     $ sf whoami functions --show-token --json
 ```
+
 <!-- commandsstop -->
