@@ -438,17 +438,19 @@
     ajv "^6.12.2"
     toml "^3.0.0"
 
-"@heroku/functions-core@0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@heroku/functions-core/-/functions-core-0.1.3.tgz#fad612c63c7509fde6cea2eb491cfbcbba8bce43"
-  integrity sha512-mVwT6onwnKMGmOSHoF17goyA+jrFCPX8fGQc+ZzqRfEd39N9JSxAVx/RIP7f+Psaii1EvMVGNqcIwD6GJ1lpYg==
+"@heroku/functions-core@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.npmjs.org/@heroku/functions-core/-/functions-core-0.2.2.tgz#066a6db9da3edbb5aa2414e83224936e3906af16"
+  integrity sha512-An7GxEJ6wyN4nJu8xUyQBJmel2J3QXlDYzmVsFVDyineHdZ2ACupmW51lA3T7dyZkuOVks96F84NAz1DS7L3wg==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku/project-descriptor" "0.0.5"
     "@salesforce/core" "^2.20.10"
     "@salesforce/templates" "^52.0.0"
     "@salesforce/ts-sinon" "^1.3.12"
-    axios "^0.21.1"
+    "@types/chai-as-promised" "^7.1.4"
+    axios "^0.21.2"
+    chai-as-promised "^7.1.1"
     cloudevents "^4.0.2"
     fs-extra "^9.1.0"
     global-agent "^2.1.8"
@@ -457,6 +459,7 @@
     mem-fs-editor "^8.1.2 || ^9.0.0"
     node-fetch "^2.6.1"
     openpgp "^5.0.0"
+    semver "^7.3.5"
     sha256-file "^1.0.0"
     yeoman-environment "~3.3.0"
 
@@ -1293,6 +1296,30 @@
     sfdx-faye "^1.0.9"
     ts-retry-promise "^0.6.0"
 
+"@salesforce/core@3.7.3":
+  version "3.7.3"
+  resolved "https://registry.npmjs.org/@salesforce/core/-/core-3.7.3.tgz#64475fe8a9dbcb3dd4410fb5babb2942275ea852"
+  integrity sha512-y9OsTvGAb0d8p/2Hnica5AKYhnM7IApTsvra8zDGV+/53ooXCnsK59eq7brC2EnG/XdaUqmtnKFr2yWDyPbNBA==
+  dependencies:
+    "@salesforce/bunyan" "^2.0.0"
+    "@salesforce/kit" "^1.5.8"
+    "@salesforce/schemas" "^1.0.1"
+    "@salesforce/ts-types" "^1.5.20"
+    "@types/graceful-fs" "^4.1.5"
+    "@types/jsforce" "^1.9.29"
+    "@types/mkdirp" "^1.0.1"
+    "@types/semver" "^7.3.9"
+    change-case "^4.1.2"
+    debug "^3.1.0"
+    faye "^1.4.0"
+    form-data "^4.0.0"
+    graceful-fs "^4.2.4"
+    jsen "0.6.6"
+    jsforce "2.0.0-beta.7"
+    jsonwebtoken "8.5.0"
+    mkdirp "1.0.4"
+    ts-retry-promise "^0.6.0"
+
 "@salesforce/dev-config@^3.0.0":
   version "3.0.0"
   resolved "https://registry.npmjs.org/@salesforce/dev-config/-/dev-config-3.0.0.tgz#a87e2cc310011a3364fc0a5d6c5550daa3192642"
@@ -1513,19 +1540,19 @@
     open "^8.2.0"
     tslib "^2"
 
-"@sf/functions@npm:@salesforce/plugin-functions@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.3.0.tgz#a640864c227b6740b9c6c416cb35a0c76f6d5e7c"
-  integrity sha512-rxa8pIKfwpjr8lneyYYJ/3HgC6VspIrJcKXmKecWSk96DrVqrkkhAxQp2ht/pLr+6qxYmhvRyeC9jdVI7erV7Q==
+"@sf/functions@npm:@salesforce/plugin-functions@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.npmjs.org/@salesforce/plugin-functions/-/plugin-functions-1.4.2.tgz#4a8d39db851fa975b02559095f17b313a28db2a6"
+  integrity sha512-+lnVdHmj2jeG1pjzzpvh0KaM8xpNvVJT9h36c3Ro2UpnE8bBQMFlx2uqbr/aBYWhRAMcZyYRw9Lzbo5OqkX/MA==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku-cli/schema" "^1.0.25"
     "@heroku/eventsource" "^1.0.7"
     "@heroku/function-toml" "^0.0.3"
-    "@heroku/functions-core" "0.1.3"
+    "@heroku/functions-core" "0.2.2"
     "@heroku/project-descriptor" "0.0.5"
     "@oclif/core" "^1.0.2"
-    "@salesforce/core" "3.7.2"
+    "@salesforce/core" "3.7.3"
     "@salesforce/plugin-org" "^1.8.1"
     "@salesforce/sf-plugins-core" "^1.0.4"
     "@salesforce/ts-sinon" "^1.3.18"
@@ -1729,6 +1756,13 @@
     "@types/node" "*"
     "@types/responselike" "*"
 
+"@types/chai-as-promised@^7.1.4":
+  version "7.1.4"
+  resolved "https://registry.npmjs.org/@types/chai-as-promised/-/chai-as-promised-7.1.4.tgz#caf64e76fb056b8c8ced4b761ed499272b737601"
+  integrity sha512-1y3L1cHePcIm5vXkh1DSGf/zQq5n5xDKG1fpCvf18+uOkpce0Z1ozNFPkyWsVswK7ntN1sZBw3oU6gmN+pDUcA==
+  dependencies:
+    "@types/chai" "*"
+
 "@types/chai@*", "@types/chai@^4.2.11":
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.3.0.tgz#23509ebc1fa32f1b4d50d6a66c4032d5b8eaabdc"
@@ -1859,7 +1893,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/semver@^7.3.4":
+"@types/semver@^7.3.4", "@types/semver@^7.3.9":
   version "7.3.9"
   resolved "https://registry.yarnpkg.com/@types/semver/-/semver-7.3.9.tgz#152c6c20a7688c30b967ec1841d31ace569863fc"
   integrity sha512-L/TMpyURfBkf+o/526Zb6kd/tchUP3iBDEPjqjb+U2MAJhVRxxrmr2fwpe08E7QsV7YLcpq0tUaQ9O9x97ZIxQ==
@@ -2909,6 +2943,13 @@ caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
+
+chai-as-promised@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.npmjs.org/chai-as-promised/-/chai-as-promised-7.1.1.tgz#08645d825deb8696ee61725dbf590c012eb00ca0"
+  integrity sha512-azL6xMoi+uxu6z4rhWQ1jbdUhOMhis2PvscD/xjLqNMkv3BPPp2JyyuTHOrf9BOosGpNQ11v6BKv/g57RXbiaA==
+  dependencies:
+    check-error "^1.0.2"
 
 chai@^4.2.0, chai@^4.3.4:
   version "4.3.4"
