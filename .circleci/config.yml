@@ -213,9 +213,6 @@ workflows:
           filters:
             branches:
               only: main
-          pre-job-steps:
-            - release-management/pin-dependencies:
-                tag: latest-rc
       - pack-and-upload-tarballs:
           filters:
             branches:
