@@ -213,6 +213,9 @@ workflows:
           filters:
             branches:
               only: main
+      - build-latest-rc:
+          requires:
+            - release-management/release-package
       - pack-and-upload-tarballs:
           filters:
             branches:
@@ -295,14 +298,3 @@ workflows:
           requires:
             - npm-promotions
             - promote-channels
-  build-latest-rc:
-    triggers:
-      - schedule:
-          # Wednesday mornings at 10:30am mountain
-          cron: '30 16 * * 3'
-          filters:
-            branches:
-              only:
-                - main
-    jobs:
-      - build-latest-rc
