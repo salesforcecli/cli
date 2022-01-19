@@ -5,7 +5,7 @@ orbs:
   jq: circleci/jq@2.2
 
 jobs:
-  build-latest-rc:
+  create-next-latest-rc-pull-request:
     docker:
       - image: node:lts
     steps:
@@ -213,7 +213,7 @@ workflows:
           filters:
             branches:
               only: main
-      - build-latest-rc:
+      - create-next-latest-rc-pull-request:
           requires:
             - release-management/release-package
       - pack-and-upload-tarballs:
