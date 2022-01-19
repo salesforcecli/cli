@@ -31,7 +31,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/1.9.1 linux-x64 node-v14.18.3
+@salesforce/cli/1.10.0 linux-x64 node-v14.18.3
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -322,7 +322,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.0.5/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.0.6/src/commands/deploy.ts)_
 
 ## `sf deploy functions`
 
@@ -429,8 +429,8 @@ FLAG DESCRIPTIONS
     75% code coverage for each class and trigger in the deployment package. This coverage is computed for each class and
     trigger individually and is different than the overall coverage percentage.
 
-    - RunLocalTests — All tests in your org are run, except the ones that originate from installed managed packages.
-    This test level is the default for production deployments that include Apex classes or triggers.
+    - RunLocalTests — All tests in your org are run, except the ones that originate from installed managed and unlocked
+    packages. This test level is the default for production deployments that include Apex classes or triggers.
 
     - RunAllTestsInOrg — All tests in your org are run, including tests of managed packages.
 
@@ -1070,7 +1070,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.6/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.7/src/commands/login.ts)_
 
 ## `sf login functions`
 
@@ -1337,7 +1337,7 @@ EXAMPLES
     $ sf logout --no-prompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.6/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.7/src/commands/logout.ts)_
 
 ## `sf logout functions`
 
@@ -1673,39 +1673,34 @@ Build and run a Salesforce Function.
 
 ```
 USAGE
-  $ sf run function start [-p <value>] [-b <value>] [--clear-cache] [--no-pull] [-e <value>] [--network <value>] [-v]
+  $ sf run function start [-b <value>] [-l javascript|typescript|java|auto] [-p <value>] [-v]
 
 FLAGS
-  -b, --debug-port=<value>  [default: 9229] Port for remote debugging.
-  -e, --env=<value>...      Set environment variables (provided during build and run).
-  -p, --port=<value>        [default: 8080] Port for running the function.
-  -v, --verbose             Output additional logs.
-  --clear-cache             Clear associated cache before executing.
-  --network=<value>         Connect and build containers to a network. This can be useful to build containers which
-                            require a local resource.
-  --no-pull                 Skip pulling builder image before use.
+  -b, --debug-port=<value>                          [default: 9229] Port for remote debugging.
+  -l, --language=(javascript|typescript|java|auto)  [default: auto]
+  -p, --port=<value>                                [default: 8080] Port for running the function.
+  -v, --verbose                                     Output additional logs.
 
 DESCRIPTION
   Build and run a Salesforce Function.
 
   Run this command from the directory of your Salesforce Functions project.
 
-  This command will run the target function in a container. In the future, this command will run the target function on
-  the host operating system (locally) instead. If one mode is preferred over the other, consider using the `container`
-  or `local` subcommand instead.
+  This command will run the target function locally (on the same operating system as this CLI), just like the `local`
+  subcommand.
+
+  Previously, this command ran functions in a container. Container mode is still supported via the `container`
+  subcommand. Arguments relevant to container mode are still accepted, but are deprecated, ignored, and will be dropped
+  in a future release.
 
 EXAMPLES
-  Build and run a function:
+  Build a function and start the invoker
 
     $ sf run function start
 
-  Run a function on a specific port with additional logs:
+  Start the invoker with a specific language and port
 
-    $ sf run function start --port 5000 --verbose
-
-  Add environment variables and specify a network:
-
-    $ sf run function start --env KEY=VALUE --network host
+    $ sf run function start --port 5000 --language javascript
 ```
 
 ## `sf run function start container`
@@ -1787,7 +1782,7 @@ DESCRIPTION
   update the sf CLI
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v2.1.4/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v2.1.5/src/commands/update.ts)_
 
 ## `sf version`
 
