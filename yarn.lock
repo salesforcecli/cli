@@ -1421,7 +1421,7 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.1.0.tgz#bbf94a11ee036f2b0ec6ba82306cd9565a6ba26b"
   integrity sha512-6D7DvE6nFxpLyyTnrOIbbAeCJw2r/EpinFAcMh6gU0gA/CGfSbwV/8uR3uHLYL2zCyCZLH8jJ4dZ3BzCMqc+Eg==
 
-"@salesforce/sf-plugins-core@1.1.0", "@salesforce/sf-plugins-core@^1.0.4", "@salesforce/sf-plugins-core@^1.1.0":
+"@salesforce/sf-plugins-core@^1.0.4", "@salesforce/sf-plugins-core@^1.1.0":
   version "1.1.0"
   resolved "https://registry.npmjs.org/@salesforce/sf-plugins-core/-/sf-plugins-core-1.1.0.tgz#4ecd4c8d4da2d03f1757bae4195881b162383922"
   integrity sha512-yAND3+9gAL7UntCnCX39LTZ/HQ/B6YfJz3nTxjENlP5/HHcid5ZMXQ6/jQ5aARDyF0MNgzZ0+m/8ORi6uIgvow==
@@ -1443,22 +1443,9 @@
     applicationinsights "^1.4.0"
     axios "^0.21.2"
 
-"@salesforce/templates@^52.0.0":
-  version "52.7.0"
-  resolved "https://registry.npmjs.org/@salesforce/templates/-/templates-52.7.0.tgz#d02674c4fe83e86e0a78fb6b82b7bfea8ee9b251"
-  integrity sha512-bUVlEifUM8XhbZ8DvQNX/lfM+N+GB81UQd2LLzQ2qQR+igzHPU0TAwDbZWO68bQJ7O+fwJvAcYjJoOhd/7e9Ng==
-  dependencies:
-    "@salesforce/core" "2.32.0"
-    got "^11.8.2"
-    mime-types "^2.1.27"
-    tar "^6.1.10"
-    tslib "^1"
-    yeoman-environment "2.4.0"
-    yeoman-generator "4.0.1"
-
-"@salesforce/templates@^53.1.0":
+"@salesforce/templates@53.1.0", "@salesforce/templates@^52.0.0", "@salesforce/templates@^53.1.0":
   version "53.1.0"
-  resolved "https://registry.npmjs.org/@salesforce/templates/-/templates-53.1.0.tgz#8a39af6ae3dfbf1570988519022c696bc1afce62"
+  resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-53.1.0.tgz#8a39af6ae3dfbf1570988519022c696bc1afce62"
   integrity sha512-1in0x6f56Z5JudB/7HqFLPjg99me1shOwcZ7e86fWhxq3IzqQcUbb5PVSuw+/x3s2G8KGawOkp3HDsrsHARIxw==
   dependencies:
     "@salesforce/core" "2.32.0"
@@ -1534,10 +1521,10 @@
     open "^8.2.0"
     tslib "^2"
 
-"@sf/functions@npm:@salesforce/plugin-functions@1.4.3":
-  version "1.4.3"
-  resolved "https://registry.npmjs.org/@salesforce/plugin-functions/-/plugin-functions-1.4.3.tgz#b665074ec27b3815e41e2f3d835cf4a29f623e94"
-  integrity sha512-nKM40hWJvDiBYnU3zZ0BImFJN3xix4QEf/OzcWZp3DFG1f66xXImygLqRRRgtFFK8ZxG7sZOCjJSBOZNyvQDVg==
+"@sf/functions@npm:@salesforce/plugin-functions@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.5.0.tgz#e3edb8a482938274e9b69514f29635f02698d0cd"
+  integrity sha512-gVmqyyaRlpyaB3ft0LMBDFZTyXBIiRH4MTyZaheD3s0RsgXgS5SgYFnZqoKgHDYNm606xh/HkOcuFFRP9rgl8A==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku-cli/schema" "^1.0.25"
