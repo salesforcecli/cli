@@ -14,7 +14,8 @@
   "files": [
     "/bin",
     "/dist/**/*.js",
-    "/oclif.manifest.json"
+    "/oclif.manifest.json",
+    "/npm-shrinkwrap.json"
   ],
   "keywords": [
     "oclif",
@@ -125,7 +126,7 @@
     "pack:win": "oclif pack:win",
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "yarn test:deprecation-policy",
-    "prepack": "sf-prepack",
+    "prepack": "sf-prepack && npm shrinkwrap",
     "prepare": "sf-install && yarn compile && yarn lint",
     "pretarball": "sf-release cli:tarballs:prepare --types",
     "pretest": "echo disable # sf-compile-test",

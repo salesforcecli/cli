@@ -1,5 +1,6 @@
 {
   "script": {
+    "prepack": "sf-prepack && npm shrinkwrap",
     "prepare": "sf-install && yarn compile && yarn lint",
     "pretest": "echo disable # sf-compile-test",
     "test": "echo disable # sf-test",
