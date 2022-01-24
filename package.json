@@ -124,7 +124,7 @@
     "pack:tarballs": "oclif pack:tarballs",
     "pack:verify": "sf-release cli:tarballs:verify --cli sf --windows-username-buffer 36",
     "pack:win": "oclif pack:win",
-    "postpack": "rm -f oclif.manifest.json",
+    "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
     "posttest": "yarn test:deprecation-policy",
     "prepack": "sf-prepack",
     "prepare": "sf-install && yarn compile && yarn lint",
