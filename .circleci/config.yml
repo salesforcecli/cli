@@ -204,6 +204,7 @@ workflows:
             branches:
               only: main
       - release-management/release-package:
+          context: AWS
           node_version: '14'
           tag: latest-rc
           github-release: true
