@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/salesforcecli/cli/compare/v1.10.0...v1.11.0) (2022-01-26)
+
+### Bug Fixes
+
+- remove npm-shrinkwrap from clean section ([1e56a7a](https://github.com/salesforcecli/cli/commit/1e56a7a42709de8589e7ae6a68f8f93a0c8f365d))
+
 ## [1.10.0](https://github.com/salesforcecli/cli/compare/v1.9.1...v1.10.0) (2022-01-19)
 
 ### [1.9.1](https://github.com/salesforcecli/cli/compare/v1.9.0...v1.9.1) (2022-01-14)
