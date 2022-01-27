@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run"
@@ -14,7 +14,8 @@
   "files": [
     "/bin",
     "/dist/**/*.js",
-    "/oclif.manifest.json"
+    "/oclif.manifest.json",
+    "/npm-shrinkwrap.json"
   ],
   "keywords": [
     "oclif",
@@ -123,10 +124,11 @@
     "pack:tarballs": "oclif pack:tarballs",
     "pack:verify": "sf-release cli:tarballs:verify --cli sf --windows-username-buffer 36",
     "pack:win": "oclif pack:win",
-    "postpack": "rm -f oclif.manifest.json",
+    "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
     "posttest": "yarn test:deprecation-policy",
     "prepack": "sf-prepack",
     "prepare": "sf-install && yarn compile && yarn lint",
+    "prepublishOnly": "npm shrinkwrap",
     "pretarball": "sf-release cli:tarballs:prepare --types",
     "pretest": "echo disable # sf-compile-test",
     "promote-dist-tags": "./scripts/promote-dist-tags",
