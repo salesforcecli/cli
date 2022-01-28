@@ -31,7 +31,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/1.11.0 linux-x64 node-v14.18.3
+@salesforce/cli/1.11.1 linux-x64 node-v14.18.3
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -1003,7 +1003,7 @@ DESCRIPTION
   Display help for sf.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.9/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.10/src/commands/help.ts)_
 
 ## `sf info:releasenotes:display [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
