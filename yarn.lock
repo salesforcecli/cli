@@ -1252,7 +1252,7 @@
     chalk "^2.4.2"
     cli-ux "^4.9.3"
 
-"@salesforce/core@2.32.0", "@salesforce/core@^2.20.10", "@salesforce/core@^2.29.0", "@salesforce/core@^2.31.0":
+"@salesforce/core@2.32.0":
   version "2.32.0"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-2.32.0.tgz#2649562f3be9bf05f436b06bc5a20014aa9a5aea"
   integrity sha512-bJ9LidLQ+6xoAaC2q0M/609AmrOIVp9ErjkC/mYdlIK2XAEZWYbnbhdBGzlzInjD7KFR65Gmq+Y0c3+ESSYFrg==
@@ -1274,7 +1274,7 @@
     semver "^7.3.5"
     ts-retry-promise "^0.6.0"
 
-"@salesforce/core@2.33.1":
+"@salesforce/core@2.33.1", "@salesforce/core@^2.20.10", "@salesforce/core@^2.29.0", "@salesforce/core@^2.31.0":
   version "2.33.1"
   resolved "https://registry.npmjs.org/@salesforce/core/-/core-2.33.1.tgz#23c22953174ad0e809b2f1c7b2881b5ba8a89d9c"
   integrity sha512-jKVFYEvlV+loBoau5heBOVXmzsPO+RbYh6SPybJK6xF7khQmzu7+WAQbikY2eY8VaXcded2kka8L/FKuD/LKBg==
@@ -1387,9 +1387,9 @@
     tslib "^2"
 
 "@salesforce/plugin-release-management@^2.7.1":
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-2.8.3.tgz#c1a59633796f9981a2ead9afe3cc1df83e35c116"
-  integrity sha512-9RB47QBsM8tqgQqW9Qn2xU3OZ89FokQEqb5BF0aHgZqGgkVxLQtI0O2PoEKutVyKnNVBs4c77JUTamvheka5OQ==
+  version "2.10.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-2.10.3.tgz#65348bca89efa67368b3bee16cb89a12387c9bbd"
+  integrity sha512-3OTTdAyI8PmDQUd/fjb/IMpj9Jaarp7cXopuktlCWlrQTA6r9/LegnhiyqfXcatbb1/0HX1A2gDoledXL1CvTg==
   dependencies:
     "@oclif/config" "^1"
     "@octokit/core" "^3.4.0"
