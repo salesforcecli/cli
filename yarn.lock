@@ -1159,7 +1159,7 @@
     chalk "^2.4.2"
     cli-ux "^4.9.3"
 
-"@salesforce/core@2.32.0", "@salesforce/core@^2.20.10", "@salesforce/core@^2.29.0", "@salesforce/core@^2.31.0":
+"@salesforce/core@2.32.0":
   version "2.32.0"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-2.32.0.tgz#2649562f3be9bf05f436b06bc5a20014aa9a5aea"
   integrity sha512-bJ9LidLQ+6xoAaC2q0M/609AmrOIVp9ErjkC/mYdlIK2XAEZWYbnbhdBGzlzInjD7KFR65Gmq+Y0c3+ESSYFrg==
@@ -1181,7 +1181,7 @@
     semver "^7.3.5"
     ts-retry-promise "^0.6.0"
 
-"@salesforce/core@2.33.1":
+"@salesforce/core@2.33.1", "@salesforce/core@^2.20.10", "@salesforce/core@^2.29.0", "@salesforce/core@^2.31.0":
   version "2.33.1"
   resolved "https://registry.npmjs.org/@salesforce/core/-/core-2.33.1.tgz#23c22953174ad0e809b2f1c7b2881b5ba8a89d9c"
   integrity sha512-jKVFYEvlV+loBoau5heBOVXmzsPO+RbYh6SPybJK6xF7khQmzu7+WAQbikY2eY8VaXcded2kka8L/FKuD/LKBg==
@@ -1294,9 +1294,9 @@
     tslib "^2"
 
 "@salesforce/plugin-release-management@^2.7.1":
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-2.8.3.tgz#c1a59633796f9981a2ead9afe3cc1df83e35c116"
-  integrity sha512-9RB47QBsM8tqgQqW9Qn2xU3OZ89FokQEqb5BF0aHgZqGgkVxLQtI0O2PoEKutVyKnNVBs4c77JUTamvheka5OQ==
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-2.11.0.tgz#54b2ba769835d5be7123a26acbc3dcab54cd105d"
+  integrity sha512-ESYCwiQCObspFvxQyRv2U73ncP3zd5aw85DsnoSJC37uA+kpZc1eUa0KdqQ1IgHhREXBZNyn2WxA/ivCSXuURg==
   dependencies:
     "@oclif/config" "^1"
     "@octokit/core" "^3.4.0"
@@ -1323,6 +1323,7 @@
     standard-version "^9.0.0"
     strip-ansi "6.0.1"
     tslib "^2"
+    yarn-deduplicate "^3.1.0"
 
 "@salesforce/plugin-trust@^1.1.0":
   version "1.1.0"
@@ -1934,6 +1935,11 @@
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@ungap/promise-all-settled/-/promise-all-settled-1.1.2.tgz#aa58042711d6e3275dd37dc597e5d31e8c290a44"
   integrity sha512-sL/cEvJWAnClXw0wHk85/2L0G6Sj8UB0Ctc1TEMbKSsmpRosqhwj9gWgFRZSrBr2f9tiXISwNhCPmlfqUqyb9Q==
+
+"@yarnpkg/lockfile@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@yarnpkg/lockfile/-/lockfile-1.1.0.tgz#e77a97fbd345b76d83245edcd17d393b1b41fb31"
+  integrity sha512-GpSwvyXOcOOlV70vbnzjj4fW5xW/FdUF6nQEt1ENy7m4ZCczi1+/buVUPAqmGfqznsORNFzUMjctTIp8a9tuCQ==
 
 JSONStream@^1.0.4, JSONStream@^1.2.1, JSONStream@^1.3.5:
   version "1.3.5"
@@ -3348,6 +3354,11 @@ commander@^4.0.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
   integrity sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==
+
+commander@^6.1.0:
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
+  integrity sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==
 
 commander@^7.2.0:
   version "7.2.0"
@@ -11770,6 +11781,15 @@ yargs@^17.0.0:
     string-width "^4.2.3"
     y18n "^5.0.5"
     yargs-parser "^21.0.0"
+
+yarn-deduplicate@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/yarn-deduplicate/-/yarn-deduplicate-3.1.0.tgz#3018d93e95f855f236a215b591fe8bc4bcabba3e"
+  integrity sha512-q2VZ6ThNzQpGfNpkPrkmV7x5HT9MOhCUsTxVTzyyZB0eSXz1NTodHn+r29DlLb+peKk8iXxzdUVhQG9pI7moFw==
+  dependencies:
+    "@yarnpkg/lockfile" "^1.1.0"
+    commander "^6.1.0"
+    semver "^7.3.2"
 
 yarn@^1.22.17:
   version "1.22.17"
