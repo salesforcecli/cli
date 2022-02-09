@@ -217,6 +217,7 @@ workflows:
           requires:
             - release-management/release-package
       - pack-and-upload-tarballs:
+          context: AWS
           filters:
             branches:
               only:
@@ -224,6 +225,7 @@ workflows:
           requires:
             - release-management/release-package
       - pack-and-upload-macos-installer:
+          context: AWS
           filters:
             branches:
               only:
@@ -232,6 +234,7 @@ workflows:
             - release-management/release-package
             - pack-and-upload-tarballs
       - pack-and-upload-windows-installer:
+          context: AWS
           filters:
             branches:
               only:
@@ -283,6 +286,7 @@ workflows:
       - change-case-start:
           context: CLI_CTC
       - promote-channels:
+          context: AWS
           requires:
             - change-case-start
       - npm-promotions:
