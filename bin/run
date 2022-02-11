@@ -1,13 +1,41 @@
 #!/usr/bin/env node
 
+/* tslint:disable:no-var-requires only-arrow-functions */
+/* eslint-disable global-require, prefer-arrow-callback */
+
 // Since the CLI is a single process, we can have a larger amount of max listeners since
 // the process gets shut down. Don't set it to 0 (no limit) since we should still be aware
 // of rouge event listeners
-process.setMaxListeners(parseInt(process.env.SF_MAX_EVENT_LISTENERS, 10) || 1000);
+process.setMaxListeners(parseInt(process.env.SFDX_MAX_EVENT_LISTENERS, 10) || 1000);
 
 // Don't let other plugins override the CLI specified max listener count
 process.setMaxListeners = () => {};
 
-require('@oclif/core').run()
-.then(require('@oclif/core/flush'))
-.catch(require('@oclif/core/handle'))
+// Check node version before requiring additional packages
+require('../dist/versions').checkNodeVersion();
+
+// Enable lazy requires by default if not already overridden
+if (process.env.SFDX_LAZY_LOAD_MODULES !== 'false') {
+  process.env.SFDX_LAZY_LOAD_MODULES = 'true';
+}
+
+const cli = require('../dist/cli');
+const pjson = require('../package.json');
+
+// OVERRIDES gets replaced with particular values for binary builds,
+// but simply use defaults for npm and local invocations
+const overrides = {
+  /* @OVERRIDES@ */
+};
+const version = overrides.version || pjson.version;
+const channel = overrides.channel || 'stable';
+
+cli
+  .create(version, channel)
+  .run()
+  .then(function (result) {
+    require('@oclif/command/flush')(result);
+  })
+  .catch(function (err) {
+    require('@oclif/errors/handle')(err);
+  });
