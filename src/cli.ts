@@ -13,7 +13,6 @@ import { set } from '@salesforce/kit';
 import { AnyJson, get } from '@salesforce/ts-types';
 import * as Debug from 'debug';
 import { exec } from 'shelljs';
-import { EnvironmentVariable } from '@salesforce/core';
 import { default as nodeEnv, Env } from './util/env';
 
 const debug = Debug('sf');
@@ -98,17 +97,17 @@ function debugCliInfo(version: string, channel: string, env: Env, config: IConfi
     'ENV',
     [
       'NODE_OPTIONS',
-      EnvironmentVariable.SFDX_AUTOUPDATE_DISABLE,
+      Env.SFDX_AUTOUPDATE_DISABLE,
       'SFDX_BINPATH',
       'SFDX_COMPILE_CACHE',
-      EnvironmentVariable.SFDX_DISABLE_AUTOUPDATE,
-      EnvironmentVariable.SFDX_ENV,
-      EnvironmentVariable.SFDX_INSTALLER,
-      EnvironmentVariable.SFDX_LAZY_LOAD_MODULES,
-      EnvironmentVariable.SFDX_NPM_REGISTRY,
+      Env.SFDX_DISABLE_AUTOUPDATE,
+      Env.SFDX_ENV,
+      Env.SFDX_INSTALLER,
+      Env.SFDX_LAZY_LOAD_MODULES,
+      Env.SFDX_NPM_REGISTRY,
       'SFDX_REDIRECTED',
-      EnvironmentVariable.SFDX_S3_HOST,
-      EnvironmentVariable.SFDX_UPDATE_INSTRUCTIONS,
+      Env.SFDX_S3_HOST,
+      Env.SFDX_UPDATE_INSTRUCTIONS,
     ].map((key): [string, string] => [key, env.getString(key, '<not set>')])
   );
 
