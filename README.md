@@ -31,7 +31,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/1.13.0 linux-x64 node-v14.19.0
+@salesforce/cli/1.14.0 linux-x64 node-v14.19.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -1773,16 +1773,36 @@ update the sf CLI
 
 ```
 USAGE
-  $ sf update [CHANNEL] [--from-local]
+  $ sf update [CHANNEL] [-a] [-v <value> | -i] [--force]
 
 FLAGS
-  --from-local  interactively choose an already installed version
+  -a, --available        Install a specific version.
+  -i, --interactive      Interactively select version to install. This is ignored if a channel is provided.
+  -v, --version=<value>  Install a specific version.
+  --force                Force a re-download of the requested version.
 
 DESCRIPTION
   update the sf CLI
+
+EXAMPLES
+  Update to the stable channel:
+
+    $ sf update stable
+
+  Update to a specific version:
+
+    $ sf update --version 1.0.0
+
+  Interactively select version:
+
+    $ sf update --interactive
+
+  See available versions:
+
+    $ sf update --available
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v2.2.0/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v3.0.0/src/commands/update.ts)_
 
 ## `sf version`
 
