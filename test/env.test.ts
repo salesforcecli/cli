@@ -20,15 +20,15 @@ describe('Env', () => {
 
   describe('normalizeAutoupdateDisabled', () => {
     it('should set the oclif autoupdate disabled envar if the legacy one is set', () => {
-      env.setBoolean(EnvironmentVariable.SFDX_AUTOUPDATE_DISABLE, true);
+      env.setBoolean(EnvironmentVariable.SF_AUTOUPDATE_DISABLE, true);
       env.normalizeAutoupdateDisabled();
-      expect(env.getBoolean(EnvironmentVariable.SFDX_DISABLE_AUTOUPDATE)).to.be.true;
+      expect(env.getBoolean(EnvironmentVariable.SF_DISABLE_AUTOUPDATE)).to.be.true;
     });
 
     it('should set the legacy autoupdate disabled envar if the oclif one is set', () => {
-      env.setBoolean(EnvironmentVariable.SFDX_DISABLE_AUTOUPDATE, true);
+      env.setBoolean(EnvironmentVariable.SF_DISABLE_AUTOUPDATE, true);
       env.normalizeAutoupdateDisabled();
-      expect(env.getBoolean(EnvironmentVariable.SFDX_AUTOUPDATE_DISABLE)).to.be.true;
+      expect(env.getBoolean(EnvironmentVariable.SF_AUTOUPDATE_DISABLE)).to.be.true;
     });
   });
 
@@ -38,12 +38,12 @@ describe('Env', () => {
     });
 
     it('should report autoupdate disabled with legacy envar', () => {
-      env.setBoolean('SFDX_AUTOUPDATE_DISABLE', true);
+      env.setBoolean('SF_AUTOUPDATE_DISABLE', true);
       expect(env.isAutoupdateDisabled()).to.be.true;
     });
 
     it('should report autoupdate disabled with oclif envar', () => {
-      env.setBoolean('SFDX_DISABLE_AUTOUPDATE', true);
+      env.setBoolean('SF_DISABLE_AUTOUPDATE', true);
       expect(env.isAutoupdateDisabled()).to.be.true;
     });
   });
@@ -54,12 +54,12 @@ describe('Env', () => {
     });
 
     it('should report set with legacy envar', () => {
-      env.setBoolean('SFDX_AUTOUPDATE_DISABLE', true);
+      env.setBoolean('SF_AUTOUPDATE_DISABLE', true);
       expect(env.isAutoupdateDisabledSet()).to.be.true;
     });
 
     it('should report set with oclif envar', () => {
-      env.setBoolean('SFDX_DISABLE_AUTOUPDATE', true);
+      env.setBoolean('SF_DISABLE_AUTOUPDATE', true);
       expect(env.isAutoupdateDisabledSet()).to.be.true;
     });
   });
@@ -67,15 +67,15 @@ describe('Env', () => {
   describe('isAutoupdateDisabledSet', () => {
     it('should set both autoupdate envars', () => {
       env.setAutoupdateDisabled(true);
-      expect(env.getBoolean('SFDX_AUTOUPDATE_DISABLE')).to.be.true;
-      expect(env.getBoolean('SFDX_DISABLE_AUTOUPDATE')).to.be.true;
+      expect(env.getBoolean('SF_AUTOUPDATE_DISABLE')).to.be.true;
+      expect(env.getBoolean('SF_DISABLE_AUTOUPDATE')).to.be.true;
     });
   });
 
   describe('setUpdateInstructions', () => {
     it('should set update instructions', () => {
       env.setUpdateInstructions('update at your own risk!');
-      expect(env.getString('SFDX_UPDATE_INSTRUCTIONS')).to.equal('update at your own risk!');
+      expect(env.getString('SF_UPDATE_INSTRUCTIONS')).to.equal('update at your own risk!');
     });
   });
 
@@ -85,7 +85,7 @@ describe('Env', () => {
     });
 
     it('should report if the cli is in demo mode', () => {
-      env.setString('SFDX_ENV', 'demo');
+      env.setString('SF_ENV', 'demo');
       expect(env.isDemoMode()).to.be.true;
     });
   });
@@ -96,14 +96,14 @@ describe('Env', () => {
     });
 
     it('should report if the cli is running from an installer', () => {
-      env.setBoolean('SFDX_INSTALLER', true);
+      env.setBoolean('SF_INSTALLER', true);
       expect(env.isInstaller()).to.be.true;
     });
   });
 
   describe('getS3HostOverride', () => {
     it('should return an S3 host override if set', () => {
-      env.setString('SFDX_S3_HOST', 'http://example.com');
+      env.setString('SF_S3_HOST', 'http://example.com');
       expect(env.getS3HostOverride()).to.equal('http://example.com');
     });
   });
@@ -111,7 +111,7 @@ describe('Env', () => {
   describe('setS3HostOverride', () => {
     it('should set an S3 host override', () => {
       env.setS3HostOverride('http://example.com');
-      expect(env.getString('SFDX_S3_HOST')).to.equal('http://example.com');
+      expect(env.getString('SF_S3_HOST')).to.equal('http://example.com');
     });
   });
 
@@ -121,7 +121,7 @@ describe('Env', () => {
     });
 
     it('should return true if lazy requires are enabled', () => {
-      env.setBoolean('SFDX_LAZY_LOAD_MODULES', true);
+      env.setBoolean('SF_LAZY_LOAD_MODULES', true);
       expect(env.isLazyRequireEnabled()).to.be.true;
     });
   });

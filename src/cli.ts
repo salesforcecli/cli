@@ -16,14 +16,14 @@ import { default as nodeEnv, Env } from './util/env';
 const debug = Debug('sf');
 
 export const UPDATE_DISABLED_INSTALLER =
-  'Manual and automatic CLI updates have been disabled by setting "SFDX_AUTOUPDATE_DISABLE=true". ' +
+  'Manual and automatic CLI updates have been disabled by setting "SF_AUTOUPDATE_DISABLE=true". ' +
   'To check for a new version, unset that environment variable.';
 
 export const UPDATE_DISABLED_NPM = 'Use "npm update --global sfdx-cli" to update npm-based installations.';
 
 export const UPDATE_DISABLED_DEMO =
   'Manual and automatic CLI updates have been disabled in DEMO mode. ' +
-  'To check for a new version, unset the environment variable SFDX_ENV.';
+  'To check for a new version, unset the environment variable SF_ENV.';
 
 export function configureUpdateSites(config: Interfaces.Config, env = nodeEnv): void {
   const s3Host = env.getS3HostOverride();
@@ -95,17 +95,17 @@ function debugCliInfo(version: string, channel: string, env: Env, config: Interf
     'ENV',
     [
       'NODE_OPTIONS',
-      Env.SFDX_AUTOUPDATE_DISABLE,
-      'SFDX_BINPATH',
-      'SFDX_COMPILE_CACHE',
-      Env.SFDX_DISABLE_AUTOUPDATE,
-      Env.SFDX_ENV,
-      Env.SFDX_INSTALLER,
-      Env.SFDX_LAZY_LOAD_MODULES,
-      Env.SFDX_NPM_REGISTRY,
-      'SFDX_REDIRECTED',
-      Env.SFDX_S3_HOST,
-      Env.SFDX_UPDATE_INSTRUCTIONS,
+      Env.SF_AUTOUPDATE_DISABLE,
+      'SF_BINPATH',
+      'SF_COMPILE_CACHE',
+      Env.SF_DISABLE_AUTOUPDATE,
+      Env.SF_ENV,
+      Env.SF_INSTALLER,
+      Env.SF_LAZY_LOAD_MODULES,
+      Env.SF_NPM_REGISTRY,
+      'SF_REDIRECTED',
+      Env.SF_S3_HOST,
+      Env.SF_UPDATE_INSTRUCTIONS,
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     ].map((key): [string, string] => [key, env.getString(key, '<not set>')] as [string, string])
   );
