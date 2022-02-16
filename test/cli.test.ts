@@ -7,12 +7,12 @@
 // the below, there's lots of un-awaited promises for testing
 /* eslint-disable no-unused-expressions*/
 /* eslint-disable @typescript-eslint/require-await*/
-import * as Config from '@oclif/config';
+import { Config, Interfaces } from '@oclif/core';
+import { LoadOptions } from '@oclif/core/lib/interfaces/config';
 import { stubInterface } from '@salesforce/ts-sinon';
 import { getString } from '@salesforce/ts-types';
 import { expect } from 'chai';
 import * as sinon from 'sinon';
-import { EnvironmentVariable } from '@salesforce/core';
 import {
   configureAutoUpdate,
   configureUpdateSites,
@@ -37,12 +37,12 @@ describe('cli', () => {
 
   describe('create', () => {
     it('should create a runnable CLI instance', async () => {
-      sandbox.stub(Config.Config.prototype, 'load').callsFake(() => Promise.resolve());
-      let config: Config.LoadOptions;
-      const exec = async (argv?: string[], opts?: Config.LoadOptions): Promise<void> => {
+      sandbox.stub(Config.prototype, 'load').callsFake(() => Promise.resolve());
+      let config: LoadOptions;
+      const exec = async (argv?: string[], opts?: LoadOptions): Promise<void> => {
         config = opts;
       };
-      const env = new Env({ [EnvironmentVariable.SFDX_LAZY_LOAD_MODULES]: 'false' });
+      const env = new Env({ [Env.SFDX_LAZY_LOAD_MODULES]: 'false' });
       await create('test', 'test', exec, env).run();
       expect(config).to.exist;
       expect(config).to.have.property('options');
@@ -61,7 +61,7 @@ describe('cli', () => {
     it('should set the s3 host in the oclif config if overridden in an envar', async () => {
       const s3Host = 'http://example.com:9000/s3';
       const npmRegistry = 'http://example.com:9000/npm';
-      const config = stubInterface<Config.IConfig>(sandbox);
+      const config = stubInterface<Interfaces.Config>(sandbox);
       env.setS3HostOverride(s3Host);
       env.setNpmRegistryOverride(npmRegistry);
       configureUpdateSites(config, env);
@@ -73,7 +73,7 @@ describe('cli', () => {
       configureAutoUpdate(env);
 
       expect(env.getBoolean('SFDX_AUTOUPDATE_DISABLE')).to.be.true;
-      expect(env.getString(EnvironmentVariable.SFDX_UPDATE_INSTRUCTIONS)).to.equal(UPDATE_DISABLED_NPM);
+      expect(env.getString(Env.SFDX_UPDATE_INSTRUCTIONS)).to.equal(UPDATE_DISABLED_NPM);
     });
 
     it('should allow autoupdate to be explicitly enabled for local dev (for testing autoupdates)', () => {
@@ -81,7 +81,7 @@ describe('cli', () => {
       configureAutoUpdate(env);
 
       expect(env.getBoolean('SFDX_AUTOUPDATE_DISABLE')).to.be.false;
-      expect(env.getString(EnvironmentVariable.SFDX_UPDATE_INSTRUCTIONS)).to.be.undefined;
+      expect(env.getString(Env.SFDX_UPDATE_INSTRUCTIONS)).to.be.undefined;
     });
 
     it('should default to autoupdate enabled for binary installs', () => {
@@ -89,7 +89,7 @@ describe('cli', () => {
       configureAutoUpdate(env);
 
       expect(env.getBoolean('SFDX_AUTOUPDATE_DISABLE')).to.be.false;
-      expect(env.getString(EnvironmentVariable.SFDX_UPDATE_INSTRUCTIONS)).to.be.undefined;
+      expect(env.getString(Env.SFDX_UPDATE_INSTRUCTIONS)).to.be.undefined;
     });
 
     it('should have autoupdate disabled for binary installs when SFDX_AUTOUPDATE_DISABLE is set to true', () => {
@@ -98,7 +98,7 @@ describe('cli', () => {
       configureAutoUpdate(env);
 
       expect(env.getBoolean('SFDX_AUTOUPDATE_DISABLE')).to.be.true;
-      expect(env.getString(EnvironmentVariable.SFDX_UPDATE_INSTRUCTIONS)).to.equal(UPDATE_DISABLED_INSTALLER);
+      expect(env.getString(Env.SFDX_UPDATE_INSTRUCTIONS)).to.equal(UPDATE_DISABLED_INSTALLER);
     });
 
     it('should have autoupdate disabled when in demo mode', () => {
@@ -106,7 +106,7 @@ describe('cli', () => {
       configureAutoUpdate(env);
 
       expect(env.getBoolean('SFDX_AUTOUPDATE_DISABLE')).to.be.true;
-      expect(env.getString(EnvironmentVariable.SFDX_UPDATE_INSTRUCTIONS)).to.equal(UPDATE_DISABLED_DEMO);
+      expect(env.getString(Env.SFDX_UPDATE_INSTRUCTIONS)).to.equal(UPDATE_DISABLED_DEMO);
     });
   });
 });

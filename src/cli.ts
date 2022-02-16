@@ -7,12 +7,10 @@
 
 import * as os from 'os';
 import * as path from 'path';
-import { Main, run as oclifRun } from '@oclif/command';
-import { Config, IConfig } from '@oclif/config';
+import { Config, Interfaces, run as oclifRun } from '@oclif/core';
 import { set } from '@salesforce/kit';
 import { AnyJson, get } from '@salesforce/ts-types';
 import * as Debug from 'debug';
-import { exec } from 'shelljs';
 import { default as nodeEnv, Env } from './util/env';
 
 const debug = Debug('sf');
@@ -27,7 +25,7 @@ export const UPDATE_DISABLED_DEMO =
   'Manual and automatic CLI updates have been disabled in DEMO mode. ' +
   'To check for a new version, unset the environment variable SFDX_ENV.';
 
-export function configureUpdateSites(config: IConfig, env = nodeEnv): void {
+export function configureUpdateSites(config: Interfaces.Config, env = nodeEnv): void {
   const s3Host = env.getS3HostOverride();
   if (s3Host) {
     // Override config value if set via envar
@@ -68,7 +66,7 @@ export function configureAutoUpdate(envars: Env): void {
   }
 }
 
-function debugCliInfo(version: string, channel: string, env: Env, config: IConfig): void {
+function debugCliInfo(version: string, channel: string, env: Env, config: Interfaces.Config): void {
   function debugSection(section: string, items: Array<[string, string]>): void {
     const pad = 25;
     debug('%s:', section.padStart(pad));
@@ -108,68 +106,14 @@ function debugCliInfo(version: string, channel: string, env: Env, config: IConfi
       'SFDX_REDIRECTED',
       Env.SFDX_S3_HOST,
       Env.SFDX_UPDATE_INSTRUCTIONS,
-    ].map((key): [string, string] => [key, env.getString(key, '<not set>')])
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    ].map((key): [string, string] => [key, env.getString(key, '<not set>')] as [string, string])
   );
 
   debugSection(
     'ARGS',
     process.argv.map((arg, i): [string, string] => [i.toString(), arg])
   );
-}
-
-interface VersionDetail {
-  cliVersion: string;
-  architecture: string;
-  nodeVersion: string;
-  pluginVersions?: string[];
-  osVersion?: string;
-}
-
-class SfMain extends Main {
-  // Function which returns Version object which includes cli version, plugin versions, OS and its version.
-  protected getVersionDetail(isVerbose: boolean): VersionDetail {
-    const versions = this.config.userAgent.split(' ');
-    const cliVersion: string = versions[0];
-    const architecture: string = versions[1];
-    const nodeVersion: string = versions[2];
-    if (!isVerbose) return { cliVersion, architecture, nodeVersion };
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
-    const pluginVersion: string = exec('sf plugins --core', {
-      silent: true,
-    }).toString();
-    const pluginVersions: string[] = pluginVersion.split('\n');
-    pluginVersions.pop();
-    const osVersion = `${os.type()} ${os.release()}`;
-    return { cliVersion, architecture, nodeVersion, pluginVersions, osVersion };
-  }
-
-  protected printVersionDetails(versionDetails: VersionDetail, isJson: boolean): void {
-    if (isJson) {
-      this.log(`${JSON.stringify(versionDetails, null, '\t')}`);
-    } else {
-      this.log(` CLI Version : \n\t${versionDetails.cliVersion}`);
-      this.log(`\n Architecture: \n\t${versionDetails.architecture}`);
-      this.log(`\n Node Version : \n\t${versionDetails.nodeVersion}`);
-      this.log('\n Plugin Version: ');
-      versionDetails.pluginVersions?.forEach((plugin) => {
-        this.log(`\t${plugin}`);
-      });
-      this.log(`\n OS and Version: \n\t${versionDetails.osVersion}`);
-    }
-  }
-
-  protected _version(): never {
-    const options: Set<string> = new Set(this.argv);
-
-    // Checking if options doesn't have --verbose and --json
-    if (!options.has('--verbose') && !options.has('--json')) {
-      this.log(this.config.userAgent);
-    } else {
-      const versionDetails = this.getVersionDetail(options.has('--verbose'));
-      this.printVersionDetails(versionDetails, options.has('--json'));
-    }
-    return this.exit(0);
-  }
 }
 
 export function create(
@@ -191,7 +135,7 @@ export function create(
       configureAutoUpdate(env);
       debugCliInfo(version, channel, env, config);
       // I think the run method is used in test.
-      return (run ? run(args, config) : await SfMain.run(args, config)) as unknown;
+      return run ? run(args, config) : await oclifRun(args, config);
     },
   };
 }
