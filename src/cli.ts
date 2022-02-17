@@ -15,6 +15,23 @@ import { default as nodeEnv, Env } from './util/env';
 
 const debug = Debug('sf');
 
+const envVars = [
+  ...Object.keys(process.env).filter((e) => e.startsWith('SF_') || e.startsWith('SFDX_')),
+  'NODE_OPTIONS',
+  Env.SF_AUTOUPDATE_DISABLE,
+  'SF_BINPATH',
+  'SF_COMPILE_CACHE',
+  Env.SF_DISABLE_AUTOUPDATE,
+  Env.SF_ENV,
+  Env.SF_INSTALLER,
+  Env.SF_LAZY_LOAD_MODULES,
+  Env.SF_NPM_REGISTRY,
+  'SF_REDIRECTED',
+  Env.SF_S3_HOST,
+  Env.SF_UPDATE_INSTRUCTIONS,
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+].reduce((s, e) => s.add(e), new Set<string>());
+
 export const UPDATE_DISABLED_INSTALLER =
   'Manual and automatic CLI updates have been disabled by setting "SF_AUTOUPDATE_DISABLE=true". ' +
   'To check for a new version, unset that environment variable.';
@@ -93,21 +110,7 @@ function debugCliInfo(version: string, channel: string, env: Env, config: Interf
 
   debugSection(
     'ENV',
-    [
-      'NODE_OPTIONS',
-      Env.SF_AUTOUPDATE_DISABLE,
-      'SF_BINPATH',
-      'SF_COMPILE_CACHE',
-      Env.SF_DISABLE_AUTOUPDATE,
-      Env.SF_ENV,
-      Env.SF_INSTALLER,
-      Env.SF_LAZY_LOAD_MODULES,
-      Env.SF_NPM_REGISTRY,
-      'SF_REDIRECTED',
-      Env.SF_S3_HOST,
-      Env.SF_UPDATE_INSTRUCTIONS,
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    ].map((key): [string, string] => [key, env.getString(key, '<not set>')] as [string, string])
+    [...envVars].map((key): [string, string] => [key, env.getString(key, '<not set>')] as [string, string])
   );
 
   debugSection(

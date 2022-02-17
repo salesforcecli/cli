@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "1.13.0",
+  "version": "1.15.0",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run"
@@ -88,7 +88,7 @@
     "@oclif/plugin-help": "5.1.11",
     "@oclif/plugin-not-found": "2.3.1",
     "@oclif/plugin-plugins": "2.1.0",
-    "@oclif/plugin-update": "2.2.0",
+    "@oclif/plugin-update": "3.0.0",
     "@oclif/plugin-version": "1.0.4",
     "@salesforce/core": "^3.7.5",
     "@salesforce/sf-plugins-core": "^1.2.1",
@@ -135,7 +135,7 @@
     "promote-dist-tags": "./scripts/promote-dist-tags",
     "promote:verify": "sf-release cli:versions:inspect --channels stable --locations archive --cli sf",
     "promote:verify-rc": "sf-release cli:versions:inspect --channels stable-rc --locations archive --cli sf",
-    "test": "echo disable # sf-test",
+    "test": "sf-test",
     "test:deprecation-policy": "./bin/dev snapshot:compare",
     "test:json-schema": "sf-release cli:schemas:compare",
     "test:smoke-unix": "sf-release cli:tarballs:smoke --cli sf",
