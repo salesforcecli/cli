@@ -29,6 +29,7 @@
     "scope": "salesforce",
     "dirname": "sf",
     "topicSeparator": " ",
+    "flexibleTaxonomy": true,
     "commands": "./dist/commands",
     "helpClass": "./dist/help/sfHelp.js",
     "plugins": [
@@ -52,7 +53,8 @@
       "@salesforce/plugin-release-management"
     ],
     "hooks": {
-      "preupdate": "./lib/hooks/preupdate"
+      "preupdate": "./lib/hooks/preupdate",
+      "command_incomplete": "./dist/hooks/incomplete.js"
     },
     "update": {
       "s3": {
