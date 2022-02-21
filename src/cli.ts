@@ -16,21 +16,22 @@ import { default as nodeEnv, Env } from './util/env';
 const debug = Debug('sf');
 
 const envVars = [
-  ...Object.keys(process.env).filter((e) => e.startsWith('SF_') || e.startsWith('SFDX_')),
-  'NODE_OPTIONS',
-  Env.SF_AUTOUPDATE_DISABLE,
-  'SF_BINPATH',
-  'SF_COMPILE_CACHE',
-  Env.SF_DISABLE_AUTOUPDATE,
-  Env.SF_ENV,
-  Env.SF_INSTALLER,
-  Env.SF_LAZY_LOAD_MODULES,
-  Env.SF_NPM_REGISTRY,
-  'SF_REDIRECTED',
-  Env.SF_S3_HOST,
-  Env.SF_UPDATE_INSTRUCTIONS,
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-].reduce((s, e) => s.add(e), new Set<string>());
+  ...new Set([
+    ...Object.keys(process.env).filter((e) => e.startsWith('SF_') || e.startsWith('SFDX_')),
+    'NODE_OPTIONS',
+    Env.SF_AUTOUPDATE_DISABLE,
+    'SF_BINPATH',
+    'SF_COMPILE_CACHE',
+    Env.SF_DISABLE_AUTOUPDATE,
+    Env.SF_ENV,
+    Env.SF_INSTALLER,
+    Env.SF_LAZY_LOAD_MODULES,
+    Env.SF_NPM_REGISTRY,
+    'SF_REDIRECTED',
+    Env.SF_S3_HOST,
+    Env.SF_UPDATE_INSTRUCTIONS,
+  ]),
+];
 
 export const UPDATE_DISABLED_INSTALLER =
   'Manual and automatic CLI updates have been disabled by setting "SF_AUTOUPDATE_DISABLE=true". ' +
