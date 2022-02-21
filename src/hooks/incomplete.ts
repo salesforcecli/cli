@@ -10,7 +10,7 @@ import { Prompter } from '@salesforce/sf-plugins-core';
 
 const hook: Hook.CommandIncomplete = async function ({ config, matches, argv }) {
   const prompter = new Prompter();
-  const { command } = await prompter.prompt<{ command: string }>([
+  const { command } = await prompter.timedPrompt<{ command: string }>([
     {
       name: 'command',
       type: 'list',
