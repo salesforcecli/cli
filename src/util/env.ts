@@ -11,6 +11,7 @@ export class Env extends EnvVars {
   public static SF_DISABLE_AUTOUPDATE = 'SF_DISABLE_AUTOUPDATE';
   public static SF_ENV = 'SF_ENV';
   public static SF_INSTALLER = 'SF_INSTALLER';
+  public static SFDX_INSTALLER = 'SFDX_INSTALLER';
   public static SF_LAZY_LOAD_MODULES = 'SF_LAZY_LOAD_MODULES';
   public static SF_NPM_REGISTRY = 'SF_NPM_REGISTRY';
   public static SF_S3_HOST = 'SF_S3_HOST';
@@ -44,7 +45,8 @@ export class Env extends EnvVars {
   }
 
   public isInstaller(): boolean {
-    return this.getBoolean(Env.SF_INSTALLER);
+    // Check SFDX_INSTALLER instead of SF_INSTALLER until such time sf has its own installers
+    return this.getBoolean(Env.SFDX_INSTALLER);
   }
 
   public getS3HostOverride(): string {
@@ -69,6 +71,7 @@ export class Env extends EnvVars {
 
   public normalizeAutoupdateDisabled(): void {
     // Ensure that the legacy envar always causes the oclif counterpart to be set
+    // see https://github.com/oclif/plugin-update/blob/3946fb296a0a95544ab6364b36a1f7422c8aeddf/src/hooks/init.ts#L22
     if (this.getBoolean(Env.SF_AUTOUPDATE_DISABLE)) {
       this.setBoolean(Env.SF_DISABLE_AUTOUPDATE, true);
     } else if (this.getBoolean(Env.SF_DISABLE_AUTOUPDATE)) {

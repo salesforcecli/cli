@@ -138,7 +138,7 @@ export function create(
       configureUpdateSites(config, env);
       configureAutoUpdate(env);
       debugCliInfo(version, channel, env, config);
-      // I think the run method is used in test.
+      // Example of how run is used in a test https://github.com/salesforcecli/cli/pull/171/files#diff-1deee0a575599b2df117c280da319f7938aaf6fdb0c04bcdbde769dbf464be69R46
       return run ? run(args, config) : await oclifRun(args, config);
     },
   };

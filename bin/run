@@ -29,7 +29,7 @@ cli
   .create(version, channel)
   .run()
   .then(function (result) {
-    require('@oclif/core/flush')(result);
+    require('@oclif/core/flush')();
   })
   .catch(function (err) {
     require('@oclif/core/handle')(err);
