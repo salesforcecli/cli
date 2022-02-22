@@ -96,7 +96,8 @@ describe('Env', () => {
     });
 
     it('should report if the cli is running from an installer', () => {
-      env.setBoolean('SF_INSTALLER', true);
+      // TODO: change to SF_INSTALLER when SF has its own installers
+      env.setBoolean('SFDX_INSTALLER', true);
       expect(env.isInstaller()).to.be.true;
     });
   });
