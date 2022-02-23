@@ -52,6 +52,9 @@
       "@oclif/plugin-command-snapshot",
       "@salesforce/plugin-release-management"
     ],
+    "hooks": {
+      "preupdate": "./lib/hooks/preupdate"
+    },
     "update": {
       "s3": {
         "bucket": "dfc-data-production",
