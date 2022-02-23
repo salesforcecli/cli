@@ -10,7 +10,7 @@ import { CliUx, Interfaces } from '@oclif/core';
 export const hook: Interfaces.Hook<'preupdate'> = async function (opts) {
   if (opts.config.root.includes('sfdx')) {
     CliUx.ux.warn(
-      'Running sf update will have no effect since you are using a version that was installed by sfdx. Please use sfdx update instead.'
+      'Running "sf update" has no effect because you\'re using a version of sf that was installed by sfdx. To update sf, run "sfdx update".'
     );
   }
 };
