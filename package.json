@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "1.15.0",
+  "version": "1.16.0",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run"
@@ -52,6 +52,9 @@
       "@oclif/plugin-command-snapshot",
       "@salesforce/plugin-release-management"
     ],
+    "hooks": {
+      "preupdate": "./lib/hooks/preupdate"
+    },
     "update": {
       "s3": {
         "bucket": "dfc-data-production",
