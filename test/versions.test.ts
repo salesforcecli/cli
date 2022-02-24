@@ -9,15 +9,15 @@ import { checkNodeVersion, isVersion } from '../src/versions';
 
 describe('versions', () => {
   it('should fail because node version too old', () => {
-    const fn = () => checkNodeVersion('v16.0.0', '16.0.1', true);
+    const fn = () => checkNodeVersion(true, 'v16.0.0', '16.0.1');
     expect(fn).to.throw('Unsupported Node.js version');
   });
   it('should succeed because node version just right', () => {
-    const fn = () => checkNodeVersion('16.0.1', 'v16.0.0', true);
+    const fn = () => checkNodeVersion(true, '16.0.1', 'v16.0.0');
     expect(fn).to.not.throw();
   });
   it('should succeed because node versions are equal', () => {
-    const fn = () => checkNodeVersion('v16.0.1', 'v16.0.1', true);
+    const fn = () => checkNodeVersion(true, 'v16.0.1', 'v16.0.1');
     expect(fn).to.not.throw();
   });
   describe('is semantic version', () => {

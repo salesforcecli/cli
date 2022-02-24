@@ -29,9 +29,9 @@ module.exports.isVersion = isVersion;
  * Checks the current Node version for compatibility before launching the CLI.
  */
 export function checkNodeVersion(
+  preferThrow = false,
   currentVersion = process.versions.node,
-  requiredVersion = pjson.engines.node.slice(2),
-  preferThrow = false
+  requiredVersion = pjson.engines.node.slice(2)
 ) {
   if (semver.compare(currentVersion, requiredVersion) < 0) {
     const message = `Unsupported Node.js version ${currentVersion}, version ${requiredVersion} or later is required.`;
