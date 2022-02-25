@@ -15,7 +15,7 @@ const hook: Hook.CommandIncomplete = async function ({ config, matches, argv }) 
       name: 'command',
       type: 'list',
       message: 'Which of these commands did you mean',
-      choices: matches.map((p) => toConfiguredId(p, config)),
+      choices: matches.map((p) => toConfiguredId(p.id, config)),
     },
   ]);
 
