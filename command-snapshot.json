@@ -55,7 +55,7 @@
   },
   {
     "command": "deploy:metadata",
-    "plugin": "@salesforce/plugin-deploy-retrieve-metadata",
+    "plugin": "@salesforce/plugin-deploy-retrieve",
     "flags": ["json", "manifest", "metadata", "source-dir", "target-org", "test-level", "wait"],
     "alias": []
   },
@@ -263,7 +263,7 @@
   },
   {
     "command": "retrieve:metadata",
-    "plugin": "@salesforce/plugin-deploy-retrieve-metadata",
+    "plugin": "@salesforce/plugin-deploy-retrieve",
     "flags": ["api-version", "json", "manifest", "metadata", "package-name", "source-dir", "target-org", "wait"],
     "alias": []
   },
