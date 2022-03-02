@@ -124,7 +124,7 @@
     "pack:deb": "oclif pack:deb",
     "pack:macos": "oclif pack:macos",
     "pack:tarballs": "oclif pack:tarballs",
-    "pack:verify": "sf-release cli:tarballs:verify --cli sf --windows-username-buffer 35",
+    "pack:verify": "sf-release cli:tarballs:verify --cli sf --windows-username-buffer 34",
     "pack:win": "oclif pack:win",
     "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
     "posttest": "yarn test:deprecation-policy",
