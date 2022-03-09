@@ -31,7 +31,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/1.17.0 linux-x64 node-v14.19.0
+@salesforce/cli/1.18.0 linux-x64 node-v14.19.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -52,6 +52,7 @@ USAGE
 - [`sf deploy`](#sf-deploy)
 - [`sf deploy functions`](#sf-deploy-functions)
 - [`sf deploy metadata`](#sf-deploy-metadata)
+- [`sf env compute collaborator add`](#sf-env-compute-collaborator-add)
 - [`sf env create compute`](#sf-env-create-compute)
 - [`sf env delete`](#sf-env-delete)
 - [`sf env display`](#sf-env-display)
@@ -460,6 +461,23 @@ ENVIRONMENT VARIABLES
   SFDX_DEFAULTUSERNAME   Username or alias of your default org. Overrides the defaultusername configuration value.
   SFDX_USE_PROGRESS_BAR  Set to false to disable the progress bar when running force:mdapi:deploy, force:source:deploy,
                          or force:source:push.
+```
+
+## `sf env compute collaborator add`
+
+Add a Heroku user as a collaborator on this Functions account, allowing them to attach Heroku add-ons to compute environments.
+
+```
+USAGE
+  $ sf env compute collaborator add -h <value>
+
+FLAGS
+  -h, --heroku-user=<value>  (required) Email address of the Heroku user you're adding as a collaborator.
+
+EXAMPLES
+  Add a Heroku user as a collaborator on this Functions account.
+
+    $ sf env compute collaborator add --heroku-user example@heroku.com
 ```
 
 ## `sf env create compute`
@@ -1003,7 +1021,7 @@ DESCRIPTION
   Display help for sf.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.11/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.12/src/commands/help.ts)_
 
 ## `sf info:releasenotes:display [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -1677,7 +1695,7 @@ USAGE
 
 FLAGS
   -b, --debug-port=<value>                          [default: 9229] Port for remote debugging.
-  -l, --language=(javascript|typescript|java|auto)  [default: auto]
+  -l, --language=(javascript|typescript|java|auto)  [default: auto] The language that the function runs in.
   -p, --port=<value>                                [default: 8080] Port for running the function.
   -v, --verbose                                     Output additional logs.
 
