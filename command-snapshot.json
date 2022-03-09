@@ -60,6 +60,12 @@
     "alias": []
   },
   {
+    "command": "env:compute:collaborator:add",
+    "plugin": "@salesforce/plugin-functions",
+    "flags": ["heroku-user"],
+    "alias": []
+  },
+  {
     "command": "env:create:compute",
     "plugin": "@salesforce/plugin-functions",
     "flags": ["alias", "connected-org", "setalias"],
