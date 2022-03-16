@@ -31,7 +31,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/1.18.0 linux-x64 node-v14.19.0
+@salesforce/cli/1.19.0 linux-x64 node-v14.19.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -323,7 +323,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.1.1/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.1.3/src/commands/deploy.ts)_
 
 ## `sf deploy functions`
 
@@ -461,6 +461,7 @@ ENVIRONMENT VARIABLES
   SFDX_DEFAULTUSERNAME   Username or alias of your default org. Overrides the defaultusername configuration value.
   SFDX_USE_PROGRESS_BAR  Set to false to disable the progress bar when running force:mdapi:deploy, force:source:deploy,
                          or force:source:push.
+  SF_USE_PROGRESS_BAR    Set to false to disable the progress bar when running the metadata deploy command.
 ```
 
 ## `sf env compute collaborator add`
