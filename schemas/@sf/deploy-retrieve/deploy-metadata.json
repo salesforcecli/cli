@@ -11,11 +11,14 @@
             "$ref": "#/definitions/FileResponse"
           }
         },
+        "jobId": {
+          "type": "string"
+        },
         "tests": {
           "$ref": "#/definitions/TestResults"
         }
       },
-      "required": ["files"],
+      "required": ["files", "jobId"],
       "additionalProperties": false
     },
     "FileResponse": {
@@ -88,7 +91,7 @@
           "type": "number"
         },
         "time": {
-          "type": "number"
+          "type": "string"
         }
       },
       "required": ["passing", "failing", "total"],

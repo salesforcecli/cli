@@ -56,7 +56,21 @@
   {
     "command": "deploy:metadata",
     "plugin": "@salesforce/plugin-deploy-retrieve",
-    "flags": ["json", "manifest", "metadata", "source-dir", "target-org", "test-level", "wait"],
+    "flags": [
+      "api-version",
+      "dry-run",
+      "ignore-errors",
+      "ignore-warnings",
+      "json",
+      "manifest",
+      "metadata",
+      "source-dir",
+      "target-org",
+      "test-level",
+      "tests",
+      "verbose",
+      "wait"
+    ],
     "alias": []
   },
   {
@@ -122,7 +136,7 @@
   {
     "command": "env:var:get",
     "plugin": "@salesforce/plugin-functions",
-    "flags": ["environment", "target-compute"],
+    "flags": ["environment", "json", "target-compute"],
     "alias": []
   },
   {
@@ -232,6 +246,12 @@
     "alias": []
   },
   {
+    "command": "plugins:add",
+    "plugin": "@oclif/plugin-plugins",
+    "flags": ["force", "help", "verbose"],
+    "alias": ["plugins:add"]
+  },
+  {
     "command": "plugins:inspect",
     "plugin": "@oclif/plugin-plugins",
     "flags": ["help", "verbose"],
@@ -250,6 +270,12 @@
     "alias": []
   },
   {
+    "command": "plugins:remove",
+    "plugin": "@oclif/plugin-plugins",
+    "flags": ["help", "verbose"],
+    "alias": ["plugins:unlink", "plugins:remove"]
+  },
+  {
     "command": "plugins:trust:verify",
     "plugin": "@salesforce/plugin-trust",
     "flags": ["json", "loglevel", "npm", "registry"],
@@ -257,6 +283,12 @@
   },
   {
     "command": "plugins:uninstall",
+    "plugin": "@oclif/plugin-plugins",
+    "flags": ["help", "verbose"],
+    "alias": ["plugins:unlink", "plugins:remove"]
+  },
+  {
+    "command": "plugins:unlink",
     "plugin": "@oclif/plugin-plugins",
     "flags": ["help", "verbose"],
     "alias": ["plugins:unlink", "plugins:remove"]
@@ -341,6 +373,12 @@
     "plugin": "@oclif/plugin-version",
     "flags": [],
     "alias": []
+  },
+  {
+    "command": "whatsnew",
+    "plugin": "@salesforce/plugin-info",
+    "flags": ["hook", "json", "loglevel", "version"],
+    "alias": ["whatsnew"]
   },
   {
     "command": "whoami:functions",
