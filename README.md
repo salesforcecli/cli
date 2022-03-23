@@ -31,7 +31,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/1.19.0 linux-x64 node-v14.19.0
+@salesforce/cli/1.20.0 linux-x64 node-v14.19.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -79,10 +79,13 @@ USAGE
 - [`sf logout functions`](#sf-logout-functions)
 - [`sf logout org`](#sf-logout-org)
 - [`sf plugins`](#sf-plugins)
-- [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
 - [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
+- [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
+- [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin-1)
 - [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
 - [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
+- [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin-1)
+- [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin-2)
 - [`sf plugins update`](#sf-plugins-update)
 - [`sf retrieve metadata`](#sf-retrieve-metadata)
 - [`sf run function`](#sf-run-function)
@@ -91,6 +94,7 @@ USAGE
 - [`sf run function start local`](#sf-run-function-start-local)
 - [`sf update [CHANNEL]`](#sf-update-channel)
 - [`sf version`](#sf-version)
+- [`sf whatsnew [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sf-whatsnew--v-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 - [`sf whoami functions`](#sf-whoami-functions)
 
 ## `sf autocomplete [SHELL]`
@@ -323,7 +327,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.1.3/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.2.0/src/commands/deploy.ts)_
 
 ## `sf deploy functions`
 
@@ -345,17 +349,24 @@ Deploy metadata in source format to an org from your local project.
 
 ```
 USAGE
-  $ sf deploy metadata [--json] [-m <value> | -x <value> | -d <value>] [-o <value>] [-l
-    NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [-w <value>]
+  $ sf deploy metadata [--json] [-a <value>] [--dry-run] [-r] [-g] [-x <value>] [-m <value>] [-d <value>] [-o
+    <value>] [-t <value>] [-l NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [--verbose] [-w <value>]
 
 FLAGS
+  -a, --api-version=<value>    Target API version for the deploy.
   -d, --source-dir=<value>...  Path to the local source files to deploy.
+  -g, --ignore-warnings        Ignore warnings and allow a deployment to complete successfully.
   -l, --test-level=<option>    [default: NoTestRun] Deployment Apex testing level.
                                <options: NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg>
   -m, --metadata=<value>...    Metadata component names to deploy.
   -o, --target-org=<value>     Login username or alias for the target org.
-  -w, --wait=<value>           [default: 33] Number of minutes to wait for command to complete and display results.
+  -r, --ignore-errors          Ignore any errors and don’t roll back deployment.
+  -t, --tests=<value>...       [default: ] Apex tests to run when --test-level is RunSpecifiedTests.
+  -w, --wait=<minutes>         [default: [object Object]] Number of minutes to wait for command to complete and display
+                               results.
   -x, --manifest=<value>       Full file path for manifest (package.xml) of components to deploy.
+  --dry-run                    Validate deploy and run Apex tests but don’t save to the org.
+  --verbose                    Show verbose output of the deploy result.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -411,12 +422,22 @@ EXAMPLES
     $ sf deploy metadata --metadata ApexClass --test-level RunLocalTests
 
 FLAG DESCRIPTIONS
+  -a, --api-version=<value>  Target API version for the deploy.
+
+    Use this flag to override the default API version, which is the latest version supported the CLI, with the API
+    version of your package.xml file.
+
   -d, --source-dir=<value>...  Path to the local source files to deploy.
 
     The supplied path can be to a single file (in which case the operation is applied to only one file) or to a folder
     (in which case the operation is applied to all metadata types in the directory and its subdirectories).
 
     If you specify this flag, don’t specify --metadata or --manifest.
+
+  -g, --ignore-warnings  Ignore warnings and allow a deployment to complete successfully.
+
+    If a warning occurs and this flag is set to true, the success status of the deployment is set to true. When this
+    flag is set to false, success is set to false, and the warning is treated like an error.
 
   -l, --test-level=NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg  Deployment Apex testing level.
 
@@ -444,7 +465,18 @@ FLAG DESCRIPTIONS
 
     Overrides your default org.
 
-  -w, --wait=<value>  Number of minutes to wait for command to complete and display results.
+  -r, --ignore-errors  Ignore any errors and don’t roll back deployment.
+
+    When deploying to a production org, keep this flag set to false (default value). When set to true, components
+    without errors are deployed and components with errors are skipped, and could result in an inconsistent production
+    org.
+
+  -t, --tests=<value>...  Apex tests to run when --test-level is RunSpecifiedTests.
+
+    Separate multiple test names with commas, and enclose the entire flag value in double quotes if a test contains a
+    space.
+
+  -w, --wait=<minutes>  Number of minutes to wait for command to complete and display results.
 
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 
@@ -457,11 +489,8 @@ CONFIGURATION VARIABLES
   apiVersion  API version of your project. Default: API version of your Dev Hub org.
 
 ENVIRONMENT VARIABLES
-  SF_TARGET_ORG          Username or alias of your default org. Overrides the target-org configuration variable.
-  SFDX_DEFAULTUSERNAME   Username or alias of your default org. Overrides the defaultusername configuration value.
-  SFDX_USE_PROGRESS_BAR  Set to false to disable the progress bar when running force:mdapi:deploy, force:source:deploy,
-                         or force:source:push.
-  SF_USE_PROGRESS_BAR    Set to false to disable the progress bar when running the metadata deploy command.
+  SF_TARGET_ORG        Username or alias of your default org. Overrides the target-org configuration variable.
+  SF_USE_PROGRESS_BAR  Set to false to disable the progress bar when running the metadata deploy command.
 ```
 
 ## `sf env compute collaborator add`
@@ -803,10 +832,11 @@ Display a single config variable for an environment.
 
 ```
 USAGE
-  $ sf env var get [KEY] [-e <value> | ]
+  $ sf env var get [KEY] [-e <value> | ] [-j]
 
 FLAGS
   -e, --target-compute=<value>  Environment name.
+  -j, --json                    Output list in JSON format.
 
 DESCRIPTION
   Display a single config variable for an environment.
@@ -1089,7 +1119,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.8/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.9/src/commands/login.ts)_
 
 ## `sf login functions`
 
@@ -1356,7 +1386,7 @@ EXAMPLES
     $ sf logout --no-prompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.8/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.9/src/commands/logout.ts)_
 
 ## `sf logout functions`
 
@@ -1430,6 +1460,44 @@ EXAMPLES
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.1.0/src/commands/plugins/index.ts)_
+
+## `sf plugins:install PLUGIN...`
+
+Installs a plugin into the CLI.
+
+```
+USAGE
+  $ sf plugins:install PLUGIN...
+
+ARGUMENTS
+  PLUGIN  Plugin to install.
+
+FLAGS
+  -f, --force    Run yarn install with force flag.
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Installs a plugin into the CLI.
+
+  Can be installed from npm or a git url.
+
+  Installation of a user-installed plugin will override a core plugin.
+
+  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
+  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
+  the CLI without the need to patch and update the whole CLI.
+
+ALIASES
+  $ sf plugins add
+
+EXAMPLES
+  $ sf plugins:install myplugin
+
+  $ sf plugins:install https://github.com/someuser/someplugin
+
+  $ sf plugins:install someuser/someplugin
+```
 
 ## `sf plugins:inspect PLUGIN...`
 
@@ -1541,6 +1609,52 @@ ALIASES
   $ sf plugins remove
 ```
 
+## `sf plugins:uninstall PLUGIN...`
+
+Removes a plugin from the CLI.
+
+```
+USAGE
+  $ sf plugins:uninstall PLUGIN...
+
+ARGUMENTS
+  PLUGIN  plugin to uninstall
+
+FLAGS
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Removes a plugin from the CLI.
+
+ALIASES
+  $ sf plugins unlink
+  $ sf plugins remove
+```
+
+## `sf plugins:uninstall PLUGIN...`
+
+Removes a plugin from the CLI.
+
+```
+USAGE
+  $ sf plugins:uninstall PLUGIN...
+
+ARGUMENTS
+  PLUGIN  plugin to uninstall
+
+FLAGS
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Removes a plugin from the CLI.
+
+ALIASES
+  $ sf plugins unlink
+  $ sf plugins remove
+```
+
 ## `sf plugins update`
 
 Update installed plugins.
@@ -1572,8 +1686,8 @@ FLAGS
   -m, --metadata=<value>...      Metadata component names to retrieve.
   -n, --package-name=<value>...  Package names to retrieve.
   -o, --target-org=<value>       Login username or alias for the target org.
-  -w, --wait=<value>             [default: 33] Number of minutes to wait for the command to complete and display results
-                                 to the terminal window.
+  -w, --wait=<value>             [default: [object Object]] Number of minutes to wait for the command to complete and
+                                 display results to the terminal window.
   -x, --manifest=<value>         File path for the manifest (package.xml) that specifies the components to retrieve.
 
 GLOBAL FLAGS
@@ -1831,6 +1945,42 @@ USAGE
 ```
 
 _See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v1.0.4/src/commands/version.ts)_
+
+## `sf whatsnew [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+
+Display Salesforce CLI release notes on the command line.
+
+```
+USAGE
+  $ sf whatsnew [-v <string>] [--json] [--loglevel
+    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+FLAGS
+  -v, --version=<value>                                                             CLI version or tag for which to
+                                                                                    display release notes.
+  --json                                                                            format output as json
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
+                                                                                    this command invocation
+
+DESCRIPTION
+  Display Salesforce CLI release notes on the command line.
+
+ALIASES
+  $ sf whatsnew
+
+EXAMPLES
+  Display release notes for the currently installed CLI version:
+
+    sf whatsnew
+
+  Display release notes for CLI version 7.120.0:
+
+    sf whatsnew --version 7.120.0
+
+  Display release notes for the CLI version that corresponds to a tag (stable, stable-rc, latest, latest-rc, rc):
+
+    sf whatsnew --version latest
+```
 
 ## `sf whoami functions`
 
