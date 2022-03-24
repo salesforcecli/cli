@@ -92,6 +92,18 @@
     "alias": []
   },
   {
+    "command": "env:delete:sandbox",
+    "plugin": "@salesforce/plugin-env",
+    "flags": ["json", "no-prompt", "target-org"],
+    "alias": []
+  },
+  {
+    "command": "env:delete:scratch",
+    "plugin": "@salesforce/plugin-env",
+    "flags": ["json", "no-prompt", "target-org"],
+    "alias": []
+  },
+  {
     "command": "env:display",
     "plugin": "@salesforce/plugin-env",
     "flags": ["json", "target-env"],
