@@ -327,7 +327,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.2.0/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.2.1/src/commands/deploy.ts)_
 
 ## `sf deploy functions`
 
@@ -361,7 +361,7 @@ FLAGS
   -m, --metadata=<value>...    Metadata component names to deploy.
   -o, --target-org=<value>     Login username or alias for the target org.
   -r, --ignore-errors          Ignore any errors and don’t roll back deployment.
-  -t, --tests=<value>...       [default: ] Apex tests to run when --test-level is RunSpecifiedTests.
+  -t, --tests=<value>...       Apex tests to run when --test-level is RunSpecifiedTests.
   -w, --wait=<minutes>         [default: [object Object]] Number of minutes to wait for command to complete and display
                                results.
   -x, --manifest=<value>       Full file path for manifest (package.xml) of components to deploy.
@@ -486,7 +486,7 @@ FLAG DESCRIPTIONS
 
 CONFIGURATION VARIABLES
   target-org  Username or alias of the org that all commands run against by default. (sf only)
-  apiVersion  API version of your project. Default: API version of your Dev Hub org.
+  apiVersion  API version of your project. Default: API version of your Dev Hub org. (sfdx only)
 
 ENVIRONMENT VARIABLES
   SF_TARGET_ORG        Username or alias of your default org. Overrides the target-org configuration variable.
@@ -1766,7 +1766,7 @@ FLAG DESCRIPTIONS
 
 CONFIGURATION VARIABLES
   target-org  Username or alias of the org that all commands run against by default. (sf only)
-  apiVersion  API version of your project. Default: API version of your Dev Hub org.
+  apiVersion  API version of your project. Default: API version of your Dev Hub org. (sfdx only)
 
 ENVIRONMENT VARIABLES
   SF_TARGET_ORG          Username or alias of your default org. Overrides the target-org configuration variable.
