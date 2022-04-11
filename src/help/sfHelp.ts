@@ -19,7 +19,7 @@ const FORMATTERS: Record<string, Formatter> = {
     format: chalk.italic,
   },
   bold: {
-    symbol: '*',
+    symbol: '**',
     format: chalk.bold,
   },
   code: {
@@ -47,10 +47,11 @@ export default class SfHelp extends Help {
   protected log(...args: string[]): void {
     const formatted = args.map((a) => {
       for (const formatter of Object.values(FORMATTERS)) {
-        const regex = new RegExp(`\\${formatter.symbol}(.*?)\\${formatter.symbol}`, 'g');
+        const symbol = `\\${formatter.symbol.split('').join('\\')}`;
+        const regex = new RegExp(`${symbol}(.*?)${symbol}`, 'g');
         const matches = a.match(regex) ?? [];
         for (const match of matches) {
-          a = a.replace(match, formatter.format(match.replace(new RegExp(`\\${formatter.symbol}`, 'g'), '')));
+          a = a.replace(match, formatter.format(match.replace(new RegExp(`${symbol}`, 'g'), '')));
         }
       }
 
