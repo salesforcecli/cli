@@ -5,7 +5,28 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 import { CommandHelp, Help, Interfaces } from '@oclif/core';
+import * as chalk from 'chalk';
 import { SfCommandHelp } from './sfCommandHelp';
+
+type Formatter = {
+  symbol: string;
+  format: chalk.Chalk;
+};
+
+const FORMATTERS: Record<string, Formatter> = {
+  italics: {
+    symbol: '_',
+    format: chalk.italic,
+  },
+  bold: {
+    symbol: '*',
+    format: chalk.bold,
+  },
+  code: {
+    symbol: '`',
+    format: chalk.dim,
+  },
+};
 
 export default class SfHelp extends Help {
   protected CommandHelpClass: typeof CommandHelp = SfCommandHelp;
@@ -21,5 +42,20 @@ export default class SfHelp extends Help {
     this.commandHelpClass = super.getCommandHelpClass(command) as SfCommandHelp;
     this.commandHelpClass.showShortHelp = this.showShortHelp;
     return this.commandHelpClass;
+  }
+
+  protected log(...args: string[]): void {
+    const formatted = args.map((a) => {
+      for (const formatter of Object.values(FORMATTERS)) {
+        const regex = new RegExp(`\\${formatter.symbol}(.*?)\\${formatter.symbol}`, 'g');
+        const matches = a.match(regex) ?? [];
+        for (const match of matches) {
+          a = a.replace(match, formatter.format(match.replace(new RegExp(`\\${formatter.symbol}`, 'g'), '')));
+        }
+      }
+
+      return a;
+    });
+    super.log(...formatted);
   }
 }
