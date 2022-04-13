@@ -8,33 +8,24 @@ import { CommandHelp, Help, Interfaces } from '@oclif/core';
 import * as chalk from 'chalk';
 import { SfCommandHelp } from './sfCommandHelp';
 
-type Formatter = {
-  symbol: string;
-  format: chalk.Chalk;
-};
-
-const FORMATTERS: Record<string, Formatter> = {
-  italics: {
-    symbol: '_',
-    format: chalk.italic,
-  },
-  bold: {
-    symbol: '**',
-    format: chalk.bold,
-  },
-  code: {
-    symbol: '`',
-    format: chalk.dim,
-  },
-};
-
 export default class SfHelp extends Help {
   protected CommandHelpClass: typeof CommandHelp = SfCommandHelp;
   protected commandHelpClass: SfCommandHelp;
   private showShortHelp = false;
+  private commands: string[] = [];
+  private subCommands: Record<string, string[]> = {};
 
   public async showHelp(argv: string[]): Promise<void> {
     this.showShortHelp = argv.includes('-h');
+    this.commands = this.config.commandIDs.map(
+      (c) => `${this.config.bin} ${c.replace(/:/g, this.config.topicSeparator)}`
+    );
+    for (const cmd of this.commands) {
+      this.subCommands[cmd] = this.commands
+        .filter((c) => c.startsWith(cmd) && c !== cmd)
+        .map((c) => `${c.replace(cmd, '')}`);
+    }
+
     return await super.showHelp(argv);
   }
 
@@ -45,18 +36,19 @@ export default class SfHelp extends Help {
   }
 
   protected log(...args: string[]): void {
-    const formatted = args.map((a) => {
-      for (const formatter of Object.values(FORMATTERS)) {
-        const symbol = `\\${formatter.symbol.split('').join('\\')}`;
-        const regex = new RegExp(`${symbol}(.*?)${symbol}`, 'g');
-        const matches = a.match(regex) ?? [];
-        for (const match of matches) {
-          a = a.replace(match, formatter.format(match.replace(new RegExp(`${symbol}`, 'g'), '')));
-        }
+    const formatted = args.map((arg) => {
+      for (const cmd of this.commands) {
+        const regex =
+          this.subCommands[cmd].length > 0
+            ? new RegExp(`(?<!\\$ )${cmd}(?!${this.subCommands[cmd].join('|')})`, 'g')
+            : new RegExp(`(?<!\\$ )${cmd}`, 'g');
+
+        arg = arg.replace(regex, chalk.dim(cmd));
       }
 
-      return a;
+      return arg;
     });
+
     super.log(...formatted);
   }
 }
