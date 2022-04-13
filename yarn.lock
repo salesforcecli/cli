@@ -887,6 +887,41 @@
     widest-line "^3.1.0"
     wrap-ansi "^7.0.0"
 
+"@oclif/core@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.7.0.tgz#3b763b53eafa9afbb13cf7cdfeac0f8ddd8ab1af"
+  integrity sha512-I4q4qgtnNG7ef4sBDrJhwADdi7RExQV7LnflnXaWZZDiUoqF9AdOjC4jjx40MK0rRrCehCUtPNZBcr3WmxuS4Q==
+  dependencies:
+    "@oclif/linewrap" "^1.0.0"
+    "@oclif/screen" "^3.0.2"
+    ansi-escapes "^4.3.2"
+    ansi-styles "^4.3.0"
+    cardinal "^2.1.1"
+    chalk "^4.1.2"
+    clean-stack "^3.0.1"
+    cli-progress "^3.10.0"
+    debug "^4.3.3"
+    ejs "^3.1.6"
+    fs-extra "^9.1.0"
+    get-package-type "^0.1.0"
+    globby "^11.1.0"
+    hyperlinker "^1.0.0"
+    indent-string "^4.0.0"
+    is-wsl "^2.2.0"
+    js-yaml "^3.14.1"
+    lodash "^4.17.21"
+    natural-orderby "^2.0.3"
+    object-treeify "^1.1.33"
+    password-prompt "^1.1.2"
+    semver "^7.3.5"
+    string-width "^4.2.3"
+    strip-ansi "^6.0.1"
+    supports-color "^8.1.1"
+    supports-hyperlinks "^2.2.0"
+    tslib "^2.3.1"
+    widest-line "^3.1.0"
+    wrap-ansi "^7.0.0"
+
 "@oclif/dev-cli@^1":
   version "1.26.10"
   resolved "https://registry.npmjs.org/@oclif/dev-cli/-/dev-cli-1.26.10.tgz#d8df3a79009b68552f5e7f249d1d19ca52278382"
@@ -1294,7 +1329,7 @@
     semver "^7.3.5"
     ts-retry-promise "^0.6.0"
 
-"@salesforce/core@^3.11.0", "@salesforce/core@^3.8.0":
+"@salesforce/core@^3.11.0", "@salesforce/core@^3.12.1", "@salesforce/core@^3.8.0":
   version "3.12.1"
   resolved "https://registry.npmjs.org/@salesforce/core/-/core-3.12.1.tgz#6ef20a58777a5368a5804817f11046737fa90baf"
   integrity sha512-j7WvlPwhTLBMBdnF/6Og3oqcM72tGqK99UHK/UqJpGaX0HcadnxMyL3uOMi8aAautvg4BnpfGjesn0pinqKVXw==
@@ -1385,10 +1420,10 @@
     open "8.4.0"
     tslib "^2"
 
-"@salesforce/plugin-release-management@^2.11.1":
-  version "2.11.1"
-  resolved "https://registry.npmjs.org/@salesforce/plugin-release-management/-/plugin-release-management-2.11.1.tgz#ca231a9eb34c4c1a74d5f53bcac4d5adb7e63631"
-  integrity sha512-Z0iORCACtTTqYAHFfkQH5pniiD5f5m3QiAx8JPQukQ99SMxGfIfQlrdIFASnzf1+Ihmvu8Nvegwgj7D5pEkjXA==
+"@salesforce/plugin-release-management@^2.12.1":
+  version "2.12.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-2.12.1.tgz#495b14a5859bbee2f342edde0e138f91ef970f44"
+  integrity sha512-vWL4ZKy6qdojiY4GQ5TzXX6B1Jahwy+i8kYy4qUI5kmbH8+W0kuqEbKig/d7wzRwPLRbQ4+dHQUUTZ2QydoBZw==
   dependencies:
     "@oclif/config" "^1"
     "@octokit/core" "^3.4.0"
@@ -1450,6 +1485,18 @@
     "@salesforce/kit" "^1.5.34"
     "@salesforce/ts-types" "^1.5.20"
     chalk "^2.4.2"
+    inquirer "^8.2.0"
+
+"@salesforce/sf-plugins-core@^1.11.3":
+  version "1.11.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-1.11.3.tgz#eca4adf78c79daae3dd139b1967aa7573a83c74e"
+  integrity sha512-h2e1XrwqYEhxfsOmpO/iwV1GCi0Gemx2UVwXe0yrhzNfwnLukGv/XtvWgT3R6p6OoYPtGEWBkovwZeIkokoQOQ==
+  dependencies:
+    "@oclif/core" "^1.6.3"
+    "@salesforce/core" "^3.11.0"
+    "@salesforce/kit" "^1.5.34"
+    "@salesforce/ts-types" "^1.5.20"
+    chalk "^4"
     inquirer "^8.2.0"
 
 "@salesforce/source-deploy-retrieve@^5.12.4":
@@ -1518,10 +1565,10 @@
     chalk "^4.1.1"
     tslib "^2"
 
-"@sf/deploy-retrieve@npm:@salesforce/plugin-deploy-retrieve@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.npmjs.org/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.2.1.tgz#dc9a24ecd39bf957362542f7af0a02df48944250"
-  integrity sha512-aUorOsm7z17vckoLKFhaLEjfmAtpn93KUwHVoDfAHBA1S7RZuJgyac+XeCfNK0WOSQ5yIza6o935KV+H18K9JA==
+"@sf/deploy-retrieve@npm:@salesforce/plugin-deploy-retrieve@1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.3.0.tgz#1e86272d67f2b4b0e02738a0f3648b11792e0a78"
+  integrity sha512-jeGkgwjmPK1HOuYyqxZcGdPGSm2tf6h85cAIA3wn/m3eshz77+iTFJa6jAQKBoEa1s0xFPrS6P2S8Ix4Wnmzgw==
   dependencies:
     "@oclif/core" "^1.6.4"
     "@salesforce/core" "^3.8.0"
@@ -2997,7 +3044,7 @@ chalk@^3.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chalk@^4.0.0, chalk@^4.0.2, chalk@^4.1.0, chalk@^4.1.1, chalk@^4.1.2:
+chalk@^4, chalk@^4.0.0, chalk@^4.0.2, chalk@^4.1.0, chalk@^4.1.1, chalk@^4.1.2:
   version "4.1.2"
   resolved "https://registry.npmjs.org/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
   integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
