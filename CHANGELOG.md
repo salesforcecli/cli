@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.25.1](https://github.com/salesforcecli/cli/compare/v1.25.0...v1.25.1) (2022-04-21)
+
+### Bug Fixes
+
+- add cli-release context to windows package job for signing key ([301762d](https://github.com/salesforcecli/cli/commit/301762d039a91dc36aa4ae223c56848425b4d959))
+
 ## [1.25.0](https://github.com/salesforcecli/cli/compare/v1.24.0...v1.25.0) (2022-04-21)
 
 ## [1.24.0](https://github.com/salesforcecli/cli/compare/v1.23.0...v1.24.0) (2022-04-13)
