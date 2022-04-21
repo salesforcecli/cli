@@ -280,6 +280,7 @@ workflows:
     jobs:
       - release-management/dependabot-automerge:
           skip-ci: true
+          context: cli-release
   promote-to-latest:
     triggers:
       - schedule:
