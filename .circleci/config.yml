@@ -238,7 +238,9 @@ workflows:
             - release-management/release-package
             - pack-and-upload-tarballs
       - pack-and-upload-windows-installer:
-          context: AWS
+          context:
+            - AWS
+            - cli-release
           filters:
             branches:
               only:
