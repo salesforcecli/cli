@@ -196,7 +196,9 @@ workflows:
               only:
                 - main
       - change-case-start:
-          context: CLI_CTC
+          context:
+            - CLI_CTC
+            - cli-release
           requires:
             - verify-no-schema-changes
             - approval
@@ -210,10 +212,12 @@ workflows:
           requires:
             - approval
             - change-case-start
+          context: cli-release
           filters:
             branches:
               only: main
       - create-next-latest-rc-pull-request:
+          context: cli-release
           requires:
             - release-management/release-package
       - pack-and-upload-tarballs:
@@ -248,7 +252,9 @@ workflows:
             - pack-and-upload-macos-installer
             - pack-and-upload-windows-installer
       - close-CTC:
-          context: CLI_CTC
+          context:
+            - CLI_CTC
+            - cli-release
           requires:
             - promote-verify-rc
   test-pack-sf-tarballs:
@@ -284,17 +290,22 @@ workflows:
     jobs:
       # start the change case
       - change-case-start:
-          context: CLI_CTC
+          context:
+            - CLI_CTC
+            - cli-release
       - promote-channels:
           context: AWS
           requires:
             - change-case-start
       - npm-promotions:
+          context: cli-release
           requires:
             - change-case-start
       # close change case
       - close-CTC:
-          context: CLI_CTC
+          context:
+            - CLI_CTC
+            - cli-release
           requires:
             - promote-verify
       # verify the npm tags and installers are on the right version
