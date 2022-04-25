@@ -477,15 +477,6 @@
     ajv-formats "^2.0.2"
     toml "^3.0.0"
 
-"@heroku/project-descriptor@0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@heroku/project-descriptor/-/project-descriptor-0.0.6.tgz#5337e7243423b283d0a032dcff25035756341095"
-  integrity sha512-zH1Wx5WQFCnt3ToiQJ9yUWsOXN5woTiGczGUpvQS0zCwwkE42ydKZSRKgSlB/YIwsDmAkFKiUwe97fT+qP45iw==
-  dependencies:
-    ajv "^8.0.0"
-    ajv-formats "^2.0.2"
-    toml "^3.0.0"
-
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
   resolved "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.5.0.tgz#1407967d4c6eecd7388f83acf1eaf4d0c6e58ef9"
@@ -1553,17 +1544,17 @@
     open "^8.4.0"
     tslib "^2"
 
-"@sf/functions@npm:@salesforce/plugin-functions@1.8.0":
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.8.0.tgz#19f98bc2c5e3cc7adde86761574c42cf404d9b55"
-  integrity sha512-2HNThXJ6AwZgywmiANLvKOJ0K5mzUkVbpyYdc+vsm1FeUJNtTC4qEAfld4UNRbEGZlWErAJ9CUnnUPPF2RNnzw==
+"@sf/functions@npm:@salesforce/plugin-functions@1.7.1":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.7.1.tgz#0d802f87ddb07decf81c56580ebcfff327ac6272"
+  integrity sha512-1xvcY9i1v6BtN55zwqf1XLHDlNbHMnlENU1vRFk/n7n0UY07ehRUNQdZnXZS1jRnrpFVD3DiojKg14dhrJNT8A==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku-cli/schema" "^1.0.25"
     "@heroku/eventsource" "^1.0.7"
     "@heroku/function-toml" "^0.0.3"
     "@heroku/functions-core" "0.2.6"
-    "@heroku/project-descriptor" "0.0.6"
+    "@heroku/project-descriptor" "0.0.5"
     "@oclif/core" "^1.6.0"
     "@salesforce/core" "^3.8.0"
     "@salesforce/plugin-org" "^1.11.2"
