@@ -31,7 +31,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/1.25.1 linux-x64 node-v14.19.1
+@salesforce/cli/1.25.2 linux-x64 node-v14.19.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -57,7 +57,6 @@ USAGE
 - [`sf env delete`](#sf-env-delete)
 - [`sf env display`](#sf-env-display)
 - [`sf env list`](#sf-env-list)
-- [`sf env log`](#sf-env-log)
 - [`sf env log tail`](#sf-env-log-tail)
 - [`sf env logdrain add`](#sf-env-logdrain-add)
 - [`sf env logdrain list`](#sf-env-logdrain-list)
@@ -517,7 +516,7 @@ Create a compute environment for use with Salesforce Functions.
 
 ```
 USAGE
-  $ sf env create compute [-o <value>] [-a <value>]
+  $ sf env create compute [-o <value>] [-a <value> | ]
 
 FLAGS
   -a, --alias=<value>          Alias for the created environment.
@@ -682,24 +681,6 @@ EXAMPLES
   Display only the table data, not the headers, in comma-separated value (csv) format:
 
     $ sf env list --csv --no-header
-```
-
-## `sf env log`
-
-Stream log output for an environment.
-
-```
-USAGE
-  $ sf env log [-e <value> | ] [-n <value>]
-
-FLAGS
-  -e, --target-compute=<value>  Compute environment name to retrieve logs.
-  -n, --num=<value>             Number of lines to display.
-
-EXAMPLES
-  Stream log output:
-
-    $ sf env log --target-compute environment-alias
 ```
 
 ## `sf env log tail`
