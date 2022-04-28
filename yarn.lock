@@ -1274,35 +1274,10 @@
     semver "^7.3.5"
     ts-retry-promise "^0.6.0"
 
-"@salesforce/core@^3.10.1", "@salesforce/core@^3.15.0", "@salesforce/core@^3.7.9":
+"@salesforce/core@^3.10.1", "@salesforce/core@^3.11.0", "@salesforce/core@^3.13.0", "@salesforce/core@^3.15.0", "@salesforce/core@^3.7.9", "@salesforce/core@^3.8.0":
   version "3.15.0"
   resolved "https://registry.npmjs.org/@salesforce/core/-/core-3.15.0.tgz#1fbee2cd31aae28bf283869a53927026e4297554"
   integrity sha512-7GbNMpLUzc1Y7u1Ouuz+KGZlj4sV6ix51OPUFJA7QbMc7sbhFz7/hoiLToU6NIbHDzq5dyAK9Q0f1M3AR1ZOAg==
-  dependencies:
-    "@salesforce/bunyan" "^2.0.0"
-    "@salesforce/kit" "^1.5.34"
-    "@salesforce/schemas" "^1.1.0"
-    "@salesforce/ts-types" "^1.5.20"
-    "@types/graceful-fs" "^4.1.5"
-    "@types/mkdirp" "^1.0.2"
-    "@types/semver" "^7.3.9"
-    archiver "^5.3.0"
-    change-case "^4.1.2"
-    debug "^3.2.7"
-    faye "^1.4.0"
-    form-data "^4.0.0"
-    graceful-fs "^4.2.9"
-    js2xmlparser "^4.0.1"
-    jsen "0.6.6"
-    jsforce "2.0.0-beta.7"
-    jsonwebtoken "8.5.1"
-    mkdirp "1.0.4"
-    ts-retry-promise "^0.6.0"
-
-"@salesforce/core@^3.11.0", "@salesforce/core@^3.13.0", "@salesforce/core@^3.8.0":
-  version "3.13.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.13.0.tgz#7288858dc0734ef50332606e9f3d0633eef54f1f"
-  integrity sha512-ZhjcF3VN8etF/R6M+x6tnI2fDB7gkdUH/tQNjf1plmXyqRiyJ4gcTK4c6RRcemP/SMRme7qt9nqlGxJk6N4v5A==
   dependencies:
     "@salesforce/bunyan" "^2.0.0"
     "@salesforce/kit" "^1.5.34"
