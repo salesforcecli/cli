@@ -78,82 +78,9 @@
         "plugin": "@salesforce/plugin-deploy-retrieve",
         "flags": [
             "api-version",
-            "async",
-            "concise",
             "dry-run",
             "ignore-errors",
             "ignore-warnings",
-            "json",
-            "manifest",
-            "metadata",
-            "metadata-dir",
-            "metadata-zip",
-            "source-dir",
-            "target-org",
-            "test-level",
-            "tests",
-            "verbose",
-            "wait"
-        ],
-        "alias": []
-    },
-    {
-        "command": "deploy:metadata:cancel",
-        "plugin": "@salesforce/plugin-deploy-retrieve",
-        "flags": [
-            "async",
-            "job-id",
-            "json",
-            "use-most-recent",
-            "wait"
-        ],
-        "alias": []
-    },
-    {
-        "command": "deploy:metadata:quick",
-        "plugin": "@salesforce/plugin-deploy-retrieve",
-        "flags": [
-            "async",
-            "concise",
-            "job-id",
-            "json",
-            "target-org",
-            "use-most-recent",
-            "verbose",
-            "wait"
-        ],
-        "alias": []
-    },
-    {
-        "command": "deploy:metadata:report",
-        "plugin": "@salesforce/plugin-deploy-retrieve",
-        "flags": [
-            "job-id",
-            "json",
-            "use-most-recent"
-        ],
-        "alias": []
-    },
-    {
-        "command": "deploy:metadata:resume",
-        "plugin": "@salesforce/plugin-deploy-retrieve",
-        "flags": [
-            "concise",
-            "job-id",
-            "json",
-            "use-most-recent",
-            "verbose",
-            "wait"
-        ],
-        "alias": []
-    },
-    {
-        "command": "deploy:metadata:validate",
-        "plugin": "@salesforce/plugin-deploy-retrieve",
-        "flags": [
-            "api-version",
-            "async",
-            "concise",
             "json",
             "manifest",
             "metadata",
