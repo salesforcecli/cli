@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/SandboxProcessObject",
+  "definitions": {
+    "SandboxProcessObject": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "SandboxName": {
+          "type": "string"
+        },
+        "SandboxInfoId": {
+          "type": "string"
+        },
+        "LicenseType": {
+          "type": "string"
+        },
+        "CreatedDate": {
+          "type": "string"
+        },
+        "SandboxOrganization": {
+          "type": "string"
+        },
+        "CopyProgress": {
+          "type": "number"
+        },
+        "SourceId": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "ApexClassId": {
+          "type": "string"
+        },
+        "EndDate": {
+          "type": "string"
+        }
+      },
+      "required": ["Id", "Status", "SandboxName", "SandboxInfoId", "LicenseType", "CreatedDate"],
+      "additionalProperties": false
+    }
+  }
+}
