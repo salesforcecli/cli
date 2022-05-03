@@ -30,6 +30,15 @@ jobs:
       - run: yarn install
       - run: yarn test:json-schema
 
+  verify-no-snapshot-changes:
+    docker:
+      - image: node:lts
+    resource_class: xlarge
+    steps:
+      - checkout
+      - run: yarn install
+      - run: yarn test:deprecation-policy
+
   # There are two pack jobs:
   # - test-pack-tarballs to run on every branch *other than main*
   # - pack-and-upload-tarballs to run only on main
@@ -185,6 +194,7 @@ workflows:
             branches:
               ignore: main
       - verify-no-schema-changes
+      - verify-no-snapshot-changes
       - test-pack-tarballs:
           filters:
             branches:
@@ -201,6 +211,7 @@ workflows:
             - cli-release
           requires:
             - verify-no-schema-changes
+            - verify-no-snapshot-changes
             - approval
           filters:
             branches:
