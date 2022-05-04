@@ -58,9 +58,54 @@
     "plugin": "@salesforce/plugin-deploy-retrieve",
     "flags": [
       "api-version",
+      "async",
+      "concise",
       "dry-run",
       "ignore-errors",
       "ignore-warnings",
+      "json",
+      "manifest",
+      "metadata",
+      "source-dir",
+      "target-org",
+      "test-level",
+      "tests",
+      "verbose",
+      "wait"
+    ],
+    "alias": []
+  },
+  {
+    "command": "deploy:metadata:cancel",
+    "plugin": "@salesforce/plugin-deploy-retrieve",
+    "flags": ["async", "job-id", "json", "use-most-recent", "wait"],
+    "alias": []
+  },
+  {
+    "command": "deploy:metadata:quick",
+    "plugin": "@salesforce/plugin-deploy-retrieve",
+    "flags": ["async", "concise", "job-id", "json", "target-org", "use-most-recent", "verbose", "wait"],
+    "alias": []
+  },
+  {
+    "command": "deploy:metadata:report",
+    "plugin": "@salesforce/plugin-deploy-retrieve",
+    "flags": ["job-id", "json", "use-most-recent"],
+    "alias": []
+  },
+  {
+    "command": "deploy:metadata:resume",
+    "plugin": "@salesforce/plugin-deploy-retrieve",
+    "flags": ["concise", "job-id", "json", "use-most-recent", "verbose", "wait"],
+    "alias": []
+  },
+  {
+    "command": "deploy:metadata:validate",
+    "plugin": "@salesforce/plugin-deploy-retrieve",
+    "flags": [
+      "api-version",
+      "async",
+      "concise",
       "json",
       "manifest",
       "metadata",
@@ -86,9 +131,60 @@
     "alias": []
   },
   {
+    "command": "env:create:sandbox",
+    "plugin": "@salesforce/plugin-env",
+    "flags": [
+      "alias",
+      "async",
+      "clone",
+      "definition-file",
+      "json",
+      "license-type",
+      "name",
+      "no-prompt",
+      "poll-interval",
+      "set-default",
+      "target-org",
+      "wait"
+    ],
+    "alias": []
+  },
+  {
+    "command": "env:create:scratch",
+    "plugin": "@salesforce/plugin-env",
+    "flags": [
+      "alias",
+      "api-version",
+      "async",
+      "client-id",
+      "definition-file",
+      "duration-days",
+      "edition",
+      "json",
+      "no-ancestors",
+      "no-namespace",
+      "set-default",
+      "target-dev-hub",
+      "wait"
+    ],
+    "alias": []
+  },
+  {
     "command": "env:delete",
     "plugin": "@salesforce/plugin-functions",
     "flags": ["confirm", "environment", "target-compute"],
+    "alias": []
+  },
+  {
+    "command": "env:delete:sandbox",
+    "plugin": "@salesforce/plugin-env",
+    "flags": ["json", "no-prompt", "target-org"],
+    "alias": []
+  },
+  {
+    "command": "env:delete:scratch",
+    "plugin": "@salesforce/plugin-env",
+    "flags": ["json", "no-prompt", "target-org"],
     "alias": []
   },
   {
@@ -131,6 +227,18 @@
     "command": "env:open",
     "plugin": "@salesforce/plugin-env",
     "flags": ["browser", "json", "path", "target-env", "url-only"],
+    "alias": []
+  },
+  {
+    "command": "env:resume:sandbox",
+    "plugin": "@salesforce/plugin-env",
+    "flags": ["job-id", "json", "name", "target-org", "use-most-recent", "wait"],
+    "alias": []
+  },
+  {
+    "command": "env:resume:scratch",
+    "plugin": "@salesforce/plugin-env",
+    "flags": ["job-id", "json", "use-most-recent"],
     "alias": []
   },
   {

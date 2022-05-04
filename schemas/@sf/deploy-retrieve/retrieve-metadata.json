@@ -1,12 +1,61 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "#/definitions/RetrieveMetadataResult",
+  "$ref": "#/definitions/RetrieveResultJson",
   "definitions": {
-    "RetrieveMetadataResult": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/FileResponse"
-      }
+    "RetrieveResultJson": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "files": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FileResponse"
+          }
+        },
+        "done": {
+          "type": "boolean"
+        },
+        "fileProperties": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/FileProperties"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/FileProperties"
+              }
+            }
+          ]
+        },
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/RequestStatus"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "messages": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RetrieveMessage"
+              }
+            },
+            {
+              "$ref": "#/definitions/RetrieveMessage"
+            }
+          ]
+        },
+        "zipFile": {
+          "type": "string",
+          "description": "`base64` encoded string"
+        }
+      },
+      "required": ["done", "fileProperties", "files", "id", "status", "success", "zipFile"]
     },
     "FileResponse": {
       "anyOf": [
@@ -64,6 +113,87 @@
           "additionalProperties": false
         }
       ]
+    },
+    "FileProperties": {
+      "type": "object",
+      "properties": {
+        "createdById": {
+          "type": "string"
+        },
+        "createdByName": {
+          "type": "string"
+        },
+        "createdDate": {
+          "type": "string"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "fullName": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "lastModifiedById": {
+          "type": "string"
+        },
+        "lastModifiedByName": {
+          "type": "string"
+        },
+        "lastModifiedDate": {
+          "type": "string"
+        },
+        "manageableState": {
+          "type": "string",
+          "enum": [
+            "beta",
+            "deleted",
+            "deprecated",
+            "deprecatedEditable",
+            "installed",
+            "installedEditable",
+            "released",
+            "unmanaged"
+          ]
+        },
+        "namespacePrefix": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "createdById",
+        "createdByName",
+        "createdDate",
+        "fileName",
+        "fullName",
+        "id",
+        "lastModifiedById",
+        "lastModifiedByName",
+        "lastModifiedDate",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    "RequestStatus": {
+      "type": "string",
+      "enum": ["Pending", "InProgress", "Succeeded", "SucceededPartial", "Failed", "Canceling", "Canceled"]
+    },
+    "RetrieveMessage": {
+      "type": "object",
+      "properties": {
+        "fileName": {
+          "type": "string"
+        },
+        "problem": {
+          "type": "string"
+        }
+      },
+      "required": ["fileName", "problem"],
+      "additionalProperties": false
     }
   }
 }
