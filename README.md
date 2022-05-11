@@ -31,7 +31,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/1.27.0 linux-x64 node-v14.19.2
+@salesforce/cli/1.28.0 linux-x64 node-v14.19.2
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -338,7 +338,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.4.2/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.4.3/src/commands/deploy.ts)_
 
 ## `sf deploy functions`
 
@@ -361,7 +361,7 @@ Deploy metadata in source format to an org from your local project.
 ```
 USAGE
   $ sf deploy metadata [--json] [-a <value>] [--async | -w <value>] [--concise | --verbose] [--dry-run] [-r] [-g] [-x
-    <value>] [-m <value>] [-d <value>] [-o <value>] [-t <value>] [-l
+    <value>] [-m <value>] [--single-package --metadata-dir <value>] [-d <value>] [-o <value>] [-t <value>] [-l
     NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg]
 
 FLAGS
@@ -380,6 +380,9 @@ FLAGS
   --async                      Run the command asynchronously.
   --concise                    Show concise output of the deploy result.
   --dry-run                    Validate deploy and run Apex tests but don’t save to the org.
+  --metadata-dir=<value>       Root of directory or zip file of metadata formatted files to deploy.
+  --single-package             Indicates that the metadata zip file points to a directory structure for a single
+                               package.
   --verbose                    Show verbose output of the deploy result.
 
 GLOBAL FLAGS
@@ -797,8 +800,9 @@ Validate a metadata deployment without actually executing it.
 
 ```
 USAGE
-  $ sf deploy metadata validate [--json] [-a <value>] [--async] [--concise | --verbose] [-x <value> | -m <value> | -d <value>]
-    [-o <value>] [-t <value>] [-l RunAllTestsInOrg|RunLocalTests|RunSpecifiedTests] [-w <value>]
+  $ sf deploy metadata validate [--json] [-a <value>] [--async] [--concise | --verbose] [-x <value>] [-m <value>] [-d <value>]
+    [--single-package --metadata-dir <value>] [-o <value>] [-t <value>] [-l
+    RunAllTestsInOrg|RunLocalTests|RunSpecifiedTests] [-w <value>]
 
 FLAGS
   -a, --api-version=<value>    Target API version for the validation.
@@ -813,6 +817,9 @@ FLAGS
   -x, --manifest=<value>       Full file path for manifest (package.xml) of components to validate for deployment.
   --async                      Run the command asynchronously.
   --concise                    Show concise output of the validation result.
+  --metadata-dir=<value>       Root of directory or zip file of metadata formatted files to deploy.
+  --single-package             Indicates that the metadata zip file points to a directory structure for a single
+                               package.
   --verbose                    Show verbose output of the validation result.
 
 GLOBAL FLAGS
@@ -838,7 +845,7 @@ DESCRIPTION
   quotes. The same syntax applies to --manifest and --source-dir.
 
 EXAMPLES
-  NOTE: These examples focus on validating large deployments.  See the help for "sf deploy metadata" for examples of deploying smaller sets of metadata which you can also use to validate.
+  NOTE: These examples focus on validating large deployments. See the help for "sf deploy metadata" for examples of deploying smaller sets of metadata which you can also use to validate.
 
   Validate the deployment of all source files in a directory to the default org:
 
