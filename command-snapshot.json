@@ -18,30 +18,6 @@
     "alias": []
   },
   {
-    "command": "config:get",
-    "plugin": "@salesforce/plugin-config",
-    "flags": ["json", "verbose"],
-    "alias": []
-  },
-  {
-    "command": "config:list",
-    "plugin": "@salesforce/plugin-config",
-    "flags": ["json"],
-    "alias": []
-  },
-  {
-    "command": "config:set",
-    "plugin": "@salesforce/plugin-config",
-    "flags": ["global", "json"],
-    "alias": []
-  },
-  {
-    "command": "config:unset",
-    "plugin": "@salesforce/plugin-config",
-    "flags": ["global", "json"],
-    "alias": []
-  },
-  {
     "command": "deploy",
     "plugin": "@salesforce/plugin-deploy-retrieve",
     "flags": ["interactive"],
@@ -66,6 +42,8 @@
       "json",
       "manifest",
       "metadata",
+      "metadata-dir",
+      "single-package",
       "source-dir",
       "target-org",
       "test-level",
@@ -109,6 +87,8 @@
       "json",
       "manifest",
       "metadata",
+      "metadata-dir",
+      "single-package",
       "source-dir",
       "target-org",
       "test-level",
@@ -131,31 +111,11 @@
     "alias": []
   },
   {
-    "command": "env:create:sandbox",
-    "plugin": "@salesforce/plugin-env",
-    "flags": [
-      "alias",
-      "async",
-      "clone",
-      "definition-file",
-      "json",
-      "license-type",
-      "name",
-      "no-prompt",
-      "poll-interval",
-      "set-default",
-      "target-org",
-      "wait"
-    ],
-    "alias": []
-  },
-  {
     "command": "env:create:scratch",
     "plugin": "@salesforce/plugin-env",
     "flags": [
       "alias",
       "api-version",
-      "async",
       "client-id",
       "definition-file",
       "duration-days",
@@ -227,18 +187,6 @@
     "command": "env:open",
     "plugin": "@salesforce/plugin-env",
     "flags": ["browser", "json", "path", "target-env", "url-only"],
-    "alias": []
-  },
-  {
-    "command": "env:resume:sandbox",
-    "plugin": "@salesforce/plugin-env",
-    "flags": ["job-id", "json", "name", "target-org", "use-most-recent", "wait"],
-    "alias": []
-  },
-  {
-    "command": "env:resume:scratch",
-    "plugin": "@salesforce/plugin-env",
-    "flags": ["job-id", "json", "use-most-recent"],
     "alias": []
   },
   {
