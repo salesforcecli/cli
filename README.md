@@ -31,7 +31,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/1.29.0 linux-x64 node-v14.19.3
+@salesforce/cli/1.30.0 linux-x64 node-v14.19.3
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -1864,15 +1864,15 @@ ALIASES
 EXAMPLES
   Display release notes for the currently installed CLI version:
 
-    sf info releasenotes display
+  $ sf info releasenotes display
 
   Display release notes for CLI version 7.120.0:
 
-    sf info releasenotes display --version 7.120.0
+  $ sf info releasenotes display --version 7.120.0
 
   Display release notes for the CLI version that corresponds to a tag (stable, stable-rc, latest, latest-rc, rc):
 
-    sf info releasenotes display --version latest
+  $ sf info releasenotes display --version latest
 ```
 
 ## `sf login`
@@ -2754,15 +2754,15 @@ ALIASES
 EXAMPLES
   Display release notes for the currently installed CLI version:
 
-    sf whatsnew
+  $ sf whatsnew
 
   Display release notes for CLI version 7.120.0:
 
-    sf whatsnew --version 7.120.0
+  $ sf whatsnew --version 7.120.0
 
   Display release notes for the CLI version that corresponds to a tag (stable, stable-rc, latest, latest-rc, rc):
 
-    sf whatsnew --version latest
+  $ sf whatsnew --version latest
 ```
 
 ## `sf whoami functions`
