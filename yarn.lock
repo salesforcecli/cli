@@ -1264,12 +1264,12 @@
     ts-retry-promise "^0.6.0"
 
 "@salesforce/core@^3.10.1", "@salesforce/core@^3.11.0", "@salesforce/core@^3.13.0", "@salesforce/core@^3.15.5", "@salesforce/core@^3.16.0", "@salesforce/core@^3.7.9", "@salesforce/core@^3.8.0":
-  version "3.16.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.16.1.tgz#5d7cfd82a270e55ee5cd48c1c185dd6964d75cbc"
-  integrity sha512-iznWeB+4PH5hq/nq60eV26nqDZj915+qwxxYJusjYG7R2tkrsaeSMd3xld0n5pUsyjnZpWeFnxfK/Li5gtUVVg==
+  version "3.19.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.19.1.tgz#bd154d2676a7ab320b4b3596e5bb61635c52a3fe"
+  integrity sha512-f2Up1N9dVFv4vEKxK97CrPu6IoYl56IynH6kv07/ZO/f4F6JTxpa27e88ZDmPiZw5eBzURhCWCYqpwk5ev0YBg==
   dependencies:
     "@salesforce/bunyan" "^2.0.0"
-    "@salesforce/kit" "^1.5.34"
+    "@salesforce/kit" "^1.5.41"
     "@salesforce/schemas" "^1.1.0"
     "@salesforce/ts-types" "^1.5.20"
     "@types/graceful-fs" "^4.1.5"
@@ -1283,7 +1283,7 @@
     form-data "^4.0.0"
     graceful-fs "^4.2.9"
     js2xmlparser "^4.0.1"
-    jsforce "2.0.0-beta.7"
+    jsforce "2.0.0-beta.10"
     jsonwebtoken "8.5.1"
     mkdirp "1.0.4"
     ts-retry-promise "^0.6.0"
@@ -6094,10 +6094,10 @@ jsesc@^2.5.1:
   resolved "https://registry.npmjs.org/jsesc/-/jsesc-2.5.2.tgz#80564d2e483dacf6e8ef209650a67df3f0c283a4"
   integrity sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==
 
-jsforce@2.0.0-beta.7:
-  version "2.0.0-beta.7"
-  resolved "https://registry.npmjs.org/jsforce/-/jsforce-2.0.0-beta.7.tgz#5d594b1b280f1ee37992b75220b4c7701a1e536c"
-  integrity sha512-aiJRbf6v0eQSJLpAg4aEB/yXsQwV9WM3ewT2v/WTLmeeZQ4ZtwlcJhQCTwW4tKX/S8U+t5nL+Iluz8jFSZFqnA==
+jsforce@2.0.0-beta.10:
+  version "2.0.0-beta.10"
+  resolved "https://registry.yarnpkg.com/jsforce/-/jsforce-2.0.0-beta.10.tgz#c33fee5dd01c96d121235cffb8fee1458a35423e"
+  integrity sha512-AFigJHQocj8t36Eu+9XffoKoC2FO4/uMDMg08TfTXgvIp53lzvnQJoQrhEnwnKReof4tO2d+7j+d1QyiOa2yGg==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@babel/runtime-corejs3" "^7.12.5"
@@ -6109,6 +6109,7 @@ jsforce@2.0.0-beta.7:
     csv-parse "^4.8.2"
     csv-stringify "^5.3.4"
     faye "^1.4.0"
+    form-data "^4.0.0"
     fs-extra "^8.1.0"
     https-proxy-agent "^5.0.0"
     inquirer "^7.0.0"
