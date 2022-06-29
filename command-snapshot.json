@@ -146,6 +146,7 @@
       "license-type",
       "name",
       "no-prompt",
+      "no-track-source",
       "poll-interval",
       "set-default",
       "target-org",
@@ -169,6 +170,7 @@
       "no-namespace",
       "set-default",
       "target-dev-hub",
+      "track-source",
       "wait"
     ],
     "alias": []
@@ -483,7 +485,7 @@
   {
     "command": "version",
     "plugin": "@oclif/plugin-version",
-    "flags": [],
+    "flags": ["json", "verbose"],
     "alias": []
   },
   {
