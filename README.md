@@ -31,7 +31,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/1.34.0 linux-x64 node-v14.19.3
+@salesforce/cli/1.35.0 linux-x64 node-v14.19.3
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -338,7 +338,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.4.3/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.5.2/src/commands/deploy.ts)_
 
 ## `sf deploy functions`
 
@@ -360,12 +360,13 @@ Deploy metadata in source format to an org from your local project.
 
 ```
 USAGE
-  $ sf deploy metadata [--json] [-a <value>] [--async | -w <value>] [--concise | --verbose] [--dry-run] [-r] [-g] [-x
-    <value>] [-m <value>] [--single-package --metadata-dir <value>] [-d <value>] [-o <value>] [-t <value>] [-l
-    NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg]
+  $ sf deploy metadata [--json] [-a <value>] [--async | -w <value>] [--concise | --verbose] [--dry-run] [-c] [-r]
+    [-g] [-x <value> | -d <value> | -m <value> | --metadata-dir <value>] [--single-package ] [-o <value>] [-t <value>]
+    [-l NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg]
 
 FLAGS
   -a, --api-version=<value>    Target API version for the deploy.
+  -c, --ignore-conflicts       Ignore conflicts and deploy local files, even if they overwrite changes in the org.
   -d, --source-dir=<value>...  Path to the local source files to deploy.
   -g, --ignore-warnings        Ignore warnings and allow a deployment to complete successfully.
   -l, --test-level=<option>    [default: NoTestRun] Deployment Apex testing level.
@@ -393,14 +394,19 @@ DESCRIPTION
 
   You must run this command from within a project.
 
-  This command doesn't support source-tracking. The source you deploy overwrites the corresponding metadata in your org.
-  This command doesn’t attempt to merge your source with the versions in your org.
+  If your org allows source tracking, then this command tracks the changes in your source. Some orgs, such as production
+  org, never allow source tracking. You can also use the "--no-track-source" flag when you create a scratch or sandbox
+  org to disable source tracking.
 
   To deploy multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with
   multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax
   applies to --manifest and --source-dir.
 
 EXAMPLES
+  Deploy local changes not in the org:
+
+    $ sf deploy metadata
+
   Deploy the source files in a directory:
 
     $ sf deploy metadata  --source-dir path/to/source
@@ -440,6 +446,11 @@ FLAG DESCRIPTIONS
 
     Use this flag to override the default API version, which is the latest version supported the CLI, with the API
     version of your package.xml file.
+
+  -c, --ignore-conflicts  Ignore conflicts and deploy local files, even if they overwrite changes in the org.
+
+    This flag applies only to orgs that allow source tracking. It has no effect on orgs that don't allow it, such as
+    production orgs.
 
   -d, --source-dir=<value>...  Path to the local source files to deploy.
 
@@ -988,7 +999,7 @@ Create a sandbox org.
 ```
 USAGE
   $ sf env create sandbox [--json] [-f <value> | -n <value> | -l Developer|Developer_Pro|Partial|Full] [-s] [-a <value>]
-    [-w <value> | --async] [-i <value> | ] [-c <value> | ] [-o <value>] [--no-prompt]
+    [-w <value> | --async] [-i <value> | ] [-c <value> | ] [-o <value>] [--no-prompt] [--no-track-source]
 
 FLAGS
   -a, --alias=<value>                                        Alias for the sandbox org.
@@ -1007,6 +1018,7 @@ FLAGS
                                                              complete.
   --no-prompt                                                Don't prompt for confirmation about the sandbox
                                                              configuration.
+  --no-track-source                                          Do not use source tracking for this sandbox.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1047,8 +1059,8 @@ FLAG DESCRIPTIONS
 
     The sandbox definition file is a blueprint for the sandbox. You can create different definition files for each
     sandbox type that you use in the development process. See
-    https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_sandbox_definition.htm for all the
-    options you can specify in the defintion file.
+    <https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_sandbox_definition.htm> for all
+    the options you can specify in the defintion file.
 
   -n, --name=<value>  Name of the sandbox org.
 
@@ -1070,6 +1082,18 @@ FLAG DESCRIPTIONS
 
     The command immediately displays the job ID and returns control of the terminal to you. This way, you can continue
     to use the CLI. To check the status of the sandbox creation, run "sf env resume sandbox".
+
+  --no-track-source  Do not use source tracking for this sandbox.
+
+    We recommend you enable source tracking in Developer and Developer Pro sandbox, which is why it's the default
+    behavior. Source tracking allows you to track the changes you make to your metadata, both in your local project and
+    in the sandbox, and to detect any conflicts between the two.
+
+    To disable source tracking in the new sandbox, specify the --no-track-source flag. The main reason to disable source
+    tracking is for performance. For example, while you probably want to deploy metadata and run Apex tests in your
+    CI/CD jobs, you probably don't want to incur the costs of source tracking (checking for conflicts, polling the
+    SourceMember object, various file system operations.) This is a good use case for disabling source tracking in the
+    sandbox.
 ```
 
 ## `sf env create scratch`
@@ -1080,7 +1104,7 @@ Create a scratch org.
 USAGE
   $ sf env create scratch [--json] [-a <value>] [--async] [-d] [-f <value>] [-v <value>] [-c] [-e
     developer|enterprise|group|professional|partner-developer|partner-enterprise|partner-group|partner-professional]
-    [-m] [-y <value>] [-w <value>] [--api-version <value>] [-i <value>]
+    [-m] [-y <value>] [-w <value>] [--api-version <value>] [-i <value>] [-t]
 
 FLAGS
   -a, --alias=<value>            Alias for the scratch org.
@@ -1090,6 +1114,8 @@ FLAGS
                                  partner-group|partner-professional>
   -f, --definition-file=<value>  Path to a scratch org definition file.
   -i, --client-id=<value>        Consumer key of the Dev Hub connected app.
+  -t, --[no-]track-source        Use source tracking for this scratch org. Set --no-track-source to disable source
+                                 tracking.
   -v, --target-dev-hub=<value>   Username or alias of the Dev Hub org.
   -w, --wait=<minutes>           [default: [object Object]] Number of minutes to wait for the scratch org to be ready.
   -y, --duration-days=<days>     [default: [object Object]] Number of days before the org expires.
@@ -1143,6 +1169,18 @@ FLAG DESCRIPTIONS
     the development life cycle, such as acceptance testing, packaging, or production. See
     <https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file.htm> for
     all the option you can specify in the definition file.
+
+  -t, --[no-]track-source  Use source tracking for this scratch org. Set --no-track-source to disable source tracking.
+
+    We recommend you enable source tracking in scratch orgs, which is why it's the default behavior. Source tracking
+    allows you to track the changes you make to your metadata, both in your local project and in the scratch org, and to
+    detect any conflicts between the two.
+
+    To disable source tracking in the new scratch org, specify the --no-track-source flag. The main reason to disable
+    source tracking is for performance. For example, while you probably want to deploy metadata and run Apex tests in
+    your CI/CD jobs, you probably don't want to incur the costs of source tracking (checking for conflicts, polling the
+    SourceMember object, various file system operations.) This is a good use case for disabling source tracking in the
+    scratch org.
 
   -v, --target-dev-hub=<value>  Username or alias of the Dev Hub org.
 
@@ -1904,7 +1942,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.9/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.1.1/src/commands/login.ts)_
 
 ## `sf login functions`
 
@@ -2039,8 +2077,8 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 
 CONFIGURATION VARIABLES
-  apiVersion   API version of your project. Default: API version of your Dev Hub org.
-  instanceUrl  URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com.
+  apiVersion   API version of your project. Default: API version of your Dev Hub org. (sfdx only)
+  instanceUrl  URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com. (sfdx only)
 
 ENVIRONMENT VARIABLES
   SFDX_INSTANCE_URL  URL of the Salesforce instance that is hosting your org. Default value is
@@ -2130,8 +2168,8 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 
 CONFIGURATION VARIABLES
-  apiVersion   API version of your project. Default: API version of your Dev Hub org.
-  instanceUrl  URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com.
+  apiVersion   API version of your project. Default: API version of your Dev Hub org. (sfdx only)
+  instanceUrl  URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com. (sfdx only)
 
 ENVIRONMENT VARIABLES
   SFDX_INSTANCE_URL  URL of the Salesforce instance that is hosting your org. Default value is
@@ -2171,7 +2209,7 @@ EXAMPLES
     $ sf logout --no-prompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.0.9/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.1.1/src/commands/logout.ts)_
 
 ## `sf logout functions`
 
@@ -2221,8 +2259,8 @@ EXAMPLES
     $ sf logout org --target-org jdoe@example.org
 
 CONFIGURATION VARIABLES
-  apiVersion   API version of your project. Default: API version of your Dev Hub org.
-  instanceUrl  URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com.
+  apiVersion   API version of your project. Default: API version of your Dev Hub org. (sfdx only)
+  instanceUrl  URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com. (sfdx only)
   target-org   Username or alias of the org that all commands run against by default. (sf only)
 ```
 
@@ -2462,11 +2500,13 @@ Retrieve metadata in source format from an org to your local project.
 
 ```
 USAGE
-  $ sf retrieve metadata [--json] [-a <value>] [-x <value> | -m <value> | -d <value>] [-n <value>] [-o <value>] [-w
-    <value>]
+  $ sf retrieve metadata [--json] [-a <value>] [-c] [-x <value> | -m <value> | -d <value>] [-n <value>] [-o <value>]
+    [-w <value>]
 
 FLAGS
   -a, --api-version=<value>      Target API version for the retrieve.
+  -c, --ignore-conflicts         Ignore conflicts and retrieve and save files to your local filesystem, even if they
+                                 overwrite your local changes.
   -d, --source-dir=<value>...    File paths for source to retrieve from the org.
   -m, --metadata=<value>...      Metadata component names to retrieve.
   -n, --package-name=<value>...  Package names to retrieve.
@@ -2483,14 +2523,19 @@ DESCRIPTION
 
   You must run this command from within a project.
 
-  This command doesn't support source-tracking. The source you retrieve overwrites the corresponding source files in
-  your local project. This command doesn’t attempt to merge the source from your org with your local source files.
+  If your org allows source tracking, then this command tracks the changes in your source. Some orgs, such as production
+  org, never allow source tracking. You can also use the "--no-track-source" flag when you create a scratch or sandbox
+  org to disable source tracking.
 
   To retrieve multiple metadata components, either use multiple --metadata <name> flags or use a single --metadata flag
   with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same
   syntax applies to --manifest and --source-dir.
 
 EXAMPLES
+  Retrieve remote changes:
+
+    $ sf retrieve metadata
+
   Retrieve the source files in a directory:
 
     $ sf retrieve metadata --source-dir path/to/source
@@ -2531,6 +2576,13 @@ FLAG DESCRIPTIONS
 
     Use this flag to override the default API version, which is the latest version supported the CLI, with the API
     version in your package.xml file.
+
+  -c, --ignore-conflicts
+
+    Ignore conflicts and retrieve and save files to your local filesystem, even if they overwrite your local changes.
+
+    This flag applies only to orgs that allow source tracking. It has no effect on orgs that don't allow it, such as
+    production orgs.
 
   -d, --source-dir=<value>...  File paths for source to retrieve from the org.
 
@@ -2724,10 +2776,21 @@ _See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v3
 
 ```
 USAGE
-  $ sf version
+  $ sf version [--json] [--verbose]
+
+FLAGS
+  --verbose  Show additional information about the CLI.
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+FLAG DESCRIPTIONS
+  --verbose  Show additional information about the CLI.
+
+    Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
 ```
 
-_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v1.0.4/src/commands/version.ts)_
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v1.1.1/src/commands/version.ts)_
 
 ## `sf whatsnew [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
