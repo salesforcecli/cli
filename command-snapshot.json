@@ -182,8 +182,7 @@
         "plugin": "@salesforce/plugin-functions",
         "flags": [
             "alias",
-            "connected-org",
-            "setalias"
+            "connected-org"
         ],
         "alias": []
     },
@@ -280,6 +279,16 @@
             "no-truncate",
             "output",
             "sort"
+        ],
+        "alias": []
+    },
+    {
+        "command": "env:log",
+        "plugin": "@salesforce/plugin-functions",
+        "flags": [
+            "environment",
+            "num",
+            "target-compute"
         ],
         "alias": []
     },
