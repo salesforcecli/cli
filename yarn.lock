@@ -7811,10 +7811,34 @@ object.values@^1.1.5:
     define-properties "^1.1.3"
     es-abstract "^1.19.1"
 
-oclif@^2.4.4, oclif@^2.6.3:
+oclif@^2.4.4:
   version "2.6.3"
   resolved "https://registry.npmjs.org/oclif/-/oclif-2.6.3.tgz#77295d8342a41bfebcf13f7eba260d26ff5d92ef"
   integrity sha512-t3w1GnDrZ9GnlO2WxdTRIlb5EmfLo7fkcpKo95q+03HoL4GVUNneraVymyUTYEBsvMyWcX8PbVkcMai/HhBydA==
+  dependencies:
+    "@oclif/core" "^1.6.4"
+    "@oclif/plugin-help" "^5.1.11"
+    "@oclif/plugin-not-found" "^2.3.1"
+    "@oclif/plugin-warn-if-update-available" "^2.0.4"
+    aws-sdk "^2.1069.0"
+    concurrently "^7.0.0"
+    debug "^4.3.3"
+    find-yarn-workspace-root "^2.0.0"
+    fs-extra "^8.1"
+    github-slugger "^1.4.0"
+    lodash "^4.17.21"
+    normalize-package-data "^3.0.3"
+    qqjs "^0.3.11"
+    semver "^7.3.5"
+    tslib "^2.3.1"
+    yeoman-environment "^3.9.1"
+    yeoman-generator "^5.6.1"
+    yosay "^2.0.2"
+
+oclif@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/oclif/-/oclif-2.7.0.tgz#590d866b02f20cff2a21ddfc56e22509c55865f5"
+  integrity sha512-nmgk/emtEth/0RYTMeovj22zpiT4P7KvIDc3OOT8VeAEDvdbnZfg3tV3YRnHK0zrSKETKqpHWFyNx2PLMl0eKQ==
   dependencies:
     "@oclif/core" "^1.6.4"
     "@oclif/plugin-help" "^5.1.11"
