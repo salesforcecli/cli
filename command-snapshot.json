@@ -69,6 +69,7 @@
             "branch",
             "connected-org",
             "force",
+            "json",
             "quiet"
         ],
         "alias": []
@@ -183,7 +184,7 @@
         "flags": [
             "alias",
             "connected-org",
-            "setalias"
+            "json"
         ],
         "alias": []
     },
@@ -234,6 +235,7 @@
         "flags": [
             "confirm",
             "environment",
+            "json",
             "target-compute"
         ],
         "alias": []
@@ -284,6 +286,16 @@
         "alias": []
     },
     {
+        "command": "env:log",
+        "plugin": "@salesforce/plugin-functions",
+        "flags": [
+            "environment",
+            "num",
+            "target-compute"
+        ],
+        "alias": []
+    },
+    {
         "command": "env:log:tail",
         "plugin": "@salesforce/plugin-functions",
         "flags": [
@@ -298,6 +310,7 @@
         "flags": [
             "drain-url",
             "environment",
+            "json",
             "target-compute",
             "url"
         ],
@@ -319,6 +332,7 @@
         "flags": [
             "drain-url",
             "environment",
+            "json",
             "target-compute",
             "url"
         ],
@@ -384,6 +398,7 @@
         "plugin": "@salesforce/plugin-functions",
         "flags": [
             "environment",
+            "json",
             "target-compute"
         ],
         "alias": []
@@ -393,6 +408,7 @@
         "plugin": "@salesforce/plugin-functions",
         "flags": [
             "environment",
+            "json",
             "target-compute"
         ],
         "alias": []
@@ -512,7 +528,9 @@
     {
         "command": "logout:functions",
         "plugin": "@salesforce/plugin-functions",
-        "flags": [],
+        "flags": [
+            "json"
+        ],
         "alias": []
     },
     {
@@ -654,6 +672,7 @@
             "connected-org",
             "function-url",
             "headers",
+            "json",
             "payload",
             "structured",
             "url"
