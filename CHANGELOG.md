@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.37.0](https://github.com/salesforcecli/cli/compare/v1.36.0...v1.37.0) (2022-07-13)
+
+### Bug Fixes
+
+- **deps:** update plugin-functions to 1.12.1 ([42f5ecd](https://github.com/salesforcecli/cli/commit/42f5ecdd30e395d823678658da1df51409c89028))
+
 ## [1.36.0](https://github.com/salesforcecli/cli/compare/v1.35.0...v1.36.0) (2022-07-06)
 
 ## [1.35.0](https://github.com/salesforcecli/cli/compare/v1.34.0...v1.35.0) (2022-06-29)
