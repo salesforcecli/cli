@@ -69,6 +69,7 @@
             "branch",
             "connected-org",
             "force",
+            "json",
             "quiet"
         ],
         "alias": []
@@ -182,7 +183,8 @@
         "plugin": "@salesforce/plugin-functions",
         "flags": [
             "alias",
-            "connected-org"
+            "connected-org",
+            "json"
         ],
         "alias": []
     },
@@ -233,6 +235,7 @@
         "flags": [
             "confirm",
             "environment",
+            "json",
             "target-compute"
         ],
         "alias": []
@@ -307,6 +310,7 @@
         "flags": [
             "drain-url",
             "environment",
+            "json",
             "target-compute",
             "url"
         ],
@@ -328,6 +332,7 @@
         "flags": [
             "drain-url",
             "environment",
+            "json",
             "target-compute",
             "url"
         ],
@@ -393,6 +398,7 @@
         "plugin": "@salesforce/plugin-functions",
         "flags": [
             "environment",
+            "json",
             "target-compute"
         ],
         "alias": []
@@ -402,6 +408,7 @@
         "plugin": "@salesforce/plugin-functions",
         "flags": [
             "environment",
+            "json",
             "target-compute"
         ],
         "alias": []
@@ -521,7 +528,9 @@
     {
         "command": "logout:functions",
         "plugin": "@salesforce/plugin-functions",
-        "flags": [],
+        "flags": [
+            "json"
+        ],
         "alias": []
     },
     {
@@ -663,6 +672,7 @@
             "connected-org",
             "function-url",
             "headers",
+            "json",
             "payload",
             "structured",
             "url"
