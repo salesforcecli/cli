@@ -458,10 +458,10 @@
     ajv-formats "^2.0.2"
     toml "^3.0.0"
 
-"@hk/functions-core@npm:@heroku/functions-core@0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@heroku/functions-core/-/functions-core-0.3.1.tgz#239eba5be5df1e3c5a021e0a629a68b7010ef551"
-  integrity sha512-8/7vO3QDCAbmg/Us47jtvlAR3m2zXTD6b1ocoCFcp40SHBBCRtLgpjRpUgzgtiZgOE4zbUWEadFIZSabrEO8cQ==
+"@hk/functions-core@npm:@heroku/functions-core@0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@heroku/functions-core/-/functions-core-0.3.2.tgz#9f68935250de9ecb9c3ccf69a0bad0e62d60303e"
+  integrity sha512-X4MybSJMYPrGEl29v+QzqhZDWYLAeUWHMziVMwrmWEsDfMJVNSi2YWSg9tqaIvts6+iIhJiIzkNnxMm/2WrSMg==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku/project-descriptor" "0.0.5"
@@ -1556,17 +1556,17 @@
     open "^8.4.0"
     tslib "^2"
 
-"@sf/functions@npm:@salesforce/plugin-functions@1.12.1":
-  version "1.12.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.12.1.tgz#fe197b703e458e3d4fb6b138d087db496ebcbc48"
-  integrity sha512-VBKRLPdaY4G4wjbze2PQq7wbwOMx7LiV6GlaIlyGFoQFZy+EoNk8zukxxfChJDas+FTKuHjrHp1IosXkldVaTA==
+"@sf/functions@npm:@salesforce/plugin-functions@1.13.1":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.13.1.tgz#e22ee3620f959e2f3e1546bfa53578a40dc596a4"
+  integrity sha512-38io+EuHeAmdk1UDQzoQftcoIwv1/hScN+BGyBa06I6dUvsyZV/1MgJwgegm1BdLyTeGBR1rx14n4iixpOyhXw==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku-cli/schema" "^1.0.25"
     "@heroku/eventsource" "^1.0.7"
     "@heroku/function-toml" "^0.0.3"
     "@heroku/project-descriptor" "0.0.6"
-    "@hk/functions-core" "npm:@heroku/functions-core@0.3.1"
+    "@hk/functions-core" "npm:@heroku/functions-core@0.3.2"
     "@oclif/core" "^1.6.0"
     "@salesforce/core" "^3.19.4"
     "@salesforce/plugin-org" "^1.11.2"
