@@ -5,10 +5,11 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import { Hook, toConfiguredId, toStandardizedId } from '@oclif/core';
+import { Hook, toConfiguredId, toStandardizedId, Interfaces } from '@oclif/core';
 import { Prompter } from '@salesforce/sf-plugins-core';
 
-const hook: Hook.CommandIncomplete = async function ({ config, matches, argv }) {
+async function determineCommand(config: Interfaces.Config, matches: Interfaces.Command.Loadable[]): Promise<string> {
+  if (matches.length === 1) return matches[0].id;
   const prompter = new Prompter();
   const { command } = await prompter.timedPrompt<{ command: string }>([
     {
@@ -18,6 +19,12 @@ const hook: Hook.CommandIncomplete = async function ({ config, matches, argv }) 
       choices: matches.map((p) => toConfiguredId(p.id, config)),
     },
   ]);
+
+  return command;
+}
+
+const hook: Hook.CommandIncomplete = async function ({ config, matches, argv }) {
+  const command = await determineCommand(config, matches);
 
   if (argv.includes('--help') || argv.includes('-h')) {
     return config.runCommand('help', [toStandardizedId(command, config)]);
