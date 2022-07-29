@@ -6,9 +6,9 @@ The Salesforce CLI is built using [oclif](oclif.io), which is an open source CLI
 
 This architecture allows us to empower internal teams and external contributors to own and maintain their CLI commands, without having to create an entirely new CLI.
 
-We encourage everyone to put their logic inside of libraries that their plugins can consume. This allows the command to be a light wrapper around the library and enables other consumers to use the exact same functionality - for example, both [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve) and the [Salesforce Extension pack for VsCode](https://developer.salesforce.com/tools/vscode) use the [source-deploy-retrieve](https://github.com/forcedotcom/source-deploy-retrieve/) library to interact with Salesforce metadata.
+We write most of our logic inside of NPM libraries that plugins can consume. This allows the command to be a light wrapper around the library and enables other consumers to use the exact same functionality - for example, both [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve) and the [Salesforce Extension pack for VsCode](https://developer.salesforce.com/tools/vscode) use the [source-deploy-retrieve](https://github.com/forcedotcom/source-deploy-retrieve/) library to interact with Salesforce metadata.
 
-![sf plugins and dependencies](images/sf-plugins-and-deps.jpg "Salesforce CLI Plugins and Dependencies")
+![sf plugins and dependencies](images/sf-plugins-and-deps.jpg 'Salesforce CLI Plugins and Dependencies')
 
 ## Typical Salesforce Plugin
 
@@ -25,6 +25,7 @@ Plugins are npm packages written in Typescript and are hosted in the public npm 
 - [@salesforce/source-tracking](https://github.com/forcedotcom/source-tracking)
 
 ### dev dependencies
+
 - [@salesforce/cli-plugins-testkit](https://github.com/salesforcecli/cli-plugins-testkit)
 - [@salesforce/dev-config](https://github.com/forcedotcom/dev-config)
 - [@salesforce/dev-scripts](https://github.com/forcedotcom/dev-scripts)
@@ -33,7 +34,6 @@ Plugins are npm packages written in Typescript and are hosted in the public npm 
 - [eslint-config-salesforce](https://github.com/forcedotcom/eslint-config-salesforce)
 - [eslint-config-salesforce-license](https://github.com/forcedotcom/-eslint-config-salesforce-license)
 - [eslint-config-salesforce-typescript](https://github.com/forcedotcom/-eslint-config-salesforce-typescript)
-
 
 ### Salesforce plugins
 
@@ -57,11 +57,10 @@ Plugins are npm packages written in Typescript and are hosted in the public npm 
 - [plugin-which](https://github.com/oclif/plugin-which)
 - [plugin-version](https://github.com/oclif/plugin-version)
 
-
-![sf typical plugin](images/sf-typical-plugin.jpg "Salesforce CLI Typical Plugin")
+![sf typical plugin](images/sf-typical-plugin.jpg 'Salesforce CLI Typical Plugin')
 
 ## Command Execution
 
 Below is a diagram that outlines at a high level the process that occurs every time a user executes a CLI command.
 
-![command execution flow](images/command-execution-flow.jpg "Command Execution Flow")
+![command execution flow](images/command-execution-flow.jpg 'Command Execution Flow')
