@@ -40,6 +40,10 @@ USAGE
 
 <!-- usagestop -->
 
+# Architecture
+
+See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
+
 # Commands
 
 <!-- commands -->
