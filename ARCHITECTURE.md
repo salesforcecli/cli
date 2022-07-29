@@ -4,7 +4,7 @@
 
 The Salesforce CLI is built using [oclif](oclif.io), which is an open source CLI framework owned and maintained by Salesforce. The primary benefit of using oclif is that it allows us to develop CLI plugins for specific feature areas. Some plugins are bundled with every CLI installation, while others can be installed if and when a user chooses.
 
-This architecture allows us to empower internal teams and external contributors to own and maintain their CLI commands, without having to create an entirely new CLI.
+This architecture allows us to empower internal teams and external contributors (aka plugin providers) to own and maintain their CLI commands, without having to create an entirely new CLI. It also allows plugin providers to keep their changes isolated from other plugins and it allows customers to preview features and fixes by manually installing a plugin before it's shipped in the CLI.
 
 We write most of our logic inside of NPM libraries that plugins can consume. This allows the command to be a light wrapper around the library and enables other consumers to use the exact same functionality - for example, both [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve) and the [Salesforce Extension pack for VsCode](https://developer.salesforce.com/tools/vscode) use the [source-deploy-retrieve](https://github.com/forcedotcom/source-deploy-retrieve/) library to interact with Salesforce metadata.
 
