@@ -11,6 +11,7 @@
 - [Getting Started](#getting-started)
 - [Feedback](#feedback)
 - [Usage](#usage)
+- [Architecture](#architecture)
 - [Commands](#commands)
 <!-- tocstop -->
 
@@ -31,7 +32,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/1.39.0 linux-x64 node-v14.20.0
+@salesforce/cli/1.40.0 linux-x64 node-v14.20.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -100,6 +101,7 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin-1)
 - [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
 - [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
+- [`sf plugins:trust:verify -n <string> [-r <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sf-pluginstrustverify--n-string--r-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 - [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin-1)
 - [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin-2)
 - [`sf plugins update`](#sf-plugins-update)
@@ -2506,6 +2508,33 @@ DESCRIPTION
 ALIASES
   $ sf plugins unlink
   $ sf plugins remove
+```
+
+## `sf plugins:trust:verify -n <string> [-r <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+
+Validate a digital signature for a npm package.
+
+```
+USAGE
+  $ sf plugins trust verify -n <string> [-r <string>] [--json] [--loglevel
+    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+FLAGS
+  -n, --npm=<value>                                                                 (required) Specify the npm name.
+                                                                                    This can include a tag/version.
+  -r, --registry=<value>                                                            The registry name. The behavior is
+                                                                                    the same as npm.
+  --json                                                                            format output as json
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
+                                                                                    this command invocation
+
+DESCRIPTION
+  Validate a digital signature for a npm package.
+
+EXAMPLES
+  $ sf plugins trust verify --npm @scope/npmName --registry http://my.repo.org:4874
+
+  $ sf plugins trust verify --npm @scope/npmName
 ```
 
 ## `sf plugins:uninstall PLUGIN...`
