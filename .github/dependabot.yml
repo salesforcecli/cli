@@ -3,7 +3,8 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: 'weekly'
+    versioning-strategy: 'increase'
     labels:
       - "dependencies"
     open-pull-requests-limit: 100
