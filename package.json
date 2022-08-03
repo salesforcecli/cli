@@ -46,7 +46,8 @@
       "@sf/gen",
       "@sf/info",
       "@sf/login",
-      "@sf/telemetry"
+      "@sf/telemetry",
+      "@sf/trust"
     ],
     "devPlugins": [
       "@oclif/plugin-command-snapshot",
@@ -104,6 +105,7 @@
     "@sf/info": "npm:@salesforce/plugin-info@2.0.1",
     "@sf/login": "npm:@salesforce/plugin-login@1.1.1",
     "@sf/telemetry": "npm:@salesforce/plugin-telemetry@2.0.0",
+    "@sf/trust": "npm:@salesforce/plugin-trust@2.0.2",
     "semver": "^7.3.7",
     "tslib": "^2.4.0"
   },
