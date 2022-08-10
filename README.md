@@ -32,7 +32,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/1.40.0 linux-x64 node-v14.20.0
+@salesforce/cli/1.41.0 linux-x64 node-v14.20.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -110,6 +110,7 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf run function start`](#sf-run-function-start)
 - [`sf run function start container`](#sf-run-function-start-container)
 - [`sf run function start local`](#sf-run-function-start-local)
+- [`sf search`](#sf-search)
 - [`sf update [CHANNEL]`](#sf-update-channel)
 - [`sf version`](#sf-version)
 - [`sf whatsnew [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sf-whatsnew--v-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
@@ -2842,6 +2843,22 @@ EXAMPLES
 
     $ sf run function start local --port 5000 --language javascript
 ```
+
+## `sf search`
+
+Search for a command.
+
+```
+USAGE
+  $ sf search
+
+DESCRIPTION
+  Search for a command.
+
+  Once you select a command, hit enter and it will show the help for that command.
+```
+
+_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/v0.0.1/dist/commands/search.ts)_
 
 ## `sf update [CHANNEL]`
 
