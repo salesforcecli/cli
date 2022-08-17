@@ -297,8 +297,7 @@ workflows:
   promote-to-latest:
     triggers:
       - schedule:
-          # Wednesday at 12pm mountain
-          cron: '0 18 * * 3'
+          cron: '10 17 * * 3'
           filters:
             branches:
               only:
