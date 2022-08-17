@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.42.0](https://github.com/salesforcecli/cli/compare/v1.41.0...v1.42.0) (2022-08-17)
+
 ## [1.41.0](https://github.com/salesforcecli/cli/compare/v1.40.0...v1.41.0) (2022-08-10)
 
 ## [1.40.0](https://github.com/salesforcecli/cli/compare/v1.39.0...v1.40.0) (2022-08-03)
