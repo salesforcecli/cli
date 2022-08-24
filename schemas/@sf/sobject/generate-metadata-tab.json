@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/GenerateTabResult",
+  "definitions": {
+    "GenerateTabResult": {
+      "type": "object",
+      "properties": {
+        "tab": {
+          "type": "object",
+          "properties": {
+            "customObject": {
+              "type": ["boolean", "null"]
+            },
+            "motif": {
+              "type": ["string", "null"]
+            }
+          },
+          "additionalProperties": false
+        },
+        "path": {
+          "type": "string"
+        }
+      },
+      "required": ["tab", "path"],
+      "additionalProperties": false
+    }
+  }
+}

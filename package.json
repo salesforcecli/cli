@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "1.42.0",
+  "version": "1.43.0",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run"
@@ -47,6 +47,7 @@
       "@sf/gen",
       "@sf/info",
       "@sf/login",
+      "@sf/sobject",
       "@sf/telemetry",
       "@sf/trust"
     ],
@@ -100,7 +101,7 @@
     "@salesforce/core": "^3.26.2",
     "@salesforce/sf-plugins-core": "^1.13.2",
     "@sf/config": "npm:@salesforce/plugin-config@2.3.2",
-    "@sf/deploy-retrieve": "npm:@salesforce/plugin-deploy-retrieve@1.5.2",
+    "@sf/deploy-retrieve": "npm:@salesforce/plugin-deploy-retrieve@1.5.5",
     "@sf/env": "npm:@salesforce/plugin-env@1.5.0",
     "@sf/functions": "npm:@salesforce/plugin-functions@1.13.5",
     "@sf/gen": "npm:@salesforce/plugin-generate@1.0.14",
@@ -108,6 +109,7 @@
     "@sf/login": "npm:@salesforce/plugin-login@1.1.1",
     "@sf/telemetry": "npm:@salesforce/plugin-telemetry@2.0.0",
     "@sf/trust": "npm:@salesforce/plugin-trust@2.0.2",
+    "@sf/sobject": "npm:@salesforce/plugin-sobject@0.0.8",
     "semver": "^7.3.7",
     "tslib": "^2.4.0"
   },
