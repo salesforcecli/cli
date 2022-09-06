@@ -980,10 +980,10 @@
     is-wsl "^2.1.1"
     tslib "^2.3.1"
 
-"@oclif/core@^1.0.8", "@oclif/core@^1.1.1", "@oclif/core@^1.12.1", "@oclif/core@^1.13.1", "@oclif/core@^1.13.9", "@oclif/core@^1.14.1", "@oclif/core@^1.15.0", "@oclif/core@^1.2.0", "@oclif/core@^1.2.1", "@oclif/core@^1.3.0", "@oclif/core@^1.3.1", "@oclif/core@^1.3.4", "@oclif/core@^1.3.6", "@oclif/core@^1.5.2", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.6.4", "@oclif/core@^1.7.0", "@oclif/core@^1.8.0", "@oclif/core@^1.9.0":
-  version "1.13.1"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.13.1.tgz#7c14df24097387eff0015b3a4999a2338c3fe8da"
-  integrity sha512-vIrk0qJllAu+q/nzxXWx8QHN4/+hmkYqh0Qx1V2x3Nkun18wF7HfkIzgy1Ml0ZxDv1WA9AfL4MXvgbaQxVXQ+Q==
+"@oclif/core@^1.0.8", "@oclif/core@^1.1.1", "@oclif/core@^1.12.1", "@oclif/core@^1.14.1", "@oclif/core@^1.15.0", "@oclif/core@^1.16.0", "@oclif/core@^1.2.0", "@oclif/core@^1.2.1", "@oclif/core@^1.3.0", "@oclif/core@^1.3.1", "@oclif/core@^1.3.4", "@oclif/core@^1.3.6", "@oclif/core@^1.5.2", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.6.4", "@oclif/core@^1.7.0", "@oclif/core@^1.8.0":
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.16.0.tgz#4b53261eeb0c0244700bfc9eb41159d483436f21"
+  integrity sha512-xtqhAbjQHBcz+xQpEHJ3eJEVfRQ4zl41Yw5gw/N+D1jgaIUrHTxCY/sfTvhw93LAQo7B++ozHzSb7DISFXsQFQ==
   dependencies:
     "@oclif/linewrap" "^1.0.0"
     "@oclif/screen" "^3.0.2"
@@ -1412,7 +1412,7 @@
     semver "^7.3.5"
     ts-retry-promise "^0.6.0"
 
-"@salesforce/core@^3.10.1", "@salesforce/core@^3.11.0", "@salesforce/core@^3.13.0", "@salesforce/core@^3.16.0", "@salesforce/core@^3.19.3", "@salesforce/core@^3.19.4", "@salesforce/core@^3.25.0", "@salesforce/core@^3.26.1", "@salesforce/core@^3.26.2", "@salesforce/core@^3.7.9":
+"@salesforce/core@^3.10.1", "@salesforce/core@^3.11.0", "@salesforce/core@^3.16.0", "@salesforce/core@^3.19.4", "@salesforce/core@^3.25.0", "@salesforce/core@^3.26.1", "@salesforce/core@^3.26.2", "@salesforce/core@^3.7.9":
   version "3.26.2"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.26.2.tgz#94b361bd62967feb3eedc624fc6cf444e7347f84"
   integrity sha512-GDrho8jbh1UDjcsYRRUzhNv4KUsMcBtux/yEqB2ycvHXhjVnrNkJcl99KESiU1eZMl2DGZEE1IO8yxnb2rSvgg==
@@ -1556,12 +1556,12 @@
   resolved "https://registry.npmjs.org/@salesforce/schemas/-/schemas-1.1.0.tgz"
   integrity sha512-6D7DvE6nFxpLyyTnrOIbbAeCJw2r/EpinFAcMh6gU0gA/CGfSbwV/8uR3uHLYL2zCyCZLH8jJ4dZ3BzCMqc+Eg==
 
-"@salesforce/sf-plugins-core@1.14.0", "@salesforce/sf-plugins-core@^1.12.0", "@salesforce/sf-plugins-core@^1.12.3", "@salesforce/sf-plugins-core@^1.13.2", "@salesforce/sf-plugins-core@^1.7.2", "@salesforce/sf-plugins-core@^1.9.0":
-  version "1.13.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-1.13.2.tgz#f9675265ff7e829604b0da38db6af13c73a161fe"
-  integrity sha512-7uCLtHeWOwzbVTG6fuO/luEKC5wgZpBb/1OZ5nMWwMNb8hUAUfHOaBcJmYu5f8T0/Dbnre/NVG6QcReVYaar/w==
+"@salesforce/sf-plugins-core@1.14.0", "@salesforce/sf-plugins-core@^1.13.2", "@salesforce/sf-plugins-core@^1.14.1", "@salesforce/sf-plugins-core@^1.7.2", "@salesforce/sf-plugins-core@^1.9.0":
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-1.14.1.tgz#d2cd21ecc1017d6f61b2389a4efb0e2acde17d2d"
+  integrity sha512-1Ri4k8vl6aS6QVvSkGsOPxBMm0w2rDhtzAwlEJzyt6Yi5cKSK+j3fDItEgvtXcIzwkHaXd0Z6fPCIJL5iEKStQ==
   dependencies:
-    "@oclif/core" "^1.13.9"
+    "@oclif/core" "^1.15.0"
     "@salesforce/core" "^3.25.0"
     "@salesforce/kit" "^1.5.44"
     "@salesforce/ts-types" "^1.5.20"
@@ -1609,7 +1609,7 @@
     applicationinsights "^1.4.0"
     axios "^0.27.2"
 
-"@salesforce/templates@^54.2.0", "@salesforce/templates@^54.3.0", "@salesforce/templates@^54.6.0":
+"@salesforce/templates@^54.2.0", "@salesforce/templates@^54.6.0", "@salesforce/templates@^55.1.0":
   version "54.8.0"
   resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-54.8.0.tgz#d8d6506b256b7460ea01f82725e57074783d0710"
   integrity sha512-pvrPiYP54aJGhxpUiySWE5l6bGS/f+Ww7iqThFA9gJxpR8TSDYGSk9+he6oULgkaSx4ASKIuwYXp30nLzP9fwg==
@@ -1649,12 +1649,12 @@
     chalk "^4.1.1"
     tslib "^2"
 
-"@sf/deploy-retrieve@npm:@salesforce/plugin-deploy-retrieve@1.5.5":
-  version "1.5.5"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.5.5.tgz#bcbb83af2c94706d728ebe4e5bf8db189bc3b9be"
-  integrity sha512-OyzQgRK2dd4iXvanE8acbhg3L2D4ZtH85JV8O9gkSlTtnstxRcR7EYdHBfiYKqrKmjtBS/bJItgIXL1ZvVQW+Q==
+"@sf/deploy-retrieve@npm:@salesforce/plugin-deploy-retrieve@1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.6.0.tgz#2defede7d4de27e1ec108b934a38ef7fd6c192f4"
+  integrity sha512-DHxJEUasiQDYh/gTrxHw+rLg7urn2i/xrs2GoqvYvZ1kS0YGKnSpeDPmoAKD4QGP7exYBxat+eyYbvHCUq8BBQ==
   dependencies:
-    "@oclif/core" "^1.15.0"
+    "@oclif/core" "^1.16.0"
     "@salesforce/core" "^3.26.1"
     "@salesforce/kit" "^1.5.45"
     "@salesforce/sf-plugins-core" "1.14.0"
@@ -1665,15 +1665,15 @@
     shelljs "^0.8.5"
     tslib "^2"
 
-"@sf/env@npm:@salesforce/plugin-env@1.5.0":
-  version "1.5.0"
-  resolved "https://registry.npmjs.org/@salesforce/plugin-env/-/plugin-env-1.5.0.tgz"
-  integrity sha512-8iJA2wRoJb6QNcEWIXE9c+YCVTBDvvUXN5ZYjNM/WKM16j8mlnloX7nv/UHXRo/z86MSuw2HNnd1kirVp7wXGw==
+"@sf/env@npm:@salesforce/plugin-env@1.5.3":
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-env/-/plugin-env-1.5.3.tgz#58343c7c8638dfd117491dc14e30380c5b181fba"
+  integrity sha512-KK1ajLFvGMRM/+lpniqyhdej4TFvqM3Q7LCyfXnZ4K+L1+j2T/DjzJLzzAjhhFH4E/vOpQlhUt7oJH0VqPcf3A==
   dependencies:
-    "@oclif/core" "^1.7.0"
-    "@salesforce/core" "^3.19.3"
-    "@salesforce/kit" "^1.5.41"
-    "@salesforce/sf-plugins-core" "^1.12.3"
+    "@oclif/core" "^1.16.0"
+    "@salesforce/core" "^3.26.2"
+    "@salesforce/kit" "^1.6.0"
+    "@salesforce/sf-plugins-core" "^1.14.1"
     chalk "^4"
     change-case "^4.1.2"
     open "^8.4.0"
@@ -1714,18 +1714,18 @@
     sha256-file "^1.0.0"
     uuid "^8.3.2"
 
-"@sf/gen@npm:@salesforce/plugin-generate@1.0.14":
-  version "1.0.14"
-  resolved "https://registry.npmjs.org/@salesforce/plugin-generate/-/plugin-generate-1.0.14.tgz"
-  integrity sha512-oi9l0mzK50XgUwEzgXH+U2zV5TRm+MXRHsciDGJhBzePzj5RY5zyEPIJqceTn0i67zbmGVUVFxHEYIfZLa3Dog==
+"@sf/gen@npm:@salesforce/plugin-generate@1.0.16":
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-generate/-/plugin-generate-1.0.16.tgz#a5181f776eb394126d242c083a17672d0d0ed10a"
+  integrity sha512-glNP8yi2I5FnAOblhwacLTk09Q6AdtI43R031mDoDeTR8Z5F2m6r4tRu0C7lk13wY1vrtYzV62xkGS5HoSj+yw==
   dependencies:
-    "@oclif/core" "^1.7.0"
-    "@salesforce/core" "^3.13.0"
-    "@salesforce/sf-plugins-core" "^1.12.0"
-    "@salesforce/templates" "^54.3.0"
+    "@oclif/core" "^1.16.0"
+    "@salesforce/core" "^3.26.2"
+    "@salesforce/sf-plugins-core" "^1.14.1"
+    "@salesforce/templates" "^55.1.0"
     tslib "^2"
-    yeoman-environment "^3.9.1"
-    yeoman-generator "^5.6.1"
+    yeoman-environment "^3.10.0"
+    yeoman-generator "^5.7.0"
 
 "@sf/info@npm:@salesforce/plugin-info@2.0.1":
   version "2.0.1"
@@ -1744,14 +1744,14 @@
     semver "^7.3.5"
     tslib "^2"
 
-"@sf/login@npm:@salesforce/plugin-login@1.1.1":
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/@salesforce/plugin-login/-/plugin-login-1.1.1.tgz"
-  integrity sha512-+n+m9HJUaJ6f6/0hdjVtfbRp2P3yrRc5j8M88UpshuVMzL+aYMovrs0Sax41VxjO2Y90fW+IRSSLdq6bZNFmFw==
+"@sf/login@npm:@salesforce/plugin-login@1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-login/-/plugin-login-1.1.2.tgz#665f27d46e8f1cc61225c89f94458a69075ce6b0"
+  integrity sha512-xbdL6dpgNbbsE0LAsuliG1HWrv1OPCajwdwiBQ2p5gl0D+vpAMarz1kh7t+w955NkRmN7Tqx8snbIDsb1FxD4g==
   dependencies:
-    "@oclif/core" "^1.9.0"
-    "@salesforce/core" "^3.19.3"
-    "@salesforce/sf-plugins-core" "^1.12.3"
+    "@oclif/core" "^1.16.0"
+    "@salesforce/core" "^3.26.2"
+    "@salesforce/sf-plugins-core" "^1.14.1"
     chalk "^4.1.2"
     inquirer "^8.2.1"
     open "^8.4.0"
@@ -6281,7 +6281,7 @@ isarray@^1.0.0, isarray@~1.0.0:
   resolved "https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz"
   integrity sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=
 
-isbinaryfile@^4.0.8:
+isbinaryfile@^4.0.10, isbinaryfile@^4.0.8:
   version "4.0.10"
   resolved "https://registry.npmjs.org/isbinaryfile/-/isbinaryfile-4.0.10.tgz"
   integrity sha512-iHrqe5shvBUcFbmZq9zOQHBoeOhZJu6RQGrDpBgenUm/Am+F3JM2MgQj+rK3Z601fzrL5gLZWtAPH2OBaSVcyw==
@@ -11276,6 +11276,48 @@ yeoman-environment@3.9.1, yeoman-environment@^3.9.1:
     textextensions "^5.12.0"
     untildify "^4.0.0"
 
+yeoman-environment@^3.10.0:
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-3.10.0.tgz#d8c56571b68d16b4af8abfb950f83acc503eed77"
+  integrity sha512-sYtSxBK9daq21QjoskJTHKLQ1xEsRPURkmFV/aM8HS8ZlQVzwx57Rz1zCs8EGPhK4vqsmTE8H92Gp1jg1fT3EA==
+  dependencies:
+    "@npmcli/arborist" "^4.0.4"
+    are-we-there-yet "^2.0.0"
+    arrify "^2.0.1"
+    binaryextensions "^4.15.0"
+    chalk "^4.1.0"
+    cli-table "^0.3.1"
+    commander "7.1.0"
+    dateformat "^4.5.0"
+    debug "^4.1.1"
+    diff "^5.0.0"
+    error "^10.4.0"
+    escape-string-regexp "^4.0.0"
+    execa "^5.0.0"
+    find-up "^5.0.0"
+    globby "^11.0.1"
+    grouped-queue "^2.0.0"
+    inquirer "^8.0.0"
+    is-scoped "^2.1.0"
+    isbinaryfile "^4.0.10"
+    lodash "^4.17.10"
+    log-symbols "^4.0.0"
+    mem-fs "^1.2.0 || ^2.0.0"
+    mem-fs-editor "^8.1.2 || ^9.0.0"
+    minimatch "^3.0.4"
+    npmlog "^5.0.1"
+    p-queue "^6.6.2"
+    p-transform "^1.3.0"
+    pacote "^12.0.2"
+    preferred-pm "^3.0.3"
+    pretty-bytes "^5.3.0"
+    semver "^7.1.3"
+    slash "^3.0.0"
+    strip-ansi "^6.0.0"
+    text-table "^0.2.0"
+    textextensions "^5.12.0"
+    untildify "^4.0.0"
+
 yeoman-environment@~3.3.0:
   version "3.3.0"
   resolved "https://registry.npmjs.org/yeoman-environment/-/yeoman-environment-3.3.0.tgz"
@@ -11325,6 +11367,25 @@ yeoman-generator@^5.6.1:
     dargs "^7.0.0"
     debug "^4.1.1"
     execa "^4.1.0"
+    github-username "^6.0.0"
+    lodash "^4.17.11"
+    minimist "^1.2.5"
+    read-pkg-up "^7.0.1"
+    run-async "^2.0.0"
+    semver "^7.2.1"
+    shelljs "^0.8.5"
+    sort-keys "^4.2.0"
+    text-table "^0.2.0"
+
+yeoman-generator@^5.7.0:
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/yeoman-generator/-/yeoman-generator-5.7.0.tgz#5cf24b9fca331646263749121d4f8d477698a83a"
+  integrity sha512-z9ZwgKoDOd+llPDCwn8Ax2l4In5FMhlslxdeByW4AMxhT+HbTExXKEAahsClHSbwZz1i5OzRwLwRIUdOJBr5Bw==
+  dependencies:
+    chalk "^4.1.0"
+    dargs "^7.0.0"
+    debug "^4.1.1"
+    execa "^5.1.1"
     github-username "^6.0.0"
     lodash "^4.17.11"
     minimist "^1.2.5"
