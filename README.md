@@ -32,7 +32,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/1.44.0 linux-x64 node-v14.20.0
+@salesforce/cli/1.45.0 linux-x64 node-v14.20.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -182,11 +182,11 @@ EXAMPLES
     $ sf config get target-org api-version --verbose
 
 CONFIGURATION VARIABLES
-  apiVersion        API version of your project. Default: API version of your Dev Hub org.
-  disableTelemetry  Disables the collection of usage and user environment information, etc. Default: true.
-  instanceUrl       URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com.
-  maxQueryLimit     Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
-  restDeploy        Whether deployments use the Metadata REST API (true) or SOAP API (false, default value).
+  apiVersion        API version of your project. Default: API version of your Dev Hub org. (sfdx only)
+  disableTelemetry  Disables the collection of usage and user environment information, etc. Default: false. (sfdx only)
+  instanceUrl       URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com. (sfdx only)
+  maxQueryLimit     Maximum number of Salesforce records returned by a CLI command. Default: 10,000. (sfdx only)
+  restDeploy        Whether deployments use the Metadata REST API (true) or SOAP API (false, default value). (sfdx only)
   target-org        Username or alias of the org that all commands run against by default. (sf only)
   target-dev-hub    Username or alias of your default Dev Hub org. (sf only)
 ```
@@ -262,11 +262,11 @@ EXAMPLES
     $ sf config set --global target-org=my-scratch-org
 
 CONFIGURATION VARIABLES
-  apiVersion        API version of your project. Default: API version of your Dev Hub org.
-  disableTelemetry  Disables the collection of usage and user environment information, etc. Default: true.
-  instanceUrl       URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com.
-  maxQueryLimit     Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
-  restDeploy        Whether deployments use the Metadata REST API (true) or SOAP API (false, default value).
+  apiVersion        API version of your project. Default: API version of your Dev Hub org. (sfdx only)
+  disableTelemetry  Disables the collection of usage and user environment information, etc. Default: false. (sfdx only)
+  instanceUrl       URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com. (sfdx only)
+  maxQueryLimit     Maximum number of Salesforce records returned by a CLI command. Default: 10,000. (sfdx only)
+  restDeploy        Whether deployments use the Metadata REST API (true) or SOAP API (false, default value). (sfdx only)
   target-org        Username or alias of the org that all commands run against by default. (sf only)
   target-dev-hub    Username or alias of your default Dev Hub org. (sf only)
 ```
@@ -301,11 +301,11 @@ EXAMPLES
     $ sf config unset target-org api-version --global
 
 CONFIGURATION VARIABLES
-  apiVersion        API version of your project. Default: API version of your Dev Hub org.
-  disableTelemetry  Disables the collection of usage and user environment information, etc. Default: true.
-  instanceUrl       URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com.
-  maxQueryLimit     Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
-  restDeploy        Whether deployments use the Metadata REST API (true) or SOAP API (false, default value).
+  apiVersion        API version of your project. Default: API version of your Dev Hub org. (sfdx only)
+  disableTelemetry  Disables the collection of usage and user environment information, etc. Default: false. (sfdx only)
+  instanceUrl       URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com. (sfdx only)
+  maxQueryLimit     Maximum number of Salesforce records returned by a CLI command. Default: 10,000. (sfdx only)
+  restDeploy        Whether deployments use the Metadata REST API (true) or SOAP API (false, default value). (sfdx only)
   target-org        Username or alias of the org that all commands run against by default. (sf only)
   target-dev-hub    Username or alias of your default Dev Hub org. (sf only)
 ```
@@ -352,7 +352,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.5.5/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.6.0/src/commands/deploy.ts)_
 
 ## `sf deploy functions`
 
@@ -1120,15 +1120,13 @@ FLAGS
   -a, --alias=<value>                                        Alias for the sandbox org.
   -c, --clone=<value>                                        Name of the sandbox org to clone.
   -f, --definition-file=<value>                              Path to a sandbox definition file.
-  -i, --poll-interval=<seconds>                              [default: [object Object]] Number of seconds to wait
-                                                             between retries.
+  -i, --poll-interval=<seconds>                              Number of seconds to wait between retries.
   -l, --license-type=(Developer|Developer_Pro|Partial|Full)  [default: Developer] Type of sandbox license.
   -n, --name=<value>                                         Name of the sandbox org.
   -o, --target-org=<value>                                   Username or alias of the production org that contains the
                                                              sandbox license.
   -s, --set-default                                          Set the sandbox org as your default org.
-  -w, --wait=<minutes>                                       [default: [object Object]] Number of minutes to wait for
-                                                             the sandbox org to be ready.
+  -w, --wait=<minutes>                                       Number of minutes to wait for the sandbox org to be ready.
   --async                                                    Request the sandbox creation, but don't wait for it to
                                                              complete.
   --no-prompt                                                Don't prompt for confirmation about the sandbox
@@ -1232,8 +1230,8 @@ FLAGS
   -t, --[no-]track-source        Use source tracking for this scratch org. Set --no-track-source to disable source
                                  tracking.
   -v, --target-dev-hub=<value>   Username or alias of the Dev Hub org.
-  -w, --wait=<minutes>           [default: [object Object]] Number of minutes to wait for the scratch org to be ready.
-  -y, --duration-days=<days>     [default: [object Object]] Number of days before the org expires.
+  -w, --wait=<minutes>           Number of minutes to wait for the scratch org to be ready.
+  -y, --duration-days=<days>     Number of days before the org expires.
   --api-version=<value>          Override the api version used for api requests made by this command
   --async                        Request the org, but don't wait for it to complete.
 
@@ -2257,7 +2255,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.1.1/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.1.2/src/commands/login.ts)_
 
 ## `sf login functions`
 
@@ -2526,7 +2524,7 @@ EXAMPLES
     $ sf logout --no-prompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.1.1/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.1.2/src/commands/logout.ts)_
 
 ## `sf logout functions`
 
@@ -2847,20 +2845,24 @@ Retrieve metadata in source format from an org to your local project.
 
 ```
 USAGE
-  $ sf retrieve metadata [--json] [-a <value>] [-c] [-x <value> | -m <value> | -d <value>] [-n <value>] [-o <value>]
-    [-w <value>]
+  $ sf retrieve metadata [--json] [-a <value>] [-c] [-x <value> | -m <value> | -d <value>] [-n <value>]
+    [--single-package -t <value>] [-o <value>] [-w <value>] [-z ] [--zip-file-name <value> ]
 
 FLAGS
-  -a, --api-version=<value>      Target API version for the retrieve.
-  -c, --ignore-conflicts         Ignore conflicts and retrieve and save files to your local filesystem, even if they
-                                 overwrite your local changes.
-  -d, --source-dir=<value>...    File paths for source to retrieve from the org.
-  -m, --metadata=<value>...      Metadata component names to retrieve.
-  -n, --package-name=<value>...  Package names to retrieve.
-  -o, --target-org=<value>       Login username or alias for the target org.
-  -w, --wait=<value>             Number of minutes to wait for the command to complete and display results to the
-                                 terminal window.
-  -x, --manifest=<value>         File path for the manifest (package.xml) that specifies the components to retrieve.
+  -a, --api-version=<value>          Target API version for the retrieve.
+  -c, --ignore-conflicts             Ignore conflicts and retrieve and save files to your local filesystem, even if they
+                                     overwrite your local changes.
+  -d, --source-dir=<value>...        File paths for source to retrieve from the org.
+  -m, --metadata=<value>...          Metadata component names to retrieve.
+  -n, --package-name=<value>...      Package names to retrieve.
+  -o, --target-org=<value>           Login username or alias for the target org.
+  -t, --target-metadata-dir=<value>  Directory root for the retrieved files.
+  -w, --wait=<value>                 Number of minutes to wait for the command to complete and display results to the
+                                     terminal window.
+  -x, --manifest=<value>             File path for the manifest (package.xml) that specifies the components to retrieve.
+  -z, --unzip                        Extract all files from the retrieved zip file.
+  --single-package                   Indicates that the zip file points to a directory structure for a single package.
+  --zip-file-name=<value>            File name to use for the retrieved zip file.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -2917,6 +2919,14 @@ EXAMPLES
 
     $ sf retrieve metadata --package-name Package1 "PackageName With Spaces" Package3
     $ sf retrieve metadata --package-name Package1 --package-name "PackageName With Spaces" --package-name Package3
+
+  Retrieve using Metadata API
+
+    $ sf retrieve metadata --source-dir force-app --target-metadata-dir output
+
+  Retrieve using Metadata API and automatically unzip the contents
+
+    $ sf retrieve metadata --source-dir force-app --target-metadata-dir output --unzip
 
 FLAG DESCRIPTIONS
   -a, --api-version=<value>  Target API version for the retrieve.
@@ -3208,7 +3218,7 @@ FLAG DESCRIPTIONS
     Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
 ```
 
-_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v1.1.1/src/commands/version.ts)_
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v1.1.2/src/commands/version.ts)_
 
 ## `sf whatsnew [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
