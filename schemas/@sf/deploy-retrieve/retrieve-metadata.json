@@ -3,59 +3,66 @@
   "$ref": "#/definitions/RetrieveResultJson",
   "definitions": {
     "RetrieveResultJson": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "files": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/FileResponse"
-          }
-        },
-        "done": {
-          "type": "boolean"
-        },
-        "fileProperties": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/FileProperties"
-            },
-            {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "files": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/FileProperties"
-              }
-            }
-          ]
-        },
-        "id": {
-          "type": "string"
-        },
-        "status": {
-          "$ref": "#/definitions/RequestStatus"
-        },
-        "success": {
-          "type": "boolean"
-        },
-        "messages": {
-          "anyOf": [
-            {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/RetrieveMessage"
+                "$ref": "#/definitions/FileResponse"
               }
             },
-            {
-              "$ref": "#/definitions/RetrieveMessage"
+            "done": {
+              "type": "boolean"
+            },
+            "fileProperties": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/FileProperties"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/FileProperties"
+                  }
+                }
+              ]
+            },
+            "id": {
+              "type": "string"
+            },
+            "status": {
+              "$ref": "#/definitions/RequestStatus"
+            },
+            "success": {
+              "type": "boolean"
+            },
+            "messages": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/RetrieveMessage"
+                  }
+                },
+                {
+                  "$ref": "#/definitions/RetrieveMessage"
+                }
+              ]
+            },
+            "zipFile": {
+              "type": "string",
+              "description": "`base64` encoded string"
             }
-          ]
+          },
+          "required": ["done", "fileProperties", "files", "id", "status", "success", "zipFile"]
         },
-        "zipFile": {
-          "type": "string",
-          "description": "`base64` encoded string"
+        {
+          "$ref": "#/definitions/MetadataRetrieveResultJson"
         }
-      },
-      "required": ["done", "fileProperties", "files", "id", "status", "success", "zipFile"]
+      ]
     },
     "FileResponse": {
       "anyOf": [
@@ -194,6 +201,60 @@
       },
       "required": ["fileName", "problem"],
       "additionalProperties": false
+    },
+    "MetadataRetrieveResultJson": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "zipFilePath": {
+          "type": "string"
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FileResponse"
+          }
+        },
+        "done": {
+          "type": "boolean"
+        },
+        "fileProperties": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/FileProperties"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/FileProperties"
+              }
+            }
+          ]
+        },
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/RequestStatus"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "messages": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RetrieveMessage"
+              }
+            },
+            {
+              "$ref": "#/definitions/RetrieveMessage"
+            }
+          ]
+        }
+      },
+      "required": ["done", "fileProperties", "files", "id", "status", "success", "zipFilePath"]
     }
   }
 }
