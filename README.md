@@ -32,7 +32,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/1.45.0 linux-x64 node-v14.20.0
+@salesforce/cli/1.46.0 linux-x64 node-v14.20.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -352,7 +352,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.6.0/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.6.1/src/commands/deploy.ts)_
 
 ## `sf deploy functions`
 
@@ -394,7 +394,7 @@ EXAMPLES
 
 ## `sf deploy metadata`
 
-Deploy metadata in source format to an org from your local project.
+Deploy metadata to an org from your local project.
 
 ```
 USAGE
@@ -427,9 +427,13 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Deploy metadata in source format to an org from your local project.
+  Deploy metadata to an org from your local project.
 
   You must run this command from within a project.
+
+  Metadata components are deployed in source format by default. Deploy them in metadata format by specifying the
+  --metadata-dir flag, which specifies the root directory or ZIP file that contains the metadata formatted files you
+  want to deploy.
 
   If your org allows source tracking, then this command tracks the changes in your source. Some orgs, such as production
   org, never allow source tracking. You can also use the "--no-track-source" flag when you create a scratch or sandbox
@@ -2841,7 +2845,7 @@ DESCRIPTION
 
 ## `sf retrieve metadata`
 
-Retrieve metadata in source format from an org to your local project.
+Retrieve metadata from an org to your local project.
 
 ```
 USAGE
@@ -2856,7 +2860,7 @@ FLAGS
   -m, --metadata=<value>...          Metadata component names to retrieve.
   -n, --package-name=<value>...      Package names to retrieve.
   -o, --target-org=<value>           Login username or alias for the target org.
-  -t, --target-metadata-dir=<value>  Directory root for the retrieved files.
+  -t, --target-metadata-dir=<value>  Directory that will contain the retrieved metadata format files or ZIP.
   -w, --wait=<value>                 Number of minutes to wait for the command to complete and display results to the
                                      terminal window.
   -x, --manifest=<value>             File path for the manifest (package.xml) that specifies the components to retrieve.
@@ -2868,9 +2872,12 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Retrieve metadata in source format from an org to your local project.
+  Retrieve metadata from an org to your local project.
 
   You must run this command from within a project.
+
+  Metadata components are retrieved in source format by default. Retrieve them in metadata format by specifying the
+  --target-metadata-dir flag, which retrieves the components into a ZIP file in the specified directory.
 
   If your org allows source tracking, then this command tracks the changes in your source. Some orgs, such as production
   org, never allow source tracking. You can also use the "--no-track-source" flag when you create a scratch or sandbox
@@ -2920,11 +2927,12 @@ EXAMPLES
     $ sf retrieve metadata --package-name Package1 "PackageName With Spaces" Package3
     $ sf retrieve metadata --package-name Package1 --package-name "PackageName With Spaces" --package-name Package3
 
-  Retrieve using Metadata API
+  Retrieve the metadata components listed in the force-app directory, but retrieve them in metadata format into a ZIP
+  file in the "output" directory:
 
     $ sf retrieve metadata --source-dir force-app --target-metadata-dir output
 
-  Retrieve using Metadata API and automatically unzip the contents
+  Retrieve in metadata format and automatically extract the contents into the "output" directory:
 
     $ sf retrieve metadata --source-dir force-app --target-metadata-dir output --unzip
 
