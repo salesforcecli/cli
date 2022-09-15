@@ -19,25 +19,25 @@
   },
   {
     "command": "config:get",
-    "plugin": "@salesforce/plugin-config",
+    "plugin": "@salesforce/plugin-settings",
     "flags": ["json", "verbose"],
     "alias": []
   },
   {
     "command": "config:list",
-    "plugin": "@salesforce/plugin-config",
+    "plugin": "@salesforce/plugin-settings",
     "flags": ["json"],
     "alias": []
   },
   {
     "command": "config:set",
-    "plugin": "@salesforce/plugin-config",
+    "plugin": "@salesforce/plugin-settings",
     "flags": ["global", "json"],
     "alias": []
   },
   {
     "command": "config:unset",
-    "plugin": "@salesforce/plugin-config",
+    "plugin": "@salesforce/plugin-settings",
     "flags": ["global", "json"],
     "alias": []
   },
