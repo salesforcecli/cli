@@ -32,7 +32,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/1.42.0 linux-x64 node-v14.20.0
+@salesforce/cli/1.46.0 linux-x64 node-v14.20.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -58,6 +58,7 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf deploy functions`](#sf-deploy-functions)
 - [`sf deploy metadata`](#sf-deploy-metadata)
 - [`sf deploy metadata cancel`](#sf-deploy-metadata-cancel)
+- [`sf deploy metadata preview`](#sf-deploy-metadata-preview)
 - [`sf deploy metadata quick`](#sf-deploy-metadata-quick)
 - [`sf deploy metadata report`](#sf-deploy-metadata-report)
 - [`sf deploy metadata resume`](#sf-deploy-metadata-resume)
@@ -84,6 +85,10 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf env var set`](#sf-env-var-set)
 - [`sf env var unset`](#sf-env-var-unset)
 - [`sf generate function`](#sf-generate-function)
+- [`sf generate metadata field`](#sf-generate-metadata-field)
+- [`sf generate metadata platformevent`](#sf-generate-metadata-platformevent)
+- [`sf generate metadata sobject`](#sf-generate-metadata-sobject)
+- [`sf generate metadata tab`](#sf-generate-metadata-tab)
 - [`sf generate project`](#sf-generate-project)
 - [`sf help [COMMAND]`](#sf-help-command)
 - [`sf info:releasenotes:display [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sf-inforeleasenotesdisplay--v-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
@@ -106,6 +111,7 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin-2)
 - [`sf plugins update`](#sf-plugins-update)
 - [`sf retrieve metadata`](#sf-retrieve-metadata)
+- [`sf retrieve metadata preview`](#sf-retrieve-metadata-preview)
 - [`sf run function`](#sf-run-function)
 - [`sf run function start`](#sf-run-function-start)
 - [`sf run function start container`](#sf-run-function-start-container)
@@ -176,11 +182,11 @@ EXAMPLES
     $ sf config get target-org api-version --verbose
 
 CONFIGURATION VARIABLES
-  apiVersion        API version of your project. Default: API version of your Dev Hub org.
-  disableTelemetry  Disables the collection of usage and user environment information, etc. Default: true.
-  instanceUrl       URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com.
-  maxQueryLimit     Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
-  restDeploy        Whether deployments use the Metadata REST API (true) or SOAP API (false, default value).
+  apiVersion        API version of your project. Default: API version of your Dev Hub org. (sfdx only)
+  disableTelemetry  Disables the collection of usage and user environment information, etc. Default: false. (sfdx only)
+  instanceUrl       URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com. (sfdx only)
+  maxQueryLimit     Maximum number of Salesforce records returned by a CLI command. Default: 10,000. (sfdx only)
+  restDeploy        Whether deployments use the Metadata REST API (true) or SOAP API (false, default value). (sfdx only)
   target-org        Username or alias of the org that all commands run against by default. (sf only)
   target-dev-hub    Username or alias of your default Dev Hub org. (sf only)
 ```
@@ -256,11 +262,11 @@ EXAMPLES
     $ sf config set --global target-org=my-scratch-org
 
 CONFIGURATION VARIABLES
-  apiVersion        API version of your project. Default: API version of your Dev Hub org.
-  disableTelemetry  Disables the collection of usage and user environment information, etc. Default: true.
-  instanceUrl       URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com.
-  maxQueryLimit     Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
-  restDeploy        Whether deployments use the Metadata REST API (true) or SOAP API (false, default value).
+  apiVersion        API version of your project. Default: API version of your Dev Hub org. (sfdx only)
+  disableTelemetry  Disables the collection of usage and user environment information, etc. Default: false. (sfdx only)
+  instanceUrl       URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com. (sfdx only)
+  maxQueryLimit     Maximum number of Salesforce records returned by a CLI command. Default: 10,000. (sfdx only)
+  restDeploy        Whether deployments use the Metadata REST API (true) or SOAP API (false, default value). (sfdx only)
   target-org        Username or alias of the org that all commands run against by default. (sf only)
   target-dev-hub    Username or alias of your default Dev Hub org. (sf only)
 ```
@@ -295,11 +301,11 @@ EXAMPLES
     $ sf config unset target-org api-version --global
 
 CONFIGURATION VARIABLES
-  apiVersion        API version of your project. Default: API version of your Dev Hub org.
-  disableTelemetry  Disables the collection of usage and user environment information, etc. Default: true.
-  instanceUrl       URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com.
-  maxQueryLimit     Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
-  restDeploy        Whether deployments use the Metadata REST API (true) or SOAP API (false, default value).
+  apiVersion        API version of your project. Default: API version of your Dev Hub org. (sfdx only)
+  disableTelemetry  Disables the collection of usage and user environment information, etc. Default: false. (sfdx only)
+  instanceUrl       URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com. (sfdx only)
+  maxQueryLimit     Maximum number of Salesforce records returned by a CLI command. Default: 10,000. (sfdx only)
+  restDeploy        Whether deployments use the Metadata REST API (true) or SOAP API (false, default value). (sfdx only)
   target-org        Username or alias of the org that all commands run against by default. (sf only)
   target-dev-hub    Username or alias of your default Dev Hub org. (sf only)
 ```
@@ -346,7 +352,7 @@ EXAMPLES
     $ sf deploy --interactive
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.5.2/src/commands/deploy.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/v1.6.1/src/commands/deploy.ts)_
 
 ## `sf deploy functions`
 
@@ -388,7 +394,7 @@ EXAMPLES
 
 ## `sf deploy metadata`
 
-Deploy metadata in source format to an org from your local project.
+Deploy metadata to an org from your local project.
 
 ```
 USAGE
@@ -407,8 +413,7 @@ FLAGS
   -o, --target-org=<value>     Login username or alias for the target org.
   -r, --ignore-errors          Ignore any errors and don’t roll back deployment.
   -t, --tests=<value>...       Apex tests to run when --test-level is RunSpecifiedTests.
-  -w, --wait=<minutes>         [default: [object Object]] Number of minutes to wait for command to complete and display
-                               results.
+  -w, --wait=<minutes>         Number of minutes to wait for command to complete and display results.
   -x, --manifest=<value>       Full file path for manifest (package.xml) of components to deploy.
   --async                      Run the command asynchronously.
   --concise                    Show concise output of the deploy result.
@@ -422,9 +427,13 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Deploy metadata in source format to an org from your local project.
+  Deploy metadata to an org from your local project.
 
   You must run this command from within a project.
+
+  Metadata components are deployed in source format by default. Deploy them in metadata format by specifying the
+  --metadata-dir flag, which specifies the root directory or ZIP file that contains the metadata formatted files you
+  want to deploy.
 
   If your org allows source tracking, then this command tracks the changes in your source. Some orgs, such as production
   org, never allow source tracking. You can also use the "--no-track-source" flag when you create a scratch or sandbox
@@ -476,8 +485,8 @@ EXAMPLES
 FLAG DESCRIPTIONS
   -a, --api-version=<value>  Target API version for the deploy.
 
-    Use this flag to override the default API version, which is the latest version supported the CLI, with the API
-    version of your package.xml file.
+    Use this flag to override the default API version with the API version of your package.xml file. The default API
+    version is the latest version supported by the CLI.
 
   -c, --ignore-conflicts  Ignore conflicts and deploy local files, even if they overwrite changes in the org.
 
@@ -632,6 +641,83 @@ FLAG DESCRIPTIONS
     deploy metadata report".
 ```
 
+## `sf deploy metadata preview`
+
+Preview a deployment to see what will deploy to the org, the potential conflicts, and the ignored files.
+
+```
+USAGE
+  $ sf deploy metadata preview [--json] [-c] [-x <value> | -d <value> | -m <value>] [-o <value>]
+
+FLAGS
+  -c, --ignore-conflicts       Ignore conflicts and deploy local files, even if they overwrite changes in the org.
+  -d, --source-dir=<value>...  Path to the local source files to preview.
+  -m, --metadata=<value>...    Metadata component names to preview.
+  -o, --target-org=<value>     Login username or alias for the target org.
+  -x, --manifest=<value>       Full file path for manifest (package.xml) of components to preview.
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Preview a deployment to see what will deploy to the org, the potential conflicts, and the ignored files.
+
+  You must run this command from within a project.
+
+  The command outputs a table that describes what will happen if you run the "sf deploy metadata" command. The table
+  lists the metadata components that will be deployed and deleted. The table also lists the current conflicts between
+  files in your local project and components in the org. Finally, the table lists the files that won't be deployed
+  because they're included in your .forceignore file.
+
+  If your org allows source tracking, then this command considers conflicts between the org and local. Some orgs, such
+  as production orgs, never allow source tracking. Use the "--no-track-source" flag when you create a scratch or sandbox
+  org to disable source tracking.
+
+  To preview the deployment of multiple metadata components, either set multiple --metadata <name> flags or a single
+  --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double
+  quotes. The same syntax applies to --manifest and --source-dir.
+
+EXAMPLES
+  NOTE: The commands to preview a deployment and actually deploy it use similar flags. We provide a few preview examples here, but see the help for "sf deploy metadata" for more examples that you can adapt for previewing.
+
+  Preview the deployment of source files in a directory, such as force-app:
+
+    $ sf deploy metadata preview  --source-dir force-app
+
+  Preview the deployment of all Apex classes:
+
+    $ sf deploy metadata preview --metadata ApexClass
+
+  Preview deployment of a specific Apex class:
+
+    $ sf deploy metadata preview --metadata ApexClass:MyApexClass
+
+  Preview deployment of all components listed in a manifest:
+
+    $ sf deploy metadata preview --manifest path/to/package.xml
+
+FLAG DESCRIPTIONS
+  -c, --ignore-conflicts  Ignore conflicts and deploy local files, even if they overwrite changes in the org.
+
+    This flag applies only to orgs that allow source tracking. It has no effect on orgs that don't allow it, such as
+    production orgs.
+
+  -d, --source-dir=<value>...  Path to the local source files to preview.
+
+    The supplied path can be to a single file (in which case the operation is applied to only one file) or to a folder
+    (in which case the operation is applied to all metadata types in the directory and its subdirectories).
+
+    If you specify this flag, don’t specify --metadata or --manifest.
+
+  -o, --target-org=<value>  Login username or alias for the target org.
+
+    Overrides your default org.
+
+  -x, --manifest=<value>  Full file path for manifest (package.xml) of components to preview.
+
+    All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
+```
+
 ## `sf deploy metadata quick`
 
 Quickly deploy a validated deployment to an org.
@@ -644,8 +730,7 @@ FLAGS
   -i, --job-id=<value>      Job ID of the deployment you want to quick deploy.
   -o, --target-org=<value>  Login username or alias for the target org.
   -r, --use-most-recent     Use the job ID of the most recently validated deployment.
-  -w, --wait=<minutes>      [default: [object Object]] Number of minutes to wait for the command to complete and display
-                            results.
+  -w, --wait=<minutes>      Number of minutes to wait for the command to complete and display results.
   --async                   Run the command asynchronously.
   --concise                 Show concise output of the deploy result.
   --verbose                 Show verbose output of the deploy result.
@@ -855,8 +940,7 @@ FLAGS
   -m, --metadata=<value>...    Metadata component names to validate for deployment.
   -o, --target-org=<value>     Login username or alias for the target org.
   -t, --tests=<value>...       Apex tests to run when --test-level is RunSpecifiedTests.
-  -w, --wait=<minutes>         [default: [object Object]] Number of minutes to wait for the command to complete and
-                               display results.
+  -w, --wait=<minutes>         Number of minutes to wait for the command to complete and display results.
   -x, --manifest=<value>       Full file path for manifest (package.xml) of components to validate for deployment.
   --async                      Run the command asynchronously.
   --concise                    Show concise output of the validation result.
@@ -907,8 +991,8 @@ EXAMPLES
 FLAG DESCRIPTIONS
   -a, --api-version=<value>  Target API version for the validation.
 
-    Use this flag to override the default API version, which is the latest version supported the CLI, with the API
-    version in your package.xml file.
+    Use this flag to override the default API version with the API version of your package.xml file. The default API
+    version is the latest version supported by the CLI.
 
   -d, --source-dir=<value>...  Path to the local source files to validate for deployment.
 
@@ -1040,15 +1124,13 @@ FLAGS
   -a, --alias=<value>                                        Alias for the sandbox org.
   -c, --clone=<value>                                        Name of the sandbox org to clone.
   -f, --definition-file=<value>                              Path to a sandbox definition file.
-  -i, --poll-interval=<seconds>                              [default: [object Object]] Number of seconds to wait
-                                                             between retries.
+  -i, --poll-interval=<seconds>                              Number of seconds to wait between retries.
   -l, --license-type=(Developer|Developer_Pro|Partial|Full)  [default: Developer] Type of sandbox license.
   -n, --name=<value>                                         Name of the sandbox org.
   -o, --target-org=<value>                                   Username or alias of the production org that contains the
                                                              sandbox license.
   -s, --set-default                                          Set the sandbox org as your default org.
-  -w, --wait=<minutes>                                       [default: [object Object]] Number of minutes to wait for
-                                                             the sandbox org to be ready.
+  -w, --wait=<minutes>                                       Number of minutes to wait for the sandbox org to be ready.
   --async                                                    Request the sandbox creation, but don't wait for it to
                                                              complete.
   --no-prompt                                                Don't prompt for confirmation about the sandbox
@@ -1152,8 +1234,8 @@ FLAGS
   -t, --[no-]track-source        Use source tracking for this scratch org. Set --no-track-source to disable source
                                  tracking.
   -v, --target-dev-hub=<value>   Username or alias of the Dev Hub org.
-  -w, --wait=<minutes>           [default: [object Object]] Number of minutes to wait for the scratch org to be ready.
-  -y, --duration-days=<days>     [default: [object Object]] Number of days before the org expires.
+  -w, --wait=<minutes>           Number of minutes to wait for the scratch org to be ready.
+  -y, --duration-days=<days>     Number of days before the org expires.
   --api-version=<value>          Override the api version used for api requests made by this command
   --async                        Request the org, but don't wait for it to complete.
 
@@ -1835,6 +1917,167 @@ EXAMPLES
     $ sf generate function --function-name myfunction --language javascript
 ```
 
+## `sf generate metadata field`
+
+Generate metadata source files for a new custom field on a specified object.
+
+```
+USAGE
+  $ sf generate metadata field -l <value> [-o <value>]
+
+FLAGS
+  -l, --label=<value>   (required) The field's label.
+  -o, --object=<value>  The directory that contains the object's source files.
+
+DESCRIPTION
+  Generate metadata source files for a new custom field on a specified object.
+
+  This command is interactive and must be run in a Salesforce DX project directory. You're required to specify the
+  field's label with the "--label" flag. The command uses this label to provide intelligent suggestions for other field
+  properties, such as its API name.
+
+  You can generate a custom field on either a standard object, such as Account, or a custom object. In both cases, the
+  source files for the object must already exist in your local project before you run this command. If you create a
+  relationship field, the source files for the parent object must also exist in your local directory.  Use the command
+  "sf metadata retrieve -m CustomObject:<object>" to retrieve source files for both standard and custom objects from
+  your org.  To create a custom object, run the "sf generate metadata sobject" command or use the Object Manager UI in
+  your Salesforce org.
+
+EXAMPLES
+  Create a field with the specified label; the command prompts you for the object:
+
+    $ sf generate metadata field --label "My Field"
+
+  Specify the local path to the object's folder:
+
+    $ sf generate metadata field --label "My Field" --object force-app/main/default/objects/MyObject__c
+
+FLAG DESCRIPTIONS
+  -o, --object=<value>  The directory that contains the object's source files.
+
+    The object source files in your local project are grouped in a directoy with the same name as the object. Custom
+    object names always end in "__c". An example of the object directory for the Account standard object is
+    "force-app/main/default/objects/Account" An example custom object directory is
+    "force-app/main/default/objects/MyObject__c"
+
+    If you don't specify this flag, the command prompts you to choose from your local objects.
+```
+
+## `sf generate metadata platformevent`
+
+Generate metadata source files for a new platform event.
+
+```
+USAGE
+  $ sf generate metadata platformevent -l <value>
+
+FLAGS
+  -l, --label=<value>  (required) The platform event's label.
+
+DESCRIPTION
+  Generate metadata source files for a new platform event.
+
+  This command is interactive and must be run in a Salesforce DX project directory. You're required to specify the
+  event's label with the "--label" flag. The command uses this label to provide intelligent suggestions for other event
+  properties, such as its API name.
+
+EXAMPLES
+  Create a platform event with the specified label:
+
+    $ sf generate metadata platformevent --label "My Platform Event"
+```
+
+## `sf generate metadata sobject`
+
+Generate metadata source files for a new custom object.
+
+```
+USAGE
+  $ sf generate metadata sobject -l <value> [-f]
+
+FLAGS
+  -f, --use-default-features  Enable all optional features without prompting.
+  -l, --label=<value>         (required) The custom object's label.
+
+DESCRIPTION
+  Generate metadata source files for a new custom object.
+
+  This command is interactive and must be run in a Salesforce DX project directory. You're required to specify the
+  object's label with the "--label" flag. The command uses this label to provide intelligent suggestions for other
+  object properties, such as its API name and plural label.
+
+  All Salesforce objects are required to have a Name field, so this command also prompts you for the label and type of
+  the Name field. Run the "sf metadata generate field" command to create additional fields for the object.
+
+  To reduce the number of prompts, use the "--use-default-features" flag to automatically enable some features, such as
+  reporting and search on the object.
+
+EXAMPLES
+  Create a custom object with the specified label and be prompted for additional information:
+
+    $ sf generate metadata sobject --label "My Object"
+
+  Create a custom object and enable optional features without prompting:
+
+    $ sf generate metadata sobject --label "My Object" --use-default-features
+
+FLAG DESCRIPTIONS
+  -f, --use-default-features  Enable all optional features without prompting.
+
+    Enables these features:
+
+    * Search: Allows users to find the custom object's records when they search, including SOSL.
+    * Feeds: Enables feed tracking.
+    * Reports: Allows reporting of the data in the custom object records.
+    * History: Enables object history tracking.
+    * Activities: Allows users to associate tasks and scheduled calendar events related to the custom object records.
+    * Bulk API: With Sharing and Streaming API, classifies the custom object as an Enterprise Application object.
+    * Sharing: With Bulk API and Streaming API, classifies the custom object as an Enterprise Application object.
+    * Streaming API: With Bulk API and Sharing, classifies the custom object as an Enterprise Application object.
+```
+
+## `sf generate metadata tab`
+
+Generate the metadata source files for a new custom tab on a custom object.
+
+```
+USAGE
+  $ sf generate metadata tab -o <value> -d <value> -i <value> [--json]
+
+FLAGS
+  -d, --directory=<value>  (required) Path to a "tabs" directory that will contain the source files for your new tab.
+  -i, --icon=<value>       (required) [default: 1] Number from 1 to 100 that specifies the color scheme and icon for the
+                           custom tab.
+  -o, --object=<value>     (required) API name of the custom object you're generating a tab for.
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Generate the metadata source files for a new custom tab on a custom object.
+
+  Custom tabs let you display custom object data or other web content in Salesforce. Custom tabs appear in Salesforce as
+  an item in the app’s navigation bar and in the App Launcher.
+
+  This command must be run in a Salesforce DX project directory. You must pass all required information to it with the
+  required flags. The source files for the custom object for which you're generating a tab don't need to exist in your
+  local project.
+
+EXAMPLES
+  Create a tab on the MyObject__c custom object:
+
+    $ sf generate metadata tab --object MyObject__c --icon 54 --directory force-app/main/default/tabs
+
+FLAG DESCRIPTIONS
+  -i, --icon=<value>  Number from 1 to 100 that specifies the color scheme and icon for the custom tab.
+
+    See https://lightningdesignsystem.com/icons/\#custom for the available icons.
+
+  -o, --object=<value>  API name of the custom object you're generating a tab for.
+
+    The API name for a custom object always ends in "__c", such as "MyObject__c".
+```
+
 ## `sf generate project`
 
 Generate a Salesforce DX project.
@@ -2016,7 +2259,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.1.1/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.1.2/src/commands/login.ts)_
 
 ## `sf login functions`
 
@@ -2285,7 +2528,7 @@ EXAMPLES
     $ sf logout --no-prompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.1.1/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/v1.1.2/src/commands/logout.ts)_
 
 ## `sf logout functions`
 
@@ -2602,32 +2845,39 @@ DESCRIPTION
 
 ## `sf retrieve metadata`
 
-Retrieve metadata in source format from an org to your local project.
+Retrieve metadata from an org to your local project.
 
 ```
 USAGE
-  $ sf retrieve metadata [--json] [-a <value>] [-c] [-x <value> | -m <value> | -d <value>] [-n <value>] [-o <value>]
-    [-w <value>]
+  $ sf retrieve metadata [--json] [-a <value>] [-c] [-x <value> | -m <value> | -d <value>] [-n <value>]
+    [--single-package -t <value>] [-o <value>] [-w <value>] [-z ] [--zip-file-name <value> ]
 
 FLAGS
-  -a, --api-version=<value>      Target API version for the retrieve.
-  -c, --ignore-conflicts         Ignore conflicts and retrieve and save files to your local filesystem, even if they
-                                 overwrite your local changes.
-  -d, --source-dir=<value>...    File paths for source to retrieve from the org.
-  -m, --metadata=<value>...      Metadata component names to retrieve.
-  -n, --package-name=<value>...  Package names to retrieve.
-  -o, --target-org=<value>       Login username or alias for the target org.
-  -w, --wait=<value>             [default: [object Object]] Number of minutes to wait for the command to complete and
-                                 display results to the terminal window.
-  -x, --manifest=<value>         File path for the manifest (package.xml) that specifies the components to retrieve.
+  -a, --api-version=<value>          Target API version for the retrieve.
+  -c, --ignore-conflicts             Ignore conflicts and retrieve and save files to your local filesystem, even if they
+                                     overwrite your local changes.
+  -d, --source-dir=<value>...        File paths for source to retrieve from the org.
+  -m, --metadata=<value>...          Metadata component names to retrieve.
+  -n, --package-name=<value>...      Package names to retrieve.
+  -o, --target-org=<value>           Login username or alias for the target org.
+  -t, --target-metadata-dir=<value>  Directory that will contain the retrieved metadata format files or ZIP.
+  -w, --wait=<value>                 Number of minutes to wait for the command to complete and display results to the
+                                     terminal window.
+  -x, --manifest=<value>             File path for the manifest (package.xml) that specifies the components to retrieve.
+  -z, --unzip                        Extract all files from the retrieved zip file.
+  --single-package                   Indicates that the zip file points to a directory structure for a single package.
+  --zip-file-name=<value>            File name to use for the retrieved zip file.
 
 GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Retrieve metadata in source format from an org to your local project.
+  Retrieve metadata from an org to your local project.
 
   You must run this command from within a project.
+
+  Metadata components are retrieved in source format by default. Retrieve them in metadata format by specifying the
+  --target-metadata-dir flag, which retrieves the components into a ZIP file in the specified directory.
 
   If your org allows source tracking, then this command tracks the changes in your source. Some orgs, such as production
   org, never allow source tracking. You can also use the "--no-track-source" flag when you create a scratch or sandbox
@@ -2677,6 +2927,15 @@ EXAMPLES
     $ sf retrieve metadata --package-name Package1 "PackageName With Spaces" Package3
     $ sf retrieve metadata --package-name Package1 --package-name "PackageName With Spaces" --package-name Package3
 
+  Retrieve the metadata components listed in the force-app directory, but retrieve them in metadata format into a ZIP
+  file in the "output" directory:
+
+    $ sf retrieve metadata --source-dir force-app --target-metadata-dir output
+
+  Retrieve in metadata format and automatically extract the contents into the "output" directory:
+
+    $ sf retrieve metadata --source-dir force-app --target-metadata-dir output --unzip
+
 FLAG DESCRIPTIONS
   -a, --api-version=<value>  Target API version for the retrieve.
 
@@ -2714,6 +2973,58 @@ CONFIGURATION VARIABLES
 ENVIRONMENT VARIABLES
   SF_TARGET_ORG        Username or alias of your default org. Overrides the target-org configuration variable.
   SF_USE_PROGRESS_BAR  Set to false to disable the progress bar when running the metadata deploy command.
+```
+
+## `sf retrieve metadata preview`
+
+Preview a retrieval to see what will be retrieved from the org, the potential conflicts, and the ignored files.
+
+```
+USAGE
+  $ sf retrieve metadata preview [--json] [-c] [-o <value>]
+
+FLAGS
+  -c, --ignore-conflicts    Ignore conflicts and preview the retrieve of remote components, even if they will overwrite
+                            local changes.
+  -o, --target-org=<value>  Login username or alias for the target org.
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Preview a retrieval to see what will be retrieved from the org, the potential conflicts, and the ignored files.
+
+  You must run this command from within a project.
+
+  The command outputs a table that describes what will happen if you run the "sf retrieve metadata" command. The table
+  lists the metadata components that will be retrieved and deleted. The table also lists the current conflicts between
+  files in your local project and components in the org. Finally, the table lists the files that won't be retrieved
+  because they're included in your .forceignore file.
+
+  If your org allows source tracking, then this command considers conflicts between the org and local. Some orgs, such
+  as production orgs, never allow source tracking. Use the "--no-track-source" flag when you create a scratch or sandbox
+  org to disable source tracking.
+
+EXAMPLES
+  Preview the retrieve of all changes from the org:
+
+    $ sf retrieve metadata preview
+
+  Preview the retrieve when ignoring any conflicts:
+
+    $ sf retrieve metadata preview --ignore-conflicts
+
+FLAG DESCRIPTIONS
+  -c, --ignore-conflicts
+
+    Ignore conflicts and preview the retrieve of remote components, even if they will overwrite local changes.
+
+    This flag applies only to orgs that allow source tracking. It has no effect on orgs that don't allow it, such as
+    production orgs.
+
+  -o, --target-org=<value>  Login username or alias for the target org.
+
+    Overrides your default org.
 ```
 
 ## `sf run function`
@@ -2915,7 +3226,7 @@ FLAG DESCRIPTIONS
     Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
 ```
 
-_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v1.1.1/src/commands/version.ts)_
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v1.1.2/src/commands/version.ts)_
 
 ## `sf whatsnew [-v <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 

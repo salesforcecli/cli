@@ -85,6 +85,12 @@
     "alias": []
   },
   {
+    "command": "deploy:metadata:preview",
+    "plugin": "@salesforce/plugin-deploy-retrieve",
+    "flags": ["ignore-conflicts", "json", "manifest", "metadata", "source-dir", "target-org"],
+    "alias": []
+  },
+  {
     "command": "deploy:metadata:quick",
     "plugin": "@salesforce/plugin-deploy-retrieve",
     "flags": ["async", "concise", "job-id", "json", "target-org", "use-most-recent", "verbose", "wait"],
@@ -285,6 +291,30 @@
     "alias": []
   },
   {
+    "command": "generate:metadata:field",
+    "plugin": "@salesforce/plugin-sobject",
+    "flags": ["label", "object"],
+    "alias": []
+  },
+  {
+    "command": "generate:metadata:platformevent",
+    "plugin": "@salesforce/plugin-sobject",
+    "flags": ["label"],
+    "alias": []
+  },
+  {
+    "command": "generate:metadata:sobject",
+    "plugin": "@salesforce/plugin-sobject",
+    "flags": ["label", "use-default-features"],
+    "alias": []
+  },
+  {
+    "command": "generate:metadata:tab",
+    "plugin": "@salesforce/plugin-sobject",
+    "flags": ["directory", "icon", "json", "object"],
+    "alias": []
+  },
+  {
     "command": "generate:project",
     "plugin": "@salesforce/plugin-generate",
     "flags": ["default-package-dir", "json", "login-url", "manifest", "name", "namespace", "output-dir", "template"],
@@ -430,10 +460,20 @@
       "manifest",
       "metadata",
       "package-name",
+      "single-package",
       "source-dir",
+      "target-metadata-dir",
       "target-org",
-      "wait"
+      "unzip",
+      "wait",
+      "zip-file-name"
     ],
+    "alias": []
+  },
+  {
+    "command": "retrieve:metadata:preview",
+    "plugin": "@salesforce/plugin-deploy-retrieve",
+    "flags": ["ignore-conflicts", "json", "target-org"],
     "alias": []
   },
   {

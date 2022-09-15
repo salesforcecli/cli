@@ -37,12 +37,12 @@ Plugins are npm packages written in Typescript and are hosted in the public npm 
 
 ### Salesforce plugins
 
-- [plugin-settings](https://github.com/salesforcecli/plugin-settings)
 - [plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve)
 - [plugin-env](https://github.com/salesforcecli/plugin-env)
 - [plugin-functions](https://github.com/salesforcecli/plugin-functions)
 - [plugin-generate](https://github.com/salesforcecli/plugin-generate)
 - [plugin-login](https://github.com/salesforcecli/plugin-login)
+- [plugin-settings](https://github.com/salesforcecli/plugin-settings)
 - [plugin-telemetry](https://github.com/salesforcecli/plugin-telemetry)
 
 ### oclif plugins
