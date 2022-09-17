@@ -25,7 +25,6 @@ const envVars = [
     Env.SF_DISABLE_AUTOUPDATE,
     Env.SF_ENV,
     Env.SF_INSTALLER,
-    Env.SF_LAZY_LOAD_MODULES,
     Env.SF_NPM_REGISTRY,
     'SF_REDIRECTED',
     Env.SF_S3_HOST,
