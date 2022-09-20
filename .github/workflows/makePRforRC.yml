@@ -1,0 +1,42 @@
+name: pr for rc
+
+on:
+  workflow_dispatch:
+    inputs:
+      patch:
+        type: boolean
+        required: false
+        default: false
+        description: increment the patch instead of the minor version
+      only:
+        type: string
+        required: false
+        description: comma-separated list, no spaces, of dependencies that you want to bump.
+  workflow_run:
+    workflows: [promote-rc-to-latest]
+    types:
+      - completed
+
+jobs:
+  rcPR:
+    if: ${{ !github.event.workflow_run || github.event.workflow_run.conclusion == 'success' }}
+    env:
+      GITHUB_TOKEN: ${{ secrets.SF_CLI_BOT_GITHUB_TOKEN }}
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+      # to get devDeps like snapshot generate
+      - run: yarn install
+      - run: npm install -g @salesforce/plugin-release-management --omit=dev
+      - uses: salesforcecli/github-workflows/.github/actions/gitConfig@main
+      - run: sf-release cli:latestrc:build --snapshot --schema
+        if: ${{ !inputs.patch && !inputs.only }}
+      - run: sf-release cli:latestrc:build --snapshot --schema --patch
+        if: ${{ inputs.patch && !inputs.only }}
+      - run: sf-release cli:latestrc:build --snapshot --schema --only ${{inputs.only}}
+        if: ${{ !inputs.patch && inputs.only }}
+      - run: sf-release cli:latestrc:build --snapshot --schema --patch --only ${{inputs.only}}
+        if: ${{ inputs.patch && inputs.only }}
