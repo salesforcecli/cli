@@ -1,0 +1,80 @@
+name: promote
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        type: string
+        description: full npm version number, like 7.150.2
+        required: true
+      tag:
+        type: string
+        required: false
+        description: tag to use for docker/npm, like latest or latest-rc
+        default: latest
+      channel:
+        type: string
+        required: true
+        default: stable
+        description: channel to promote the matching tarball to (example stable, stable-rc )
+      useCTC:
+        type: boolean
+        required: false
+        description: this promotion should only run if no release moratorium is in place
+
+jobs:
+  ctc-open:
+    if: inputs.useCTC
+    uses: salesforcecli/github-workflows/.github/workflows/ctcOpen.yml@main
+    secrets: inherit
+
+  npm-promote:
+    needs: [ctc-open]
+    runs-on:
+      ubuntu-latest
+      # if you try to use yarn here, it will attempt to use the wrong registry and throw 401s
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: latest
+      - run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          npm dist-tag add @salesforce/cli@${{ inputs.version }} ${{ inputs.tag }}
+
+  channel-promote:
+    needs: [ctc-open]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: latest
+          cache: yarn
+      - run: yarn install
+      # to get the SHA
+      - uses: salesforcecli/github-workflows/.github/actions/versionInfo@main
+        id: version-info
+        with:
+          version: ${{ inputs.version }}
+          npmPackage: '@salesforce/cli'
+      - run: yarn promote --cli sf --version ${{ steps.version-info.outputs.version }} --sha ${{ steps.version-info.outputs.sha }} --channel ${{ inputs.channel }} --max-age 300 --macos --win --indexes --xz
+        env:
+          AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+          AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+
+  ctcCloseSuccess:
+    needs: [ctc-open, npm-promote, docker-promote, channel-promote]
+    if: needs.ctc-open.result == 'success' && needs.npm-promote.result == 'success' && needs.docker-promote.result == 'success' && needs.channel-promote.result == 'success'
+    uses: salesforcecli/github-workflows/.github/workflows/ctcClose.yml@main
+    secrets: inherit
+    with:
+      changeCaseId: ${{needs.ctc-open.outputs.changeCaseId}}
+
+  ctcCloseFail:
+    needs: [ctc-open, npm-promote, docker-promote, channel-promote]
+    if: always() && (needs.ctc-open.result != 'success' || needs.npm-promote.result != 'success' || needs.docker-promote.result != 'success' || needs.channel-promote.result != 'success')
+    uses: salesforcecli/github-workflows/.github/workflows/ctcClose.yml@main
+    secrets: inherit
+    with:
+      changeCaseId: ${{ needs.ctc-open.outputs.changeCaseId }}
+      status: Not Implemented

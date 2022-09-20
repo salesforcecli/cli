@@ -1,0 +1,38 @@
+name: ut and tarballs
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+concurrency:
+  group: ut-tarballs
+  cancel-in-progress: true
+
+jobs:
+  ut:
+    uses: salesforcecli/github-workflows/.github/workflows/unitTest.yml@main
+    secrets: inherit
+
+  tarballs:
+    uses: salesforcecli/github-workflows/.github/workflows/tarballs.yml@main
+    secrets: inherit
+
+  schema:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: yarn
+      - run: yarn install
+      - run: yarn test:json-schema
+
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: yarn
+      - run: yarn install
+      - run: yarn test:deprecation-policy
