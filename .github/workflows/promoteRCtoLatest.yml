@@ -61,7 +61,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": ":rocket: `@salesforce/cli` version `${{ needs.getVersion.outputs.version }}` has been promoted to latest :rocket:\nRun `sf whatsnew -v latest` to see what's new"
+                  "text": ":rocket: `sf` version `${{ needs.getVersion.outputs.version }}` has been promoted to latest :rocket:\nRun `sf whatsnew -v latest` to see what's new"
                 }
               }]
             }

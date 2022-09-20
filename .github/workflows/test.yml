@@ -35,4 +35,5 @@ jobs:
         with:
           cache: yarn
       - run: yarn install
+      - run: npm install -g @salesforce/plugin-release-management
       - run: yarn test:deprecation-policy
