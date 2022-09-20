@@ -130,12 +130,6 @@
     "alias": []
   },
   {
-    "command": "doctor",
-    "plugin": "@salesforce/plugin-info",
-    "flags": ["command", "json", "loglevel", "outputdir", "plugin"],
-    "alias": []
-  },
-  {
     "command": "env:compute:collaborator:add",
     "plugin": "@salesforce/plugin-functions",
     "flags": ["heroku-user"],
