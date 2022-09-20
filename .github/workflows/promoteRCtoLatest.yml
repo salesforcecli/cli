@@ -1,0 +1,67 @@
+name: promote-rc-to-latest
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Wednesday 2:10p central
+    - cron: '10 17 * * 3'
+
+jobs:
+  # what is the RC version, numerically?
+  getVersion:
+    outputs:
+      version: ${{ steps.version-info.outputs.version }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - uses: salesforcecli/github-workflows/.github/actions/versionInfo@main
+        id: version-info
+        with:
+          version: latest-rc
+          npmPackage: '@salesforcecli/cli'
+
+  promote:
+    uses: ./.github/workflows/promote.yml
+    needs: getVersion
+    secrets: inherit
+    with:
+      version: ${{needs.getVersion.outputs.version}}
+      tag: latest
+      channel: stable
+      useCTC: true
+
+  promote-verify:
+    runs-on: ubuntu-latest
+    needs: [promote]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: latest
+          cache: yarn
+      - run: npm install -g @salesforce/plugin-release-management --omit=dev
+      - run: yarn promote:verify
+
+  announce:
+    runs-on: ubuntu-latest
+    needs: [getVersion, promote-verify]
+
+    steps:
+      - name: Announce promotion
+        id: slack
+        uses: slackapi/slack-github-action@v1.21.0
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.PLATFORM_CLI_CHANNEL_SLACK_INCOMING_WEBHOOK }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+        with:
+          payload: |
+            {
+              "blocks": [{
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":rocket: `sf` version `${{ needs.getVersion.outputs.version }}` has been promoted to latest :rocket:\nRun `sf whatsnew -v latest` to see what's new"
+                }
+              }]
+            }
