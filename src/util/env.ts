@@ -12,7 +12,6 @@ export class Env extends EnvVars {
   public static SF_ENV = 'SF_ENV';
   public static SF_INSTALLER = 'SF_INSTALLER';
   public static SFDX_INSTALLER = 'SFDX_INSTALLER';
-  public static SF_LAZY_LOAD_MODULES = 'SF_LAZY_LOAD_MODULES';
   public static SF_NPM_REGISTRY = 'SF_NPM_REGISTRY';
   public static SF_S3_HOST = 'SF_S3_HOST';
   public static SF_UPDATE_INSTRUCTIONS = 'SF_UPDATE_INSTRUCTIONS';
@@ -63,10 +62,6 @@ export class Env extends EnvVars {
 
   public setNpmRegistryOverride(value: string): void {
     return this.setString(Env.SF_NPM_REGISTRY, value);
-  }
-
-  public isLazyRequireEnabled(): boolean {
-    return this.getBoolean(Env.SF_LAZY_LOAD_MODULES);
   }
 
   public normalizeAutoupdateDisabled(): void {

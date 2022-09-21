@@ -42,7 +42,7 @@ describe('cli', () => {
       const exec = async (argv?: string[], opts?: LoadOptions): Promise<void> => {
         config = opts;
       };
-      const env = new Env({ [Env.SF_LAZY_LOAD_MODULES]: 'false' });
+      const env = new Env({});
       await create('test', 'test', exec, env).run();
       expect(config).to.exist;
       expect(config).to.have.property('options');
