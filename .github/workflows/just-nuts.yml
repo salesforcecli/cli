@@ -32,6 +32,10 @@ jobs:
         os: [ubuntu-20-8core]
         command:
           - yarn test:nuts:deploy:metadata:manifest
+          - 'yarn test:nuts:deploy:metadata:metadata-dir'
+          - 'yarn test:nuts:deploy:metadata:metadata'
+          - 'yarn test:nuts:deploy:metadata:source-dir'
+          - 'yarn test:nuts:deploy:metadata:test-level'
     uses: ./.github/workflows/justNut.yml
     with:
       repository: salesforcecli/plugin-deploy-retrieve
