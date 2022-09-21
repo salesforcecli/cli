@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: latest
           cache: yarn
-      - run: npm install -g @salesforcecli/@latest-rc --omit=dev
+      - run: npm install -g @salesforce/@latest-rc --omit=dev
       - run: yarn install
       - name: NUTs with custom executable
         run: ${{ inputs.command }}
