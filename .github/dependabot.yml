@@ -7,12 +7,9 @@ updates:
     versioning-strategy: 'increase'
     labels:
       - "dependencies"
-    open-pull-requests-limit: 100
+    open-pull-requests-limit: 5
     pull-request-branch-name:
       separator: "-"
-    ignore:
-      - dependency-name: "typescript"
-      - dependency-name: "sinon"
-      - dependency-name: "string-ansi"
+    ignore:      
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
