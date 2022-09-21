@@ -3,8 +3,8 @@ name: promote-rc-to-latest
 on:
   workflow_dispatch:
   schedule:
-    # Wednesday 2:10p central
-    - cron: '10 17 * * 3'
+    # Wednesdays 11a central
+    - cron: '0 16 * * 3'
 
 jobs:
   # what is the RC version, numerically?
