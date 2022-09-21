@@ -31,7 +31,8 @@ jobs:
         with:
           node-version: latest
           cache: yarn
-      - run: npm install -g @salesforce/cli@latest-rc --omit=dev
+      # many setup commands require sfdx executable
+      - run: npm install -g @salesforce/cli@latest-rc sfdx-cli --omit=dev
       - run: yarn install
       - name: NUTs with custom executable
         run: ${{ inputs.command }}
