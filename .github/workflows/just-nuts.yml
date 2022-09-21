@@ -1,0 +1,40 @@
+name: just-nuts
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [RC]
+    types:
+      - completed
+
+jobs:
+  basic:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        repository:
+          - salesforcecli/plugin-login
+          - salesforcecli/plugin-settings
+    uses: ./.github/workflows/justNut.yml
+    with:
+      repository: ${{matrix.repository}}
+      os: ${{matrix.os}}
+    secrets: inherit
+
+  deploy-big:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-20-8core]
+        command:
+          - yarn test:nuts:deploy:metadata:manifest
+    uses: ./.github/workflows/justNut.yml
+    with:
+      repository: salesforcecli/plugin-deploy-retrieve
+      os: ${{matrix.os}}
+      command: ${{matrix.command}}
+    secrets: inherit

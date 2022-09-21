@@ -1,0 +1,44 @@
+name: just-nut
+on:
+  workflow_call:
+    inputs:
+      repository:
+        description: 'The repo that will be cloned (format: owner/repo).  This contains the NUTs you want to run.  Ex: salesforcecli/plugin-user'
+        type: string
+        required: true
+      command:
+        required: false
+        type: string
+        default: yarn test:nuts
+        description: 'command to execute (ex: yarn test:nuts)'
+      os:
+        required: false
+        description: 'runs-on property, ex: ubuntu-latest, windows-latest'
+        type: string
+        default: 'ubuntu-latest'
+
+jobs:
+  just-nut:
+    name: ${{inputs.repository}}
+    runs-on: ${{inputs.os}}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: ${{inputs.repository}}
+          token: ${{ secrets.SF_CLI_BOT_GITHUB_TOKEN }}
+          path: .
+      - uses: actions/setup-node@v3
+        with:
+          node-version: latest
+          cache: yarn
+      - run: npm install -g @salesforcecli/@latest-rc --omit=dev
+      - run: yarn install
+      - name: NUTs with custom executable
+        run: ${{ inputs.command }}
+        env:
+          TESTKIT_EXECUTABLE_PATH: sf
+          TESTKIT_AUTH_URL: ${{ secrets.TESTKIT_AUTH_URL}}
+          TESTKIT_HUB_USERNAME: ${{ secrets.TESTKIT_HUB_USERNAME}}
+          TESTKIT_JWT_CLIENT_ID: ${{ secrets.TESTKIT_JWT_CLIENT_ID}}
+          TESTKIT_JWT_KEY: ${{ secrets.TESTKIT_JWT_KEY}}
+          TESTKIT_HUB_INSTANCE: ${{ secrets.TESTKIT_HUB_INSTANCE}}
