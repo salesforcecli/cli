@@ -19,7 +19,7 @@ jobs:
         id: version-info
         with:
           version: latest-rc
-          npmPackage: '@salesforcecli/cli'
+          npmPackage: '@salesforce/cli'
 
   promote:
     uses: ./.github/workflows/promote.yml
