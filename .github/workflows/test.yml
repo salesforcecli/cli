@@ -5,7 +5,7 @@ on:
     types: [opened, reopened, synchronize]
 
 concurrency:
-  group: ut-tarballs
+  group: ut-tarballs-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
