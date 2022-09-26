@@ -18,6 +18,25 @@
     "alias": []
   },
   {
+    "command": "commands",
+    "plugin": "@oclif/plugin-commands",
+    "flags": [
+      "columns",
+      "csv",
+      "extended",
+      "filter",
+      "help",
+      "hidden",
+      "json",
+      "no-header",
+      "no-truncate",
+      "output",
+      "sort",
+      "tree"
+    ],
+    "alias": []
+  },
+  {
     "command": "config:get",
     "plugin": "@salesforce/plugin-settings",
     "flags": ["json", "verbose"],
