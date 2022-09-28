@@ -26,7 +26,7 @@ export default class SfHelp extends Help {
         .map((c) => `${c.replace(cmd, '')}`);
     }
 
-    return await super.showHelp(argv);
+    return super.showHelp(argv);
   }
 
   protected getCommandHelpClass(command: Interfaces.Command): CommandHelp {
