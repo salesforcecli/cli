@@ -451,17 +451,17 @@
     ajv-formats "^2.0.2"
     toml "^3.0.0"
 
-"@hk/functions-core@npm:@heroku/functions-core@0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@heroku/functions-core/-/functions-core-0.4.0.tgz#554711291e7a6e92d0a4aa5602cd9f864244c91e"
-  integrity sha512-Orlh8yl8BHvTSqZiTDCAScNC5E7AZfNQR3wMCl7GwIOM4P5fZzNiK/U+svasajq2BfEzm0J1P6WFbTaEQ14Zig==
+"@hk/functions-core@npm:@heroku/functions-core@0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@heroku/functions-core/-/functions-core-0.4.1.tgz#51f1d8458fd987d25db238fc7996cc3c8c6320bd"
+  integrity sha512-ZJGke5XM1WAVXFty56VMvimpZ+/7xwOLAtLo1m0vecD13UpkyCPJScSFpGQ4d0VwyZtKc7HjNYDb7QhOrb4O+A==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku/project-descriptor" "0.0.6"
     "@salesforce/core" "^2.37.1"
     "@salesforce/templates" "^55.1.0"
     axios "^0.27.2"
-    cloudevents "^4.0.3"
+    cloudevents "^6.0.2"
     fs-extra "^10.1.0"
     global-agent "^3.0.0"
     handlebars "^4.7.7"
@@ -1698,17 +1698,17 @@
     open "^8.4.0"
     tslib "^2"
 
-"@sf/functions@npm:@salesforce/plugin-functions@1.14.0":
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.14.0.tgz#c4cb47e19b7ceaeb14268cc328048294517d6f6b"
-  integrity sha512-626PHl3puuySRO9QDjHWz+0eTjwY2h7Hozr/8GVHOlU7WPyOqPNDECvJQUhUTgmt7Di5e8AKz2ckxgmLiiStkA==
+"@sf/functions@npm:@salesforce/plugin-functions@1.14.1":
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.14.1.tgz#55167213ef9c1422a451993e966b16edfe423a3d"
+  integrity sha512-Y9zk7myRB24PBqry0nvqXbpFY45Iv3cFJgDJVxp7UoLwlGI/t9dAXcNW5yHRlPe96w5pW9Lh1oDzoowpvqYZrA==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku-cli/schema" "^1.0.25"
     "@heroku/eventsource" "^1.0.7"
     "@heroku/function-toml" "^0.0.3"
     "@heroku/project-descriptor" "0.0.6"
-    "@hk/functions-core" "npm:@heroku/functions-core@0.4.0"
+    "@hk/functions-core" "npm:@heroku/functions-core@0.4.1"
     "@oclif/core" "^1.6.0"
     "@salesforce/core" "^3.19.4"
     "@salesforce/plugin-org" "^1.11.2"
@@ -2304,7 +2304,7 @@ aggregate-error@^3.0.0:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
-ajv-formats@^2.0.2:
+ajv-formats@^2.0.2, ajv-formats@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ajv-formats/-/ajv-formats-2.1.1.tgz#6e669400659eb74973bbf2e33327180a0996b520"
   integrity sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==
@@ -3339,6 +3339,16 @@ cloudevents@^4.0.3:
   dependencies:
     ajv "~6.12.3"
     uuid "~8.3.0"
+
+cloudevents@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/cloudevents/-/cloudevents-6.0.2.tgz#7b4990a92c6c30f6790eb4b59207b4d8949fca12"
+  integrity sha512-mn/4EZnAbhfb/TghubK2jPnxYM15JRjf8LnWJtXidiVKi5ZCkd+p9jyBZbL57w7nRm6oFAzJhjxRLsXd/DNaBQ==
+  dependencies:
+    ajv "^8.11.0"
+    ajv-formats "^2.1.1"
+    util "^0.12.4"
+    uuid "^8.3.2"
 
 cls-hooked@^4.2.2:
   version "4.2.2"
