@@ -1097,22 +1097,22 @@
     fast-levenshtein "^3.0.0"
     lodash "^4.17.21"
 
-"@oclif/plugin-plugins@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-2.1.0.tgz#af2def7992332e46137eac31c40947d9b077bff1"
-  integrity sha512-Bgt+QpTlX7+Q0HkVgtbUGYQlo/hyzNBAaXH5l16ou9Ji5wfi5T+niV5AzQ14R7JF8ZDOTbUOU/NRBJ2bzLCaZQ==
+"@oclif/plugin-plugins@2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-2.1.1.tgz#3523cc07059843cc063e250cfc4f3cb6f344e397"
+  integrity sha512-EUffiFH8g1N8AQrxhBe+eIxDXkx2tZ/IgTkWFfzO/ujzQt1GkXAG85PMIuau6t8FZQlJ/nSNZ1H7z7bJxAsAFA==
   dependencies:
     "@oclif/color" "^1.0.1"
-    "@oclif/core" "^1.2.0"
+    "@oclif/core" "^1.16.4"
     chalk "^4.1.2"
-    debug "^4.1.0"
+    debug "^4.3.4"
     fs-extra "^9.0"
     http-call "^5.2.2"
     load-json-file "^5.3.0"
     npm-run-path "^4.0.1"
     semver "^7.3.2"
     tslib "^2.0.0"
-    yarn "^1.22.17"
+    yarn "^1.22.18"
 
 "@oclif/plugin-search@0.0.1":
   version "0.0.1"
@@ -10287,10 +10287,10 @@ typedoc@0.22.18:
     minimatch "^5.1.0"
     shiki "^0.10.1"
 
-typescript@^4.1.3, typescript@^4.4.3, typescript@^4.8.3:
-  version "4.8.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.8.3.tgz#d59344522c4bc464a65a730ac695007fdb66dd88"
-  integrity sha512-goMHfm00nWPa8UvR/CPSvykqf6dVV8x/dp0c5mFTMTIu0u0FlGWRioyy7Nn0PGAdHxpJZnuO/ut+PpQ8UiHAig==
+typescript@^4.1.3, typescript@^4.4.3, typescript@^4.8.4:
+  version "4.8.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.8.4.tgz#c464abca159669597be5f96b8943500b238e60e6"
+  integrity sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==
 
 typescript@~4.4.3:
   version "4.4.4"
@@ -10901,7 +10901,7 @@ yarn-deduplicate@^3.1.0:
     commander "^6.1.0"
     semver "^7.3.2"
 
-yarn@^1.22.17:
+yarn@^1.22.18:
   version "1.22.19"
   resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.19.tgz#4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
   integrity sha512-/0V5q0WbslqnwP91tirOvldvYISzaqhClxzyUKXYxs07yUILIs5jx/k6CFe8bvKSkds5w+eiOqta39Wk3WxdcQ==
