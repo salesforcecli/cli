@@ -1401,10 +1401,10 @@
     "@salesforce/ts-types" "^1.5.21"
     chalk "^2.4.2"
 
-"@salesforce/core@3.30.8":
-  version "3.30.8"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.30.8.tgz#e40ee555b4eae5c74ae337d74c5db5a8f0d5fc59"
-  integrity sha512-5ixL5R9F600RfHtskuFLossGWAa2BDzysQk6Ns5OsHLY87U/1bH8edf+fubamf3aDaZaMIrcBoucQ2OJVmPtYw==
+"@salesforce/core@3.30.9", "@salesforce/core@^3.10.1", "@salesforce/core@^3.16.0", "@salesforce/core@^3.19.4", "@salesforce/core@^3.19.5", "@salesforce/core@^3.24.0", "@salesforce/core@^3.25.0", "@salesforce/core@^3.26.0", "@salesforce/core@^3.26.1", "@salesforce/core@^3.26.2", "@salesforce/core@^3.30.1", "@salesforce/core@^3.30.2", "@salesforce/core@^3.30.8", "@salesforce/core@^3.30.9":
+  version "3.30.9"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.30.9.tgz#a2a577db60f1276d08b81e185d49161a75b54d76"
+  integrity sha512-dZFr2QS0joxl/FgdR+ZYhIVTEsJ7t+u02eaZCXLOqug/rzBq9xFoGPQaBboXx4CSf7k71Ox/Ty0sMSZNzkXb0A==
   dependencies:
     "@salesforce/bunyan" "^2.0.0"
     "@salesforce/kit" "^1.5.41"
@@ -1446,29 +1446,6 @@
     jsonwebtoken "8.5.0"
     mkdirp "1.0.4"
     semver "^7.3.5"
-    ts-retry-promise "^0.6.0"
-
-"@salesforce/core@^3.10.1", "@salesforce/core@^3.16.0", "@salesforce/core@^3.19.4", "@salesforce/core@^3.19.5", "@salesforce/core@^3.24.0", "@salesforce/core@^3.25.0", "@salesforce/core@^3.26.0", "@salesforce/core@^3.26.1", "@salesforce/core@^3.26.2", "@salesforce/core@^3.30.1", "@salesforce/core@^3.30.2", "@salesforce/core@^3.30.8", "@salesforce/core@^3.30.9":
-  version "3.30.9"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.30.9.tgz#a2a577db60f1276d08b81e185d49161a75b54d76"
-  integrity sha512-dZFr2QS0joxl/FgdR+ZYhIVTEsJ7t+u02eaZCXLOqug/rzBq9xFoGPQaBboXx4CSf7k71Ox/Ty0sMSZNzkXb0A==
-  dependencies:
-    "@salesforce/bunyan" "^2.0.0"
-    "@salesforce/kit" "^1.5.41"
-    "@salesforce/schemas" "^1.1.0"
-    "@salesforce/ts-types" "^1.5.20"
-    "@types/graceful-fs" "^4.1.5"
-    "@types/semver" "^7.3.9"
-    ajv "^8.11.0"
-    archiver "^5.3.0"
-    change-case "^4.1.2"
-    debug "^3.2.7"
-    faye "^1.4.0"
-    form-data "^4.0.0"
-    graceful-fs "^4.2.9"
-    js2xmlparser "^4.0.1"
-    jsforce beta
-    jsonwebtoken "8.5.1"
     ts-retry-promise "^0.6.0"
 
 "@salesforce/dev-config@^3.0.0", "@salesforce/dev-config@^3.1.0":
