@@ -914,7 +914,7 @@
     is-wsl "^2.1.1"
     tslib "^2.3.1"
 
-"@oclif/core@1.16.4", "@oclif/core@^1.0.8", "@oclif/core@^1.12.1", "@oclif/core@^1.14.1", "@oclif/core@^1.15.0", "@oclif/core@^1.16.0", "@oclif/core@^1.16.4", "@oclif/core@^1.2.0", "@oclif/core@^1.3.0", "@oclif/core@^1.3.4", "@oclif/core@^1.3.6", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.6.4", "@oclif/core@^1.7.0", "@oclif/core@^1.8.0":
+"@oclif/core@1.16.4", "@oclif/core@^1.0.8", "@oclif/core@^1.12.1", "@oclif/core@^1.14.1", "@oclif/core@^1.15.0", "@oclif/core@^1.16.0", "@oclif/core@^1.16.4", "@oclif/core@^1.2.0", "@oclif/core@^1.3.4", "@oclif/core@^1.3.6", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.6.4", "@oclif/core@^1.7.0", "@oclif/core@^1.8.0":
   version "1.16.4"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.16.4.tgz#fafa338ada0624d7f1adac036302b05a37cd96d0"
   integrity sha512-l+xHtVMteJWeTZZ+f2yLyNjf69X0mhAH8GILXnmoAGAemXbc1DVstvloxOouarvm9xyHHhquzO1Qg5l6xa1VIw==
@@ -1125,13 +1125,13 @@
     inquirer "^8.2.4"
     rxjs "^7.5.6"
 
-"@oclif/plugin-update@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-3.0.0.tgz#dc51f1a42d7b80825ebc1ee5f14310a0545c6b8f"
-  integrity sha512-uWYTPxea4cDoOgDYxPhOisJCcoJHbbXFSM69iB9VkenAMerUjjq1VrlwWAIzLc45ciWk13uef4nBLy2S0ADtOg==
+"@oclif/plugin-update@3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-3.0.2.tgz#5d767ec26f0bed6b0e455fcfdaf8cd9f07817793"
+  integrity sha512-QFRTyVr2eu5j6XmOMcmtZpSmcPeH0KZbuQ68ZpIDqEW08UmWJ8H8E8BA+JpRWpOOfeQ8CyXk7eLVBIKhu1oSTg==
   dependencies:
     "@oclif/color" "^1.0.0"
-    "@oclif/core" "^1.3.0"
+    "@oclif/core" "^1.16.4"
     cross-spawn "^7.0.3"
     debug "^4.3.1"
     filesize "^6.1.0"
