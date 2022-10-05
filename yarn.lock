@@ -1388,7 +1388,7 @@
     chalk "^2.4.2"
     cli-ux "^4.9.3"
 
-"@salesforce/command@^5.0.4", "@salesforce/command@^5.1.3", "@salesforce/command@^5.2.10", "@salesforce/command@^5.2.11":
+"@salesforce/command@^5.0.4", "@salesforce/command@^5.1.3", "@salesforce/command@^5.2.11":
   version "5.2.11"
   resolved "https://registry.yarnpkg.com/@salesforce/command/-/command-5.2.11.tgz#43fdb687c8cd6a5f76dafd548ea176663c8a6620"
   integrity sha512-6KhXbxlV+noVFL8FNhVBPDiD5Z4fEcezh1rClcjdturt2Zg/cp9KPIFqZoFn34zt30u+DlhhU3GDlfE18IoNHw==
@@ -1401,7 +1401,7 @@
     "@salesforce/ts-types" "^1.5.21"
     chalk "^2.4.2"
 
-"@salesforce/core@3.30.10", "@salesforce/core@^3.10.1", "@salesforce/core@^3.16.0", "@salesforce/core@^3.19.4", "@salesforce/core@^3.19.5", "@salesforce/core@^3.24.0", "@salesforce/core@^3.25.0", "@salesforce/core@^3.26.0", "@salesforce/core@^3.26.1", "@salesforce/core@^3.26.2", "@salesforce/core@^3.30.1", "@salesforce/core@^3.30.2", "@salesforce/core@^3.30.8", "@salesforce/core@^3.30.9":
+"@salesforce/core@3.30.10", "@salesforce/core@^3.10.1", "@salesforce/core@^3.16.0", "@salesforce/core@^3.19.4", "@salesforce/core@^3.19.5", "@salesforce/core@^3.24.0", "@salesforce/core@^3.25.0", "@salesforce/core@^3.26.0", "@salesforce/core@^3.26.1", "@salesforce/core@^3.26.2", "@salesforce/core@^3.30.1", "@salesforce/core@^3.30.10", "@salesforce/core@^3.30.2", "@salesforce/core@^3.30.8", "@salesforce/core@^3.30.9":
   version "3.30.10"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.30.10.tgz#146724f2bbc294afbcb3fa41eac281d5d880f2f7"
   integrity sha512-mVt/gLuF/zimBEs1oDThHm6GjKCRYkc6MuLjfwZrAo3m2H2QFH828HZEVU0nulkC4lF7F0kMXuLqk8n6sWwScw==
@@ -1493,10 +1493,10 @@
     typedoc-plugin-missing-exports "0.23.0"
     typescript "^4.1.3"
 
-"@salesforce/kit@^1.5.17", "@salesforce/kit@^1.5.41", "@salesforce/kit@^1.5.44", "@salesforce/kit@^1.5.45", "@salesforce/kit@^1.6.0", "@salesforce/kit@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/kit/-/kit-1.6.1.tgz#73a16205f957e527b2cc9bfcebc55b6880f3169b"
-  integrity sha512-ZuQrzUo1jili5xl9LbJOsIra07C4FIRy5f9PLGi8lXEKGIJ2qg21VCLlREGV5tz5Qm1aYsCYW9rjQQzME1ou8Q==
+"@salesforce/kit@^1.5.17", "@salesforce/kit@^1.5.41", "@salesforce/kit@^1.5.44", "@salesforce/kit@^1.6.0", "@salesforce/kit@^1.6.1", "@salesforce/kit@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/kit/-/kit-1.7.0.tgz#f14ef71662742edf0fb74ffb23c530fad5ccb4c9"
+  integrity sha512-AxJi7W9skYEVQrZMGyWtG3xOOLzdRu7638Hlea3gtPdMpMRc0aB1Nvpg7Ru+VLtULNhXnnQ3nXesDl0d2TA04w==
   dependencies:
     "@salesforce/ts-types" "^1.5.21"
     shx "^0.3.3"
@@ -1596,13 +1596,13 @@
     chalk "^4"
     inquirer "^8.2.0"
 
-"@salesforce/source-deploy-retrieve@^6.2.9", "@salesforce/source-deploy-retrieve@^6.8.0":
-  version "6.8.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-6.8.0.tgz#b64db40d15deee90a40daf159112a71fefa17119"
-  integrity sha512-NRVhiRjdnfFPv9VXDX2H8kpCCRBAFVP4PbQAtu3k/YX2RVdqfqSZ352FWji6jgbVxKeSO5BiCQK5NZ48K/bdKA==
+"@salesforce/source-deploy-retrieve@^6.8.0", "@salesforce/source-deploy-retrieve@^6.8.2":
+  version "6.8.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-6.8.4.tgz#7df823457c18ef6571468be263d0406d75eb6a1c"
+  integrity sha512-weLY4Km9TX2iwF9zhrrq0zN/serMQmFY9susMj2uOruoR0r6v38ZOyh+G7Z9a8lGl6Hbc7HWH853WSXmjza8mw==
   dependencies:
-    "@salesforce/core" "^3.26.2"
-    "@salesforce/kit" "^1.6.0"
+    "@salesforce/core" "^3.30.10"
+    "@salesforce/kit" "^1.6.1"
     "@salesforce/ts-types" "^1.5.20"
     "@xmldom/xmldom" "^0.8.2"
     archiver "^5.3.1"
@@ -1668,16 +1668,16 @@
   dependencies:
     tslib "^2.2.0"
 
-"@sf/deploy-retrieve@npm:@salesforce/plugin-deploy-retrieve@1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.6.1.tgz#d242233dcf0951851a98d70f31cab437dd279935"
-  integrity sha512-VbB1wbfkyfOWEm6DraoBNIeIoBfpAXW9UOVWPmdQRoXrJQvcTNESOHexsFNqqS0eQyENeSOt4Z0KSoOZpU3JyQ==
+"@sf/deploy-retrieve@npm:@salesforce/plugin-deploy-retrieve@1.6.4":
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.6.4.tgz#7e6ca787f9b36375ac33bbb96b384f975cc075ec"
+  integrity sha512-0WQgFK/5bYzNC9Xni+dLNXcJmLWf1bY4+hdqnSXcSgGdZF/hvvwXQsLCWduvBTkVPrgpk8l3Z2gVKBkJtsPtXg==
   dependencies:
     "@oclif/core" "^1.16.0"
     "@salesforce/core" "^3.26.1"
-    "@salesforce/kit" "^1.5.45"
+    "@salesforce/kit" "^1.7.0"
     "@salesforce/sf-plugins-core" "1.14.0"
-    "@salesforce/source-deploy-retrieve" "^6.2.9"
+    "@salesforce/source-deploy-retrieve" "^6.8.2"
     "@salesforce/source-tracking" "^2.2.2"
     chalk "^4.1.2"
     fs-extra "^10.0.1"
@@ -1733,30 +1733,30 @@
     sha256-file "^1.0.0"
     uuid "^8.3.2"
 
-"@sf/gen@npm:@salesforce/plugin-generate@1.0.20":
-  version "1.0.20"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-generate/-/plugin-generate-1.0.20.tgz#736a7aa2ca8726b7a834010ef3e0128348e5d72e"
-  integrity sha512-UMVe4uxk3JWufGuMxNadEA1sUjLkuxp2cHT41uWSuIdMrGUGuCKxRcp4nmyx7EDxnmz3VXI74oCtUZjwQF13PA==
+"@sf/gen@npm:@salesforce/plugin-generate@1.0.21":
+  version "1.0.21"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-generate/-/plugin-generate-1.0.21.tgz#7c537cbd8d2918de2189eb77750c4b4cbdfb4e2e"
+  integrity sha512-5/uqrGzMTc06xLimvg28myeNKWxcjk9dI58FXX7MiKsXl+rNeSzSwjuae4O6ys894U9N249bYtqQv2A59V4Jyw==
   dependencies:
     "@oclif/core" "^1.16.4"
     "@salesforce/core" "^3.30.2"
     "@salesforce/sf-plugins-core" "^1.14.1"
     "@salesforce/templates" "^55.1.0"
     tslib "^2"
-    yeoman-environment "^3.11.0"
+    yeoman-environment "^3.11.1"
     yeoman-generator "^5.7.0"
 
-"@sf/info@npm:@salesforce/plugin-info@2.1.6":
-  version "2.1.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-2.1.6.tgz#534825dc6cae8ebf387dcd8cd931a7072ffd9691"
-  integrity sha512-W92q6QklEhzSn3Ur5+5ExSDkUFXef5Lm+i1XUdNNVYZuAT+bHqCBIk91MeVXzgWjzkd7aTvs29uQS/mdZjD02Q==
+"@sf/info@npm:@salesforce/plugin-info@2.1.8":
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-2.1.8.tgz#8f56eda02512d53ba8d2d2f9b4ffc0aeee9d1b1c"
+  integrity sha512-wW2oQxgpVYc6gWo0qERl19spyMsk0DqJzd9f/jLyzoZhJ41a/rBcMOJ8vgWhP7RW53PVYOhsu1xPyU1N4zpZ7Q==
   dependencies:
     "@oclif/core" "^1.16.4"
-    "@salesforce/command" "^5.2.10"
+    "@salesforce/command" "^5.2.11"
     "@salesforce/core" "^3.30.1"
     "@salesforce/kit" "^1.6.1"
     got "^11.8.2"
-    marked "^4.0.1"
+    marked "^4.1.1"
     marked-terminal "^4.2.0"
     proxy-agent "^5.0.0"
     proxy-from-env "^1.1.0"
@@ -7122,10 +7122,10 @@ marked-terminal@^4.2.0:
     node-emoji "^1.10.0"
     supports-hyperlinks "^2.1.0"
 
-marked@^4.0.1, marked@^4.0.16:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-4.1.0.tgz#3fc6e7485f21c1ca5d6ec4a39de820e146954796"
-  integrity sha512-+Z6KDjSPa6/723PQYyc1axYZpYYpDnECDaU6hkaf5gqBieBkMKYReL5hteF2QizhlMbgbo8umXl/clZ67+GlsA==
+marked@^4.0.16, marked@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-4.1.1.tgz#2f709a4462abf65a283f2453dc1c42ab177d302e"
+  integrity sha512-0cNMnTcUJPxbA6uWmCmjWz4NJRe/0Xfk2NhXCUHjew9qJzFN20krFnsUe7QynwqOwa5m1fZ4UDg0ycKFVC0ccw==
 
 matcher@^3.0.0:
   version "3.0.0"
@@ -10893,10 +10893,10 @@ yarn@^1.22.18:
   resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.19.tgz#4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
   integrity sha512-/0V5q0WbslqnwP91tirOvldvYISzaqhClxzyUKXYxs07yUILIs5jx/k6CFe8bvKSkds5w+eiOqta39Wk3WxdcQ==
 
-yeoman-environment@^3.11.0, yeoman-environment@^3.9.1:
-  version "3.11.1"
-  resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-3.11.1.tgz#7379489f0925a9e8cb619c0333629ba1ff8d4bbd"
-  integrity sha512-WxPntJFhdJiBtkaJOmkv/v5siWVJvLX2GB26TXMPaIgxHGhreKUwACI2jzjnsFcHv1F8Uayp668NZsz8ygalvg==
+yeoman-environment@^3.11.1, yeoman-environment@^3.9.1:
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-3.12.0.tgz#16bc51d318a780cc563633b1d44c5310bebfd06a"
+  integrity sha512-W+2gD6lLzS2GUs67QjnvBYgY0SdXN3g1viI01noI/OXEW0BZYspnvs+sl6V5x+qeUk4flnT1uph49b10fEVs4A==
   dependencies:
     "@npmcli/arborist" "^4.0.4"
     are-we-there-yet "^2.0.0"
