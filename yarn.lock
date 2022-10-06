@@ -914,7 +914,7 @@
     is-wsl "^2.1.1"
     tslib "^2.3.1"
 
-"@oclif/core@1.16.4", "@oclif/core@^1.0.8", "@oclif/core@^1.12.1", "@oclif/core@^1.14.1", "@oclif/core@^1.15.0", "@oclif/core@^1.16.0", "@oclif/core@^1.16.4", "@oclif/core@^1.2.0", "@oclif/core@^1.3.4", "@oclif/core@^1.3.6", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.6.4", "@oclif/core@^1.7.0", "@oclif/core@^1.8.0":
+"@oclif/core@1.16.4", "@oclif/core@^1.0.8", "@oclif/core@^1.12.1", "@oclif/core@^1.14.1", "@oclif/core@^1.15.0", "@oclif/core@^1.16.0", "@oclif/core@^1.16.4", "@oclif/core@^1.2.0", "@oclif/core@^1.3.6", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.6.4", "@oclif/core@^1.7.0", "@oclif/core@^1.8.0":
   version "1.16.4"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.16.4.tgz#fafa338ada0624d7f1adac036302b05a37cd96d0"
   integrity sha512-l+xHtVMteJWeTZZ+f2yLyNjf69X0mhAH8GILXnmoAGAemXbc1DVstvloxOouarvm9xyHHhquzO1Qg5l6xa1VIw==
@@ -1028,18 +1028,18 @@
     debug "^4.3.4"
     fs-extra "^9.0.1"
 
-"@oclif/plugin-command-snapshot@^3.1.3":
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-command-snapshot/-/plugin-command-snapshot-3.1.3.tgz#9adf78dfd2415fc70a5341118f6decc4ebe0aa10"
-  integrity sha512-zF84uT/hSt4zo+BCURPVpdLdRczXAKYY6X26ImyvLyfTeZp3XfTFNMSYK1eHDvvmc+vlLCGk/eUeXf8yi3C2iA==
+"@oclif/plugin-command-snapshot@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-command-snapshot/-/plugin-command-snapshot-3.2.1.tgz#ced71f05026a721749803951dca57a298659f58f"
+  integrity sha512-9QDqj3aT1NI1zYjXQg6PnZKsV0sb5aREfZJO+k1Cn1htPjlx/ivSDlNlY4SWvfBZfGlqe4+2yzuQlwLOxXGN0Q==
   dependencies:
-    "@oclif/core" "^1.3.4"
+    "@oclif/core" "^1.16.4"
     chalk "^4.1.2"
-    just-diff "^3.1.1"
-    semver "^7.3.5"
-    sinon "^11.1.2"
-    ts-json-schema-generator "^0.97.0"
-    tslib "^2"
+    just-diff "^5.1.1"
+    lodash "^4.17.21"
+    semver "^7.3.7"
+    ts-json-schema-generator "^1.1.2"
+    tslib "^2.4.0"
 
 "@oclif/plugin-commands@2.2.0":
   version "2.2.0"
@@ -1989,7 +1989,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/json-schema@^7.0.3", "@types/json-schema@^7.0.7", "@types/json-schema@^7.0.9":
+"@types/json-schema@^7.0.11", "@types/json-schema@^7.0.3", "@types/json-schema@^7.0.7":
   version "7.0.11"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.11.tgz#d421b6c527a3037f7c84433fd2c4229e016863d3"
   integrity sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==
@@ -3452,10 +3452,10 @@ commander@^6.1.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
   integrity sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==
 
-commander@^8.2.0:
-  version "8.3.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-8.3.0.tgz#4837ea1b2da67b9c616a67afbb0fafee567bca66"
-  integrity sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==
+commander@^9.4.0:
+  version "9.4.1"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-9.4.1.tgz#d1dd8f2ce6faf93147295c0df13c7c21141cfbdd"
+  integrity sha512-5EEkTNyHNGFPD2H+c/dXXfQZYa/scCKasxWcXJaWnNJ99pnQN9Vnmqow+p+PlFPE63Q6mThaZws1T+HxfpgtPw==
 
 comment-parser@1.1.6-beta.0:
   version "1.1.6-beta.0"
@@ -6460,7 +6460,7 @@ json5@^1.0.1:
   dependencies:
     minimist "^1.2.0"
 
-json5@^2.2.0, json5@^2.2.1:
+json5@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.1.tgz#655d50ed1e6f95ad1a3caababd2b0efda10b395c"
   integrity sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==
@@ -6538,12 +6538,7 @@ just-diff-apply@^5.2.0:
   resolved "https://registry.yarnpkg.com/just-diff-apply/-/just-diff-apply-5.4.1.tgz#1debed059ad009863b4db0e8d8f333d743cdd83b"
   integrity sha512-AAV5Jw7tsniWwih8Ly3fXxEZ06y+6p5TwQMsw0dzZ/wPKilzyDgdAnL0Ug4NNIquPUOh1vfFWEHbmXUqM5+o8g==
 
-just-diff@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/just-diff/-/just-diff-3.1.1.tgz#d50c597c6fd4776495308c63bdee1b6839082647"
-  integrity sha512-sdMWKjRq8qWZEjDcVA6llnUT8RDEBIfOiGpYFPYa9u+2c39JCsejktSP7mj5eRid5EIvTzIpQ2kDOCw1Nq9BjQ==
-
-just-diff@^5.0.1:
+just-diff@^5.0.1, just-diff@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/just-diff/-/just-diff-5.1.1.tgz#8da6414342a5ed6d02ccd64f5586cbbed3146202"
   integrity sha512-u8HXJ3HlNrTzY7zrYYKjNEfBlyjqhdBkoyTVdjtn7p02RJD5NvR8rIClzeGA7t+UYP1/7eAkWNLU0+P3QrEqKQ==
@@ -9226,10 +9221,10 @@ safe-regex@^2.1.1:
   dependencies:
     regexp-tree "~0.1.1"
 
-safe-stable-stringify@^2.2.0:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/safe-stable-stringify/-/safe-stable-stringify-2.3.1.tgz#ab67cbe1fe7d40603ca641c5e765cb942d04fc73"
-  integrity sha512-kYBSfT+troD9cDA85VDnHZ1rpHC50O0g1e6WlGHVCz/g+JS+9WKLj+XwFYyR8UbrZN8ll9HUpDAAddY58MGisg==
+safe-stable-stringify@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/safe-stable-stringify/-/safe-stable-stringify-2.4.0.tgz#95fadb1bcf8057a1363e11052122f5da36a69215"
+  integrity sha512-eehKHKpab6E741ud7ZIMcXhKcP6TSIezPkNZhy5U8xC6+VvrRdUA2tMgxGxaGl4cz7c2Ew5+mg5+wNB16KQqrA==
 
 "safer-buffer@>= 2.1.2 < 3", "safer-buffer@>= 2.1.2 < 3.0.0", safer-buffer@^2.0.2, safer-buffer@^2.1.0, safer-buffer@~2.1.0:
   version "2.1.2"
@@ -10095,17 +10090,18 @@ triplesec@^4.0.3:
     progress "~1.1.2"
     uglify-js "^3.1.9"
 
-ts-json-schema-generator@^0.97.0:
-  version "0.97.0"
-  resolved "https://registry.yarnpkg.com/ts-json-schema-generator/-/ts-json-schema-generator-0.97.0.tgz#ea4f2ddbcba1fb6c0a2f97d242783b7fdc8e203b"
-  integrity sha512-kPDq4ut8Mu1ZgSN7OeTXz+ueb1juFt2eyGd23lMr3WoN5sq4Xa9m22kDI46OlwapE0aF8e1pUesOFgDcATHcuA==
+ts-json-schema-generator@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/ts-json-schema-generator/-/ts-json-schema-generator-1.1.2.tgz#29a0c878733b6a1bb0346fce02b1ebb8b96effa3"
+  integrity sha512-XMnxvndJFJEYv3NBmW7Po5bGajKdK2qH8Q078eDy60srK9+nEvbT9nLCRKd2IV/RQ7a+oc5FNylvZWveqh7jeQ==
   dependencies:
-    "@types/json-schema" "^7.0.9"
-    commander "^8.2.0"
-    glob "^7.2.0"
-    json5 "^2.2.0"
-    safe-stable-stringify "^2.2.0"
-    typescript "~4.4.3"
+    "@types/json-schema" "^7.0.11"
+    commander "^9.4.0"
+    glob "^8.0.3"
+    json5 "^2.2.1"
+    normalize-path "^3.0.0"
+    safe-stable-stringify "^2.4.0"
+    typescript "~4.8.3"
 
 ts-node@^10.0.0, ts-node@^10.9.1:
   version "10.9.1"
@@ -10274,15 +10270,10 @@ typedoc@0.22.18:
     minimatch "^5.1.0"
     shiki "^0.10.1"
 
-typescript@^4.1.3, typescript@^4.4.3, typescript@^4.8.4:
+typescript@^4.1.3, typescript@^4.4.3, typescript@^4.8.4, typescript@~4.8.3:
   version "4.8.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.8.4.tgz#c464abca159669597be5f96b8943500b238e60e6"
   integrity sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==
-
-typescript@~4.4.3:
-  version "4.4.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.4.tgz#2cd01a1a1f160704d3101fd5a58ff0f9fcb8030c"
-  integrity sha512-DqGhF5IKoBl8WNf8C1gu8q0xZSInh9j1kJJMqT3a94w1JzVaBU4EXOSMrz9yDqMT0xt3selp83fuFMQ0uzv6qA==
 
 uglify-js@^3.1.4, uglify-js@^3.1.9:
   version "3.17.0"
