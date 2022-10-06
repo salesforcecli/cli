@@ -13,6 +13,8 @@ import { stubInterface } from '@salesforce/ts-sinon';
 import { getString } from '@salesforce/ts-types';
 import { expect } from 'chai';
 import * as sinon from 'sinon';
+import { VersionCommand } from '@oclif/plugin-version';
+import { Doctor } from '@sf/info';
 import {
   configureAutoUpdate,
   configureUpdateSites,
@@ -25,10 +27,19 @@ import {
 import { Env } from '../src/util/env';
 
 describe('cli', () => {
-  let sandbox: sinon.SinonSandbox;
+  const sandbox = sinon.createSandbox();
+  const versionDetailMock = {
+    architecture: 'darwin-x64',
+    cliVersion: '@salesforce/cli/1.48.0',
+    nodeVersion: 'node-v16.17.0',
+  };
+
+  let versionCommandRunStub: sinon.SinonStub;
+  let doctorInitStub: sinon.SinonStub;
 
   beforeEach(() => {
-    sandbox = sinon.createSandbox();
+    versionCommandRunStub = sandbox.stub(VersionCommand.prototype, 'run').resolves(versionDetailMock);
+    doctorInitStub = sandbox.stub(Doctor, 'init');
   });
 
   afterEach(() => {
@@ -48,6 +59,31 @@ describe('cli', () => {
       expect(config).to.have.property('options');
       expect(config).to.have.nested.property('options.version').and.equal('test');
       expect(config).to.have.nested.property('options.channel').and.equal('test');
+
+      // does not call Doctor.init or VersionCommand.run()
+      expect(versionCommandRunStub.called).to.be.false;
+      expect(doctorInitStub.called).to.be.false;
+    });
+
+    it('should initialize a Doctor instance when the doctor command is run', async () => {
+      debugger;
+      sandbox.stub(Config.prototype, 'load').callsFake(() => Promise.resolve());
+      let loadOptions: LoadOptions;
+      const exec = async (argv?: string[], opts?: LoadOptions): Promise<void> => {
+        loadOptions = opts;
+      };
+      // override process.argv to make it look like the doctor command was run
+      process.argv = ['node', 'sf', 'doctor'];
+      const env = new Env();
+      await create('test', 'test', exec, env).run();
+      expect(loadOptions).to.exist;
+      expect(loadOptions).to.have.property('options');
+      expect(loadOptions).to.have.nested.property('options.version').and.equal('test');
+      expect(loadOptions).to.have.nested.property('options.channel').and.equal('test');
+
+      // should call Doctor.init and VersionCommand.run()
+      expect(versionCommandRunStub.called).to.be.true;
+      expect(doctorInitStub.called).to.be.true;
     });
   });
 
