@@ -1401,13 +1401,13 @@
     "@salesforce/ts-types" "^1.5.21"
     chalk "^2.4.2"
 
-"@salesforce/core@3.30.10", "@salesforce/core@^3.10.1", "@salesforce/core@^3.16.0", "@salesforce/core@^3.19.4", "@salesforce/core@^3.19.5", "@salesforce/core@^3.24.0", "@salesforce/core@^3.25.0", "@salesforce/core@^3.26.0", "@salesforce/core@^3.26.1", "@salesforce/core@^3.26.2", "@salesforce/core@^3.30.1", "@salesforce/core@^3.30.10", "@salesforce/core@^3.30.2", "@salesforce/core@^3.30.8", "@salesforce/core@^3.30.9":
-  version "3.30.10"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.30.10.tgz#146724f2bbc294afbcb3fa41eac281d5d880f2f7"
-  integrity sha512-mVt/gLuF/zimBEs1oDThHm6GjKCRYkc6MuLjfwZrAo3m2H2QFH828HZEVU0nulkC4lF7F0kMXuLqk8n6sWwScw==
+"@salesforce/core@3.30.13", "@salesforce/core@^3.10.1", "@salesforce/core@^3.16.0", "@salesforce/core@^3.19.4", "@salesforce/core@^3.19.5", "@salesforce/core@^3.24.0", "@salesforce/core@^3.25.0", "@salesforce/core@^3.26.0", "@salesforce/core@^3.26.1", "@salesforce/core@^3.26.2", "@salesforce/core@^3.30.1", "@salesforce/core@^3.30.10", "@salesforce/core@^3.30.2", "@salesforce/core@^3.30.8", "@salesforce/core@^3.30.9":
+  version "3.30.13"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.30.13.tgz#b9c556033b0ad59d23f2f78e7477c6dd9c53b7d3"
+  integrity sha512-cK3tVKceIO6adBk+e8L70sYbqveINslVMFHo7M/JSwtEhTUIHG2iCbiSF2wjybbKhpLwL78/AsjycZVCpMz0NA==
   dependencies:
     "@salesforce/bunyan" "^2.0.0"
-    "@salesforce/kit" "^1.5.41"
+    "@salesforce/kit" "^1.7.0"
     "@salesforce/schemas" "^1.1.0"
     "@salesforce/ts-types" "^1.5.20"
     "@types/graceful-fs" "^4.1.5"
@@ -1420,9 +1420,9 @@
     form-data "^4.0.0"
     graceful-fs "^4.2.9"
     js2xmlparser "^4.0.1"
-    jsforce beta
+    jsforce "^2.0.0-beta.19"
     jsonwebtoken "8.5.1"
-    ts-retry-promise "^0.6.0"
+    ts-retry-promise "^0.7.0"
 
 "@salesforce/core@^2.35.0", "@salesforce/core@^2.36.3", "@salesforce/core@^2.37.1":
   version "2.37.1"
@@ -1493,7 +1493,7 @@
     typedoc-plugin-missing-exports "0.23.0"
     typescript "^4.1.3"
 
-"@salesforce/kit@^1.5.17", "@salesforce/kit@^1.5.41", "@salesforce/kit@^1.5.44", "@salesforce/kit@^1.6.0", "@salesforce/kit@^1.6.1", "@salesforce/kit@^1.7.0":
+"@salesforce/kit@^1.5.17", "@salesforce/kit@^1.5.44", "@salesforce/kit@^1.6.0", "@salesforce/kit@^1.6.1", "@salesforce/kit@^1.7.0":
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/@salesforce/kit/-/kit-1.7.0.tgz#f14ef71662742edf0fb74ffb23c530fad5ccb4c9"
   integrity sha512-AxJi7W9skYEVQrZMGyWtG3xOOLzdRu7638Hlea3gtPdMpMRc0aB1Nvpg7Ru+VLtULNhXnnQ3nXesDl0d2TA04w==
@@ -1746,10 +1746,10 @@
     yeoman-environment "^3.11.1"
     yeoman-generator "^5.7.0"
 
-"@sf/info@npm:@salesforce/plugin-info@2.1.8":
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-2.1.8.tgz#8f56eda02512d53ba8d2d2f9b4ffc0aeee9d1b1c"
-  integrity sha512-wW2oQxgpVYc6gWo0qERl19spyMsk0DqJzd9f/jLyzoZhJ41a/rBcMOJ8vgWhP7RW53PVYOhsu1xPyU1N4zpZ7Q==
+"@sf/info@npm:@salesforce/plugin-info@2.1.9":
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-2.1.9.tgz#863c89d26291158e4f62ee893ff0fc4376a30c39"
+  integrity sha512-yESMBvZSESa4ZTYv2E2hkosVGS0kySKj0va/0GI4eOtg5hEMb/VoJP4hIMIwLl0tClndP+2Wt5lAlPc4FOPyxw==
   dependencies:
     "@oclif/core" "^1.16.4"
     "@salesforce/command" "^5.2.11"
@@ -6382,10 +6382,10 @@ jsforce@^1.11.0:
     request "^2.72.0"
     xml2js "^0.4.16"
 
-jsforce@beta:
-  version "2.0.0-beta.18"
-  resolved "https://registry.yarnpkg.com/jsforce/-/jsforce-2.0.0-beta.18.tgz#2791a2e6ec15d4d8b41f0782e23b833f5dbe5678"
-  integrity sha512-9IKv3M/U/FCdL6G8WlFqWiBTvLx1TRmGW+JhcSWHZb0YlMLHiGNVymvLyPsvRfO9sNP6VR3A5AIntqD+UsDKkQ==
+jsforce@^2.0.0-beta.19:
+  version "2.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/jsforce/-/jsforce-2.0.0-beta.19.tgz#4a136b88d6a9f6668714c4ccbb0acd55e46ea493"
+  integrity sha512-WdF6hs7kukXNGvp/VRhu2DngldgiBBorsc2WA5us08oJGbEIPwn/itqYJWKJ+rfPXepz5JbkWQd48XHGjqmPpw==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@babel/runtime-corejs3" "^7.12.5"
