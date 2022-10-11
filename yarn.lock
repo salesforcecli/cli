@@ -1028,16 +1028,16 @@
     debug "^4.3.4"
     fs-extra "^9.0.1"
 
-"@oclif/plugin-command-snapshot@^3.2.1":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-command-snapshot/-/plugin-command-snapshot-3.2.1.tgz#ced71f05026a721749803951dca57a298659f58f"
-  integrity sha512-9QDqj3aT1NI1zYjXQg6PnZKsV0sb5aREfZJO+k1Cn1htPjlx/ivSDlNlY4SWvfBZfGlqe4+2yzuQlwLOxXGN0Q==
+"@oclif/plugin-command-snapshot@^3.2.3":
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-command-snapshot/-/plugin-command-snapshot-3.2.3.tgz#6a59acb88a4c52ef362b345c77f6f635cdc3700d"
+  integrity sha512-GV6asL3JZw8DPlKCMbxE1ZzuvTEvx770fGBpcxn/VbKa/rjlRVcvVtk5u3TmIToEA4W1PdspD8ZNqIiEuW804w==
   dependencies:
-    "@oclif/core" "^1.16.4"
+    "@oclif/core" "^1.16.5"
     chalk "^4.1.2"
     just-diff "^5.1.1"
     lodash "^4.17.21"
-    semver "^7.3.7"
+    semver "^7.3.8"
     ts-json-schema-generator "^1.1.2"
     tslib "^2.4.0"
 
