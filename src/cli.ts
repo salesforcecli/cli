@@ -8,8 +8,10 @@
 import * as os from 'os';
 import * as path from 'path';
 import { Config, Interfaces, run as oclifRun } from '@oclif/core';
+import { VersionCommand } from '@oclif/plugin-version';
 import { set } from '@salesforce/kit';
 import { AnyJson, get } from '@salesforce/ts-types';
+import { Doctor } from '@sf/info';
 import * as Debug from 'debug';
 import { default as nodeEnv, Env } from './util/env';
 
@@ -137,6 +139,12 @@ export function create(
       configureUpdateSites(config, env);
       configureAutoUpdate(env);
       debugCliInfo(version, channel, env, config);
+      if (args[0] === 'doctor') {
+        // The doctor command requires CLI version details obtained from the CLI's oclif config.
+        const versionCmd = new VersionCommand(['--verbose', '--json'], config);
+        const versionDetail = await versionCmd.run();
+        Doctor.init(config, versionDetail);
+      }
       // Example of how run is used in a test https://github.com/salesforcecli/cli/pull/171/files#diff-1deee0a575599b2df117c280da319f7938aaf6fdb0c04bcdbde769dbf464be69R46
       return run ? run(args, config) : oclifRun(args, config);
     },
