@@ -914,7 +914,7 @@
     is-wsl "^2.1.1"
     tslib "^2.3.1"
 
-"@oclif/core@1.16.6", "@oclif/core@^1.0.8", "@oclif/core@^1.12.1", "@oclif/core@^1.14.1", "@oclif/core@^1.15.0", "@oclif/core@^1.16.0", "@oclif/core@^1.16.4", "@oclif/core@^1.16.5", "@oclif/core@^1.2.0", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.6.4", "@oclif/core@^1.8.0":
+"@oclif/core@1.16.6", "@oclif/core@^1.0.8", "@oclif/core@^1.12.1", "@oclif/core@^1.14.1", "@oclif/core@^1.16.0", "@oclif/core@^1.16.4", "@oclif/core@^1.16.5", "@oclif/core@^1.2.0", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.6.4", "@oclif/core@^1.8.0":
   version "1.16.6"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.16.6.tgz#b83704d03f9e420090f91e3c8708f2f74108a767"
   integrity sha512-g6ILjfs9sbyZGEXV+CUBR22wfT2D7/SNW1QvUAR3K8l4Joe1Z/xD2e2Dk27EA8+mU+HcwiTZJKiTVq7BUtZe5g==
@@ -1018,12 +1018,12 @@
     chalk "^4.1.0"
     tslib "^2.3.1"
 
-"@oclif/plugin-autocomplete@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-1.3.1.tgz#f4906fb6c587b3006c05f1c2fccf6bf52d23d218"
-  integrity sha512-XiEBmtMLyFvBkIl+p3g90G7/lbnZmiKPskZ5bXUySw8BgfmaczXhirn0YIr443H//4laUasfI/A9LjASiE4qww==
+"@oclif/plugin-autocomplete@1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-1.3.2.tgz#863bae461c09b3983dea6e7f2a6974a845b8cdd2"
+  integrity sha512-HNVpRi0b7skFEcs4jWbHJSfh0HSwdFownaLgkGFjgDdHiVJFwjLvcHGa9zUPs1SSeXPidq1rASefcsO5HUAcWQ==
   dependencies:
-    "@oclif/core" "^1.16.4"
+    "@oclif/core" "^1.16.5"
     chalk "^4.1.0"
     debug "^4.3.4"
     fs-extra "^9.0.1"
@@ -1401,7 +1401,7 @@
     "@salesforce/ts-types" "^1.5.21"
     chalk "^2.4.2"
 
-"@salesforce/core@3.30.14", "@salesforce/core@^3.10.1", "@salesforce/core@^3.16.0", "@salesforce/core@^3.19.4", "@salesforce/core@^3.24.0", "@salesforce/core@^3.25.0", "@salesforce/core@^3.26.0", "@salesforce/core@^3.26.1", "@salesforce/core@^3.26.2", "@salesforce/core@^3.30.10", "@salesforce/core@^3.30.12", "@salesforce/core@^3.30.8", "@salesforce/core@^3.30.9":
+"@salesforce/core@3.30.14", "@salesforce/core@^3.10.1", "@salesforce/core@^3.16.0", "@salesforce/core@^3.19.4", "@salesforce/core@^3.24.0", "@salesforce/core@^3.26.0", "@salesforce/core@^3.26.1", "@salesforce/core@^3.26.2", "@salesforce/core@^3.30.10", "@salesforce/core@^3.30.12", "@salesforce/core@^3.30.8", "@salesforce/core@^3.30.9":
   version "3.30.14"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.30.14.tgz#9f792ce0390e97992b5a2450b893adc9b81ebfeb"
   integrity sha512-vQ1LZfNaWD75haBmfjCXT6j0M5iCi+op6LH9jM4cdGGHdoNahD/OJCQAFc5W/NE+CozNOUJChTqvAbhz52Xs9A==
@@ -1560,6 +1560,7 @@
     yarn-deduplicate "^3.1.0"
 
 "@salesforce/plugin-trust@^2.1.0", "@sf/trust@npm:@salesforce/plugin-trust@2.1.0":
+  name "@sf/trust"
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-2.1.0.tgz#74200985c159bd0a98986e2cba187013902947fe"
   integrity sha512-M9y15gD4u7uVhGXh7KBqtB1P9Yj1Ywp/qrngtaBMTvnN9zKtjUrlZBxUA11zXYNShuWgVdHPsk1otr+2YQqemQ==
