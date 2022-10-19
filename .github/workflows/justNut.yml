@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: ${{inputs.repository}}
-          token: ${{ secrets.SF_CLI_BOT_GITHUB_TOKEN }}
+          token: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
           path: .
       - uses: actions/setup-node@v3
         with:
