@@ -21,7 +21,7 @@ jobs:
   rcPR:
     if: ${{ !github.event.workflow_run || github.event.workflow_run.conclusion == 'success' }}
     env:
-      GITHUB_TOKEN: ${{ secrets.SF_CLI_BOT_GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
     runs-on: 'ubuntu-latest'
     steps:
       - uses: actions/checkout@v3

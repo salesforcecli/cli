@@ -1,5 +1,23 @@
 [
   {
+    "command": "alias:list",
+    "plugin": "@salesforce/plugin-settings",
+    "flags": ["json"],
+    "alias": []
+  },
+  {
+    "command": "alias:set",
+    "plugin": "@salesforce/plugin-settings",
+    "flags": ["json"],
+    "alias": []
+  },
+  {
+    "command": "alias:unset",
+    "plugin": "@salesforce/plugin-settings",
+    "flags": ["all", "json", "no-prompt"],
+    "alias": []
+  },
+  {
     "command": "autocomplete",
     "plugin": "@oclif/plugin-autocomplete",
     "flags": ["refresh-cache"],
@@ -151,7 +169,7 @@
   {
     "command": "doctor",
     "plugin": "@salesforce/plugin-info",
-    "flags": ["command", "json", "loglevel", "outputdir", "plugin"],
+    "flags": ["command", "createissue", "json", "loglevel", "outputdir", "plugin"],
     "alias": []
   },
   {
