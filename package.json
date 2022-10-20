@@ -39,7 +39,6 @@
       "@oclif/plugin-plugins",
       "@oclif/plugin-search",
       "@oclif/plugin-update",
-      "@oclif/plugin-version",
       "@sf/config",
       "@sf/deploy-retrieve",
       "@sf/env",
@@ -55,9 +54,14 @@
       "@oclif/plugin-command-snapshot",
       "@salesforce/plugin-release-management"
     ],
+    "jitPlugins": [
+      "@oclif/plugin-version",
+      "@salesforce/plugin-packaging"
+    ],
     "hooks": {
       "preupdate": "./dist/hooks/preupdate",
-      "command_incomplete": "./dist/hooks/incomplete"
+      "command_incomplete": "./dist/hooks/incomplete",
+      "jit_plugin_not_installed": "./dist/hooks/jitPlugin"
     },
     "update": {
       "s3": {
