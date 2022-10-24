@@ -962,7 +962,7 @@
     is-wsl "^2.1.1"
     tslib "^2.3.1"
 
-"@oclif/core@1.19.0", "@oclif/core@^1.0.8", "@oclif/core@^1.12.1", "@oclif/core@^1.14.1", "@oclif/core@^1.16.0", "@oclif/core@^1.16.4", "@oclif/core@^1.16.5", "@oclif/core@^1.18.0", "@oclif/core@^1.19.0", "@oclif/core@^1.2.0", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.6.4", "@oclif/core@^1.8.0":
+"@oclif/core@1.19.0", "@oclif/core@^1.0.8", "@oclif/core@^1.14.1", "@oclif/core@^1.16.0", "@oclif/core@^1.16.4", "@oclif/core@^1.16.5", "@oclif/core@^1.18.0", "@oclif/core@^1.19.0", "@oclif/core@^1.2.0", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.6.4", "@oclif/core@^1.8.0":
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.19.0.tgz#b2e5260c2344e5905312efd7538daacaedb75cbf"
   integrity sha512-4R087E3TAG6Q9cvr+4wnlryHbciioXkZmUF/Qmc08dReoFus1BIfwtR5kUa/thNmQBw5oeGnrxnl9yA/TaxAmA==
@@ -1162,12 +1162,12 @@
     tslib "^2.0.0"
     yarn "^1.22.18"
 
-"@oclif/plugin-search@0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-search/-/plugin-search-0.0.1.tgz#5171b6f88d83344e5b330838d2f30d18a1bf4183"
-  integrity sha512-5vrNDArZtBrNaFuZBIrqlaFQ9GyPtCyFzC/y0eMlYeCs3wzs1Yg6br5aaasJ/WQV5yszlYwn7uzuqe8NlumRTA==
+"@oclif/plugin-search@0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-search/-/plugin-search-0.0.2.tgz#48898838fbb95f8de9075473ff6e752fc31c0094"
+  integrity sha512-MIuVU24lmLQ6lyPO2zThRY/YFx4QAGRkIjUzy6xaU26xvaN0w8RRo4fix+J6IeCs4EUUxUi9Rw9bsRrMrs1BSg==
   dependencies:
-    "@oclif/core" "^1.12.1"
+    "@oclif/core" "^1.18.0"
     chalk "^4"
     fuse.js "^6.6.2"
     inquirer "^8.2.4"
