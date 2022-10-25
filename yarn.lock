@@ -962,7 +962,7 @@
     is-wsl "^2.1.1"
     tslib "^2.3.1"
 
-"@oclif/core@1.19.0", "@oclif/core@^1.0.8", "@oclif/core@^1.14.1", "@oclif/core@^1.16.0", "@oclif/core@^1.16.4", "@oclif/core@^1.16.5", "@oclif/core@^1.18.0", "@oclif/core@^1.19.0", "@oclif/core@^1.2.0", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.6.4", "@oclif/core@^1.8.0":
+"@oclif/core@1.19.0", "@oclif/core@^1.0.8", "@oclif/core@^1.14.1", "@oclif/core@^1.16.0", "@oclif/core@^1.16.4", "@oclif/core@^1.16.5", "@oclif/core@^1.18.0", "@oclif/core@^1.19.0", "@oclif/core@^1.19.1", "@oclif/core@^1.2.0", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.6.4", "@oclif/core@^1.8.0":
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.19.0.tgz#b2e5260c2344e5905312efd7538daacaedb75cbf"
   integrity sha512-4R087E3TAG6Q9cvr+4wnlryHbciioXkZmUF/Qmc08dReoFus1BIfwtR5kUa/thNmQBw5oeGnrxnl9yA/TaxAmA==
@@ -1076,12 +1076,12 @@
     debug "^4.3.4"
     fs-extra "^9.0.1"
 
-"@oclif/plugin-command-snapshot@^3.2.3":
-  version "3.2.3"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-command-snapshot/-/plugin-command-snapshot-3.2.3.tgz#6a59acb88a4c52ef362b345c77f6f635cdc3700d"
-  integrity sha512-GV6asL3JZw8DPlKCMbxE1ZzuvTEvx770fGBpcxn/VbKa/rjlRVcvVtk5u3TmIToEA4W1PdspD8ZNqIiEuW804w==
+"@oclif/plugin-command-snapshot@^3.2.6":
+  version "3.2.6"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-command-snapshot/-/plugin-command-snapshot-3.2.6.tgz#a7f48a5c8171c5a6d49b24d650c83f7fcfd6e689"
+  integrity sha512-oUJ/VQJCYbtZlrj8CTbspS1Iq/QEAXlpacxdHgDca956qCqoed0/Y6dDzuOOP7/yz+2yOEvqOlx5ibhHTzw3DQ==
   dependencies:
-    "@oclif/core" "^1.16.5"
+    "@oclif/core" "^1.19.1"
     chalk "^4.1.2"
     just-diff "^5.1.1"
     lodash "^4.17.21"
