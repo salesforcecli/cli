@@ -1206,6 +1206,14 @@
     lodash "^4.17.21"
     semver "^7.3.2"
 
+"@oclif/plugin-which@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-which/-/plugin-which-2.2.0.tgz#703bcd676d7344a05b4f4e801b857b05fd979f88"
+  integrity sha512-F24+6RGBoehv6wpVLh4aGEKb2AMyErYC8MUmLd/6Xy8czS+OguYjhSz8dx3vZnJrb/h1rjTJklbS3U4X8k34Gg==
+  dependencies:
+    "@oclif/core" "^1.18.0"
+    tslib "^2.4.0"
+
 "@oclif/screen@^1.0.3", "@oclif/screen@^1.0.4":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@oclif/screen/-/screen-1.0.4.tgz#b740f68609dfae8aa71c3a6cab15d816407ba493"
@@ -6075,7 +6083,7 @@ inquirer@^7.0.0:
     strip-ansi "^6.0.0"
     through "^2.3.6"
 
-inquirer@^8.0.0, inquirer@^8.2.0, inquirer@^8.2.1, inquirer@^8.2.3, inquirer@^8.2.4, inquirer@^8.2.5:
+inquirer@^8.0.0, inquirer@^8.2.0, inquirer@^8.2.1, inquirer@^8.2.4, inquirer@^8.2.5:
   version "8.2.5"
   resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-8.2.5.tgz#d8654a7542c35a9b9e069d27e2df4858784d54f8"
   integrity sha512-QAgPDQMEgrDssk1XiwwHoOGYF9BAbUcc1+j+FhEvaOt8/cKRqyLn0U5qA6F74fGhTMGxf92pOvPBeh29jQJDTQ==
