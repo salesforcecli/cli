@@ -601,6 +601,12 @@
     "alias": ["whatsnew"]
   },
   {
+    "command": "which",
+    "plugin": "@oclif/plugin-which",
+    "flags": [],
+    "alias": []
+  },
+  {
     "command": "whoami:functions",
     "plugin": "@salesforce/plugin-functions",
     "flags": ["json", "show-token"],
