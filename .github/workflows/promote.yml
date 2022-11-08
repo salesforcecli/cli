@@ -70,8 +70,8 @@ jobs:
       AWS_EC2_METADATA_DISABLED: true
     needs: [channel-promote]
     steps:
-      - run: aws s3 cp s3://dfc-data-production/media/salesforce-cli/sfdx/channels/${{ inputs.channel }}/sfdx-x64.pkg ./sfdx.pkg
-      - run: aws s3 cp ./sfdx.pkg s3://dfc-data-production/media/salesforce-cli/sfdx/channels/${{ inputs.channel }}/
+      - run: aws s3 cp s3://dfc-data-production/media/salesforce-cli/sf/channels/${{ inputs.channel }}/sf-x64.pkg ./sf.pkg
+      - run: aws s3 cp ./sf.pkg s3://dfc-data-production/media/salesforce-cli/sf/channels/${{ inputs.channel }}/
 
   ctcCloseSuccess:
     needs: [ctc-open, npm-promote, channel-promote, rename-mac-pkg]
