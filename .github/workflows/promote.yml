@@ -62,6 +62,9 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
 
+  # This job is renames the sfdx-x64.pkg that oclif v3 produces to sfdx.pkg which matches what oclif v2 produces.
+  # Doing so avoids breaking changes for customers relying on the old URLs to download the CLI.
+  # It can be removed once the developer site is linking to the new sfdx-x64.pkg file and the mac signing job is signing the new -x64.pkg file.
   rename-mac-pkg:
     runs-on: ubuntu-latest
     env:
@@ -70,8 +73,10 @@ jobs:
       AWS_EC2_METADATA_DISABLED: true
     needs: [channel-promote]
     steps:
-      - run: aws s3 cp s3://dfc-data-production/media/salesforce-cli/sf/channels/${{ inputs.channel }}/sf-x64.pkg ./sf.pkg
-      - run: aws s3 cp ./sf.pkg s3://dfc-data-production/media/salesforce-cli/sf/channels/${{ inputs.channel }}/
+      - uses: salesforcecli/github-workflows/.github/actions/renameMacPkg@main
+        with:
+          cli: sf
+          channel: ${{ inputs.channel }}
 
   ctcCloseSuccess:
     needs: [ctc-open, npm-promote, channel-promote, rename-mac-pkg]
