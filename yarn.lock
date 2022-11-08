@@ -957,7 +957,7 @@
     is-wsl "^2.1.1"
     tslib "^2.3.1"
 
-"@oclif/core@1.20.2", "@oclif/core@^1.0.8", "@oclif/core@^1.14.1", "@oclif/core@^1.16.0", "@oclif/core@^1.16.4", "@oclif/core@^1.16.5", "@oclif/core@^1.18.0", "@oclif/core@^1.19.1", "@oclif/core@^1.2.0", "@oclif/core@^1.20.0", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.6.4", "@oclif/core@^1.8.0":
+"@oclif/core@1.20.2", "@oclif/core@^1.0.8", "@oclif/core@^1.14.1", "@oclif/core@^1.16.0", "@oclif/core@^1.16.4", "@oclif/core@^1.16.5", "@oclif/core@^1.18.0", "@oclif/core@^1.19.1", "@oclif/core@^1.2.0", "@oclif/core@^1.20.0", "@oclif/core@^1.20.3", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.6.4", "@oclif/core@^1.8.0":
   version "1.20.2"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.20.2.tgz#724713086355d693e578960f72c7e2d14fd3e7c3"
   integrity sha512-c6CpDbDPS9UuKwGoajzsjrjfnwQywWEV3WI5FDvb87h0/WW2tGf1QwHUWgdKOojafEcMAa9DnP5j+mXdUTtpCg==
@@ -1130,13 +1130,13 @@
     widest-line "^2.0.1"
     wrap-ansi "^4.0.0"
 
-"@oclif/plugin-not-found@2.3.5", "@oclif/plugin-not-found@^2.3.1":
-  version "2.3.5"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-2.3.5.tgz#76d939d57f207039061a14727ee263de14e1a739"
-  integrity sha512-8c1hf6+JnWmtGQS5gBSGlbMOYLbssz0mpGytlzevHZzPes2k8EGuNQBOP2nEeyObM9HhbNjzBRjwJcjDB6zoQQ==
+"@oclif/plugin-not-found@2.3.8", "@oclif/plugin-not-found@^2.3.1":
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-2.3.8.tgz#eb3f8101cfa501ec7d748fd316240bb60c43e018"
+  integrity sha512-PfUVr67dHORFSeQthUwrPMJB/mRRNT4ENNdbafCOlL0HqC+WTuFy5nih+qnHBEli15RaOuMNoW3kR5MyBH82hA==
   dependencies:
     "@oclif/color" "^1.0.1"
-    "@oclif/core" "^1.18.0"
+    "@oclif/core" "^1.20.3"
     fast-levenshtein "^3.0.0"
     lodash "^4.17.21"
 
