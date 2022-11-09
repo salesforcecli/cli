@@ -51,7 +51,7 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_EC2_METADATA_DISABLED: true
-    needs: [macos]
+    needs: [pack-upload-mac]
     steps:
       - uses: salesforcecli/github-workflows/.github/actions/renameMacPkg@main
         with:
@@ -69,7 +69,7 @@ jobs:
 
   Post-RC-to-Slack:
     runs-on: ubuntu-latest
-    needs: [pack-verify-upload-tarballs, npm-release, pack-upload-win, pack-upload-mac]
+    needs: [pack-verify-upload-tarballs, npm-release, pack-upload-win, pack-upload-mac, rename-mac-pkg]
     steps:
       - name: Announce RC Workflow
         id: slack
