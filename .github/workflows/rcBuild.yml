@@ -42,6 +42,21 @@ jobs:
       version: ${{ github.event.release.tag_name }}
       channel: stable-rc
     secrets: inherit
+    
+  # The rename-mac-pkg job is only needed as long as the developer site is linking to the old sfdx.pkg file and the mac signing job is only signing the old file as well.
+  # It can be removed once those are updated to use the new name, sfdx-x64.pkg.
+  rename-mac-pkg:
+    runs-on: ubuntu-latest
+    env: 
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_EC2_METADATA_DISABLED: true
+    needs: [pack-upload-mac]
+    steps:
+      - uses: salesforcecli/github-workflows/.github/actions/renameMacPkg@main
+        with:
+          cli: sf
+          channel: stable-rc
 
   pack-upload-win:
     needs: [pack-verify-upload-tarballs]
@@ -54,7 +69,7 @@ jobs:
 
   Post-RC-to-Slack:
     runs-on: ubuntu-latest
-    needs: [pack-verify-upload-tarballs, npm-release, pack-upload-win, pack-upload-mac]
+    needs: [pack-verify-upload-tarballs, npm-release, pack-upload-win, pack-upload-mac, rename-mac-pkg]
     steps:
       - name: Announce RC Workflow
         id: slack

@@ -18,8 +18,8 @@ jobs:
         uses: TriPSs/conventional-changelog-action@d360fad3a42feca6462f72c97c165d60a02d4bf2
         # overriding some of the basic behaviors to just get the changelog
         with:
-          git-user-name: SF-CLI-BOT
-          git-user-email: alm-cli@salesforce.com
+          git-user-name: svc-cli-bot
+          git-user-email: svc_cli_bot@salesforce.com
           github-token: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
           output-file: false
           # always do the release, even if there are no semantic commits
