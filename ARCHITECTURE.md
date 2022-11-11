@@ -31,18 +31,18 @@ Plugins are npm packages written in Typescript and are hosted in the public npm 
 - [plugin-autocomplete](https://github.com/oclif/plugin-autocomplete)
 - [plugin-commands](https://github.com/oclif/plugin-commands)
 - [plugin-help](https://github.com/oclif/plugin-help)
-- [plugin-not-found](https://github.com/oclif/plugin-not)
+- [plugin-not-found](https://github.com/oclif/plugin-not-found)
 - [plugin-plugins](https://github.com/oclif/plugin-plugins)
 - [plugin-update](https://github.com/oclif/plugin-update)
-- [plugin-warn-if-update-available](https://github.com/oclif/plugin-plugin-warn-if-update-available)
+- [plugin-warn-if-update-available](https://github.com/oclif/plugin-warn-if-update-available)
 - [plugin-which](https://github.com/oclif/plugin-which)
 - [plugin-version](https://github.com/oclif/plugin-version)
 
 ### dependencies
 
 - [@oclif/core](https://github.com/oclif/core)
-- [@salesforce/kit](https://github.com/forcedotom/kit)
-- [@salesforce/core](https://github.com/forcedotcom//core)
+- [@salesforce/kit](https://github.com/forcedotcom/kit)
+- [@salesforce/core](https://github.com/forcedotcom/sfdx-core/tree/v3)
 - [@salesforce/ts-types](https://github.com/forcedotcom/ts-types)
 - [@salesforce/sf-plugins-core](https://github.com/salesforcecli/sf-plugins-core)
 - [@salesforce/source-deploy-retrieve](https://github.com/forcedotcom/source-deploy-retrieve)
@@ -56,8 +56,8 @@ Plugins are npm packages written in Typescript and are hosted in the public npm 
 - [@salesforce/prettier-config](https://github.com/forcedotcom/prettier-config)
 - [@salesforce/ts-sinon](https://github.com/forcedotcom/ts-sinon)
 - [eslint-config-salesforce](https://github.com/forcedotcom/eslint-config-salesforce)
-- [eslint-config-salesforce-license](https://github.com/forcedotcom/-eslint-config-salesforce-license)
-- [eslint-config-salesforce-typescript](https://github.com/forcedotcom/-eslint-config-salesforce-typescript)
+- [eslint-config-salesforce-license](https://github.com/forcedotcom/eslint-config-salesforce-license)
+- [eslint-config-salesforce-typescript](https://github.com/forcedotcom/eslint-config-salesforce-typescript)
 
 ![sf typical plugin](images/sf-typical-plugin.jpg 'Salesforce CLI Typical Plugin')
 
