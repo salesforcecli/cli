@@ -480,10 +480,10 @@
     ajv-formats "^2.0.2"
     toml "^3.0.0"
 
-"@hk/functions-core@npm:@heroku/functions-core@0.4.1":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@heroku/functions-core/-/functions-core-0.4.1.tgz#51f1d8458fd987d25db238fc7996cc3c8c6320bd"
-  integrity sha512-ZJGke5XM1WAVXFty56VMvimpZ+/7xwOLAtLo1m0vecD13UpkyCPJScSFpGQ4d0VwyZtKc7HjNYDb7QhOrb4O+A==
+"@hk/functions-core@npm:@heroku/functions-core@0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@heroku/functions-core/-/functions-core-0.4.3.tgz#fb68556ab27402975cb8f9a68aae9198315ab843"
+  integrity sha512-NCurnYhaabWtPTJNZIQ8aH5lCumznn5kpAjuldj5L+aa9kEq2n/9pr2GH4y8RwOOX05MhbfLvFlQXaWOLOSFkw==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku/project-descriptor" "0.0.6"
@@ -498,9 +498,9 @@
     mem-fs-editor "^9.5.0"
     node-fetch "^2.6.7"
     openpgp "^5.5.0"
-    semver "^7.3.7"
+    semver "^7.3.8"
     sha256-file "^1.0.0"
-    yeoman-environment "~3.10.0"
+    yeoman-environment "~3.12.1"
 
 "@humanwhocodes/config-array@^0.11.6":
   version "0.11.7"
@@ -1470,7 +1470,7 @@
     "@salesforce/ts-types" "^1.5.21"
     chalk "^2.4.2"
 
-"@salesforce/core@3.31.18", "@salesforce/core@^3.10.1", "@salesforce/core@^3.19.4", "@salesforce/core@^3.24.0", "@salesforce/core@^3.26.0", "@salesforce/core@^3.30.12", "@salesforce/core@^3.30.8", "@salesforce/core@^3.31.10", "@salesforce/core@^3.31.16", "@salesforce/core@^3.31.17", "@salesforce/core@^3.31.9":
+"@salesforce/core@3.31.18", "@salesforce/core@^3.10.1", "@salesforce/core@^3.24.0", "@salesforce/core@^3.26.0", "@salesforce/core@^3.30.12", "@salesforce/core@^3.30.8", "@salesforce/core@^3.31.10", "@salesforce/core@^3.31.16", "@salesforce/core@^3.31.17", "@salesforce/core@^3.31.9":
   version "3.31.18"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.31.18.tgz#ceaf2333c98bacd59b8666b5b69b659268165d61"
   integrity sha512-t2T7BzuNXdLGyAXMBHm9PtGbRvqCZQga+c3ceKKufJXW+ahQ2X8SXrOnXRzoZOt8DgTjWO3hLJmTCzC4AVgl7w==
@@ -1766,19 +1766,19 @@
     open "^8.4.0"
     tslib "^2"
 
-"@sf/functions@npm:@salesforce/plugin-functions@1.14.2":
-  version "1.14.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.14.2.tgz#ae55af9aedddfa39289f686ef5169f550e23d4d0"
-  integrity sha512-3heSc1BdosNwcbj4f/Ug7+oud4T/wgU98UKkPkDVDQE+6+6Mwt3sKe1xkCA4EEDw3bs6wYvzvJ/n6dVDFlqzug==
+"@sf/functions@npm:@salesforce/plugin-functions@1.14.4":
+  version "1.14.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.14.4.tgz#dd0d9d8d2490c11471b100b3d20ae303fcf7a4ce"
+  integrity sha512-0WPAXTd3bfIE8EhlnwM3eZYzakyTtjgWenhz8tAgUguYCF1hMHXVewzXrjEHQqLC1ow769kvEi2LeI1uI1Wk3g==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku-cli/schema" "^1.0.25"
     "@heroku/eventsource" "^1.0.7"
     "@heroku/function-toml" "^0.0.3"
     "@heroku/project-descriptor" "0.0.6"
-    "@hk/functions-core" "npm:@heroku/functions-core@0.4.1"
+    "@hk/functions-core" "npm:@heroku/functions-core@0.4.3"
     "@oclif/core" "^1.6.0"
-    "@salesforce/core" "^3.19.4"
+    "@salesforce/core" "^3.31.16"
     "@salesforce/plugin-org" "^1.11.2"
     "@salesforce/sf-plugins-core" "^1.7.2"
     "@salesforce/ts-sinon" "^1.3.21"
@@ -11096,48 +11096,6 @@ yeoman-environment@^3.11.1, yeoman-environment@^3.12.1, yeoman-environment@^3.9.
   version "3.12.1"
   resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-3.12.1.tgz#20fc0ab05d76f84c956ad03ed112e3a32e65e862"
   integrity sha512-q5nC954SE4BEkWFXOwkifbelEZrza6z7vnXCC9bTWvfHjRiaG45eqzv/M6/u4l6PvB/KMmBPgMrACV2mBHE+PQ==
-  dependencies:
-    "@npmcli/arborist" "^4.0.4"
-    are-we-there-yet "^2.0.0"
-    arrify "^2.0.1"
-    binaryextensions "^4.15.0"
-    chalk "^4.1.0"
-    cli-table "^0.3.1"
-    commander "7.1.0"
-    dateformat "^4.5.0"
-    debug "^4.1.1"
-    diff "^5.0.0"
-    error "^10.4.0"
-    escape-string-regexp "^4.0.0"
-    execa "^5.0.0"
-    find-up "^5.0.0"
-    globby "^11.0.1"
-    grouped-queue "^2.0.0"
-    inquirer "^8.0.0"
-    is-scoped "^2.1.0"
-    isbinaryfile "^4.0.10"
-    lodash "^4.17.10"
-    log-symbols "^4.0.0"
-    mem-fs "^1.2.0 || ^2.0.0"
-    mem-fs-editor "^8.1.2 || ^9.0.0"
-    minimatch "^3.0.4"
-    npmlog "^5.0.1"
-    p-queue "^6.6.2"
-    p-transform "^1.3.0"
-    pacote "^12.0.2"
-    preferred-pm "^3.0.3"
-    pretty-bytes "^5.3.0"
-    semver "^7.1.3"
-    slash "^3.0.0"
-    strip-ansi "^6.0.0"
-    text-table "^0.2.0"
-    textextensions "^5.12.0"
-    untildify "^4.0.0"
-
-yeoman-environment@~3.10.0:
-  version "3.10.0"
-  resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-3.10.0.tgz#d8c56571b68d16b4af8abfb950f83acc503eed77"
-  integrity sha512-sYtSxBK9daq21QjoskJTHKLQ1xEsRPURkmFV/aM8HS8ZlQVzwx57Rz1zCs8EGPhK4vqsmTE8H92Gp1jg1fT3EA==
   dependencies:
     "@npmcli/arborist" "^4.0.4"
     are-we-there-yet "^2.0.0"
