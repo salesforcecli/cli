@@ -67,7 +67,10 @@ jobs:
       channel: stable-rc
     secrets: inherit
 
-  Post-RC-to-Slack:
+  announce-rc-release-to-slack:
+    # TODO: only run this on a real release, not a prerelease or when testing
+    # Will need to add a condition to the job but github.ref doesn't work by itself because this triggers on a release event, not on a branch
+    # if: ${{ github.ref == 'refs/tags/<tag_name>' }}
     runs-on: ubuntu-latest
     needs: [pack-verify-upload-tarballs, npm-release, pack-upload-win, pack-upload-mac, rename-mac-pkg]
     steps:
