@@ -1175,19 +1175,19 @@
     inquirer "^8.2.4"
     rxjs "^7.5.6"
 
-"@oclif/plugin-update@3.0.3":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-3.0.3.tgz#9bab64ceedc67bc20836cca758a9387a2209e51f"
-  integrity sha512-OTNRvcZiXi6MR6KKmJL77kAbn7/CcQN33b8yNyrZbkUbZJUHw2DvZl5111IZ/z8NMQibvxMI1iCtKbIdCWO6pQ==
+"@oclif/plugin-update@3.0.6":
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-3.0.6.tgz#40b2dba592cb94d64e039e7d2a5524bd6195e0ca"
+  integrity sha512-6+c8crGC5QcrOo4nehF52jRi3uqYAEtVaqlW98uxLVo1Cu5fwnCutLevPUMuOsYvmcJJPIrn+5E5kHbSBr737A==
   dependencies:
     "@oclif/color" "^1.0.0"
-    "@oclif/core" "^1.16.4"
+    "@oclif/core" "^1.18.0"
     cross-spawn "^7.0.3"
     debug "^4.3.1"
     filesize "^6.1.0"
     fs-extra "^9.0.1"
     http-call "^5.3.0"
-    inquirer "^8.2.0"
+    inquirer "^8.2.5"
     lodash.throttle "^4.1.1"
     log-chopper "^1.0.2"
     semver "^7.3.8"
@@ -6090,7 +6090,7 @@ inquirer@^7.0.0:
     strip-ansi "^6.0.0"
     through "^2.3.6"
 
-inquirer@^8.0.0, inquirer@^8.2.0, inquirer@^8.2.4, inquirer@^8.2.5:
+inquirer@^8.0.0, inquirer@^8.2.4, inquirer@^8.2.5:
   version "8.2.5"
   resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-8.2.5.tgz#d8654a7542c35a9b9e069d27e2df4858784d54f8"
   integrity sha512-QAgPDQMEgrDssk1XiwwHoOGYF9BAbUcc1+j+FhEvaOt8/cKRqyLn0U5qA6F74fGhTMGxf92pOvPBeh29jQJDTQ==
