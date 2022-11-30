@@ -1051,7 +1051,7 @@
     chalk "^4.1.0"
     tslib "^2.3.1"
 
-"@oclif/plugin-autocomplete@1.3.6":
+"@oclif/plugin-autocomplete@^1.3.6":
   version "1.3.6"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-1.3.6.tgz#9320c0b9b286c97915a9cc591a3f5e2673fc799b"
   integrity sha512-XmSuuVohfGPAi2ouoCbWbVUjaaxprK+4KsNOkUafK2rqCMmmoK/VuAQvv539yMpM9IhSvARwS7NnGvFY9HmZVw==
@@ -1074,7 +1074,7 @@
     ts-json-schema-generator "^1.1.2"
     tslib "^2.4.0"
 
-"@oclif/plugin-commands@2.2.1":
+"@oclif/plugin-commands@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-commands/-/plugin-commands-2.2.1.tgz#cf985f20ba67b1aa0dac8e08db3c993c19680469"
   integrity sha512-mCv5Dlxkxg5sNaatFgbol9rKS9nBqPydRfxW0vusfzwuYZhxpdrvpgqkjcCO3LnQHSqX4qW5UCF6ZU0bBgnMBQ==
@@ -1099,14 +1099,14 @@
     widest-line "^3.1.0"
     wrap-ansi "^6.2.0"
 
-"@oclif/plugin-help@5.1.19", "@oclif/plugin-help@^5.1.19":
+"@oclif/plugin-help@^5.1.19":
   version "5.1.19"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-5.1.19.tgz#43051772fefafe9bfe8823e2298103feb351b9c7"
   integrity sha512-eQVRCFJOwRj8Tbqz8Lzd9GN38egwLCg+ohJ0xfg12CoXml03WqkfcFiAWkVwSWmLVrZUlUVrxfXKKkmpUaXZHg==
   dependencies:
     "@oclif/core" "^1.20.4"
 
-"@oclif/plugin-not-found@2.3.9", "@oclif/plugin-not-found@^2.3.7":
+"@oclif/plugin-not-found@^2.3.7", "@oclif/plugin-not-found@^2.3.9":
   version "2.3.9"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-2.3.9.tgz#045277bf04c8fd6ee25e68d5355658985c21404a"
   integrity sha512-FJXIa5KmNbCgO8kDVJ23C/SkRRuwMYaRTNs5jejwrwKAm5fPp+TnR1+4pBp64ik7FA806nioqMGlotiyEWfMJA==
@@ -1116,7 +1116,7 @@
     fast-levenshtein "^3.0.0"
     lodash "^4.17.21"
 
-"@oclif/plugin-plugins@2.1.7":
+"@oclif/plugin-plugins@^2.1.7":
   version "2.1.7"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-2.1.7.tgz#5f51a93c7f8057ec9b68307e72980d28ee426085"
   integrity sha512-z3nJWFskBKSimw8HUmlYyoaGEJlbjoFRT0xuiip4x7bccWn/Jyp4OWUzXcEdas6mnzmtBpNcQ5VxLaHIfad70Q==
@@ -1133,7 +1133,7 @@
     tslib "^2.4.1"
     yarn "^1.22.18"
 
-"@oclif/plugin-search@0.0.4":
+"@oclif/plugin-search@^0.0.4":
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-search/-/plugin-search-0.0.4.tgz#2f7c03938f9738b2bfb46fd7b85732c4c4e4942d"
   integrity sha512-NbbXAd0dX8MVik/2UQMjS3OOwDaPDN10uWd0v0Xf3N6qCxqaaCR6761v9Ka9y+IvBKuKYP5jy9MhlVJhrcV48g==
@@ -1144,7 +1144,7 @@
     inquirer "^8.2.5"
     rxjs "^7.5.6"
 
-"@oclif/plugin-update@3.0.7":
+"@oclif/plugin-update@^3.0.7":
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-3.0.7.tgz#c62f14a44bc8fe127f38b8653cd673c7f435bb60"
   integrity sha512-ANYyOhvl3OrFSYE6HJGI34Cjcqy775Zw9q/V70vFnK8oymjD5D7sahRPsyoU6t+m3lhK9Mh5kMAxplJXeMM/Rw==
@@ -1162,7 +1162,7 @@
     semver "^7.3.8"
     tar-fs "^2.1.1"
 
-"@oclif/plugin-version@1.1.3":
+"@oclif/plugin-version@^1.1.3":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-version/-/plugin-version-1.1.3.tgz#775853199dd12120a8820b300f3370685e8b6dd0"
   integrity sha512-n+kOpKudXe84onVC+9/mrABKU+SZxrY7p772e1aHhn9pVKv2gfVHrxp9CzlXUcc8nvWnjuBUg1IZ9I6kl6RVVg==
@@ -1200,7 +1200,7 @@
   resolved "https://registry.yarnpkg.com/@oclif/screen/-/screen-3.0.3.tgz#e679ad10535e31d333f809f7a71335cc9aef1e55"
   integrity sha512-KX8gMYA9ujBPOd1HFsV9e0iEx7Uoj8AG/3YsW4TtWQTg4lJvr82qNm7o/cFQfYRIt+jw7Ew/4oL4A22zOT+IRA==
 
-"@oclif/test@^2.2.10", "@oclif/test@^2.2.12":
+"@oclif/test@^2.2.12":
   version "2.2.12"
   resolved "https://registry.yarnpkg.com/@oclif/test/-/test-2.2.12.tgz#bb97a8c678b349e0e323013be67d68f619e6aaf2"
   integrity sha512-6s1XwvBTXHdVjVZY/qDgMl74NVvoy8MQoknqT/YfR9K3P/6fPW4xeZqemtvrvU4heM5kzSShta5sk0I28MXHMg==
@@ -4840,7 +4840,7 @@ extsprintf@^1.2.0:
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.4.1.tgz#8d172c064867f235c0c84a596806d279bf4bcc07"
   integrity sha512-Wrk35e8ydCKDj/ArClo1VrPVmN8zph5V4AtHwIuHhvMXsKf73UT3BOD+azBIW+3wOJ4FhEH7zyaJCFvChjYvMA==
 
-fancy-test@^2.0.6, fancy-test@^2.0.7:
+fancy-test@^2.0.7:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/fancy-test/-/fancy-test-2.0.7.tgz#a5e8e23113384c5550914da4f429d10822622521"
   integrity sha512-E9qiHMi/Wf3y0PLwoRbgr8SRTcvQY+6gx9d/qaVNT6N5AQ79iZr08ftY2Ki5KRC5LS02GoVD/CYT4t/KwwC/Pw==
