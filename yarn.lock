@@ -1144,15 +1144,15 @@
     tslib "^2.4.1"
     yarn "^1.22.18"
 
-"@oclif/plugin-search@0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-search/-/plugin-search-0.0.2.tgz#48898838fbb95f8de9075473ff6e752fc31c0094"
-  integrity sha512-MIuVU24lmLQ6lyPO2zThRY/YFx4QAGRkIjUzy6xaU26xvaN0w8RRo4fix+J6IeCs4EUUxUi9Rw9bsRrMrs1BSg==
+"@oclif/plugin-search@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-search/-/plugin-search-0.0.4.tgz#2f7c03938f9738b2bfb46fd7b85732c4c4e4942d"
+  integrity sha512-NbbXAd0dX8MVik/2UQMjS3OOwDaPDN10uWd0v0Xf3N6qCxqaaCR6761v9Ka9y+IvBKuKYP5jy9MhlVJhrcV48g==
   dependencies:
-    "@oclif/core" "^1.18.0"
+    "@oclif/core" "^1.20.3"
     chalk "^4"
     fuse.js "^6.6.2"
-    inquirer "^8.2.4"
+    inquirer "^8.2.5"
     rxjs "^7.5.6"
 
 "@oclif/plugin-update@3.0.7":
@@ -5974,7 +5974,7 @@ inquirer@^7.0.0:
     strip-ansi "^6.0.0"
     through "^2.3.6"
 
-inquirer@^8.0.0, inquirer@^8.2.4, inquirer@^8.2.5:
+inquirer@^8.0.0, inquirer@^8.2.5:
   version "8.2.5"
   resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-8.2.5.tgz#d8654a7542c35a9b9e069d27e2df4858784d54f8"
   integrity sha512-QAgPDQMEgrDssk1XiwwHoOGYF9BAbUcc1+j+FhEvaOt8/cKRqyLn0U5qA6F74fGhTMGxf92pOvPBeh29jQJDTQ==
