@@ -40,7 +40,6 @@ jobs:
         with:
           node-version: latest
           cache: yarn
-      - run: ./scripts/verify-promote
       - run: npm install -g @salesforce/plugin-release-management --omit=dev
       - run: yarn promote:verify
 

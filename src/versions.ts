@@ -1,4 +1,3 @@
-/* eslint-disable */
 /*
  * Copyright (c) 2022, salesforce.com, inc.
  * All rights reserved.
@@ -8,7 +7,9 @@
 
 import * as semver from 'semver';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const pjson = require('../package.json');
+const pjson = require('../package.json') as { engines: { node: string } };
+
+type Tag = string | semver.SemVer | null | undefined;
 
 /**
  * Determines whether or not a tag string is a semantic version.
@@ -16,13 +17,14 @@ const pjson = require('../package.json');
  * @param {*} tag The possible version string
  * @returns {boolean} True, if the string is recognized as a semantic version
  */
-export function isVersion(tag) {
+export function isVersion(tag: Tag): string | boolean {
   if (!tag) {
     return false;
   }
   return !!semver.valid(tag) || false;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
 module.exports.isVersion = isVersion;
 
 /**
@@ -32,7 +34,7 @@ export function checkNodeVersion(
   preferThrow = false,
   currentVersion = process.versions.node,
   requiredVersion = pjson.engines.node.slice(2)
-) {
+): void {
   if (semver.compare(currentVersion, requiredVersion) < 0) {
     const message = `Unsupported Node.js version ${currentVersion}, version ${requiredVersion} or later is required.`;
     if (!preferThrow) {
@@ -45,4 +47,5 @@ export function checkNodeVersion(
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
 module.exports.checkNodeVersion = checkNodeVersion;
