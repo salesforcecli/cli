@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "1.57.0",
+  "version": "1.58.0",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run"
@@ -109,11 +109,11 @@
     "@salesforce/core": "3.32.8",
     "@salesforce/sf-plugins-core": "^1.19.1",
     "@sf/deploy-retrieve": "npm:@salesforce/plugin-deploy-retrieve@1.6.16",
-    "@sf/env": "npm:@salesforce/plugin-env@1.5.13",
+    "@sf/env": "npm:@salesforce/plugin-env@1.5.14",
     "@sf/functions": "npm:@salesforce/plugin-functions@1.16.1",
-    "@sf/gen": "npm:@salesforce/plugin-generate@1.0.32",
-    "@sf/info": "npm:@salesforce/plugin-info@2.2.10",
-    "@sf/login": "npm:@salesforce/plugin-login@1.1.11",
+    "@sf/gen": "npm:@salesforce/plugin-generate@1.0.33",
+    "@sf/info": "npm:@salesforce/plugin-info@2.2.11",
+    "@sf/login": "npm:@salesforce/plugin-login@1.1.12",
     "@sf/settings": "npm:@salesforce/plugin-settings@1.1.10",
     "@sf/sobject": "npm:@salesforce/plugin-sobject@0.0.33",
     "@sf/telemetry": "npm:@salesforce/plugin-telemetry@2.0.5",
@@ -134,9 +134,9 @@
     "@sf/trust"
   ],
   "resolutions": {
-    "@oclif/core": "1.20.4",
+    "@oclif/core": "1.21.0",
     "@salesforce/schemas": "1.4.0",
-    "@salesforce/sf-plugins-core": "1.19.1",
+    "@salesforce/sf-plugins-core": "1.19.2",
     "@salesforce/templates": "55.1.0"
   },
   "repository": "salesforcecli/cli",
