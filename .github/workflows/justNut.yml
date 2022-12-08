@@ -19,6 +19,13 @@ on:
 
 jobs:
   just-nut:
+    env:
+      TESTKIT_EXECUTABLE_PATH: sf
+      TESTKIT_AUTH_URL: ${{ secrets.TESTKIT_AUTH_URL}}
+      TESTKIT_HUB_USERNAME: ${{ secrets.TESTKIT_HUB_USERNAME}}
+      TESTKIT_JWT_CLIENT_ID: ${{ secrets.TESTKIT_JWT_CLIENT_ID}}
+      TESTKIT_JWT_KEY: ${{ secrets.TESTKIT_JWT_KEY}}
+      TESTKIT_HUB_INSTANCE: ${{ secrets.TESTKIT_HUB_INSTANCE}}
     name: ${{inputs.repository}}
     runs-on: ${{inputs.os}}
     steps:
@@ -34,12 +41,19 @@ jobs:
       # many setup commands require sfdx executable
       - run: npm install -g @salesforce/cli@latest-rc sfdx-cli --omit=dev
       - run: yarn install
-      - name: NUTs with custom executable
+      - name: NUTs attempt 1
+        continue-on-error: true
+        id: nut1
         run: ${{ inputs.command }}
-        env:
-          TESTKIT_EXECUTABLE_PATH: sf
-          TESTKIT_AUTH_URL: ${{ secrets.TESTKIT_AUTH_URL}}
-          TESTKIT_HUB_USERNAME: ${{ secrets.TESTKIT_HUB_USERNAME}}
-          TESTKIT_JWT_CLIENT_ID: ${{ secrets.TESTKIT_JWT_CLIENT_ID}}
-          TESTKIT_JWT_KEY: ${{ secrets.TESTKIT_JWT_KEY}}
-          TESTKIT_HUB_INSTANCE: ${{ secrets.TESTKIT_HUB_INSTANCE}}
+      - name: NUTs attempt 2
+        continue-on-error: true
+        id: nut2
+        if: steps.nut1.outcome == 'failure'
+        run: |
+          echo "::notice title=NUT Retry::NUT '${{inputs.command}}' failed and was retried."
+          ${{ inputs.command }}
+      - name: NUTs attempt 3
+        if: steps.nut2.outcome == 'failure'
+        run: |
+          echo "::warning title=NUT Retry 2::NUT '${{inputs.command}}' failed twice and was retried."
+          ${{ inputs.command }}
