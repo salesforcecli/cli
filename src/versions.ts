@@ -17,7 +17,7 @@ type Tag = string | semver.SemVer | null | undefined;
  * @param {*} tag The possible version string
  * @returns {boolean} True, if the string is recognized as a semantic version
  */
-export function isVersion(tag: Tag): string | boolean {
+export function isVersion(tag: Tag): boolean {
   if (!tag) {
     return false;
   }

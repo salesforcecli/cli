@@ -21,15 +21,24 @@ export function preprocessCliFlags(process: ProcessLike): void {
     switch (arg) {
       case '--dev-debug': {
         let debug = '*';
-        if (process.argv[index + 1] && !process.argv[index + 1]?.startsWith('-')) {
-          // if the next arg is defined and IS NOT a flag, set it as the logger level
-          debug = process.argv[index + 1];
+        const lookahead = process.argv[index + 1];
+        if (lookahead && !lookahead.startsWith('-') && !lookahead.includes('=')) {
+          // --dev-debug var=arg -> DEBUG = *
+          // --dev-debug -a alias -> DEBUG = *
+          // --dev-debug --alias alias -> DEBUG = *
+          // sf config get --dev-debug target-dev-hub --json -> DEBUG = 'target-dev-hub'
+          // we need to delete the DEBUG level before being passed to OCLIF
+          delete process.argv[index + 1];
+          debug = lookahead;
         }
 
         // convert --dev-debug into a set of environment variables
         process.env.DEBUG = debug;
         process.env.SF_DEBUG = '1';
         process.env.SF_ENV = 'development';
+        process.env.SFDX_DEBUG = '1';
+        process.env.SFDX_ENV = 'development';
+
         return false;
       }
 
