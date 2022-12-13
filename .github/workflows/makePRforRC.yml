@@ -32,11 +32,11 @@ jobs:
       - run: yarn install
       - run: npm install -g @salesforce/plugin-release-management --omit=dev
       - uses: salesforcecli/github-workflows/.github/actions/gitConfig@main
-      - run: sf-release cli:latestrc:build --snapshot --schema
+      - run: sf-release cli:release:build --start-from-npm-dist-tag latest-rc --snapshot --schema
         if: ${{ !inputs.patch && !inputs.only }}
-      - run: sf-release cli:latestrc:build --snapshot --schema --patch
+      - run: sf-release cli:release:build --start-from-npm-dist-tag latest-rc --snapshot --schema --patch
         if: ${{ inputs.patch && !inputs.only }}
-      - run: sf-release cli:latestrc:build --snapshot --schema --only ${{inputs.only}}
+      - run: sf-release cli:release:build --start-from-npm-dist-tag latest-rc --snapshot --schema --only ${{inputs.only}}
         if: ${{ !inputs.patch && inputs.only }}
-      - run: sf-release cli:latestrc:build --snapshot --schema --patch --only ${{inputs.only}}
+      - run: sf-release cli:release:build --start-from-npm-dist-tag latest-rc --snapshot --schema --patch --only ${{inputs.only}}
         if: ${{ inputs.patch && inputs.only }}

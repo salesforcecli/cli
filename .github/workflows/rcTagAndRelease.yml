@@ -9,7 +9,7 @@ on:
 jobs:
   mergedReleaseBranch:
     # very specific PRs
-    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.title, 'Release') && endsWith(github.event.pull_request.title, 'as latest-rc')
+    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.title, 'Release PR for')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
