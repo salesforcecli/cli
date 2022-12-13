@@ -1051,12 +1051,12 @@
     chalk "^4.1.0"
     tslib "^2.3.1"
 
-"@oclif/plugin-autocomplete@^1.3.6":
-  version "1.3.6"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-1.3.6.tgz#9320c0b9b286c97915a9cc591a3f5e2673fc799b"
-  integrity sha512-XmSuuVohfGPAi2ouoCbWbVUjaaxprK+4KsNOkUafK2rqCMmmoK/VuAQvv539yMpM9IhSvARwS7NnGvFY9HmZVw==
+"@oclif/plugin-autocomplete@^1.3.7":
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-1.3.7.tgz#44376b164b3bdd13d814eeea0f540ed8667a6114"
+  integrity sha512-bJMf/ieHhnU5+2IPCFZl85ym/XVJ4IIN891R80pNs9KvUdOdE4RwFrYv+nCOp5k+aqteY903tIWmV1xI6A8YgA==
   dependencies:
-    "@oclif/core" "^1.20.4"
+    "@oclif/core" "^1.21.0"
     chalk "^4.1.0"
     debug "^4.3.4"
     fs-extra "^9.0.1"
@@ -1099,12 +1099,12 @@
     widest-line "^3.1.0"
     wrap-ansi "^6.2.0"
 
-"@oclif/plugin-help@^5.1.19":
-  version "5.1.19"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-5.1.19.tgz#43051772fefafe9bfe8823e2298103feb351b9c7"
-  integrity sha512-eQVRCFJOwRj8Tbqz8Lzd9GN38egwLCg+ohJ0xfg12CoXml03WqkfcFiAWkVwSWmLVrZUlUVrxfXKKkmpUaXZHg==
+"@oclif/plugin-help@^5.1.19", "@oclif/plugin-help@^5.1.20":
+  version "5.1.20"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-5.1.20.tgz#eba25a93266c271c7bbd08034bf53975f022476e"
+  integrity sha512-N8xRxE/isFcdBDI8cobixEZA5toxIK5jbxpwALNTr4s8KNAtBA3ORQrSiY0fWGkcv0sCGMwZw7rJ0Izh18JPsw==
   dependencies:
-    "@oclif/core" "^1.20.4"
+    "@oclif/core" "^1.21.0"
 
 "@oclif/plugin-not-found@^2.3.7", "@oclif/plugin-not-found@^2.3.9":
   version "2.3.9"
@@ -1144,13 +1144,13 @@
     inquirer "^8.2.5"
     rxjs "^7.5.6"
 
-"@oclif/plugin-update@^3.0.7":
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-3.0.7.tgz#c62f14a44bc8fe127f38b8653cd673c7f435bb60"
-  integrity sha512-ANYyOhvl3OrFSYE6HJGI34Cjcqy775Zw9q/V70vFnK8oymjD5D7sahRPsyoU6t+m3lhK9Mh5kMAxplJXeMM/Rw==
+"@oclif/plugin-update@^3.0.8":
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-3.0.8.tgz#e98e189e427b502993665b98b3ac8d7c1b4380d1"
+  integrity sha512-l/WtIJZLeBJKzD72EzooS6u8YoMyqqJZrFYaERdqrLfw6g42TzMaABiz0kFnkR8jy65vCn60j177D9LP2nXA+w==
   dependencies:
     "@oclif/color" "^1.0.2"
-    "@oclif/core" "^1.18.0"
+    "@oclif/core" "^1.21.0"
     cross-spawn "^7.0.3"
     debug "^4.3.1"
     filesize "^6.1.0"
@@ -1169,12 +1169,12 @@
   dependencies:
     "@oclif/core" "^1.14.1"
 
-"@oclif/plugin-warn-if-update-available@^2.0.14", "@oclif/plugin-warn-if-update-available@^2.0.15":
-  version "2.0.15"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-2.0.15.tgz#8d2610ccfb5fbbde639ce86aa95c7208d8152ee1"
-  integrity sha512-HC3ZNNH2V1m3LTgzc8+5ISpyv0bmZwngANLzc1rM3a0kxUiH1jSagZU5XWBF7B4Wh1VIOFkR96y4D0Dwh6KNfw==
+"@oclif/plugin-warn-if-update-available@^2.0.14", "@oclif/plugin-warn-if-update-available@^2.0.16":
+  version "2.0.16"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-2.0.16.tgz#7cabea4abaf021683ff85c2fe03bec02328d4947"
+  integrity sha512-jLe+yIwyMqUwdHTKLviAUqJbX0+QEj63LPDWCWqLZnuo6BSoIvJl6vRGzIDoxhWG/4nileBgwPv8ivSo6BEr0w==
   dependencies:
-    "@oclif/core" "^1.20.4"
+    "@oclif/core" "^1.21.0"
     chalk "^4.1.0"
     debug "^4.1.0"
     fs-extra "^9.0.1"
@@ -1182,12 +1182,12 @@
     lodash "^4.17.21"
     semver "^7.3.8"
 
-"@oclif/plugin-which@^2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-which/-/plugin-which-2.2.2.tgz#c672dec4aa741a16ff4f3ea862ee21ae3bfebbe1"
-  integrity sha512-aFCeRd4XEa26kQjYsegDKKOMWDXQK4ciX3+ZYiUA2z6khhxTNoIOH/4Y+v/QG/YLgOvduMWdEevkY/fek5BMgA==
+"@oclif/plugin-which@^2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-which/-/plugin-which-2.2.3.tgz#d367cb3779d3fb2bba80d486c2afa987399d195e"
+  integrity sha512-VwUtrJ27sTPBmKinOiQSUnFyCDghS4G1npKWlEjSCClTzsWQW/aXkEaXzKsdl39ow+7XPUw6E08knQ6MyxaEfw==
   dependencies:
-    "@oclif/core" "^1.20.4"
+    "@oclif/core" "^1.21.0"
     tslib "^2.4.1"
 
 "@oclif/screen@^1.0.4":
