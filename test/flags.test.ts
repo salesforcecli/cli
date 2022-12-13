@@ -49,7 +49,7 @@ describe('CLI flags', () => {
 
   it('should recognize --dev-debug with a DEBUG filter', () => {
     const process: ProcessLike = {
-      argv: ['--dev-debug', '--dev-filter', 'sf:config'],
+      argv: ['--dev-debug', '--debug-filter', 'sf:config'],
       env: {},
     };
     preprocessCliFlags(process);
@@ -64,7 +64,7 @@ describe('CLI flags', () => {
 
   it('should recognize --dev-debug with a DEBUG filter in any order', () => {
     const process: ProcessLike = {
-      argv: ['--setdefault', '--dev-filter', 'sf:Config', '--dev-debug'],
+      argv: ['--setdefault', '--debug-filter', 'sf:Config', '--dev-debug'],
       env: {},
     };
     preprocessCliFlags(process);
@@ -80,11 +80,11 @@ describe('CLI flags', () => {
 
   it('should only set DEBUG if --dev-debug is present', () => {
     const process: ProcessLike = {
-      argv: ['--setdefault', '--dev-filter', 'sf:Config'],
+      argv: ['--setdefault', '--debug-filter', 'sf:Config'],
       env: {},
     };
     preprocessCliFlags(process);
-    expect(process.argv).to.deep.equal(['--setdefault', '--dev-filter', 'sf:Config']);
+    expect(process.argv).to.deep.equal(['--setdefault', '--debug-filter', 'sf:Config']);
     expect(process.env.DEBUG).to.undefined;
     expect(process.env.SF_DEBUG).to.be.undefined;
     expect(process.env.SF_ENV).to.undefined;

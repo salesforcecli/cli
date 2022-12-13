@@ -20,12 +20,11 @@ export function preprocessCliFlags(process: ProcessLike): void {
   process.argv.map((arg) => {
     if (arg === '--dev-debug') {
       let debug = '*';
-      const filterIndex = process.argv.indexOf('--dev-filter');
+      const filterIndex = process.argv.indexOf('--debug-filter');
       if (filterIndex > 0) {
         debug = process.argv[filterIndex + 1];
 
-        process.argv.splice(filterIndex + 1, 1);
-        process.argv.splice(filterIndex, 1);
+        process.argv.splice(filterIndex, 2);
       }
       // convert --dev-debug into a set of environment variables
       process.env.DEBUG = debug;
@@ -34,7 +33,7 @@ export function preprocessCliFlags(process: ProcessLike): void {
       process.env.SFDX_DEBUG = '1';
       process.env.SFDX_ENV = 'development';
 
-      // need to calculate indexOf --dev-debug here because it might've changed based on --dev-filter
+      // need to calculate indexOf --dev-debug here because it might've changed based on --debug-filter
       process.argv.splice(process.argv.indexOf('--dev-debug'), 1);
     }
   });
