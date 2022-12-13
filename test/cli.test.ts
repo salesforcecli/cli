@@ -5,8 +5,7 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 // the below, there's lots of un-awaited promises for testing
-/* eslint-disable no-unused-expressions*/
-/* eslint-disable @typescript-eslint/require-await*/
+
 import { Config, Interfaces } from '@oclif/core';
 import { LoadOptions } from '@oclif/core/lib/interfaces/config';
 import { stubInterface } from '@salesforce/ts-sinon';
@@ -66,7 +65,6 @@ describe('cli', () => {
     });
 
     it('should initialize a Doctor instance when the doctor command is run', async () => {
-      debugger;
       sandbox.stub(Config.prototype, 'load').callsFake(() => Promise.resolve());
       let loadOptions: LoadOptions;
       const exec = async (argv?: string[], opts?: LoadOptions): Promise<void> => {
