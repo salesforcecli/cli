@@ -17,35 +17,25 @@ export interface ProcessLike {
 }
 
 export function preprocessCliFlags(process: ProcessLike): void {
-  process.argv = process.argv.filter((arg, index) => {
-    switch (arg) {
-      case '--dev-debug': {
-        let debug = '*';
-        const lookahead = process.argv[index + 1];
-        if (lookahead && !lookahead.startsWith('-') && !lookahead.includes('=')) {
-          // --dev-debug var=arg -> DEBUG = *
-          // --dev-debug -a alias -> DEBUG = *
-          // --dev-debug --alias alias -> DEBUG = *
-          // sf config get --dev-debug target-dev-hub --json -> DEBUG = 'target-dev-hub'
-          // we need to delete the DEBUG level before being passed to OCLIF
-          delete process.argv[index + 1];
-          debug = lookahead;
-        }
+  process.argv.map((arg) => {
+    if (arg === '--dev-debug') {
+      let debug = '*';
+      const filterIndex = process.argv.indexOf('--dev-filter');
+      if (filterIndex > 0) {
+        debug = process.argv[filterIndex + 1];
 
-        // convert --dev-debug into a set of environment variables
-        process.env.DEBUG = debug;
-        process.env.SF_DEBUG = '1';
-        process.env.SF_ENV = 'development';
-        process.env.SFDX_DEBUG = '1';
-        process.env.SFDX_ENV = 'development';
-
-        return false;
+        process.argv.splice(filterIndex + 1, 1);
+        process.argv.splice(filterIndex, 1);
       }
+      // convert --dev-debug into a set of environment variables
+      process.env.DEBUG = debug;
+      process.env.SF_DEBUG = '1';
+      process.env.SF_ENV = 'development';
+      process.env.SFDX_DEBUG = '1';
+      process.env.SFDX_ENV = 'development';
 
-      default: {
-        // retain all other cli args
-        return true;
-      }
+      // need to calculate indexOf --dev-debug here because it might've changed based on --dev-filter
+      process.argv.splice(process.argv.indexOf('--dev-debug'), 1);
     }
   });
 }

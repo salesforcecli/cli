@@ -44,15 +44,17 @@ describe('CLI flags', () => {
     expect(process.env.SF_ENV).to.equal('development');
     expect(process.env.SFDX_DEBUG).to.equal('1');
     expect(process.env.SFDX_ENV).to.equal('development');
+    expect(process.argv.length).to.equal(3);
   });
 
-  it('should recognize --dev-debug with a DEBUG level', () => {
+  it('should recognize --dev-debug with a DEBUG filter', () => {
     const process: ProcessLike = {
-      argv: ['--dev-debug', 'sf:config'],
+      argv: ['--dev-debug', '--dev-filter', 'sf:config'],
       env: {},
     };
     preprocessCliFlags(process);
-    expect(process.argv).not.to.include('--dev-debug');
+    expect(process.argv).to.deep.equal([]);
+    expect(process.argv).not.to.include('sf:Config');
     expect(process.env.DEBUG).to.equal('sf:config');
     expect(process.env.SF_DEBUG).to.equal('1');
     expect(process.env.SF_ENV).to.equal('development');
@@ -60,45 +62,33 @@ describe('CLI flags', () => {
     expect(process.env.SFDX_ENV).to.equal('development');
   });
 
-  it('should recognize --dev-debug with a short flag after', () => {
+  it('should recognize --dev-debug with a DEBUG filter in any order', () => {
     const process: ProcessLike = {
-      argv: ['--dev-debug', '-a', 'alias'],
+      argv: ['--setdefault', '--dev-filter', 'sf:Config', '--dev-debug'],
       env: {},
     };
     preprocessCliFlags(process);
-    expect(process.argv).not.to.include('--dev-debug');
-    expect(process.env.DEBUG).to.equal('*');
+    expect(process.argv).to.deep.equal(['--setdefault']);
+    expect(process.argv).not.to.include('sf:Config');
+    expect(process.argv).to.include('--setdefault');
+    expect(process.env.DEBUG).to.equal('sf:Config');
     expect(process.env.SF_DEBUG).to.equal('1');
     expect(process.env.SF_ENV).to.equal('development');
     expect(process.env.SFDX_DEBUG).to.equal('1');
     expect(process.env.SFDX_ENV).to.equal('development');
   });
 
-  it('should recognize --dev-debug with a long flag after', () => {
+  it('should only set DEBUG if --dev-debug is present', () => {
     const process: ProcessLike = {
-      argv: ['--dev-debug', '--alias', 'alias'],
+      argv: ['--setdefault', '--dev-filter', 'sf:Config'],
       env: {},
     };
     preprocessCliFlags(process);
-    expect(process.argv).not.to.include('--dev-debug');
-    expect(process.env.DEBUG).to.equal('*');
-    expect(process.env.SF_DEBUG).to.equal('1');
-    expect(process.env.SF_ENV).to.equal('development');
-    expect(process.env.SFDX_DEBUG).to.equal('1');
-    expect(process.env.SFDX_ENV).to.equal('development');
-  });
-
-  it('should recognize --dev-debug with a vararg after', () => {
-    const process: ProcessLike = {
-      argv: ['--dev-debug', 'var=arg'],
-      env: {},
-    };
-    preprocessCliFlags(process);
-    expect(process.argv).not.to.include('--dev-debug');
-    expect(process.env.DEBUG).to.equal('*');
-    expect(process.env.SF_DEBUG).to.equal('1');
-    expect(process.env.SF_ENV).to.equal('development');
-    expect(process.env.SFDX_DEBUG).to.equal('1');
-    expect(process.env.SFDX_ENV).to.equal('development');
+    expect(process.argv).to.deep.equal(['--setdefault', '--dev-filter', 'sf:Config']);
+    expect(process.env.DEBUG).to.undefined;
+    expect(process.env.SF_DEBUG).to.be.undefined;
+    expect(process.env.SF_ENV).to.undefined;
+    expect(process.env.SFDX_DEBUG).to.undefined;
+    expect(process.env.SFDX_ENV).to.undefined;
   });
 });
