@@ -480,10 +480,10 @@
     ajv-formats "^2.0.2"
     toml "^3.0.0"
 
-"@hk/functions-core@npm:@heroku/functions-core@0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@heroku/functions-core/-/functions-core-0.5.1.tgz#51ee65b75aad4ac7a04b36b81fb5013355345bb1"
-  integrity sha512-ADsWxCiJATf1gQKfOVdPakEYXrgYoDw84Xr5JAwXpRlcoVP5D4rVfNkQ0JWvtrUno2KF/c8VSx5jqvY9Wg4suQ==
+"@hk/functions-core@npm:@heroku/functions-core@0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@heroku/functions-core/-/functions-core-0.5.2.tgz#c3f6dd633a615e7c8aa4a57d159d87c4033007a1"
+  integrity sha512-kqlBT/lT9wuRDxD7q6HyN7j1JZz3+eryo0Jqos5b0Cx0aHxU/3xHNEZF8o+dauX4VvcaReHxNvrRjkxFVt3RwA==
   dependencies:
     "@heroku-cli/color" "^1.1.15"
     "@heroku/project-descriptor" "0.0.6"
@@ -500,7 +500,7 @@
     openpgp "^5.5.0"
     semver "^7.3.8"
     sha256-file "^1.0.0"
-    yeoman-environment "~3.12.1"
+    yeoman-environment "~3.13.0"
 
 "@humanwhocodes/config-array@^0.11.6":
   version "0.11.7"
@@ -1701,17 +1701,17 @@
     open "^8.4.0"
     tslib "^2"
 
-"@sf/functions@npm:@salesforce/plugin-functions@1.16.1":
-  version "1.16.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.16.1.tgz#035cb02a2913eb040c88e777021a3d161772ee02"
-  integrity sha512-ozKxzlcHKnMcUs+GN03Fk740U8eV0EMYWZObskzsHeDuhIQaCCALyCy54pwdWiPPrQpZDXbPvB8gmDRcZLXL+w==
+"@sf/functions@npm:@salesforce/plugin-functions@1.17.0":
+  version "1.17.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.17.0.tgz#e1b056d38cccea66d2978840a85560bf3e298e54"
+  integrity sha512-8pKRdzQwdjjQbXR8Qhd5bz4VsuzgNSIKFsw3FRmWMgSoMIQgQG1tB3XrWW74BKG3N7ZLU2skEgnyklquSj3XsQ==
   dependencies:
     "@heroku-cli/color" "^1.1.14"
     "@heroku-cli/schema" "^1.0.25"
     "@heroku/eventsource" "^1.0.7"
     "@heroku/function-toml" "^0.0.3"
     "@heroku/project-descriptor" "0.0.6"
-    "@hk/functions-core" "npm:@heroku/functions-core@0.5.1"
+    "@hk/functions-core" "npm:@heroku/functions-core@0.5.2"
     "@oclif/core" "^1.6.0"
     "@salesforce/core" "^3.31.16"
     "@salesforce/sf-plugins-core" "^1.7.2"
@@ -10876,10 +10876,52 @@ yarn@^1.22.18:
   resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.19.tgz#4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
   integrity sha512-/0V5q0WbslqnwP91tirOvldvYISzaqhClxzyUKXYxs07yUILIs5jx/k6CFe8bvKSkds5w+eiOqta39Wk3WxdcQ==
 
-yeoman-environment@^3.11.1, yeoman-environment@^3.12.1, yeoman-environment@^3.9.1, yeoman-environment@~3.12.1:
+yeoman-environment@^3.11.1, yeoman-environment@^3.12.1, yeoman-environment@^3.9.1:
   version "3.12.1"
   resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-3.12.1.tgz#20fc0ab05d76f84c956ad03ed112e3a32e65e862"
   integrity sha512-q5nC954SE4BEkWFXOwkifbelEZrza6z7vnXCC9bTWvfHjRiaG45eqzv/M6/u4l6PvB/KMmBPgMrACV2mBHE+PQ==
+  dependencies:
+    "@npmcli/arborist" "^4.0.4"
+    are-we-there-yet "^2.0.0"
+    arrify "^2.0.1"
+    binaryextensions "^4.15.0"
+    chalk "^4.1.0"
+    cli-table "^0.3.1"
+    commander "7.1.0"
+    dateformat "^4.5.0"
+    debug "^4.1.1"
+    diff "^5.0.0"
+    error "^10.4.0"
+    escape-string-regexp "^4.0.0"
+    execa "^5.0.0"
+    find-up "^5.0.0"
+    globby "^11.0.1"
+    grouped-queue "^2.0.0"
+    inquirer "^8.0.0"
+    is-scoped "^2.1.0"
+    isbinaryfile "^4.0.10"
+    lodash "^4.17.10"
+    log-symbols "^4.0.0"
+    mem-fs "^1.2.0 || ^2.0.0"
+    mem-fs-editor "^8.1.2 || ^9.0.0"
+    minimatch "^3.0.4"
+    npmlog "^5.0.1"
+    p-queue "^6.6.2"
+    p-transform "^1.3.0"
+    pacote "^12.0.2"
+    preferred-pm "^3.0.3"
+    pretty-bytes "^5.3.0"
+    semver "^7.1.3"
+    slash "^3.0.0"
+    strip-ansi "^6.0.0"
+    text-table "^0.2.0"
+    textextensions "^5.12.0"
+    untildify "^4.0.0"
+
+yeoman-environment@~3.13.0:
+  version "3.13.0"
+  resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-3.13.0.tgz#9db29f47352cb4a38eb0ef830a86091be3fd7240"
+  integrity sha512-eBPpBZCvFzx6yk17x+ZrOHp8ADDv6qHradV+SgdugaQKIy9NjEX5AkbwdTHLOgccSTkQ9rN791xvYOu6OmqjBg==
   dependencies:
     "@npmcli/arborist" "^4.0.4"
     are-we-there-yet "^2.0.0"
