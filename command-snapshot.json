@@ -167,6 +167,66 @@
     "alias": []
   },
   {
+    "command": "dev:audit:messages",
+    "plugin": "@salesforce/plugin-dev",
+    "flags": ["json", "messages-dir", "project-dir", "source-dir"],
+    "alias": []
+  },
+  {
+    "command": "dev:configure:repo",
+    "plugin": "@salesforce/plugin-dev",
+    "flags": ["bot", "dry-run", "json", "repository"],
+    "alias": []
+  },
+  {
+    "command": "dev:configure:secrets",
+    "plugin": "@salesforce/plugin-dev",
+    "flags": ["dry-run", "json", "repository"],
+    "alias": []
+  },
+  {
+    "command": "dev:convert:messages",
+    "plugin": "@salesforce/plugin-dev",
+    "flags": ["filename", "json"],
+    "alias": []
+  },
+  {
+    "command": "dev:generate:command",
+    "plugin": "@salesforce/plugin-dev",
+    "flags": ["force", "name", "nuts", "unit"],
+    "alias": []
+  },
+  {
+    "command": "dev:generate:flag",
+    "plugin": "@salesforce/plugin-dev",
+    "flags": ["dry-run"],
+    "alias": []
+  },
+  {
+    "command": "dev:generate:hook",
+    "plugin": "@salesforce/plugin-dev",
+    "flags": ["event", "force"],
+    "alias": []
+  },
+  {
+    "command": "dev:generate:library",
+    "plugin": "@salesforce/plugin-dev",
+    "flags": [],
+    "alias": []
+  },
+  {
+    "command": "dev:generate:plugin",
+    "plugin": "@salesforce/plugin-dev",
+    "flags": [],
+    "alias": []
+  },
+  {
+    "command": "dev:hook",
+    "plugin": "@salesforce/plugin-dev",
+    "flags": ["json", "plugin"],
+    "alias": []
+  },
+  {
     "command": "doctor",
     "plugin": "@salesforce/plugin-info",
     "flags": ["command", "createissue", "json", "loglevel", "outputdir", "plugin"],

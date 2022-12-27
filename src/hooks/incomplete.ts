@@ -5,8 +5,10 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
+import * as os from 'os';
 import { Hook, toConfiguredId, toStandardizedId, Interfaces } from '@oclif/core';
 import { Prompter } from '@salesforce/sf-plugins-core';
+import { Lifecycle } from '@salesforce/core';
 
 async function determineCommand(config: Interfaces.Config, matches: Interfaces.Command.Loadable[]): Promise<string> {
   if (matches.length === 1) return matches[0].id;
@@ -30,7 +32,17 @@ const hook: Hook.CommandIncomplete = async function ({ config, matches, argv }) 
     return config.runCommand('help', [toStandardizedId(command, config)]);
   }
 
-  return config.runCommand(toStandardizedId(command, config), argv);
+  const standardCommand = toStandardizedId(command, config);
+
+  if (matches.length === 1) {
+    await Lifecycle.getInstance().emitWarning(
+      `One command matches the partial command entered, running command:${os.EOL}${
+        config.bin
+      } ${standardCommand} ${argv.join(' ')}`
+    );
+  }
+
+  return config.runCommand(standardCommand, argv);
 };
 
 export default hook;
