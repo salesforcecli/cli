@@ -32,17 +32,16 @@ const hook: Hook.CommandIncomplete = async function ({ config, matches, argv }) 
     return config.runCommand('help', [toStandardizedId(command, config)]);
   }
 
-  const standardCommand = toStandardizedId(command, config);
-
   if (matches.length === 1) {
     await Lifecycle.getInstance().emitWarning(
-      `One command matches the partial command entered, running command:${os.EOL}${
-        config.bin
-      } ${standardCommand} ${argv.join(' ')}`
+      `One command matches the partial command entered, running command:${os.EOL}${config.bin} ${toConfiguredId(
+        command,
+        config
+      )} ${argv.join(' ')}`
     );
   }
 
-  return config.runCommand(standardCommand, argv);
+  return config.runCommand(toStandardizedId(command, config), argv);
 };
 
 export default hook;
