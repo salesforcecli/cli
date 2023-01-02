@@ -957,7 +957,7 @@
     is-wsl "^2.1.1"
     tslib "^2.3.1"
 
-"@oclif/core@1.21.0", "@oclif/core@^1.14.1", "@oclif/core@^1.16.0", "@oclif/core@^1.18.0", "@oclif/core@^1.2.0", "@oclif/core@^1.20.0", "@oclif/core@^1.20.4", "@oclif/core@^1.21.0", "@oclif/core@^1.22.0", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.8.0":
+"@oclif/core@1.21.0", "@oclif/core@^1.14.1", "@oclif/core@^1.16.0", "@oclif/core@^1.18.0", "@oclif/core@^1.2.0", "@oclif/core@^1.20.0", "@oclif/core@^1.20.4", "@oclif/core@^1.21.0", "@oclif/core@^1.22.0", "@oclif/core@^1.23.0", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.8.0":
   version "1.21.0"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.21.0.tgz#d91b2f40a4f446279ab6335c619fc1716fc23ab6"
   integrity sha512-B/AKYfHcNRAbb6Xz2kj0FlH9gWEi8aFS4iEr7EzguP3E2DpDk4wcf7eOMOfJYEmhuVd9sOpVWSnI2yP+FL/3Sg==
@@ -1533,12 +1533,12 @@
     mkdirp "^1.0.4"
     tslib "^2"
 
-"@salesforce/plugin-release-management@^3.7.5":
-  version "3.7.5"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-3.7.5.tgz#c458bffb77e6106e9d6fb82b25389d2b8864c436"
-  integrity sha512-x1nuixc+iGzCNQgbcKbdvF8ayl4Ds52Eq9EjMf7eTMoSi6edi3bCw8VOkc+3zDGoa0OZu+zOu7Q8yKjlGd8o2w==
+"@salesforce/plugin-release-management@^3.7.6":
+  version "3.7.6"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-3.7.6.tgz#17bf29a9dc130825bbe99c171622dbe192203979"
+  integrity sha512-8BcDGqxoPFyad/jlSKwpiCQ3CVLXLvhYZYEmLaw81Bdc4KSUOL1jlxZAP+CZs0UlgL6zAEqpG0e5k21NBN9sbw==
   dependencies:
-    "@oclif/core" "^1.20.4"
+    "@oclif/core" "^1.23.0"
     "@octokit/core" "^4.1.0"
     "@salesforce/core" "^3.32.9"
     "@salesforce/kit" "^1.6.1"
