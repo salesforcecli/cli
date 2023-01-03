@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 
-/* tslint:disable:no-var-requires only-arrow-functions */
-/* eslint-disable global-require, prefer-arrow-callback */
-
 // Since the CLI is a single process, we can have a larger amount of max listeners since
 // the process gets shut down. Don't set it to 0 (no limit) since we should still be aware
 // of rouge event listeners
@@ -13,6 +10,9 @@ process.setMaxListeners = () => {};
 
 // Check node version before requiring additional packages
 require('../dist/versions').checkNodeVersion();
+
+// Pre-process/prune flags before creating or running the actual CLI
+require('../dist/flags').preprocessCliFlags(process);
 
 const cli = require('../dist/cli');
 const pjson = require('../package.json');
