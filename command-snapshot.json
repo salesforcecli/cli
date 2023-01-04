@@ -169,7 +169,7 @@
   {
     "command": "doctor",
     "plugin": "@salesforce/plugin-info",
-    "flags": ["command", "createissue", "json", "loglevel", "outputdir", "plugin"],
+    "flags": ["command", "create-issue", "json", "loglevel", "output-dir", "plugin"],
     "alias": []
   },
   {
@@ -376,6 +376,18 @@
     "alias": ["whatsnew"]
   },
   {
+    "command": "limits:api:display",
+    "plugin": "@salesforce/plugin-limits",
+    "flags": ["api-version", "json", "loglevel", "target-org"],
+    "alias": ["force:limits:api:display", "org:list:limits"]
+  },
+  {
+    "command": "limits:recordcounts:display",
+    "plugin": "@salesforce/plugin-limits",
+    "flags": ["api-version", "json", "loglevel", "sobject", "target-org"],
+    "alias": ["force:limits:recordcounts:display", "org:list:sobject:record-counts"]
+  },
+  {
     "command": "login",
     "plugin": "@salesforce/plugin-login",
     "flags": [],
@@ -557,6 +569,18 @@
     "plugin": "@oclif/plugin-search",
     "flags": [],
     "alias": []
+  },
+  {
+    "command": "sobject:describe",
+    "plugin": "@salesforce/plugin-schema",
+    "flags": ["api-version", "json", "loglevel", "sobject", "target-org", "use-tooling-api"],
+    "alias": ["force:schema:sobject:describe"]
+  },
+  {
+    "command": "sobject:list",
+    "plugin": "@salesforce/plugin-schema",
+    "flags": ["api-version", "json", "loglevel", "sobject", "target-org"],
+    "alias": ["force:schema:sobject:list"]
   },
   {
     "command": "telemetry",
