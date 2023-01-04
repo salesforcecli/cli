@@ -571,6 +571,18 @@
     "alias": []
   },
   {
+    "command": "sobject:describe",
+    "plugin": "@salesforce/plugin-schema",
+    "flags": ["api-version", "json", "loglevel", "sobject", "target-org", "use-tooling-api"],
+    "alias": ["force:schema:sobject:describe"]
+  },
+  {
+    "command": "sobject:list",
+    "plugin": "@salesforce/plugin-schema",
+    "flags": ["api-version", "json", "loglevel", "sobject", "target-org"],
+    "alias": ["force:schema:sobject:list"]
+  },
+  {
     "command": "telemetry",
     "plugin": "@salesforce/plugin-telemetry",
     "flags": [],
