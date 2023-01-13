@@ -18,6 +18,13 @@ jobs:
         repository:
           - salesforcecli/plugin-login
           - salesforcecli/plugin-settings
+          - salesforcecli/plugin-custom-metadata
+          - salesforcecli/plugin-community
+          - salesforcecli/plugin-env
+          - salesforcecli/plugin-generate
+          - salesforcecli/plugin-limits
+          # omitted while nuts are too flaky on bulk commands
+          # - salesforcecli/plugin-data
     uses: ./.github/workflows/justNut.yml
     with:
       repository: ${{matrix.repository}}
