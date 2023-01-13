@@ -1022,6 +1022,17 @@
     strip-ansi "^6.0.0"
     wrap-ansi "^7.0.0"
 
+"@oclif/errors@^1.3.6":
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/@oclif/errors/-/errors-1.3.6.tgz#e8fe1fc12346cb77c4f274e26891964f5175f75d"
+  integrity sha512-fYaU4aDceETd89KXP+3cLyg9EHZsLD3RxF2IU9yxahhBpspWjkWi3Dy3bTgcwZ3V47BgxQaGapzJWDM33XIVDQ==
+  dependencies:
+    clean-stack "^3.0.0"
+    fs-extra "^8.1"
+    indent-string "^4.0.0"
+    strip-ansi "^6.0.1"
+    wrap-ansi "^7.0.0"
+
 "@oclif/help@^1.0.0", "@oclif/help@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@oclif/help/-/help-1.0.1.tgz#fd96a3dd9fb2314479e6c8584c91b63754a7dff5"
@@ -1051,6 +1062,16 @@
     "@oclif/linewrap" "^1.0.0"
     chalk "^4.1.0"
     tslib "^2.3.1"
+
+"@oclif/parser@^3.8.9":
+  version "3.8.9"
+  resolved "https://registry.yarnpkg.com/@oclif/parser/-/parser-3.8.9.tgz#9399041ada7e465043f34b24f4d82a8beb68a023"
+  integrity sha512-1j/kThdse7yHQz6+c3v8RA1I3gD6+SGt2O7IAb/MAMoxqyBrFQDabQHH2UU4eVFGMLN7U91AiYJp11zJ9LcQAg==
+  dependencies:
+    "@oclif/errors" "^1.3.6"
+    "@oclif/linewrap" "^1.0.0"
+    chalk "^4.1.0"
+    tslib "^2.4.1"
 
 "@oclif/plugin-autocomplete@^1.3.7":
   version "1.3.7"
@@ -1502,6 +1523,48 @@
     mkdirp "^1.0.4"
     tslib "^2"
 
+"@salesforce/plugin-community@^2.1.3":
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-community/-/plugin-community-2.1.3.tgz#0cbf48dd6270d1e4b2d8507507aee7e4d1aef902"
+  integrity sha512-P9vY6OKuY9oHjIbspx9boK8ySVjfkGu82/SG8to//fIEXQch9CHbrCSsIbySNOaS5i821q39Yy6XHFXf88reog==
+  dependencies:
+    "@oclif/core" "^1.23.0"
+    "@oclif/parser" "^3.8.9"
+    "@salesforce/core" "^3.32.9"
+    "@salesforce/kit" "^1.8.0"
+    "@salesforce/sf-plugins-core" "^1.21.5"
+    tslib "^2"
+
+"@salesforce/plugin-custom-metadata@^2.0.11":
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-custom-metadata/-/plugin-custom-metadata-2.0.11.tgz#66a85f944729bac870f533571737d5fd66b08066"
+  integrity sha512-WV1qsbFKTm738aXnM/7l4dIoBXv38HHV6NWFnZuckLwsKxl3PnPYaUGuGEpeKESREgnUOCNW5iCy4GjwfKQmtQ==
+  dependencies:
+    "@oclif/core" "^1.22.0"
+    "@salesforce/core" "^3.32.11"
+    "@salesforce/sf-plugins-core" "^1.21.3"
+    "@salesforce/ts-types" "^1.7.1"
+    fast-xml-parser "^4.0.12"
+    tslib "^2"
+
+"@salesforce/plugin-data@^2.1.22":
+  version "2.1.22"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-2.1.22.tgz#c4ee6b652a97d74ebc8fa8b60db6df68bfbd4056"
+  integrity sha512-PSyK3c7ZmvEuGyhIj6lV5JR30BkBV1f87rRqiiirbNDHmGWd9rF8I6t9DQUkIZjRWuDlQzb7AyCpcX0rKPRGhQ==
+  dependencies:
+    "@oclif/core" "^1.22.0"
+    "@salesforce/core" "^3.32.12"
+    "@salesforce/kit" "^1.7.0"
+    "@salesforce/sf-plugins-core" "^1.21.3"
+    "@salesforce/ts-types" "^1.7.2"
+    "@types/fs-extra" "^9.0.13"
+    chalk "^4.1.0"
+    csv-parse "^4.16.3"
+    csv-stringify "^6.2.3"
+    fs-extra "^10.0.1"
+    jsforce "^2.0.0-beta.19"
+    tslib "^2"
+
 "@salesforce/plugin-release-management@^3.7.7":
   version "3.7.10"
   resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-3.7.10.tgz#e9b7e924f6c688d147db0a8c35b1fbbeb08d3782"
@@ -1638,6 +1701,13 @@
     tslib "^2.2.0"
 
 "@salesforce/ts-types@^1.5.20", "@salesforce/ts-types@^1.5.21", "@salesforce/ts-types@^1.7.0", "@salesforce/ts-types@^1.7.1", "@salesforce/ts-types@^1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/ts-types/-/ts-types-1.7.2.tgz#ab40399d291c7eca57efc9890daf2fa2632197ec"
+  integrity sha512-eCpWKEb03UCKBJ6Svp0Vwcwt+fG6BQbopO4x5wt6CYeT8Rjt0dbDQicZPmVL59j2qyt3Q4Y4EYsxXUGZmdfvDw==
+  dependencies:
+    tslib "^2.4.1"
+
+"@salesforce/ts-types@^1.7.2":
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/@salesforce/ts-types/-/ts-types-1.7.2.tgz#ab40399d291c7eca57efc9890daf2fa2632197ec"
   integrity sha512-eCpWKEb03UCKBJ6Svp0Vwcwt+fG6BQbopO4x5wt6CYeT8Rjt0dbDQicZPmVL59j2qyt3Q4Y4EYsxXUGZmdfvDw==
@@ -1974,6 +2044,13 @@
   version "1.20.4"
   resolved "https://registry.yarnpkg.com/@types/expect/-/expect-1.20.4.tgz#8288e51737bf7e3ab5d7c77bfa695883745264e5"
   integrity sha512-Q5Vn3yjTDyCMV50TB6VRIbQNxSE4OmZR86VSbGaNpfUolm0iePBB4KdEEHmxoY5sT2+2DIvXW0rvMDP2nHZ4Mg==
+
+"@types/fs-extra@^9.0.13":
+  version "9.0.13"
+  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-9.0.13.tgz#7594fbae04fe7f1918ce8b3d213f74ff44ac1f45"
+  integrity sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==
+  dependencies:
+    "@types/node" "*"
 
 "@types/glob@^7.1.1":
   version "7.2.0"
@@ -3843,7 +3920,7 @@ cssesc@^3.0.0:
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
   integrity sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
 
-csv-parse@^4.10.1, csv-parse@^4.8.2:
+csv-parse@^4.10.1, csv-parse@^4.16.3, csv-parse@^4.8.2:
   version "4.16.3"
   resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-4.16.3.tgz#7ca624d517212ebc520a36873c3478fa66efbaf7"
   integrity sha512-cO1I/zmz4w2dcKHVvpCr7JVRu8/FymG5OEpmvsZYlccYolPBLoVGKUHgNoc4ZGkFeFlWGEDmMyBM+TTqRdW/wg==
@@ -3859,6 +3936,11 @@ csv-stringify@^5.3.4:
   version "5.6.5"
   resolved "https://registry.yarnpkg.com/csv-stringify/-/csv-stringify-5.6.5.tgz#c6d74badda4b49a79bf4e72f91cce1e33b94de00"
   integrity sha512-PjiQ659aQ+fUTQqSrd1XEDnOr52jh30RBurfzkscaE2tPaFsDH5wOAHJiw8XAHphRknCwMUE9KRayc4K/NbO8A==
+
+csv-stringify@^6.2.3:
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/csv-stringify/-/csv-stringify-6.2.3.tgz#fefd25e66fd48f8f42f43b85a66a4663a2c3e796"
+  integrity sha512-4qGjUMwnlaRc00gc2jrIYh2w/h1fo25B0mTuY9K8fBiIgtmCX3LcgUbrEGViL98Ci4Se/F5LFEtu8k+dItJVZQ==
 
 dargs@^7.0.0:
   version "7.0.0"
@@ -4385,10 +4467,10 @@ eslint-config-oclif@^3.1:
     eslint-plugin-node "^11.1.0"
     eslint-plugin-unicorn "^36.0.0"
 
-eslint-config-prettier@^8.5.0:
-  version "8.5.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.5.0.tgz#5a81680ec934beca02c7b1a61cf8ca34b66feab1"
-  integrity sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==
+eslint-config-prettier@^8.5.0, eslint-config-prettier@^8.6.0:
+  version "8.6.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.6.0.tgz#dec1d29ab728f4fa63061774e1672ac4e363d207"
+  integrity sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==
 
 eslint-config-salesforce-license@^0.1.6:
   version "0.1.6"
