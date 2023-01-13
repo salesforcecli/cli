@@ -67,59 +67,65 @@
     "FileResponse": {
       "anyOf": [
         {
-          "type": "object",
-          "properties": {
-            "fullName": {
-              "type": "string"
-            },
-            "type": {
-              "type": "string"
-            },
-            "filePath": {
-              "type": "string"
-            },
-            "state": {
-              "type": "string",
-              "enum": ["Created", "Changed", "Unchanged", "Deleted"]
-            }
-          },
-          "required": ["fullName", "state", "type"],
-          "additionalProperties": false
+          "$ref": "#/definitions/FileResponseSuccess"
         },
         {
-          "type": "object",
-          "properties": {
-            "fullName": {
-              "type": "string"
-            },
-            "type": {
-              "type": "string"
-            },
-            "filePath": {
-              "type": "string"
-            },
-            "state": {
-              "type": "string",
-              "const": "Failed"
-            },
-            "lineNumber": {
-              "type": "number"
-            },
-            "columnNumber": {
-              "type": "number"
-            },
-            "error": {
-              "type": "string"
-            },
-            "problemType": {
-              "type": "string",
-              "enum": ["Warning", "Error"]
-            }
-          },
-          "required": ["error", "fullName", "problemType", "state", "type"],
-          "additionalProperties": false
+          "$ref": "#/definitions/FileResponseFailure"
         }
       ]
+    },
+    "FileResponseSuccess": {
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "filePath": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string",
+          "enum": ["Created", "Changed", "Unchanged", "Deleted"]
+        }
+      },
+      "required": ["fullName", "state", "type"],
+      "additionalProperties": false
+    },
+    "FileResponseFailure": {
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "filePath": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string",
+          "const": "Failed"
+        },
+        "lineNumber": {
+          "type": "number"
+        },
+        "columnNumber": {
+          "type": "number"
+        },
+        "error": {
+          "type": "string"
+        },
+        "problemType": {
+          "type": "string",
+          "enum": ["Warning", "Error"]
+        }
+      },
+      "required": ["error", "fullName", "problemType", "state", "type"],
+      "additionalProperties": false
     },
     "FileProperties": {
       "type": "object",
