@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "1.61.0",
+  "version": "1.61.1",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run"
@@ -108,10 +108,10 @@
     "@oclif/plugin-version": "^1.1.4",
     "@oclif/plugin-warn-if-update-available": "^2.0.18",
     "@oclif/plugin-which": "^2.2.4",
-    "@salesforce/core": "3.32.12",
+    "@salesforce/core": "3.32.13",
     "@salesforce/sf-plugins-core": "^1.21.6",
-    "@sf/deploy-retrieve": "npm:@salesforce/plugin-deploy-retrieve@1.6.17",
-    "@sf/env": "npm:@salesforce/plugin-env@1.5.17",
+    "@sf/deploy-retrieve": "npm:@salesforce/plugin-deploy-retrieve@1.6.18",
+    "@sf/env": "npm:@salesforce/plugin-env@1.5.18",
     "@sf/functions": "npm:@salesforce/plugin-functions@1.17.0",
     "@sf/gen": "npm:@salesforce/plugin-generate@1.0.44",
     "@sf/info": "npm:@salesforce/plugin-info@2.3.2",
@@ -141,7 +141,7 @@
   "resolutions": {
     "@oclif/core": "1.24.0",
     "@salesforce/schemas": "1.4.0",
-    "@salesforce/sf-plugins-core": "1.22.0",
+    "@salesforce/sf-plugins-core": "1.22.1",
     "@salesforce/templates": "57.0.2"
   },
   "repository": "salesforcecli/cli",
