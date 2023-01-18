@@ -305,7 +305,22 @@
         "tracksSource": {
           "type": "boolean"
         },
-        "__computed": {
+        "name": {
+          "type": "string"
+        },
+        "instanceName": {
+          "type": "string"
+        },
+        "namespacePrefix": {
+          "type": ["string", "null"]
+        },
+        "isSandbox": {
+          "type": "boolean"
+        },
+        "isScratch": {
+          "type": "boolean"
+        },
+        "trailExpirationDate": {
           "type": ["string", "null"]
         }
       },
