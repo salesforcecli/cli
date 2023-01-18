@@ -8,6 +8,15 @@
           "type": "object",
           "additionalProperties": false,
           "properties": {
+            "replacements": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
             "files": {
               "type": "array",
               "items": {
