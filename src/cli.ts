@@ -11,7 +11,7 @@ import { Config, Interfaces, run as oclifRun } from '@oclif/core';
 import { VersionCommand } from '@oclif/plugin-version';
 import { set } from '@salesforce/kit';
 import { AnyJson, get } from '@salesforce/ts-types';
-import { Doctor } from '@sf/info';
+import { Doctor } from '@salesforce/plugin-info';
 import * as Debug from 'debug';
 import { default as nodeEnv, Env } from './util/env';
 

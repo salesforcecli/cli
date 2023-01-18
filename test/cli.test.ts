@@ -13,7 +13,7 @@ import { getString } from '@salesforce/ts-types';
 import { expect } from 'chai';
 import * as sinon from 'sinon';
 import { VersionCommand } from '@oclif/plugin-version';
-import { Doctor } from '@sf/info';
+import { Doctor } from '@salesforce/plugin-info';
 import {
   configureAutoUpdate,
   configureUpdateSites,
