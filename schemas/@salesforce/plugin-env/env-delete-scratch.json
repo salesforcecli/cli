@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/ScratchDeleteResponse",
+  "definitions": {
+    "ScratchDeleteResponse": {
+      "type": "object",
+      "properties": {
+        "orgId": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        }
+      },
+      "required": ["orgId", "username"],
+      "additionalProperties": false
+    }
+  }
+}

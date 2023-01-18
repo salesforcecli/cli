@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/FieldGenerateResult",
+  "definitions": {
+    "FieldGenerateResult": {
+      "type": "object",
+      "properties": {
+        "field": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "displayLocationInDecimal": {
+              "type": "boolean"
+            },
+            "type": {
+              "type": ["string", "null"]
+            },
+            "label": {
+              "type": ["string", "null"]
+            },
+            "description": {
+              "type": ["string", "null"]
+            },
+            "trackHistory": {
+              "type": ["boolean", "null"]
+            },
+            "inlineHelpText": {
+              "type": ["string", "null"]
+            },
+            "required": {
+              "type": ["boolean", "null"]
+            },
+            "fullName": {
+              "type": ["string", "null"]
+            },
+            "scale": {
+              "type": ["number", "null"]
+            },
+            "precision": {
+              "type": ["number", "null"]
+            },
+            "visibleLines": {
+              "type": ["number", "null"]
+            },
+            "length": {
+              "type": ["number", "null"]
+            }
+          },
+          "required": ["type"]
+        },
+        "path": {
+          "type": "string"
+        }
+      },
+      "required": ["field", "path"],
+      "additionalProperties": false
+    }
+  }
+}

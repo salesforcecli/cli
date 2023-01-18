@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/PreviewResult",
+  "definitions": {
+    "PreviewResult": {
+      "type": "object",
+      "properties": {
+        "ignored": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PreviewFile"
+          }
+        },
+        "conflicts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PreviewFile"
+          }
+        },
+        "toDeploy": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PreviewFile"
+          }
+        },
+        "toDelete": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PreviewFile"
+          }
+        },
+        "toRetrieve": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PreviewFile"
+          }
+        }
+      },
+      "required": ["ignored", "conflicts", "toDeploy", "toDelete", "toRetrieve"],
+      "additionalProperties": false
+    },
+    "PreviewFile": {
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "conflict": {
+          "type": "boolean"
+        },
+        "ignored": {
+          "type": "boolean"
+        },
+        "path": {
+          "type": "string"
+        },
+        "projectRelativePath": {
+          "type": "string"
+        },
+        "operation": {
+          "type": "string",
+          "enum": ["deploy", "retrieve", "deletePost", "deletePre"]
+        }
+      },
+      "required": ["fullName", "type", "conflict", "ignored"],
+      "additionalProperties": false
+    }
+  }
+}
