@@ -1,0 +1,378 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/CmdtRecordCreateResponse",
+  "definitions": {
+    "CmdtRecordCreateResponse": {
+      "type": "object",
+      "properties": {
+        "typename": {
+          "type": "string"
+        },
+        "recordname": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "inputdir": {
+          "type": "string"
+        },
+        "outputdir": {
+          "type": "string"
+        },
+        "protectedFlag": {
+          "type": "boolean"
+        },
+        "varargs": {
+          "type": "object",
+          "additionalProperties": {}
+        },
+        "fileData": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CustomField"
+          }
+        }
+      },
+      "required": ["typename", "recordname", "label", "inputdir", "outputdir", "protectedFlag", "varargs", "fileData"],
+      "additionalProperties": false
+    },
+    "CustomField": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "businessOwnerGroup": {
+          "type": ["string", "null"]
+        },
+        "businessOwnerUser": {
+          "type": ["string", "null"]
+        },
+        "businessStatus": {
+          "type": ["string", "null"]
+        },
+        "caseSensitive": {
+          "type": ["boolean", "null"]
+        },
+        "complianceGroup": {
+          "type": ["string", "null"]
+        },
+        "customDataType": {
+          "type": ["string", "null"]
+        },
+        "defaultValue": {
+          "type": ["string", "null"]
+        },
+        "deleteConstraint": {
+          "type": ["string", "null"]
+        },
+        "deprecated": {
+          "type": ["boolean", "null"]
+        },
+        "description": {
+          "type": ["string", "null"]
+        },
+        "displayFormat": {
+          "type": ["string", "null"]
+        },
+        "encryptionScheme": {
+          "type": ["string", "null"]
+        },
+        "escapeMarkup": {
+          "type": ["boolean", "null"]
+        },
+        "externalDeveloperName": {
+          "type": ["string", "null"]
+        },
+        "externalId": {
+          "type": ["boolean", "null"]
+        },
+        "fieldManageability": {
+          "type": ["string", "null"]
+        },
+        "formula": {
+          "type": ["string", "null"]
+        },
+        "formulaTreatBlanksAs": {
+          "type": ["string", "null"]
+        },
+        "inlineHelpText": {
+          "type": ["string", "null"]
+        },
+        "isAIPredictionField": {
+          "type": ["boolean", "null"]
+        },
+        "isConvertLeadDisabled": {
+          "type": ["boolean", "null"]
+        },
+        "isFilteringDisabled": {
+          "type": ["boolean", "null"]
+        },
+        "isNameField": {
+          "type": ["boolean", "null"]
+        },
+        "isSortingDisabled": {
+          "type": ["boolean", "null"]
+        },
+        "label": {
+          "type": ["string", "null"]
+        },
+        "length": {
+          "type": ["number", "null"]
+        },
+        "lookupFilter": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/LookupFilter"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "maskChar": {
+          "type": ["string", "null"]
+        },
+        "maskType": {
+          "type": ["string", "null"]
+        },
+        "metadataRelationshipControllingField": {
+          "type": ["string", "null"]
+        },
+        "populateExistingRows": {
+          "type": ["boolean", "null"]
+        },
+        "precision": {
+          "type": ["number", "null"]
+        },
+        "referenceTargetField": {
+          "type": ["string", "null"]
+        },
+        "referenceTo": {
+          "type": ["string", "null"]
+        },
+        "relationshipLabel": {
+          "type": ["string", "null"]
+        },
+        "relationshipName": {
+          "type": ["string", "null"]
+        },
+        "relationshipOrder": {
+          "type": ["number", "null"]
+        },
+        "reparentableMasterDetail": {
+          "type": ["boolean", "null"]
+        },
+        "required": {
+          "type": ["boolean", "null"]
+        },
+        "restrictedAdminField": {
+          "type": ["boolean", "null"]
+        },
+        "scale": {
+          "type": ["number", "null"]
+        },
+        "securityClassification": {
+          "type": ["string", "null"]
+        },
+        "startingNumber": {
+          "type": ["number", "null"]
+        },
+        "stripMarkup": {
+          "type": ["boolean", "null"]
+        },
+        "summarizedField": {
+          "type": ["string", "null"]
+        },
+        "summaryFilterItems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FilterItem"
+          }
+        },
+        "summaryForeignKey": {
+          "type": ["string", "null"]
+        },
+        "summaryOperation": {
+          "type": ["string", "null"]
+        },
+        "trackFeedHistory": {
+          "type": ["boolean", "null"]
+        },
+        "trackHistory": {
+          "type": ["boolean", "null"]
+        },
+        "trackTrending": {
+          "type": ["boolean", "null"]
+        },
+        "translateData": {
+          "type": ["boolean", "null"]
+        },
+        "type": {
+          "type": ["string", "null"]
+        },
+        "unique": {
+          "type": ["boolean", "null"]
+        },
+        "valueSet": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ValueSet"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "visibleLines": {
+          "type": ["number", "null"]
+        },
+        "writeRequiresMasterRead": {
+          "type": ["boolean", "null"]
+        },
+        "fullName": {
+          "type": ["string", "null"]
+        }
+      },
+      "required": ["summaryFilterItems"]
+    },
+    "LookupFilter": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean"
+        },
+        "booleanFilter": {
+          "type": ["string", "null"]
+        },
+        "description": {
+          "type": ["string", "null"]
+        },
+        "errorMessage": {
+          "type": ["string", "null"]
+        },
+        "filterItems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FilterItem"
+          }
+        },
+        "infoMessage": {
+          "type": ["string", "null"]
+        },
+        "isOptional": {
+          "type": "boolean"
+        }
+      },
+      "required": ["active", "filterItems", "isOptional"],
+      "additionalProperties": false
+    },
+    "FilterItem": {
+      "type": "object",
+      "properties": {
+        "field": {
+          "type": "string"
+        },
+        "operation": {
+          "type": "string"
+        },
+        "value": {
+          "type": ["string", "null"]
+        },
+        "valueField": {
+          "type": ["string", "null"]
+        }
+      },
+      "required": ["field", "operation"],
+      "additionalProperties": false
+    },
+    "ValueSet": {
+      "type": "object",
+      "properties": {
+        "controllingField": {
+          "type": ["string", "null"]
+        },
+        "restricted": {
+          "type": ["boolean", "null"]
+        },
+        "valueSetDefinition": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ValueSetValuesDefinition"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "valueSetName": {
+          "type": ["string", "null"]
+        },
+        "valueSettings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ValueSettings"
+          }
+        }
+      },
+      "required": ["valueSettings"],
+      "additionalProperties": false
+    },
+    "ValueSetValuesDefinition": {
+      "type": "object",
+      "properties": {
+        "sorted": {
+          "type": "boolean"
+        },
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CustomValue"
+          }
+        }
+      },
+      "required": ["sorted", "value"],
+      "additionalProperties": false
+    },
+    "CustomValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "color": {
+          "type": ["string", "null"]
+        },
+        "default": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": ["string", "null"]
+        },
+        "isActive": {
+          "type": ["boolean", "null"]
+        },
+        "label": {
+          "type": ["string", "null"]
+        },
+        "fullName": {
+          "type": ["string", "null"]
+        }
+      },
+      "required": ["default"]
+    },
+    "ValueSettings": {
+      "type": "object",
+      "properties": {
+        "controllingFieldValue": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "valueName": {
+          "type": "string"
+        }
+      },
+      "required": ["controllingFieldValue", "valueName"],
+      "additionalProperties": false
+    }
+  }
+}

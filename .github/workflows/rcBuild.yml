@@ -9,7 +9,6 @@ jobs:
     secrets: inherit
     with:
       tag: latest-rc
-      ctc: true
       githubTag: ${{ github.event.release.tag_name }}
 
   pack-verify-upload-tarballs:
@@ -42,12 +41,12 @@ jobs:
       version: ${{ github.event.release.tag_name }}
       channel: stable-rc
     secrets: inherit
-    
+
   # The rename-mac-pkg job is only needed as long as the developer site is linking to the old sfdx.pkg file and the mac signing job is only signing the old file as well.
   # It can be removed once those are updated to use the new name, sfdx-x64.pkg.
   rename-mac-pkg:
     runs-on: ubuntu-latest
-    env: 
+    env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_EC2_METADATA_DISABLED: true
