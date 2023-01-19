@@ -41,7 +41,26 @@ jobs:
           node-version: latest
           cache: yarn
       - run: npm install -g @salesforce/plugin-release-management --omit=dev
-      - run: yarn promote:verify
+      - run: |
+          ATTEMPT=1
+          MAX=5
+          DELAY=120 # two minutes
+
+          # Retry several times because the S3 cache can cause failures
+          # Command: sf-release cli:versions:inspect --channels stable --locations archive --cli sf
+
+          while true; do
+              sf-release cli:versions:inspect --channels stable --locations archive --cli sf && break || {
+                  if [[ $ATTEMPT -lt $MAX ]]; then
+                      ((ATTEMPT++))
+                      echo "Promote verify failed - trying again ($ATTEMPT/$MAX)"
+                      sleep $DELAY;
+                  else
+                      "Exiting after $ATTEMPT failed attempts"
+                      exit 1
+                  fi
+              }
+          done
 
   announce-promotion-to-slack:
     # Only runs on main branch
