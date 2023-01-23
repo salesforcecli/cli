@@ -30,7 +30,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
   failure-notify:
     runs-on: ubuntu-latest
-    if: ${{ jobs.get-workflow-conclusion.outputs.conclusion == 'failure' }}
+    needs: [get-workflow-conclusion]
+    if: ${{ needs.get-workflow-conclusion.outputs.conclusion == 'failure' }}
     steps:
       - name: Announce Failure
         id: slack
