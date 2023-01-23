@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "1.62.0",
+  "version": "1.63.0",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run"
@@ -112,24 +112,24 @@
     "@oclif/plugin-version": "^1.1.4",
     "@oclif/plugin-warn-if-update-available": "^2.0.19",
     "@oclif/plugin-which": "^2.2.4",
-    "@salesforce/core": "3.32.14",
+    "@salesforce/core": "3.33.0",
     "@salesforce/sf-plugins-core": "^1.21.6",
-    "@salesforce/plugin-deploy-retrieve": "1.7.0",
+    "@salesforce/plugin-deploy-retrieve": "1.7.1",
     "@salesforce/plugin-env": "1.5.18",
     "@salesforce/plugin-functions": "1.17.0",
     "@salesforce/plugin-generate": "1.0.44",
-    "@salesforce/plugin-info": "2.3.3",
+    "@salesforce/plugin-info": "2.3.5",
     "@salesforce/plugin-limits": "2.2.3",
     "@salesforce/plugin-login": "1.1.16",
     "@salesforce/plugin-schema": "2.2.1",
     "@salesforce/plugin-settings": "1.1.15",
-    "@salesforce/plugin-sobject": "0.0.40",
+    "@salesforce/plugin-sobject": "0.0.41",
     "@salesforce/plugin-telemetry": "2.0.5",
     "@salesforce/plugin-data": "2.1.22",
-    "@salesforce/plugin-community": "2.1.3",
-    "@salesforce/plugin-custom-metadata": "2.0.14",
-    "@salesforce/plugin-trust": "2.2.8",
-    "@salesforce/plugin-signups": "1.3.0",
+    "@salesforce/plugin-community": "2.1.4",
+    "@salesforce/plugin-custom-metadata": "2.0.15",
+    "@salesforce/plugin-trust": "2.3.0",
+    "@salesforce/plugin-signups": "1.3.1",
     "semver": "^7.3.8",
     "tslib": "^2.4.1"
   },
@@ -152,7 +152,7 @@
   ],
   "resolutions": {
     "@salesforce/schemas": "1.4.0",
-    "@salesforce/templates": "57.0.2"
+    "@salesforce/templates": "57.1.0"
   },
   "repository": "salesforcecli/cli",
   "scripts": {
