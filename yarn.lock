@@ -958,10 +958,10 @@
     is-wsl "^2.1.1"
     tslib "^2.3.1"
 
-"@oclif/core@^1.2.0", "@oclif/core@^1.20.4", "@oclif/core@^1.21.0", "@oclif/core@^1.22.0", "@oclif/core@^1.23.0", "@oclif/core@^1.23.1", "@oclif/core@^1.23.2", "@oclif/core@^1.24.0", "@oclif/core@^1.24.2", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.8.0":
-  version "1.24.2"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.24.2.tgz#1d2e4b8b27db7e98b0c1d7b367934196a2f2c202"
-  integrity sha512-0wfAa6HG4sJ4j5c4/GV4BWZwALtJyw2ZO6titnrWKcowxU1BWd8mBM45ilTPnDhClMowz7+8EtK4kqUGc1rNwA==
+"@oclif/core@^1.2.0", "@oclif/core@^1.20.4", "@oclif/core@^1.21.0", "@oclif/core@^1.22.0", "@oclif/core@^1.23.0", "@oclif/core@^1.23.1", "@oclif/core@^1.23.2", "@oclif/core@^1.24.0", "@oclif/core@^1.24.2", "@oclif/core@^1.25.0", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.8.0":
+  version "1.25.0"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.25.0.tgz#a3891f903bf211ce1f3c8a05419b686f02c5bbd6"
+  integrity sha512-vS8L5Uqc5Wuq3zmKVvX5LLcyxhfH2X2q+LG1P6czzkh6k09uLeDaZfwaYPXD7ItM4Vfy+KEctfKiWePeLDnOpg==
   dependencies:
     "@oclif/linewrap" "^1.0.0"
     "@oclif/screen" "^3.0.4"
@@ -1179,12 +1179,12 @@
     tslib "^2.4.1"
     yarn "^1.22.18"
 
-"@oclif/plugin-search@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-search/-/plugin-search-0.0.6.tgz#a7acbcee60f4d5104b09e3bc55267f21c97973a0"
-  integrity sha512-r4PZqCXDQFfXPGe+liDNzgGD3CgunmQm+f7mVwDLAU7U+wLVrfWuPlIDyCOD0+yYW2rkryvsdPYu3XfW631BXQ==
+"@oclif/plugin-search@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-search/-/plugin-search-0.0.9.tgz#017c9e9e57c6c2e7cd68963c5c59b30cac8429b3"
+  integrity sha512-Rqe4KhQYfZol6Vruiux1Rn4j0eYV41PdSvk/a/ZTd+N3uqgPqpL/fxY7iLoC+HhPPugcqOUBRNU//++5ZnvcBQ==
   dependencies:
-    "@oclif/core" "^1.22.0"
+    "@oclif/core" "^1.25.0"
     chalk "^4"
     fuse.js "^6.6.2"
     inquirer "^8.2.5"
