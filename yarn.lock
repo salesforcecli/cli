@@ -440,10 +440,10 @@
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
 
-"@heroku-cli/color@^1.1.14", "@heroku-cli/color@^1.1.15":
-  version "1.1.15"
-  resolved "https://registry.yarnpkg.com/@heroku-cli/color/-/color-1.1.15.tgz#076cc78e129f8d1bca94be90d808c2783210bff2"
-  integrity sha512-eUjF6KD36iQm+32mMVExWosmLQsimtWIe6xdKFGpxGTTEM1SPd4ut+dsWVax38WRumezRsQpV0GADYUxuPewwQ==
+"@heroku-cli/color@^1.1.16":
+  version "1.1.16"
+  resolved "https://registry.yarnpkg.com/@heroku-cli/color/-/color-1.1.16.tgz#713b7e57441b27ae93d8d0f695b8036aaef8ec1e"
+  integrity sha512-97bYxNaDe/+GCUAKu0V2qudQmR3NFRnv3SrQd2FTtOAa9OWKwkvoBs2WzT7MkNwP4DIpYL6W/e3CSfShfhzEMw==
   dependencies:
     ansi-styles "^3.2.1"
     chalk "^2.4.1"
@@ -480,23 +480,23 @@
     ajv-formats "^2.0.2"
     toml "^3.0.0"
 
-"@hk/functions-core@npm:@heroku/functions-core@0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@heroku/functions-core/-/functions-core-0.5.2.tgz#c3f6dd633a615e7c8aa4a57d159d87c4033007a1"
-  integrity sha512-kqlBT/lT9wuRDxD7q6HyN7j1JZz3+eryo0Jqos5b0Cx0aHxU/3xHNEZF8o+dauX4VvcaReHxNvrRjkxFVt3RwA==
+"@hk/functions-core@npm:@heroku/functions-core@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@heroku/functions-core/-/functions-core-0.5.3.tgz#f76da141729b509b3b1ae0f6cb2c8bbeecd6c3c1"
+  integrity sha512-SoJ+8wbke9nRZms2DojMv8bg25ISV5IcvguWMo6XF73knGjAHPqu9AEDOU/w3/X99bfPntfrqT/ipZgbt2c9ow==
   dependencies:
-    "@heroku-cli/color" "^1.1.15"
+    "@heroku-cli/color" "^1.1.16"
     "@heroku/project-descriptor" "0.0.6"
     "@salesforce/core" "^2.37.1"
-    "@salesforce/templates" "^55.1.0"
+    "@salesforce/templates" "^57.1.0"
     axios "^0.27.2"
     cloudevents "^6.0.3"
-    fs-extra "^10.1.0"
+    fs-extra "^11.1.0"
     global-agent "^3.0.0"
     handlebars "^4.7.7"
     mem-fs "^2.2.1"
     mem-fs-editor "^9.5.0"
-    node-fetch "^2.6.7"
+    node-fetch "^2.6.8"
     openpgp "^5.5.0"
     semver "^7.3.8"
     sha256-file "^1.0.0"
@@ -1477,7 +1477,7 @@
     semver "^7.3.5"
     ts-retry-promise "^0.6.0"
 
-"@salesforce/core@^3.24.0", "@salesforce/core@^3.31.16", "@salesforce/core@^3.31.17", "@salesforce/core@^3.31.19", "@salesforce/core@^3.32.11", "@salesforce/core@^3.32.12", "@salesforce/core@^3.32.13", "@salesforce/core@^3.32.2", "@salesforce/core@^3.32.8", "@salesforce/core@^3.32.9", "@salesforce/core@^3.33.0", "@salesforce/core@^3.8.0":
+"@salesforce/core@^3.24.0", "@salesforce/core@^3.31.17", "@salesforce/core@^3.31.19", "@salesforce/core@^3.32.11", "@salesforce/core@^3.32.12", "@salesforce/core@^3.32.13", "@salesforce/core@^3.32.2", "@salesforce/core@^3.32.8", "@salesforce/core@^3.32.9", "@salesforce/core@^3.33.0", "@salesforce/core@^3.8.0":
   version "3.33.0"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.33.0.tgz#481cbd58955a7384a1f9200e02effc4dfe8e59da"
   integrity sha512-nz7qKwm1GpNr8swksthm5jKORj4wn647iCm6Ij1X5oRts1uynLdnqyNDtWD6OJCOaMXunjRmnhRB82JXq/TnFg==
@@ -1642,19 +1642,19 @@
     open "^8.4.0"
     tslib "^2"
 
-"@salesforce/plugin-functions@1.17.0":
-  version "1.17.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.17.0.tgz#e1b056d38cccea66d2978840a85560bf3e298e54"
-  integrity sha512-8pKRdzQwdjjQbXR8Qhd5bz4VsuzgNSIKFsw3FRmWMgSoMIQgQG1tB3XrWW74BKG3N7ZLU2skEgnyklquSj3XsQ==
+"@salesforce/plugin-functions@1.17.4":
+  version "1.17.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.17.4.tgz#f12d3760b43ae0c6a3de4d7811e764ec34f8dd63"
+  integrity sha512-5nAzuJSywsthUpid/9HQ1dDsgwGratS3w6YAq9IG0vmz+ntYkszbLC1ilMG6wkgcZJ0WHmhS0T44AG1ysJgd9g==
   dependencies:
-    "@heroku-cli/color" "^1.1.14"
+    "@heroku-cli/color" "^1.1.16"
     "@heroku-cli/schema" "^1.0.25"
     "@heroku/eventsource" "^1.0.7"
     "@heroku/function-toml" "^0.0.3"
     "@heroku/project-descriptor" "0.0.6"
-    "@hk/functions-core" "npm:@heroku/functions-core@0.5.2"
+    "@hk/functions-core" "npm:@heroku/functions-core@^0.5.3"
     "@oclif/core" "^1.6.0"
-    "@salesforce/core" "^3.31.16"
+    "@salesforce/core" "^3.32.12"
     "@salesforce/sf-plugins-core" "^1.7.2"
     "@salesforce/ts-types" "^1.7.1"
     axios "^0.27.2"
@@ -1671,7 +1671,7 @@
     kbpgp "^2.1.15"
     lodash "^4.17.21"
     netrc-parser "^3.1.6"
-    node-fetch "^3.2.3"
+    node-fetch "^3.3.0"
     sha256-file "^1.0.0"
     uuid "^8.3.2"
 
@@ -1898,7 +1898,7 @@
     applicationinsights "^1.4.0"
     axios "^0.27.2"
 
-"@salesforce/templates@57.0.2", "@salesforce/templates@^55.1.0":
+"@salesforce/templates@57.0.2", "@salesforce/templates@^55.1.0", "@salesforce/templates@^57.1.0":
   version "57.0.2"
   resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-57.0.2.tgz#f92904bf0701e9139c0782265845e3ab1cf310e7"
   integrity sha512-Dix0l6pNGtLCK9HJwdejCfTeQFAPlvF1Ww0H3UN8sU4ji440EhwD4BbHL6HMusxCnANEhD6tJ46OVmlPEcDhJg==
@@ -5302,10 +5302,19 @@ fs-constants@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs-constants/-/fs-constants-1.0.0.tgz#6be0de9be998ce16af8afc24497b9ee9b7ccd9ad"
   integrity sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==
 
-fs-extra@^10.0.0, fs-extra@^10.0.1, fs-extra@^10.1.0:
+fs-extra@^10.0.0, fs-extra@^10.0.1:
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-10.1.0.tgz#02873cfbc4084dde127eaa5f9905eef2325d1abf"
   integrity sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==
+  dependencies:
+    graceful-fs "^4.2.0"
+    jsonfile "^6.0.1"
+    universalify "^2.0.0"
+
+fs-extra@^11.1.0:
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-11.1.0.tgz#5784b102104433bb0e090f48bfc4a30742c357ed"
+  integrity sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==
   dependencies:
     graceful-fs "^4.2.0"
     jsonfile "^6.0.1"
@@ -7855,10 +7864,17 @@ node-fetch@^2.6.1, node-fetch@^2.6.7:
   dependencies:
     whatwg-url "^5.0.0"
 
-node-fetch@^3.2.3:
-  version "3.2.10"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-3.2.10.tgz#e8347f94b54ae18b57c9c049ef641cef398a85c8"
-  integrity sha512-MhuzNwdURnZ1Cp4XTazr69K0BTizsBroX7Zx3UgDSVcZYKF/6p0CBe4EUb/hLqmzVhl0UpYfgRljQ4yxE+iCxA==
+node-fetch@^2.6.8:
+  version "2.6.8"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.8.tgz#a68d30b162bc1d8fd71a367e81b997e1f4d4937e"
+  integrity sha512-RZ6dBYuj8dRSfxpUSu+NsdF1dpPpluJxwOp+6IoDp/sH2QNDSvurYsAa+F1WxY2RjA1iP93xhcsUoYbF2XBqVg==
+  dependencies:
+    whatwg-url "^5.0.0"
+
+node-fetch@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-3.3.0.tgz#37e71db4ecc257057af828d523a7243d651d91e4"
+  integrity sha512-BKwRP/O0UvoMKp7GNdwPlObhYGB5DQqwhEDQlNKuoqwVYSxkSZCSbHjnFFmUEtwSKRPU4kNK8PbDYYitwaE3QA==
   dependencies:
     data-uri-to-buffer "^4.0.0"
     fetch-blob "^3.1.4"
