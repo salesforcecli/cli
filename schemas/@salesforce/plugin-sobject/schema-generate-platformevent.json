@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/PlatformEventGenerateResult",
+  "definitions": {
+    "PlatformEventGenerateResult": {
+      "type": "object",
+      "properties": {
+        "object": {
+          "$ref": "#/definitions/SaveablePlatformEvent"
+        },
+        "path": {
+          "type": "string"
+        }
+      },
+      "required": ["object", "path"],
+      "additionalProperties": false
+    },
+    "SaveablePlatformEvent": {
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": ["string", "null"]
+        },
+        "label": {
+          "type": ["string", "null"]
+        },
+        "deploymentStatus": {
+          "type": ["string", "null"]
+        },
+        "description": {
+          "type": ["string", "null"]
+        },
+        "pluralLabel": {
+          "type": ["string", "null"]
+        },
+        "eventType": {
+          "type": ["string", "null"]
+        },
+        "publishBehavior": {
+          "type": ["string", "null"]
+        }
+      },
+      "additionalProperties": false,
+      "description": "There are a lot of properties that we don't, and some that jsforce thinks are mandatory that aren't. Many apply to the various sub-species (mdt, external, events)\n\nThis type represents a PlatformEvent that can deploy."
+    }
+  }
+}
