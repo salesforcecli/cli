@@ -36,6 +36,58 @@
     "alias": []
   },
   {
+    "command": "cmdt:generate:field",
+    "plugin": "@salesforce/plugin-custom-metadata",
+    "flags": ["decimal-places", "json", "label", "loglevel", "name", "output-directory", "picklist-values", "type"],
+    "alias": ["force:cmdt:field:create", "cmdt:field:create"]
+  },
+  {
+    "command": "cmdt:generate:fromorg",
+    "plugin": "@salesforce/plugin-custom-metadata",
+    "flags": [
+      "api-version",
+      "dev-name",
+      "ignore-unsupported",
+      "json",
+      "label",
+      "loglevel",
+      "plural-label",
+      "records-output-dir",
+      "sobject",
+      "target-org",
+      "type-output-directory",
+      "visibility"
+    ],
+    "alias": ["force:cmdt:generate"]
+  },
+  {
+    "command": "cmdt:generate:object",
+    "plugin": "@salesforce/plugin-custom-metadata",
+    "flags": ["json", "label", "loglevel", "output-directory", "plural-label", "type-name", "visibility"],
+    "alias": ["force:cmdt:create", "cmdt:create"]
+  },
+  {
+    "command": "cmdt:generate:record",
+    "plugin": "@salesforce/plugin-custom-metadata",
+    "flags": [
+      "input-directory",
+      "json",
+      "label",
+      "loglevel",
+      "output-directory",
+      "protected",
+      "record-name",
+      "type-name"
+    ],
+    "alias": ["force:cmdt:record:create", "cmdt:record:create"]
+  },
+  {
+    "command": "cmdt:generate:records",
+    "plugin": "@salesforce/plugin-custom-metadata",
+    "flags": ["csv", "input-directory", "json", "loglevel", "name-column", "output-directory", "type-name"],
+    "alias": ["force:cmdt:record:insert", "cmdt:record:insert"]
+  },
+  {
     "command": "commands",
     "plugin": "@oclif/plugin-commands",
     "flags": [
@@ -465,85 +517,9 @@
     "alias": []
   },
   {
-    "command": "generate:cmdt:field",
-    "plugin": "@salesforce/plugin-custom-metadata",
-    "flags": ["decimal-places", "json", "label", "loglevel", "name", "output-directory", "picklist-values", "type"],
-    "alias": ["force:cmdt:field:create", "cmdt:field:create"]
-  },
-  {
-    "command": "generate:cmdt:fromorg",
-    "plugin": "@salesforce/plugin-custom-metadata",
-    "flags": [
-      "api-version",
-      "dev-name",
-      "ignore-unsupported",
-      "json",
-      "label",
-      "loglevel",
-      "plural-label",
-      "records-output-dir",
-      "sobject",
-      "target-org",
-      "type-output-directory",
-      "visibility"
-    ],
-    "alias": ["force:cmdt:generate"]
-  },
-  {
-    "command": "generate:cmdt:object",
-    "plugin": "@salesforce/plugin-custom-metadata",
-    "flags": ["json", "label", "loglevel", "output-directory", "plural-label", "type-name", "visibility"],
-    "alias": ["force:cmdt:create", "cmdt:create"]
-  },
-  {
-    "command": "generate:cmdt:record",
-    "plugin": "@salesforce/plugin-custom-metadata",
-    "flags": [
-      "input-directory",
-      "json",
-      "label",
-      "loglevel",
-      "output-directory",
-      "protected",
-      "record-name",
-      "type-name"
-    ],
-    "alias": ["force:cmdt:record:create", "cmdt:record:create"]
-  },
-  {
-    "command": "generate:cmdt:records",
-    "plugin": "@salesforce/plugin-custom-metadata",
-    "flags": ["csv", "input-directory", "json", "loglevel", "name-column", "output-directory", "type-name"],
-    "alias": ["force:cmdt:record:insert", "cmdt:record:insert"]
-  },
-  {
     "command": "generate:function",
     "plugin": "@salesforce/plugin-functions",
     "flags": ["function-name", "language", "name"],
-    "alias": []
-  },
-  {
-    "command": "generate:metadata:field",
-    "plugin": "@salesforce/plugin-sobject",
-    "flags": ["label", "object"],
-    "alias": []
-  },
-  {
-    "command": "generate:metadata:platformevent",
-    "plugin": "@salesforce/plugin-sobject",
-    "flags": ["label"],
-    "alias": []
-  },
-  {
-    "command": "generate:metadata:sobject",
-    "plugin": "@salesforce/plugin-sobject",
-    "flags": ["label", "use-default-features"],
-    "alias": []
-  },
-  {
-    "command": "generate:metadata:tab",
-    "plugin": "@salesforce/plugin-sobject",
-    "flags": ["directory", "icon", "json", "object"],
     "alias": []
   },
   {
@@ -794,6 +770,30 @@
     "plugin": "@salesforce/plugin-functions",
     "flags": ["debug-port", "language", "path", "port"],
     "alias": []
+  },
+  {
+    "command": "schema:generate:field",
+    "plugin": "@salesforce/plugin-sobject",
+    "flags": ["label", "object"],
+    "alias": ["generate:metadata:field"]
+  },
+  {
+    "command": "schema:generate:platformevent",
+    "plugin": "@salesforce/plugin-sobject",
+    "flags": ["label"],
+    "alias": ["generate:metadata:platformevent"]
+  },
+  {
+    "command": "schema:generate:sobject",
+    "plugin": "@salesforce/plugin-sobject",
+    "flags": ["label", "use-default-features"],
+    "alias": ["generate:metadata:sobject"]
+  },
+  {
+    "command": "schema:generate:tab",
+    "plugin": "@salesforce/plugin-sobject",
+    "flags": ["directory", "icon", "json", "object"],
+    "alias": ["generate:metadata:tab"]
   },
   {
     "command": "search",
