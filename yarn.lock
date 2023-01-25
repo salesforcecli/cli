@@ -1708,10 +1708,10 @@
     open "^8.4.0"
     tslib "^2"
 
-"@salesforce/plugin-release-management@^3.7.7":
-  version "3.7.10"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-3.7.10.tgz#e9b7e924f6c688d147db0a8c35b1fbbeb08d3782"
-  integrity sha512-7CT0+w7GeezfISEzjIgcu1Ye5Q3GFbg8Qzc6dATCTDKDA6flwo5UH2UsN0KYXThtJ2zOhAjiiOIHhCTPxBtVKQ==
+"@salesforce/plugin-release-management@^3.8.8":
+  version "3.8.8"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-3.8.8.tgz#49f50ad6187a6b53a8a1033ee36b1dd200a20b96"
+  integrity sha512-MqYjpINnaszHkHp/aSiydf3lU2mo2/luhVt+ScJ0MNO1HINsYgodDFUEJ0MFl+G1pU0KSPt6BlM689ehj5Kz3w==
   dependencies:
     "@oclif/core" "^1.23.1"
     "@octokit/core" "^4.1.0"
@@ -1719,10 +1719,10 @@
     "@salesforce/kit" "^1.8.2"
     "@salesforce/plugin-command-reference" "^2.2.8"
     "@salesforce/plugin-trust" "^2.2.3"
-    "@salesforce/sf-plugins-core" "^1.21.5"
+    "@salesforce/sf-plugins-core" "^1.22.1"
     "@salesforce/ts-types" "^1.5.21"
     agent-base "^6.0.2"
-    aws-sdk "^2.1238.0"
+    aws-sdk "^2.1299.0"
     chalk "^4.1.0"
     conventional-changelog-conventionalcommits "^4.6.1"
     conventional-changelog-preset-loader "^2.3.4"
@@ -2785,7 +2785,7 @@ available-typed-arrays@^1.0.5:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
 
-aws-sdk@^2.1231.0, aws-sdk@^2.1238.0, aws-sdk@^2.1301.0:
+aws-sdk@^2.1231.0, aws-sdk@^2.1299.0, aws-sdk@^2.1301.0:
   version "2.1301.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1301.0.tgz#fbe971fca51deccecc6729f2f01fc2b0ff41ba1f"
   integrity sha512-AxCt0GfWV14AWC0yvN3+WEBr45JMu2X3FHb8r3H8EhZjJfHk3hWcDwu6vS5Qd8NFDATlFdWJfyQjPVU1YuaDfw==
