@@ -59,12 +59,16 @@
       "@salesforce/plugin-data",
       "@salesforce/plugin-community",
       "@salesforce/plugin-custom-metadata",
-      "@salesforce/plugin-signups"
+      "@salesforce/plugin-signups",
+      "@salesforce/plugin-user"
     ],
     "devPlugins": [
       "@oclif/plugin-command-snapshot",
       "@salesforce/plugin-release-management"
     ],
+    "jitPlugins": {
+      "@salesforce/plugin-packaging": "1.12.4"
+    },
     "hooks": {
       "preupdate": "./dist/hooks/preupdate",
       "command_incomplete": "./dist/hooks/incomplete",
@@ -130,6 +134,8 @@
     "@salesforce/plugin-custom-metadata": "2.0.16",
     "@salesforce/plugin-trust": "2.3.0",
     "@salesforce/plugin-signups": "1.3.1",
+    "@salesforce/plugin-user": "2.2.1",
+    "@salesforce/plugin-packaging": "1.12.4",
     "semver": "^7.3.8",
     "tslib": "^2.4.1"
   },
@@ -158,7 +164,8 @@
     "@salesforce/plugin-data",
     "@salesforce/plugin-community",
     "@salesforce/plugin-signups",
-    "@salesforce/plugin-custom-metadata"
+    "@salesforce/plugin-custom-metadata",
+    "@salesforce/plugin-user"
   ],
   "resolutions": {
     "@salesforce/schemas": "1.5.0",
