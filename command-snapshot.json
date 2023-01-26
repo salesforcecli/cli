@@ -842,5 +842,44 @@
     "plugin": "@salesforce/plugin-functions",
     "flags": ["json", "show-token"],
     "alias": []
+  },
+  {
+    "command": "org:assign:permset",
+    "plugin": "@salesforce/plugin-user",
+    "flags": ["api-version", "json", "name", "on-behalf-of", "target-org"],
+    "alias": []
+  },
+  {
+    "command": "org:assign:permsetlicense",
+    "plugin": "@salesforce/plugin-user",
+    "flags": ["api-version", "json", "name", "on-behalf-of", "target-org"],
+    "alias": []
+  },
+  {
+    "command": "force:user:password:generate",
+    "plugin": "@salesforce/plugin-user",
+    "flags": [
+      "api-version",
+      "complexity",
+      "json",
+      "length",
+      "loglevel",
+      "on-behalf-of",
+      "target-dev-hub",
+      "target-org"
+    ],
+    "alias": []
+  },
+  {
+    "command": "force:user:permset:assign",
+    "plugin": "@salesforce/plugin-user",
+    "flags": ["api-version", "json", "loglevel", "on-behalf-of", "perm-set-name", "target-org"],
+    "alias": []
+  },
+  {
+    "command": "force:user:permsetlicense:assign",
+    "plugin": "@salesforce/plugin-user",
+    "flags": ["api-version", "json", "loglevel", "name", "on-behalf-of", "target-org"],
+    "alias": []
   }
 ]
