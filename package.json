@@ -66,9 +66,6 @@
       "@oclif/plugin-command-snapshot",
       "@salesforce/plugin-release-management"
     ],
-    "jitPlugins": {
-      "@salesforce/plugin-packaging": "1.12.4"
-    },
     "hooks": {
       "preupdate": "./dist/hooks/preupdate",
       "command_incomplete": "./dist/hooks/incomplete",
