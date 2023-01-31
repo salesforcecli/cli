@@ -374,62 +374,9 @@
     "alias": []
   },
   {
-    "command": "env:create:sandbox",
-    "plugin": "@salesforce/plugin-env",
-    "flags": [
-      "alias",
-      "async",
-      "clone",
-      "definition-file",
-      "json",
-      "license-type",
-      "name",
-      "no-prompt",
-      "no-track-source",
-      "poll-interval",
-      "set-default",
-      "target-org",
-      "wait"
-    ],
-    "alias": []
-  },
-  {
-    "command": "env:create:scratch",
-    "plugin": "@salesforce/plugin-env",
-    "flags": [
-      "alias",
-      "api-version",
-      "async",
-      "client-id",
-      "definition-file",
-      "duration-days",
-      "edition",
-      "json",
-      "no-ancestors",
-      "no-namespace",
-      "set-default",
-      "target-dev-hub",
-      "track-source",
-      "wait"
-    ],
-    "alias": []
-  },
-  {
     "command": "env:delete",
     "plugin": "@salesforce/plugin-functions",
     "flags": ["confirm", "environment", "json", "target-compute"],
-    "alias": []
-  },
-  {
-    "command": "env:delete:sandbox",
-    "plugin": "@salesforce/plugin-env",
-    "flags": ["json", "no-prompt", "target-org"],
-    "alias": []
-  },
-  {
-    "command": "env:delete:scratch",
-    "plugin": "@salesforce/plugin-env",
-    "flags": ["json", "no-prompt", "target-org"],
     "alias": []
   },
   {
@@ -478,18 +425,6 @@
     "command": "env:open",
     "plugin": "@salesforce/plugin-env",
     "flags": ["browser", "json", "path", "target-env", "url-only"],
-    "alias": []
-  },
-  {
-    "command": "env:resume:sandbox",
-    "plugin": "@salesforce/plugin-env",
-    "flags": ["job-id", "json", "name", "target-org", "use-most-recent", "wait"],
-    "alias": []
-  },
-  {
-    "command": "env:resume:scratch",
-    "plugin": "@salesforce/plugin-env",
-    "flags": ["job-id", "json", "use-most-recent"],
     "alias": []
   },
   {
