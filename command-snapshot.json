@@ -452,6 +452,56 @@
     "alias": []
   },
   {
+    "command": "force:org:clone",
+    "plugin": "@salesforce/plugin-org",
+    "flags": [
+      "api-version",
+      "definitionfile",
+      "json",
+      "loglevel",
+      "setalias",
+      "setdefaultusername",
+      "target-org",
+      "type",
+      "wait"
+    ],
+    "alias": []
+  },
+  {
+    "command": "force:org:create",
+    "plugin": "@salesforce/plugin-org",
+    "flags": [
+      "api-version",
+      "clientid",
+      "definitionfile",
+      "durationdays",
+      "json",
+      "loglevel",
+      "noancestors",
+      "nonamespace",
+      "retry",
+      "setalias",
+      "setdefaultusername",
+      "target-dev-hub",
+      "target-org",
+      "type",
+      "wait"
+    ],
+    "alias": []
+  },
+  {
+    "command": "force:org:delete",
+    "plugin": "@salesforce/plugin-org",
+    "flags": ["api-version", "json", "loglevel", "no-prompt", "target-org"],
+    "alias": []
+  },
+  {
+    "command": "force:org:status",
+    "plugin": "@salesforce/plugin-org",
+    "flags": ["api-version", "json", "loglevel", "sandboxname", "setalias", "setdefaultusername", "target-org", "wait"],
+    "alias": []
+  },
+  {
     "command": "force:user:password:generate",
     "plugin": "@salesforce/plugin-user",
     "flags": [
@@ -585,6 +635,47 @@
     "alias": []
   },
   {
+    "command": "org:create:sandbox",
+    "plugin": "@salesforce/plugin-org",
+    "flags": [
+      "alias",
+      "async",
+      "clone",
+      "definition-file",
+      "json",
+      "license-type",
+      "name",
+      "no-prompt",
+      "no-track-source",
+      "poll-interval",
+      "set-default",
+      "target-org",
+      "wait"
+    ],
+    "alias": ["env:create:sandbox"]
+  },
+  {
+    "command": "org:create:scratch",
+    "plugin": "@salesforce/plugin-org",
+    "flags": [
+      "alias",
+      "api-version",
+      "async",
+      "client-id",
+      "definition-file",
+      "duration-days",
+      "edition",
+      "json",
+      "no-ancestors",
+      "no-namespace",
+      "set-default",
+      "target-dev-hub",
+      "track-source",
+      "wait"
+    ],
+    "alias": ["env:create:scratch"]
+  },
+  {
     "command": "org:create:shape",
     "plugin": "@salesforce/plugin-signups",
     "flags": ["api-version", "json", "loglevel", "target-org"],
@@ -612,6 +703,18 @@
     "alias": ["force:user:create"]
   },
   {
+    "command": "org:delete:sandbox",
+    "plugin": "@salesforce/plugin-org",
+    "flags": ["json", "no-prompt", "target-org"],
+    "alias": ["env:delete:sandbox"]
+  },
+  {
+    "command": "org:delete:scratch",
+    "plugin": "@salesforce/plugin-org",
+    "flags": ["json", "no-prompt", "target-org"],
+    "alias": ["env:delete:scratch"]
+  },
+  {
     "command": "org:delete:shape",
     "plugin": "@salesforce/plugin-signups",
     "flags": ["api-version", "json", "loglevel", "no-prompt", "target-org"],
@@ -622,6 +725,12 @@
     "plugin": "@salesforce/plugin-signups",
     "flags": ["api-version", "json", "loglevel", "snapshot", "target-dev-hub"],
     "alias": ["force:org:snapshot:delete"]
+  },
+  {
+    "command": "org:display",
+    "plugin": "@salesforce/plugin-org",
+    "flags": ["api-version", "json", "loglevel", "target-org", "verbose"],
+    "alias": ["force:org:display"]
   },
   {
     "command": "org:display:user",
@@ -642,6 +751,12 @@
     "alias": ["force:org:snapshot:get"]
   },
   {
+    "command": "org:list",
+    "plugin": "@salesforce/plugin-org",
+    "flags": ["all", "clean", "json", "loglevel", "no-prompt", "skip-connection-status", "verbose"],
+    "alias": ["force:org:list"]
+  },
+  {
     "command": "org:list:shape",
     "plugin": "@salesforce/plugin-signups",
     "flags": ["json", "loglevel", "verbose"],
@@ -658,6 +773,24 @@
     "plugin": "@salesforce/plugin-user",
     "flags": ["api-version", "json", "loglevel", "target-dev-hub", "target-org"],
     "alias": ["force:user:list"]
+  },
+  {
+    "command": "org:open",
+    "plugin": "@salesforce/plugin-org",
+    "flags": ["api-version", "browser", "json", "loglevel", "path", "target-org", "url-only"],
+    "alias": ["force:org:open"]
+  },
+  {
+    "command": "org:resume:sandbox",
+    "plugin": "@salesforce/plugin-org",
+    "flags": ["job-id", "json", "name", "target-org", "use-most-recent", "wait"],
+    "alias": ["env:resume:sandbox"]
+  },
+  {
+    "command": "org:resume:scratch",
+    "plugin": "@salesforce/plugin-org",
+    "flags": ["job-id", "json", "use-most-recent"],
+    "alias": ["env:resume:scratch"]
   },
   {
     "command": "plugins",
