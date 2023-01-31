@@ -26,6 +26,7 @@ jobs:
           - salesforcecli/plugin-signups
           - salesforcecli/plugin-user
           - salesforcecli/plugin-packaging
+          - salesforcecli/plugin-org
           # omitted while nuts are too flaky on bulk commands
           # - salesforcecli/plugin-data
     uses: ./.github/workflows/justNut.yml
