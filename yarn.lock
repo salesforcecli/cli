@@ -964,7 +964,7 @@
     is-wsl "^2.1.1"
     tslib "^2.3.1"
 
-"@oclif/core@^1.22.0", "@oclif/core@^1.23.0", "@oclif/core@^1.23.1", "@oclif/core@^1.23.2", "@oclif/core@^1.24.0", "@oclif/core@^1.25.0", "@oclif/core@^1.26.1", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.8.0":
+"@oclif/core@^1.22.0", "@oclif/core@^1.23.0", "@oclif/core@^1.23.1", "@oclif/core@^1.24.0", "@oclif/core@^1.25.0", "@oclif/core@^1.26.1", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3", "@oclif/core@^1.8.0":
   version "1.26.1"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.26.1.tgz#26e46c96143d3e2b1dd9bd558ae1653fe9a4f3fa"
   integrity sha512-g+OWJcM7JOVI53caTEtq0BB1nPotWctRLUyFODPgvDqXhVR7QED+Qz3LwFAMD8dt7/Ar2ZNq15U3bnpnOv453A==
@@ -1611,15 +1611,15 @@
     shelljs "^0.8.5"
     tslib "^2"
 
-"@salesforce/plugin-env@1.5.18":
-  version "1.5.18"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-env/-/plugin-env-1.5.18.tgz#3644c24b1ca3f0eb3414480184a103f0e093de52"
-  integrity sha512-dOUEN64svU6qEa+R9BBhZ8chq+5Cac3JHmAyBFOzgLBCHxcoOLtaHLBfJHgh5RSc6LFEYaH/AbPT06zz+nEFeg==
+"@salesforce/plugin-env@1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-env/-/plugin-env-1.6.0.tgz#9b3f694bec92ebf9b3322df5435d770ed62c3ecd"
+  integrity sha512-Tb7isdr/xIy2HaIcxXmy/FNJ8L4EEll4t+RJUgKyPyAxmYXPfXUlSTledwfQJEhRJ95AHQYtDp7HiGkIeSINGQ==
   dependencies:
-    "@oclif/core" "^1.23.2"
+    "@oclif/core" "^2.0.7"
     "@salesforce/core" "^3.32.11"
     "@salesforce/kit" "^1.8.2"
-    "@salesforce/sf-plugins-core" "^1.21.8"
+    "@salesforce/sf-plugins-core" "^2.0.1"
     chalk "^4"
     change-case "^4.1.2"
     open "^8.4.0"
