@@ -37,7 +37,7 @@ describe('cli', () => {
   let doctorInitStub: sinon.SinonStub;
 
   beforeEach(() => {
-    versionCommandRunStub = sandbox.stub(VersionCommand.prototype, 'run').resolves(versionDetailMock);
+    versionCommandRunStub = sandbox.stub(VersionCommand, 'run').resolves(versionDetailMock);
     doctorInitStub = sandbox.stub(Doctor, 'init');
   });
 

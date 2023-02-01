@@ -6,11 +6,11 @@
  */
 
 import * as os from 'os';
-import { Hook, toConfiguredId, toStandardizedId, Interfaces } from '@oclif/core';
+import { Hook, toConfiguredId, toStandardizedId, Interfaces, Command } from '@oclif/core';
 import { Prompter } from '@salesforce/sf-plugins-core';
 import { Lifecycle } from '@salesforce/core';
 
-async function determineCommand(config: Interfaces.Config, matches: Interfaces.Command.Loadable[]): Promise<string> {
+async function determineCommand(config: Interfaces.Config, matches: Command.Loadable[]): Promise<string> {
   if (matches.length === 1) return matches[0].id;
   const prompter = new Prompter();
   const { command } = await prompter.timedPrompt<{ command: string }>([
