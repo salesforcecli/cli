@@ -998,7 +998,7 @@
     widest-line "^3.1.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/core@^2.0.2-beta.10", "@oclif/core@^2.0.2-beta.6", "@oclif/core@^2.0.3", "@oclif/core@^2.0.7", "@oclif/core@^2.0.8":
+"@oclif/core@^2.0.2-beta.6", "@oclif/core@^2.0.3", "@oclif/core@^2.0.7", "@oclif/core@^2.0.8":
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.0.8.tgz#81c79f051ffb326b7c9999463ae9547a7e799316"
   integrity sha512-jt06vEZfpazkR0C8vYuVMKmsxjky52y1B1oFGPnCa6/17qH+PByd5knQP6/QbRoE5OT9RAf4zzpxx2wcihVslw==
@@ -8365,12 +8365,12 @@ object.values@^1.1.5, object.values@^1.1.6:
     define-properties "^1.1.4"
     es-abstract "^1.20.4"
 
-oclif@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/oclif/-/oclif-3.6.0.tgz#0469bcc20e67911124d93a0109ccfbfea0219801"
-  integrity sha512-iM7M4SA8yapjTXy7uom1N3530CjaNBxRZ1jjCYgWLePeQyFLPOm9dbzOBLe0rLC7cZJ7ExPd1VcA8qW7N7Xq5Q==
+oclif@^3.6.2:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/oclif/-/oclif-3.6.2.tgz#356b5344237b0060d5864f5d2402926fc2877645"
+  integrity sha512-SslNzNzryOMJ8eqID4ehIipqS+cF032ZEGIyhqN2J5mD6gsHAf1t+rMNpHBFy2kcCjgy/9/wUZQGanaFSCB41Q==
   dependencies:
-    "@oclif/core" "^2.0.2-beta.10"
+    "@oclif/core" "^2.0.3"
     "@oclif/plugin-help" "^5.1.19"
     "@oclif/plugin-not-found" "^2.3.7"
     "@oclif/plugin-warn-if-update-available" "^2.0.14"
