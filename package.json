@@ -195,7 +195,7 @@
     "promote:verify": "sf-release cli:versions:inspect --channels stable --locations archive --cli sf",
     "promote:verify-rc": "sf-release cli:versions:inspect --channels stable-rc --locations archive --cli sf",
     "test": "sf-test",
-    "test:deprecation-policy": "yarn oclif-artifacts && ./bin/dev snapshot:compare && yarn postpack",
+    "test:deprecation-policy": "./bin/dev snapshot:compare",
     "test:json-schema": "sf-release cli:schemas:compare",
     "test:smoke-unix": "sf-release cli:tarballs:smoke --cli sf",
     "upload:deb": "oclif upload:deb",
