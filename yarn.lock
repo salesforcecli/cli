@@ -477,19 +477,10 @@
     ajv "^6.12.2"
     toml "^3.0.0"
 
-"@heroku/project-descriptor@0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@heroku/project-descriptor/-/project-descriptor-0.0.6.tgz#5337e7243423b283d0a032dcff25035756341095"
-  integrity sha512-zH1Wx5WQFCnt3ToiQJ9yUWsOXN5woTiGczGUpvQS0zCwwkE42ydKZSRKgSlB/YIwsDmAkFKiUwe97fT+qP45iw==
-  dependencies:
-    ajv "^8.0.0"
-    ajv-formats "^2.0.2"
-    toml "^3.0.0"
-
-"@hk/functions-core@npm:@heroku/functions-core@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@heroku/functions-core/-/functions-core-0.5.3.tgz#f76da141729b509b3b1ae0f6cb2c8bbeecd6c3c1"
-  integrity sha512-SoJ+8wbke9nRZms2DojMv8bg25ISV5IcvguWMo6XF73knGjAHPqu9AEDOU/w3/X99bfPntfrqT/ipZgbt2c9ow==
+"@heroku/functions-core@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@heroku/functions-core/-/functions-core-0.6.0.tgz#35e814400b316d202b14a67e0689e9d5b051ad6c"
+  integrity sha512-jGGYFwWov9eyqpIrdtSO96oZEFn9jilG8dVzUHfe2+7pyUSDWVXGBYMEk50pE3HtDQp2Oz8F5FLALQGcOjINVg==
   dependencies:
     "@heroku-cli/color" "^1.1.16"
     "@heroku/project-descriptor" "0.0.6"
@@ -501,12 +492,21 @@
     global-agent "^3.0.0"
     handlebars "^4.7.7"
     mem-fs "^2.2.1"
-    mem-fs-editor "^9.5.0"
+    mem-fs-editor "^9.6.0"
     node-fetch "^2.6.8"
     openpgp "^5.5.0"
     semver "^7.3.8"
     sha256-file "^1.0.0"
     yeoman-environment "~3.13.0"
+
+"@heroku/project-descriptor@0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@heroku/project-descriptor/-/project-descriptor-0.0.6.tgz#5337e7243423b283d0a032dcff25035756341095"
+  integrity sha512-zH1Wx5WQFCnt3ToiQJ9yUWsOXN5woTiGczGUpvQS0zCwwkE42ydKZSRKgSlB/YIwsDmAkFKiUwe97fT+qP45iw==
+  dependencies:
+    ajv "^8.0.0"
+    ajv-formats "^2.0.2"
+    toml "^3.0.0"
 
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
@@ -964,7 +964,7 @@
     is-wsl "^2.1.1"
     tslib "^2.3.1"
 
-"@oclif/core@^1.23.1", "@oclif/core@^1.26.1", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3":
+"@oclif/core@^1.23.1", "@oclif/core@^1.26.1", "@oclif/core@^1.6.3":
   version "1.26.1"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.26.1.tgz#26e46c96143d3e2b1dd9bd558ae1653fe9a4f3fa"
   integrity sha512-g+OWJcM7JOVI53caTEtq0BB1nPotWctRLUyFODPgvDqXhVR7QED+Qz3LwFAMD8dt7/Ar2ZNq15U3bnpnOv453A==
@@ -998,7 +998,7 @@
     widest-line "^3.1.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/core@^2.0.2-beta.10", "@oclif/core@^2.0.2-beta.6", "@oclif/core@^2.0.3", "@oclif/core@^2.0.7", "@oclif/core@^2.0.8", "@oclif/core@^2.1.1":
+"@oclif/core@^2.0.2-beta.10", "@oclif/core@^2.0.2-beta.6", "@oclif/core@^2.0.3", "@oclif/core@^2.0.7", "@oclif/core@^2.0.8", "@oclif/core@^2.1.1", "@oclif/core@^2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.1.2.tgz#a3e47ed2274e47cb2b3dc1a16b5955cceae5d2d0"
   integrity sha512-l7Kx+80zuDgi9o4gZe39XQeYvQuj6Hf+B31kXSUSntgXpfLdDbpFSZH/GP7tsldzG4icrpmSwnLDOz8MNB40Hg==
@@ -1622,21 +1622,21 @@
     open "^8.4.0"
     tslib "^2"
 
-"@salesforce/plugin-functions@1.17.4":
-  version "1.17.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.17.4.tgz#f12d3760b43ae0c6a3de4d7811e764ec34f8dd63"
-  integrity sha512-5nAzuJSywsthUpid/9HQ1dDsgwGratS3w6YAq9IG0vmz+ntYkszbLC1ilMG6wkgcZJ0WHmhS0T44AG1ysJgd9g==
+"@salesforce/plugin-functions@1.19.3":
+  version "1.19.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.19.3.tgz#8b122cd0e20b9c5a0dc5facd93d05eb998bc5748"
+  integrity sha512-z0iX6lXaJa0M0rLCZbXOhwXVK5FH+PJ2xmQHfEdmDVSFhfGAW7kakwyNJk8VOMxbHsHUGZQLnEhdC558PfSkRw==
   dependencies:
     "@heroku-cli/color" "^1.1.16"
     "@heroku-cli/schema" "^1.0.25"
     "@heroku/eventsource" "^1.0.7"
     "@heroku/function-toml" "^0.0.3"
+    "@heroku/functions-core" "^0.6.0"
     "@heroku/project-descriptor" "0.0.6"
-    "@hk/functions-core" "npm:@heroku/functions-core@^0.5.3"
-    "@oclif/core" "^1.6.0"
-    "@salesforce/core" "^3.32.12"
-    "@salesforce/sf-plugins-core" "^1.7.2"
-    "@salesforce/ts-types" "^1.7.1"
+    "@oclif/core" "^2.1.2"
+    "@salesforce/core" "^3.33.1"
+    "@salesforce/sf-plugins-core" "^2.0.1"
+    "@salesforce/ts-types" "^1.7.3"
     axios "^0.27.2"
     axios-debug-log "^0.8.4"
     chalk "^4.1.2"
@@ -1851,7 +1851,7 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.5.0.tgz#8bfe2cb5d7cb29d3394b3b9cfb71bb527009c82c"
   integrity sha512-EKFBURBuON7cj8XZCW+ybeSRRw7wUP1XUXZVHzFgx8KiYmSeGiRHBYbDjQOsQMho2uOLsTozMPEt2ehYnji0YA==
 
-"@salesforce/sf-plugins-core@^1.22.1", "@salesforce/sf-plugins-core@^1.7.2", "@salesforce/sf-plugins-core@^1.9.0":
+"@salesforce/sf-plugins-core@^1.22.1", "@salesforce/sf-plugins-core@^1.9.0":
   version "1.22.3"
   resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-1.22.3.tgz#c8817130675d16fa0b197d4dd968c42217253a3a"
   integrity sha512-u/W95Ulxutktargpx6YWCzv2KrguaDOnNO6rVQ4lVZpateXXCDUc4JP+VDNzlHtTuzvGXm8biMYCDvFFbGsIZg==
@@ -7424,10 +7424,26 @@ matcher@^3.0.0:
   dependencies:
     escape-string-regexp "^4.0.0"
 
-"mem-fs-editor@^8.1.2 || ^9.0.0", mem-fs-editor@^9.5.0:
+"mem-fs-editor@^8.1.2 || ^9.0.0":
   version "9.5.0"
   resolved "https://registry.yarnpkg.com/mem-fs-editor/-/mem-fs-editor-9.5.0.tgz#9368724bd37f76eebfcf24d71fc6624b01588969"
   integrity sha512-7p+bBDqsSisO20YIZf2ntYvST27fFJINn7CKE21XdPUQDcLV62b/yB5sTOooQeEoiZ3rldZQ+4RfONgL/gbRoA==
+  dependencies:
+    binaryextensions "^4.16.0"
+    commondir "^1.0.1"
+    deep-extend "^0.6.0"
+    ejs "^3.1.8"
+    globby "^11.1.0"
+    isbinaryfile "^4.0.8"
+    minimatch "^3.1.2"
+    multimatch "^5.0.0"
+    normalize-path "^3.0.0"
+    textextensions "^5.13.0"
+
+mem-fs-editor@^9.6.0:
+  version "9.6.0"
+  resolved "https://registry.yarnpkg.com/mem-fs-editor/-/mem-fs-editor-9.6.0.tgz#a867377737b12c0d02ca756d90bc70c51883aa38"
+  integrity sha512-CsuAd+s0UPZnGzm3kQ5X7gGmVmwiX9XXRAmXj9Mbq0CJa8YWUkPqneelp0aG2g+7uiwCBHlJbl30FYtToLT3VQ==
   dependencies:
     binaryextensions "^4.16.0"
     commondir "^1.0.1"
