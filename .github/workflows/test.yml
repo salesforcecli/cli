@@ -17,18 +17,10 @@ jobs:
     uses: salesforcecli/github-workflows/.github/workflows/tarballs.yml@main
     secrets: inherit
 
-  schema:
+  artifacts:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          cache: yarn
-      - run: yarn install
-      - run: yarn test:json-schema
-
-  snapshot:
-    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
