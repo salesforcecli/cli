@@ -1655,19 +1655,6 @@
     sha256-file "^1.0.0"
     uuid "^8.3.2"
 
-"@salesforce/plugin-generate@1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-generate/-/plugin-generate-1.1.2.tgz#679572d09c908570aa72b47754f189e838e5bca9"
-  integrity sha512-Wbq6a0aq0lv3n4hX/S9TE0jvfLw5stx/Qs/sDjb3Tw16D9+SBuj/zVF95+GWJlcIZYh54EdDSHeVDxaY7CStlA==
-  dependencies:
-    "@oclif/core" "^2.0.7"
-    "@salesforce/core" "^3.33.1"
-    "@salesforce/sf-plugins-core" "^2.0.1"
-    "@salesforce/templates" "^55.1.0"
-    tslib "^2"
-    yeoman-environment "^3.13.0"
-    yeoman-generator "^5.7.0"
-
 "@salesforce/plugin-info@2.4.2":
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-2.4.2.tgz#47bee44226a87dd137c1db27b8ed1c5f7ccac321"
@@ -1929,7 +1916,7 @@
     applicationinsights "^1.4.0"
     axios "^0.27.2"
 
-"@salesforce/templates@57.1.0", "@salesforce/templates@^55.1.0", "@salesforce/templates@^57.1.0", "@salesforce/templates@^57.1.1":
+"@salesforce/templates@57.1.0", "@salesforce/templates@^57.1.0", "@salesforce/templates@^57.1.1":
   version "57.1.0"
   resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-57.1.0.tgz#7ff327880f36fa6b979af8219471609019937f26"
   integrity sha512-4XTfNS+wBOM/QJpulJmTBb7o0m0ysfJo2mmTWu6Niz4QfXrSR2LlOc22aet/uTt5okqvmGnpbzG1xF4zzFc8fg==
@@ -7437,7 +7424,7 @@ matcher@^3.0.0:
   dependencies:
     escape-string-regexp "^4.0.0"
 
-"mem-fs-editor@^8.1.2 || ^9.0.0", mem-fs-editor@^9.6.0:
+"mem-fs-editor@^8.1.2 || ^9.0.0", mem-fs-editor@^9.0.0, mem-fs-editor@^9.6.0:
   version "9.6.0"
   resolved "https://registry.yarnpkg.com/mem-fs-editor/-/mem-fs-editor-9.6.0.tgz#a867377737b12c0d02ca756d90bc70c51883aa38"
   integrity sha512-CsuAd+s0UPZnGzm3kQ5X7gGmVmwiX9XXRAmXj9Mbq0CJa8YWUkPqneelp0aG2g+7uiwCBHlJbl30FYtToLT3VQ==
@@ -11140,7 +11127,49 @@ yarn@^1.22.18:
   resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.19.tgz#4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
   integrity sha512-/0V5q0WbslqnwP91tirOvldvYISzaqhClxzyUKXYxs07yUILIs5jx/k6CFe8bvKSkds5w+eiOqta39Wk3WxdcQ==
 
-yeoman-environment@^3.11.1, yeoman-environment@^3.13.0, yeoman-environment@^3.9.1, yeoman-environment@~3.13.0:
+yeoman-environment@^3.11.1, yeoman-environment@^3.13.0, yeoman-environment@^3.9.1:
+  version "3.14.1"
+  resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-3.14.1.tgz#c8e901b781136b64241ef6f0925f5a5ce21d2ff6"
+  integrity sha512-IjH9lCm0CKbNqH7x59c75feg64bz/WOk72j/wwMRiEQvcD47eKYduJmbyohR9pncmveJw/kkoJy3/OazARk7KA==
+  dependencies:
+    "@npmcli/arborist" "^4.0.4"
+    are-we-there-yet "^2.0.0"
+    arrify "^2.0.1"
+    binaryextensions "^4.15.0"
+    chalk "^4.1.0"
+    cli-table "^0.3.1"
+    commander "7.1.0"
+    dateformat "^4.5.0"
+    debug "^4.1.1"
+    diff "^5.0.0"
+    error "^10.4.0"
+    escape-string-regexp "^4.0.0"
+    execa "^5.0.0"
+    find-up "^5.0.0"
+    globby "^11.0.1"
+    grouped-queue "^2.0.0"
+    inquirer "^8.0.0"
+    is-scoped "^2.1.0"
+    isbinaryfile "^4.0.10"
+    lodash "^4.17.10"
+    log-symbols "^4.0.0"
+    mem-fs "^1.2.0 || ^2.0.0"
+    mem-fs-editor "^8.1.2 || ^9.0.0"
+    minimatch "^3.0.4"
+    npmlog "^5.0.1"
+    p-queue "^6.6.2"
+    p-transform "^1.3.0"
+    pacote "^12.0.2"
+    preferred-pm "^3.0.3"
+    pretty-bytes "^5.3.0"
+    semver "^7.1.3"
+    slash "^3.0.0"
+    strip-ansi "^6.0.0"
+    text-table "^0.2.0"
+    textextensions "^5.12.0"
+    untildify "^4.0.0"
+
+yeoman-environment@~3.13.0:
   version "3.13.0"
   resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-3.13.0.tgz#9db29f47352cb4a38eb0ef830a86091be3fd7240"
   integrity sha512-eBPpBZCvFzx6yk17x+ZrOHp8ADDv6qHradV+SgdugaQKIy9NjEX5AkbwdTHLOgccSTkQ9rN791xvYOu6OmqjBg==
@@ -11183,9 +11212,9 @@ yeoman-environment@^3.11.1, yeoman-environment@^3.13.0, yeoman-environment@^3.9.
     untildify "^4.0.0"
 
 yeoman-generator@^5.6.1, yeoman-generator@^5.7.0:
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/yeoman-generator/-/yeoman-generator-5.7.0.tgz#5cf24b9fca331646263749121d4f8d477698a83a"
-  integrity sha512-z9ZwgKoDOd+llPDCwn8Ax2l4In5FMhlslxdeByW4AMxhT+HbTExXKEAahsClHSbwZz1i5OzRwLwRIUdOJBr5Bw==
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/yeoman-generator/-/yeoman-generator-5.8.0.tgz#a1951ce0d95555f94adc5975a517d4741b5ce24d"
+  integrity sha512-dsrwFn9/c2/MOe80sa2nKfbZd/GaPTgmmehdgkFifs1VN/I7qPsW2xcBfvSkHNGK+PZly7uHyH8kaVYSFNUDhQ==
   dependencies:
     chalk "^4.1.0"
     dargs "^7.0.0"
@@ -11193,6 +11222,7 @@ yeoman-generator@^5.6.1, yeoman-generator@^5.7.0:
     execa "^5.1.1"
     github-username "^6.0.0"
     lodash "^4.17.11"
+    mem-fs-editor "^9.0.0"
     minimist "^1.2.5"
     read-pkg-up "^7.0.1"
     run-async "^2.0.0"

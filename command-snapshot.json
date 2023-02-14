@@ -613,12 +613,6 @@
     "alias": []
   },
   {
-    "command": "generate:project",
-    "plugin": "@salesforce/plugin-generate",
-    "flags": ["default-package-dir", "json", "login-url", "manifest", "name", "namespace", "output-dir", "template"],
-    "alias": []
-  },
-  {
     "command": "help",
     "plugin": "@oclif/plugin-help",
     "flags": ["nested-commands"],
