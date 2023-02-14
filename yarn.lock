@@ -998,7 +998,7 @@
     widest-line "^3.1.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/core@^2.0.2-beta.6", "@oclif/core@^2.0.3", "@oclif/core@^2.0.7", "@oclif/core@^2.0.8", "@oclif/core@^2.0.9", "@oclif/core@^2.1.1", "@oclif/core@^2.1.2":
+"@oclif/core@^2.0.10", "@oclif/core@^2.0.2-beta.6", "@oclif/core@^2.0.3", "@oclif/core@^2.0.7", "@oclif/core@^2.0.8", "@oclif/core@^2.0.9", "@oclif/core@^2.1.1", "@oclif/core@^2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.1.2.tgz#a3e47ed2274e47cb2b3dc1a16b5955cceae5d2d0"
   integrity sha512-l7Kx+80zuDgi9o4gZe39XQeYvQuj6Hf+B31kXSUSntgXpfLdDbpFSZH/GP7tsldzG4icrpmSwnLDOz8MNB40Hg==
@@ -1610,16 +1610,16 @@
     shelljs "^0.8.5"
     tslib "^2"
 
-"@salesforce/plugin-env@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-env/-/plugin-env-2.0.2.tgz#27a05f1d8f0f249ec7701cab13084e525f219981"
-  integrity sha512-O5NiTTuMdSet0SQLZwhRnJzE/xw4BHZOAxop9nBM8N3pQ5S/8qDvm4t8/Z6D83FRuRMUH7K/Gd3RuDs5xF799A==
+"@salesforce/plugin-env@2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-env/-/plugin-env-2.0.4.tgz#5fb24664b2f60bb88942f0fb6998c3f81d7ea377"
+  integrity sha512-GnbonJtajsc27AkU5LS38tOp1SGB6AquLBSDMN8fFcQbfjp9Xh2y6vtA3ZkYohVhvlR+UI0g6uaGaixc3IVXng==
   dependencies:
-    "@oclif/core" "^2.0.7"
-    "@salesforce/core" "^3.32.11"
-    "@salesforce/sf-plugins-core" "^2.0.1"
+    "@oclif/core" "^2.1.2"
+    "@salesforce/core" "^3.33.1"
+    "@salesforce/sf-plugins-core" "^2.1.1"
     change-case "^4.1.2"
-    open "^8.4.0"
+    open "^8.4.1"
     tslib "^2"
 
 "@salesforce/plugin-functions@1.19.3":
@@ -1863,12 +1863,12 @@
     chalk "^4"
     inquirer "^8.2.5"
 
-"@salesforce/sf-plugins-core@^2", "@salesforce/sf-plugins-core@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-2.0.1.tgz#079d6cc200ea53ce7fb60aafb5eaf5f2b48e46c9"
-  integrity sha512-vT4Y9n/4lStSWrfMAlgQB/XzwJAYK6ibcsFykHNCl86NCoebVGzg5KDIxYjHpidrt2PG/nPk7NL9iBtTH/p8Yg==
+"@salesforce/sf-plugins-core@^2", "@salesforce/sf-plugins-core@^2.0.1", "@salesforce/sf-plugins-core@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-2.1.1.tgz#2c03762328d5ad8462de5d364bb1c54836daef3f"
+  integrity sha512-O+GP+nY/oRRtPVL7r0ITjUTDT7mbWHQt8jzUJ8nux7mkp1wKk1uq/qTtkDMc1fcFhCkslJSyIzoE84X7j9w7jQ==
   dependencies:
-    "@oclif/core" "^2.0.7"
+    "@oclif/core" "^2.0.10"
     "@salesforce/core" "^3.33.1"
     "@salesforce/kit" "^1.8.3"
     "@salesforce/ts-types" "^1.7.1"
@@ -8419,7 +8419,7 @@ onetime@^5.1.0, onetime@^5.1.2:
   dependencies:
     mimic-fn "^2.1.0"
 
-open@8.4.0, open@^8.4.0:
+open@8.4.0:
   version "8.4.0"
   resolved "https://registry.yarnpkg.com/open/-/open-8.4.0.tgz#345321ae18f8138f82565a910fdc6b39e8c244f8"
   integrity sha512-XgFPPM+B28FtCCgSb9I+s9szOC1vZRSwgWsRUA5ylIxRTgKozqjOCrVOqGsYABPYK5qnfqClxZTFBa8PKt2v6Q==
@@ -8435,6 +8435,15 @@ open@^7.0.0:
   dependencies:
     is-docker "^2.0.0"
     is-wsl "^2.1.1"
+
+open@^8.4.0, open@^8.4.1:
+  version "8.4.1"
+  resolved "https://registry.yarnpkg.com/open/-/open-8.4.1.tgz#2ab3754c07f5d1f99a7a8d6a82737c95e3101cff"
+  integrity sha512-/4b7qZNhv6Uhd7jjnREh1NjnPxlTq+XNWPG88Ydkj5AILcA5m3ajvcg57pB24EQjKv0dK62XnDqk9c/hkIG5Kg==
+  dependencies:
+    define-lazy-prop "^2.0.0"
+    is-docker "^2.1.1"
+    is-wsl "^2.2.0"
 
 opener@^1.5.2:
   version "1.5.2"
