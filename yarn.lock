@@ -477,19 +477,10 @@
     ajv "^6.12.2"
     toml "^3.0.0"
 
-"@heroku/project-descriptor@0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@heroku/project-descriptor/-/project-descriptor-0.0.6.tgz#5337e7243423b283d0a032dcff25035756341095"
-  integrity sha512-zH1Wx5WQFCnt3ToiQJ9yUWsOXN5woTiGczGUpvQS0zCwwkE42ydKZSRKgSlB/YIwsDmAkFKiUwe97fT+qP45iw==
-  dependencies:
-    ajv "^8.0.0"
-    ajv-formats "^2.0.2"
-    toml "^3.0.0"
-
-"@hk/functions-core@npm:@heroku/functions-core@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@heroku/functions-core/-/functions-core-0.5.3.tgz#f76da141729b509b3b1ae0f6cb2c8bbeecd6c3c1"
-  integrity sha512-SoJ+8wbke9nRZms2DojMv8bg25ISV5IcvguWMo6XF73knGjAHPqu9AEDOU/w3/X99bfPntfrqT/ipZgbt2c9ow==
+"@heroku/functions-core@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@heroku/functions-core/-/functions-core-0.6.0.tgz#35e814400b316d202b14a67e0689e9d5b051ad6c"
+  integrity sha512-jGGYFwWov9eyqpIrdtSO96oZEFn9jilG8dVzUHfe2+7pyUSDWVXGBYMEk50pE3HtDQp2Oz8F5FLALQGcOjINVg==
   dependencies:
     "@heroku-cli/color" "^1.1.16"
     "@heroku/project-descriptor" "0.0.6"
@@ -501,12 +492,21 @@
     global-agent "^3.0.0"
     handlebars "^4.7.7"
     mem-fs "^2.2.1"
-    mem-fs-editor "^9.5.0"
+    mem-fs-editor "^9.6.0"
     node-fetch "^2.6.8"
     openpgp "^5.5.0"
     semver "^7.3.8"
     sha256-file "^1.0.0"
     yeoman-environment "~3.13.0"
+
+"@heroku/project-descriptor@0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@heroku/project-descriptor/-/project-descriptor-0.0.6.tgz#5337e7243423b283d0a032dcff25035756341095"
+  integrity sha512-zH1Wx5WQFCnt3ToiQJ9yUWsOXN5woTiGczGUpvQS0zCwwkE42ydKZSRKgSlB/YIwsDmAkFKiUwe97fT+qP45iw==
+  dependencies:
+    ajv "^8.0.0"
+    ajv-formats "^2.0.2"
+    toml "^3.0.0"
 
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
@@ -917,10 +917,10 @@
     read-package-json-fast "^2.0.3"
     which "^2.0.2"
 
-"@oclif/color@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@oclif/color/-/color-1.0.3.tgz#1a303b533a832a0af563006eb9a6883ebe3b77ed"
-  integrity sha512-E+KKAE5CKhXRBZEoZLe5yNR0VHmba1m1fxz8HlpcWjHF5Pdhhf6W/0XMmed6vwQCmyzL/YLwdspCRfu0A1cgGA==
+"@oclif/color@^1.0.3", "@oclif/color@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@oclif/color/-/color-1.0.4.tgz#07e54e3bd76a29e77d6ad71aef33222fe4f728e7"
+  integrity sha512-HEcVnSzpQkjskqWJyVN3tGgR0H0F8GrBmDjgQ1N0ZwwktYa4y9kfV07P/5vt5BjPXNyslXHc4KAO8Bt7gmErCA==
   dependencies:
     ansi-styles "^4.2.1"
     chalk "^4.1.0"
@@ -964,7 +964,7 @@
     is-wsl "^2.1.1"
     tslib "^2.3.1"
 
-"@oclif/core@^1.22.0", "@oclif/core@^1.23.1", "@oclif/core@^1.25.0", "@oclif/core@^1.6.0", "@oclif/core@^1.6.3":
+"@oclif/core@^1.23.1", "@oclif/core@^1.6.3":
   version "1.26.1"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.26.1.tgz#26e46c96143d3e2b1dd9bd558ae1653fe9a4f3fa"
   integrity sha512-g+OWJcM7JOVI53caTEtq0BB1nPotWctRLUyFODPgvDqXhVR7QED+Qz3LwFAMD8dt7/Ar2ZNq15U3bnpnOv453A==
@@ -998,10 +998,10 @@
     widest-line "^3.1.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/core@^2.0.2-beta.6", "@oclif/core@^2.0.3", "@oclif/core@^2.0.7", "@oclif/core@^2.0.9":
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.0.9.tgz#f38c7260653a60698772ff09c5cf91febbfe003b"
-  integrity sha512-SLwSQa1No4br0D9cLY8lleXvcs3K/YpSQdo0md6z8AHx3P+l0/fv9dtIlYYD8MqsRUcNPxshJ3ZkN2sNNM5VjQ==
+"@oclif/core@^2.0.10", "@oclif/core@^2.0.2-beta.6", "@oclif/core@^2.0.3", "@oclif/core@^2.0.7", "@oclif/core@^2.0.8", "@oclif/core@^2.0.9", "@oclif/core@^2.1.2":
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.1.4.tgz#536cf9d2367ba96c625076588b0cbccf3341829c"
+  integrity sha512-8rPS/gsjLgWp//nraRs5/yf7EkueFHBLRTMUli3yTu88XrQ2czbXIP2HsF2rxmtCqUUfXUTllHfr8OzqBs0Dcw==
   dependencies:
     "@types/cli-progress" "^3.11.0"
     ansi-escapes "^4.3.2"
@@ -1009,7 +1009,7 @@
     cardinal "^2.1.1"
     chalk "^4.1.2"
     clean-stack "^3.0.1"
-    cli-progress "^3.10.0"
+    cli-progress "^3.11.2"
     debug "^4.3.4"
     ejs "^3.1.6"
     fs-extra "^9.1.0"
@@ -1027,7 +1027,7 @@
     strip-ansi "^6.0.1"
     supports-color "^8.1.1"
     supports-hyperlinks "^2.2.0"
-    tslib "^2.4.1"
+    tslib "^2.5.0"
     widest-line "^3.1.0"
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
@@ -1103,10 +1103,10 @@
     chalk "^4.1.0"
     tslib "^2.4.1"
 
-"@oclif/plugin-autocomplete@1.4.4":
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-1.4.4.tgz#c2e5fbcfbabc0a92df12f29d8a3e4a34fa7756e8"
-  integrity sha512-8Bcn1h1H5EORJ3UMYS91AE3lQh7Ks5u4na7hPXS1GsnWaN1MVdpipvEAPV2Uj5bUUC+xj/v0k7N4ld0BWkEx+w==
+"@oclif/plugin-autocomplete@1.4.5":
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-1.4.5.tgz#0df7f419b3b86f90986aa948fa6e3f00286bb91c"
+  integrity sha512-qc8BVlOsfUjGDhzHQNYRRWjqJFOyaAPTZK0GqVcrpyeFt3MyXpC0Du8g0tKex/xo+JgaYLAAiN1ZnWWcm4r0Gw==
   dependencies:
     "@oclif/core" "^2.0.7"
     chalk "^4.1.0"
@@ -1126,12 +1126,12 @@
     ts-json-schema-generator "^1.2.0"
     tslib "^2.4.1"
 
-"@oclif/plugin-commands@2.2.5":
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-commands/-/plugin-commands-2.2.5.tgz#072a476055b6f6896de51171e03a4389342b079e"
-  integrity sha512-vr1+iqRTkGt8U2HD/SK5ywGYWduRxqKxHvN6m3Iug3gVc8zQSmbbUkUerkrCuE81Z8VEJeY+7GK3/XSDE1QfbQ==
+"@oclif/plugin-commands@2.2.7":
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-commands/-/plugin-commands-2.2.7.tgz#09667ca59ca2225d938cee0f817e76d660d35f28"
+  integrity sha512-cZjWEj3ea9n9iw+RWZLq/WOUb0B6Gj/bi4/rbExzrqHMVNczPBXqQspNIeVadiD/dK4Y9RSYAsDV32kl+eORWg==
   dependencies:
-    "@oclif/core" "^2.0.7"
+    "@oclif/core" "^2.0.8"
     lodash "^4.17.11"
 
 "@oclif/plugin-help@3.2.18":
@@ -1151,20 +1151,20 @@
     widest-line "^3.1.0"
     wrap-ansi "^6.2.0"
 
-"@oclif/plugin-help@5.2.2", "@oclif/plugin-help@^5.1.19":
-  version "5.2.2"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-5.2.2.tgz#f00e60b1349c4ec62c1d6a98d3a424899373c5ad"
-  integrity sha512-ok8gS2phqA4MiGkjCrZPFvhNIHIp35WsvNNVUn4GL8WZYQ5mk1cZuu+IIqTZxBFZ4QDUZLVkumrhsqx3oNId9A==
+"@oclif/plugin-help@5.2.4", "@oclif/plugin-help@^5.1.19":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-5.2.4.tgz#57b87b05b1cddc10c4958f93f6320424bb9e3ec6"
+  integrity sha512-7fVB/M1cslwHJTmyNGGDYBizi54NHcKCxHAbDSD16EbjosKxFwncRylVC/nsMgKZEufMDKZaVYI2lYRY3GHlSQ==
   dependencies:
-    "@oclif/core" "^2.0.7"
+    "@oclif/core" "^2.0.8"
 
-"@oclif/plugin-not-found@2.3.17", "@oclif/plugin-not-found@^2.3.7":
-  version "2.3.17"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-2.3.17.tgz#c27fd323591d559110ef022a34074bf9732eb41c"
-  integrity sha512-KTh4vQ3GIiHNeuqsMV58cdvRBO1IREoEGuAE+e73OcP5VEjjsbJNQS+IXg0UHivMQhVBl7FeadgvAqGzUHPv5w==
+"@oclif/plugin-not-found@2.3.19", "@oclif/plugin-not-found@^2.3.7":
+  version "2.3.19"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-2.3.19.tgz#34d10cd43695da44d3749cae973b8edb8abb7ce9"
+  integrity sha512-W0rY+txYSElPCP/DA4n5ffUDWQtk9EDRtL8oceP8vyXXPPjdCFk5vIXeisQGGTElD4L1+uHC4LriaFLNhysNYQ==
   dependencies:
     "@oclif/color" "^1.0.3"
-    "@oclif/core" "^2.0.3"
+    "@oclif/core" "^2.1.2"
     fast-levenshtein "^3.0.0"
     lodash "^4.17.21"
 
@@ -1185,24 +1185,24 @@
     tslib "^2.4.1"
     yarn "^1.22.18"
 
-"@oclif/plugin-search@0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-search/-/plugin-search-0.0.11.tgz#43f756798d44e6d57419db2950855db3c3b66bf9"
-  integrity sha512-zOiLLfg5/Jt7g8J+txFm4tjHl2jRKgj7KyX4rQsS+UjvySs4V0qtt1CPAvaAZrbjFDCzzRwVXaaDFdQyiWWL1A==
+"@oclif/plugin-search@0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-search/-/plugin-search-0.0.13.tgz#0e833fb0a2737fd04f148840bbf79bb0cece14ff"
+  integrity sha512-7EAkyD+czVxQYcKwV4cCMLj/0oMoOez0QOGbf/K0oKgDCkepyzgp+lEuhtx7LZa2yfDw8B2gCwCdD2vaJoZCGQ==
   dependencies:
-    "@oclif/core" "^2.0.3"
+    "@oclif/core" "^2.0.8"
     chalk "^4"
     fuse.js "^6.6.2"
     inquirer "^8.2.5"
     rxjs "^7.8.0"
 
-"@oclif/plugin-update@3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-3.1.1.tgz#5afc5dd80483d1635bd6721532379d342df328a9"
-  integrity sha512-WPXAbrbeDjGmDftKK7EsPUmhjuVeBOoWd0tedwKr5VQBgVlVH9jkCOx6JHTVK2r8/jCHwfOx8ngfbD3L9tFkDg==
+"@oclif/plugin-update@3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-3.1.4.tgz#d77a505482a2758bbbc757657a7456f7e9f11765"
+  integrity sha512-AJp5i1ePvBw5jLjF7BEXReASWxlM/U9ON2fEppwNVptLi5xz86vNc/qw8/KXcIUqNdwXy03XNoetrs6VzTmS6Q==
   dependencies:
-    "@oclif/color" "^1.0.3"
-    "@oclif/core" "^2.0.7"
+    "@oclif/color" "^1.0.4"
+    "@oclif/core" "^2.1.2"
     cross-spawn "^7.0.3"
     debug "^4.3.1"
     filesize "^6.1.0"
@@ -1221,12 +1221,12 @@
   dependencies:
     "@oclif/core" "^2.0.3"
 
-"@oclif/plugin-warn-if-update-available@2.0.24", "@oclif/plugin-warn-if-update-available@^2.0.14":
-  version "2.0.24"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-2.0.24.tgz#dffc4b19cf64baf0bf3a4d9925b17bfb111cc1c8"
-  integrity sha512-Rq8/EZ8wQawvPWS6W59Zhf/zSz/umLc3q75I1ybi7pul6YMNwf/E1eDVHytSUEQ6yQV+p3cCs034IItz4CVdjw==
+"@oclif/plugin-warn-if-update-available@2.0.26", "@oclif/plugin-warn-if-update-available@^2.0.14":
+  version "2.0.26"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-2.0.26.tgz#c7f727cdc3ee1db1054ffe83fe3795e4995c36a1"
+  integrity sha512-eMwDOzxPdN1X0y5G0W/GJXFRUvevT6gOrbbRLPoboTUwcFRqhFOJ7jCqGUTomeDfMRgAb3O+3bcD64lIb/y+FA==
   dependencies:
-    "@oclif/core" "^2.0.7"
+    "@oclif/core" "^2.0.8"
     chalk "^4.1.0"
     debug "^4.1.0"
     fs-extra "^9.0.1"
@@ -1234,12 +1234,12 @@
     lodash "^4.17.21"
     semver "^7.3.8"
 
-"@oclif/plugin-which@2.2.12":
-  version "2.2.12"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-which/-/plugin-which-2.2.12.tgz#b441c28bc7d990e07560cf61c4992a7037b1a34b"
-  integrity sha512-8tkpCBD/quJrutzNW0GzWX0MK8qRgGUK9j4hxr+mNajUtJA1A8Ha1fw2c7R4Ox85Bw8Tt8iRG3CXX88uKdIF3g==
+"@oclif/plugin-which@2.2.14":
+  version "2.2.14"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-which/-/plugin-which-2.2.14.tgz#b4728b11fd5ac3121152aa5832b602eabbd9ba62"
+  integrity sha512-/PcgbWteAsDe6123Xy2fMSqRNLXrv5hcdlfc9Z5+UE4yd053lllwS2I9dR925w2uLVR/XsqUqLmKhwwr9US2UA==
   dependencies:
-    "@oclif/core" "^2.0.7"
+    "@oclif/core" "^2.0.8"
     tslib "^2.5.0"
 
 "@oclif/screen@^1.0.4":
@@ -1338,12 +1338,24 @@
   resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-14.0.0.tgz#949c5019028c93f189abbc2fb42f333290f7134a"
   integrity sha512-HNWisMYlR8VCnNurDU6os2ikx0s0VyEjDYHNS/h4cgb8DeOxQ0n72HyinUtdDVxJhFy3FWLGl0DJhfEWk3P5Iw==
 
+"@octokit/openapi-types@^16.0.0":
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-16.0.0.tgz#d92838a6cd9fb4639ca875ddb3437f1045cc625e"
+  integrity sha512-JbFWOqTJVLHZSUUoF4FzAZKYtqdxWu9Z5m2QQnOyEa04fOFljvyh7D3GYKbfuaSWisqehImiVIMG4eyJeP5VEA==
+
 "@octokit/plugin-paginate-rest@^2.16.8":
   version "2.21.3"
   resolved "https://registry.yarnpkg.com/@octokit/plugin-paginate-rest/-/plugin-paginate-rest-2.21.3.tgz#7f12532797775640dbb8224da577da7dc210c87e"
   integrity sha512-aCZTEf0y2h3OLbrgKkrfFdjRL6eSOo8komneVQJnYecAxIej7Bafor2xhuDJOIFau4pk0i/P28/XgtbyPF0ZHw==
   dependencies:
     "@octokit/types" "^6.40.0"
+
+"@octokit/plugin-paginate-rest@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-paginate-rest/-/plugin-paginate-rest-6.0.0.tgz#f34b5a7d9416019126042cd7d7b811e006c0d561"
+  integrity sha512-Sq5VU1PfT6/JyuXPyt04KZNVsFOSBaYOAq2QRZUwzVlI10KFvcbUo8lR258AAQL1Et60b0WuVik+zOWKLuDZxw==
+  dependencies:
+    "@octokit/types" "^9.0.0"
 
 "@octokit/plugin-request-log@^1.0.4":
   version "1.0.4"
@@ -1424,6 +1436,13 @@
   dependencies:
     "@octokit/openapi-types" "^14.0.0"
 
+"@octokit/types@^9.0.0":
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/@octokit/types/-/types-9.0.0.tgz#6050db04ddf4188ec92d60e4da1a2ce0633ff635"
+  integrity sha512-LUewfj94xCMH2rbD5YJ+6AQ4AVjFYTgpp6rboWM5T7N3IsIF65SBEOVcYMGAEzO/kKNiNaW4LoWtoThOhH06gw==
+  dependencies:
+    "@octokit/openapi-types" "^16.0.0"
+
 "@salesforce/bunyan@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@salesforce/bunyan/-/bunyan-2.0.0.tgz#8dbe377f2cf7d35348a23260416fee15adba5f97"
@@ -1436,7 +1455,7 @@
     mv "~2"
     safe-json-stringify "~1"
 
-"@salesforce/core@3.33.1", "@salesforce/core@^3.24.0", "@salesforce/core@^3.31.19", "@salesforce/core@^3.32.11", "@salesforce/core@^3.32.12", "@salesforce/core@^3.32.13", "@salesforce/core@^3.32.2", "@salesforce/core@^3.32.8", "@salesforce/core@^3.33.0", "@salesforce/core@^3.33.1", "@salesforce/core@^3.8.0":
+"@salesforce/core@3.33.1", "@salesforce/core@^3.24.0", "@salesforce/core@^3.31.19", "@salesforce/core@^3.32.11", "@salesforce/core@^3.32.12", "@salesforce/core@^3.32.13", "@salesforce/core@^3.32.2", "@salesforce/core@^3.33.0", "@salesforce/core@^3.33.1", "@salesforce/core@^3.8.0":
   version "3.33.1"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.33.1.tgz#3dd0a44ba22763e8e0c2c97df03393e5c2c845d9"
   integrity sha512-jaed8rK+NhSxB6MjYUN8f/2VkvtbFN/Ce/l6JvgFE+cvOf2g+lPv1pSsnKKlaSiiYcXkOvIRDT9d9ns1RLJzUw==
@@ -1527,14 +1546,14 @@
     typedoc-plugin-missing-exports "0.23.0"
     typescript "^4.1.3"
 
-"@salesforce/kit@^1.5.17", "@salesforce/kit@^1.7.0", "@salesforce/kit@^1.7.1", "@salesforce/kit@^1.8.0", "@salesforce/kit@^1.8.2", "@salesforce/kit@^1.8.3":
-  version "1.8.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/kit/-/kit-1.8.3.tgz#b590b78a8618494c51534598a7eb0683ba0da3f2"
-  integrity sha512-p+0tWR2pyCAIjZwDXGhrYFPuLckX9fP3Xa6Jync9POeQBfDGyK9CRd1eaiWj+6BeDS9kwvgm5M6o+OptIEhEjw==
+"@salesforce/kit@^1.5.17", "@salesforce/kit@^1.7.1", "@salesforce/kit@^1.8.0", "@salesforce/kit@^1.8.2", "@salesforce/kit@^1.8.3":
+  version "1.8.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/kit/-/kit-1.8.5.tgz#3dcda46e7216363f8703c1c1d3b4dc5d80c1b4d3"
+  integrity sha512-py5M1PI5tWy/au/1tJ6qQBv7pHX3B4APqsNxg7yx/s2jbERUD6QNwcmWAayuRpZVVnFXBShBYROFZCojuNJwMA==
   dependencies:
-    "@salesforce/ts-types" "^1.7.2"
+    "@salesforce/ts-types" "^1.7.3"
     shx "^0.3.3"
-    tslib "^2.2.0"
+    tslib "^2.5.0"
 
 "@salesforce/plugin-command-reference@^2.2.8":
   version "2.2.8"
@@ -1553,15 +1572,15 @@
     mkdirp "^1.0.4"
     tslib "^2"
 
-"@salesforce/plugin-data@2.1.24":
-  version "2.1.24"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-2.1.24.tgz#a60c0806581b940fad9763da17fe6c6b79058bb9"
-  integrity sha512-eYRZRR3KOiS5Kr6KbPfbCO6XXCcZmQDhiQFzLVsTZoLUStIAuzbjQdwK+eW76luqM+ooo1hpZFFr4oPPluM4nw==
+"@salesforce/plugin-data@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-2.2.1.tgz#c373d9742b1edc4990d558ed2569f1242f78a53f"
+  integrity sha512-FRMb88hxMOSYwIbr0xtC9oVYvjwZqHuU9e1z2neiLqJwBbsm1H11CFyy4rxkClZzj/tsB66sU3nhrS2lLlL6AA==
   dependencies:
-    "@oclif/core" "^1.22.0"
+    "@oclif/core" "^2.0.7"
     "@salesforce/core" "^3.32.12"
-    "@salesforce/kit" "^1.7.0"
-    "@salesforce/sf-plugins-core" "^1.21.3"
+    "@salesforce/kit" "^1.8.3"
+    "@salesforce/sf-plugins-core" "^2.0.1"
     "@salesforce/ts-types" "^1.7.2"
     "@types/fs-extra" "^9.0.13"
     chalk "^4.1.0"
@@ -1587,33 +1606,33 @@
     shelljs "^0.8.5"
     tslib "^2"
 
-"@salesforce/plugin-env@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-env/-/plugin-env-2.0.1.tgz#f25bfe4e8db1dc742165320cc05b77a0d14eeb6a"
-  integrity sha512-odgeoDk+Q57fIYtI7jN9wD/ODwZ07rmnUDpk1Zj9juijHX9xyfeDsDWBa0L3YYK/LdjC2Y6t1ksnn3rPnVuxYw==
+"@salesforce/plugin-env@2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-env/-/plugin-env-2.0.4.tgz#5fb24664b2f60bb88942f0fb6998c3f81d7ea377"
+  integrity sha512-GnbonJtajsc27AkU5LS38tOp1SGB6AquLBSDMN8fFcQbfjp9Xh2y6vtA3ZkYohVhvlR+UI0g6uaGaixc3IVXng==
   dependencies:
-    "@oclif/core" "^2.0.7"
-    "@salesforce/core" "^3.32.11"
-    "@salesforce/sf-plugins-core" "^2.0.1"
+    "@oclif/core" "^2.1.2"
+    "@salesforce/core" "^3.33.1"
+    "@salesforce/sf-plugins-core" "^2.1.1"
     change-case "^4.1.2"
-    open "^8.4.0"
+    open "^8.4.1"
     tslib "^2"
 
-"@salesforce/plugin-functions@1.17.4":
-  version "1.17.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.17.4.tgz#f12d3760b43ae0c6a3de4d7811e764ec34f8dd63"
-  integrity sha512-5nAzuJSywsthUpid/9HQ1dDsgwGratS3w6YAq9IG0vmz+ntYkszbLC1ilMG6wkgcZJ0WHmhS0T44AG1ysJgd9g==
+"@salesforce/plugin-functions@1.19.3":
+  version "1.19.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.19.3.tgz#8b122cd0e20b9c5a0dc5facd93d05eb998bc5748"
+  integrity sha512-z0iX6lXaJa0M0rLCZbXOhwXVK5FH+PJ2xmQHfEdmDVSFhfGAW7kakwyNJk8VOMxbHsHUGZQLnEhdC558PfSkRw==
   dependencies:
     "@heroku-cli/color" "^1.1.16"
     "@heroku-cli/schema" "^1.0.25"
     "@heroku/eventsource" "^1.0.7"
     "@heroku/function-toml" "^0.0.3"
+    "@heroku/functions-core" "^0.6.0"
     "@heroku/project-descriptor" "0.0.6"
-    "@hk/functions-core" "npm:@heroku/functions-core@^0.5.3"
-    "@oclif/core" "^1.6.0"
-    "@salesforce/core" "^3.32.12"
-    "@salesforce/sf-plugins-core" "^1.7.2"
-    "@salesforce/ts-types" "^1.7.1"
+    "@oclif/core" "^2.1.2"
+    "@salesforce/core" "^3.33.1"
+    "@salesforce/sf-plugins-core" "^2.0.1"
+    "@salesforce/ts-types" "^1.7.3"
     axios "^0.27.2"
     axios-debug-log "^0.8.4"
     chalk "^4.1.2"
@@ -1632,30 +1651,30 @@
     sha256-file "^1.0.0"
     uuid "^8.3.2"
 
-"@salesforce/plugin-generate@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-generate/-/plugin-generate-1.1.0.tgz#40c8c4c97043f4f08a657be92a84cfa19b1ec0df"
-  integrity sha512-gIZAxjA2LumN0tskKutb9AuExpZyNak7iN1GoKd74kCWsA4h6FU70SaWCiY58E9IhUWB63kbEX3G2rkRHxeBEA==
+"@salesforce/plugin-generate@1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-generate/-/plugin-generate-1.1.2.tgz#679572d09c908570aa72b47754f189e838e5bca9"
+  integrity sha512-Wbq6a0aq0lv3n4hX/S9TE0jvfLw5stx/Qs/sDjb3Tw16D9+SBuj/zVF95+GWJlcIZYh54EdDSHeVDxaY7CStlA==
   dependencies:
     "@oclif/core" "^2.0.7"
-    "@salesforce/core" "^3.32.12"
+    "@salesforce/core" "^3.33.1"
     "@salesforce/sf-plugins-core" "^2.0.1"
     "@salesforce/templates" "^55.1.0"
     tslib "^2"
     yeoman-environment "^3.13.0"
     yeoman-generator "^5.7.0"
 
-"@salesforce/plugin-info@2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-2.4.0.tgz#3a9dee8f0847f7ceddca3836dd67e5f6f4fc93fb"
-  integrity sha512-mrhh+9i7U1M/DOUbUqY9sJPa2CnMjiM4FeAUH0eYY/rX+fpRsja1Y+8dlThV76qbDZoMPPq0LG2q4UtWAH4k5w==
+"@salesforce/plugin-info@2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-2.4.2.tgz#47bee44226a87dd137c1db27b8ed1c5f7ccac321"
+  integrity sha512-HvXJkrx4lzB3MkP80gGYmt/IOIbBjA5HxZFohkM+TQf++zgTDjv1cVka4OV7yFIhW8QCCN6CNEdMOlFTHi2uKQ==
   dependencies:
     "@oclif/core" "^2.0.7"
     "@salesforce/core" "^3.33.0"
     "@salesforce/kit" "^1.8.0"
     "@salesforce/sf-plugins-core" "^2.0.1"
     got "^11.8.6"
-    marked "^4.2.5"
+    marked "^4.2.12"
     marked-terminal "^4.2.0"
     open "^8.4.0"
     proxy-agent "^5.0.0"
@@ -1663,22 +1682,22 @@
     semver "^7.3.5"
     tslib "^2"
 
-"@salesforce/plugin-limits@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-limits/-/plugin-limits-2.3.0.tgz#2bf63ed17b7e92615a264785a7303dd64eb84f0f"
-  integrity sha512-QBx40YQBsCMM+wowf0gascEOB+DSqZMH6ZkHO9yDBzJbTCnIca2zS01CoozwxPqAndeyWTVufDzKKosRun4YiA==
+"@salesforce/plugin-limits@2.3.3":
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-limits/-/plugin-limits-2.3.3.tgz#32eb2b2b7cbd1633671ccf1c23e58d896fa055e8"
+  integrity sha512-RQw5aH59C00jerhtEKOYXF/dpM0eyO2yPhRKLHHrNs/H6KlZcgs0UoJua7KZw4Q5K1W83Y2Kt8PId+nUFNUg5g==
   dependencies:
-    "@oclif/core" "^2.0.7"
+    "@oclif/core" "^2.0.8"
     "@salesforce/core" "^3.32.11"
     "@salesforce/kit" "^1.8.0"
     "@salesforce/sf-plugins-core" "^2.0.1"
-    "@salesforce/ts-types" "^1.7.2"
+    "@salesforce/ts-types" "^1.7.3"
     tslib "^2"
 
-"@salesforce/plugin-login@1.1.17":
-  version "1.1.17"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-login/-/plugin-login-1.1.17.tgz#b2e93c45c5b91a9c37cb9e5567dbb8dab70aa93b"
-  integrity sha512-kSOigB1AVh7wUvn5jo1JAa3ndyWL4W6fQ06l4M4Iaw+/3MyXLoL2CPoJ5fmhuH6NKr90AqFOTB6rIfwOAcEiBw==
+"@salesforce/plugin-login@1.1.18":
+  version "1.1.18"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-login/-/plugin-login-1.1.18.tgz#96c645dac65e3bde7c8d77ae48fbda677054f282"
+  integrity sha512-ycBJh9LJCe26IJSqP9e8o4/VpZF/bvy/IeWy/0GlTMn6qPpbFl652CQ5SnOmUKbmQRdaoZq4wQo1l7SImaeUdQ==
   dependencies:
     "@oclif/core" "^2.0.7"
     "@salesforce/core" "^3.31.19"
@@ -1688,10 +1707,10 @@
     open "^8.4.0"
     tslib "^2"
 
-"@salesforce/plugin-org@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-2.3.0.tgz#ef92c5a83ab30da223f777815603d04fc4022d70"
-  integrity sha512-r1sFBg4Yy/7Zy8hXyiTN0BLHAWHRTmpwY5rmwfPQgXNzZnX9ZNC6nbN3f5ZWoXZSzmWpehRh6fBNShXbjbKM/A==
+"@salesforce/plugin-org@2.3.3":
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-2.3.3.tgz#7545545699c0e0325650d70b2a6de6e26e161237"
+  integrity sha512-XdLPyaYQwUGVTCx65qOlQ5JS7gN8dUoy81te1pfKDpxdsbS6ICxHHos9bxFA1n51WruJDObGpbK0j1OoFXvJRQ==
   dependencies:
     "@oclif/core" "^2.0.7"
     "@salesforce/core" "^3.33.1"
@@ -1700,27 +1719,29 @@
     open "8.4.0"
     tslib "^2"
 
-"@salesforce/plugin-release-management@^3.10.0":
-  version "3.10.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-3.10.0.tgz#148db074a8cb6f4f5c466c5567f0e17c6dc855d3"
-  integrity sha512-m5tc+kcC8u1TwSHscm0yO1jODPfRLlvWCHr2zAyGt4rkW7T1uHPvxly6zKX3OuweHQnmeMcfpijEJ6a57KP8Tw==
+"@salesforce/plugin-release-management@^3.12.0":
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-3.12.0.tgz#1c4861d6f37a8f5cc8db7d0f01557906341c9754"
+  integrity sha512-zK9B1CBBxGKsXkZ522Oww5Oz1K7XyJhLNL7wN9sC6Xht0LVieslhmVVNCZs2WKEaDMR1OCLHqldWzZ1KyOtNCA==
   dependencies:
     "@oclif/core" "^2.0.9"
     "@octokit/core" "^4.1.0"
+    "@octokit/plugin-paginate-rest" "^6.0.0"
     "@salesforce/core" "^3.32.12"
     "@salesforce/kit" "^1.8.2"
     "@salesforce/plugin-command-reference" "^2.2.8"
     "@salesforce/plugin-trust" "^2.2.3"
     "@salesforce/sf-plugins-core" "^2.0.1"
-    "@salesforce/ts-types" "^1.5.21"
+    "@salesforce/ts-types" "^1.7.3"
     agent-base "^6.0.2"
-    aws-sdk "^2.1299.0"
+    aws-sdk "^2.1313.0"
     chalk "^4.1.0"
     conventional-changelog-conventionalcommits "^4.6.1"
     conventional-changelog-preset-loader "^2.3.4"
     conventional-commits-parser "^3.2.2"
     fast-glob "^3.2.12"
     got "^11.8.6"
+    just-diff "^5.2.0"
     proxy-agent "^5.0.0"
     proxy-from-env "^1.1.0"
     semver "^7.3.8"
@@ -1729,33 +1750,33 @@
     tslib "^2"
     yarn-deduplicate "^3.1.0"
 
-"@salesforce/plugin-schema@2.2.3":
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-schema/-/plugin-schema-2.2.3.tgz#3432e4c453f7b5574064fe619cd1c68baf306d25"
-  integrity sha512-t7YtH3hpt6byvee9vMlT/Ij7JdQVQ8KSynUEqC+7R6bYA46uZrwrOXALd1VQ4hfNyv/wq2VMi6nOZbCCHdSYBw==
-  dependencies:
-    "@oclif/core" "^1.25.0"
-    "@salesforce/core" "^3.32.8"
-    "@salesforce/sf-plugins-core" "^1.19.2"
-    tslib "^2"
-
-"@salesforce/plugin-settings@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-settings/-/plugin-settings-1.2.0.tgz#d1a1e12e760e158831b742ba86c1111dcdfe1cd0"
-  integrity sha512-EuWIdOlf58d77aeykli22XlsEMzThzcRfZom4HYyaNvgDVIBBOm0XySt8CwYDR/LOinLaSUt+3Wsg+zU0pm0iQ==
+"@salesforce/plugin-schema@2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-schema/-/plugin-schema-2.3.1.tgz#403c5caa562d04f385fc8362be83f7a1bdb0623e"
+  integrity sha512-r8T6qLsY06C0m3dxHOfaDLj0L8tMonQTduRafiHRjyk/EBo8iD7parWrutvs+OA52xAylA64FyRPaLK81g0SmA==
   dependencies:
     "@oclif/core" "^2.0.7"
+    "@salesforce/core" "^3.33.1"
+    "@salesforce/sf-plugins-core" "^2.0.1"
+    tslib "^2"
+
+"@salesforce/plugin-settings@1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-settings/-/plugin-settings-1.2.2.tgz#4e510365a4791ef200905a0f886fe551c87eac13"
+  integrity sha512-BUj4OSDXbLaLP0MlaCq7xLUDplLC/ZHlnMDfqq6Eza6kGERdqINgIu1iCO6Eg1CO0AHd89a2rt5gcRiHtz89LA==
+  dependencies:
+    "@oclif/core" "^2.1.2"
     "@salesforce/core" "^3.32.12"
     "@salesforce/sf-plugins-core" "^2.0.1"
     tslib "^2"
 
-"@salesforce/plugin-sobject@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-sobject/-/plugin-sobject-0.1.0.tgz#f8d2f418011ab24473e314652059d63ecb2a23c2"
-  integrity sha512-Nn7S8uvDikwxsYNmlMSSj8pfZ2cRM3PRCoOvsIo6v8Po19bT+OlO54LS9/W9uQMCFHeHO4W3To8sDPmmKo+g9w==
+"@salesforce/plugin-sobject@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-sobject/-/plugin-sobject-0.1.2.tgz#c49b48e54967eb27b02a1c8a5906df0b08bba904"
+  integrity sha512-hUPra3zK5sunBavc32epfmvFJ5y++f1DseoNQOr2O14YEh1YGzk/TJojEk6ab1Qi4KoB+XqOtf2vCgVPnh0iYQ==
   dependencies:
     "@oclif/core" "^2.0.7"
-    "@salesforce/core" "^3.32.13"
+    "@salesforce/core" "^3.33.1"
     "@salesforce/kit" "^1.8.2"
     "@salesforce/sf-plugins-core" "^2.0.1"
     change-case "^4.1.2"
@@ -1765,10 +1786,10 @@
     js2xmlparser "^4.0.2"
     tslib "^2"
 
-"@salesforce/plugin-telemetry@2.1.0", "@salesforce/plugin-telemetry@^2.0.5":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-2.1.0.tgz#cef663c247d6befd82c07ae6423b824cb1a9fe05"
-  integrity sha512-L2l2lBs5QXiv5N2RpVe/CRrtFsFbjsYOZ6eSq6/o+lLwcIKL8UnosCdOPI8UX0D/jDkmAxqRvcoQXK72jaPUxQ==
+"@salesforce/plugin-telemetry@2.1.1", "@salesforce/plugin-telemetry@^2.0.5":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-2.1.1.tgz#10a6ac5dc02fc7e66a7e6a5c36d34c75eec35779"
+  integrity sha512-k4JqCBwVpYOID8S8s1GH73NE3hsB6DuI7t26FoXubz96tlP2/s+TFoN+jWQa4isLvQGU9msL4E7otrxuCPljwQ==
   dependencies:
     "@oclif/core" "^2.0.7"
     "@salesforce/core" "^3.32.2"
@@ -1776,10 +1797,10 @@
     debug "^4.3.4"
     tslib "^2"
 
-"@salesforce/plugin-trust@2.4.0", "@salesforce/plugin-trust@^2.2.3":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-2.4.0.tgz#495106c7e6c43098b946c7b69f26bdf7799c7b25"
-  integrity sha512-Tf4NUWZn8tTdfIV4xZoXmDsi/pGLBTmpqpTZi9qh1qfANJIcl/nVNokryGRgdWMrApHFRSaDWnjdwNJGKkzNGg==
+"@salesforce/plugin-trust@2.4.1", "@salesforce/plugin-trust@^2.2.3":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-2.4.1.tgz#1605c6063d942e1d3019d9ea80ae9599661f6d10"
+  integrity sha512-3QF3RYvbRNG0pOREXtDKuyvekCrB1sZwXirIRwkdC7uWZv/9p77aDZoWsycheI7TIwYPTW7urVQwu6AIvHN3YA==
   dependencies:
     "@oclif/core" "^2.0.7"
     "@salesforce/core" "^3.33.1"
@@ -1794,10 +1815,10 @@
     shelljs "^0.8.4"
     tslib "^2"
 
-"@salesforce/plugin-user@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-user/-/plugin-user-2.3.0.tgz#6b45dbbc4bb3e83029084164e446e3c96c83df58"
-  integrity sha512-qxtu5Ta/gzYUy5RhLTOVQTsWucLIaWbPhImzWWzu1xtA4JKlMbqm87zJD0vomzO50eV4qKtE9wgFsUG27o/4CQ==
+"@salesforce/plugin-user@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-user/-/plugin-user-2.3.2.tgz#3029da529699079096c0f6f2e6442c8a515d79b6"
+  integrity sha512-1MR1NbWIHJ+LqtCZ95Ag1fx3Dehj31tGr2FTCE+46f4PdPl2w/xbC3I3PUkVXkRc5a/4B+ENY4SsgKdGfJ4Ciw==
   dependencies:
     "@oclif/core" "^2.0.7"
     "@salesforce/core" "^3.33.1"
@@ -1816,7 +1837,7 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.5.0.tgz#8bfe2cb5d7cb29d3394b3b9cfb71bb527009c82c"
   integrity sha512-EKFBURBuON7cj8XZCW+ybeSRRw7wUP1XUXZVHzFgx8KiYmSeGiRHBYbDjQOsQMho2uOLsTozMPEt2ehYnji0YA==
 
-"@salesforce/sf-plugins-core@^1.19.2", "@salesforce/sf-plugins-core@^1.21.3", "@salesforce/sf-plugins-core@^1.7.2", "@salesforce/sf-plugins-core@^1.9.0":
+"@salesforce/sf-plugins-core@^1.9.0":
   version "1.22.3"
   resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-1.22.3.tgz#c8817130675d16fa0b197d4dd968c42217253a3a"
   integrity sha512-u/W95Ulxutktargpx6YWCzv2KrguaDOnNO6rVQ4lVZpateXXCDUc4JP+VDNzlHtTuzvGXm8biMYCDvFFbGsIZg==
@@ -1828,12 +1849,12 @@
     chalk "^4"
     inquirer "^8.2.5"
 
-"@salesforce/sf-plugins-core@^2", "@salesforce/sf-plugins-core@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-2.0.1.tgz#079d6cc200ea53ce7fb60aafb5eaf5f2b48e46c9"
-  integrity sha512-vT4Y9n/4lStSWrfMAlgQB/XzwJAYK6ibcsFykHNCl86NCoebVGzg5KDIxYjHpidrt2PG/nPk7NL9iBtTH/p8Yg==
+"@salesforce/sf-plugins-core@^2", "@salesforce/sf-plugins-core@^2.0.1", "@salesforce/sf-plugins-core@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-2.1.1.tgz#2c03762328d5ad8462de5d364bb1c54836daef3f"
+  integrity sha512-O+GP+nY/oRRtPVL7r0ITjUTDT7mbWHQt8jzUJ8nux7mkp1wKk1uq/qTtkDMc1fcFhCkslJSyIzoE84X7j9w7jQ==
   dependencies:
-    "@oclif/core" "^2.0.7"
+    "@oclif/core" "^2.0.10"
     "@salesforce/core" "^3.33.1"
     "@salesforce/kit" "^1.8.3"
     "@salesforce/ts-types" "^1.7.1"
@@ -1898,21 +1919,21 @@
     yeoman-environment "^3.9.1"
     yeoman-generator "^5.6.1"
 
-"@salesforce/ts-sinon@^1.4.5":
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/@salesforce/ts-sinon/-/ts-sinon-1.4.5.tgz#9f3d00f28e8f73dd0e60651a025a52f283ee8ff7"
-  integrity sha512-gE/y/fNXm/3hiKTqG4wuVSaPUMo3qR/A1Qhv86EN8tNvWVr7MonFn7/TCyi5XHfXhWzE7Qx1k7Ig2+r00RbxQw==
+"@salesforce/ts-sinon@^1.4.6":
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/@salesforce/ts-sinon/-/ts-sinon-1.4.6.tgz#50ac8f091ae546bcc5b1a2b0937f566e3f9683c6"
+  integrity sha512-yWed+QzGU3UOSX9ytg09ELWA7Oc5BAK4MVYv8Ap9uUbkg6tylETF7nzuMkvP49TaZcKC7zOG6MBebKNVZqUjPw==
   dependencies:
-    "@salesforce/ts-types" "^1.7.2"
+    "@salesforce/ts-types" "^1.7.3"
     sinon "^5.1.1"
     tslib "^2.5.0"
 
-"@salesforce/ts-types@^1.5.20", "@salesforce/ts-types@^1.5.21", "@salesforce/ts-types@^1.7.1", "@salesforce/ts-types@^1.7.2":
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/ts-types/-/ts-types-1.7.2.tgz#ab40399d291c7eca57efc9890daf2fa2632197ec"
-  integrity sha512-eCpWKEb03UCKBJ6Svp0Vwcwt+fG6BQbopO4x5wt6CYeT8Rjt0dbDQicZPmVL59j2qyt3Q4Y4EYsxXUGZmdfvDw==
+"@salesforce/ts-types@^1.5.20", "@salesforce/ts-types@^1.7.1", "@salesforce/ts-types@^1.7.2", "@salesforce/ts-types@^1.7.3":
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/ts-types/-/ts-types-1.7.3.tgz#89b79ff0aaa55fea9f2de0afa8e515be3e17d0d8"
+  integrity sha512-jpmekGqZ7tpHRJwf1rF0yBJ/IMC5mOrryNi4HZkKuNQn8RF97WpynmL8Om04mLTCESvCiif3y7NWfIcxtID2Gw==
   dependencies:
-    tslib "^2.4.1"
+    tslib "^2.5.0"
 
 "@sindresorhus/is@^4.0.0":
   version "4.6.0"
@@ -2255,14 +2276,14 @@
     "@typescript-eslint/typescript-estree" "2.34.0"
     eslint-visitor-keys "^1.1.0"
 
-"@typescript-eslint/parser@^5.49.0":
-  version "5.49.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.49.0.tgz#d699734b2f20e16351e117417d34a2bc9d7c4b90"
-  integrity sha512-veDlZN9mUhGqU31Qiv2qEp+XrJj5fgZpJ8PW30sHU+j/8/e5ruAhLaVDAeznS7A7i4ucb/s8IozpDtt9NqCkZg==
+"@typescript-eslint/parser@^5.51.0":
+  version "5.51.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.51.0.tgz#2d74626652096d966ef107f44b9479f02f51f271"
+  integrity sha512-fEV0R9gGmfpDeRzJXn+fGQKcl0inIeYobmmUWijZh9zA7bxJ8clPhV9up2ZQzATxAiFAECqPQyMDB4o4B81AaA==
   dependencies:
-    "@typescript-eslint/scope-manager" "5.49.0"
-    "@typescript-eslint/types" "5.49.0"
-    "@typescript-eslint/typescript-estree" "5.49.0"
+    "@typescript-eslint/scope-manager" "5.51.0"
+    "@typescript-eslint/types" "5.51.0"
+    "@typescript-eslint/typescript-estree" "5.51.0"
     debug "^4.3.4"
 
 "@typescript-eslint/scope-manager@5.45.1":
@@ -2273,13 +2294,13 @@
     "@typescript-eslint/types" "5.45.1"
     "@typescript-eslint/visitor-keys" "5.45.1"
 
-"@typescript-eslint/scope-manager@5.49.0":
-  version "5.49.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/scope-manager/-/scope-manager-5.49.0.tgz#81b5d899cdae446c26ddf18bd47a2f5484a8af3e"
-  integrity sha512-clpROBOiMIzpbWNxCe1xDK14uPZh35u4QaZO1GddilEzoCLAEz4szb51rBpdgurs5k2YzPtJeTEN3qVbG+LRUQ==
+"@typescript-eslint/scope-manager@5.51.0":
+  version "5.51.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/scope-manager/-/scope-manager-5.51.0.tgz#ad3e3c2ecf762d9a4196c0fbfe19b142ac498990"
+  integrity sha512-gNpxRdlx5qw3yaHA0SFuTjW4rxeYhpHxt491PEcKF8Z6zpq0kMhe0Tolxt0qjlojS+/wArSDlj/LtE69xUJphQ==
   dependencies:
-    "@typescript-eslint/types" "5.49.0"
-    "@typescript-eslint/visitor-keys" "5.49.0"
+    "@typescript-eslint/types" "5.51.0"
+    "@typescript-eslint/visitor-keys" "5.51.0"
 
 "@typescript-eslint/type-utils@5.45.1":
   version "5.45.1"
@@ -2296,10 +2317,10 @@
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-5.45.1.tgz#8e1883041cee23f1bb7e1343b0139f97f6a17c14"
   integrity sha512-HEW3U0E5dLjUT+nk7b4lLbOherS1U4ap+b9pfu2oGsW3oPu7genRaY9dDv3nMczC1rbnRY2W/D7SN05wYoGImg==
 
-"@typescript-eslint/types@5.49.0":
-  version "5.49.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-5.49.0.tgz#ad66766cb36ca1c89fcb6ac8b87ec2e6dac435c3"
-  integrity sha512-7If46kusG+sSnEpu0yOz2xFv5nRz158nzEXnJFCGVEHWnuzolXKwrH5Bsf9zsNlOQkyZuk0BZKKoJQI+1JPBBg==
+"@typescript-eslint/types@5.51.0":
+  version "5.51.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-5.51.0.tgz#e7c1622f46c7eea7e12bbf1edfb496d4dec37c90"
+  integrity sha512-SqOn0ANn/v6hFn0kjvLwiDi4AzR++CBZz0NV5AnusT2/3y32jdc0G4woXPWHCumWtUXZKPAS27/9vziSsC9jnw==
 
 "@typescript-eslint/typescript-estree@2.34.0":
   version "2.34.0"
@@ -2327,13 +2348,13 @@
     semver "^7.3.7"
     tsutils "^3.21.0"
 
-"@typescript-eslint/typescript-estree@5.49.0":
-  version "5.49.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-5.49.0.tgz#ebd6294c0ea97891fce6af536048181e23d729c8"
-  integrity sha512-PBdx+V7deZT/3GjNYPVQv1Nc0U46dAHbIuOG8AZ3on3vuEKiPDwFE/lG1snN2eUB9IhF7EyF7K1hmTcLztNIsA==
+"@typescript-eslint/typescript-estree@5.51.0":
+  version "5.51.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-5.51.0.tgz#0ec8170d7247a892c2b21845b06c11eb0718f8de"
+  integrity sha512-TSkNupHvNRkoH9FMA3w7TazVFcBPveAAmb7Sz+kArY6sLT86PA5Vx80cKlYmd8m3Ha2SwofM1KwraF24lM9FvA==
   dependencies:
-    "@typescript-eslint/types" "5.49.0"
-    "@typescript-eslint/visitor-keys" "5.49.0"
+    "@typescript-eslint/types" "5.51.0"
+    "@typescript-eslint/visitor-keys" "5.51.0"
     debug "^4.3.4"
     globby "^11.1.0"
     is-glob "^4.0.3"
@@ -2362,12 +2383,12 @@
     "@typescript-eslint/types" "5.45.1"
     eslint-visitor-keys "^3.3.0"
 
-"@typescript-eslint/visitor-keys@5.49.0":
-  version "5.49.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/visitor-keys/-/visitor-keys-5.49.0.tgz#2561c4da3f235f5c852759bf6c5faec7524f90fe"
-  integrity sha512-v9jBMjpNWyn8B6k/Mjt6VbUS4J1GvUlR4x3Y+ibnP1z7y7V4n0WRz+50DY6+Myj0UaXVSuUlHohO+eZ8IJEnkg==
+"@typescript-eslint/visitor-keys@5.51.0":
+  version "5.51.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/visitor-keys/-/visitor-keys-5.51.0.tgz#c0147dd9a36c0de758aaebd5b48cae1ec59eba87"
+  integrity sha512-Oh2+eTdjHjOFjKA27sxESlA87YPSOJafGCR0md5oeMdh1ZcCfAGCIOL216uTBAkAIptvLIfKQhl7lHxMJet4GQ==
   dependencies:
-    "@typescript-eslint/types" "5.49.0"
+    "@typescript-eslint/types" "5.51.0"
     eslint-visitor-keys "^3.3.0"
 
 "@ungap/promise-all-settled@1.1.2":
@@ -2784,10 +2805,10 @@ available-typed-arrays@^1.0.5:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
 
-aws-sdk@^2.1231.0, aws-sdk@^2.1299.0, aws-sdk@^2.1301.0:
-  version "2.1301.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1301.0.tgz#fbe971fca51deccecc6729f2f01fc2b0ff41ba1f"
-  integrity sha512-AxCt0GfWV14AWC0yvN3+WEBr45JMu2X3FHb8r3H8EhZjJfHk3hWcDwu6vS5Qd8NFDATlFdWJfyQjPVU1YuaDfw==
+aws-sdk@^2.1231.0, aws-sdk@^2.1301.0, aws-sdk@^2.1313.0:
+  version "2.1313.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1313.0.tgz#e6dad914670fb3f4d5cd95c58413fca5ea5c6c86"
+  integrity sha512-8GMdtV2Uch3HL2c6+P3lNZFTcg/fqq9L3EWYRLb6ljCZvWKTssjdkjSJFDyTReNgeiKV224YRPYQbKpOEz4flQ==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -3341,7 +3362,7 @@ cli-cursor@^3.1.0:
   dependencies:
     restore-cursor "^3.1.0"
 
-cli-progress@^3.10.0, cli-progress@^3.4.0:
+cli-progress@^3.10.0, cli-progress@^3.11.2, cli-progress@^3.4.0:
   version "3.11.2"
   resolved "https://registry.yarnpkg.com/cli-progress/-/cli-progress-3.11.2.tgz#f8c89bd157e74f3f2c43bcfb3505670b4d48fc77"
   integrity sha512-lCPoS6ncgX4+rJu5bS3F/iCz17kZ9MPZ6dpuTtI0KXKABkhyXIdYB3Inby1OpaGti3YlI3EeEkM9AuWpelJrVA==
@@ -4650,10 +4671,10 @@ eslint-plugin-jsdoc@^35.1.2:
     semver "^7.3.5"
     spdx-expression-parse "^3.0.1"
 
-eslint-plugin-jsdoc@^39.6.4:
-  version "39.6.4"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-39.6.4.tgz#b940aebd3eea26884a0d341785d2dc3aba6a38a7"
-  integrity sha512-fskvdLCfwmPjHb6e+xNGDtGgbF8X7cDwMtVLAP2WwSf9Htrx68OAx31BESBM1FAwsN2HTQyYQq7m4aW4Q4Nlag==
+eslint-plugin-jsdoc@^39.8.0:
+  version "39.8.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-39.8.0.tgz#9ca38ae31fb6e6de6268c5c041fa175fe1190469"
+  integrity sha512-ZwGmk0jJoJD/NILeDRBKrpq/PCgddUdATjeU5JGTqTzKsOWfeaHOnaAwZjuOh7T8EB4hSoZ/9pR4+Qns2ldQVg==
   dependencies:
     "@es-joy/jsdoccomment" "~0.36.1"
     comment-parser "1.3.1"
@@ -4848,10 +4869,10 @@ eslint@^7.27.0:
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
 
-eslint@^8.32.0:
-  version "8.32.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.32.0.tgz#d9690056bb6f1a302bd991e7090f5b68fbaea861"
-  integrity sha512-nETVXpnthqKPFyuY2FNjz/bEd6nbosRgKbkgS/y1C7LJop96gYHWpiguLecMHQ2XCPxn77DS0P+68WzG6vkZSQ==
+eslint@^8.34.0:
+  version "8.34.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.34.0.tgz#fe0ab0ef478104c1f9ebc5537e303d25a8fb22d6"
+  integrity sha512-1Z8iFsucw+7kSqXNZVslXS8Ioa4u2KM7GPwuKtkTFAqZ/cHMcEaR+1+Br0wLlot49cNxIiZk5wp8EAbPcYZxTg==
   dependencies:
     "@eslint/eslintrc" "^1.4.1"
     "@humanwhocodes/config-array" "^0.11.8"
@@ -5073,9 +5094,9 @@ fast-xml-parser@^3.21.1:
     strnum "^1.0.4"
 
 fast-xml-parser@^4.0.13:
-  version "4.0.13"
-  resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-4.0.13.tgz#dab3e7ea17d39805af0a9f6d041f4c975c2b9b58"
-  integrity sha512-g+OboAw8ol1FgTHhKLR7ZHcItNudceiY04BBrvqa0JBWoPhi/+e5r4H5AeW+EsQCroJLJwsuOP3dD3c6cc5uOg==
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-4.1.2.tgz#5a98c18238d28a57bbdfa9fe4cda01211fff8f4a"
+  integrity sha512-CDYeykkle1LiA/uqQyNwYpFbyF6Axec6YapmpUP+/RHWIoR1zKjocdvNaTsxCxZzQ6v9MLXaSYm9Qq0thv0DHg==
   dependencies:
     strnum "^1.0.5"
 
@@ -5871,9 +5892,9 @@ html-escaper@^2.0.0:
   integrity sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==
 
 http-cache-semantics@^4.0.0, http-cache-semantics@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/http-cache-semantics/-/http-cache-semantics-4.1.0.tgz#49e91c5cbf36c9b94bcfcd71c23d5249ec74e390"
-  integrity sha512-carPklcUh7ROWRK7Cv27RPtdhYhUsela/ue5/jKzjegVvXDqM2ILE9Q2BGn9JZJh1g87cp56su/FgQSzcWS8cQ==
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/http-cache-semantics/-/http-cache-semantics-4.1.1.tgz#abe02fcb2985460bf0323be664436ec3476a6d5a"
+  integrity sha512-er295DKPVsV82j5kw1Gjt+ADA/XYHsajl82cGNQG2eyoPkvgUhX+nDIyelzhIWbbsXP39EHcI6l5tYs2FYqYXQ==
 
 http-call@^5.1.2, http-call@^5.2.2, http-call@^5.3.0:
   version "5.3.0"
@@ -7377,7 +7398,7 @@ marked-terminal@^4.2.0:
     node-emoji "^1.10.0"
     supports-hyperlinks "^2.1.0"
 
-marked@^4.0.19, marked@^4.2.5:
+marked@^4.0.19, marked@^4.2.12:
   version "4.2.12"
   resolved "https://registry.yarnpkg.com/marked/-/marked-4.2.12.tgz#d69a64e21d71b06250da995dcd065c11083bebb5"
   integrity sha512-yr8hSKa3Fv4D3jdZmtMMPghgVt6TWbk86WQaWhDloQjRSQhMMYCAro7jP7VDJrjjdV8pxVxMssXS8B8Y5DZ5aw==
@@ -7389,10 +7410,26 @@ matcher@^3.0.0:
   dependencies:
     escape-string-regexp "^4.0.0"
 
-"mem-fs-editor@^8.1.2 || ^9.0.0", mem-fs-editor@^9.5.0:
+"mem-fs-editor@^8.1.2 || ^9.0.0":
   version "9.5.0"
   resolved "https://registry.yarnpkg.com/mem-fs-editor/-/mem-fs-editor-9.5.0.tgz#9368724bd37f76eebfcf24d71fc6624b01588969"
   integrity sha512-7p+bBDqsSisO20YIZf2ntYvST27fFJINn7CKE21XdPUQDcLV62b/yB5sTOooQeEoiZ3rldZQ+4RfONgL/gbRoA==
+  dependencies:
+    binaryextensions "^4.16.0"
+    commondir "^1.0.1"
+    deep-extend "^0.6.0"
+    ejs "^3.1.8"
+    globby "^11.1.0"
+    isbinaryfile "^4.0.8"
+    minimatch "^3.1.2"
+    multimatch "^5.0.0"
+    normalize-path "^3.0.0"
+    textextensions "^5.13.0"
+
+mem-fs-editor@^9.6.0:
+  version "9.6.0"
+  resolved "https://registry.yarnpkg.com/mem-fs-editor/-/mem-fs-editor-9.6.0.tgz#a867377737b12c0d02ca756d90bc70c51883aa38"
+  integrity sha512-CsuAd+s0UPZnGzm3kQ5X7gGmVmwiX9XXRAmXj9Mbq0CJa8YWUkPqneelp0aG2g+7uiwCBHlJbl30FYtToLT3VQ==
   dependencies:
     binaryextensions "^4.16.0"
     commondir "^1.0.1"
@@ -8329,10 +8366,10 @@ object.values@^1.1.5, object.values@^1.1.6:
     define-properties "^1.1.4"
     es-abstract "^1.20.4"
 
-oclif@^3.6.2:
-  version "3.6.2"
-  resolved "https://registry.yarnpkg.com/oclif/-/oclif-3.6.2.tgz#356b5344237b0060d5864f5d2402926fc2877645"
-  integrity sha512-SslNzNzryOMJ8eqID4ehIipqS+cF032ZEGIyhqN2J5mD6gsHAf1t+rMNpHBFy2kcCjgy/9/wUZQGanaFSCB41Q==
+oclif@^3.6.4:
+  version "3.6.4"
+  resolved "https://registry.yarnpkg.com/oclif/-/oclif-3.6.4.tgz#9b30b3fc301638a639a89cf58254346c67670645"
+  integrity sha512-RYWmKQM5jammrHTF33DGBfBAaYxdARkc0VvUNpLtg8AFu5x91FxaOHdbOAYwkzPMC168MZ+O/EFi4jM96GxvPA==
   dependencies:
     "@oclif/core" "^2.0.3"
     "@oclif/plugin-help" "^5.1.19"
@@ -8368,7 +8405,7 @@ onetime@^5.1.0, onetime@^5.1.2:
   dependencies:
     mimic-fn "^2.1.0"
 
-open@8.4.0, open@^8.4.0:
+open@8.4.0:
   version "8.4.0"
   resolved "https://registry.yarnpkg.com/open/-/open-8.4.0.tgz#345321ae18f8138f82565a910fdc6b39e8c244f8"
   integrity sha512-XgFPPM+B28FtCCgSb9I+s9szOC1vZRSwgWsRUA5ylIxRTgKozqjOCrVOqGsYABPYK5qnfqClxZTFBa8PKt2v6Q==
@@ -8384,6 +8421,15 @@ open@^7.0.0:
   dependencies:
     is-docker "^2.0.0"
     is-wsl "^2.1.1"
+
+open@^8.4.0, open@^8.4.1:
+  version "8.4.1"
+  resolved "https://registry.yarnpkg.com/open/-/open-8.4.1.tgz#2ab3754c07f5d1f99a7a8d6a82737c95e3101cff"
+  integrity sha512-/4b7qZNhv6Uhd7jjnREh1NjnPxlTq+XNWPG88Ydkj5AILcA5m3ajvcg57pB24EQjKv0dK62XnDqk9c/hkIG5Kg==
+  dependencies:
+    define-lazy-prop "^2.0.0"
+    is-docker "^2.1.1"
+    is-wsl "^2.2.0"
 
 opener@^1.5.2:
   version "1.5.2"
@@ -8855,10 +8901,10 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w==
 
-prettier@^2.7.1, prettier@^2.8.3:
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.3.tgz#ab697b1d3dd46fb4626fbe2f543afe0cc98d8632"
-  integrity sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==
+prettier@^2.7.1, prettier@^2.8.4:
+  version "2.8.4"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.4.tgz#34dd2595629bfbb79d344ac4a91ff948694463c3"
+  integrity sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==
 
 pretty-bytes@^5.3.0:
   version "5.6.0"
@@ -10367,7 +10413,7 @@ tslib@^1, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2, tslib@^2.0.0, tslib@^2.0.1, tslib@^2.0.3, tslib@^2.1.0, tslib@^2.2.0, tslib@^2.3.1, tslib@^2.4.1, tslib@^2.5.0:
+tslib@^2, tslib@^2.0.0, tslib@^2.0.1, tslib@^2.0.3, tslib@^2.1.0, tslib@^2.3.1, tslib@^2.4.1, tslib@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.5.0.tgz#42bfed86f5787aeb41d031866c8f402429e0fddf"
   integrity sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==
