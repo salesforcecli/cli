@@ -1811,6 +1811,19 @@
     debug "^4.3.4"
     tslib "^2"
 
+"@salesforce/plugin-templates@^55.4.1":
+  version "55.4.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-templates/-/plugin-templates-55.4.1.tgz#e6a70a7c2e30e9e6449077f6d0ff8058eaa8d789"
+  integrity sha512-5AIy7bkkoqu6BHb4DXQZnzNGDzf4589JdJ9X8SBg0qGR0Qh6tBi8uwKlgsvuQDaEWCVDrm1rKXaMpBhgryXwpQ==
+  dependencies:
+    "@oclif/core" "^2.0.10"
+    "@salesforce/core" "^3.33.1"
+    "@salesforce/sf-plugins-core" "^2.0.2"
+    "@salesforce/templates" "^57.1.1"
+    tslib "^2"
+    yeoman-environment "^3.13.0"
+    yeoman-generator "^5.7.0"
+
 "@salesforce/plugin-trust@2.4.1", "@salesforce/plugin-trust@^2.2.3":
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-2.4.1.tgz#1605c6063d942e1d3019d9ea80ae9599661f6d10"
@@ -1863,12 +1876,12 @@
     chalk "^4"
     inquirer "^8.2.5"
 
-"@salesforce/sf-plugins-core@^2", "@salesforce/sf-plugins-core@^2.0.1", "@salesforce/sf-plugins-core@^2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-2.1.1.tgz#2c03762328d5ad8462de5d364bb1c54836daef3f"
-  integrity sha512-O+GP+nY/oRRtPVL7r0ITjUTDT7mbWHQt8jzUJ8nux7mkp1wKk1uq/qTtkDMc1fcFhCkslJSyIzoE84X7j9w7jQ==
+"@salesforce/sf-plugins-core@^2", "@salesforce/sf-plugins-core@^2.0.1", "@salesforce/sf-plugins-core@^2.0.2", "@salesforce/sf-plugins-core@^2.1.1":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-2.1.2.tgz#51a7a3d401ccfe18351f30eed60b59ce47df4ab4"
+  integrity sha512-XOLmtRDIQQbfewegxqWAOYRD0lypVyjl39XBrfu65qenfDfUXYcEDvDcWJFCnL+IwvUe4VhapFqmjZLMxG+YWA==
   dependencies:
-    "@oclif/core" "^2.0.10"
+    "@oclif/core" "^2.1.1"
     "@salesforce/core" "^3.33.1"
     "@salesforce/kit" "^1.8.3"
     "@salesforce/ts-types" "^1.7.1"
@@ -1916,7 +1929,7 @@
     applicationinsights "^1.4.0"
     axios "^0.27.2"
 
-"@salesforce/templates@57.1.0", "@salesforce/templates@^55.1.0", "@salesforce/templates@^57.1.0":
+"@salesforce/templates@57.1.0", "@salesforce/templates@^55.1.0", "@salesforce/templates@^57.1.0", "@salesforce/templates@^57.1.1":
   version "57.1.0"
   resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-57.1.0.tgz#7ff327880f36fa6b979af8219471609019937f26"
   integrity sha512-4XTfNS+wBOM/QJpulJmTBb7o0m0ysfJo2mmTWu6Niz4QfXrSR2LlOc22aet/uTt5okqvmGnpbzG1xF4zzFc8fg==
@@ -7424,23 +7437,7 @@ matcher@^3.0.0:
   dependencies:
     escape-string-regexp "^4.0.0"
 
-"mem-fs-editor@^8.1.2 || ^9.0.0":
-  version "9.5.0"
-  resolved "https://registry.yarnpkg.com/mem-fs-editor/-/mem-fs-editor-9.5.0.tgz#9368724bd37f76eebfcf24d71fc6624b01588969"
-  integrity sha512-7p+bBDqsSisO20YIZf2ntYvST27fFJINn7CKE21XdPUQDcLV62b/yB5sTOooQeEoiZ3rldZQ+4RfONgL/gbRoA==
-  dependencies:
-    binaryextensions "^4.16.0"
-    commondir "^1.0.1"
-    deep-extend "^0.6.0"
-    ejs "^3.1.8"
-    globby "^11.1.0"
-    isbinaryfile "^4.0.8"
-    minimatch "^3.1.2"
-    multimatch "^5.0.0"
-    normalize-path "^3.0.0"
-    textextensions "^5.13.0"
-
-mem-fs-editor@^9.6.0:
+"mem-fs-editor@^8.1.2 || ^9.0.0", mem-fs-editor@^9.6.0:
   version "9.6.0"
   resolved "https://registry.yarnpkg.com/mem-fs-editor/-/mem-fs-editor-9.6.0.tgz#a867377737b12c0d02ca756d90bc70c51883aa38"
   integrity sha512-CsuAd+s0UPZnGzm3kQ5X7gGmVmwiX9XXRAmXj9Mbq0CJa8YWUkPqneelp0aG2g+7uiwCBHlJbl30FYtToLT3VQ==
