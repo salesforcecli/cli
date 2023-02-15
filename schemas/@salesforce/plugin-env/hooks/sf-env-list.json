@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/SalesforceOrg",
+  "definitions": {
+    "SalesforceOrg": {
+      "type": "object",
+      "properties": {
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "username": {
+          "type": "string"
+        },
+        "orgId": {
+          "type": "string"
+        },
+        "instanceUrl": {
+          "type": "string"
+        },
+        "oauthMethod": {
+          "type": "string"
+        },
+        "configs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "error": {
+          "type": "string"
+        }
+      },
+      "required": ["aliases", "username", "orgId", "instanceUrl", "oauthMethod", "configs"],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,616 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/DescribeSObjectResult",
+  "definitions": {
+    "DescribeSObjectResult": {
+      "type": "object",
+      "properties": {
+        "actionOverrides": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ActionOverride"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "activateable": {
+          "type": "boolean"
+        },
+        "childRelationships": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChildRelationship"
+          }
+        },
+        "compactLayoutable": {
+          "type": "boolean"
+        },
+        "createable": {
+          "type": "boolean"
+        },
+        "custom": {
+          "type": "boolean"
+        },
+        "customSetting": {
+          "type": "boolean"
+        },
+        "dataTranslationEnabled": {
+          "type": ["boolean", "null"]
+        },
+        "deepCloneable": {
+          "type": "boolean"
+        },
+        "defaultImplementation": {
+          "type": ["string", "null"]
+        },
+        "deletable": {
+          "type": "boolean"
+        },
+        "deprecatedAndHidden": {
+          "type": "boolean"
+        },
+        "feedEnabled": {
+          "type": "boolean"
+        },
+        "fields": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Field"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "hasSubtypes": {
+          "type": "boolean"
+        },
+        "idEnabled": {
+          "type": "boolean"
+        },
+        "implementedBy": {
+          "type": ["string", "null"]
+        },
+        "implementsInterfaces": {
+          "type": ["string", "null"]
+        },
+        "isInterface": {
+          "type": "boolean"
+        },
+        "isSubtype": {
+          "type": "boolean"
+        },
+        "keyPrefix": {
+          "type": ["string", "null"]
+        },
+        "label": {
+          "type": "string"
+        },
+        "labelPlural": {
+          "type": "string"
+        },
+        "layoutable": {
+          "type": "boolean"
+        },
+        "mergeable": {
+          "type": "boolean"
+        },
+        "mruEnabled": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "namedLayoutInfos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NamedLayoutInfo"
+          }
+        },
+        "networkScopeFieldName": {
+          "type": ["string", "null"]
+        },
+        "queryable": {
+          "type": "boolean"
+        },
+        "recordTypeInfos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RecordTypeInfo"
+          }
+        },
+        "replicateable": {
+          "type": "boolean"
+        },
+        "retrieveable": {
+          "type": "boolean"
+        },
+        "searchLayoutable": {
+          "type": ["boolean", "null"]
+        },
+        "searchable": {
+          "type": "boolean"
+        },
+        "supportedScopes": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ScopeInfo"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "triggerable": {
+          "type": ["boolean", "null"]
+        },
+        "undeletable": {
+          "type": "boolean"
+        },
+        "updateable": {
+          "type": "boolean"
+        },
+        "urlDetail": {
+          "type": ["string", "null"]
+        },
+        "urlEdit": {
+          "type": ["string", "null"]
+        },
+        "urlNew": {
+          "type": ["string", "null"]
+        }
+      },
+      "required": [
+        "activateable",
+        "childRelationships",
+        "compactLayoutable",
+        "createable",
+        "custom",
+        "customSetting",
+        "deepCloneable",
+        "deletable",
+        "deprecatedAndHidden",
+        "feedEnabled",
+        "hasSubtypes",
+        "idEnabled",
+        "isInterface",
+        "isSubtype",
+        "label",
+        "labelPlural",
+        "layoutable",
+        "mergeable",
+        "mruEnabled",
+        "name",
+        "namedLayoutInfos",
+        "queryable",
+        "recordTypeInfos",
+        "replicateable",
+        "retrieveable",
+        "searchable",
+        "undeletable",
+        "updateable"
+      ],
+      "additionalProperties": false
+    },
+    "ActionOverride": {
+      "type": "object",
+      "properties": {
+        "formFactor": {
+          "type": "string"
+        },
+        "isAvailableInTouch": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "pageId": {
+          "type": "string"
+        },
+        "url": {
+          "type": ["string", "null"]
+        }
+      },
+      "required": ["formFactor", "isAvailableInTouch", "name", "pageId"],
+      "additionalProperties": false
+    },
+    "ChildRelationship": {
+      "type": "object",
+      "properties": {
+        "cascadeDelete": {
+          "type": "boolean"
+        },
+        "childSObject": {
+          "type": "string"
+        },
+        "deprecatedAndHidden": {
+          "type": "boolean"
+        },
+        "field": {
+          "type": "string"
+        },
+        "junctionIdListNames": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "junctionReferenceTo": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "relationshipName": {
+          "type": ["string", "null"]
+        },
+        "restrictedDelete": {
+          "type": ["boolean", "null"]
+        }
+      },
+      "required": ["cascadeDelete", "childSObject", "deprecatedAndHidden", "field"],
+      "additionalProperties": false
+    },
+    "Field": {
+      "type": "object",
+      "properties": {
+        "aggregatable": {
+          "type": "boolean"
+        },
+        "aiPredictionField": {
+          "type": "boolean"
+        },
+        "autoNumber": {
+          "type": "boolean"
+        },
+        "byteLength": {
+          "type": "number"
+        },
+        "calculated": {
+          "type": "boolean"
+        },
+        "calculatedFormula": {
+          "type": ["string", "null"]
+        },
+        "cascadeDelete": {
+          "type": ["boolean", "null"]
+        },
+        "caseSensitive": {
+          "type": "boolean"
+        },
+        "compoundFieldName": {
+          "type": ["string", "null"]
+        },
+        "controllerName": {
+          "type": ["string", "null"]
+        },
+        "createable": {
+          "type": "boolean"
+        },
+        "custom": {
+          "type": "boolean"
+        },
+        "dataTranslationEnabled": {
+          "type": ["boolean", "null"]
+        },
+        "defaultValue": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "defaultValueFormula": {
+          "type": ["string", "null"]
+        },
+        "defaultedOnCreate": {
+          "type": "boolean"
+        },
+        "dependentPicklist": {
+          "type": ["boolean", "null"]
+        },
+        "deprecatedAndHidden": {
+          "type": "boolean"
+        },
+        "digits": {
+          "type": "number"
+        },
+        "displayLocationInDecimal": {
+          "type": ["boolean", "null"]
+        },
+        "encrypted": {
+          "type": ["boolean", "null"]
+        },
+        "externalId": {
+          "type": ["boolean", "null"]
+        },
+        "extraTypeInfo": {
+          "type": ["string", "null"]
+        },
+        "filterable": {
+          "type": "boolean"
+        },
+        "filteredLookupInfo": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/FilteredLookupInfo"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "formulaTreatNullNumberAsZero": {
+          "type": ["boolean", "null"]
+        },
+        "groupable": {
+          "type": "boolean"
+        },
+        "highScaleNumber": {
+          "type": ["boolean", "null"]
+        },
+        "htmlFormatted": {
+          "type": ["boolean", "null"]
+        },
+        "idLookup": {
+          "type": "boolean"
+        },
+        "inlineHelpText": {
+          "type": ["string", "null"]
+        },
+        "label": {
+          "type": "string"
+        },
+        "length": {
+          "type": "number"
+        },
+        "mask": {
+          "type": ["string", "null"]
+        },
+        "maskType": {
+          "type": ["string", "null"]
+        },
+        "name": {
+          "type": "string"
+        },
+        "nameField": {
+          "type": "boolean"
+        },
+        "namePointing": {
+          "type": ["boolean", "null"]
+        },
+        "nillable": {
+          "type": "boolean"
+        },
+        "permissionable": {
+          "type": "boolean"
+        },
+        "picklistValues": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PicklistEntry"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "polymorphicForeignKey": {
+          "type": "boolean"
+        },
+        "precision": {
+          "type": "number"
+        },
+        "queryByDistance": {
+          "type": "boolean"
+        },
+        "referenceTargetField": {
+          "type": ["string", "null"]
+        },
+        "referenceTo": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "relationshipName": {
+          "type": ["string", "null"]
+        },
+        "relationshipOrder": {
+          "type": ["number", "null"]
+        },
+        "restrictedDelete": {
+          "type": ["boolean", "null"]
+        },
+        "restrictedPicklist": {
+          "type": "boolean"
+        },
+        "scale": {
+          "type": "number"
+        },
+        "searchPrefilterable": {
+          "type": "boolean"
+        },
+        "soapType": {
+          "type": "string"
+        },
+        "sortable": {
+          "type": ["boolean", "null"]
+        },
+        "type": {
+          "type": "string"
+        },
+        "unique": {
+          "type": "boolean"
+        },
+        "updateable": {
+          "type": "boolean"
+        },
+        "writeRequiresMasterRead": {
+          "type": ["boolean", "null"]
+        }
+      },
+      "required": [
+        "aggregatable",
+        "aiPredictionField",
+        "autoNumber",
+        "byteLength",
+        "calculated",
+        "caseSensitive",
+        "createable",
+        "custom",
+        "defaultedOnCreate",
+        "deprecatedAndHidden",
+        "digits",
+        "filterable",
+        "groupable",
+        "idLookup",
+        "label",
+        "length",
+        "name",
+        "nameField",
+        "nillable",
+        "permissionable",
+        "polymorphicForeignKey",
+        "precision",
+        "queryByDistance",
+        "restrictedPicklist",
+        "scale",
+        "searchPrefilterable",
+        "soapType",
+        "type",
+        "unique",
+        "updateable"
+      ],
+      "additionalProperties": false
+    },
+    "FilteredLookupInfo": {
+      "type": "object",
+      "properties": {
+        "controllingFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dependent": {
+          "type": "boolean"
+        },
+        "optionalFilter": {
+          "type": "boolean"
+        }
+      },
+      "required": ["controllingFields", "dependent", "optionalFilter"],
+      "additionalProperties": false
+    },
+    "PicklistEntry": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean"
+        },
+        "defaultValue": {
+          "type": "boolean"
+        },
+        "label": {
+          "type": ["string", "null"]
+        },
+        "validFor": {
+          "type": ["string", "null"]
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": ["active", "defaultValue", "value"],
+      "additionalProperties": false
+    },
+    "NamedLayoutInfo": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": ["name"],
+      "additionalProperties": false
+    },
+    "RecordTypeInfo": {
+      "type": "object",
+      "properties": {
+        "active": {
+          "type": "boolean"
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "defaultRecordTypeMapping": {
+          "type": "boolean"
+        },
+        "developerName": {
+          "type": "string"
+        },
+        "master": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "recordTypeId": {
+          "type": ["string", "null"]
+        }
+      },
+      "required": ["active", "available", "defaultRecordTypeMapping", "developerName", "master", "name"],
+      "additionalProperties": false
+    },
+    "ScopeInfo": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": ["label", "name"],
+      "additionalProperties": false
+    }
+  }
+}
