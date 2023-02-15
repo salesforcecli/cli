@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/MetadataDeployer",
+  "definitions": {
+    "MetadataDeployer": {
+      "type": "object",
+      "properties": {
+        "deployables": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DeployablePackage"
+          },
+          "description": "Deployables are individual pieces that can be deployed on their own. For example, each package in a salesforce project is considered a deployable that can be deployed on its own."
+        }
+      },
+      "required": ["deployables"],
+      "additionalProperties": false
+    },
+    "DeployablePackage": {
+      "type": "object",
+      "properties": {
+        "pkg": {
+          "$ref": "#/definitions/NamedPackageDir"
+        }
+      },
+      "required": ["pkg"],
+      "additionalProperties": false
+    },
+    "NamedPackageDir": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The [normalized](https://nodejs.org/api/path.html#path_path_normalize_path) path used as the package name."
+        },
+        "fullPath": {
+          "type": "string",
+          "description": "The absolute path of the package."
+        },
+        "ancestorId": {
+          "type": "string"
+        },
+        "ancestorVersion": {
+          "type": "string"
+        },
+        "default": {
+          "type": "boolean"
+        },
+        "definitionFile": {
+          "type": "string"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PackageDirDependency"
+          }
+        },
+        "includeProfileUserLicenses": {
+          "type": "boolean"
+        },
+        "package": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "postInstallScript": {
+          "type": "string"
+        },
+        "postInstallUrl": {
+          "type": "string"
+        },
+        "releaseNotesUrl": {
+          "type": "string"
+        },
+        "uninstallScript": {
+          "type": "string"
+        },
+        "versionDescription": {
+          "type": "string"
+        },
+        "versionName": {
+          "type": "string"
+        },
+        "versionNumber": {
+          "type": "string"
+        }
+      },
+      "required": ["fullPath", "name", "path"]
+    },
+    "PackageDirDependency": {
+      "type": "object",
+      "properties": {
+        "package": {
+          "type": "string"
+        },
+        "versionNumber": {
+          "type": "string"
+        }
+      },
+      "required": ["package"],
+      "additionalProperties": {}
+    }
+  }
+}
