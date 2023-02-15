@@ -225,13 +225,13 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
-"@commitlint/cli@^17.1.2":
-  version "17.4.2"
-  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-17.4.2.tgz#8600c83abb7e84191fd59528fc14f436496fb00b"
-  integrity sha512-0rPGJ2O1owhpxMIXL9YJ2CgPkdrFLKZElIZHXDN8L8+qWK1DGH7Q7IelBT1pchXTYTuDlqkOTdh//aTvT3bSUA==
+"@commitlint/cli@^17.1.2", "@commitlint/cli@^17.4.3":
+  version "17.4.3"
+  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-17.4.3.tgz#49583a7946b4030e7e6d9caafac44307835fb05e"
+  integrity sha512-IPTS7AZuBHgD0gl24El8HwuDM9zJN9JLa5KmZUQoFD1BQeGGdzAYJOnAr85CeJWpTDok0BGHDL0+4odnH0iTyA==
   dependencies:
     "@commitlint/format" "^17.4.0"
-    "@commitlint/lint" "^17.4.2"
+    "@commitlint/lint" "^17.4.3"
     "@commitlint/load" "^17.4.2"
     "@commitlint/read" "^17.4.2"
     "@commitlint/types" "^17.4.0"
@@ -241,10 +241,10 @@
     resolve-global "1.0.0"
     yargs "^17.0.0"
 
-"@commitlint/config-conventional@^17.1.0":
-  version "17.4.2"
-  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-17.4.2.tgz#671f7febfcfef90ec11b122a659c6be25e11c19e"
-  integrity sha512-JVo1moSj5eDMoql159q8zKCU8lkOhQ+b23Vl3LVVrS6PXDLQIELnJ34ChQmFVbBdSSRNAbbXnRDhosFU+wnuHw==
+"@commitlint/config-conventional@^17.1.0", "@commitlint/config-conventional@^17.2.0":
+  version "17.4.3"
+  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-17.4.3.tgz#c732d29181c3a4d5f65b01a7bb5989edd5c470cf"
+  integrity sha512-8EsY2iDw74hCk3hIQSg7/E0R8/KtPjnFPZVwmmHxcjhZjkSykmxysefICPDnbI3xgxfov0zwL1WKDHM8zglJdw==
   dependencies:
     conventional-changelog-conventionalcommits "^5.0.0"
 
@@ -289,14 +289,14 @@
     "@commitlint/types" "^17.4.0"
     semver "7.3.8"
 
-"@commitlint/lint@^17.4.2":
-  version "17.4.2"
-  resolved "https://registry.yarnpkg.com/@commitlint/lint/-/lint-17.4.2.tgz#1277cb4d5395e9d6c39cbc351984bac9dcc6b7cd"
-  integrity sha512-HcymabrdBhsDMNzIv146+ZPNBPBK5gMNsVH+el2lCagnYgCi/4ixrHooeVyS64Fgce2K26+MC7OQ4vVH8wQWVw==
+"@commitlint/lint@^17.4.3":
+  version "17.4.3"
+  resolved "https://registry.yarnpkg.com/@commitlint/lint/-/lint-17.4.3.tgz#20be03992b33edd26ba8d07e210c08173069371e"
+  integrity sha512-GnPsqEYmXIB/MaBhRMzkiDJWyjuLrKad4xoxKO4N6Kc19iqjR4DPc/bl2dxeW9kUmtrAtefOzIEzJAevpA5y2w==
   dependencies:
     "@commitlint/is-ignored" "^17.4.2"
     "@commitlint/parse" "^17.4.2"
-    "@commitlint/rules" "^17.4.2"
+    "@commitlint/rules" "^17.4.3"
     "@commitlint/types" "^17.4.0"
 
 "@commitlint/load@^17.4.2":
@@ -356,10 +356,10 @@
     resolve-from "^5.0.0"
     resolve-global "^1.0.0"
 
-"@commitlint/rules@^17.4.2":
-  version "17.4.2"
-  resolved "https://registry.yarnpkg.com/@commitlint/rules/-/rules-17.4.2.tgz#cdf203bc82af979cb319210ef9215cb1de216a9b"
-  integrity sha512-OGrPsMb9Fx3/bZ64/EzJehY9YDSGWzp81Pj+zJiY+r/NSgJI3nUYdlS37jykNIugzazdEXfMtQ10kmA+Kx2pZQ==
+"@commitlint/rules@^17.4.3":
+  version "17.4.3"
+  resolved "https://registry.yarnpkg.com/@commitlint/rules/-/rules-17.4.3.tgz#e5e7bf472102447a283b7643ca7240d757a72bb7"
+  integrity sha512-xHReDfE3Z+O9p1sXeEhPRSk4FifBsC4EbXzvQ4aa0ykQe+n/iZDd4CrFC/Oiv2K9BU4ZnFHak30IbMLa4ks1Rw==
   dependencies:
     "@commitlint/ensure" "^17.4.0"
     "@commitlint/message" "^17.4.2"
@@ -998,7 +998,7 @@
     widest-line "^3.1.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/core@^2.0.10", "@oclif/core@^2.0.2-beta.6", "@oclif/core@^2.0.3", "@oclif/core@^2.0.7", "@oclif/core@^2.0.8", "@oclif/core@^2.0.9", "@oclif/core@^2.1.1", "@oclif/core@^2.1.2":
+"@oclif/core@^2.0.10", "@oclif/core@^2.0.2-beta.6", "@oclif/core@^2.0.3", "@oclif/core@^2.0.7", "@oclif/core@^2.0.8", "@oclif/core@^2.0.9", "@oclif/core@^2.1.1", "@oclif/core@^2.1.2", "@oclif/core@^2.1.4":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.1.4.tgz#536cf9d2367ba96c625076588b0cbccf3341829c"
   integrity sha512-8rPS/gsjLgWp//nraRs5/yf7EkueFHBLRTMUli3yTu88XrQ2czbXIP2HsF2rxmtCqUUfXUTllHfr8OzqBs0Dcw==
@@ -1443,6 +1443,21 @@
   dependencies:
     "@octokit/openapi-types" "^16.0.0"
 
+"@salesforce/apex-node@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/apex-node/-/apex-node-1.6.0.tgz#cb474347fca7448f75bb9348ffb52b559ed4d8bb"
+  integrity sha512-ujdPy32U3pMpfko6egXpm4NO3cNg+eEHeAUIh1ZLGuli2mBT1skyCjxZ1WHkIHJlIpXOaWwWaka+rblFgGxY+Q==
+  dependencies:
+    "@commitlint/config-conventional" "^17.2.0"
+    "@salesforce/core" "^3.32.12"
+    "@types/istanbul-reports" "^3.0.1"
+    commitlint "^17.2.0"
+    faye "1.4.0"
+    glob "^8.0.3"
+    istanbul-lib-coverage "^3.2.0"
+    istanbul-lib-report "^3.0.0"
+    istanbul-reports "^3.1.4"
+
 "@salesforce/bunyan@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@salesforce/bunyan/-/bunyan-2.0.0.tgz#8dbe377f2cf7d35348a23260416fee15adba5f97"
@@ -1554,6 +1569,18 @@
     "@salesforce/ts-types" "^1.7.3"
     shx "^0.3.3"
     tslib "^2.5.0"
+
+"@salesforce/plugin-apex@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-apex/-/plugin-apex-2.2.0.tgz#9826aa7c7a1021c3fa5dd6d9ce93914efc4daf61"
+  integrity sha512-MDz7/bhJ9aMYtm/gj/GOPWSGMOx3s/OP5/98W2w/WAgmLaPaLSWY+DkQo4QxMii0H30JLmZlEbbBjf+pE7pPIg==
+  dependencies:
+    "@oclif/core" "^2.1.4"
+    "@salesforce/apex-node" "^1.6.0"
+    "@salesforce/core" "^3.33.1"
+    "@salesforce/sf-plugins-core" "^2.1.2"
+    chalk "^4.1.0"
+    tslib "^2"
 
 "@salesforce/plugin-command-reference@^2.2.8":
   version "2.2.8"
@@ -1784,7 +1811,7 @@
     debug "^4.3.4"
     tslib "^2"
 
-"@salesforce/plugin-templates@^55.4.1":
+"@salesforce/plugin-templates@55.4.1":
   version "55.4.1"
   resolved "https://registry.yarnpkg.com/@salesforce/plugin-templates/-/plugin-templates-55.4.1.tgz#e6a70a7c2e30e9e6449077f6d0ff8058eaa8d789"
   integrity sha512-5AIy7bkkoqu6BHb4DXQZnzNGDzf4589JdJ9X8SBg0qGR0Qh6tBi8uwKlgsvuQDaEWCVDrm1rKXaMpBhgryXwpQ==
@@ -1849,7 +1876,7 @@
     chalk "^4"
     inquirer "^8.2.5"
 
-"@salesforce/sf-plugins-core@^2", "@salesforce/sf-plugins-core@^2.0.1", "@salesforce/sf-plugins-core@^2.0.2", "@salesforce/sf-plugins-core@^2.1.1":
+"@salesforce/sf-plugins-core@^2", "@salesforce/sf-plugins-core@^2.0.1", "@salesforce/sf-plugins-core@^2.0.2", "@salesforce/sf-plugins-core@^2.1.1", "@salesforce/sf-plugins-core@^2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-2.1.2.tgz#51a7a3d401ccfe18351f30eed60b59ce47df4ab4"
   integrity sha512-XOLmtRDIQQbfewegxqWAOYRD0lypVyjl39XBrfu65qenfDfUXYcEDvDcWJFCnL+IwvUe4VhapFqmjZLMxG+YWA==
@@ -2117,6 +2144,25 @@
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@types/http-cache-semantics/-/http-cache-semantics-4.0.1.tgz#0ea7b61496902b95890dc4c3a116b60cb8dae812"
   integrity sha512-SZs7ekbP8CN0txVG2xVRH6EgKmEm31BOxA07vkFaETzZz1xh+cbt8BcI0slpymvwhx5dlFnQG2rTlPVQn+iRPQ==
+
+"@types/istanbul-lib-coverage@*":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.4.tgz#8467d4b3c087805d63580480890791277ce35c44"
+  integrity sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==
+
+"@types/istanbul-lib-report@*":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/istanbul-lib-report/-/istanbul-lib-report-3.0.0.tgz#c14c24f18ea8190c118ee7562b7ff99a36552686"
+  integrity sha512-plGgXAPfVKFoYfa9NpYDAkseG+g6Jr294RqeqcqDixSbU34MZVJRi/P+7Y8GDpzkEwLaGZZOpKIEmeVZNtKsrg==
+  dependencies:
+    "@types/istanbul-lib-coverage" "*"
+
+"@types/istanbul-reports@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@types/istanbul-reports/-/istanbul-reports-3.0.1.tgz#9153fe98bba2bd565a63add9436d6f0d7f8468ff"
+  integrity sha512-c3mAZEuK0lvBp8tmuL74XRKn1+y2dcwOUpH7x4WrF6gk1GIgiluDRgMYQtw2OFcBvAJWlt6ASU3tSqxp0Uu0Aw==
+  dependencies:
+    "@types/istanbul-lib-report" "*"
 
 "@types/jsforce@^1.9.41":
   version "1.9.43"
@@ -3615,6 +3661,14 @@ comment-parser@1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/comment-parser/-/comment-parser-1.3.1.tgz#3d7ea3adaf9345594aedee6563f422348f165c1b"
   integrity sha512-B52sN2VNghyq5ofvUsqZjmk6YkihBX5vMSChmSK9v4ShjKf3Vk5Xcmgpw4o+iIgtrnM/u5FiMpz9VKb8lpBveA==
+
+commitlint@^17.2.0:
+  version "17.4.3"
+  resolved "https://registry.yarnpkg.com/commitlint/-/commitlint-17.4.3.tgz#10fc4140fc8a46bbeb7aa0e7367b08534efb9928"
+  integrity sha512-3MGkngRG3x3KY5uKWxgyKK7WU5apelorn4jeJsu8aCotuaoPXYtZX8Ym7a/ZzB19UUuWADnKWVTWBePvweu3aA==
+  dependencies:
+    "@commitlint/cli" "^17.4.3"
+    "@commitlint/types" "^17.4.0"
 
 common-ancestor-path@^1.0.1:
   version "1.0.1"
@@ -5119,7 +5173,7 @@ faye-websocket@>=0.9.1:
   dependencies:
     websocket-driver ">=0.5.1"
 
-faye@^1.4.0:
+faye@1.4.0, faye@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/faye/-/faye-1.4.0.tgz#01d3d26ed5642c1cb203eed358afb1c1444b8669"
   integrity sha512-kRrIg4be8VNYhycS2PY//hpBJSzZPr/DBbcy9VWelhZMW3KhyLkQR0HL0k0MNpmVoNFF4EdfMFkNAWjTP65g6w==
@@ -6563,7 +6617,7 @@ istanbul-lib-source-maps@^4.0.0:
     istanbul-lib-coverage "^3.0.0"
     source-map "^0.6.1"
 
-istanbul-reports@^3.0.2:
+istanbul-reports@^3.0.2, istanbul-reports@^3.1.4:
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/istanbul-reports/-/istanbul-reports-3.1.5.tgz#cc9a6ab25cb25659810e4785ed9d9fb742578bae"
   integrity sha512-nUsEMa9pBt/NOHqbcbeJEgqIlY/K7rVWUX6Lql2orY5e9roQOthbR3vtY4zzf2orPELg80fnxxk9zUyPlgwD1w==
