@@ -18,7 +18,11 @@ function buildChoices(
   const maxCommandLength = configuredIds.reduce((max, id) => Math.max(max, id.length), 0);
   return matches.map((p, i) => {
     const summary = p.summary ?? p.description?.split(os.EOL)[0] ?? '';
-    return { name: `${configuredIds[i].padEnd(maxCommandLength + 5, ' ')}${summary}`, value: p };
+    return {
+      name: `${configuredIds[i].padEnd(maxCommandLength + 5, ' ')}${summary}`,
+      value: p,
+      short: configuredIds[i],
+    };
   });
 }
 
