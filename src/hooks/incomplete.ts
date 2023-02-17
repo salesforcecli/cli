@@ -6,7 +6,7 @@
  */
 
 import * as os from 'os';
-import { Hook, toConfiguredId, toStandardizedId, Interfaces, Command } from '@oclif/core';
+import { Hook, toConfiguredId, toStandardizedId, Interfaces, Command, loadHelpClass } from '@oclif/core';
 import { Prompter } from '@salesforce/sf-plugins-core';
 import { Lifecycle } from '@salesforce/core';
 
@@ -46,7 +46,10 @@ const hook: Hook.CommandIncomplete = async function ({ config, matches, argv }) 
   const command = await determineCommand(config, matches);
 
   if (argv.includes('--help') || argv.includes('-h')) {
-    return config.runCommand('help', [toStandardizedId(command, config)]);
+    const Help = await loadHelpClass(config);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    const help = new Help(config, config.pjson.helpOptions);
+    return help.showHelp([toStandardizedId(command, config), ...argv]);
   }
 
   if (matches.length === 1) {
