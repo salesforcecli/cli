@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "1.66.1",
+  "version": "1.66.2",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run"
@@ -107,7 +107,7 @@
     ]
   },
   "dependencies": {
-    "@oclif/core": "^2.0.8",
+    "@oclif/core": "2.1.6",
     "@oclif/plugin-autocomplete": "2.1.0",
     "@oclif/plugin-commands": "2.2.9",
     "@oclif/plugin-help": "5.2.4",
