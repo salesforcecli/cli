@@ -6,30 +6,50 @@
  */
 
 import * as os from 'os';
-import { Hook, toConfiguredId, toStandardizedId, Interfaces, Command } from '@oclif/core';
+import { Hook, toConfiguredId, toStandardizedId, Interfaces, Command, loadHelpClass } from '@oclif/core';
 import { Prompter } from '@salesforce/sf-plugins-core';
 import { Lifecycle } from '@salesforce/core';
+
+function buildChoices(
+  matches: Command.Loadable[],
+  config: Interfaces.Config
+): Array<{ name: string; value: Command.Loadable }> {
+  const configuredIds = matches.map((p) => toConfiguredId(p.id, config));
+  const maxCommandLength = configuredIds.reduce((max, id) => Math.max(max, id.length), 0);
+  return matches.map((p, i) => {
+    const summary = p.summary ?? p.description?.split(os.EOL)[0] ?? '';
+    return {
+      name: `${configuredIds[i].padEnd(maxCommandLength + 5, ' ')}${summary}`,
+      value: p,
+      short: configuredIds[i],
+    };
+  });
+}
 
 async function determineCommand(config: Interfaces.Config, matches: Command.Loadable[]): Promise<string> {
   if (matches.length === 1) return matches[0].id;
   const prompter = new Prompter();
-  const { command } = await prompter.timedPrompt<{ command: string }>([
+  const choices = buildChoices(matches, config);
+  const { command } = await prompter.timedPrompt<{ command: Command.Loadable }>([
     {
       name: 'command',
       type: 'list',
       message: 'Which of these commands do you mean',
-      choices: matches.map((p) => toConfiguredId(p.id, config)),
+      choices,
     },
   ]);
 
-  return command;
+  return command.id;
 }
 
 const hook: Hook.CommandIncomplete = async function ({ config, matches, argv }) {
   const command = await determineCommand(config, matches);
 
   if (argv.includes('--help') || argv.includes('-h')) {
-    return config.runCommand('help', [toStandardizedId(command, config)]);
+    const Help = await loadHelpClass(config);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    const help = new Help(config, config.pjson.helpOptions);
+    return help.showHelp([toStandardizedId(command, config), ...argv]);
   }
 
   if (matches.length === 1) {
