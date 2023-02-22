@@ -10,7 +10,7 @@ import { SfCommandHelp } from './sfCommandHelp';
 
 export default class SfHelp extends Help {
   protected CommandHelpClass: typeof CommandHelp = SfCommandHelp;
-  protected commandHelpClass: SfCommandHelp;
+  protected commandHelpClass: SfCommandHelp | undefined;
   private showShortHelp = false;
   private commands: string[] = [];
   private subCommands: Record<string, string[]> = {};

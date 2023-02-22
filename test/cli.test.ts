@@ -37,6 +37,8 @@ describe('cli', () => {
   let doctorInitStub: sinon.SinonStub;
 
   beforeEach(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     versionCommandRunStub = sandbox.stub(VersionCommand, 'run').resolves(versionDetailMock);
     doctorInitStub = sandbox.stub(Doctor, 'init');
   });
