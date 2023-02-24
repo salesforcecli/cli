@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "1.67.0",
+  "version": "1.67.1",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run"
@@ -65,7 +65,7 @@
     "jitPlugins": {
       "@salesforce/plugin-custom-metadata": "2.1.3",
       "@salesforce/plugin-community": "2.2.3",
-      "@salesforce/plugin-packaging": "1.14.5",
+      "@salesforce/plugin-packaging": "1.15.0",
       "@salesforce/plugin-signups": "1.4.3"
     },
     "devPlugins": [
@@ -109,7 +109,7 @@
   },
   "dependencies": {
     "@oclif/core": "2.3.0",
-    "@oclif/plugin-autocomplete": "2.1.1",
+    "@oclif/plugin-autocomplete": "2.1.2",
     "@oclif/plugin-commands": "2.2.10",
     "@oclif/plugin-help": "5.2.5",
     "@oclif/plugin-not-found": "2.3.20",
@@ -121,7 +121,7 @@
     "@oclif/plugin-which": "2.2.16",
     "@salesforce/core": "3.33.4",
     "@salesforce/plugin-apex": "2.2.0",
-    "@salesforce/plugin-auth": "2.7.0",
+    "@salesforce/plugin-auth": "2.7.1",
     "@salesforce/plugin-data": "2.3.1",
     "@salesforce/plugin-deploy-retrieve": "1.8.1",
     "@salesforce/plugin-env": "2.1.0",
