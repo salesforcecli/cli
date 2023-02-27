@@ -1437,7 +1437,7 @@
     mv "~2"
     safe-json-stringify "~1"
 
-"@salesforce/core@3.33.4", "@salesforce/core@^3.24.0", "@salesforce/core@^3.31.19", "@salesforce/core@^3.32.11", "@salesforce/core@^3.32.12", "@salesforce/core@^3.32.13", "@salesforce/core@^3.32.2", "@salesforce/core@^3.33.0", "@salesforce/core@^3.33.1", "@salesforce/core@^3.33.2":
+"@salesforce/core@3.33.4":
   version "3.33.4"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.33.4.tgz#6bc5793b509f45020b550748084db498b45a445f"
   integrity sha512-wd+21QAvfCyYO5ZsSxoIAT2sEUsbypZ2i84nHy1176vWJrRFzJwfdS4MV2yXhkKDE3IlcVTgN+L3RPjLRB/sig==
@@ -1483,6 +1483,29 @@
     mkdirp "1.0.4"
     semver "^7.3.5"
     ts-retry-promise "^0.6.0"
+
+"@salesforce/core@^3.24.0", "@salesforce/core@^3.31.19", "@salesforce/core@^3.32.11", "@salesforce/core@^3.32.12", "@salesforce/core@^3.32.13", "@salesforce/core@^3.32.2", "@salesforce/core@^3.33.0", "@salesforce/core@^3.33.1", "@salesforce/core@^3.33.2", "@salesforce/core@^3.33.4":
+  version "3.33.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.33.5.tgz#7b3ee60860abc5cb7098b9388d01f7ed47d58c0a"
+  integrity sha512-4Gb6LzjbhyvdykdclSUTxIlAVqIQZ5dsRhR7XifndvbviAX4s11f3TweOVZl1WEthTBKPF3i34K3QP/MPwbxrQ==
+  dependencies:
+    "@salesforce/bunyan" "^2.0.0"
+    "@salesforce/kit" "^1.9.0"
+    "@salesforce/schemas" "^1.5.0"
+    "@salesforce/ts-types" "^1.7.2"
+    "@types/graceful-fs" "^4.1.6"
+    "@types/semver" "^7.3.13"
+    ajv "^8.11.2"
+    archiver "^5.3.0"
+    change-case "^4.1.2"
+    debug "^3.2.7"
+    faye "^1.4.0"
+    form-data "^4.0.0"
+    graceful-fs "^4.2.9"
+    js2xmlparser "^4.0.1"
+    jsforce "^2.0.0-beta.19"
+    jsonwebtoken "9.0.0"
+    ts-retry-promise "^0.7.0"
 
 "@salesforce/dev-config@^3.0.0", "@salesforce/dev-config@^3.1.0":
   version "3.1.0"
@@ -1627,10 +1650,10 @@
     open "^8.4.1"
     tslib "^2"
 
-"@salesforce/plugin-functions@1.21.0":
-  version "1.21.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.21.0.tgz#05828bb1f281e7db54f07fba8eba74b2c820c11f"
-  integrity sha512-07xC81fZ2KyBukxzHeMN9gWETFpcxyO00i5XlqpsYPvF2PQAgzMjNo9og8YELTHnFD8+IL1nyRrdWa6b+zNzGw==
+"@salesforce/plugin-functions@1.21.1":
+  version "1.21.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-functions/-/plugin-functions-1.21.1.tgz#d00aea0ce6b33c96e2eb4419b7c4fd015a9473d8"
+  integrity sha512-EXYlxz2zhNZ3T8DrhDMlAfjEXw/3uq2kIPqSlyxzasw64bl3nJ9NoamUZapgCjCilMSpQkepBA/wEzGQOv1J/w==
   dependencies:
     "@heroku-cli/color" "^1.1.16"
     "@heroku-cli/schema" "^1.0.25"
@@ -1639,7 +1662,7 @@
     "@heroku/functions-core" "^0.7.0"
     "@heroku/project-descriptor" "0.0.6"
     "@oclif/core" "^2.1.6"
-    "@salesforce/core" "^3.33.1"
+    "@salesforce/core" "^3.33.4"
     "@salesforce/sf-plugins-core" "^2.0.1"
     "@salesforce/ts-types" "^1.7.3"
     axios "^0.27.2"
@@ -1842,7 +1865,7 @@
   resolved "https://registry.yarnpkg.com/@salesforce/prettier-config/-/prettier-config-0.0.2.tgz#ded39bf7cb75238edc9db6dd093649111350f8bc"
   integrity sha512-KExM355BLbxCW6siGBV7oUOotXvvVp0tAWERgzUkM2FcMb9fWrjwXDrIHc8V0UdDlA3UXtFltDWgN+Yqi+BA/g==
 
-"@salesforce/schemas@1.5.0", "@salesforce/schemas@^1.0.1", "@salesforce/schemas@^1.4.0":
+"@salesforce/schemas@1.5.0", "@salesforce/schemas@^1.0.1", "@salesforce/schemas@^1.4.0", "@salesforce/schemas@^1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.5.0.tgz#8bfe2cb5d7cb29d3394b3b9cfb71bb527009c82c"
   integrity sha512-EKFBURBuON7cj8XZCW+ybeSRRw7wUP1XUXZVHzFgx8KiYmSeGiRHBYbDjQOsQMho2uOLsTozMPEt2ehYnji0YA==
