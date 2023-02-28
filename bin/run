@@ -28,7 +28,7 @@ const channel = overrides.channel || 'stable';
 cli
   .create(version, channel)
   .run()
-  .then(function (result) {
+  .then(function () {
     require('@oclif/core/flush')();
   })
   .catch(function (err) {

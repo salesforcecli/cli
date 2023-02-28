@@ -7,7 +7,7 @@
 
 import * as os from 'os';
 import * as path from 'path';
-import { Config, Interfaces, run as oclifRun } from '@oclif/core';
+import { Config, Interfaces, run as oclifRun, settings } from '@oclif/core';
 import { VersionCommand } from '@oclif/plugin-version';
 import { set } from '@salesforce/kit';
 import { AnyJson, get } from '@salesforce/ts-types';
@@ -127,6 +127,7 @@ export function create(
   run: typeof oclifRun,
   env = nodeEnv
 ): { run: () => Promise<unknown> } {
+  settings.performanceEnabled = true;
   const root = path.resolve(__dirname, '..');
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const pjson = require(path.resolve(__dirname, '..', 'package.json')) as AnyJson;
@@ -134,7 +135,12 @@ export function create(
 
   return {
     async run(): Promise<unknown> {
-      const config = new Config({ name: get(pjson, 'oclif.bin') as string | undefined, root, version, channel });
+      const config = new Config({
+        name: get(pjson, 'oclif.bin') as string | undefined,
+        root,
+        version,
+        channel,
+      });
       await config.load();
       configureUpdateSites(config, env);
       configureAutoUpdate(env);
