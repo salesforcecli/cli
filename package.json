@@ -142,6 +142,7 @@
     "tslib": "^2.4.1"
   },
   "pinnedDependencies": [
+    "@oclif/core",
     "@oclif/plugin-autocomplete",
     "@oclif/plugin-commands",
     "@oclif/plugin-help",
@@ -162,11 +163,13 @@
     "@salesforce/plugin-limits",
     "@salesforce/plugin-login",
     "@salesforce/plugin-org",
+    "@salesforce/plugin-schema",
     "@salesforce/plugin-settings",
     "@salesforce/plugin-sobject",
     "@salesforce/plugin-telemetry",
     "@salesforce/plugin-templates",
     "@salesforce/plugin-trust",
+    "@salesforce/sf-plugins-core",
     "@salesforce/plugin-user"
   ],
   "resolutions": {
