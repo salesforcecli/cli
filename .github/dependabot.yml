@@ -11,5 +11,8 @@ updates:
     pull-request-branch-name:
       separator: "-"
     ignore:      
+      - dependency-name: '@salesforce/dev-scripts'
+      - dependency-name: "@salesforce/plugin-*"
+      - dependency-name: "@oclif/plugin-*"
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
