@@ -1,18 +1,20 @@
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
       interval: 'weekly'
     versioning-strategy: 'increase'
     labels:
-      - "dependencies"
+      - 'dependencies'
     open-pull-requests-limit: 5
     pull-request-branch-name:
-      separator: "-"
-    ignore:      
+      separator: '-'
+    ignore:
       - dependency-name: '@salesforce/dev-scripts'
-      - dependency-name: "@salesforce/plugin-*"
-      - dependency-name: "@oclif/plugin-*"
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
+      - dependency-name: '@salesforce/plugin-*'
+      - dependency-name: '@oclif/plugin-*'
+      - dependency-name: '@oclif/core'
+      - dependency-name: '@salesforce/core'
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
