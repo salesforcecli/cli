@@ -979,7 +979,7 @@
     is-wsl "^2.1.1"
     tslib "^2.5.0"
 
-"@oclif/core@2.4.0", "@oclif/core@^2.0.3", "@oclif/core@^2.0.7", "@oclif/core@^2.0.8", "@oclif/core@^2.1.1", "@oclif/core@^2.1.2", "@oclif/core@^2.1.4", "@oclif/core@^2.1.6", "@oclif/core@^2.1.7", "@oclif/core@^2.2.1", "@oclif/core@^2.3.0", "@oclif/core@^2.3.1":
+"@oclif/core@2.4.0", "@oclif/core@^2.0.3", "@oclif/core@^2.0.7", "@oclif/core@^2.0.8", "@oclif/core@^2.1.1", "@oclif/core@^2.1.2", "@oclif/core@^2.1.4", "@oclif/core@^2.1.6", "@oclif/core@^2.1.7", "@oclif/core@^2.3.0", "@oclif/core@^2.3.1", "@oclif/core@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.4.0.tgz#8e5983dd0d50a3c0c170a844fe8925cb639f0a9f"
   integrity sha512-wWUnOOfQQty0k1Cstm/iWW6pbG0mHzU7rcUtab2Sni9kjBPCcy6ENTgpsWbb/WdITopqtXmvpYII2fgcjKdzUA==
@@ -1708,10 +1708,10 @@
     open "^8.4.0"
     tslib "^2"
 
-"@salesforce/plugin-org@2.4.3":
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-2.4.3.tgz#342bdcd9a831e35afde799cf131500c81bc40da3"
-  integrity sha512-nO86Q3cJBG5SWuGDE3MR5MRNi0QZNIFeLNgqm7PPKJBquq3AaKXXfrbqROdxR2Q/Ogj0H5KRRtCaqTYnIZ3+0Q==
+"@salesforce/plugin-org@2.4.4":
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-2.4.4.tgz#8f2ce9b9ad808231f6b3e1fef8d1b6eebc42289b"
+  integrity sha512-0MmAqJtVLnVFyiaKN9ay9Ii1FrBGYP1j9sgZ3tyARQIFEGXdxNWe+85+vNz/aT86JaZz1fT3pXXjG5L7NyQ3QA==
   dependencies:
     "@oclif/core" "^2.3.1"
     "@salesforce/core" "^3.33.5"
@@ -1762,14 +1762,15 @@
     "@salesforce/sf-plugins-core" "^2.0.1"
     tslib "^2"
 
-"@salesforce/plugin-settings@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-settings/-/plugin-settings-1.3.0.tgz#d625c323dd596756aac188d80492b340582e2dc4"
-  integrity sha512-qcQUwguSxfqQSKjmvzF4CtCt5UGwsOWuLcS3zV8ohesEzoIeJZ7IN5cSEiUvY19VmawXyCkVozvePpxW+DIRrg==
+"@salesforce/plugin-settings@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-settings/-/plugin-settings-1.4.0.tgz#4dcd698805790e3e96de2e8c96035a5909c987b6"
+  integrity sha512-oUPDjtAphSBKnEh/dLoxrIDQtkULSu0tjZB3y+R82lPOce9vmjlZ6NXSFpZHURultiYMKKsg8sJy9LJz0AHknA==
   dependencies:
-    "@oclif/core" "^2.1.2"
-    "@salesforce/core" "^3.32.12"
-    "@salesforce/sf-plugins-core" "^2.1.1"
+    "@oclif/core" "^2.3.0"
+    "@salesforce/core" "^3.33.4"
+    "@salesforce/sf-plugins-core" "^2.2.1"
+    fast-levenshtein "^3.0.0"
     tslib "^2"
 
 "@salesforce/plugin-sobject@0.1.7":
@@ -1852,15 +1853,15 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.5.0.tgz#8bfe2cb5d7cb29d3394b3b9cfb71bb527009c82c"
   integrity sha512-EKFBURBuON7cj8XZCW+ybeSRRw7wUP1XUXZVHzFgx8KiYmSeGiRHBYbDjQOsQMho2uOLsTozMPEt2ehYnji0YA==
 
-"@salesforce/sf-plugins-core@2.2.3", "@salesforce/sf-plugins-core@^2", "@salesforce/sf-plugins-core@^2.0.1", "@salesforce/sf-plugins-core@^2.0.2", "@salesforce/sf-plugins-core@^2.1.1", "@salesforce/sf-plugins-core@^2.1.2", "@salesforce/sf-plugins-core@^2.2.3":
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-2.2.3.tgz#f491156fbd83b18d01d943a43396a57009d10b42"
-  integrity sha512-B+ITa19o2ChAQXWNjmqxtXy7Bn0+dOcFwxqUhVR4YJ7wBzgvvGQ/pvG/WOah+v/uza91Jqfokq59D14fNAQfPw==
+"@salesforce/sf-plugins-core@2.2.4", "@salesforce/sf-plugins-core@^2", "@salesforce/sf-plugins-core@^2.0.1", "@salesforce/sf-plugins-core@^2.0.2", "@salesforce/sf-plugins-core@^2.1.1", "@salesforce/sf-plugins-core@^2.1.2", "@salesforce/sf-plugins-core@^2.2.1", "@salesforce/sf-plugins-core@^2.2.3":
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-2.2.4.tgz#c94f83cab62ff0009b88069e72b4cdcfc9748b82"
+  integrity sha512-lKi0W4y3SJfZCT1cuWZsc6vbJLS+QwO4TMbu/dob0LIba7r3+nrd7st8t2xvm/Z3hRKr8xsJADq/XFYPU7jfmQ==
   dependencies:
-    "@oclif/core" "^2.2.1"
-    "@salesforce/core" "^3.33.1"
-    "@salesforce/kit" "^1.8.3"
-    "@salesforce/ts-types" "^1.7.1"
+    "@oclif/core" "^2.4.0"
+    "@salesforce/core" "^3.33.5"
+    "@salesforce/kit" "^1.9.0"
+    "@salesforce/ts-types" "^1.7.3"
     chalk "^4"
     inquirer "^8.2.5"
 
