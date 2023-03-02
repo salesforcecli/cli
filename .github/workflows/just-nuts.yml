@@ -22,13 +22,13 @@ jobs:
           - salesforcecli/plugin-community
           - salesforcecli/plugin-dev
           - salesforcecli/plugin-env
-          - salesforcecli/plugin-generate
           - salesforcecli/plugin-limits
           - salesforcecli/plugin-signups
           - salesforcecli/plugin-user
           - salesforcecli/plugin-packaging
           - salesforcecli/plugin-org
           - salesforcecli/plugin-auth
+          - salesforcecli/plugin-templates
           # omitted while nuts are too flaky on bulk commands
           # - salesforcecli/plugin-data
     uses: ./.github/workflows/justNut.yml
