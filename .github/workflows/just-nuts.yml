@@ -42,13 +42,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-20-8core]
+        os: [ubuntu-latest]
         command:
           - yarn test:nuts:deploy:metadata:manifest
           - 'yarn test:nuts:deploy:metadata:metadata-dir'
           - 'yarn test:nuts:deploy:metadata:metadata'
           - 'yarn test:nuts:deploy:metadata:source-dir'
           - 'yarn test:nuts:deploy:metadata:test-level'
+          - 'yarn test:nuts:static'
+          - 'yarn test:nuts:tracking'
     uses: ./.github/workflows/justNut.yml
     with:
       repository: salesforcecli/plugin-deploy-retrieve
