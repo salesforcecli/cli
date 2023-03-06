@@ -16,20 +16,21 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         repository:
-          - salesforcecli/plugin-login
-          - salesforcecli/plugin-settings
-          - salesforcecli/plugin-custom-metadata
-          - salesforcecli/plugin-community
-          - salesforcecli/plugin-env
-          - salesforcecli/plugin-generate
-          - salesforcecli/plugin-limits
-          - salesforcecli/plugin-signups
-          - salesforcecli/plugin-user
-          - salesforcecli/plugin-packaging
-          - salesforcecli/plugin-org
           - salesforcecli/plugin-auth
-          # omitted while nuts are too flaky on bulk commands
-          # - salesforcecli/plugin-data
+          - salesforcecli/plugin-community
+          - salesforcecli/plugin-custom-metadata
+          - salesforcecli/plugin-data
+          - salesforcecli/plugin-dev
+          - salesforcecli/plugin-env
+          - salesforcecli/plugin-limits
+          - salesforcecli/plugin-org
+          - salesforcecli/plugin-packaging
+          - salesforcecli/plugin-schema
+          - salesforcecli/plugin-settings
+          - salesforcecli/plugin-signups
+          - salesforcecli/plugin-sobject
+          - salesforcecli/plugin-templates
+          - salesforcecli/plugin-user
     uses: ./.github/workflows/justNut.yml
     with:
       repository: ${{matrix.repository}}
