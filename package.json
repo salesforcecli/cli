@@ -49,7 +49,6 @@
       "@salesforce/plugin-data",
       "@salesforce/plugin-deploy-retrieve",
       "@salesforce/plugin-env",
-      "@salesforce/plugin-functions",
       "@salesforce/plugin-info",
       "@salesforce/plugin-limits",
       "@salesforce/plugin-login",
@@ -66,6 +65,7 @@
       "@salesforce/plugin-custom-metadata": "2.1.6",
       "@salesforce/plugin-community": "2.2.4",
       "@salesforce/plugin-dev": "0.7.0",
+      "@salesforce/plugin-functions": "1.21.4",
       "@salesforce/plugin-packaging": "1.15.2",
       "@salesforce/plugin-signups": "1.4.6",
       "@salesforce/sfdx-scanner": "3.10.0"
@@ -139,7 +139,7 @@
     "@salesforce/plugin-templates": "55.4.4",
     "@salesforce/plugin-trust": "2.4.4",
     "@salesforce/plugin-user": "2.3.4",
-    "@salesforce/sf-plugins-core": "2.2.4",
+    "@salesforce/sf-plugins-core": "^2.2.4",
     "semver": "^7.3.8",
     "tslib": "^2.4.1"
   },
