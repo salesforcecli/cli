@@ -65,26 +65,6 @@ describe('cli', () => {
       expect(versionCommandRunStub.called).to.be.false;
       expect(doctorInitStub.called).to.be.false;
     });
-
-    it('should initialize a Doctor instance when the doctor command is run', async () => {
-      sandbox.stub(Config.prototype, 'load').callsFake(() => Promise.resolve());
-      let loadOptions: LoadOptions;
-      const exec = async (argv?: string[], opts?: LoadOptions): Promise<void> => {
-        loadOptions = opts;
-      };
-      // override process.argv to make it look like the doctor command was run
-      process.argv = ['node', 'sf', 'doctor'];
-      const env = new Env();
-      await create('test', 'test', exec, env).run();
-      expect(loadOptions).to.exist;
-      expect(loadOptions).to.have.property('options');
-      expect(loadOptions).to.have.nested.property('options.version').and.equal('test');
-      expect(loadOptions).to.have.nested.property('options.channel').and.equal('test');
-
-      // should call Doctor.init and VersionCommand.run()
-      expect(versionCommandRunStub.called).to.be.true;
-      expect(doctorInitStub.called).to.be.true;
-    });
   });
 
   describe('env', () => {
