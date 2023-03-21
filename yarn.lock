@@ -1397,7 +1397,7 @@
     mv "~2"
     safe-json-stringify "~1"
 
-"@salesforce/core@3.34.0", "@salesforce/core@^3.24.0", "@salesforce/core@^3.32.12", "@salesforce/core@^3.32.2", "@salesforce/core@^3.33.1", "@salesforce/core@^3.33.4", "@salesforce/core@^3.33.5", "@salesforce/core@^3.33.6", "@salesforce/core@^3.33.9":
+"@salesforce/core@3.34.0":
   version "3.34.0"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.34.0.tgz#431eeb31e10ab228296379b25dab0d7549898e63"
   integrity sha512-e8DeS8ePIVjBu385EnjwhqsXcICZVZajXSy9nA05UTvn7x1JPLqEjX/N/PyxjDlGPECfBoAxkHMSC+mEJSV+ZA==
@@ -1417,6 +1417,29 @@
     graceful-fs "^4.2.9"
     js2xmlparser "^4.0.1"
     jsforce "^2.0.0-beta.19"
+    jsonwebtoken "9.0.0"
+    ts-retry-promise "^0.7.0"
+
+"@salesforce/core@^3.24.0", "@salesforce/core@^3.32.12", "@salesforce/core@^3.32.2", "@salesforce/core@^3.33.1", "@salesforce/core@^3.33.4", "@salesforce/core@^3.33.5", "@salesforce/core@^3.33.6", "@salesforce/core@^3.33.9", "@salesforce/core@^3.34.1":
+  version "3.34.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.34.3.tgz#e0ae6ea751e37f4102b8f0c6a7a84bd82ec54f17"
+  integrity sha512-3vSqSwoANKG4j4+7Wn0PQI97nZpxtkM4bHHtp7qnetn4BXG5z3c3uO+LK5OcYFZj6V39jI0G49FEa7do0PFUIA==
+  dependencies:
+    "@salesforce/bunyan" "^2.0.0"
+    "@salesforce/kit" "^1.9.2"
+    "@salesforce/schemas" "^1.5.0"
+    "@salesforce/ts-types" "^1.7.2"
+    "@types/graceful-fs" "^4.1.6"
+    "@types/semver" "^7.3.13"
+    ajv "^8.12.0"
+    archiver "^5.3.0"
+    change-case "^4.1.2"
+    debug "^3.2.7"
+    faye "^1.4.0"
+    form-data "^4.0.0"
+    graceful-fs "^4.2.11"
+    js2xmlparser "^4.0.1"
+    jsforce "^2.0.0-beta.20"
     jsonwebtoken "9.0.0"
     ts-retry-promise "^0.7.0"
 
@@ -1752,13 +1775,13 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.5.1.tgz#2d1bfdcf593caaa04cd4b3e6fe621097ff7f28fe"
   integrity sha512-MRqU+tn8w5IFvZ0Lm9YKLgxYxr2MQMI+fXXsTrwfUnijsps+ybF9IOTu6MOMxxl2vCUkO8XDjA435wXlWSLI6g==
 
-"@salesforce/sf-plugins-core@2.2.4", "@salesforce/sf-plugins-core@^2", "@salesforce/sf-plugins-core@^2.0.1", "@salesforce/sf-plugins-core@^2.0.2", "@salesforce/sf-plugins-core@^2.1.1", "@salesforce/sf-plugins-core@^2.2.3", "@salesforce/sf-plugins-core@^2.2.4":
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-2.2.4.tgz#c94f83cab62ff0009b88069e72b4cdcfc9748b82"
-  integrity sha512-lKi0W4y3SJfZCT1cuWZsc6vbJLS+QwO4TMbu/dob0LIba7r3+nrd7st8t2xvm/Z3hRKr8xsJADq/XFYPU7jfmQ==
+"@salesforce/sf-plugins-core@2.2.5", "@salesforce/sf-plugins-core@^2", "@salesforce/sf-plugins-core@^2.0.1", "@salesforce/sf-plugins-core@^2.0.2", "@salesforce/sf-plugins-core@^2.1.1", "@salesforce/sf-plugins-core@^2.2.3", "@salesforce/sf-plugins-core@^2.2.4":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-2.2.5.tgz#cc20c6f18f15c173b6bc3b511a56c09f155675df"
+  integrity sha512-9CINVi3akBDreUpoz1J9QhZphKJWqq86m7aJxMPPTIh0cHAdJ4qi4KcdP4Tmwub2BUTYdbibYzix7kpRM0MkwA==
   dependencies:
     "@oclif/core" "^2.4.0"
-    "@salesforce/core" "^3.33.5"
+    "@salesforce/core" "^3.34.1"
     "@salesforce/kit" "^1.9.0"
     "@salesforce/ts-types" "^1.7.3"
     chalk "^4"
@@ -5415,6 +5438,11 @@ graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.5, graceful-fs@^4.1.6,
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.10.tgz#147d3a006da4ca3ce14728c7aefc287c367d7a6c"
   integrity sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==
 
+graceful-fs@^4.2.11:
+  version "4.2.11"
+  resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.11.tgz#4183e4e8bf08bb6e05bbb2f7d2e0c8f712ca40e3"
+  integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
+
 grapheme-splitter@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz#9cf3a665c6247479896834af35cf1dbb4400767e"
@@ -6267,7 +6295,7 @@ jsesc@^2.5.1:
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-2.5.2.tgz#80564d2e483dacf6e8ef209650a67df3f0c283a4"
   integrity sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==
 
-jsforce@2.0.0-beta.20, jsforce@^2.0.0-beta.19:
+jsforce@2.0.0-beta.20, jsforce@^2.0.0-beta.19, jsforce@^2.0.0-beta.20:
   version "2.0.0-beta.20"
   resolved "https://registry.yarnpkg.com/jsforce/-/jsforce-2.0.0-beta.20.tgz#907630942b2ecd653098caa3f87e7710874cb207"
   integrity sha512-5TpdU0MEUN34M0mSKmBwOMKaI8dllTYF8NzpJn0/9akrwqKEERK6K2jGiMWcs85Vx1HCHEcwU2n+5ij6z6zr2g==
