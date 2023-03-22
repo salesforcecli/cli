@@ -1397,7 +1397,7 @@
     mv "~2"
     safe-json-stringify "~1"
 
-"@salesforce/core@3.34.4", "@salesforce/core@^3.24.0", "@salesforce/core@^3.32.12", "@salesforce/core@^3.32.2", "@salesforce/core@^3.33.1", "@salesforce/core@^3.33.4", "@salesforce/core@^3.33.5", "@salesforce/core@^3.33.6", "@salesforce/core@^3.34.1", "@salesforce/core@^3.34.2", "@salesforce/core@^3.34.3":
+"@salesforce/core@3.34.4", "@salesforce/core@^3.24.0", "@salesforce/core@^3.32.12", "@salesforce/core@^3.32.2", "@salesforce/core@^3.33.1", "@salesforce/core@^3.33.4", "@salesforce/core@^3.33.5", "@salesforce/core@^3.33.6", "@salesforce/core@^3.34.1", "@salesforce/core@^3.34.2", "@salesforce/core@^3.34.4":
   version "3.34.4"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.34.4.tgz#6fa11c32f14d20130a0c92c5d306f368671ec104"
   integrity sha512-WasR/6IXKcNj3MgZIcVaT7W5Ic/blxOgpQIzob/7JEsnLVr3pPPb+9/axRvxEGdJr/gOnL1vR0NbBX+Mz6TtkQ==
@@ -1606,13 +1606,13 @@
     open "^8.4.2"
     tslib "^2"
 
-"@salesforce/plugin-org@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-2.6.1.tgz#c43d087890e08efb62f8fa7b5b4854c443048d6c"
-  integrity sha512-JIGGD83bxrXJZQ216JRDlXqrWIgxO11N5DgQOm0lmnKRKrCqT3TlxDCpAKVqmjY3LsTD5gGp1DFluHu5yo/fWw==
+"@salesforce/plugin-org@2.6.2":
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-2.6.2.tgz#19de964ac1928c0a64679a4ac1c16c894fa8c47e"
+  integrity sha512-sLff58eaxlzZbHInm5J5ZgUWrje30uhM88iPB4z7pWKeYz/xrY0AVS2IPTr8+HohYv+IQcHZTl6k8wiq2+tmLg==
   dependencies:
     "@oclif/core" "^2.6.3"
-    "@salesforce/core" "^3.34.3"
+    "@salesforce/core" "^3.34.4"
     "@salesforce/kit" "^1.9.2"
     "@salesforce/sf-plugins-core" "^2.2.4"
     "@salesforce/source-deploy-retrieve" "^7.12.0"
