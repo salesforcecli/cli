@@ -933,7 +933,7 @@
     is-wsl "^2.1.1"
     tslib "^2.5.0"
 
-"@oclif/core@2.7.1", "@oclif/core@^2.0.7", "@oclif/core@^2.0.8", "@oclif/core@^2.1.4", "@oclif/core@^2.3.0", "@oclif/core@^2.3.1", "@oclif/core@^2.4.0", "@oclif/core@^2.5.0", "@oclif/core@^2.6.2", "@oclif/core@^2.6.3", "@oclif/core@^2.6.4", "@oclif/core@^2.7.0":
+"@oclif/core@2.7.1", "@oclif/core@^2.0.7", "@oclif/core@^2.0.8", "@oclif/core@^2.1.4", "@oclif/core@^2.3.0", "@oclif/core@^2.3.1", "@oclif/core@^2.4.0", "@oclif/core@^2.5.0", "@oclif/core@^2.6.2", "@oclif/core@^2.6.3", "@oclif/core@^2.6.4", "@oclif/core@^2.7.1":
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.7.1.tgz#3f38c1ace1675d80b0bbaa3ae5d4572b8fa04c22"
   integrity sha512-HnaZ0ezNJUGok4uACOmVl05aSrCblmuq5Sqyg3Qa8aLFnTBuvHn3d67fTJKSttyAnJ5LI3zw8e5vzLD7WZuP0A==
@@ -7795,12 +7795,12 @@ object.values@^1.1.5, object.values@^1.1.6:
     define-properties "^1.1.4"
     es-abstract "^1.20.4"
 
-oclif@^3.7.0:
-  version "3.7.1"
-  resolved "https://registry.yarnpkg.com/oclif/-/oclif-3.7.1.tgz#ee6e47445255dc98d049dc3f4b2929fc9279c575"
-  integrity sha512-j7nR6hWqYRW46z9vM/ypYTvNFHfPqRLjXpqOEalfL1BHl1LwvkibdfnwX6IiYUcH00HGAQeEZuuQTGZomLixsg==
+oclif@^3.7.2:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/oclif/-/oclif-3.7.2.tgz#52bcfc5fcdf996fc7f27a9d3729f63aa0c8225e3"
+  integrity sha512-mKzQQ4GFbsuqtzvN3nHYZu2SYLDX670Sa7UItTCOFNJY3S/e65Dcj+Nx/dBPMolESWjW6fIk8I8+kuGeiGVNXw==
   dependencies:
-    "@oclif/core" "^2.7.0"
+    "@oclif/core" "^2.7.1"
     "@oclif/plugin-help" "^5.1.19"
     "@oclif/plugin-not-found" "^2.3.7"
     "@oclif/plugin-warn-if-update-available" "^2.0.14"
