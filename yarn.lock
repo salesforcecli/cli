@@ -1689,6 +1689,25 @@
     js2xmlparser "^4.0.2"
     tslib "^2"
 
+"@salesforce/plugin-source@2.9.1":
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-source/-/plugin-source-2.9.1.tgz#5792af07f80f566ce3694c41f1821d2f393a2348"
+  integrity sha512-8AVPLx94D2J63vn/XKWxiZwfPKZIZuf7qoI6d9dMag51/ABpZxPk+l1v3qTYJKM6su67wR93qr9Tsp+gA4XMaA==
+  dependencies:
+    "@oclif/core" "^2.6.3"
+    "@salesforce/apex-node" "^1.6.0"
+    "@salesforce/core" "^3.33.6"
+    "@salesforce/kit" "^1.9.0"
+    "@salesforce/sf-plugins-core" "^2.2.4"
+    "@salesforce/source-deploy-retrieve" "^7.14.2"
+    "@salesforce/source-tracking" "^2.2.24"
+    chalk "^4.1.2"
+    got "^11.8.6"
+    jsforce "^2.0.0-beta.20"
+    proxy-agent "^5.0.0"
+    proxy-from-env "^1.1.0"
+    tslib "^2"
+
 "@salesforce/plugin-telemetry@2.1.3", "@salesforce/plugin-telemetry@^2.1.3":
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-2.1.3.tgz#0952f52a74311248de543409b98deeb79eaaf4a3"
@@ -1784,7 +1803,7 @@
     proxy-from-env "^1.1.0"
     unzipper "0.10.11"
 
-"@salesforce/source-tracking@^2.2.26":
+"@salesforce/source-tracking@^2.2.24", "@salesforce/source-tracking@^2.2.26":
   version "2.2.26"
   resolved "https://registry.yarnpkg.com/@salesforce/source-tracking/-/source-tracking-2.2.26.tgz#7db291c29987d169721ad7b23912b39472dc6843"
   integrity sha512-Atvh87ZVBgGtRuDQHLmZRAv7fmZFsDDeukgd+9vCDPG5fEiBaphjwbFBlhLxRrggwFqkT3od+KiH2FiVeFqMPw==
