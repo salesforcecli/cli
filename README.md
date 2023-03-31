@@ -18,6 +18,7 @@
 # Getting Started
 
 Read the [Get Started with CLI Unification](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_sf_intro.htm) to learn about the new `sf` executable.
+Read the [sf Plugin Developer Guide](https://github.com/salesforcecli/cli/wiki) to learn how to develop a `sf` plugin
 
 # Feedback
 
