@@ -45,7 +45,7 @@ jobs:
       - name: Get nightly version
         id: nightly-version
         run: |
-          VERSION=$(npm view sfdx-cli@nightly --json | jq -r '.version')
+          VERSION=$(npm view @salesforce/cli@nightly --json | jq -r '.version')
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Announce promotion
@@ -61,7 +61,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": ":owl3: `sfdx-cli` version `${{ steps.nightly-version.outputs.version }}` has been promoted from `nightly` to `latest-rc` :owl3:\nRun `sfdx whatsnew -v latest-rc` to see what's new"
+                  "text": ":owl3: `sf` version `${{ steps.nightly-version.outputs.version }}` has been promoted from `nightly` to `latest-rc` :owl3:\nRun `sf whatsnew -v latest-rc` to see what's new"
                 }
               }]
             }
