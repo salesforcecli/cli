@@ -204,6 +204,7 @@
     "prepublishOnly": "npm shrinkwrap",
     "pretarball": "sf-release cli:tarballs:prepare --types",
     "pretest": "echo disable # sf-compile-test",
+    "promote": "oclif promote",
     "promote-dist-tags": "./scripts/promote-dist-tags",
     "promote:verify": "sf-release cli:versions:inspect --channels stable --locations archive --cli sf",
     "promote:verify-rc": "sf-release cli:versions:inspect --channels stable-rc --locations archive --cli sf",

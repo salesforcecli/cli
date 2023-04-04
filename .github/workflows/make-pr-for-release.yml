@@ -1,0 +1,62 @@
+name: make-pr-for-release
+
+on:
+  workflow_dispatch:
+    inputs:
+      start-from-github-ref:
+        type: string
+        description: '[--start-from-github-ref] A github ref to start the release from, examples: main, 7.144.0, f476e8e'
+      start-from-npm-dist-tag:
+        type: string
+        description: '[--start-from-npm-dist-tag] An npm dist-tag to start the release from, examples: nightly, latest-rc'
+      release-channel:
+        type: string
+        required: true
+        description: '[--release-channel] The promote channel for this release, examples: nightly, latest-rc, latest, dev, beta, etc...'
+      patch:
+        type: boolean
+        default: false
+        description: '[--patch] Increment the patch instead of the minor version'
+      pinned-deps:
+        type: boolean
+        default: true
+        description: '[--pinned-deps] Bump the versions of the packages listed in the "pinnedDependencies" section'
+      resolutions:
+        type: boolean
+        default: true
+        description: '[--resolutions] Bump the versions of packages listed in the "resolutions" section'
+      jit:
+        type: boolean
+        default: true
+        description: '[--jit] Bump the versions of the packages listed in the "jitPlugins" (just-in-time) section'
+      only:
+        type: string
+        description: '[--only] Comma-separated list, no spaces, of dependencies that you want to bump'
+
+jobs:
+  make-pr:
+    env:
+      GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
+      # TODO: Add support for SF_ env vars in plugin-info and replace it here.
+      SFDX_HIDE_RELEASE_NOTES: true
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+      - run: npm install -g @salesforce/plugin-release-management --omit=dev
+      - uses: salesforcecli/github-workflows/.github/actions/gitConfig@main
+      - run: git fetch --tag
+      - run: |
+          sf-release cli:release:build \
+            --release-channel ${{ inputs.release-channel }} \
+            ${{ inputs.pinned-deps && '--pinned-deps' || '--no-pinned-deps' }} \
+            ${{ inputs.resolutions && '--resolutions' || '--no-resolutions' }} \
+            ${{ inputs.jit && '--jit' || '--no-jit' }} \
+            ${{ inputs.start-from-github-ref && format('--start-from-github-ref {0}', inputs.start-from-github-ref) || '' }} \
+            ${{ inputs.start-from-npm-dist-tag && format('--start-from-npm-dist-tag {0}', inputs.start-from-npm-dist-tag) || '' }} \
+            ${{ inputs.patch && '--patch' || '' }} \
+            ${{ inputs.only && format('--only {0}', inputs.only) || '' }}

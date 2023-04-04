@@ -1,0 +1,139 @@
+name: create-cli-release
+on:
+  release:
+    # This works for both releases and prereleases https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#release
+    types: [published]
+
+jobs:
+  get-channel:
+    runs-on: ubuntu-latest
+    outputs:
+      channel: ${{ steps.release-channel.outputs.group1 }}
+      s3-channel: ${{ steps.s3-release-channel.outputs.s3-channel }}
+    steps:
+      - name: Get release channel Github release
+        id: release-channel
+        uses: actions-ecosystem/action-regex-match@9e6c4fb3d5e898f505be7a1fb6e7b0a278f6665b
+        with:
+          text: ${{ github.event.release.body }}
+          # https://regex101.com/r/tYAJ8L/1
+          regex: '!! Release as ([a-z-]+) !!'
+      - name: Confirm regex channel match
+        if: ${{ !steps.release-channel.outputs.group1 }}
+        uses: actions/github-script@v3
+        with:
+          script: |
+            core.setFailed('Release channel was not found in release body. Exiting')
+      - name: Get release channel for s3
+        id: s3-release-channel
+        run: |
+          CHANNEL=${{ steps.release-channel.outputs.group1 }}
+          S3_CHANNEL=${CHANNEL/latest/stable}
+          echo "s3-channel=$S3_CHANNEL" >> "$GITHUB_OUTPUT"
+      - name: Channel Notice
+        run: |
+          echo "::notice title=Channel::Channel found in Github Release: ${{ steps.release-channel.outputs.group1 }}"
+          echo "::notice title=S3 Channel::Channel that will be used in S3: ${{ steps.s3-release-channel.outputs.s3-channel }}"
+
+  npm-release:
+    uses: salesforcecli/github-workflows/.github/workflows/npmPublish.yml@main
+    needs: [get-channel]
+    secrets: inherit
+    with:
+      tag: ${{ needs.get-channel.outputs.channel }}
+      githubTag: ${{ github.event.release.tag_name }}
+
+  pack-verify-upload-tarballs:
+    needs: [get-channel, npm-release]
+    uses: salesforcecli/github-workflows/.github/workflows/tarballs.yml@main
+    with:
+      upload: true
+      cli: sf
+      version: ${{ github.event.release.tag_name }}
+      channel: ${{ needs.get-channel.outputs.s3-channel }}
+    secrets: inherit
+
+  archives-verify:
+    # Skip archive-verify on prereleases
+    if: ${{ contains(fromJSON('["latest", "latest-rc", "nightly"]'), needs.get-channel.outputs.channel) }}
+    runs-on: ubuntu-latest
+    needs: [get-channel, pack-verify-upload-tarballs]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: npm
+      - run: npm install -g @salesforce/plugin-release-management --omit=dev
+      # Retry several times because the S3 cache can cause failures
+      - name: Version inspect (with retries)
+        uses: nick-fields/retry@943e742917ac94714d2f408a0e8320f2d1fcafcd
+        with:
+          max_attempts: 5
+          retry_wait_seconds: 120
+          command: sf-release cli:versions:inspect -c ${{ needs.get-channel.outputs.s3-channel }} -l archive --cli sf
+          retry_on: error
+          timeout_minutes: 60
+
+  pack-upload-mac:
+    needs: [get-channel, pack-verify-upload-tarballs]
+    uses: salesforcecli/github-workflows/.github/workflows/packUploadMac.yml@main
+    with:
+      cli: sf
+      version: ${{ github.event.release.tag_name }}
+      channel: ${{ needs.get-channel.outputs.s3-channel }}
+    secrets: inherit
+
+  # The rename-mac-pkg job is only needed as long as the developer site is linking to the old sfdx.pkg file and the mac signing job is only signing the old file as well.
+  # It can be removed once those are updated to use the new name, sfdx-x64.pkg.
+  rename-mac-pkg:
+    needs: [get-channel, pack-upload-mac]
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_EC2_METADATA_DISABLED: true
+    steps:
+      - uses: salesforcecli/github-workflows/.github/actions/renameMacPkg@main
+        with:
+          cli: sf
+          channel: ${{ needs.get-channel.outputs.s3-channel }}
+
+  pack-upload-win:
+    needs: [get-channel, pack-verify-upload-tarballs]
+    uses: salesforcecli/github-workflows/.github/workflows/packUploadWindows.yml@main
+    with:
+      cli: sf
+      version: ${{ github.event.release.tag_name }}
+      channel: ${{ needs.get-channel.outputs.s3-channel }}
+    secrets: inherit
+
+  # TODO: Add docker-build-full and docker-build-slim here
+  #       Also add them to the announce-rc-release-to-slack job "needs"
+
+  announce-rc-release-to-slack:
+    # Do not announce prereleases or nightlies
+    # https://docs.github.com/en/actions/learn-github-actions/expressions#contains
+    if: ${{ contains(fromJSON('["latest", "latest-rc"]'), needs.get-channel.outputs.channel ) }}
+    runs-on: ubuntu-latest
+    needs:
+      - get-channel
+      - pack-verify-upload-tarballs
+      - npm-release
+      - pack-upload-win
+      - pack-upload-mac
+      - rename-mac-pkg
+    steps:
+      - name: Announce RC Workflow
+        id: slack
+        uses: slackapi/slack-github-action@v1.21.0
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_RC_ANNOUNCEMENT_WORKFLOW_WEBHOOK }}
+        with:
+          # This data can be any valid JSON from a previous step in the GitHub Action
+          payload: |
+            {
+              "cli": "sf",
+              "npm-package": "@salesforce/cli",
+              "version": "${{ github.event.release.tag_name }}"
+            }

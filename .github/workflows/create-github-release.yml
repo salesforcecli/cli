@@ -1,0 +1,105 @@
+name: create-github-release
+
+on:
+  pull_request:
+    branches:
+      - main
+      - release-base/*
+    types:
+      - closed
+
+jobs:
+  # This job determines the channel that will be released.
+  validate-channel:
+    # All release PRs must have the 'release' branch prefix
+    # They must start with the string 'Release PR for'.
+    # Must also be merged=true (this ignores PRs that are closed without merging)
+    if: startsWith(github.head_ref, 'release') && startsWith(github.event.pull_request.title, 'Release PR for') && github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    outputs:
+      channel: ${{ steps.found-channel.outputs.channel }}
+    steps:
+      - name: Get release channel from PR title
+        id: release-channel
+        uses: actions-ecosystem/action-regex-match@9e6c4fb3d5e898f505be7a1fb6e7b0a278f6665b
+        with:
+          text: ${{ github.event.pull_request.title }}
+          # https://regex101.com/r/66VrAs/1
+          regex: 'as ([a-z-]+)$'
+
+      # Exit the build if no channel is match
+      - name: Confirm regex channel match
+        if: ${{ !steps.release-channel.outputs.group1 }}
+        uses: actions/github-script@v3
+        with:
+          script: |
+            core.setFailed('Release channel was not found in PR title. Exiting')
+
+      # Checkout needed to validate prerelease version in package.json
+      - name: Check out the repo
+        if: ${{ !contains(fromJSON('["latest", "latest-rc", "nightly"]'), steps.release-channel.outputs.group1) }}
+        uses: actions/checkout@v3
+
+      - name: Get prerelease from package.json
+        id: check-prerelease
+        if: ${{ !contains(fromJSON('["latest", "latest-rc", "nightly"]'), steps.release-channel.outputs.group1) }}
+        uses: salesforcecli/github-workflows/.github/actions/getPreReleaseTag@main
+
+      # Package.json version must contain "alpha" tag: example 1.2.3-beta.0 (beta)
+      # Package.json "alpha" tag must match PR title channel
+      - name: Validate prerelease tag
+        if: ${{ !contains(fromJSON('["latest", "latest-rc", "nightly"]'), steps.release-channel.outputs.group1) && (!steps.check-prerelease.outputs.tag || steps.check-prerelease.outputs.tag != steps.release-channel.outputs.group1) }}
+        uses: actions/github-script@v3
+        with:
+          script: |
+            core.setFailed('Prerelease requires a dist tag name in your package.json like beta in 1.1.1-beta.0')
+
+      # Echo and set the matched channel
+      - name: Set channel output
+        id: found-channel
+        run: |
+          echo "Found channel: ${{ steps.release-channel.outputs.group1 }}"
+          echo "::notice title=Channel::Channel found in PR title: ${{ steps.release-channel.outputs.group1 }}"
+          echo "channel=${{ steps.release-channel.outputs.group1 }}" >> "$GITHUB_OUTPUT"
+
+  create-tag-and-release-in-github:
+    needs: [validate-channel]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Conventional Changelog Action
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@d360fad3a42feca6462f72c97c165d60a02d4bf2
+        # overriding some of the basic behaviors to just get the changelog
+        with:
+          git-user-name: svc-cli-bot
+          git-user-email: svc_cli_bot@salesforce.com
+          github-token: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
+          output-file: false
+          # always do the release, even if there are no semantic commits
+          skip-on-empty: false
+          # pjson version was already updated by the "cli:release:build" script, so don't base behavior on these commits
+          skip-version-file: true
+          # avoids the default `v` so all the later actions don't have to remove it
+          tag-prefix: ''
+      - uses: notiz-dev/github-action-json-property@2192e246737701f108a4571462b76c75e7376216
+        id: packageVersion
+        with:
+          path: 'package.json'
+          prop_path: 'version'
+      - name: Create Github Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.packageVersion.outputs.prop }}
+          release_name: ${{ steps.packageVersion.outputs.prop }}
+          prerelease: ${{ !contains(fromJSON('["latest", "latest-rc", "nightly"]'), needs.validate-channel.outputs.channel) }}
+          # This channel value is read from the Github Release body to determine the channel. Be cautious editing
+          body: |
+            !! Release as ${{ needs.validate-channel.outputs.channel }} !!
+
+            Change log:
+            ${{ steps.changelog.outputs.clean_changelog }}

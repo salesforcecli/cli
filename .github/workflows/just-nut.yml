@@ -1,0 +1,79 @@
+name: just-nut
+on:
+  workflow_dispatch:
+    inputs:
+      channel-or-version:
+        description: Version or channel of the CLI to test against (nightly, latest-rc, 2.1.1)
+        type: string
+        required: true
+      repository:
+        description: 'The repo that will be cloned (format: owner/repo).  This contains the NUTs you want to run.  Ex: salesforcecli/plugin-user'
+        type: string
+        required: true
+      command:
+        required: false
+        type: string
+        default: yarn test:nuts
+        description: 'command to execute (ex: yarn test:nuts)'
+      os:
+        required: false
+        description: 'runs-on property, ex: ubuntu-latest, windows-latest'
+        type: string
+        default: 'ubuntu-latest'
+  workflow_call:
+    inputs:
+      channel-or-version:
+        description: Version or channel of the CLI to test against (nightly, latest-rc, 2.1.1)
+        type: string
+        required: true
+      repository:
+        description: 'The repo that will be cloned (format: owner/repo).  This contains the NUTs you want to run.  Ex: salesforcecli/plugin-user'
+        type: string
+        required: true
+      command:
+        required: false
+        type: string
+        default: yarn test:nuts
+        description: 'command to execute (ex: yarn test:nuts)'
+      os:
+        required: false
+        description: 'runs-on property, ex: ubuntu-latest, windows-latest'
+        type: string
+        default: 'ubuntu-latest'
+
+jobs:
+  just-nut:
+    name: ${{inputs.repository}}
+    runs-on: ${{inputs.os}}
+    env:
+      TESTKIT_EXECUTABLE_PATH: sf
+      TESTKIT_AUTH_URL: ${{ secrets.TESTKIT_AUTH_URL}}
+      TESTKIT_HUB_USERNAME: ${{ secrets.TESTKIT_HUB_USERNAME}}
+      TESTKIT_JWT_CLIENT_ID: ${{ secrets.TESTKIT_JWT_CLIENT_ID}}
+      TESTKIT_JWT_KEY: ${{ secrets.TESTKIT_JWT_KEY}}
+      TESTKIT_HUB_INSTANCE: ${{ secrets.TESTKIT_HUB_INSTANCE}}
+      ONEGP_TESTKIT_AUTH_URL: ${{ secrets.ONEGP_TESTKIT_AUTH_URL }}
+      TESTKIT_SETUP_RETRIES: 2
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: ${{inputs.repository}}
+          token: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
+          path: .
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: yarn
+      # TODO: Remove sfdx-cli install after parity
+      # many setup commands require sfdx executable
+      - run: npm install -g @salesforce/cli@${{ inputs.channel-or-version }} sfdx-cli --omit=dev
+      - run: yarn install
+      - name: Run NUT (with retries)
+        uses: nick-fields/retry@943e742917ac94714d2f408a0e8320f2d1fcafcd
+        with:
+          max_attempts: 3
+          retry_wait_seconds: 1
+          command: ${{ inputs.command }}
+          retry_on: error
+          timeout_minutes: 60

@@ -1,12 +1,13 @@
-# test push
-name: pr-validation
+name: validate-pr
 
 on:
   pull_request:
     types: [opened, reopened, edited]
-    # only applies to PRs that want to merge to main
-    branches: [main]
+    # only applies to PRs that intent to be released to the public
+    branches:
+      - main
+      - release-base/*
 
 jobs:
-  pr-validation:
+  validate-pr:
     uses: salesforcecli/github-workflows/.github/workflows/validatePR.yml@main
