@@ -54,8 +54,8 @@ if [ "$NEW_VERSION" != "$OLD_MANIFEST_VERSION" ]; then
 fi
 
 # Uncomment for testing on a M1 Mac
-VERSIONS_URL="https://developer.salesforce.com/media/salesforce-cli/sf/versions/sf-darwin-arm64-tar-xz.json"
-# VERSIONS_URL="https://developer.salesforce.com/media/salesforce-cli/sf/versions/sf-linux-x64-tar-xz.json"
+# VERSIONS_URL="https://developer.salesforce.com/media/salesforce-cli/sf/versions/sf-darwin-arm64-tar-xz.json"
+VERSIONS_URL="https://developer.salesforce.com/media/salesforce-cli/sf/versions/sf-linux-x64-tar-xz.json"
 VERSION_CONTENT=$(curl -s "$VERSIONS_URL" | jq -cr)
 
 
