@@ -5,13 +5,13 @@ on:
     inputs:
       channel-or-version:
         required: true
-        description: Version or channel of the CLI to test against (nightly, latest-rc, 7.112.1)
+        description: Version or channel of the CLI to test against (nightly, latest-rc, 2.1.1)
         type: string
   workflow_call:
     inputs:
       channel-or-version:
         required: true
-        description: Version or channel of the CLI to test against (nightly, latest-rc, 7.112.1)
+        description: Version or channel of the CLI to test against (nightly, latest-rc, 2.1.1)
         type: string
 
 jobs:
