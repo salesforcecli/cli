@@ -94,9 +94,9 @@ jobs:
     secrets: inherit
 
   # TODO: Add docker-build-full and docker-build-slim here
-  #       Also add them to the announce-rc-release-to-slack job "needs"
+  #       Also add them to the announce-cli-patch-in-slack job "needs"
 
-  announce-rc-release-to-slack:
+  announce-cli-patch-in-slack:
     # Do not announce prereleases or nightlies
     # https://docs.github.com/en/actions/learn-github-actions/expressions#contains
     if: ${{ contains(fromJSON('["latest", "latest-rc"]'), needs.get-channel.outputs.channel ) }}
@@ -108,16 +108,31 @@ jobs:
       - pack-upload-win
       - pack-upload-mac
     steps:
-      - name: Announce RC Workflow
-        id: slack
+      - name: Announce patch in Slack
         uses: slackapi/slack-github-action@v1.21.0
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_RC_ANNOUNCEMENT_WORKFLOW_WEBHOOK }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
         with:
-          # This data can be any valid JSON from a previous step in the GitHub Action
           payload: |
             {
-              "cli": "sf",
-              "npm-package": "@salesforce/cli",
-              "version": "${{ github.event.release.tag_name }}"
+              "blocks": [{
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":bandaid-4506: `sf@${{ needs.get-channel.outputs.channel }}` has been patched in version `${{ github.event.release.tag_name }}` :bandaid-4506:\nPlease ensure you are running the newest version of `sf`"
+                }
+              }]
             }
+
+  run-just-nuts:
+    needs:
+      - get-channel
+      - pack-verify-upload-tarballs
+      - npm-release
+      - pack-upload-win
+      - pack-upload-mac
+    uses: ./.github/workflows/just-nuts.yml
+    with:
+      channel-or-version: ${{ needs.get-channel.outputs.channel }}
+    secrets: inherit
