@@ -150,34 +150,17 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-  # This job is renames the sfdx-x64.pkg that oclif v3 produces to sfdx.pkg which matches what oclif v2 produces.
-  # Doing so avoids breaking changes for customers relying on the old URLs to download the CLI.
-  # It can be removed once the developer site is linking to the new sfdx-x64.pkg file and the mac signing job is signing the new -x64.pkg file.
-  rename-mac-pkg:
-    needs: [open-ctc-or-skip, oclif-promote, build-s3-channel]
-    if: success()
-    runs-on: ubuntu-latest
-    env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      AWS_EC2_METADATA_DISABLED: true
-    steps:
-      - uses: salesforcecli/github-workflows/.github/actions/renameMacPkg@main
-        with:
-          cli: sf
-          channel: ${{ needs.build-s3-channel.outputs.s3-new-channel }}
-
   ctcCloseSuccess:
-    needs: [open-ctc-or-skip, npm-promote, oclif-promote, rename-mac-pkg]
-    if: needs.open-ctc-or-skip.result == 'success' && needs.open-ctc-or-skip.outputs.changeCaseId && needs.npm-promote.result == 'success' && needs.docker-promote.result == 'success' && needs.oclif-promote.result == 'success' && needs.rename-mac-pkg.result == 'success'
+    needs: [open-ctc-or-skip, npm-promote, oclif-promote]
+    if: needs.open-ctc-or-skip.result == 'success' && needs.open-ctc-or-skip.outputs.changeCaseId && needs.npm-promote.result == 'success' && needs.docker-promote.result == 'success' && needs.oclif-promote.result == 'success'
     uses: salesforcecli/github-workflows/.github/workflows/ctcClose.yml@main
     secrets: inherit
     with:
       changeCaseId: ${{needs.open-ctc-or-skip.outputs.changeCaseId}}
 
   ctcCloseFail:
-    needs: [open-ctc-or-skip, npm-promote, oclif-promote, rename-mac-pkg]
-    if: always() && needs.open-ctc-or-skip.outputs.changeCaseId && (needs.open-ctc-or-skip.result != 'success' || needs.npm-promote.result != 'success' || needs.docker-promote.result != 'success' || needs.oclif-promote.result != 'success' || needs.rename-mac-pkg.result != 'success')
+    needs: [open-ctc-or-skip, npm-promote, oclif-promote]
+    if: always() && needs.open-ctc-or-skip.outputs.changeCaseId && (needs.open-ctc-or-skip.result != 'success' || needs.npm-promote.result != 'success' || needs.docker-promote.result != 'success' || needs.oclif-promote.result != 'success')
     uses: salesforcecli/github-workflows/.github/workflows/ctcClose.yml@main
     secrets: inherit
     with:
