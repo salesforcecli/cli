@@ -5,92 +5,164 @@ on:
     inputs:
       version:
         type: string
-        description: full npm version number, like 7.150.2
-        required: true
-      tag:
+        description: 'Semver version to promote. Example: 2.1.1'
+      old-channel:
         type: string
-        required: false
-        description: tag to use for docker/npm, like latest or latest-rc
-        default: latest
-      channel:
+        description: 'Existing channel to promote. Example: Promote **latest-rc** to latest'
+      new-channel:
         type: string
+        description: 'The channel to promote to. Example: Promote latest-rc to **latest**'
         required: true
-        default: stable
-        description: channel to promote the matching tarball to (example stable, stable-rc )
-      useCTC:
+      use-ctc:
         type: boolean
         required: false
-        description: this promotion should only run if no release moratorium is in place
+        description: Open a change case for this promotion. Only needed for promotions to latest.
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        description: 'Semver version to promote. Example: 2.1.1'
+      old-channel:
+        type: string
+        description: 'Existing channel to promote. Example: Promote **latest-rc** to latest'
+      new-channel:
+        type: string
+        description: 'The channel to promote to. Example: Promote latest-rc to **latest**'
+        required: true
+      use-ctc:
+        type: boolean
+        required: false
+        description: Open a change case for this promotion. Only needed for promotions to latest.
 
 jobs:
-  ctc-open:
-    if: inputs.useCTC
-    uses: salesforcecli/github-workflows/.github/workflows/ctcOpen.yml@main
-    secrets: inherit
+  validate-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ensure either 'version' or 'old-channel' is passed"
+        if: ${{ !inputs.version && !inputs.old-channel }}
+        run: |
+          echo "ERROR: You must pass either 'version' or 'old-channel' to promote from."
+          echo "-> Use 'version' if you are promoting a new semver version to a channel. Example: I want to promote version '2.1.1' to channel 'dev'.
+          echo "-> Use 'old-channel' if you are promoting an existing channel to another channel. Example: I want to promote channel 'latest-rc' to channel 'latest'.
+          exit 1
+      - name: Ensure only one "starting point"
+        if: ${{ inputs.version && inputs.old-channel }}
+        run: |
+          echo "ERROR: Inputs 'version' and 'old-channel' cannot both be passed (exactlyOne)."
+          echo "-> Use 'version' if you are promoting a new semver version to a channel. Example: I want to promote version '2.1.1' to channel 'dev'.
+          echo "-> Use 'old-channel' if you are promoting an existing channel to another channel. Example: I want to promote channel 'latest-rc' to channel 'latest'.
+          exit 1
+      - name: Ensure channels do not include "stable"
+        if: ${{ contains(inputs.old-channel, 'stable') || contains(inputs.new-channel, 'stable') }}
+        run: |
+          echo "ERROR: Do not use 'stable' in channel names. Use 'latest' instead.
+          echo "-> S3 resources (stable, stable-rc) will be translated for you and will eventually be deprecated in favor of 'latest' and 'latest-rc'
+          exit 1
+
+  # Even if inputs.version is passed, we still need the SHA for a later step
+  get-package-info:
+    needs: [validate-inputs]
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version-info.outputs.version }}
+      sha: ${{ steps.version-info.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: yarn
+      - uses: salesforcecli/github-workflows/.github/actions/versionInfo@main
+        id: version-info
+        with:
+          version: ${{ inputs.version || inputs.old-channel }}
+
+  # Replace 'latest' with 'stable' for S3 resources
+  build-s3-channel:
+    runs-on: ubuntu-latest
+    needs: [get-package-info]
+    outputs:
+      s3-new-channel: ${{ steps.replace-channel.outputs.s3-new-channel }}
+    steps:
+      - id: replace-channel
+        run: |
+          NEW_CHANNEL=${{ inputs.new-channel }}
+          S3_NEW_CHANNEL=${NEW_CHANNEL/latest/stable}
+          echo "s3-new-channel=$S3_NEW_CHANNEL" >> "$GITHUB_OUTPUT"
+
+  # CTC is only needed for promotions to 'latest'
+  # Note: "Optional" GHA jobs are tricky to get right. Edit with caution.
+  # Working example: https://github.com/iowillhoit/gha-sandbox/blob/main/.github/workflows/needing-an-optional-job-alternate.yml
+  open-ctc-or-skip:
+    needs: [build-s3-channel]
+    runs-on: static-ip-ubuntu-runners
+    outputs:
+      changeCaseId: ${{ steps.open-ctc.outputs.changeCaseId }}
+    steps:
+      - name: Open CTC
+        id: open-ctc
+        if: inputs.use-ctc
+        uses: salesforcecli/github-workflows/.github/actions/ctcOpen@main
+        with:
+          SF_CHANGE_CASE_SFDX_AUTH_URL: ${{ secrets.SF_CHANGE_CASE_SFDX_AUTH_URL}}
+          SF_CHANGE_CASE_TEMPLATE_ID: ${{ secrets.SF_CHANGE_CASE_TEMPLATE_ID}}
+          SF_CHANGE_CASE_CONFIGURATION_ITEM: ${{ secrets.SF_CHANGE_CASE_CONFIGURATION_ITEM}}
+          SVC_CLI_BOT_GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN}}
+      - name: Check open-ctc status
+        if: always()
+        run: |
+          RESULT=${{ steps.open-ctc.outcome }}
+          if [[ "$RESULT" != 'success' && "$RESULT" != 'skipped' ]]; then
+            echo "Step 'open-ctc' failed! Exiting."
+            exit 1
+          else
+            echo "Step 'open-ctc' was successful or was skipped, proceeding."
+          fi
+
+  # TODO: Add docker-promote
 
   npm-promote:
-    needs: [ctc-open]
-    runs-on:
-      ubuntu-latest
-      # if you try to use yarn here, it will attempt to use the wrong registry and throw 401s
+    needs: [open-ctc-or-skip, get-package-info]
+    if: success()
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v3
         with:
-          node-version: latest
+          node-version: lts/*
+      # NOTE: If you try to use yarn here, it will use the wrong registry and throw 401s
       - run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-          npm dist-tag add @salesforce/cli@${{ inputs.version }} ${{ inputs.tag }}
+          npm dist-tag add @salesforce/cli@${{ needs.get-package-info.outputs.version }} ${{ inputs.new-channel }}
 
-  channel-promote:
-    needs: [ctc-open]
+  oclif-promote:
+    needs: [open-ctc-or-skip, get-package-info, build-s3-channel]
+    if: success()
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: latest
+          node-version: lts/*
           cache: yarn
       - run: yarn install
-      # to get the SHA
-      - uses: salesforcecli/github-workflows/.github/actions/versionInfo@main
-        id: version-info
-        with:
-          version: ${{ inputs.version }}
-          npmPackage: '@salesforce/cli'
-      - run: yarn oclif promote --version ${{ steps.version-info.outputs.version }} --sha ${{ steps.version-info.outputs.sha }} --channel ${{ inputs.channel }} --max-age 300 --macos --win --indexes --xz
+      - run: yarn promote --version ${{ needs.get-package-info.outputs.version }} --sha ${{ needs.get-package-info.outputs.sha }} --channel ${{ needs.build-s3-channel.outputs.s3-new-channel }} --max-age 300 --macos --win --indexes --xz
         env:
-          AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
-          AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-
-  # This job is renames the sfdx-x64.pkg that oclif v3 produces to sfdx.pkg which matches what oclif v2 produces.
-  # Doing so avoids breaking changes for customers relying on the old URLs to download the CLI.
-  # It can be removed once the developer site is linking to the new sfdx-x64.pkg file and the mac signing job is signing the new -x64.pkg file.
-  rename-mac-pkg:
-    runs-on: ubuntu-latest
-    env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      AWS_EC2_METADATA_DISABLED: true
-    needs: [channel-promote]
-    steps:
-      - uses: salesforcecli/github-workflows/.github/actions/renameMacPkg@main
-        with:
-          cli: sf
-          channel: ${{ inputs.channel }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
   ctcCloseSuccess:
-    needs: [ctc-open, npm-promote, channel-promote, rename-mac-pkg]
-    if: needs.ctc-open.outputs.changeCaseId && needs.ctc-open.result == 'success' && needs.npm-promote.result == 'success' && needs.channel-promote.result == 'success' && needs.rename-mac-pkg.result == 'success'
+    needs: [open-ctc-or-skip, npm-promote, oclif-promote]
+    if: needs.open-ctc-or-skip.result == 'success' && needs.open-ctc-or-skip.outputs.changeCaseId && needs.npm-promote.result == 'success' && needs.docker-promote.result == 'success' && needs.oclif-promote.result == 'success'
     uses: salesforcecli/github-workflows/.github/workflows/ctcClose.yml@main
     secrets: inherit
     with:
-      changeCaseId: ${{needs.ctc-open.outputs.changeCaseId}}
+      changeCaseId: ${{needs.open-ctc-or-skip.outputs.changeCaseId}}
 
   ctcCloseFail:
-    needs: [ctc-open, npm-promote, channel-promote, rename-mac-pkg]
-    if: always() && needs.ctc-open.outputs.changeCaseId && (needs.ctc-open.result != 'success' || needs.npm-promote.result != 'success' || needs.channel-promote.result != 'success' || needs.rename-mac-pkg.result != 'success')
+    needs: [open-ctc-or-skip, npm-promote, oclif-promote]
+    if: always() && needs.open-ctc-or-skip.outputs.changeCaseId && (needs.open-ctc-or-skip.result != 'success' || needs.npm-promote.result != 'success' || needs.docker-promote.result != 'success' || needs.oclif-promote.result != 'success')
     uses: salesforcecli/github-workflows/.github/workflows/ctcClose.yml@main
     secrets: inherit
     with:
-      changeCaseId: ${{ needs.ctc-open.outputs.changeCaseId }}
+      changeCaseId: ${{ needs.open-ctc-or-skip.outputs.changeCaseId }}
       status: Not Implemented

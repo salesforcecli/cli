@@ -2,14 +2,20 @@ name: just-nuts
 
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: [RC]
-    types:
-      - completed
+    inputs:
+      channel-or-version:
+        required: true
+        description: Version or channel of the CLI to test against (nightly, latest-rc, 7.112.1)
+        type: string
+  workflow_call:
+    inputs:
+      channel-or-version:
+        required: true
+        description: Version or channel of the CLI to test against (nightly, latest-rc, 7.112.1)
+        type: string
 
 jobs:
   basic:
-    if: ${{ !github.event.workflow_run || github.event.workflow_run.conclusion == 'success' }}
     strategy:
       fail-fast: false
       max-parallel: 6
@@ -31,9 +37,10 @@ jobs:
           - salesforcecli/plugin-sobject
           - salesforcecli/plugin-templates
           - salesforcecli/plugin-user
-    uses: ./.github/workflows/justNut.yml
+    uses: ./.github/workflows/just-nut.yml
     with:
       repository: ${{matrix.repository}}
+      channel-or-version: ${{ inputs.channel-or-version }}
       os: ${{matrix.os}}
     secrets: inherit
   source:
@@ -63,21 +70,30 @@ jobs:
       os: ${{matrix.os}}
       command: ${{matrix.command}}
     secrets: inherit
-  deploy-big:
-    if: ${{ !github.event.workflow_run || github.event.workflow_run.conclusion == 'success' }}
+  deploy-retrieve:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-20-8core]
+        os: [ubuntu-latest, windows-latest]
         command:
+          - yarn test:nuts:convert
+          - yarn test:nuts:deb
+          - yarn test:nuts:delete
           - yarn test:nuts:deploy:metadata:manifest
-          - 'yarn test:nuts:deploy:metadata:metadata-dir'
-          - 'yarn test:nuts:deploy:metadata:metadata'
-          - 'yarn test:nuts:deploy:metadata:source-dir'
-          - 'yarn test:nuts:deploy:metadata:test-level'
-    uses: ./.github/workflows/justNut.yml
+          - yarn test:nuts:deploy:metadata:metadata
+          - yarn test:nuts:deploy:metadata:metadata-dir
+          - yarn test:nuts:deploy:metadata:source-dir
+          - yarn test:nuts:deploy:metadata:test-level
+          - yarn test:nuts:destructive
+          - yarn test:nuts:manifest
+          - yarn test:nuts:retrieve
+          - yarn test:nuts:specialTypes
+          - yarn test:nuts:static
+          - yarn test:nuts:tracking
+    uses: ./.github/workflows/just-nut.yml
     with:
       repository: salesforcecli/plugin-deploy-retrieve
+      channel-or-version: ${{ inputs.channel-or-version }}
       os: ${{matrix.os}}
       command: ${{matrix.command}}
     secrets: inherit

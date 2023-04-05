@@ -9,6 +9,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  yarn-lockfile-check:
+    uses: salesforcecli/github-workflows/.github/workflows/lockFileCheck.yml@main
+
   ut:
     uses: salesforcecli/github-workflows/.github/workflows/unitTest.yml@main
     secrets: inherit

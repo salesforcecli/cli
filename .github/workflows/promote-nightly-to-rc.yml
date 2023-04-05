@@ -1,0 +1,67 @@
+name: promote-nightly-to-rc
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - promote-rc-to-latest
+    types:
+      - completed
+
+jobs:
+  promote:
+    # Only run on 'workflow_dispatch' or if the 'workflow_run' was successful
+    if: ${{ !github.event.workflow_run || github.event.workflow_run.conclusion == 'success' }}
+    uses: ./.github/workflows/promote.yml
+    secrets: inherit
+    with:
+      old-channel: nightly
+      new-channel: latest-rc
+
+  promote-verify:
+    runs-on: ubuntu-latest
+    needs: [promote]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: yarn
+      - run: ./scripts/verify-promote nightly latest-rc
+      - run: npm install -g @salesforce/plugin-release-management --omit=dev
+      - name: Version inspect (with retries)
+        uses: nick-fields/retry@943e742917ac94714d2f408a0e8320f2d1fcafcd
+        with:
+          max_attempts: 5
+          retry_wait_seconds: 120
+          command: sf-release cli:versions:inspect -c stable-rc -l archive --cli sf
+          retry_on: error
+          timeout_minutes: 60
+
+  announce-promotion-to-slack:
+    needs: [promote-verify]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get nightly version
+        id: nightly-version
+        run: |
+          VERSION=$(npm view @salesforce/cli@nightly --json | jq -r '.version')
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Announce promotion
+        id: slack
+        uses: slackapi/slack-github-action@v1.21.0
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.PLATFORM_CLI_CHANNEL_SLACK_INCOMING_WEBHOOK }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+        with:
+          payload: |
+            {
+              "blocks": [{
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":owl3: `sf` version `${{ steps.nightly-version.outputs.version }}` has been promoted from `nightly` to `latest-rc` :owl3:\nRun `sf whatsnew -v latest-rc` to see what's new"
+                }
+              }]
+            }

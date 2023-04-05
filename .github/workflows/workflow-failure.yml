@@ -1,11 +1,16 @@
+name: workflow-failure
+
 on:
   workflow_run:
     workflows:
-      - RC
+      - automerge-nightly-pr
+      - create-cli-release
+      - create-github-release
+      - make-pr-for-nightly
+      - make-pr-for-release
+      - promote
+      - promote-nightly-to-rc
       - promote-rc-to-latest
-      - manual promote
-      - pr for rc
-      - rc tag/release
     types:
       - completed
     branches:
