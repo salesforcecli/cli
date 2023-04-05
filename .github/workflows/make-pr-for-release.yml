@@ -5,7 +5,7 @@ on:
     inputs:
       start-from-github-ref:
         type: string
-        description: '[--start-from-github-ref] A github ref to start the release from, examples: main, 7.144.0, f476e8e'
+        description: '[--start-from-github-ref] A github ref to start the release from, examples: main, 2.1.1, f476e8e'
       start-from-npm-dist-tag:
         type: string
         description: '[--start-from-npm-dist-tag] An npm dist-tag to start the release from, examples: nightly, latest-rc'
