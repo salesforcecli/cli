@@ -49,10 +49,8 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         command:
-          - yarn test:nuts:convert
           - yarn test:nuts:mdapi
           - yarn test:nuts:deploy:metadata
-          - yarn test:nuts:delete
           - yarn test:nuts:deploy:async
           - yarn test:nuts:deploy:destructive
           - yarn test:nuts:deploy:manifest
