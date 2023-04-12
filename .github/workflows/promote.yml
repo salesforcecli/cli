@@ -67,14 +67,10 @@ jobs:
       version: ${{ steps.version-info.outputs.version }}
       sha: ${{ steps.version-info.outputs.sha }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: lts/*
-          cache: yarn
       - uses: salesforcecli/github-workflows/.github/actions/versionInfo@main
         id: version-info
         with:
+          npmPackage: '@salesforce/cli'
           version: ${{ inputs.version || inputs.old-channel }}
 
   # Replace 'latest' with 'stable' for S3 resources
