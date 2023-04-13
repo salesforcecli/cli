@@ -2,7 +2,7 @@ name: automerge
 on:
   workflow_dispatch:
   schedule:
-    - cron: '23 2,5,8,11 * * *'
+    - cron: '23 1,4,7,10 * * *'
 
 jobs:
   automerge:
