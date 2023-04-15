@@ -1535,10 +1535,10 @@
     jsforce "2.0.0-beta.20"
     tslib "^2"
 
-"@salesforce/plugin-deploy-retrieve@1.8.11":
-  version "1.8.11"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.8.11.tgz#fb26bac1e0ce665dee37d5f491e1b140d9a1b696"
-  integrity sha512-GnWsoKi1LF/WrrtGSJWmj0/lHpYCeSsMuvliR6hw2BX85uMKUTfl46FNa7mIc0yps+hX1BHTfBTkxiKA8NcYhA==
+"@salesforce/plugin-deploy-retrieve@1.8.13":
+  version "1.8.13"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.8.13.tgz#ca0ba14f2d6d35ac047a8832288076c55aef84b5"
+  integrity sha512-jJ+RV7G9jPJbES+JEF0W0Gbx1P/QqxH4N0Tw7zvH4D3bWwEL+qYxUuPYMU9MrVIRaaA++lA4V8S6JejzpYhY0A==
   dependencies:
     "@oclif/core" "^2.8.0"
     "@salesforce/apex-node" "^1.6.0"
@@ -1546,7 +1546,7 @@
     "@salesforce/kit" "^1.9.2"
     "@salesforce/sf-plugins-core" "^2.2.7"
     "@salesforce/source-deploy-retrieve" "^8.0.1"
-    "@salesforce/source-tracking" "^2.2.27"
+    "@salesforce/source-tracking" "^3.1.0"
     chalk "^4.1.2"
     fs-extra "^10.0.1"
     shelljs "^0.8.5"
@@ -1595,10 +1595,10 @@
     open "^8.4.2"
     tslib "^2"
 
-"@salesforce/plugin-org@2.6.12":
-  version "2.6.12"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-2.6.12.tgz#f6458a890417a532d4438077401aca7bcaff6775"
-  integrity sha512-ETynbZaB8/LuQ9kOGg7PulDfORVyO8KlDKMOI+DOo/ADzcgAZAb7RNlSAC/nTzEG5/uTX/4+1ljuzrL7POZRyA==
+"@salesforce/plugin-org@2.6.13":
+  version "2.6.13"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-2.6.13.tgz#0b38b302f0c6ad64c43a27913a8c952c93aa88d1"
+  integrity sha512-mTQEiT6CNydyIddvTJlT81BxaB3knf1KGn0Uw78pbBQ71+z1ct5gT6+6hF+IwOYoD/8VbfwgR+esJsH/GeTyIQ==
   dependencies:
     "@oclif/core" "^2.6.3"
     "@salesforce/core" "^3.34.6"
@@ -1789,18 +1789,6 @@
     proxy-agent "^5.0.0"
     proxy-from-env "^1.1.0"
     unzipper "0.10.11"
-
-"@salesforce/source-tracking@^2.2.27":
-  version "2.2.27"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-tracking/-/source-tracking-2.2.27.tgz#c6d14d37153cee63c1e1d18593f1b44753562ef8"
-  integrity sha512-3Krl4dngtVKjp10gj8x6eXS/blKK+pVHu7RbIW8BWBUFehANt3/ddKnAcqMIRiHgE3gODbE54Whz6EFl4AEWBg==
-  dependencies:
-    "@salesforce/core" "^3.34.6"
-    "@salesforce/kit" "^1.9.0"
-    "@salesforce/source-deploy-retrieve" "^8.0.1"
-    graceful-fs "^4.2.11"
-    isomorphic-git "1.17.0"
-    ts-retry-promise "^0.7.0"
 
 "@salesforce/source-tracking@^3.1.0":
   version "3.1.0"
