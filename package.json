@@ -202,6 +202,7 @@
     "pack:verify": "sf-release cli:tarballs:verify --cli sf --windows-username-buffer 34",
     "pack:win": "oclif pack:win",
     "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
+    "preinstall": "node ./scripts/preinstall.js",
     "prepack": "sf-prepack",
     "prepare": "sf-install && yarn compile && yarn lint",
     "prepublishOnly": "npm shrinkwrap",
