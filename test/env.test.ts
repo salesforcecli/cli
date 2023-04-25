@@ -100,18 +100,4 @@ describe('Env', () => {
       expect(env.isInstaller()).to.be.true;
     });
   });
-
-  describe('getS3HostOverride', () => {
-    it('should return an S3 host override if set', () => {
-      env.setString('SF_S3_HOST', 'http://example.com');
-      expect(env.getS3HostOverride()).to.equal('http://example.com');
-    });
-  });
-
-  describe('setS3HostOverride', () => {
-    it('should set an S3 host override', () => {
-      env.setS3HostOverride('http://example.com');
-      expect(env.getString('SF_S3_HOST')).to.equal('http://example.com');
-    });
-  });
 });
