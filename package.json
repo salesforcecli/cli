@@ -108,7 +108,7 @@
     "windows": {
       "name": "Salesforce CLI",
       "keypath": "/tmp/windows-signing.pfx",
-      "nsisInsertion": "scripts/preventSfSfdxWindowsInstallers.nsi"
+      "nsisCustomization": "scripts/preventSfSfdxWindowsInstallers.nsi"
     },
     "additionalVersionFlags": [
       "-v"
