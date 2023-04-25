@@ -17,7 +17,8 @@
     "/bin",
     "/dist/**/*.js",
     "/oclif.manifest.json",
-    "/npm-shrinkwrap.json"
+    "/npm-shrinkwrap.json",
+    "/scripts/preinstall.js"
   ],
   "keywords": [
     "oclif",
@@ -106,7 +107,8 @@
     },
     "windows": {
       "name": "Salesforce CLI",
-      "keypath": "/tmp/windows-signing.pfx"
+      "keypath": "/tmp/windows-signing.pfx",
+      "nsisInsertion": "scripts/preventSfSfdxWindowsInstallers.nsi"
     },
     "additionalVersionFlags": [
       "-v"
