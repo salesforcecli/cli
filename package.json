@@ -1,10 +1,11 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "1.76.1",
+  "version": "2.0.0-beta.0",
   "author": "Salesforce",
   "bin": {
-    "sf": "./bin/run"
+    "sf": "./bin/run",
+    "sfdx": "./bin/run"
   },
   "homepage": "https://github.com/salesforcecli/cli",
   "bugs": "https://github.com/forcedotcom/cli/issues",
@@ -27,6 +28,9 @@
   "main": "dist/index.js",
   "oclif": {
     "bin": "sf",
+    "binAliases": [
+      "sfdx"
+    ],
     "scope": "salesforce",
     "dirname": "sf",
     "topicSeparator": " ",
