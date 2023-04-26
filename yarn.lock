@@ -1397,6 +1397,27 @@
     mv "~2"
     safe-json-stringify "~1"
 
+"@salesforce/core@3.35.0-qa.3", "@salesforce/core@^3.35.0-qa.3":
+  version "3.35.0-qa.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.35.0-qa.3.tgz#99f8183084d1de92f0e8bf3aa43c1b1098ce69b2"
+  integrity sha512-OsLMAAYOSBLFKWajPZMuys9IOKsac7dCbajZFumpjHC+qG6UIJy+n1Q1mW6MkBLMOET63Ht6kIM2IwwzJMwIsg==
+  dependencies:
+    "@salesforce/bunyan" "^2.0.0"
+    "@salesforce/kit" "^1.9.2"
+    "@salesforce/schemas" "^1.5.1"
+    "@salesforce/ts-types" "^1.7.2"
+    "@types/semver" "^7.3.13"
+    ajv "^8.12.0"
+    archiver "^5.3.0"
+    change-case "^4.1.2"
+    debug "^3.2.7"
+    faye "^1.4.0"
+    form-data "^4.0.0"
+    js2xmlparser "^4.0.1"
+    jsforce "^2.0.0-beta.21"
+    jsonwebtoken "9.0.0"
+    ts-retry-promise "^0.7.0"
+
 "@salesforce/core@^3.24.0", "@salesforce/core@^3.32.12", "@salesforce/core@^3.33.4", "@salesforce/core@^3.33.5", "@salesforce/core@^3.34.1", "@salesforce/core@^3.34.2", "@salesforce/core@^3.34.4", "@salesforce/core@^3.34.5", "@salesforce/core@^3.34.6":
   version "3.34.7"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.34.7.tgz#445efe5c76fbab53e6c891563aa9b0dc5dd24179"
@@ -1415,27 +1436,6 @@
     faye "^1.4.0"
     form-data "^4.0.0"
     graceful-fs "^4.2.11"
-    js2xmlparser "^4.0.1"
-    jsforce "^2.0.0-beta.21"
-    jsonwebtoken "9.0.0"
-    ts-retry-promise "^0.7.0"
-
-"@salesforce/core@^3.35.0-qa.3":
-  version "3.35.0-qa.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.35.0-qa.3.tgz#99f8183084d1de92f0e8bf3aa43c1b1098ce69b2"
-  integrity sha512-OsLMAAYOSBLFKWajPZMuys9IOKsac7dCbajZFumpjHC+qG6UIJy+n1Q1mW6MkBLMOET63Ht6kIM2IwwzJMwIsg==
-  dependencies:
-    "@salesforce/bunyan" "^2.0.0"
-    "@salesforce/kit" "^1.9.2"
-    "@salesforce/schemas" "^1.5.1"
-    "@salesforce/ts-types" "^1.7.2"
-    "@types/semver" "^7.3.13"
-    ajv "^8.12.0"
-    archiver "^5.3.0"
-    change-case "^4.1.2"
-    debug "^3.2.7"
-    faye "^1.4.0"
-    form-data "^4.0.0"
     js2xmlparser "^4.0.1"
     jsforce "^2.0.0-beta.21"
     jsonwebtoken "9.0.0"
