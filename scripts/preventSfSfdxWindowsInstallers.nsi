@@ -57,7 +57,7 @@ Pop $0
 StrCpy $9 "sfdx-cli/7."
 
 ;$1 is the result of the comparison
-\${StrContains} $1 $9 $0
+${StrContains} $1 $9 $0
 StrCmp $1 "" notFound1
   MessageBox MB_OK 'Error: sfdx cli version 7 installed, please uninstall - https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_uninstall.htm'
   Quit
@@ -74,7 +74,7 @@ Pop $0
 StrCpy $8 "@salesforce/cli/1."
 
 ;$1 is the result of the comparison
-\${StrContains} $1 $8 $0
+${StrContains} $1 $8 $0
 StrCmp $1 "" notFound2
   MessageBox MB_OK 'Error: sf cli version 1 installed, please uninstall -https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_uninstall.htm'
   Quit
