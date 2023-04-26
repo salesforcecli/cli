@@ -32,6 +32,7 @@
     "binAliases": [
       "sfdx"
     ],
+    "nsisCustomization": "scripts/nsis.nsi",
     "scope": "salesforce",
     "dirname": "sf",
     "topicSeparator": " ",
@@ -107,8 +108,7 @@
     },
     "windows": {
       "name": "Salesforce CLI",
-      "keypath": "/tmp/windows-signing.pfx",
-      "nsisCustomization": "scripts/preventSfSfdxWindowsInstallers.nsi"
+      "keypath": "/tmp/windows-signing.pfx"
     },
     "additionalVersionFlags": [
       "-v"

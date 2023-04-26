@@ -38,10 +38,10 @@ Function StrContains
 FunctionEnd
 
 !macro _StrContainsConstructor OUT NEEDLE HAYSTACK
-  Push \`\${HAYSTACK}\`
-  Push \`\${NEEDLE}\`
+  Push `${HAYSTACK}`
+  Push `${NEEDLE}`
   Call StrContains
-  Pop \`\${OUT}\`
+  Pop `${OUT}`
 !macroend
 
 !define StrContains '!insertmacro "_StrContainsConstructor"'
