@@ -1805,13 +1805,25 @@
     proxy-from-env "^1.1.0"
     tslib "^2"
 
-"@salesforce/plugin-telemetry@2.1.4", "@salesforce/plugin-telemetry@^2.1.3":
+"@salesforce/plugin-telemetry@2.1.4":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-2.1.4.tgz#53cbabd2dec428dc9be1fece806df1c9a78217e6"
   integrity sha512-F76xpMx0963SFD+1VS8YLZm3mBADLdvBljfGabKsXK4PXhLJc/v6lS4qJOvkvxIy9fkuiaye+sDgZAagaf1aKQ==
   dependencies:
     "@oclif/core" "^2.5.0"
     "@salesforce/core" "^3.34.6"
+    "@salesforce/telemetry" "^3.2.5"
+    debug "^4.3.4"
+    tslib "^2"
+
+"@salesforce/plugin-telemetry@^2.1.3", "@salesforce/plugin-telemetry@^2.1.5":
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-2.1.6.tgz#9ba78b7b82f5021e6f3d9aba0cf13dfd458e6ce2"
+  integrity sha512-U9N4HMPfwlCTILrY6Wtt42Y+Dt2qMmcmVKtLZt+gNt1UcaGcy/RvijUvyHg8CyBlV5MsQckjUW6TEnFItUhThw==
+  dependencies:
+    "@oclif/core" "^2.8.2"
+    "@salesforce/core" "^3.34.6"
+    "@salesforce/sf-plugins-core" "^2.2.4"
     "@salesforce/telemetry" "^3.2.5"
     debug "^4.3.4"
     tslib "^2"
@@ -1829,7 +1841,25 @@
     yeoman-environment "^3.15.1"
     yeoman-generator "^5.8.0"
 
-"@salesforce/plugin-trust@2.4.9", "@salesforce/plugin-trust@^2.4.2":
+"@salesforce/plugin-trust@2.5.0-qa.1":
+  version "2.5.0-qa.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-2.5.0-qa.1.tgz#1b02bd3833b67553a1d76f98b7a0b707fcdee03c"
+  integrity sha512-SnLqJQkjoZIlZIWMUZCZX7Xyn699ApijYQahTYXU9YTpyA/2Vu46y9uxTLj+vy0RTvwX7Y9nOPcZVkJlA3CQSQ==
+  dependencies:
+    "@oclif/core" "^2.8.2"
+    "@salesforce/core" "^3.33.4"
+    "@salesforce/plugin-telemetry" "^2.1.5"
+    "@salesforce/sf-plugins-core" "^2"
+    "@salesforce/telemetry" "^3.2.13"
+    got "^11"
+    npm "^8.19.4"
+    npm-run-path "^4.0.1"
+    proxy-agent "^5.0.0"
+    proxy-from-env "^1.1.0"
+    shelljs "^0.8.4"
+    tslib "^2"
+
+"@salesforce/plugin-trust@^2.4.2":
   version "2.4.9"
   resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-2.4.9.tgz#7bf9c6455cc4dacb73ac6ffef40578cab5af8eb9"
   integrity sha512-wUlxpEbxsEbCK0lrb4byKhZCjejZMNO0Pe35Z0lam60ntTuGpYxhaZTX6SIPLxjpk1ULaaVclYlUS+3qNHYeJQ==
