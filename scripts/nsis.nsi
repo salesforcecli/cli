@@ -59,25 +59,8 @@ StrCpy $9 "sfdx-cli/7."
 ;$1 is the result of the comparison
 ${StrContains} $1 $9 $0
 StrCmp $1 "" notFound1
-  MessageBox MB_OK 'Error: sfdx cli version 7 installed, please uninstall - https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_uninstall.htm'
+  MessageBox MB_OK 'Error: sfdx cli installed, please uninstall - https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_uninstall.htm'
   Quit
 notFound1:
-
-; check for sf v1 now
-
-nsExec::ExecToStack /TIMEOUT=2000 'cmd /c "sf --version"'
-
-Pop $0
-Pop $0
-
-;0 now contains stdout
-StrCpy $8 "@salesforce/cli/1."
-
-;$1 is the result of the comparison
-${StrContains} $1 $8 $0
-StrCmp $1 "" notFound2
-  MessageBox MB_OK 'Error: sf cli version 1 installed, please uninstall -https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_uninstall.htm'
-  Quit
-notFound2:
 
 FunctionEnd

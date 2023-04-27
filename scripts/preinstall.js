@@ -9,8 +9,8 @@ const { execSync } = require('child_process');
       return false;
     }
   };
-  // test if sf v1 or sfdx is installed
-  if (testCliNotVersion('sf', '@salesforce/cli/1.') || testCliNotVersion('sfdx', 'sfdx-cli/7.')) {
-    throw Error('Please uninstall sf v1 and sfdx');
+  // test  or sfdx is installed
+  if (testCliNotVersion('sfdx', 'sfdx-cli/7.')) {
+    throw Error('Please uninstall sfdx');
   }
 })();
