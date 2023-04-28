@@ -1,0 +1,48 @@
+name: v2-make-pr-for-nightly
+
+# ****************
+# ***** NOTE *****
+# ****************
+# This is a temporary workflow to build nightly releases for v2 as 'beta'.
+# Once v2 is GA, this workflow will be removed and the v2 branch will be deleted.
+
+on:
+  schedule:
+    # Daily at:
+    # 6pm MST
+    # 7pm MST
+    # 8pm CST
+    # 9pm EST
+    # 11pm ARG
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  v2-make-pr-for-nightly:
+    env:
+      GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
+      SFDX_HIDE_RELEASE_NOTES: true
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: Check out repository as our bot user
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
+
+      - name: Set up NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+
+      - name: Install @salesforce/plugin-release-management
+        run: npm install -g @salesforce/plugin-release-management --omit=dev
+
+      - name: Set git config defaults
+        uses: salesforcecli/github-workflows/.github/actions/gitConfig@main
+
+      - name: Fetch all branches
+        run: git fetch
+
+      # This will always be a prerelease (bumps the 2.0.0-beta.0, 2.0.0-beta.1, 2.0.0-beta.2, etc)
+      - name: Build nightly v2 PR as beta
+        run: sf-release cli:release:build --start-from-github-ref v2 --label nightly-automerge --release-channel beta --pr-base-branch v2
