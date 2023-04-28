@@ -3,8 +3,8 @@ name: v2-make-pr-for-nightly
 # ****************
 # ***** NOTE *****
 # ****************
-# This is a temporary workflow to build nightly releases for v2 as 'beta'.
-# Once v2 is GA, this workflow will be removed and the v2 branch will be deleted.
+# Temporary workflow to create nightly prereleases on the v2 branch as 'beta'
+# Once v2 is GA, this workflow will be removed and the v2 branch will be deleted
 
 on:
   schedule:
