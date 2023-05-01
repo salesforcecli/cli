@@ -111,7 +111,7 @@ jobs:
       - name: Announce patch in Slack
         uses: slackapi/slack-github-action@v1.21.0
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_RC_ANNOUNCEMENT_WORKFLOW_WEBHOOK }}
+          SLACK_WEBHOOK_URL: ${{ secrets.PLATFORM_CLI_CHANNEL_SLACK_INCOMING_WEBHOOK }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
         with:
           payload: |
