@@ -15,6 +15,7 @@ on:
         type: string
 
 jobs:
+  # plugins that use yarn:test:nuts
   basic:
     strategy:
       fail-fast: false
@@ -30,7 +31,6 @@ jobs:
           - salesforcecli/plugin-env
           - salesforcecli/plugin-limits
           - salesforcecli/plugin-org
-          - salesforcecli/plugin-packaging
           - salesforcecli/plugin-schema
           - salesforcecli/plugin-settings
           - salesforcecli/plugin-signups
@@ -43,6 +43,23 @@ jobs:
       channel-or-version: ${{ inputs.channel-or-version }}
       os: ${{matrix.os}}
     secrets: inherit
+
+  packaging:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        command:
+          - yarn test:nuts:package
+          - yarn test:nuts:package1
+    uses: ./.github/workflows/just-nut.yml
+    with:
+      repository: salesforcecli/plugin-packaging
+      channel-or-version: ${{ inputs.channel-or-version }}
+      os: ${{matrix.os}}
+      command: ${{matrix.command}}
+    secrets: inherit
+
   source:
     strategy:
       fail-fast: false
@@ -68,6 +85,7 @@ jobs:
       os: ${{matrix.os}}
       command: ${{matrix.command}}
     secrets: inherit
+
   deploy-retrieve:
     strategy:
       fail-fast: false
