@@ -17,7 +17,8 @@
     "/bin",
     "/dist/**/*.js",
     "/oclif.manifest.json",
-    "/npm-shrinkwrap.json"
+    "/npm-shrinkwrap.json",
+    "/scripts/preinstall.js"
   ],
   "keywords": [
     "oclif",
@@ -27,16 +28,35 @@
   "license": "BSD-3-Clause",
   "main": "dist/index.js",
   "oclif": {
+    "additionalVersionFlags": [
+      "-v"
+    ],
+    "additionalHelpFlags": [
+      "-h"
+    ],
     "bin": "sf",
     "binAliases": [
       "sfdx"
     ],
-    "scope": "salesforce",
-    "dirname": "sf",
-    "topicSeparator": " ",
-    "flexibleTaxonomy": true,
     "commands": "./dist/commands",
+    "dirname": "sf",
+    "flexibleTaxonomy": true,
     "helpClass": "./dist/help/sfHelp.js",
+    "hooks": {
+      "preupdate": "./dist/hooks/preupdate",
+      "command_incomplete": "./dist/hooks/incomplete",
+      "plugins:preinstall": "./dist/hooks/pluginsPreinstall.js"
+    },
+    "info": {
+      "releasenotes": {
+        "distTagUrl": "https://registry.npmjs.org/-/package/@salesforce/cli/dist-tags",
+        "releaseNotesPath": "https://github.com/forcedotcom/cli/tree/main/releasenotes/sf",
+        "releaseNotesFilename": "README.md"
+      }
+    },
+    "nsisCustomization": "scripts/nsis.nsi",
+    "scope": "salesforce",
+    "topicSeparator": " ",
     "plugins": [
       "@oclif/plugin-autocomplete",
       "@oclif/plugin-commands",
@@ -80,11 +100,6 @@
       "@oclif/plugin-command-snapshot",
       "@salesforce/plugin-release-management"
     ],
-    "hooks": {
-      "preupdate": "./dist/hooks/preupdate",
-      "command_incomplete": "./dist/hooks/incomplete",
-      "plugins:preinstall": "./dist/hooks/pluginsPreinstall.js"
-    },
     "update": {
       "s3": {
         "bucket": "dfc-data-production",
@@ -94,26 +109,13 @@
         "host": "https://developer.salesforce.com"
       }
     },
-    "info": {
-      "releasenotes": {
-        "distTagUrl": "https://registry.npmjs.org/-/package/@salesforce/cli/dist-tags",
-        "releaseNotesPath": "https://github.com/forcedotcom/cli/tree/main/releasenotes/sf",
-        "releaseNotesFilename": "README.md"
-      }
-    },
     "macos": {
       "identifier": "com.salesforce.cli"
     },
     "windows": {
       "name": "Salesforce CLI",
       "keypath": "/tmp/windows-signing.pfx"
-    },
-    "additionalVersionFlags": [
-      "-v"
-    ],
-    "additionalHelpFlags": [
-      "-h"
-    ]
+    }
   },
   "dependencies": {
     "@oclif/core": "^2.8.4",
@@ -202,6 +204,7 @@
     "pack:verify": "sf-release cli:tarballs:verify --cli sf --windows-username-buffer 34",
     "pack:win": "oclif pack:win",
     "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
+    "preinstall": "node ./scripts/preinstall.js",
     "prepack": "sf-prepack",
     "prepare": "sf-install && yarn compile && yarn lint",
     "prepublishOnly": "npm shrinkwrap",
