@@ -78,7 +78,7 @@ Run `sf autocomplete --refresh-cache` to regenerate your autocompletions. Open a
 
 ### Updates
 
-We'll update `sf` v2 often during the beta period. To update, run one of these commands:
+We'll build new versions of `sf` v2 often during the beta period. To get these updates, run one of these commands:
 
 - For npm installs, run `npm install -g @salesforce/cli@beta` again.
 - For installers or TAR files, run `sf update beta`.
@@ -87,7 +87,7 @@ Because Salesforce CLI is made of plugins, the `sf` v2 beta gets functionality f
 
 ### What to Expect When You're Inspecting
 
-Every command run, VSCode invocation of Salesforce CLI, and script should work like it does under `sfdx. If you find a difference, [open an issue](https://github.com/forcedotcom/cli/issues).
+Every command execution, VSCode invocation of Salesforce CLI, and script should work like it does under `sfdx. If you find a difference, [open an issue](https://github.com/forcedotcom/cli/issues).
 
 You can run commands with either `sfdx` or `sf`. It's all the same. Everything that was in `sfdx` should be available in `sf`, with the same names and flags.
 
@@ -97,9 +97,9 @@ In `sf` v2, commands from just-in-time plugins show up in the help. These plugin
 
 We don't yet publish a Docker image for `sf` v2. But we're working on it!
 
-## Getting Back 
+## Get Back 
 
-To get back to using `sfdx` (Version 7):
+To return to using `sfdx` (Version 7):
 
 1. Uninstall `sf` v2.
-2. Install `sfdx` however you normally do.
+2. Install `sfdx` using your usual installation method.
