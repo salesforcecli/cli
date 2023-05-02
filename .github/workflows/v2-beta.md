@@ -15,8 +15,6 @@ If you normally install `sfdx` via npm
 
 If you happen to already have `sf` installed, that 2nd command updates it to v2. You don't have to uninstall it
 
-We'll be making frequent updates to sf v2 during the beta period, and you can keep yours up to date by running `npm install -g @salesforce/cli@beta` again.
-
 ### installers
 
 > "installers" means the windows .exe or mac .pkg installers
@@ -35,8 +33,6 @@ We'll be making frequent updates to sf v2 during the beta period, and you can ke
 - win
   - <https://developer.salesforce.com/media/salesforce-cli/sf/channels/beta/sf-x86.exe>
   - <https://developer.salesforce.com/media/salesforce-cli/sf/channels/beta/sf-x64.exe>
-
-We'll be making frequent updates to sf v2 during the beta period, and you can keep yours up to date by running `sf update beta` anytime.
 
 ### tarballs
 
