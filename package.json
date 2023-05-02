@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "1.77.4",
+  "version": "1.77.5",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run"
@@ -62,7 +62,7 @@
       "@salesforce/plugin-user"
     ],
     "jitPlugins": {
-      "@salesforce/plugin-custom-metadata": "2.1.18",
+      "@salesforce/plugin-custom-metadata": "2.1.19",
       "@salesforce/plugin-community": "2.2.11",
       "@salesforce/plugin-dev": "0.7.4",
       "@salesforce/plugin-env": "2.1.8",
@@ -112,7 +112,7 @@
     ]
   },
   "dependencies": {
-    "@oclif/core": "2.8.2",
+    "@oclif/core": "2.8.4",
     "@oclif/plugin-autocomplete": "2.1.9",
     "@oclif/plugin-commands": "2.2.14",
     "@oclif/plugin-help": "5.2.9",
@@ -138,7 +138,7 @@
     "@salesforce/plugin-source": "2.10.7",
     "@salesforce/plugin-telemetry": "2.2.0",
     "@salesforce/plugin-templates": "55.4.13",
-    "@salesforce/plugin-trust": "2.4.12",
+    "@salesforce/plugin-trust": "2.4.14",
     "@salesforce/plugin-user": "2.3.10",
     "@salesforce/sf-plugins-core": "2.4.0",
     "debug": "^4.3.4",
