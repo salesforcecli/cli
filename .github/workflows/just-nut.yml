@@ -65,10 +65,14 @@ jobs:
         with:
           node-version: lts/*
           cache: yarn
-      # TODO: Remove sfdx-cli install after parity
-      # many setup commands require sfdx executable
-      - run: npm install -g @salesforce/cli@${{ inputs.channel-or-version }} sfdx-cli --omit=dev
-      - run: yarn install
+      - name: Install CLI
+        uses: nick-fields/retry@943e742917ac94714d2f408a0e8320f2d1fcafcd
+        with:
+          max_attempts: 3
+          retry_wait_seconds: 60
+          command: npm install -g @salesforce/cli@${{ inputs.channel-or-version }} --omit=dev
+          timeout_minutes: 60
+      - uses: salesforcecli/github-workflows/.github/actions/yarnInstallWithRetries@main
       - name: Run NUT (with retries)
         uses: nick-fields/retry@943e742917ac94714d2f408a0e8320f2d1fcafcd
         with:

@@ -1,0 +1,32 @@
+name: v2-automerge-nightly-pr
+
+# ****************
+# ***** NOTE *****
+# ****************
+# Temporary workflow to create nightly prereleases on the v2 branch as 'beta'
+# Once v2 is GA, this workflow will be removed and the v2 branch will be deleted
+
+on:
+  pull_request:
+    types: [labeled]
+
+# This job relies on defining required checks in your branch protection settings
+# Settings > Branches > 'main' > Require status checks to pass before merging
+
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.pull_request.title, 'Release PR for') && endsWith(github.event.pull_request.title, 'beta')
+    steps:
+      - name: Install plugin-release-management
+        run: npm install -g @salesforce/plugin-release-management --omit=dev
+      - name: Automerge
+        uses: nick-fields/retry@943e742917ac94714d2f408a0e8320f2d1fcafcd
+        with:
+          max_attempts: 15
+          retry_wait_seconds: 120 # 15 attempts every two minutes
+          command: sf-release cli:release:automerge --owner salesforcecli --repo cli --pull-number ${{ github.event.pull_request.number }} --verbose
+          retry_on: error
+          timeout_minutes: 60
+        env:
+          GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
