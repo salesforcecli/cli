@@ -93,8 +93,21 @@ jobs:
       channel: ${{ needs.get-channel.outputs.s3-channel }}
     secrets: inherit
 
-  # TODO: Add docker-build-full and docker-build-slim here
-  #       Also add them to the announce-cli-patch-in-slack job "needs"
+  build-docker-slim:
+    needs: [get-channel, pack-verify-upload-tarballs]
+    uses: ./.github/workflows/build-docker-slim.yml
+    with:
+      version: ${{ github.event.release.tag_name }}
+      channel: ${{ needs.get-channel.outputs.channel }}
+    secrets: inherit
+
+  build-docker-full:
+    needs: [get-channel, npm-release]
+    uses: ./.github/workflows/build-docker-full.yml
+    with:
+      version: ${{ github.event.release.tag_name }}
+      channel: ${{ needs.get-channel.outputs.channel }}
+    secrets: inherit
 
   announce-cli-patch-in-slack:
     # Do not announce prereleases or nightlies
@@ -105,6 +118,7 @@ jobs:
       - get-channel
       - pack-verify-upload-tarballs
       - npm-release
+      - build-docker-full
       - pack-upload-win
       - pack-upload-mac
     steps:
@@ -131,6 +145,7 @@ jobs:
       - pack-verify-upload-tarballs
       - npm-release
       - pack-upload-win
+      - build-docker-full
       - pack-upload-mac
     uses: ./.github/workflows/just-nuts.yml
     with:
