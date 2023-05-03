@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.0.0-beta.14",
+  "version": "2.0.0-beta.15",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run",
@@ -10,7 +10,7 @@
   "homepage": "https://github.com/salesforcecli/cli",
   "bugs": "https://github.com/forcedotcom/cli/issues",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=14.0.0"
   },
   "packageManager": "yarn@1.22.19",
   "files": [
@@ -73,10 +73,10 @@
       "@salesforce/plugin-dev": "0.7.4",
       "@salesforce/plugin-env": "2.1.8",
       "@salesforce/plugin-functions": "1.21.8",
-      "@salesforce/plugin-packaging": "1.16.10",
+      "@salesforce/plugin-packaging": "1.16.11",
       "@salesforce/plugin-signups": "1.4.14",
       "@salesforce/sfdx-plugin-lwc-test": "1.0.2",
-      "@salesforce/sfdx-scanner": "3.11.0"
+      "@salesforce/sfdx-scanner": "3.12.0"
     },
     "devPlugins": [
       "@oclif/plugin-command-snapshot",
