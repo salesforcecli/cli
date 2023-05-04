@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.0.0-beta.15",
+  "version": "2.0.0-beta.16",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run",
@@ -118,7 +118,7 @@
     ]
   },
   "dependencies": {
-    "@oclif/core": "2.8.4",
+    "@oclif/core": "2.8.5",
     "@oclif/plugin-autocomplete": "2.1.9",
     "@oclif/plugin-commands": "2.2.14",
     "@oclif/plugin-help": "5.2.9",
@@ -137,7 +137,7 @@
     "@salesforce/plugin-info": "2.6.10",
     "@salesforce/plugin-limits": "2.3.13",
     "@salesforce/plugin-login": "1.2.8",
-    "@salesforce/plugin-org": "2.7.3",
+    "@salesforce/plugin-org": "2.8.1",
     "@salesforce/plugin-schema": "2.3.10",
     "@salesforce/plugin-settings": "1.4.6",
     "@salesforce/plugin-sobject": "0.1.18",
@@ -185,7 +185,7 @@
   "resolutions": {
     "@salesforce/schemas": "1.5.1",
     "@salesforce/templates": "57.1.1",
-    "@oclif/core": "2.8.4"
+    "@oclif/core": "2.8.5"
   },
   "repository": "salesforcecli/cli",
   "scripts": {
