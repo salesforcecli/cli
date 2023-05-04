@@ -17,7 +17,7 @@ If you already had `sf` installed, the 2nd command updates it to v2. You don't h
 
 ### Installers
 
-> "Installers" refer to the Windows `.exe` or macOS `.pkg` installers.
+> "Installers" refer to the Windows `.exe` or macOS `.pkg` installers.  During the beta, the windows installer will be signed with Salesforce's key, but the mac installer will not
 
 1. [Uninstall your current _sfdx_ (Version 7) installation.](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_uninstall.htm).
 
