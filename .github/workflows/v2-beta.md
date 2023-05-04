@@ -17,9 +17,9 @@ If you already had `sf` installed, the 2nd command updates it to v2. You don't h
 
 ### Installers
 
-> "Installers" refer to the Windows `.exe` or macOS `.pkg` installers.  During the beta, the windows installer will be signed with Salesforce's key, but the mac installer will not
+> "Installers" refer to the Windows `.exe` or macOS `.pkg` installers.  During the beta, the Windows installer will be signed with Salesforce's key, but the macOS installer won't be.
 
-1. [Uninstall your current _sfdx_ (Version 7) installation.](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_uninstall.htm).
+1. [Uninstall your current `sfdx` (Version 7) installation.](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_uninstall.htm)
 
    If you originally installed Salesforce CLI using the OS-specific installers, as of October 2021 you actually got _two_ interoperable CLIs (aka executables) bundled together: `sfdx` (Version 7) and `sf` (Version 1). When you uninstall Salesforce CLI, it removes both executables.
 
@@ -36,7 +36,7 @@ If you already had `sf` installed, the 2nd command updates it to v2. You don't h
 
 ### TAR Files
 
-1. [Uninstall your current _sfdx_ (Version 7) installation.](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_uninstall.htm).
+1. [Uninstall your current `sfdx` (Version 7) installation.](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_uninstall.htm)
 
    If you originally installed Salesforce CLI using TAR files, as of October 2021 you actually got _two_ interoperable CLIs (aka executables) bundled together: `sfdx` (Version 7) and `sf` (Version 1). When you uninstall Salesforce CLI, it removes both executables.
 
@@ -62,7 +62,7 @@ If you already had `sf` installed, the 2nd command updates it to v2. You don't h
   - <https://developer.salesforce.com/media/salesforce-cli/sf/channels/beta/sf-win32-x64.tar.gz>
   - <https://developer.salesforce.com/media/salesforce-cli/sf/channels/beta/sf-win32-x64.tar.xz>
 
-TAR file installation is similar to [sfdx](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm) but use `sf` where it says `sfdx`.
+TAR file installation for `sf` v2 is similar to [sfdx](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm) but use `sf` where it says `sfdx`.
 
 ## After You've Installed
 
