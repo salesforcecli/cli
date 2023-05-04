@@ -54,6 +54,7 @@ jobs:
       TESTKIT_HUB_INSTANCE: ${{ secrets.TESTKIT_HUB_INSTANCE}}
       ONEGP_TESTKIT_AUTH_URL: ${{ secrets.ONEGP_TESTKIT_AUTH_URL }}
       TESTKIT_SETUP_RETRIES: 2
+      SF_DISABLE_TELEMETRY: true
 
     steps:
       - uses: actions/checkout@v3
