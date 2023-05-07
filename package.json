@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.0.0-beta.18",
+  "version": "2.0.0-beta.19",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run",
@@ -68,11 +68,11 @@
       "@salesforce/plugin-user"
     ],
     "jitPlugins": {
-      "@salesforce/plugin-custom-metadata": "2.1.19",
+      "@salesforce/plugin-custom-metadata": "2.1.20",
       "@salesforce/plugin-community": "2.2.11",
       "@salesforce/plugin-dev": "0.7.6",
       "@salesforce/plugin-env": "2.1.8",
-      "@salesforce/plugin-functions": "1.21.8",
+      "@salesforce/plugin-functions": "1.21.9",
       "@salesforce/plugin-packaging": "1.16.11",
       "@salesforce/plugin-signups": "1.4.14",
       "@salesforce/sfdx-plugin-lwc-test": "1.0.2",
@@ -120,7 +120,7 @@
   "dependencies": {
     "@oclif/core": "2.8.5",
     "@oclif/plugin-autocomplete": "2.1.9",
-    "@oclif/plugin-commands": "2.2.14",
+    "@oclif/plugin-commands": "2.2.15",
     "@oclif/plugin-help": "5.2.9",
     "@oclif/plugin-not-found": "2.3.23",
     "@oclif/plugin-plugins": "3.0.1",
@@ -133,7 +133,7 @@
     "@salesforce/plugin-apex": "2.2.16",
     "@salesforce/plugin-auth": "2.7.14",
     "@salesforce/plugin-data": "2.3.14",
-    "@salesforce/plugin-deploy-retrieve": "1.8.18",
+    "@salesforce/plugin-deploy-retrieve": "1.8.19",
     "@salesforce/plugin-info": "2.6.10",
     "@salesforce/plugin-limits": "2.3.13",
     "@salesforce/plugin-login": "1.2.8",
@@ -144,7 +144,7 @@
     "@salesforce/plugin-source": "2.10.7",
     "@salesforce/plugin-telemetry": "2.2.0",
     "@salesforce/plugin-templates": "55.4.13",
-    "@salesforce/plugin-trust": "2.4.14",
+    "@salesforce/plugin-trust": "2.4.15",
     "@salesforce/plugin-user": "2.3.10",
     "@salesforce/sf-plugins-core": "2.4.2",
     "debug": "^4.3.4",
