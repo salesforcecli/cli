@@ -9,7 +9,7 @@ const { execSync } = require('child_process');
       return false;
     }
   };
-  // test  or sfdx is installed
+  // test sfdx is installed
   if (testCliNotVersion('sfdx', 'sfdx-cli/7.')) {
     throw Error('Please uninstall sfdx');
   }
