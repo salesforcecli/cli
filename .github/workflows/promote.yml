@@ -117,7 +117,9 @@ jobs:
 
   docker-promote:
     needs: [open-ctc-or-skip, get-package-info]
-    if: success()
+    # TODO: remove for v2 GA
+    # if: success()
+    if: success() && !contains(inputs.new-channel, 'latest') && !contains(inputs.new-channel , 'stable')
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
