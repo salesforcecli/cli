@@ -54,10 +54,8 @@ Pop $0
 Pop $0
 ; $0 now contains stdout
 
-StrCpy $9 "sfdx-cli/7."
-
 ;$1 is the result of the comparison
-${StrContains} $1 $9 $0
+${StrContains} $1 "sfdx-cli/7." $0
 StrCmp $1 "" notFound1
   MessageBox MB_OK 'Error: sfdx cli installed, please uninstall - https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_uninstall.htm'
   Quit
