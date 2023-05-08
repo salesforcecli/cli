@@ -3,8 +3,8 @@ name: update-docker-node-version
 on:
   workflow_dispatch:
   schedule:
-    # Wednesday 7a central (12 UTC)
-    - cron: '0 12 * * 3'
+    # Tuesday 7a central (12 UTC)
+    - cron: '0 12 * * 2'
 
 jobs:
   update-node:

@@ -135,13 +135,13 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - run: |
-          docker pull salesforce/salesforcedx:${{ needs.get-package-info.outputs.version }}-slim
-          docker tag salesforce/salesforcedx:${{ needs.get-package-info.outputs.version }}-slim salesforce/salesforcedx:${{ inputs.new-channel }}-slim
-          docker push salesforce/salesforcedx:${{ inputs.new-channel }}-slim
+          docker pull salesforce/cli:${{ needs.get-package-info.outputs.version }}-slim
+          docker tag salesforce/cli:${{ needs.get-package-info.outputs.version }}-slim salesforce/cli:${{ inputs.new-channel }}-slim
+          docker push salesforce/cli:${{ inputs.new-channel }}-slim
 
-          docker pull salesforce/salesforcedx:${{ needs.get-package-info.outputs.version }}-full
-          docker tag salesforce/salesforcedx:${{ needs.get-package-info.outputs.version }}-full salesforce/salesforcedx:${{ inputs.new-channel }}-full
-          docker push salesforce/salesforcedx:${{ inputs.new-channel }}-full
+          docker pull salesforce/cli:${{ needs.get-package-info.outputs.version }}-full
+          docker tag salesforce/cli:${{ needs.get-package-info.outputs.version }}-full salesforce/cli:${{ inputs.new-channel }}-full
+          docker push salesforce/cli:${{ inputs.new-channel }}-full
 
   npm-promote:
     needs: [open-ctc-or-skip, get-package-info]

@@ -42,7 +42,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: salesforce/salesforcedx
+          images: salesforce/cli
 
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
@@ -55,13 +55,13 @@ jobs:
             DOWNLOAD_URL=${{ steps.version-info.outputs.url }}
           # TODO: Do we want _all_ docker images to release with the version in their name?
           #       Should we skip this on prereleases?
-          tags: salesforce/salesforcedx:${{ inputs.channel }}-slim, salesforce/salesforcedx:${{ steps.version-info.outputs.version }}-slim
+          tags: salesforce/cli:${{ inputs.channel }}-slim, salesforce/cli:${{ steps.version-info.outputs.version }}-slim
 
   verify:
     needs: buildPush
     runs-on: ubuntu-latest
     container:
-      image: salesforce/salesforcedx:${{ inputs.version }}-slim
+      image: salesforce/cli:${{ inputs.version }}-slim
     steps:
       - name: verify sf, java
         # without bash this will fail.  Not sure what the default shell is but it doesn't like the [[(())]] bashism
