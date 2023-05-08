@@ -6,7 +6,7 @@ on:
     # only applies to PRs that intent to be released to the public
     branches:
       - main
-      - release-base/**
+      - release-base/*
 
 jobs:
   validate-pr:
