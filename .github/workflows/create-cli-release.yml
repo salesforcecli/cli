@@ -94,6 +94,8 @@ jobs:
     secrets: inherit
 
   build-docker-slim:
+    # TODO: remove when GA
+    if: ${{ !contains(needs.get-channel.outputs.channel, 'nightly') }}
     needs: [get-channel, pack-verify-upload-tarballs]
     uses: ./.github/workflows/build-docker-slim.yml
     with:
@@ -102,6 +104,8 @@ jobs:
     secrets: inherit
 
   build-docker-full:
+    # TODO: remove when GA
+    if: ${{ !contains(needs.get-channel.outputs.channel, 'nightly') }}
     needs: [get-channel, npm-release]
     uses: ./.github/workflows/build-docker-full.yml
     with:
