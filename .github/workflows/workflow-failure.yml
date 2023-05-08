@@ -11,6 +11,7 @@ on:
       - promote
       - promote-nightly-to-rc
       - promote-rc-to-latest
+      - update-docker-node-version
     types:
       - completed
 
