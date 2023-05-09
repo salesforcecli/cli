@@ -94,8 +94,6 @@ jobs:
     secrets: inherit
 
   build-docker-slim:
-    # TODO: remove when GA
-    if: ${{ !contains(fromJSON('["latest", "latest-rc", "nightly"]'), needs.get-channel.outputs.channel) }}
     needs: [get-channel, pack-verify-upload-tarballs]
     uses: ./.github/workflows/build-docker-slim.yml
     with:

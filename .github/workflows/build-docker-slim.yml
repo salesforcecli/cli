@@ -53,8 +53,6 @@ jobs:
           file: dockerfiles/Dockerfile_slim
           build-args: |
             DOWNLOAD_URL=${{ steps.version-info.outputs.url }}
-          # TODO: Do we want _all_ docker images to release with the version in their name?
-          #       Should we skip this on prereleases?
           tags: salesforce/cli:${{ inputs.channel }}-slim, salesforce/cli:${{ steps.version-info.outputs.version }}-slim
 
   verify:

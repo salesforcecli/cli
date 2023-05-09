@@ -1,9 +1,8 @@
 FROM heroku/heroku:20
 
 ENV DEBIAN_FRONTEND=noninteractive
-# TODO: make this nightly once GA
 # this will typically be nightly
-ARG SF_CLI_VERSION=beta
+ARG SF_CLI_VERSION
 
 RUN echo 'fc83046a93d2189d919005a348db3b2372b598a145d84eb9781a3a4b0f032e95  ./nodejs.tar.gz' > node-file-lock.sha \
   && curl -s -o nodejs.tar.gz https://nodejs.org/dist/v18.16.0/node-v18.16.0-linux-x64.tar.gz \
