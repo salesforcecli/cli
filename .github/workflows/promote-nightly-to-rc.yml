@@ -49,8 +49,41 @@ jobs:
           command: sf-release cli:versions:inspect -c stable-rc -l archive --cli sf
           timeout_minutes: 60
 
-  announce-promotion-to-slack:
+  verify-docker-version:
     needs: [promote-verify]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest-rc version
+        id: latest-rc-version
+        run: |
+          VERSION=$(npm view @salesforce/cli@latest-rc --json | jq -r '.version')
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+      - name: Get docker-full CLI version
+        id: docker-full-version
+        run: |
+          docker pull salesforce/cli:latest-rc-full
+          VERSION=$(docker run --rm salesforce/cli:latest-rc-full sf version --json | jq -r '.cliVersion' | cut -d'/' -f 3)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+      - name: Get docker-slim CLI version
+        id: docker-slim-version
+        run: |
+          docker pull salesforce/cli:latest-rc-slim
+          VERSION=$(docker run --rm salesforce/cli:latest-rc-slim sf version --json | jq -r '.cliVersion' | cut -d'/' -f 3)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+      - name: Compare Docker versions against npm
+        run: |
+          echo "NPM latest-rc version is: ${{ steps.latest-rc-version.outputs.version }}"
+          echo "Docker-full version is: ${{ steps.docker-full-version.outputs.version }}"
+          echo "Docker-slim version is: ${{ steps.docker-slim-version.outputs.version }}"
+          if [ "${{ steps.latest-rc-version.outputs.version }}" == "${{ steps.docker-full-version.outputs.version }}" ] && [ "${{ steps.docker-full-version.outputs.version }}" == "${{ steps.docker-slim-version.outputs.version }}"]; then
+            echo "Docker versions match npm version. Proceeding..."
+          else
+            echo "Version mismatch! Exiting..."
+            exit 1
+          fi
+
+  announce-promotion-to-slack:
+    needs: [promote-verify, verify-docker-version]
     runs-on: ubuntu-latest
     steps:
       - name: Get nightly version
