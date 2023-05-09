@@ -93,9 +93,25 @@ jobs:
       channel: ${{ needs.get-channel.outputs.s3-channel }}
     secrets: inherit
 
-  # TODO: Add docker-build-full and docker-build-slim here
-  #       Also add them to the announce-cli-patch-in-slack job "needs"
+  build-docker-slim:
+    needs: [get-channel, pack-verify-upload-tarballs]
+    uses: ./.github/workflows/build-docker-slim.yml
+    with:
+      version: ${{ github.event.release.tag_name }}
+      channel: ${{ needs.get-channel.outputs.channel }}
+    secrets: inherit
 
+  build-docker-full:
+    # TODO: remove when GA
+    if: ${{ !contains(fromJSON('["latest", "latest-rc", "nightly"]'), needs.get-channel.outputs.channel) }}
+    needs: [get-channel, npm-release]
+    uses: ./.github/workflows/build-docker-full.yml
+    with:
+      version: ${{ github.event.release.tag_name }}
+      channel: ${{ needs.get-channel.outputs.channel }}
+    secrets: inherit
+
+  # TODO: Add docker-build-slim and docker-build-full to needs after GA
   announce-cli-patch-in-slack:
     # Do not announce prereleases or nightlies
     # https://docs.github.com/en/actions/learn-github-actions/expressions#contains

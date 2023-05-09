@@ -1,0 +1,85 @@
+name: build-docker-slim
+on:
+  workflow_call:
+    inputs:
+      version:
+        type: string
+        description: The release semver version
+        required: true
+      channel:
+        type: string
+        description: The release channel (latest-rc, nightly, dev, etc)
+        required: true
+
+jobs:
+  buildPush:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: yarn
+
+      # for whatever version got passed in, we need the download url for the linux xz tarball
+      - uses: salesforcecli/github-workflows/.github/actions/versionInfo@main
+        id: version-info
+        with:
+          version: ${{ inputs.version }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        with:
+          images: salesforce/cli
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: .
+          push: true
+          labels: ${{ steps.meta.outputs.labels }}
+          file: dockerfiles/Dockerfile_slim
+          build-args: |
+            DOWNLOAD_URL=${{ steps.version-info.outputs.url }}
+          tags: salesforce/cli:${{ inputs.channel }}-slim, salesforce/cli:${{ steps.version-info.outputs.version }}-slim
+
+  verify:
+    needs: buildPush
+    runs-on: ubuntu-latest
+    container:
+      image: salesforce/cli:${{ inputs.version }}-slim
+    steps:
+      - name: verify sf, java
+        # without bash this will fail.  Not sure what the default shell is but it doesn't like the [[(())]] bashism
+        shell: bash
+        run: |
+          set -e
+          sf version
+          SF_CLI_VERSION=$(sf version)
+          JAVA_VERSION=$(java --version | head -n 1)
+          if [[ ((`echo $SF_CLI_VERSION | grep -c "@salesforce/cli/"` > 0))]]
+          then
+            echo "sf installed -" $SF_CLI_VERSION
+          else
+            echo "The sf installation could not be verified"
+            exit 1
+          fi
+          if [[ ((`echo $JAVA_VERSION | grep -c "openjdk"` > 0))]]
+          then
+            echo "Java installed -" $JAVA_VERSION
+          else
+            echo "The Java installation could not be verified"
+            exit 1
+          fi
