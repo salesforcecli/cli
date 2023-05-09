@@ -113,6 +113,7 @@ jobs:
       channel: ${{ needs.get-channel.outputs.channel }}
     secrets: inherit
 
+  # TODO: Add docker-build-slim and docker-build-full to needs after GA
   announce-cli-patch-in-slack:
     # Do not announce prereleases or nightlies
     # https://docs.github.com/en/actions/learn-github-actions/expressions#contains
@@ -122,8 +123,6 @@ jobs:
       - get-channel
       - pack-verify-upload-tarballs
       - npm-release
-      - build-docker-full
-      - build-docker-slim
       - pack-upload-win
       - pack-upload-mac
     steps:
@@ -144,13 +143,13 @@ jobs:
               }]
             }
 
+  # TODO: Add docker-build-slim and docker-build-full to needs after GA
   run-just-nuts:
     needs:
       - get-channel
       - pack-verify-upload-tarballs
       - npm-release
       - pack-upload-win
-      - build-docker-full
       - pack-upload-mac
     uses: ./.github/workflows/just-nuts.yml
     with:
