@@ -51,6 +51,7 @@ jobs:
       cli: sf
       version: ${{ github.event.release.tag_name }}
       channel: ${{ needs.get-channel.outputs.s3-channel }}
+      nodeVersion: ${{ vars.TARBALL_NODE_VERSION }}
     secrets: inherit
 
   archives-verify:
@@ -82,6 +83,7 @@ jobs:
       cli: sf
       version: ${{ github.event.release.tag_name }}
       channel: ${{ needs.get-channel.outputs.s3-channel }}
+      nodeVersion: ${{ vars.TARBALL_NODE_VERSION }}
     secrets: inherit
 
   pack-upload-win:
@@ -91,6 +93,7 @@ jobs:
       cli: sf
       version: ${{ github.event.release.tag_name }}
       channel: ${{ needs.get-channel.outputs.s3-channel }}
+      nodeVersion: ${{ vars.TARBALL_NODE_VERSION }}
     secrets: inherit
 
   build-docker-slim:
