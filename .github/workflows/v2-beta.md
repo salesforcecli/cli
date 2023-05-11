@@ -64,6 +64,10 @@ If you already had `sf` installed, the 2nd command updates it to v2. You don't h
 
 TAR file installation for `sf` v2 is similar to [sfdx](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm) but use `sf` where it says `sfdx`.
 
+### Docker
+
+`sf v2` is available as a [Docker Image](https://hub.docker.com/r/salesforce/cli).    
+
 ## After You've Installed
 
 ### Check Your Install
@@ -94,8 +98,6 @@ You can run commands with either `sfdx` or `sf`. It's all the same. Everything t
 In `sf` v2, commands from just-in-time plugins show up in the help. These plugins are installed the first time you run a command from that plugin. Some of these plugins were bundled in `sfdx`.
 
 `sf` includes (via JIT) the Salesforce Functions plugin. This plugin wasn't in `sfdx`.
-
-We don't yet publish a Docker image for `sf` v2. But we're working on it!
 
 ## Get Back 
 
