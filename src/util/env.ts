@@ -12,7 +12,6 @@ export class Env extends EnvVars {
   public static SF_DISABLE_AUTOUPDATE = 'SF_DISABLE_AUTOUPDATE';
   public static SF_ENV = 'SF_ENV';
   public static SF_INSTALLER = 'SF_INSTALLER';
-  public static SFDX_INSTALLER = 'SFDX_INSTALLER';
   public static SF_NPM_REGISTRY = 'SF_NPM_REGISTRY';
   public static SF_UPDATE_INSTRUCTIONS = 'SF_UPDATE_INSTRUCTIONS';
 
@@ -44,8 +43,7 @@ export class Env extends EnvVars {
   }
 
   public isInstaller(): boolean {
-    // Check SFDX_INSTALLER instead of SF_INSTALLER until such time sf has its own installers
-    return this.getBoolean(Env.SFDX_INSTALLER);
+    return this.getBoolean(Env.SF_INSTALLER);
   }
 
   public getNpmRegistryOverride(): Optional<string> {

@@ -21,7 +21,7 @@ jobs:
   v2-make-pr-for-nightly:
     env:
       GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
-      SFDX_HIDE_RELEASE_NOTES: true
+      SF_HIDE_RELEASE_NOTES: true
     runs-on: 'ubuntu-latest'
     steps:
       - name: Check out repository as our bot user
