@@ -1688,10 +1688,10 @@
     mv "~2"
     safe-json-stringify "~1"
 
-"@salesforce/core@3.36.0", "@salesforce/core@^3.24.0", "@salesforce/core@^3.32.12", "@salesforce/core@^3.33.4", "@salesforce/core@^3.33.5", "@salesforce/core@^3.34.1", "@salesforce/core@^3.34.5", "@salesforce/core@^3.34.6", "@salesforce/core@^3.34.8", "@salesforce/core@^3.34.9", "@salesforce/core@^3.35.0", "@salesforce/core@^3.36.0":
-  version "3.36.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.36.0.tgz#cbff147d888eee0b921e368c1fdc1a1a3c2eacab"
-  integrity sha512-LOeSJgozf5B1S8C98/K3afewRsathfEm+HrXxaFXJjITFfIhxqcIDB5xC1cw0VikfRUlq7dQocmVsvezcK0Ghw==
+"@salesforce/core@3.36.1", "@salesforce/core@^3.24.0", "@salesforce/core@^3.32.12", "@salesforce/core@^3.33.4", "@salesforce/core@^3.33.5", "@salesforce/core@^3.34.1", "@salesforce/core@^3.34.5", "@salesforce/core@^3.34.6", "@salesforce/core@^3.34.8", "@salesforce/core@^3.34.9", "@salesforce/core@^3.35.0", "@salesforce/core@^3.36.0":
+  version "3.36.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.36.1.tgz#053a5e1079b9749b62e461e6ac3e630b5689694a"
+  integrity sha512-kcjyr9bj35nnL8Bqv8U39xeho3CrZYXJiS/X5X1eEHVNZLd9zckrmKrh1V7z8ElCFpsJrewT989SJsdvi9kE8w==
   dependencies:
     "@salesforce/bunyan" "^2.0.0"
     "@salesforce/kit" "^1.9.2"
@@ -1821,14 +1821,14 @@
     jsforce "2.0.0-beta.21"
     tslib "^2"
 
-"@salesforce/plugin-deploy-retrieve@1.8.20":
-  version "1.8.20"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.8.20.tgz#94e3e5858342b3434b5ced9948b3fa91c1d1eef3"
-  integrity sha512-88sHiib+uSCqndlX64a0AvfBDeR5qkDo1G8WpvMJ5dfk/hGHBamM2J6He9ciN4I1U81t/ISBRxElhiD50L2Jew==
+"@salesforce/plugin-deploy-retrieve@1.8.21":
+  version "1.8.21"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.8.21.tgz#5f19a3be14a0119e00954f9ae122d7c698ab340f"
+  integrity sha512-KS2NrV/HC1qR9F7rhz9BkF+4OZluxQdGpKlD6CYPrhHG2x4Jj9ILZ9bZ2qv7ylutPWrVBavUxc+9NUZ4/79NRQ==
   dependencies:
     "@oclif/core" "^2.8.2"
     "@salesforce/apex-node" "^1.6.0"
-    "@salesforce/core" "^3.34.6"
+    "@salesforce/core" "^3.36.0"
     "@salesforce/kit" "^1.9.2"
     "@salesforce/sf-plugins-core" "^2.4.2"
     "@salesforce/source-deploy-retrieve" "^8.0.2"
@@ -2023,15 +2023,15 @@
     shelljs "^0.8.4"
     tslib "^2"
 
-"@salesforce/plugin-user@2.3.10":
-  version "2.3.10"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-user/-/plugin-user-2.3.10.tgz#3895105e608254af9c11302d9346c386d344ccea"
-  integrity sha512-374H/G+pgIRrL7MNNDHv0qLTuali0EEwEhXLTSdiHHRzwflT5DKZNJy7LWzEnlFA1WxhLB2+pe9Vzii/1yijIQ==
+"@salesforce/plugin-user@2.3.11":
+  version "2.3.11"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-user/-/plugin-user-2.3.11.tgz#bd4383679205b2a490c798044c7b6a4f7e2e2e7e"
+  integrity sha512-LGPtR+SlAAR7XzWD91x8U/+aI2Kj975dVr0Z/xLKlkfuv1nugQpKhP6EMPnrbmxqT6UB219igixb5IN5FXql6Q==
   dependencies:
     "@oclif/core" "^2.8.2"
     "@salesforce/core" "^3.36.0"
     "@salesforce/kit" "^1.9.0"
-    "@salesforce/sf-plugins-core" "^2.2.5"
+    "@salesforce/sf-plugins-core" "^2.4.2"
     "@salesforce/ts-types" "^1.7.3"
     tslib "^2"
 
@@ -2045,7 +2045,7 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.5.1.tgz#2d1bfdcf593caaa04cd4b3e6fe621097ff7f28fe"
   integrity sha512-MRqU+tn8w5IFvZ0Lm9YKLgxYxr2MQMI+fXXsTrwfUnijsps+ybF9IOTu6MOMxxl2vCUkO8XDjA435wXlWSLI6g==
 
-"@salesforce/sf-plugins-core@2.4.2", "@salesforce/sf-plugins-core@^2", "@salesforce/sf-plugins-core@^2.0.1", "@salesforce/sf-plugins-core@^2.2.10", "@salesforce/sf-plugins-core@^2.2.11", "@salesforce/sf-plugins-core@^2.2.4", "@salesforce/sf-plugins-core@^2.2.5", "@salesforce/sf-plugins-core@^2.2.6", "@salesforce/sf-plugins-core@^2.2.9", "@salesforce/sf-plugins-core@^2.3.0", "@salesforce/sf-plugins-core@^2.4.0", "@salesforce/sf-plugins-core@^2.4.2":
+"@salesforce/sf-plugins-core@2.4.2", "@salesforce/sf-plugins-core@^2", "@salesforce/sf-plugins-core@^2.0.1", "@salesforce/sf-plugins-core@^2.2.10", "@salesforce/sf-plugins-core@^2.2.11", "@salesforce/sf-plugins-core@^2.2.4", "@salesforce/sf-plugins-core@^2.2.6", "@salesforce/sf-plugins-core@^2.2.9", "@salesforce/sf-plugins-core@^2.3.0", "@salesforce/sf-plugins-core@^2.4.0", "@salesforce/sf-plugins-core@^2.4.2":
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-2.4.2.tgz#86329d8df9a8704a58db8989a31414376fdcf79e"
   integrity sha512-X2KuYhC0vQN53j+10dDch3MbDAQMsldgyW8m8UrKcya12puJcyVv41PHw5XhrPk532/dFu8iCDjQ4tl2Pq4/RA==
@@ -2098,10 +2098,10 @@
     applicationinsights "^2.5.1"
     axios "^1.3.6"
 
-"@salesforce/templates@57.1.1", "@salesforce/templates@^57.1.1":
-  version "57.1.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-57.1.1.tgz#851af880d135af00f9941706aae81bc28014fdb1"
-  integrity sha512-pJUS96rxWyZiCnHcxw/VrxFGr00NOhovRqIlhFToLiUwfsI3wxB40vJGWQ/dDw0c3EVm/3SaC/5lO85KU/0Sbw==
+"@salesforce/templates@57.1.2", "@salesforce/templates@^57.1.1":
+  version "57.1.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-57.1.2.tgz#c661b92c5b3427d3db93a05189ef4e54b47e87dc"
+  integrity sha512-RMNBSsVTPG2XYXhjlCyfsEBVWMi4jUhCdVb0m6cRBWUOPo11xo8rMwjN9QLSAlpMYTd7/xpOiXKO9PzC651eig==
   dependencies:
     "@salesforce/core" "^3.24.0"
     "@salesforce/kit" "^1.7.1"
