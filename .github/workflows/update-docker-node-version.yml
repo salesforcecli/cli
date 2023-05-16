@@ -15,7 +15,7 @@ jobs:
           token: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{ vars.TARBALL_NODE_VERSION}}
+          node-version: ${{ vars.TARBALL_NODE_VERSION }}
           cache: yarn
       - uses: salesforcecli/github-workflows/.github/actions/yarnInstallWithRetries@main
       - name: Update node version in dockerfile_full
