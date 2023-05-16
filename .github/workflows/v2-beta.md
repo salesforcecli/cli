@@ -15,6 +15,11 @@ If you normally install `sfdx` via npm, run these commands:
 
 If you already had `sf` installed, the 2nd command updates it to v2. You don't have to uninstall it first. 
 
+If you want to try out the beta in your CI scripts, and they install both `sfdx` and `sf` using npm, update the scripts in a similar way:
+
+1. Remove the command to install `sfdx`.  
+2. Update the command that installs `sf` to this: `npm install -g @salesforce/cli@beta`.
+
 ### Installers
 
 > "Installers" refer to the Windows `.exe` or macOS `.pkg` installers.  During the beta, the Windows installer will be signed with Salesforce's key, but the macOS installer won't be.
@@ -63,6 +68,8 @@ If you already had `sf` installed, the 2nd command updates it to v2. You don't h
   - <https://developer.salesforce.com/media/salesforce-cli/sf/channels/beta/sf-win32-x64.tar.xz>
 
 TAR file installation for `sf` v2 is similar to [sfdx](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm) but use `sf` where it says `sfdx`.
+
+If you want to try out the beta in your CI scripts, and they use TAR files, replace the download URLs with the ones shown above. 
 
 ### Docker
 
