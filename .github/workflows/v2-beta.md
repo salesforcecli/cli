@@ -28,7 +28,7 @@ If you have CI scripts that install Salesforce CLI with npm, and you want to try
 
    If you originally installed Salesforce CLI using the OS-specific installers, as of October 2021 you actually got _two_ interoperable CLIs (aka executables) bundled together: `sfdx` (v7) and `sf` (v1). When you uninstall Salesforce CLI, it removes both executables.
 
-   This step does NOT mess with your authenticated orgs or the configuration settings (ex: `defaultdevhubusername`).
+   This step does NOT mess with your authenticated orgs or the configuration settings (ex: `target-dev-hub`).
 
 1. Install `sf` (v2) using these `beta` installer links:
 
