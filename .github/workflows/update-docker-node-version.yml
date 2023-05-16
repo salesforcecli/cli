@@ -15,7 +15,7 @@ jobs:
           token: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
       - uses: actions/setup-node@v3
         with:
-          node-version: lts/*
+          node-version: ${{ vars.TARBALL_NODE_VERSION }}
           cache: yarn
       - run: yarn install
       - run: node ./dockerfiles/update-docker-node-version.js

@@ -15,15 +15,19 @@ const execPromise = promisify(execSync);
 
 (async () => {
   // Get the node version from `process.versions`
+  // Note that in GHA, this can be overwritten with the TARBALL_NODE_VERSION variable
+  // https://github.com/salesforcecli/cli/settings/variables/actions
+
   // This matches the default for oclif tarball node versions
   // https://github.com/oclif/oclif/blob/main/src/tarballs/config.ts#L56
-  const nodeMajor = process.versions.node.split('.')[0];
+  const nodeVersion = process.versions.node;
 
-  const url = `https://nodejs.org/dist/latest-v${nodeMajor}.x/SHASUMS256.txt`;
+  // Example url: https://nodejs.org/dist/v18.15.0/
+  const url = `https://nodejs.org/dist/v${nodeVersion}/SHASUMS256.txt`;
   console.log('Retrieving SHA data from:', url);
 
   const distData = await got(url).text();
-  const distRegex = new RegExp(`^([A-z0-9]+)  (node-(v${nodeMajor}.[0-9]+.[0-9]+)-linux-x64.tar.gz)$`, 'm');
+  const distRegex = new RegExp(`^([A-z0-9]+)  (node-(v${nodeVersion})-linux-x64.tar.gz)$`, 'm');
 
   const [, sha, tar, version] = distRegex.exec(distData);
 
