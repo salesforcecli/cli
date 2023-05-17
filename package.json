@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.0.0-beta.30",
+  "version": "2.0.0-beta.31",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run",
@@ -18,7 +18,8 @@
     "/dist/**/*.js",
     "/oclif.manifest.json",
     "/npm-shrinkwrap.json",
-    "/scripts/preinstall.js"
+    "/scripts/preinstall.js",
+    "/scripts/post-install-release-notes.js"
   ],
   "keywords": [
     "oclif",
@@ -85,7 +86,8 @@
     "hooks": {
       "preupdate": "./dist/hooks/preupdate",
       "command_incomplete": "./dist/hooks/incomplete",
-      "plugins:preinstall": "./dist/hooks/pluginsPreinstall.js"
+      "plugins:preinstall": "./dist/hooks/pluginsPreinstall.js",
+      "update": "./dist/hooks/display-release-notes.js"
     },
     "update": {
       "s3": {
@@ -206,6 +208,7 @@
     "pack:win": "oclif pack:win",
     "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
     "preinstall": "node ./scripts/preinstall.js",
+    "postinstall": "node ./scripts/post-install-release-notes.js",
     "prepack": "sf-prepack",
     "prepare": "sf-install && yarn compile && yarn lint",
     "prepublishOnly": "npm shrinkwrap",
