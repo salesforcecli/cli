@@ -1,0 +1,37 @@
+name: update-docker-node-version
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Tuesday 7a central (12 UTC)
+    - cron: '0 12 * * 2'
+
+jobs:
+  update-node:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ vars.TARBALL_NODE_VERSION }}
+          cache: yarn
+      - uses: salesforcecli/github-workflows/.github/actions/yarnInstallWithRetries@main
+      - name: Update node version in dockerfile_full
+        uses: nick-fields/retry@943e742917ac94714d2f408a0e8320f2d1fcafcd
+        with:
+          max_attempts: 3
+          retry_wait_seconds: 60
+          command: node ./dockerfiles/update-docker-node-version.js
+          timeout_minutes: 60
+      - uses: salesforcecli/github-workflows/.github/actions/gitConfig@main
+      # Push changes if 'git status' is not empty
+      - run: |
+          if [[ -n $(git status --short) ]]; then
+            git add dockerfiles/Dockerfile_full
+            git commit -m "chore: update node in dockerfile_full" --no-verify
+            git push --no-verify
+          else
+            echo "Already up to date"
+          fi
