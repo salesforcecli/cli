@@ -1822,17 +1822,17 @@
     jsforce "2.0.0-beta.22"
     tslib "^2"
 
-"@salesforce/plugin-deploy-retrieve@1.9.3":
-  version "1.9.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.9.3.tgz#a82e5ec6df191e67a11d6dd5afb8c3ff78a67401"
-  integrity sha512-NoHa4sJrSszH0Ye+NuAEC7C5havbVvIuc/6KZD10xtBboZhRTWi6PZWXB0IAy8igkKWtAvrMAe1wTwe2l+lwpg==
+"@salesforce/plugin-deploy-retrieve@1.9.5":
+  version "1.9.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.9.5.tgz#c898cd356920cb0b8b78732d0a1eb56881c6b8fe"
+  integrity sha512-NS3C5YB56Ah5X8Iy/E3PztkNeZW1UG2tdHbPdoccS0rIg+n4Owcc6uc25TpXAK3xjM+fPH00NcBHl3yCLXQwuQ==
   dependencies:
     "@oclif/core" "^2.8.2"
-    "@salesforce/apex-node" "^1.6.0"
+    "@salesforce/apex-node" "^1.6.1"
     "@salesforce/core" "^3.36.1"
     "@salesforce/kit" "^1.9.2"
-    "@salesforce/sf-plugins-core" "^2.4.2"
-    "@salesforce/source-deploy-retrieve" "^8.4.0"
+    "@salesforce/sf-plugins-core" "^2.4.3"
+    "@salesforce/source-deploy-retrieve" "^8.5.1"
     "@salesforce/source-tracking" "^3.1.5"
     chalk "^4.1.2"
     fs-extra "^10.0.1"
