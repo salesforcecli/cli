@@ -1766,10 +1766,10 @@
     shx "^0.3.3"
     tslib "^2.5.0"
 
-"@salesforce/kit@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/kit/-/kit-3.0.1.tgz#2375e96b0b22445b52069ca59474652febe8fd2e"
-  integrity sha512-pH0o7zNKRSjHOBPJeV2nUXrmYD9NsFfxxoVBaa66V7wXQH7OSBlO0/VvEAs1rKZ+MJELgSlpf6h9TajYqTYRrA==
+"@salesforce/kit@^3.0.0", "@salesforce/kit@^3.0.1":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/kit/-/kit-3.0.2.tgz#6474c3e9905290bbcfb3455388b140eee3ff84db"
+  integrity sha512-/TbqjmxThz3+ZeLrYZFEcvn7kbK7DW0aHzotazyKsoGbqsHiiXIMNS1Cc5rfJRKQV7bKp84vMF/WCyBZJFHZKA==
   dependencies:
     "@salesforce/ts-types" "^2.0.1"
     tslib "^2.5.2"
@@ -1816,20 +1816,20 @@
     mkdirp "^1.0.4"
     tslib "^2"
 
-"@salesforce/plugin-data@2.3.19":
-  version "2.3.19"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-2.3.19.tgz#c987570e3a82c2bb4cb7fb29b9dbe6e1fe1d4323"
-  integrity sha512-FGCcIrqYXdctVdSvQ1yUPgicgpFqgavsss9Ug/es49hdj37I8SFzhrw7Ig7Yor4xFKoEgMcNorgEpgsVHFnx5w==
+"@salesforce/plugin-data@2.3.20":
+  version "2.3.20"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-2.3.20.tgz#6043265ff953c11b6130fcaa159e0e457696cf94"
+  integrity sha512-HNKxQb/1vbdNZrL5RWXnVohHzU3wGxfT2x3f8XxOvYhxY3wNC9NiE8UQCTWJp+0R+jwz7frN4qeTQOf7UlB2kA==
   dependencies:
     "@oclif/core" "^2.8.2"
-    "@salesforce/core" "^3.36.1"
-    "@salesforce/kit" "^1.9.0"
+    "@salesforce/core" "^3.36.0"
+    "@salesforce/kit" "^3.0.0"
     "@salesforce/sf-plugins-core" "^2.4.2"
-    "@salesforce/ts-types" "^1.7.3"
+    "@salesforce/ts-types" "^2.0.1"
     chalk "^4.1.0"
     csv-parse "^4.16.3"
     csv-stringify "^6.4.0"
-    jsforce "2.0.0-beta.22"
+    jsforce "^2.0.0-beta.23"
     tslib "^2"
 
 "@salesforce/plugin-deploy-retrieve@1.10.4":
@@ -1879,14 +1879,14 @@
     "@salesforce/ts-types" "^1.7.3"
     tslib "^2"
 
-"@salesforce/plugin-login@1.2.10":
-  version "1.2.10"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-login/-/plugin-login-1.2.10.tgz#a261e8afec99be567437015f8ee552c2a82703a6"
-  integrity sha512-N8q/8i9bzOX+3Yg/kpEVNcCQ0/5WZ3MDjgc3Gskr6K9nSq0gaa5Svmk+FPstqrAlZXwgolOxSIycjOnKz1Z5mA==
+"@salesforce/plugin-login@1.2.11":
+  version "1.2.11"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-login/-/plugin-login-1.2.11.tgz#9eeed75bb4746f6bf23f35a3fe1202bb27038ffd"
+  integrity sha512-LbjFJQqTqU89XmbExEk9RPru1iAavZvBWd3BJUr3k7H/dYnSJcqjL0PR6hCuYlEpX96l/xAAV3iNasNp57v+mw==
   dependencies:
     "@oclif/core" "^2.8.2"
-    "@salesforce/core" "^3.36.1"
-    "@salesforce/sf-plugins-core" "^2.4.3"
+    "@salesforce/core" "^3.36.0"
+    "@salesforce/sf-plugins-core" "^2.4.2"
     chalk "^4.1.2"
     inquirer "^8.2.5"
     tslib "^2"
@@ -6760,32 +6760,6 @@ jsesc@^2.5.1:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-2.5.2.tgz#80564d2e483dacf6e8ef209650a67df3f0c283a4"
   integrity sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==
-
-jsforce@2.0.0-beta.22:
-  version "2.0.0-beta.22"
-  resolved "https://registry.yarnpkg.com/jsforce/-/jsforce-2.0.0-beta.22.tgz#cccb72b3f89b451e3e24e52661c008d334e07909"
-  integrity sha512-aSmztQYS64z/Pr7QmJwpq67Qzajt8nVrZDf8dbU+TEWhOXIHlJ8q8Dx6p0zaV89WksxUDmSt6dA11KcZEBFXPw==
-  dependencies:
-    "@babel/runtime" "^7.12.5"
-    "@babel/runtime-corejs3" "^7.12.5"
-    "@types/node" "^12.19.9"
-    abort-controller "^3.0.0"
-    base64url "^3.0.1"
-    commander "^4.0.1"
-    core-js "^3.6.4"
-    csv-parse "^4.8.2"
-    csv-stringify "^5.3.4"
-    faye "^1.4.0"
-    form-data "^4.0.0"
-    fs-extra "^8.1.0"
-    https-proxy-agent "^5.0.0"
-    inquirer "^7.0.0"
-    multistream "^3.1.0"
-    node-fetch "^2.6.1"
-    open "^7.0.0"
-    regenerator-runtime "^0.13.3"
-    strip-ansi "^6.0.0"
-    xml2js "^0.5.0"
 
 jsforce@^2.0.0-beta.23:
   version "2.0.0-beta.23"
