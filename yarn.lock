@@ -1692,10 +1692,10 @@
     mv "~2"
     safe-json-stringify "~1"
 
-"@salesforce/core@4.0.1", "@salesforce/core@^4.0.1":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-4.0.1.tgz#d843c86cfd59f74e33e70d9558e0fe3ee9b49a53"
-  integrity sha512-BjHM3C3QfjW0wSrt0q2+5JOwa/9edg/18TT2C3iykmPxeDXAum/2W/S+7ctyefEJ0/VYlh/DvzLaEc74MadKnA==
+"@salesforce/core@4.1.0", "@salesforce/core@^4.0.1":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-4.1.0.tgz#909c1ef1640683f797529899dbf316d53f1aebee"
+  integrity sha512-S+5sJ3wSlpu4ATEYGDeqNMu1NaRgD5+HjtYFZiiUOdtHrUh55JD6DGcwgtrj2ojM9cnwcqlj/Ho/2yljrJdOSQ==
   dependencies:
     "@salesforce/bunyan" "^2.0.0"
     "@salesforce/kit" "^3.0.0"
@@ -1711,6 +1711,7 @@
     js2xmlparser "^4.0.1"
     jsforce "^2.0.0-beta.23"
     jsonwebtoken "9.0.0"
+    proper-lockfile "^4.1.2"
     ts-retry-promise "^0.7.0"
 
 "@salesforce/core@^3.24.0", "@salesforce/core@^3.33.4", "@salesforce/core@^3.33.5", "@salesforce/core@^3.34.6", "@salesforce/core@^3.34.7", "@salesforce/core@^3.34.8", "@salesforce/core@^3.34.9", "@salesforce/core@^3.35.0", "@salesforce/core@^3.36.0", "@salesforce/core@^3.36.1", "@salesforce/core@^3.36.2":
@@ -1795,15 +1796,15 @@
     "@salesforce/ts-types" "^2.0.1"
     tslib "^2.5.2"
 
-"@salesforce/plugin-apex@2.2.22":
-  version "2.2.22"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-apex/-/plugin-apex-2.2.22.tgz#03358fc88a8bdd48ee66d298b3b3a3bf7dc73999"
-  integrity sha512-pc5V+dfAG0ei3rQjoAcO65BXWn0lLcFf/qookqceKZABooxcyubdwAJbVFQQkMc5xN/gznQiSHEhLDMbQRE81Q==
+"@salesforce/plugin-apex@2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-apex/-/plugin-apex-2.3.0.tgz#d6e7ddadbf38efcf103f476ece7503e02d74865b"
+  integrity sha512-mYvjHJhFIGbHNLcv+XhQqyJ2doyG2ammWI0Bl1soBF348A182rgJ4QA5z/QS/DByUsTnRAM5Gv/siDBpMzQ1GA==
   dependencies:
     "@oclif/core" "^2.8.2"
     "@salesforce/apex-node" "^1.6.1"
-    "@salesforce/core" "^3.36.2"
-    "@salesforce/sf-plugins-core" "^2.4.3"
+    "@salesforce/core" "^3.36.0"
+    "@salesforce/sf-plugins-core" "^2.4.2"
     chalk "^4.1.0"
     tslib "^2"
 
@@ -5904,7 +5905,7 @@ got@^11, got@^11.8.2, got@^11.8.6:
     p-cancelable "^2.0.0"
     responselike "^2.0.0"
 
-graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.5, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.10, graceful-fs@^4.2.11, graceful-fs@^4.2.2, graceful-fs@^4.2.6:
+graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.5, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.10, graceful-fs@^4.2.11, graceful-fs@^4.2.2, graceful-fs@^4.2.4, graceful-fs@^4.2.6:
   version "4.2.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.11.tgz#4183e4e8bf08bb6e05bbb2f7d2e0c8f712ca40e3"
   integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
@@ -9341,6 +9342,15 @@ promzard@^1.0.0:
   integrity sha512-KQVDEubSUHGSt5xLakaToDFrSoZhStB8dXLzk2xvwR67gJktrHFvpR63oZgHyK19WKbHFLXJqCPXdVR3aBP8Ig==
   dependencies:
     read "^2.0.0"
+
+proper-lockfile@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/proper-lockfile/-/proper-lockfile-4.1.2.tgz#c8b9de2af6b2f1601067f98e01ac66baa223141f"
+  integrity sha512-TjNPblN4BwAWMXU8s9AEz4JmQxnD1NNL7bNOY/AKUzyamc379FWASUhc/K1pL2noVb+XmZKLL68cjzLsiOAMaA==
+  dependencies:
+    graceful-fs "^4.2.4"
+    retry "^0.12.0"
+    signal-exit "^3.0.2"
 
 proxy-agent@^5.0.0:
   version "5.0.0"
