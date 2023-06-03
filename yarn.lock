@@ -1712,7 +1712,7 @@
     proper-lockfile "^4.1.2"
     ts-retry-promise "^0.7.0"
 
-"@salesforce/core@^3.24.0", "@salesforce/core@^3.32.12", "@salesforce/core@^3.33.4", "@salesforce/core@^3.33.5", "@salesforce/core@^3.34.6", "@salesforce/core@^3.34.8", "@salesforce/core@^3.34.9", "@salesforce/core@^3.35.0", "@salesforce/core@^3.36.0", "@salesforce/core@^3.36.1", "@salesforce/core@^3.36.2":
+"@salesforce/core@^3.24.0", "@salesforce/core@^3.32.12", "@salesforce/core@^3.33.4", "@salesforce/core@^3.33.5", "@salesforce/core@^3.34.6", "@salesforce/core@^3.34.8", "@salesforce/core@^3.35.0", "@salesforce/core@^3.36.0", "@salesforce/core@^3.36.1", "@salesforce/core@^3.36.2":
   version "3.36.2"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.36.2.tgz#135fa2fb858da6245b9ecff1e7819aeaeead5150"
   integrity sha512-IS1rR6Y0tMJYx/+TOAUQ9Gs+Vtum0MHLGfodT7ZJMQZQHEp1S4o0BJ8676uq5sASAnVL64GA+Et/LWCCOWWEuw==
@@ -1806,15 +1806,16 @@
     chalk "^4.1.0"
     tslib "^2"
 
-"@salesforce/plugin-auth@2.7.17":
-  version "2.7.17"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-2.7.17.tgz#f04eb5a3cb2d01d0d598cbcc3f4eb3337c540f47"
-  integrity sha512-rmRGJoLx22fJx/j6SxqTT2ZkKPmffFqvHOHX+suqkzzCCx4U4UHsHlaZ0T+DzIPS7+eIfp6YXE2zyJPHnJ+XBA==
+"@salesforce/plugin-auth@2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-2.8.0.tgz#64ce7428e7c2e85eacf2e906e5e9af3eebd695e6"
+  integrity sha512-/sh8A2J/ORPypcTneg9ic6JUZd8VjHyxVu4CfXBvmwXkMewkGHqsZ9JALr0yXPM7kJ4Ff1zsQqBmoMRhAumXpA==
   dependencies:
-    "@oclif/core" "^2.8.5"
-    "@salesforce/core" "^3.34.9"
-    "@salesforce/kit" "^1.9.2"
-    "@salesforce/sf-plugins-core" "^2.4.3"
+    "@oclif/core" "^2.8.2"
+    "@salesforce/core" "^4.0.1"
+    "@salesforce/kit" "^3.0.2"
+    "@salesforce/sf-plugins-core" "^3.0.2"
+    "@salesforce/ts-types" "^2.0.2"
     chalk "^4.1.2"
     inquirer "^8.2.5"
     open "^8.2.1"
