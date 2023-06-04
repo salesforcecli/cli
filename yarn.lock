@@ -300,7 +300,7 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
-"@commitlint/cli@^17.1.2", "@commitlint/cli@^17.5.1":
+"@commitlint/cli@^17.1.2":
   version "17.5.1"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-17.5.1.tgz#db176538db7b4140c8856c88a46bd15ec705f881"
   integrity sha512-pRRgGSzdHQHehxZbGA3qF6wVPyl+EEQgTe/t321rtMLFbuJ7nRj2waS17s/v5oEbyZtiY5S8PGB6XtEIm0I+Sg==
@@ -316,7 +316,7 @@
     resolve-global "1.0.0"
     yargs "^17.0.0"
 
-"@commitlint/config-conventional@^17.1.0", "@commitlint/config-conventional@^17.2.0":
+"@commitlint/config-conventional@^17.1.0":
   version "17.4.4"
   resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-17.4.4.tgz#f30b1e5b2e48ce5799a483c200c52f218a98efcc"
   integrity sha512-u6ztvxqzi6NuhrcEDR7a+z0yrh11elY66nRrQIpqsqW6sZmpxYkDLtpRH8jRML+mmxYQ8s4qqF06Q/IQx5aJeQ==
@@ -1663,15 +1663,13 @@
   resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
 
-"@salesforce/apex-node@^1.6.0", "@salesforce/apex-node@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/apex-node/-/apex-node-1.6.1.tgz#ca01b974e3ee87f31f100c15e9185b1655be87db"
-  integrity sha512-Jx+mD9l8/OpcsVxmgcIPVtN+41RMlGzNehZCwC0irucKFpAi7kKbwMyFo4LXdYZUFg28lFw1WlghfzEwfuJ3aA==
+"@salesforce/apex-node@^1.6.0", "@salesforce/apex-node@^1.6.1", "@salesforce/apex-node@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/apex-node/-/apex-node-1.6.2.tgz#ea53c01994994288dcab362548ddda36e3127bbc"
+  integrity sha512-EeBdfkVd6nA6MK8gdkNgk+aVuoxc8KzQvMIBzP1hBYNP0SDGOmq3bSINV3cyiAGCuBgt4VbYTznb/+iPdWRr/w==
   dependencies:
-    "@commitlint/config-conventional" "^17.2.0"
-    "@salesforce/core" "^3.34.6"
+    "@salesforce/core" "^4.0.1"
     "@types/istanbul-reports" "^3.0.1"
-    commitlint "^17.2.0"
     faye "1.4.0"
     glob "^8.0.3"
     istanbul-lib-coverage "^3.2.0"
@@ -1690,7 +1688,7 @@
     mv "~2"
     safe-json-stringify "~1"
 
-"@salesforce/core@4.1.0", "@salesforce/core@^4.0.1":
+"@salesforce/core@4.1.0", "@salesforce/core@^4.0.1", "@salesforce/core@^4.1.0":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-4.1.0.tgz#909c1ef1640683f797529899dbf316d53f1aebee"
   integrity sha512-S+5sJ3wSlpu4ATEYGDeqNMu1NaRgD5+HjtYFZiiUOdtHrUh55JD6DGcwgtrj2ojM9cnwcqlj/Ho/2yljrJdOSQ==
@@ -1712,7 +1710,7 @@
     proper-lockfile "^4.1.2"
     ts-retry-promise "^0.7.0"
 
-"@salesforce/core@^3.24.0", "@salesforce/core@^3.32.12", "@salesforce/core@^3.33.4", "@salesforce/core@^3.33.5", "@salesforce/core@^3.34.6", "@salesforce/core@^3.34.8", "@salesforce/core@^3.35.0", "@salesforce/core@^3.36.0", "@salesforce/core@^3.36.1", "@salesforce/core@^3.36.2":
+"@salesforce/core@^3.24.0", "@salesforce/core@^3.32.12", "@salesforce/core@^3.33.4", "@salesforce/core@^3.33.5", "@salesforce/core@^3.34.8", "@salesforce/core@^3.35.0", "@salesforce/core@^3.36.0", "@salesforce/core@^3.36.1", "@salesforce/core@^3.36.2":
   version "3.36.2"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.36.2.tgz#135fa2fb858da6245b9ecff1e7819aeaeead5150"
   integrity sha512-IS1rR6Y0tMJYx/+TOAUQ9Gs+Vtum0MHLGfodT7ZJMQZQHEp1S4o0BJ8676uq5sASAnVL64GA+Et/LWCCOWWEuw==
@@ -1854,14 +1852,14 @@
     jsforce "^2.0.0-beta.23"
     tslib "^2"
 
-"@salesforce/plugin-deploy-retrieve@1.11.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.11.0.tgz#20ffc5516e035a4f9a7e1f0578121f81c474556b"
-  integrity sha512-CopHJ0kwnhdjOr9BwGOpDbkySDPx7Gi3oNcjb+VSxaVZ29HoLYf3agriY02+FFwUkpfSToVhg7RTx+VnvWCiWA==
+"@salesforce/plugin-deploy-retrieve@1.11.2":
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.11.2.tgz#5bba8a4b4c430a12d5e55c12db0c4ae2012355f4"
+  integrity sha512-guwKQfHXsqLn0aN5pdtvT2PuenWbIkO6iPpKYFcF0d+LA0jvEqYIL8H4+r74gGPAf9uubA2jov7hazIEYuF0Kg==
   dependencies:
     "@oclif/core" "^2.8.2"
-    "@salesforce/apex-node" "^1.6.1"
-    "@salesforce/core" "^4.0.1"
+    "@salesforce/apex-node" "^1.6.2"
+    "@salesforce/core" "^4.1.0"
     "@salesforce/kit" "^3.0.2"
     "@salesforce/sf-plugins-core" "^3.0.2"
     "@salesforce/source-deploy-retrieve" "^9.1.0"
@@ -3844,14 +3842,6 @@ comment-parser@1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/comment-parser/-/comment-parser-1.3.1.tgz#3d7ea3adaf9345594aedee6563f422348f165c1b"
   integrity sha512-B52sN2VNghyq5ofvUsqZjmk6YkihBX5vMSChmSK9v4ShjKf3Vk5Xcmgpw4o+iIgtrnM/u5FiMpz9VKb8lpBveA==
-
-commitlint@^17.2.0:
-  version "17.5.1"
-  resolved "https://registry.yarnpkg.com/commitlint/-/commitlint-17.5.1.tgz#9a4c5b2af7df5ab73ea7814920faf65001d04b12"
-  integrity sha512-BmYX5GJrZFk/90Owlsoh7J38hbikK1AIE+j0MlU0U+Vns+JNHwOE+6jkU9UYEiyY9rrgrI50kx2thI3028FwGw==
-  dependencies:
-    "@commitlint/cli" "^17.5.1"
-    "@commitlint/types" "^17.4.4"
 
 common-ancestor-path@^1.0.1:
   version "1.0.1"
