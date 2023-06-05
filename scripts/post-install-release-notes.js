@@ -3,7 +3,7 @@
 const { spawn } = require('child_process');
 const { join } = require('path');
 
-if (process.env.SFDX_HIDE_RELEASE_NOTES === 'true' || process.env.SF_HIDE_RELEASE_NOTES === 'true') process.exit(0);
+if (process.env.SF_HIDE_RELEASE_NOTES === 'true') process.exit(0);
 
 const logAndExit = (msg) => {
   console.log('NOTE: This error can be ignored in CI and may be silenced in the future');

@@ -22,7 +22,7 @@ const logError = (msg: Error): void => {
 
 const hook: Hook.Update = async (): Promise<void> =>
   new Promise((resolve) => {
-    if (process.env.SFDX_HIDE_RELEASE_NOTES === 'true' || process.env.SF_HIDE_RELEASE_NOTES === 'true') {
+    if (process.env.SF_HIDE_RELEASE_NOTES === 'true') {
       resolve();
     }
 

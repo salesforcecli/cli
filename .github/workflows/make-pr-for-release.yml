@@ -37,8 +37,7 @@ jobs:
   make-pr:
     env:
       GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
-      # TODO: Add support for SF_ env vars in plugin-info and replace it here.
-      SFDX_HIDE_RELEASE_NOTES: true
+      SF_HIDE_RELEASE_NOTES: true
     runs-on: 'ubuntu-latest'
     steps:
       - uses: actions/checkout@v3
