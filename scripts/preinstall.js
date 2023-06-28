@@ -11,6 +11,6 @@ const { execSync } = require('child_process');
   };
   // test sfdx is installed
   if (testCliNotVersion('sfdx', 'sfdx-cli/7.')) {
-    throw Error('Please uninstall sfdx');
+    throw Error('Please uninstall sfdx. See https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_move_to_sf_v2.htm for more information');
   }
 })();
