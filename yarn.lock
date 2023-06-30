@@ -1688,28 +1688,6 @@
     mv "~2"
     safe-json-stringify "~1"
 
-"@salesforce/core@4.3.5", "@salesforce/core@^4.0.1", "@salesforce/core@^4.1.0", "@salesforce/core@^4.2.1", "@salesforce/core@^4.3.1", "@salesforce/core@^4.3.2", "@salesforce/core@^4.3.3", "@salesforce/core@^4.3.4":
-  version "4.3.5"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-4.3.5.tgz#6b17141301923b5cd9423e08a7c2172084beca6b"
-  integrity sha512-OpelT9syDjEab4jCF82jzTzRJfAoTqj+jfQjzh0MwYMgsS4wGTtjUILZqqE82Cq/W4ByADjlclHcOd3gE9XVMQ==
-  dependencies:
-    "@salesforce/bunyan" "^2.0.0"
-    "@salesforce/kit" "^3.0.3"
-    "@salesforce/schemas" "^1.5.1"
-    "@salesforce/ts-types" "^2.0.2"
-    "@types/semver" "^7.5.0"
-    ajv "^8.12.0"
-    change-case "^4.1.2"
-    debug "^3.2.7"
-    faye "^1.4.0"
-    form-data "^4.0.0"
-    js2xmlparser "^4.0.1"
-    jsforce "^2.0.0-beta.27"
-    jsonwebtoken "9.0.0"
-    jszip "3.10.1"
-    proper-lockfile "^4.1.2"
-    ts-retry-promise "^0.7.0"
-
 "@salesforce/core@^3.32.12", "@salesforce/core@^3.33.5", "@salesforce/core@^3.36.1":
   version "3.36.2"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-3.36.2.tgz#135fa2fb858da6245b9ecff1e7819aeaeead5150"
@@ -1729,6 +1707,28 @@
     js2xmlparser "^4.0.1"
     jsforce "^2.0.0-beta.23"
     jsonwebtoken "9.0.0"
+    ts-retry-promise "^0.7.0"
+
+"@salesforce/core@^4.0.1", "@salesforce/core@^4.1.0", "@salesforce/core@^4.2.1", "@salesforce/core@^4.3.1", "@salesforce/core@^4.3.2", "@salesforce/core@^4.3.3", "@salesforce/core@^4.3.4", "@salesforce/core@^4.3.5":
+  version "4.3.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-4.3.5.tgz#6b17141301923b5cd9423e08a7c2172084beca6b"
+  integrity sha512-OpelT9syDjEab4jCF82jzTzRJfAoTqj+jfQjzh0MwYMgsS4wGTtjUILZqqE82Cq/W4ByADjlclHcOd3gE9XVMQ==
+  dependencies:
+    "@salesforce/bunyan" "^2.0.0"
+    "@salesforce/kit" "^3.0.3"
+    "@salesforce/schemas" "^1.5.1"
+    "@salesforce/ts-types" "^2.0.2"
+    "@types/semver" "^7.5.0"
+    ajv "^8.12.0"
+    change-case "^4.1.2"
+    debug "^3.2.7"
+    faye "^1.4.0"
+    form-data "^4.0.0"
+    js2xmlparser "^4.0.1"
+    jsforce "^2.0.0-beta.27"
+    jsonwebtoken "9.0.0"
+    jszip "3.10.1"
+    proper-lockfile "^4.1.2"
     ts-retry-promise "^0.7.0"
 
 "@salesforce/dev-config@^3.0.0":
