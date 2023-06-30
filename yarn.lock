@@ -1688,10 +1688,10 @@
     mv "~2"
     safe-json-stringify "~1"
 
-"@salesforce/core@4.3.4", "@salesforce/core@^4.0.1", "@salesforce/core@^4.1.0", "@salesforce/core@^4.2.1", "@salesforce/core@^4.3.1", "@salesforce/core@^4.3.2", "@salesforce/core@^4.3.3":
-  version "4.3.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-4.3.4.tgz#047b88af4fcceb1101f01cb5e1b188b4a6688bc1"
-  integrity sha512-2TGE8iQua0AEuLBUF9VFxt7vyefpoxIexjsI5acjLICzoS1RwrsoqoPTFJVKS8sCqgeExieV4T50/74q2zDnDQ==
+"@salesforce/core@4.3.5", "@salesforce/core@^4.0.1", "@salesforce/core@^4.1.0", "@salesforce/core@^4.2.1", "@salesforce/core@^4.3.1", "@salesforce/core@^4.3.2", "@salesforce/core@^4.3.3", "@salesforce/core@^4.3.4":
+  version "4.3.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-4.3.5.tgz#6b17141301923b5cd9423e08a7c2172084beca6b"
+  integrity sha512-OpelT9syDjEab4jCF82jzTzRJfAoTqj+jfQjzh0MwYMgsS4wGTtjUILZqqE82Cq/W4ByADjlclHcOd3gE9XVMQ==
   dependencies:
     "@salesforce/bunyan" "^2.0.0"
     "@salesforce/kit" "^3.0.3"
@@ -1809,16 +1809,16 @@
     chalk "^4.1.0"
     tslib "^2"
 
-"@salesforce/plugin-auth@2.8.3":
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-2.8.3.tgz#85b17443f3d3197bece7023578e6e868e5ad57a3"
-  integrity sha512-bkhB8n7xl8GuftRoz2JP+foinZl6uOyLaHABlNxiJi+gBF9/2vwsfUJjRy9Qo8t4PjGLcYFf07BKBBUUTDL1qw==
+"@salesforce/plugin-auth@2.8.4":
+  version "2.8.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-2.8.4.tgz#a7cb1911ff72dca0edf2b2f5c10cd9979f33ae31"
+  integrity sha512-bAmVzCkprMVgym9Ydwu+Z0sBXmGA2dadLVgwEfvOH50TXZf8r4/r0m9zHr5Q8DlV3jpkiY2SqL1buCJI8mw8mg==
   dependencies:
     "@oclif/core" "^2.8.2"
-    "@salesforce/core" "^4.0.1"
+    "@salesforce/core" "^4.3.4"
     "@salesforce/kit" "^3.0.3"
     "@salesforce/sf-plugins-core" "^3.0.2"
-    "@salesforce/ts-types" "^2.0.2"
+    "@salesforce/ts-types" "^2.0.3"
     chalk "^4.1.2"
     inquirer "^8.2.5"
     open "^8.2.1"
