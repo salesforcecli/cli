@@ -7,7 +7,7 @@
 > **Warning**  
 > You **must** uninstall `sfdx` before you install `sf` (v2), or you'll get an error. See instructions for your installation methods below.
 > 
-> **Context:** We created an alias for `sfdx` within `sf` (v2) so that you would not have to update all of your scripts from `sfdx` to `sf`. The concequence is a one-time uninstall of `sfdx-cli` to prevent this collision.
+> **Context:** We created an alias for `sfdx` within `sf` (v2) so that you don't need to update your scripts from `sfdx` to `sf`. The consequence is a one-time uninstall of `sfdx-cli` to prevent this collision.
 
 ### npm
 
