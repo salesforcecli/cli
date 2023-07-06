@@ -84,7 +84,6 @@
       "@salesforce/plugin-release-management"
     ],
     "hooks": {
-      "preupdate": "./dist/hooks/preupdate",
       "command_incomplete": "./dist/hooks/incomplete",
       "plugins:preinstall": "./dist/hooks/pluginsPreinstall.js",
       "update": "./dist/hooks/display-release-notes.js"
