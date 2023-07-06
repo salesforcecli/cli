@@ -68,22 +68,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-
-      - name: Conventional Changelog Action
-        id: changelog
-        uses: TriPSs/conventional-changelog-action@d360fad3a42feca6462f72c97c165d60a02d4bf2
-        # overriding some of the basic behaviors to just get the changelog
-        with:
-          git-user-name: svc-cli-bot
-          git-user-email: svc_cli_bot@salesforce.com
-          github-token: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
-          output-file: false
-          # always do the release, even if there are no semantic commits
-          skip-on-empty: false
-          # pjson version was already updated by the "cli:release:build" script, so don't base behavior on these commits
-          skip-version-file: true
-          # avoids the default `v` so all the later actions don't have to remove it
-          tag-prefix: ''
       - uses: notiz-dev/github-action-json-property@2192e246737701f108a4571462b76c75e7376216
         id: packageVersion
         with:
@@ -100,6 +84,3 @@ jobs:
           # This channel value is read from the Github Release body to determine the channel. Be cautious editing
           body: |
             !! Release as ${{ needs.validate-channel.outputs.channel }} !!
-
-            Change log:
-            ${{ steps.changelog.outputs.clean_changelog }}
