@@ -23,7 +23,7 @@ If you have CI scripts that install Salesforce CLI with npm, and you want to try
 1. Remove the command to install `sfdx`.  
 2. Add (or replace) the command that installs `sf` with this command:  `npm install -g @salesforce/cli@beta`.
 
-If you see an error similar to this, it means you need to uninstall `sfdx-cli`
+If you see an error similar to this, you must uninstall `sfdx-cli`.
 ```
 npm ERR! code EEXIST
 npm ERR! path /Users/username/.nvm/versions/node/v18.15.0/bin/sfdx
