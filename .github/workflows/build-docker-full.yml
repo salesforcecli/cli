@@ -37,11 +37,8 @@ jobs:
           push: true
           labels: ${{ steps.meta.outputs.labels }}
           file: dockerfiles/Dockerfile_full
-          # We are using latest-rc SF_CLI_VERSION version.
           build-args: |
             SF_CLI_VERSION=${{ inputs.version }}
-          # TODO: Do we want _all_ docker images to release with the version in their name?
-          #       Should we skip this on prereleases?
           tags: salesforce/cli:${{ inputs.channel }}-full, salesforce/cli:${{ inputs.version }}-full
 
   verify:

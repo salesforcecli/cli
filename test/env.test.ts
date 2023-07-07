@@ -95,23 +95,8 @@ describe('Env', () => {
     });
 
     it('should report if the cli is running from an installer', () => {
-      // TODO: change to SF_INSTALLER when SF has its own installers
-      env.setBoolean('SFDX_INSTALLER', true);
+      env.setBoolean('SF_INSTALLER', true);
       expect(env.isInstaller()).to.be.true;
-    });
-  });
-
-  describe('getS3HostOverride', () => {
-    it('should return an S3 host override if set', () => {
-      env.setString('SF_S3_HOST', 'http://example.com');
-      expect(env.getS3HostOverride()).to.equal('http://example.com');
-    });
-  });
-
-  describe('setS3HostOverride', () => {
-    it('should set an S3 host override', () => {
-      env.setS3HostOverride('http://example.com');
-      expect(env.getString('SF_S3_HOST')).to.equal('http://example.com');
     });
   });
 });

@@ -30,8 +30,6 @@ export function preprocessCliFlags(process: ProcessLike): void {
       process.env.DEBUG = debug;
       process.env.SF_DEBUG = '1';
       process.env.SF_ENV = 'development';
-      process.env.SFDX_DEBUG = '1';
-      process.env.SFDX_ENV = 'development';
 
       // need to calculate indexOf --dev-debug here because it might've changed based on --debug-filter
       process.argv.splice(process.argv.indexOf('--dev-debug'), 1);

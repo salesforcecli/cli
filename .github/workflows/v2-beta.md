@@ -1,6 +1,6 @@
 # Move from `sfdx` (v7) to `sf` (v2)
 
-> Thank you for helping us test `sf` (v2). We're working on official documentation, but in the meantime, use this document. 
+> Thank you for helping us test `sf` (v2). We're working on official documentation, but in the meantime, use this document.
 
 ## Installation
 
@@ -16,12 +16,12 @@ If you normally install `sfdx` via npm, run these commands:
 1. `npm uninstall -g sfdx-cli`
 1. `npm install -g @salesforce/cli@beta` [When `sf` (v2) becomes generally available, don't use the `@beta` tag anymore.]
 
-If you already had `sf` (v1) installed, the 2nd command updates it to v2. You don't have to uninstall it first. 
+If you already had `sf` (v1) installed, the 2nd command updates it to v2. You don't have to uninstall it first.
 
-If you have CI scripts that install Salesforce CLI with npm, and you want to try out the `sf` (v2) beta in your CI environment, follow these steps: 
+If you have CI scripts that install Salesforce CLI with npm, and you want to try out the `sf` (v2) beta in your CI environment, follow these steps:
 
-1. Remove the command to install `sfdx`.  
-2. Add (or replace) the command that installs `sf` with this command:  `npm install -g @salesforce/cli@beta`.
+1. Remove the command to install `sfdx`.
+2. Add (or replace) the command that installs `sf` with this command: `npm install -g @salesforce/cli@beta`.
 
 If you see an error similar to this, you must uninstall `sfdx-cli`.
 ```
@@ -35,7 +35,7 @@ npm ERR! with --force to overwrite files recklessly.
 
 ### Installers
 
-> "Installers" refer to the Windows `.exe` or macOS `.pkg` installers.  During the beta, the Windows installer will be signed with Salesforce's key, but the macOS installer won't be.
+> "Installers" refer to the Windows `.exe` or macOS `.pkg` installers. During the beta, the Windows installer will be signed with Salesforce's key, but the macOS installer won't be.
 
 1. [Uninstall your current `sfdx` (v7) installation.](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_uninstall.htm)
 
@@ -82,17 +82,17 @@ npm ERR! with --force to overwrite files recklessly.
 
 TAR file installation for `sf` (v2) is similar to [sfdx](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm) but use `sf` where it says `sfdx`.
 
-If you have CI scripts that install Salesforce CLI using TAR files, and you want to try out the `sf` (v2) beta in your CI environment, replace the download URLs with the ones shown above. 
+If you have CI scripts that install Salesforce CLI using TAR files, and you want to try out the `sf` (v2) beta in your CI environment, replace the download URLs with the ones shown above.
 
 ### Docker
 
-`sf` (v2) is available as a [Docker Image](https://hub.docker.com/r/salesforce/cli).    
+`sf` (v2) is available as a [Docker Image](https://hub.docker.com/r/salesforce/cli).
 
 ## After You've Installed
 
 ### Check Your Install
 
-Run `sf version`. It should display a version that starts with a `2`. 
+Run `sf version`. It should display a version that starts with a `2`.
 
 `sfdx version` should give the same answer because it's just a pointer to the same file.
 
@@ -119,7 +119,7 @@ In `sf` (v2), commands from just-in-time plugins show up in the help. These plug
 
 `sf` (both versions) includes (via JIT) the Salesforce Functions plugin. This plugin wasn't in `sfdx`.
 
-## Get Back 
+## Get Back
 
 To return to using `sfdx` (v7):
 

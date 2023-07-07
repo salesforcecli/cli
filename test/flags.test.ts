@@ -28,8 +28,6 @@ describe('CLI flags', () => {
     expect(process.env.DEBUG).to.equal('*');
     expect(process.env.SF_DEBUG).to.equal('1');
     expect(process.env.SF_ENV).to.equal('development');
-    expect(process.env.SFDX_DEBUG).to.equal('1');
-    expect(process.env.SFDX_ENV).to.equal('development');
   });
 
   it('should recognize --dev-debug in any order', () => {
@@ -42,8 +40,6 @@ describe('CLI flags', () => {
     expect(process.env.DEBUG).to.equal('*');
     expect(process.env.SF_DEBUG).to.equal('1');
     expect(process.env.SF_ENV).to.equal('development');
-    expect(process.env.SFDX_DEBUG).to.equal('1');
-    expect(process.env.SFDX_ENV).to.equal('development');
     expect(process.argv.length).to.equal(3);
   });
 
@@ -58,8 +54,6 @@ describe('CLI flags', () => {
     expect(process.env.DEBUG).to.equal('sf:config');
     expect(process.env.SF_DEBUG).to.equal('1');
     expect(process.env.SF_ENV).to.equal('development');
-    expect(process.env.SFDX_DEBUG).to.equal('1');
-    expect(process.env.SFDX_ENV).to.equal('development');
   });
 
   it('should recognize --dev-debug with a DEBUG filter in any order', () => {
@@ -74,8 +68,6 @@ describe('CLI flags', () => {
     expect(process.env.DEBUG).to.equal('sf:Config');
     expect(process.env.SF_DEBUG).to.equal('1');
     expect(process.env.SF_ENV).to.equal('development');
-    expect(process.env.SFDX_DEBUG).to.equal('1');
-    expect(process.env.SFDX_ENV).to.equal('development');
   });
 
   it('should only set DEBUG if --dev-debug is present', () => {
@@ -88,7 +80,5 @@ describe('CLI flags', () => {
     expect(process.env.DEBUG).to.undefined;
     expect(process.env.SF_DEBUG).to.be.undefined;
     expect(process.env.SF_ENV).to.undefined;
-    expect(process.env.SFDX_DEBUG).to.undefined;
-    expect(process.env.SFDX_ENV).to.undefined;
   });
 });

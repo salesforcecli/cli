@@ -1,10 +1,11 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "1.87.0",
+  "version": "2.0.0",
   "author": "Salesforce",
   "bin": {
-    "sf": "./bin/run"
+    "sf": "./bin/run",
+    "sfdx": "./bin/run"
   },
   "homepage": "https://github.com/salesforcecli/cli",
   "bugs": "https://github.com/forcedotcom/cli/issues",
@@ -77,7 +78,6 @@
       "@salesforce/plugin-release-management"
     ],
     "hooks": {
-      "preupdate": "./dist/hooks/preupdate",
       "command_incomplete": "./dist/hooks/incomplete",
       "plugins:preinstall": "./dist/hooks/pluginsPreinstall.js"
     },
@@ -127,7 +127,7 @@
     "@salesforce/plugin-apex": "2.3.4",
     "@salesforce/plugin-auth": "2.8.4",
     "@salesforce/plugin-data": "2.4.5",
-    "@salesforce/plugin-deploy-retrieve": "1.14.0",
+    "@salesforce/plugin-deploy-retrieve": "1.13.5",
     "@salesforce/plugin-info": "2.6.25",
     "@salesforce/plugin-limits": "2.3.23",
     "@salesforce/plugin-login": "1.2.15",
@@ -178,7 +178,7 @@
   "resolutions": {
     "@salesforce/schemas": "1.6.0",
     "@salesforce/templates": "58.0.1",
-    "@salesforce/source-deploy-retrieve": "9.3.1",
+    "@salesforce/source-deploy-retrieve": "9.3.0",
     "@salesforce/source-tracking": "4.2.4"
   },
   "repository": "salesforcecli/cli",

@@ -74,14 +74,11 @@ describe('cli', () => {
       env = new Env({});
     });
 
-    it('should set the s3 host in the oclif config if overridden in an envar', async () => {
-      const s3Host = 'http://example.com:9000/s3';
+    it('should set the npm the oclif config if overridden in an envar', async () => {
       const npmRegistry = 'http://example.com:9000/npm';
       const config = stubInterface<Interfaces.Config>(sandbox);
-      env.setS3HostOverride(s3Host);
       env.setNpmRegistryOverride(npmRegistry);
       configureUpdateSites(config, env);
-      expect(getString(config, 'pjson.oclif.update.s3.host')).to.equal(s3Host);
       expect(getString(config, 'pjson.oclif.warn-if-update-available.registry')).to.equal(npmRegistry);
     });
 
@@ -101,7 +98,7 @@ describe('cli', () => {
     });
 
     it('should default to autoupdate enabled for binary installs', () => {
-      env.setBoolean('SFDX_INSTALLER', true);
+      env.setBoolean('SF_INSTALLER', true);
       configureAutoUpdate(env);
 
       expect(env.getBoolean('SF_AUTOUPDATE_DISABLE')).to.be.false;
@@ -109,7 +106,7 @@ describe('cli', () => {
     });
 
     it('should have autoupdate disabled for binary installs when SF_AUTOUPDATE_DISABLE is set to true', () => {
-      env.setBoolean('SFDX_INSTALLER', true);
+      env.setBoolean('SF_INSTALLER', true);
       env.setBoolean('SF_AUTOUPDATE_DISABLE', true);
       configureAutoUpdate(env);
 
