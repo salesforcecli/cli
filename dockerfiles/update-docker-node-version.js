@@ -16,7 +16,7 @@ const execPromise = promisify(execSync);
 (async () => {
   // Get the node version from `process.versions`
   // Note that in GHA, this can be overwritten with the TARBALL_NODE_VERSION variable
-  // https://github.com/salesforcecli/sfdx-cli/settings/variables/actions
+  // https://github.com/salesforcecli/cli/settings/variables/actions
 
   // This matches the default for oclif tarball node versions
   // https://github.com/oclif/oclif/blob/main/src/tarballs/config.ts#L56

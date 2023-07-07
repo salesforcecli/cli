@@ -31,7 +31,11 @@ on:
         description: '[--jit] Bump the versions of the packages listed in the "jitPlugins" (just-in-time) section'
       only:
         type: string
-        description: '[--only] Comma-separated list, no spaces, of dependencies that you want to bump'
+        description: '[--only] Comma-separated list (no spaces) of dependencies that you want to bump'
+      empty:
+        type: boolean
+        default: false
+        description: '[--empty] Create an empty release PR for pushing changes to later (version will still be bumped)'
 
 jobs:
   make-pr:

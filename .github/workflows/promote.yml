@@ -173,16 +173,16 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
   ctcCloseSuccess:
-    needs: [open-ctc-or-skip, npm-promote, oclif-promote]
-    if: needs.open-ctc-or-skip.result == 'success' && needs.open-ctc-or-skip.outputs.changeCaseId && needs.npm-promote.result == 'success' && needs.docker-promote.result == 'success' && needs.oclif-promote.result == 'success'
+    needs: [open-ctc-or-skip, npm-promote, docker-promote, oclif-promote]
+    if: needs.open-ctc-or-skip.result == 'success' && needs.open-ctc-or-skip.outputs.changeCaseId && needs.npm-promote.result == 'success' && needs.docker-promote.result == 'success' && needs.docker-promote.result == 'success' && needs.oclif-promote.result == 'success'
     uses: salesforcecli/github-workflows/.github/workflows/ctcClose.yml@main
     secrets: inherit
     with:
       changeCaseId: ${{needs.open-ctc-or-skip.outputs.changeCaseId}}
 
   ctcCloseFail:
-    needs: [open-ctc-or-skip, npm-promote, oclif-promote]
-    if: always() && needs.open-ctc-or-skip.outputs.changeCaseId && (needs.open-ctc-or-skip.result != 'success' || needs.npm-promote.result != 'success' || needs.docker-promote.result != 'success' || needs.oclif-promote.result != 'success')
+    needs: [open-ctc-or-skip, npm-promote, docker-promote, oclif-promote]
+    if: always() && needs.open-ctc-or-skip.outputs.changeCaseId && (needs.open-ctc-or-skip.result != 'success' || needs.npm-promote.result != 'success' || needs.docker-promote.result != 'success' || needs.docker-promote.result != 'success' || needs.oclif-promote.result != 'success')
     uses: salesforcecli/github-workflows/.github/workflows/ctcClose.yml@main
     secrets: inherit
     with:

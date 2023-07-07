@@ -11,9 +11,7 @@ on:
       - promote
       - promote-nightly-to-rc
       - promote-rc-to-latest
-      - v2-create-github-release
-      - v2-automerge-nightly-pr
-      - v2-make-pr-for-nightly
+      - update-docker-node-version
     types:
       - completed
 

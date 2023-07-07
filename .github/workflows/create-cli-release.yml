@@ -105,8 +105,6 @@ jobs:
     secrets: inherit
 
   build-docker-full:
-    # TODO: remove when GA
-    if: ${{ !contains(fromJSON('["latest", "latest-rc", "nightly"]'), needs.get-channel.outputs.channel) }}
     needs: [get-channel, npm-release]
     uses: ./.github/workflows/build-docker-full.yml
     with:
@@ -114,7 +112,6 @@ jobs:
       channel: ${{ needs.get-channel.outputs.channel }}
     secrets: inherit
 
-  # TODO: Add docker-build-slim and docker-build-full to needs after GA
   announce-cli-patch-in-slack:
     # Do not announce prereleases or nightlies
     # https://docs.github.com/en/actions/learn-github-actions/expressions#contains
@@ -126,6 +123,8 @@ jobs:
       - npm-release
       - pack-upload-win
       - pack-upload-mac
+      - build-docker-slim
+      - build-docker-full
     steps:
       - name: Announce patch in Slack
         uses: slackapi/slack-github-action@v1.21.0
@@ -151,6 +150,8 @@ jobs:
       - npm-release
       - pack-upload-win
       - pack-upload-mac
+      - build-docker-slim
+      - build-docker-full
     uses: ./.github/workflows/just-nuts.yml
     with:
       channel-or-version: ${{ needs.get-channel.outputs.channel }}
