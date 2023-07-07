@@ -28,6 +28,9 @@
   "main": "dist/index.js",
   "oclif": {
     "bin": "sf",
+    "binAliases": [
+      "sfdx"
+    ],
     "scope": "salesforce",
     "dirname": "sf",
     "topicSeparator": " ",
