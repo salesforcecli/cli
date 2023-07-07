@@ -98,7 +98,7 @@ describe('cli', () => {
     });
 
     it('should default to autoupdate enabled for binary installs', () => {
-      env.setBoolean('SFDX_INSTALLER', true);
+      env.setBoolean('SF_INSTALLER', true);
       configureAutoUpdate(env);
 
       expect(env.getBoolean('SF_AUTOUPDATE_DISABLE')).to.be.false;
@@ -106,7 +106,7 @@ describe('cli', () => {
     });
 
     it('should have autoupdate disabled for binary installs when SF_AUTOUPDATE_DISABLE is set to true', () => {
-      env.setBoolean('SFDX_INSTALLER', true);
+      env.setBoolean('SF_INSTALLER', true);
       env.setBoolean('SF_AUTOUPDATE_DISABLE', true);
       configureAutoUpdate(env);
 

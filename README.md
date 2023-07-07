@@ -2401,7 +2401,7 @@ CONFIGURATION VARIABLES
   instanceUrl  URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com. (sfdx only)
 
 ENVIRONMENT VARIABLES
-  SFDX_INSTANCE_URL  URL of the Salesforce instance that is hosting your org. Default value is
+  SF_INSTANCE_URL  URL of the Salesforce instance that is hosting your org. Default value is
                      https://login.salesforce.com. Overrides the instanceUrl configuration value.
 ```
 
@@ -2492,7 +2492,7 @@ CONFIGURATION VARIABLES
   instanceUrl  URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com. (sfdx only)
 
 ENVIRONMENT VARIABLES
-  SFDX_INSTANCE_URL  URL of the Salesforce instance that is hosting your org. Default value is
+  SF_INSTANCE_URL  URL of the Salesforce instance that is hosting your org. Default value is
                      https://login.salesforce.com. Overrides the instanceUrl configuration value.
 ```
 
