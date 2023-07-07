@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run",
@@ -17,7 +17,9 @@
     "/bin",
     "/dist/**/*.js",
     "/oclif.manifest.json",
-    "/npm-shrinkwrap.json"
+    "/npm-shrinkwrap.json",
+    "/scripts/preinstall.js",
+    "/scripts/post-install-release-notes.js"
   ],
   "keywords": [
     "oclif",
@@ -28,6 +30,10 @@
   "main": "dist/index.js",
   "oclif": {
     "bin": "sf",
+    "binAliases": [
+      "sfdx"
+    ],
+    "nsisCustomization": "scripts/nsis.nsi",
     "scope": "salesforce",
     "dirname": "sf",
     "topicSeparator": " ",
@@ -79,7 +85,8 @@
     ],
     "hooks": {
       "command_incomplete": "./dist/hooks/incomplete",
-      "plugins:preinstall": "./dist/hooks/pluginsPreinstall.js"
+      "plugins:preinstall": "./dist/hooks/pluginsPreinstall.js",
+      "update": "./dist/hooks/display-release-notes.js"
     },
     "update": {
       "s3": {
@@ -93,7 +100,7 @@
     "info": {
       "releasenotes": {
         "distTagUrl": "https://registry.npmjs.org/-/package/@salesforce/cli/dist-tags",
-        "releaseNotesPath": "https://github.com/forcedotcom/cli/tree/main/releasenotes/sf",
+        "releaseNotesPath": "https://github.com/forcedotcom/cli/tree/main/releasenotes",
         "releaseNotesFilename": "README.md"
       }
     },
@@ -199,6 +206,8 @@
     "pack:verify": "sf-release cli:tarballs:verify --cli sf --windows-username-buffer 34",
     "pack:win": "oclif pack:win",
     "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
+    "preinstall": "node ./scripts/preinstall.js",
+    "postinstall": "node ./scripts/post-install-release-notes.js",
     "prepack": "sf-prepack",
     "prepare": "sf-install && yarn compile && yarn lint",
     "prepublishOnly": "npm shrinkwrap",
