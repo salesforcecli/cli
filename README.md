@@ -9,7 +9,8 @@
 # Getting Started
 
 - Read the [sf Plugin Developer Guide](https://github.com/salesforcecli/cli/wiki/Quick-Introduction-to-Developing-sf-Plugins) to learn how to develop a `sf` plugin.
-- Are you migrating an `sfdx` plugin to `sf`?  Then be sure to check out the [migration section](https://github.com/salesforcecli/cli/wiki/Migrate-Plugins-Built-for-sfdx) of the guide. 
+- Are you migrating an `sfdx` plugin to `sf`?  Then check out the [migration section](https://github.com/salesforcecli/cli/wiki/Migrate-Plugins-Built-for-sfdx) of the developer guide.
+- Read [this section of the Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_move_to_sf_v2.htm) for easy instructions on how to move from your `sfdx` (v7) installation to `sf` (v2).
 
 # Feedback
 
