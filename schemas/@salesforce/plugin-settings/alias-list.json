@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/AliasResults",
+  "definitions": {
+    "AliasResults": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AliasResult"
+      }
+    },
+    "AliasResult": {
+      "type": "object",
+      "properties": {
+        "alias": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "error": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": ["name", "message"],
+          "additionalProperties": false
+        }
+      },
+      "required": ["alias"],
+      "additionalProperties": false
+    }
+  }
+}

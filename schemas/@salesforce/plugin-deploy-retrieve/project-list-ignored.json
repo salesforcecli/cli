@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/SourceIgnoredResults",
+  "definitions": {
+    "SourceIgnoredResults": {
+      "type": "object",
+      "properties": {
+        "ignoredFiles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["ignoredFiles"],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/AuthFields",
+  "definitions": {
+    "AuthFields": {
+      "type": "object",
+      "properties": {
+        "accessToken": {
+          "type": "string"
+        },
+        "alias": {
+          "type": "string"
+        },
+        "authCode": {
+          "type": "string"
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "clientSecret": {
+          "type": "string"
+        },
+        "created": {
+          "type": "string"
+        },
+        "createdOrgInstance": {
+          "type": "string"
+        },
+        "devHubUsername": {
+          "type": "string"
+        },
+        "instanceUrl": {
+          "type": "string"
+        },
+        "instanceApiVersion": {
+          "type": "string"
+        },
+        "instanceApiVersionLastRetrieved": {
+          "type": "string"
+        },
+        "isDevHub": {
+          "type": "boolean"
+        },
+        "loginUrl": {
+          "type": "string"
+        },
+        "orgId": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "privateKey": {
+          "type": "string"
+        },
+        "refreshToken": {
+          "type": "string"
+        },
+        "scratchAdminUsername": {
+          "type": "string"
+        },
+        "snapshot": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "usernames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "userProfileName": {
+          "type": "string"
+        },
+        "expirationDate": {
+          "type": "string"
+        },
+        "tracksSource": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "instanceName": {
+          "type": "string"
+        },
+        "namespacePrefix": {
+          "type": ["string", "null"]
+        },
+        "isSandbox": {
+          "type": "boolean"
+        },
+        "isScratch": {
+          "type": "boolean"
+        },
+        "trailExpirationDate": {
+          "type": ["string", "null"]
+        }
+      },
+      "additionalProperties": false,
+      "description": "Fields for authorization, org, and local information."
+    }
+  }
+}

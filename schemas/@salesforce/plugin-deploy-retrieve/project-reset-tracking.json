@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/ResetTrackingResult",
+  "definitions": {
+    "ResetTrackingResult": {
+      "type": "object",
+      "properties": {
+        "sourceMembersSynced": {
+          "type": "number"
+        },
+        "localPathsSynced": {
+          "type": "number"
+        }
+      },
+      "required": ["sourceMembersSynced", "localPathsSynced"],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/SetOrUnsetConfigCommandResult",
+  "definitions": {
+    "SetOrUnsetConfigCommandResult": {
+      "type": "object",
+      "properties": {
+        "successes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        },
+        "failures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Msg"
+          }
+        }
+      },
+      "required": ["successes", "failures"],
+      "additionalProperties": false
+    },
+    "Msg": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": ["string", "boolean", "number", "null"]
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "location": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "error": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "stack": {
+              "type": "string"
+            }
+          },
+          "required": ["name", "message"],
+          "additionalProperties": false
+        },
+        "successes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "message": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": ["name"],
+            "additionalProperties": false
+          }
+        },
+        "failures": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "message": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": ["name"],
+            "additionalProperties": false
+          }
+        },
+        "key": {
+          "type": "string"
+        },
+        "deprecated": {
+          "type": "boolean"
+        }
+      },
+      "required": ["name", "success"],
+      "additionalProperties": false
+    }
+  }
+}

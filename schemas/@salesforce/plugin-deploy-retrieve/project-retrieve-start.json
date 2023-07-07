@@ -1,0 +1,262 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/RetrieveResultJson",
+  "definitions": {
+    "RetrieveResultJson": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "files": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/FileResponse"
+              }
+            },
+            "done": {
+              "type": "boolean"
+            },
+            "fileProperties": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/FileProperties"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/FileProperties"
+                  }
+                }
+              ]
+            },
+            "id": {
+              "type": "string"
+            },
+            "status": {
+              "$ref": "#/definitions/RequestStatus"
+            },
+            "success": {
+              "type": "boolean"
+            },
+            "messages": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/RetrieveMessage"
+                  }
+                },
+                {
+                  "$ref": "#/definitions/RetrieveMessage"
+                }
+              ]
+            }
+          },
+          "required": ["done", "fileProperties", "files", "id", "status", "success"]
+        },
+        {
+          "$ref": "#/definitions/MetadataRetrieveResultJson"
+        }
+      ]
+    },
+    "FileResponse": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/FileResponseSuccess"
+        },
+        {
+          "$ref": "#/definitions/FileResponseFailure"
+        }
+      ]
+    },
+    "FileResponseSuccess": {
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "filePath": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string",
+          "enum": ["Created", "Changed", "Unchanged", "Deleted"]
+        }
+      },
+      "required": ["fullName", "state", "type"],
+      "additionalProperties": false
+    },
+    "FileResponseFailure": {
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "filePath": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string",
+          "const": "Failed"
+        },
+        "lineNumber": {
+          "type": "number"
+        },
+        "columnNumber": {
+          "type": "number"
+        },
+        "error": {
+          "type": "string"
+        },
+        "problemType": {
+          "type": "string",
+          "enum": ["Warning", "Error"]
+        }
+      },
+      "required": ["error", "fullName", "problemType", "state", "type"],
+      "additionalProperties": false
+    },
+    "FileProperties": {
+      "type": "object",
+      "properties": {
+        "createdById": {
+          "type": "string"
+        },
+        "createdByName": {
+          "type": "string"
+        },
+        "createdDate": {
+          "type": "string"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "fullName": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "lastModifiedById": {
+          "type": "string"
+        },
+        "lastModifiedByName": {
+          "type": "string"
+        },
+        "lastModifiedDate": {
+          "type": "string"
+        },
+        "manageableState": {
+          "type": "string",
+          "enum": [
+            "beta",
+            "deleted",
+            "deprecated",
+            "deprecatedEditable",
+            "installed",
+            "installedEditable",
+            "released",
+            "unmanaged"
+          ]
+        },
+        "namespacePrefix": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "createdById",
+        "createdByName",
+        "createdDate",
+        "fileName",
+        "fullName",
+        "id",
+        "lastModifiedById",
+        "lastModifiedByName",
+        "lastModifiedDate",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    "RequestStatus": {
+      "type": "string",
+      "enum": ["Pending", "InProgress", "Succeeded", "SucceededPartial", "Failed", "Canceling", "Canceled"]
+    },
+    "RetrieveMessage": {
+      "type": "object",
+      "properties": {
+        "fileName": {
+          "type": "string"
+        },
+        "problem": {
+          "type": "string"
+        }
+      },
+      "required": ["fileName", "problem"],
+      "additionalProperties": false
+    },
+    "MetadataRetrieveResultJson": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "zipFilePath": {
+          "type": "string"
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FileResponse"
+          }
+        },
+        "done": {
+          "type": "boolean"
+        },
+        "fileProperties": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/FileProperties"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/FileProperties"
+              }
+            }
+          ]
+        },
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/RequestStatus"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "messages": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RetrieveMessage"
+              }
+            },
+            {
+              "$ref": "#/definitions/RetrieveMessage"
+            }
+          ]
+        }
+      },
+      "required": ["done", "fileProperties", "files", "id", "status", "success", "zipFilePath"]
+    }
+  }
+}

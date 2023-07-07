@@ -1,0 +1,609 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/DeleteSourceJson",
+  "definitions": {
+    "DeleteSourceJson": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/RequestStatus"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "done": {
+          "type": "boolean"
+        },
+        "canceledBy": {
+          "type": "string"
+        },
+        "canceledByName": {
+          "type": "string"
+        },
+        "checkOnly": {
+          "type": "boolean"
+        },
+        "completedDate": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "createdByName": {
+          "type": "string"
+        },
+        "createdDate": {
+          "type": "string"
+        },
+        "details": {
+          "$ref": "#/definitions/DeployDetails"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "errorStatusCode": {
+          "type": "string"
+        },
+        "ignoreWarnings": {
+          "type": "boolean"
+        },
+        "lastModifiedDate": {
+          "type": "string"
+        },
+        "numberComponentErrors": {
+          "type": "number"
+        },
+        "numberComponentsDeployed": {
+          "type": "number"
+        },
+        "numberComponentsTotal": {
+          "type": "number"
+        },
+        "numberTestErrors": {
+          "type": "number"
+        },
+        "numberTestsCompleted": {
+          "type": "number"
+        },
+        "numberTestsTotal": {
+          "type": "number"
+        },
+        "runTestsEnabled": {
+          "type": "boolean"
+        },
+        "rollbackOnError": {
+          "type": "boolean"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "stateDetail": {
+          "type": "string"
+        },
+        "deletedSource": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FileResponse"
+          }
+        },
+        "deployedSource": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FileResponse"
+          }
+        },
+        "outboundFiles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deploys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MetadataApiDeployStatus"
+          }
+        },
+        "deletes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MetadataApiDeployStatus"
+          }
+        },
+        "replacements": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "coverage": {
+          "$ref": "#/definitions/CoverageResultsFileInfo"
+        },
+        "junit": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "checkOnly",
+        "createdBy",
+        "createdByName",
+        "createdDate",
+        "deployedSource",
+        "details",
+        "done",
+        "id",
+        "ignoreWarnings",
+        "lastModifiedDate",
+        "numberComponentErrors",
+        "numberComponentsDeployed",
+        "numberComponentsTotal",
+        "numberTestErrors",
+        "numberTestsCompleted",
+        "numberTestsTotal",
+        "outboundFiles",
+        "rollbackOnError",
+        "runTestsEnabled",
+        "status",
+        "success"
+      ]
+    },
+    "RequestStatus": {
+      "type": "string",
+      "enum": ["Pending", "InProgress", "Succeeded", "SucceededPartial", "Failed", "Canceling", "Canceled"]
+    },
+    "DeployDetails": {
+      "type": "object",
+      "properties": {
+        "componentFailures": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/DeployMessage"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DeployMessage"
+              }
+            }
+          ]
+        },
+        "componentSuccesses": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/DeployMessage"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DeployMessage"
+              }
+            }
+          ]
+        },
+        "runTestResult": {
+          "$ref": "#/definitions/RunTestResult"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DeployMessage": {
+      "type": "object",
+      "properties": {
+        "changed": {
+          "type": ["string", "boolean"],
+          "enum": ["true", "false", true, false]
+        },
+        "columnNumber": {
+          "type": "string"
+        },
+        "componentType": {
+          "type": "string"
+        },
+        "created": {
+          "type": ["string", "boolean"],
+          "enum": ["true", "false", true, false]
+        },
+        "createdDate": {
+          "type": "string"
+        },
+        "deleted": {
+          "type": ["string", "boolean"],
+          "enum": ["true", "false", true, false]
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "fullName": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "lineNumber": {
+          "type": "string"
+        },
+        "problem": {
+          "type": "string"
+        },
+        "problemType": {
+          "type": "string",
+          "enum": ["Warning", "Error"]
+        },
+        "success": {
+          "type": ["string", "boolean"],
+          "enum": ["true", "false", true, false]
+        }
+      },
+      "required": ["changed", "created", "createdDate", "deleted", "fileName", "fullName", "success"],
+      "additionalProperties": false
+    },
+    "RunTestResult": {
+      "type": "object",
+      "properties": {
+        "codeCoverage": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CodeCoverage"
+              }
+            },
+            {
+              "$ref": "#/definitions/CodeCoverage"
+            }
+          ]
+        },
+        "codeCoverageWarnings": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CodeCoverageWarnings"
+              }
+            },
+            {
+              "$ref": "#/definitions/CodeCoverageWarnings"
+            }
+          ]
+        },
+        "failures": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Failures"
+              }
+            },
+            {
+              "$ref": "#/definitions/Failures"
+            }
+          ]
+        },
+        "numFailures": {
+          "type": "string"
+        },
+        "numTestsRun": {
+          "type": "string"
+        },
+        "successes": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Successes"
+              }
+            },
+            {
+              "$ref": "#/definitions/Successes"
+            }
+          ]
+        },
+        "totalTime": {
+          "type": "string"
+        }
+      },
+      "required": ["numFailures", "numTestsRun", "totalTime"],
+      "additionalProperties": false
+    },
+    "CodeCoverage": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "locationsNotCovered": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LocationsNotCovered"
+              }
+            },
+            {
+              "$ref": "#/definitions/LocationsNotCovered"
+            }
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "numLocations": {
+          "type": "string"
+        },
+        "numLocationsNotCovered": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "name", "numLocations", "numLocationsNotCovered", "type"],
+      "additionalProperties": false
+    },
+    "LocationsNotCovered": {
+      "type": "object",
+      "properties": {
+        "column": {
+          "type": "string"
+        },
+        "line": {
+          "type": "string"
+        },
+        "numExecutions": {
+          "type": "string"
+        },
+        "time": {
+          "type": "string"
+        }
+      },
+      "required": ["column", "line", "numExecutions", "time"],
+      "additionalProperties": false
+    },
+    "CodeCoverageWarnings": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "message", "namespace"],
+      "additionalProperties": false
+    },
+    "Failures": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "methodName": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "packageName": {
+          "type": "string"
+        },
+        "stackTrace": {
+          "type": "string"
+        },
+        "time": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "message", "methodName", "name", "packageName", "stackTrace", "time", "type"],
+      "additionalProperties": false
+    },
+    "Successes": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "methodName": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "time": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "methodName", "name", "time"],
+      "additionalProperties": false
+    },
+    "FileResponse": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/FileResponseSuccess"
+        },
+        {
+          "$ref": "#/definitions/FileResponseFailure"
+        }
+      ]
+    },
+    "FileResponseSuccess": {
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "filePath": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string",
+          "enum": ["Created", "Changed", "Unchanged", "Deleted"]
+        }
+      },
+      "required": ["fullName", "state", "type"],
+      "additionalProperties": false
+    },
+    "FileResponseFailure": {
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "filePath": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string",
+          "const": "Failed"
+        },
+        "lineNumber": {
+          "type": "number"
+        },
+        "columnNumber": {
+          "type": "number"
+        },
+        "error": {
+          "type": "string"
+        },
+        "problemType": {
+          "type": "string",
+          "enum": ["Warning", "Error"]
+        }
+      },
+      "required": ["error", "fullName", "problemType", "state", "type"],
+      "additionalProperties": false
+    },
+    "MetadataApiDeployStatus": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/RequestStatus"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "done": {
+          "type": "boolean"
+        },
+        "canceledBy": {
+          "type": "string"
+        },
+        "canceledByName": {
+          "type": "string"
+        },
+        "checkOnly": {
+          "type": "boolean"
+        },
+        "completedDate": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "createdByName": {
+          "type": "string"
+        },
+        "createdDate": {
+          "type": "string"
+        },
+        "details": {
+          "$ref": "#/definitions/DeployDetails"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "errorStatusCode": {
+          "type": "string"
+        },
+        "ignoreWarnings": {
+          "type": "boolean"
+        },
+        "lastModifiedDate": {
+          "type": "string"
+        },
+        "numberComponentErrors": {
+          "type": "number"
+        },
+        "numberComponentsDeployed": {
+          "type": "number"
+        },
+        "numberComponentsTotal": {
+          "type": "number"
+        },
+        "numberTestErrors": {
+          "type": "number"
+        },
+        "numberTestsCompleted": {
+          "type": "number"
+        },
+        "numberTestsTotal": {
+          "type": "number"
+        },
+        "runTestsEnabled": {
+          "type": "boolean"
+        },
+        "rollbackOnError": {
+          "type": "boolean"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "stateDetail": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "checkOnly",
+        "createdBy",
+        "createdByName",
+        "createdDate",
+        "details",
+        "done",
+        "id",
+        "ignoreWarnings",
+        "lastModifiedDate",
+        "numberComponentErrors",
+        "numberComponentsDeployed",
+        "numberComponentsTotal",
+        "numberTestErrors",
+        "numberTestsCompleted",
+        "numberTestsTotal",
+        "rollbackOnError",
+        "runTestsEnabled",
+        "status",
+        "success"
+      ],
+      "additionalProperties": false,
+      "description": "Raw response returned from a checkDeployStatus call to the Metadata API"
+    },
+    "CoverageResultsFileInfo": {
+      "type": "object",
+      "additionalProperties": false
+    }
+  }
+}

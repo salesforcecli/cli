@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/CustomObjectGenerateResult",
+  "definitions": {
+    "CustomObjectGenerateResult": {
+      "type": "object",
+      "properties": {
+        "object": {
+          "$ref": "#/definitions/SaveableCustomObject"
+        },
+        "path": {
+          "type": "string"
+        }
+      },
+      "required": ["object", "path"],
+      "additionalProperties": false
+    },
+    "SaveableCustomObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nameField": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": ["string", "null"]
+            },
+            "type": {
+              "type": ["string", "null"]
+            },
+            "displayFormat": {
+              "type": ["string", "null"]
+            }
+          },
+          "additionalProperties": false,
+          "description": "Used by classical CustomObject"
+        },
+        "label": {
+          "type": ["string", "null"]
+        },
+        "deploymentStatus": {
+          "type": ["string", "null"]
+        },
+        "description": {
+          "type": ["string", "null"]
+        },
+        "enableHistory": {
+          "type": ["boolean", "null"]
+        },
+        "enableActivities": {
+          "type": ["boolean", "null"]
+        },
+        "enableBulkApi": {
+          "type": ["boolean", "null"]
+        },
+        "enableFeeds": {
+          "type": ["boolean", "null"]
+        },
+        "enableReports": {
+          "type": ["boolean", "null"]
+        },
+        "enableSearch": {
+          "type": ["boolean", "null"]
+        },
+        "enableStreamingApi": {
+          "type": ["boolean", "null"]
+        },
+        "enableSharing": {
+          "type": ["boolean", "null"]
+        },
+        "pluralLabel": {
+          "type": ["string", "null"]
+        },
+        "sharingModel": {
+          "type": ["string", "null"]
+        },
+        "fullName": {
+          "type": ["string", "null"]
+        }
+      },
+      "required": ["nameField"],
+      "description": "There are a lot of properties that we don't, and some that jsforce thinks are mandatory that aren't. Many apply to the various sub-species (mdt, external, events)\n\nThis type represents a \"classical\" CustomObject subset that can deploy."
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/ManifestGenerateCommandResult",
+  "definitions": {
+    "ManifestGenerateCommandResult": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        }
+      },
+      "required": ["name", "path"],
+      "additionalProperties": false
+    }
+  }
+}
