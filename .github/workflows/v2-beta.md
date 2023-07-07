@@ -4,7 +4,10 @@
 
 ## Installation
 
-> You **must** uninstall `sfdx` before you install `sf` (v2), or you'll get an error. This is true for all installation methods (npm, installers, and TAR files.)
+> **Warning**  
+> You **must** uninstall `sfdx` before you install `sf` (v2), or you'll get an error. See instructions for your installation methods below.
+> 
+> **Context:** We created an alias for `sfdx` within `sf` (v2) so that you don't need to update your scripts from `sfdx` to `sf`. The consequence is a one-time uninstall of `sfdx-cli` to prevent this collision.
 
 ### npm
 
@@ -19,6 +22,16 @@ If you have CI scripts that install Salesforce CLI with npm, and you want to try
 
 1. Remove the command to install `sfdx`.
 2. Add (or replace) the command that installs `sf` with this command: `npm install -g @salesforce/cli@beta`.
+
+If you see an error similar to this, you must uninstall `sfdx-cli`.
+```
+npm ERR! code EEXIST
+npm ERR! path /Users/username/.nvm/versions/node/v18.15.0/bin/sfdx
+npm ERR! EEXIST: file already exists
+npm ERR! File exists: /Users/username/.nvm/versions/node/v18.15.0/bin/sfdx
+npm ERR! Remove the existing file and try again, or run npm
+npm ERR! with --force to overwrite files recklessly.
+```
 
 ### Installers
 
