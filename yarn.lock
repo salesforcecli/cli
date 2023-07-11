@@ -1735,14 +1735,14 @@
     jsonwebtoken "9.0.0"
     ts-retry-promise "^0.7.0"
 
-"@salesforce/core@^4.0.1", "@salesforce/core@^4.1.0", "@salesforce/core@^4.2.1", "@salesforce/core@^4.3.1", "@salesforce/core@^4.3.2", "@salesforce/core@^4.3.4", "@salesforce/core@^4.3.5":
-  version "4.3.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-4.3.6.tgz#2ee6e6bdffdd5f1c9836c809c38a8a8050dd7681"
-  integrity sha512-gJvY8rK0U0ELCcbQAAjqgjt3MHUB/ycrKW4e/M8Qg8iir+qIXd7hTD2SfuPYsuM/1y+inR9FdGDnh/tLvdoYWA==
+"@salesforce/core@^4.0.1", "@salesforce/core@^4.1.0", "@salesforce/core@^4.2.1", "@salesforce/core@^4.3.1", "@salesforce/core@^4.3.2", "@salesforce/core@^4.3.4", "@salesforce/core@^4.3.5", "@salesforce/core@^4.3.8":
+  version "4.3.9"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-4.3.9.tgz#58a2d54933183a27967bbcad67bf1ffc174ebd8b"
+  integrity sha512-j9sCEJuXxTExQVYnIDjsNF9Sor3Ff71M1bpJkfnm1BFH66A333KkmdJTUVB2lmNFg7sR+4q/IfgPi92wwsKOfQ==
   dependencies:
     "@salesforce/bunyan" "^2.0.0"
-    "@salesforce/kit" "^3.0.3"
-    "@salesforce/schemas" "^1.5.1"
+    "@salesforce/kit" "^3.0.4"
+    "@salesforce/schemas" "^1.6.0"
     "@salesforce/ts-types" "^2.0.2"
     "@types/semver" "^7.5.0"
     ajv "^8.12.0"
@@ -1815,12 +1815,12 @@
     shx "^0.3.3"
     tslib "^2.5.0"
 
-"@salesforce/kit@^3.0.0", "@salesforce/kit@^3.0.2", "@salesforce/kit@^3.0.3":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/kit/-/kit-3.0.4.tgz#c9cbe65d530340e9b0966f4380ccc2bbaa41a57a"
-  integrity sha512-i+0/JlysWEhFyqSxFAuptdCs3aVLxaL2e3vDsur4gRkb+AtyzFwJH68ZpqWJI8HiZdSVCMksNXWiuHBS5PpErg==
+"@salesforce/kit@^3.0.0", "@salesforce/kit@^3.0.2", "@salesforce/kit@^3.0.3", "@salesforce/kit@^3.0.4":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/kit/-/kit-3.0.5.tgz#0792daff4f45e1c0e0667735988815e3a01d20fb"
+  integrity sha512-Vwryx7v5z0JTV+IdoxnKFArFyVfyKPClmIXtwEH3O6uZd1mDZAp7Y3aJPoKNWgfBtQaxRalc3W5heuC1lTa5SA==
   dependencies:
-    "@salesforce/ts-types" "^2.0.3"
+    "@salesforce/ts-types" "^2.0.4"
     tslib "^2.6.0"
 
 "@salesforce/plugin-apex@2.3.4":
@@ -2101,19 +2101,19 @@
   resolved "https://registry.yarnpkg.com/@salesforce/prettier-config/-/prettier-config-0.0.3.tgz#ba648d4886bb38adabe073dbea0b3a91b3753bb0"
   integrity sha512-hYOhoPTCSYMDYn+U1rlEk16PoBeAJPkrdg4/UtAzupM1mRRJOwEPMG1d7U8DxJFKuXW3DMEYWr2MwAIBDaHmFg==
 
-"@salesforce/schemas@1.6.0", "@salesforce/schemas@^1.5.1":
+"@salesforce/schemas@1.6.0", "@salesforce/schemas@^1.5.1", "@salesforce/schemas@^1.6.0":
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.6.0.tgz#14505ebad2fb2d4f7b14837545d662766d293561"
   integrity sha512-SwhDTLucj/GRbPpxlEoDZeqlX22o+G6fiebTXTu1cZKmd1oE0W2L7SlTTgJnWck8bhTeBIgQi9cpD8c2t5ISKA==
 
-"@salesforce/sf-plugins-core@3.1.4", "@salesforce/sf-plugins-core@^3.0.2", "@salesforce/sf-plugins-core@^3.1.0", "@salesforce/sf-plugins-core@^3.1.1", "@salesforce/sf-plugins-core@^3.1.2", "@salesforce/sf-plugins-core@^3.1.3", "@salesforce/sf-plugins-core@^3.1.4":
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-3.1.4.tgz#2526338d0dfb2247de382ff1a88017640df11f4e"
-  integrity sha512-njdV0/cEHa3jI+8/izMxf/ChOO7gJiC39ooa0oZu9DD8INFFfRdJ9u6cgT3xk16buZG1E9zUJpmV2CjWn2HJeg==
+"@salesforce/sf-plugins-core@3.1.6", "@salesforce/sf-plugins-core@^3.0.2", "@salesforce/sf-plugins-core@^3.1.0", "@salesforce/sf-plugins-core@^3.1.1", "@salesforce/sf-plugins-core@^3.1.2", "@salesforce/sf-plugins-core@^3.1.3", "@salesforce/sf-plugins-core@^3.1.4":
+  version "3.1.6"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-3.1.6.tgz#7c290c2dcb89f0db3940b0fbb5418978ee70b268"
+  integrity sha512-+npdtT3U1dnFX2HW0t5MV20u8pf07ZAJRmIsgGpkg2Yk7+sFWrxWVnS1VmXsfY4YkoIgK6PIDkVJtl5ZBO1rPA==
   dependencies:
     "@oclif/core" "^2.8.11"
-    "@salesforce/core" "^4.3.2"
-    "@salesforce/kit" "^3.0.3"
+    "@salesforce/core" "^4.3.8"
+    "@salesforce/kit" "^3.0.4"
     "@salesforce/ts-types" "^2.0.2"
     chalk "^4"
     inquirer "^8.2.5"
