@@ -27,7 +27,6 @@ const envVars = [
     Env.SF_INSTALLER,
     Env.SF_NPM_REGISTRY,
     'SF_REDIRECTED',
-    Env.SF_S3_HOST,
     Env.SF_UPDATE_INSTRUCTIONS,
   ]),
 ];
@@ -43,12 +42,6 @@ export const UPDATE_DISABLED_DEMO =
   'To check for a new version, unset the environment variable SF_ENV.';
 
 export function configureUpdateSites(config: Interfaces.Config, env = nodeEnv): void {
-  const s3Host = env.getS3HostOverride();
-  if (s3Host) {
-    // Override config value if set via envar
-    set(config, 'pjson.oclif.update.s3.host', s3Host);
-  }
-
   const npmRegistry = env.getNpmRegistryOverride();
   if (npmRegistry) {
     // Override config value if set via envar

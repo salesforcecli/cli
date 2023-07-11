@@ -12,9 +12,7 @@ export class Env extends EnvVars {
   public static SF_DISABLE_AUTOUPDATE = 'SF_DISABLE_AUTOUPDATE';
   public static SF_ENV = 'SF_ENV';
   public static SF_INSTALLER = 'SF_INSTALLER';
-  public static SFDX_INSTALLER = 'SFDX_INSTALLER';
   public static SF_NPM_REGISTRY = 'SF_NPM_REGISTRY';
-  public static SF_S3_HOST = 'SF_S3_HOST';
   public static SF_UPDATE_INSTRUCTIONS = 'SF_UPDATE_INSTRUCTIONS';
 
   public constructor(env = process.env) {
@@ -45,16 +43,7 @@ export class Env extends EnvVars {
   }
 
   public isInstaller(): boolean {
-    // Check SFDX_INSTALLER instead of SF_INSTALLER until such time sf has its own installers
-    return this.getBoolean(Env.SFDX_INSTALLER);
-  }
-
-  public getS3HostOverride(): Optional<string> {
-    return this.getString(Env.SF_S3_HOST);
-  }
-
-  public setS3HostOverride(value: string): void {
-    return this.setString(Env.SF_S3_HOST, value);
+    return this.getBoolean(Env.SF_INSTALLER);
   }
 
   public getNpmRegistryOverride(): Optional<string> {
