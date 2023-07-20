@@ -75,7 +75,7 @@ jobs:
           echo "NPM latest-rc version is: ${{ steps.latest-rc-version.outputs.version }}"
           echo "Docker-full version is: ${{ steps.docker-full-version.outputs.version }}"
           echo "Docker-slim version is: ${{ steps.docker-slim-version.outputs.version }}"
-          if [ "${{ steps.latest-rc-version.outputs.version }}" == "${{ steps.docker-full-version.outputs.version }}" ] && [ "${{ steps.docker-full-version.outputs.version }}" == "${{ steps.docker-slim-version.outputs.version }}"]; then
+          if [ "${{ steps.latest-rc-version.outputs.version }}" == "${{ steps.docker-full-version.outputs.version }}" ] && [ "${{ steps.docker-full-version.outputs.version }}" == "${{ steps.docker-slim-version.outputs.version }}" ]; then
             echo "Docker versions match npm version. Proceeding..."
           else
             echo "Version mismatch! Exiting..."
