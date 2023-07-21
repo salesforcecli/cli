@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.2.1",
+  "version": "2.2.2-dev.0",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run",
@@ -130,7 +130,7 @@
     "@oclif/plugin-version": "1.3.7",
     "@oclif/plugin-warn-if-update-available": "2.0.44",
     "@oclif/plugin-which": "2.2.26",
-    "@salesforce/core": "^4.3.5",
+    "@salesforce/core": "5.0.1-v5-beta.0",
     "@salesforce/plugin-apex": "2.3.7",
     "@salesforce/plugin-auth": "2.8.9",
     "@salesforce/plugin-data": "2.5.2",
@@ -183,6 +183,7 @@
     "@salesforce/plugin-user"
   ],
   "resolutions": {
+    "@salesforce/core": "5.0.1-v5-beta.0",
     "@salesforce/schemas": "1.6.0",
     "@salesforce/templates": "58.0.1",
     "@salesforce/source-deploy-retrieve": "9.4.2",
@@ -231,7 +232,7 @@
     "@oclif/plugin-command-snapshot": "^3.3.0",
     "@salesforce/dev-config": "^4.0.1",
     "@salesforce/dev-scripts": "^3.1.1",
-    "@salesforce/plugin-release-management": "^3.16.11",
+    "@salesforce/plugin-release-management": "4.1.12",
     "@salesforce/prettier-config": "^0.0.3",
     "@salesforce/ts-sinon": "^1.4.10",
     "@types/debug": "^4.1.8",
