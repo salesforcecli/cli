@@ -17,16 +17,8 @@ require('../dist/flags').preprocessCliFlags(process);
 const cli = require('../dist/cli');
 const pjson = require('../package.json');
 
-// OVERRIDES gets replaced with particular values for binary builds,
-// but simply use defaults for npm and local invocations
-const overrides = {
-  /* @OVERRIDES@ */
-};
-const version = overrides.version || pjson.version;
-const channel = overrides.channel || 'stable';
-
 cli
-  .create(version, channel)
+  .create(pjson.version, 'stable')
   .run()
   .then(function () {
     require('@oclif/core/flush')();
