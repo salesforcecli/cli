@@ -1191,10 +1191,10 @@
     is-wsl "^2.1.1"
     tslib "^2.5.0"
 
-"@oclif/core@2.10.0", "@oclif/core@^2.8.10", "@oclif/core@^2.8.11", "@oclif/core@^2.8.2", "@oclif/core@^2.8.5", "@oclif/core@^2.8.7", "@oclif/core@^2.9.3", "@oclif/core@^2.9.4":
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.10.0.tgz#8fd4a46bdea2a45ccf090c1433e913ea454b0607"
-  integrity sha512-4csNtXBb+RKrhO2lBAwBvxuyk0B3NB45tAkSHOrJjUo1ufT+qpg9V+g7nHZBMlwoQmjlAjCOKtm6RHar8FrpZg==
+"@oclif/core@2.10.1", "@oclif/core@^2.8.10", "@oclif/core@^2.8.11", "@oclif/core@^2.8.2", "@oclif/core@^2.8.5", "@oclif/core@^2.8.7", "@oclif/core@^2.9.3", "@oclif/core@^2.9.4":
+  version "2.10.1"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.10.1.tgz#a863ea9f86643d3a681d2a9412f3ad58210eabf7"
+  integrity sha512-NdNoDdR0is1cRxFOmwbB0RVGbsD76IU0/aoEd+VzL1zz5dg3GkTOSBuhru+7P0JfP68rDxytHv0kToZBcnJ22A==
   dependencies:
     "@types/cli-progress" "^3.11.0"
     ansi-escapes "^4.3.2"
@@ -2021,17 +2021,17 @@
     js2xmlparser "^4.0.2"
     tslib "^2"
 
-"@salesforce/plugin-source@2.10.27":
-  version "2.10.27"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-source/-/plugin-source-2.10.27.tgz#da6f5b3a5c6d8da755fbff7c8ba7c4c6b699c72b"
-  integrity sha512-lO/xVzTvTEqNdE4JIK3ZKtFntLY+OvnEjA7gZf1CLqqr83fWR4iTTfIYNyftiotZindGSqSh/2qTINc6Cx5nMg==
+"@salesforce/plugin-source@2.10.28":
+  version "2.10.28"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-source/-/plugin-source-2.10.28.tgz#96cd45d6a519b2d06cbb7756f48b4df82934e71b"
+  integrity sha512-aVOfiCfxj/PgLMv4R12iK5peKGpsU1rNadkC7/ubPmaPhYLQAYVgrWwrYrrtNqJlRCAVp0m7q2edILo/iv8Gow==
   dependencies:
     "@oclif/core" "^2.8.10"
     "@salesforce/apex-node" "^1.6.2"
     "@salesforce/core" "^4.3.2"
     "@salesforce/kit" "^3.0.2"
     "@salesforce/sf-plugins-core" "^3.0.2"
-    "@salesforce/source-deploy-retrieve" "^9.2.2"
+    "@salesforce/source-deploy-retrieve" "^9.6.0"
     "@salesforce/source-tracking" "^4.2.5"
     chalk "^4.1.2"
     got "^11.8.6"
@@ -2130,10 +2130,10 @@
     chalk "^4"
     inquirer "^8.2.5"
 
-"@salesforce/source-deploy-retrieve@9.5.0", "@salesforce/source-deploy-retrieve@^9.2.2", "@salesforce/source-deploy-retrieve@^9.3.2", "@salesforce/source-deploy-retrieve@^9.4.0", "@salesforce/source-deploy-retrieve@^9.4.2":
-  version "9.5.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-9.5.0.tgz#e9079263f53671bf6ed6276a0245d49b6d6e5410"
-  integrity sha512-yjISk/euy77OOGyPxchUJt9jvc99Ia+tSXj3TJpaK552AqNq8WlT4Wnay+IKBa24SWFV57nvUtqaI8bcgkmm/Q==
+"@salesforce/source-deploy-retrieve@9.6.0", "@salesforce/source-deploy-retrieve@^9.3.2", "@salesforce/source-deploy-retrieve@^9.4.0", "@salesforce/source-deploy-retrieve@^9.4.2", "@salesforce/source-deploy-retrieve@^9.6.0":
+  version "9.6.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-9.6.0.tgz#fac1a76c5ca29ede327b5af75c1b6f38c77edc85"
+  integrity sha512-p5peQQT3mpRNFf5sa9K1P40wWkiBfqMJOEG4u8tj4299vaDlA50k1FojpAuJlXJQaazbq0h8R+TKXxtmUdls2A==
   dependencies:
     "@salesforce/core" "^4.3.1"
     "@salesforce/kit" "^3.0.6"
