@@ -21,5 +21,6 @@ RUN apt-get autoremove --assume-yes \
   && rm -rf /var/lib/apt/lists/*
 
 ENV SF_CONTAINER_MODE true
+ENV SFDX_CONTAINER_MODE true
 ENV DEBIAN_FRONTEND=dialog
 ENV SHELL /bin/bash

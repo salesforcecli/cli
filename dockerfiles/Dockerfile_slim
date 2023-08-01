@@ -18,5 +18,6 @@ RUN apt-get autoremove --assume-yes \
 
 ENV PATH="/usr/local/sf/bin:$PATH"
 ENV SF_CONTAINER_MODE true
+ENV SFDX_CONTAINER_MODE true
 ENV DEBIAN_FRONTEND=dialog
 ENV SHELL /bin/bash
