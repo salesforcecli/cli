@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.3.8",
+  "version": "2.4.0",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run",
@@ -71,10 +71,10 @@
     "jitPlugins": {
       "@salesforce/plugin-custom-metadata": "2.1.36",
       "@salesforce/plugin-community": "2.3.10",
-      "@salesforce/plugin-dev": "1.1.6",
+      "@salesforce/plugin-dev": "1.1.7",
       "@salesforce/plugin-env": "2.1.20",
       "@salesforce/plugin-functions": "1.21.10",
-      "@salesforce/plugin-packaging": "1.21.4",
+      "@salesforce/plugin-packaging": "1.21.5",
       "@salesforce/plugin-signups": "1.4.31",
       "@salesforce/sfdx-plugin-lwc-test": "1.0.2",
       "@salesforce/sfdx-scanner": "3.15.0"
@@ -119,8 +119,8 @@
     ]
   },
   "dependencies": {
-    "@oclif/core": "2.11.5",
-    "@oclif/plugin-autocomplete": "2.3.3",
+    "@oclif/core": "2.11.6",
+    "@oclif/plugin-autocomplete": "2.3.4",
     "@oclif/plugin-commands": "2.2.21",
     "@oclif/plugin-help": "5.2.15",
     "@oclif/plugin-not-found": "2.3.34",
@@ -185,7 +185,7 @@
   "resolutions": {
     "@salesforce/schemas": "1.6.0",
     "@salesforce/templates": "58.0.1",
-    "@salesforce/source-deploy-retrieve": "9.6.1",
+    "@salesforce/source-deploy-retrieve": "9.7.0",
     "@salesforce/source-tracking": "4.2.9"
   },
   "repository": "salesforcecli/cli",
