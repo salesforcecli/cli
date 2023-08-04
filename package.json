@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.4.1",
+  "version": "2.4.2-qa.0",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run",
@@ -134,7 +134,7 @@
     "@salesforce/plugin-apex": "2.3.9",
     "@salesforce/plugin-auth": "2.8.10",
     "@salesforce/plugin-data": "2.5.4",
-    "@salesforce/plugin-deploy-retrieve": "1.16.5",
+    "@salesforce/plugin-deploy-retrieve": "1.17.0",
     "@salesforce/plugin-info": "2.6.35",
     "@salesforce/plugin-limits": "2.3.27",
     "@salesforce/plugin-login": "1.2.23",
@@ -147,7 +147,7 @@
     "@salesforce/plugin-templates": "55.5.7",
     "@salesforce/plugin-trust": "2.5.1",
     "@salesforce/plugin-user": "2.3.27",
-    "@salesforce/sf-plugins-core": "3.1.13",
+    "@salesforce/sf-plugins-core": "3.1.14",
     "debug": "^4.3.4",
     "semver": "^7.5.4",
     "tslib": "^2.4.1"
@@ -184,7 +184,7 @@
   ],
   "resolutions": {
     "@salesforce/schemas": "1.6.0",
-    "@salesforce/templates": "58.0.1",
+    "@salesforce/templates": "58.0.2",
     "@salesforce/source-deploy-retrieve": "9.7.1",
     "@salesforce/source-tracking": "4.2.9"
   },
@@ -231,7 +231,7 @@
     "@oclif/plugin-command-snapshot": "^3.3.0",
     "@salesforce/dev-config": "^4.0.1",
     "@salesforce/dev-scripts": "^3.1.1",
-    "@salesforce/plugin-release-management": "^3.16.11",
+    "@salesforce/plugin-release-management": "^4.1.18-qa.0",
     "@salesforce/prettier-config": "^0.0.3",
     "@salesforce/ts-sinon": "^1.4.13",
     "@types/debug": "^4.1.8",
