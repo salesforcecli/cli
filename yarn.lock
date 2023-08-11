@@ -2007,15 +2007,15 @@
     proxy-agent "^6.3.0"
     tslib "^2"
 
-"@salesforce/plugin-telemetry@2.2.6":
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-2.2.6.tgz#629a009918d5f298cf1d4222687ebb3a5d89c102"
-  integrity sha512-dOctOAAmBQ83yib42V61h2LQhEmOk+9bminyoHKFVloR47u7PoQSU86xJ/NR1EUlYSKUVrfZN7zqWBx1AQ0Cvw==
+"@salesforce/plugin-telemetry@2.2.7-qa.0":
+  version "2.2.7-qa.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-2.2.7-qa.0.tgz#ea4121314f86a7f2f836ccede9c0f42225b897bd"
+  integrity sha512-d3S1IZEQzbLBvGSAAwXDvaBSHOHVJRZ86W7vjkMEwCEINe3ohYTOX5OxvA3JO8KNS0omNgNg0qdiynmQyCiYNw==
   dependencies:
     "@oclif/core" "^2.11.7"
     "@salesforce/core" "^5.2.0"
     "@salesforce/sf-plugins-core" "^3.1.14"
-    "@salesforce/telemetry" "^4.0.16"
+    "@salesforce/telemetry" "^4.0.17-qa.0"
     debug "^4.3.4"
     tslib "^2"
 
@@ -2120,10 +2120,10 @@
     isomorphic-git "1.23.0"
     ts-retry-promise "^0.7.0"
 
-"@salesforce/telemetry@^4.0.16":
-  version "4.0.16"
-  resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-4.0.16.tgz#7c2168ff1f9838c87be044e7419f260f30b90aad"
-  integrity sha512-W1cBQdS7Mu78IyyVzLWucdoqLHDy5ZJ49Q6Oo1LLHi2gYD3o5zvDY/Sj6euy4Skms3OrFfOuusxBxu5NG6H3NQ==
+"@salesforce/telemetry@4.0.17-qa.0", "@salesforce/telemetry@^4.0.16", "@salesforce/telemetry@^4.0.17-qa.0":
+  version "4.0.17-qa.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-4.0.17-qa.0.tgz#76ddd2bcd0857e8d67dc545a49da8a13a27413b2"
+  integrity sha512-czixTrbXf8VNdgyBRJixognZV7toSYoqUhe6idlIShmy73BMMtbcFtt58NNUooKDc3sIzaI0h10oTV+5rMVAxg==
   dependencies:
     "@salesforce/core" "^5.2.0"
     "@salesforce/ts-types" "^2.0.6"
