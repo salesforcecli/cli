@@ -1191,7 +1191,7 @@
     is-wsl "^2.1.1"
     tslib "^2.5.0"
 
-"@oclif/core@2.11.8", "@oclif/core@^2.11.1", "@oclif/core@^2.11.4", "@oclif/core@^2.11.7", "@oclif/core@^2.11.8", "@oclif/core@^2.8.5", "@oclif/core@^2.8.7", "@oclif/core@^2.9.3":
+"@oclif/core@2.11.8", "@oclif/core@^2.11.1", "@oclif/core@^2.11.4", "@oclif/core@^2.11.7", "@oclif/core@^2.11.8", "@oclif/core@^2.8.5", "@oclif/core@^2.9.3":
   version "2.11.8"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.11.8.tgz#780c4fdf53e8569cf754c2a8fefcc7ddeacf1747"
   integrity sha512-GILmztcHBzze45GvxRpUvqQI5nM26kSE/Q21Y+6DtMR+C8etM/hFW26D3uqIAbGlGtg5QEZZ6pjA/Fqgz+gl3A==
@@ -1362,13 +1362,13 @@
     "@oclif/core" "^2.11.7"
     fast-levenshtein "^3.0.0"
 
-"@oclif/plugin-plugins@3.2.1":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-3.2.1.tgz#04c05bf8c8047d6d01a636de989478876b7eafc6"
-  integrity sha512-bxTHVMgBz9okTLrqeACzux5fBlqhhLb+mE2B4UyJaWWk7YYgq86I+KVOkD2dmkIX9cbV1xT3Z6Pt6/CV7LRX3Q==
+"@oclif/plugin-plugins@3.2.5":
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-3.2.5.tgz#4a497627948df98e80831d1bc283708a336a9ab3"
+  integrity sha512-1MCvzXHk1ESVXC/aH8XraHAmB/M8yA8YfbHaxgvvc2RGI/y9YWtGAbaamQULs6Rez98YQ+zMSgfNILL5ENkf8A==
   dependencies:
     "@oclif/color" "^1.0.4"
-    "@oclif/core" "^2.8.7"
+    "@oclif/core" "^2.11.8"
     chalk "^4.1.2"
     debug "^4.3.4"
     fs-extra "^9.0"
@@ -2007,15 +2007,15 @@
     proxy-agent "^6.3.0"
     tslib "^2"
 
-"@salesforce/plugin-telemetry@2.2.6":
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-2.2.6.tgz#629a009918d5f298cf1d4222687ebb3a5d89c102"
-  integrity sha512-dOctOAAmBQ83yib42V61h2LQhEmOk+9bminyoHKFVloR47u7PoQSU86xJ/NR1EUlYSKUVrfZN7zqWBx1AQ0Cvw==
+"@salesforce/plugin-telemetry@2.2.7-qa.0":
+  version "2.2.7-qa.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-2.2.7-qa.0.tgz#ea4121314f86a7f2f836ccede9c0f42225b897bd"
+  integrity sha512-d3S1IZEQzbLBvGSAAwXDvaBSHOHVJRZ86W7vjkMEwCEINe3ohYTOX5OxvA3JO8KNS0omNgNg0qdiynmQyCiYNw==
   dependencies:
     "@oclif/core" "^2.11.7"
     "@salesforce/core" "^5.2.0"
     "@salesforce/sf-plugins-core" "^3.1.14"
-    "@salesforce/telemetry" "^4.0.16"
+    "@salesforce/telemetry" "^4.0.17-qa.0"
     debug "^4.3.4"
     tslib "^2"
 
@@ -2120,10 +2120,10 @@
     isomorphic-git "1.23.0"
     ts-retry-promise "^0.7.0"
 
-"@salesforce/telemetry@^4.0.16":
-  version "4.0.16"
-  resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-4.0.16.tgz#7c2168ff1f9838c87be044e7419f260f30b90aad"
-  integrity sha512-W1cBQdS7Mu78IyyVzLWucdoqLHDy5ZJ49Q6Oo1LLHi2gYD3o5zvDY/Sj6euy4Skms3OrFfOuusxBxu5NG6H3NQ==
+"@salesforce/telemetry@4.0.17-qa.0", "@salesforce/telemetry@^4.0.16", "@salesforce/telemetry@^4.0.17-qa.0":
+  version "4.0.17-qa.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-4.0.17-qa.0.tgz#76ddd2bcd0857e8d67dc545a49da8a13a27413b2"
+  integrity sha512-czixTrbXf8VNdgyBRJixognZV7toSYoqUhe6idlIShmy73BMMtbcFtt58NNUooKDc3sIzaI0h10oTV+5rMVAxg==
   dependencies:
     "@salesforce/core" "^5.2.0"
     "@salesforce/ts-types" "^2.0.6"

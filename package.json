@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.5.1",
+  "version": "2.5.2-qa.0",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run",
@@ -124,7 +124,7 @@
     "@oclif/plugin-commands": "2.2.21",
     "@oclif/plugin-help": "5.2.16",
     "@oclif/plugin-not-found": "2.3.36",
-    "@oclif/plugin-plugins": "3.2.1",
+    "@oclif/plugin-plugins": "3.2.5",
     "@oclif/plugin-search": "0.0.22",
     "@oclif/plugin-update": "3.1.30",
     "@oclif/plugin-version": "1.3.8",
@@ -143,7 +143,7 @@
     "@salesforce/plugin-settings": "1.4.25",
     "@salesforce/plugin-sobject": "0.2.2",
     "@salesforce/plugin-source": "2.10.30",
-    "@salesforce/plugin-telemetry": "2.2.6",
+    "@salesforce/plugin-telemetry": "2.2.7-qa.0",
     "@salesforce/plugin-templates": "55.5.10",
     "@salesforce/plugin-trust": "2.5.4",
     "@salesforce/plugin-user": "2.3.28",
@@ -186,7 +186,8 @@
     "@salesforce/schemas": "1.6.0",
     "@salesforce/templates": "59.0.1",
     "@salesforce/source-deploy-retrieve": "9.7.3",
-    "@salesforce/source-tracking": "4.2.10"
+    "@salesforce/source-tracking": "4.2.10",
+    "@salesforce/telemetry": "4.0.17-qa.0"
   },
   "repository": "salesforcecli/cli",
   "scripts": {
