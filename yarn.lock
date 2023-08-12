@@ -1191,7 +1191,7 @@
     is-wsl "^2.1.1"
     tslib "^2.5.0"
 
-"@oclif/core@2.11.8", "@oclif/core@^2.11.1", "@oclif/core@^2.11.4", "@oclif/core@^2.11.7", "@oclif/core@^2.11.8", "@oclif/core@^2.8.5", "@oclif/core@^2.8.7", "@oclif/core@^2.9.3":
+"@oclif/core@2.11.8", "@oclif/core@^2.11.1", "@oclif/core@^2.11.4", "@oclif/core@^2.11.7", "@oclif/core@^2.11.8", "@oclif/core@^2.8.5", "@oclif/core@^2.9.3":
   version "2.11.8"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.11.8.tgz#780c4fdf53e8569cf754c2a8fefcc7ddeacf1747"
   integrity sha512-GILmztcHBzze45GvxRpUvqQI5nM26kSE/Q21Y+6DtMR+C8etM/hFW26D3uqIAbGlGtg5QEZZ6pjA/Fqgz+gl3A==
@@ -1362,13 +1362,13 @@
     "@oclif/core" "^2.11.7"
     fast-levenshtein "^3.0.0"
 
-"@oclif/plugin-plugins@3.2.1":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-3.2.1.tgz#04c05bf8c8047d6d01a636de989478876b7eafc6"
-  integrity sha512-bxTHVMgBz9okTLrqeACzux5fBlqhhLb+mE2B4UyJaWWk7YYgq86I+KVOkD2dmkIX9cbV1xT3Z6Pt6/CV7LRX3Q==
+"@oclif/plugin-plugins@3.2.5":
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-3.2.5.tgz#4a497627948df98e80831d1bc283708a336a9ab3"
+  integrity sha512-1MCvzXHk1ESVXC/aH8XraHAmB/M8yA8YfbHaxgvvc2RGI/y9YWtGAbaamQULs6Rez98YQ+zMSgfNILL5ENkf8A==
   dependencies:
     "@oclif/color" "^1.0.4"
-    "@oclif/core" "^2.8.7"
+    "@oclif/core" "^2.11.8"
     chalk "^4.1.2"
     debug "^4.3.4"
     fs-extra "^9.0"
