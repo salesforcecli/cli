@@ -2007,15 +2007,15 @@
     proxy-agent "^6.3.0"
     tslib "^2"
 
-"@salesforce/plugin-telemetry@2.2.6":
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-2.2.6.tgz#629a009918d5f298cf1d4222687ebb3a5d89c102"
-  integrity sha512-dOctOAAmBQ83yib42V61h2LQhEmOk+9bminyoHKFVloR47u7PoQSU86xJ/NR1EUlYSKUVrfZN7zqWBx1AQ0Cvw==
+"@salesforce/plugin-telemetry@2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-2.3.0.tgz#5e9c94eb490d85a1af6a91aea7a29da1ff501881"
+  integrity sha512-syTtwnpND5leBAz0LUuocV6alhcxrMwt50+MrzqW5UzOme3iWQRwPMyhuaLjqyHYE8ccPf4apgovIJAwRhLpQQ==
   dependencies:
     "@oclif/core" "^2.11.7"
     "@salesforce/core" "^5.2.0"
     "@salesforce/sf-plugins-core" "^3.1.14"
-    "@salesforce/telemetry" "^4.0.16"
+    "@salesforce/telemetry" "^4.1.0"
     debug "^4.3.4"
     tslib "^2"
 
@@ -2032,15 +2032,15 @@
     yeoman-environment "^3.19.3"
     yeoman-generator "^5.9.0"
 
-"@salesforce/plugin-trust@2.5.5", "@salesforce/plugin-trust@^2.4.2":
-  version "2.5.5"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-2.5.5.tgz#f42d7e726bab02c9fd5d0fcd1ed5d005f19280c8"
-  integrity sha512-F+hHKTOGeb3LPxIkWrlW2BhW0TPDIgnKUvj3zhyLhB6s1F2wDbtdF8ZwMQK6JHfZWtdsj4bpnRshHYwaqedXxQ==
+"@salesforce/plugin-trust@2.6.0", "@salesforce/plugin-trust@^2.4.2":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-2.6.0.tgz#5c5cd41189d0937d0e8258b4048ad0db4f8ae828"
+  integrity sha512-cQQ27me6kQxrqhUH1YTRNd+GqmO5jSvRoiW27gbBW+R9NS/GpOW4VgaBursAP5+T9SMfoiP5SE+3h7uKSZESTA==
   dependencies:
     "@oclif/core" "^2.11.8"
     "@salesforce/core" "^5.2.0"
     "@salesforce/sf-plugins-core" "^3.1.14"
-    "@salesforce/telemetry" "^4.0.16"
+    "@salesforce/telemetry" "^4.1.0"
     got "^11"
     npm "^8.19.4"
     npm-run-path "^4.0.1"
@@ -2087,14 +2087,14 @@
     chalk "^4"
     inquirer "^8.2.5"
 
-"@salesforce/source-deploy-retrieve@9.7.3", "@salesforce/source-deploy-retrieve@^9.7.2":
-  version "9.7.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-9.7.3.tgz#45af775ce58de070c430be4826edeb196b7d0772"
-  integrity sha512-vhYokgC52i6Vgu19N/6zVmvUNIkTE0AV4qQK42ybZeW6bIyGH+jkJ1BSutUgN/XZeOdvGVqltCAe2blpgn+mIw==
+"@salesforce/source-deploy-retrieve@9.7.4", "@salesforce/source-deploy-retrieve@^9.7.2":
+  version "9.7.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-9.7.4.tgz#d1fb390e3be3d245b7b0fae5b803d946cc653f9a"
+  integrity sha512-Y+/93VvRT9YkP368s+K9WrZrSwoo8Y0e2iVlrxj2WVLkOacue0clWZZizrkqXMxD0s4xnStk9be8cKyyWbKh1w==
   dependencies:
     "@salesforce/core" "^5.2.0"
     "@salesforce/kit" "^3.0.9"
-    "@salesforce/ts-types" "^2.0.5"
+    "@salesforce/ts-types" "^2.0.6"
     fast-levenshtein "^3.0.0"
     fast-xml-parser "^4.2.7"
     got "^11.8.6"
@@ -2120,10 +2120,10 @@
     isomorphic-git "1.23.0"
     ts-retry-promise "^0.7.0"
 
-"@salesforce/telemetry@^4.0.16":
-  version "4.0.16"
-  resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-4.0.16.tgz#7c2168ff1f9838c87be044e7419f260f30b90aad"
-  integrity sha512-W1cBQdS7Mu78IyyVzLWucdoqLHDy5ZJ49Q6Oo1LLHi2gYD3o5zvDY/Sj6euy4Skms3OrFfOuusxBxu5NG6H3NQ==
+"@salesforce/telemetry@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-4.1.0.tgz#7ba69cb5c00fe108fa179e6a3ac8a0534c649ab8"
+  integrity sha512-Z5zg1l0yLoRRDJF3aR3bdicDNe2KoSizg4BCaTQe7WAhJErfRpv+7QcTs4LZkD2jxtJnl7RiBR9DYx2fTLcQaQ==
   dependencies:
     "@salesforce/core" "^5.2.0"
     "@salesforce/ts-types" "^2.0.6"
