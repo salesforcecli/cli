@@ -1393,17 +1393,16 @@
     inquirer "^8.2.6"
     rxjs "^7.8.1"
 
-"@oclif/plugin-update@3.1.32":
-  version "3.1.32"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-3.1.32.tgz#134e716f3b68aea0b611079ecf297393b0d7beda"
-  integrity sha512-x8ND74rXXP74OOQ8y9UAWK6cTx9XgBuHnpKMTS1JGCJ3Y887uT9ccsQC03ezCyPN0+IQqexNk2lCs+FCpLKk9w==
+"@oclif/plugin-update@4.0.1-qa.0":
+  version "4.0.1-qa.0"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.0.1-qa.0.tgz#cf1a41cfd2a2c91c51706aeb292ee9562528ff78"
+  integrity sha512-zdJjkHKJ1wOqlxsam79uJvrVWScvKhfdM5cc3GxLBjb7ZdrsH4FGkBhdyrXnAfcToTlfiNM1fcqEQgQtbu11Sw==
   dependencies:
-    "@oclif/color" "^1.0.10"
     "@oclif/core" "^2.11.8"
-    cross-spawn "^7.0.3"
+    chalk "^4"
     debug "^4.3.1"
     filesize "^6.1.0"
-    fs-extra "^9.0.1"
+    fs-extra "^11.1.1"
     http-call "^5.3.0"
     inquirer "^8.2.6"
     lodash.throttle "^4.1.1"
@@ -1703,14 +1702,14 @@
     istanbul-lib-report "^3.0.1"
     istanbul-reports "^3.1.6"
 
-"@salesforce/cli-plugins-testkit@^4.2.9":
-  version "4.2.9"
-  resolved "https://registry.yarnpkg.com/@salesforce/cli-plugins-testkit/-/cli-plugins-testkit-4.2.9.tgz#813bbb6a7926d17d5d0becd664e08f1c115680d1"
-  integrity sha512-v71dFmhlgwtmehK2QJ8+toeCYc39WQFu7R2wmhsHQeVA1UuYcx3uue5JnC392PIXddxQtjdR6eazk52tQg4nyA==
+"@salesforce/cli-plugins-testkit@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/cli-plugins-testkit/-/cli-plugins-testkit-4.3.0.tgz#253079d476569fbc4977c8100b3bf201b3e4a788"
+  integrity sha512-kW59i4muO49evQ76waWTfDUXpTfyBUQ0N1QIF4ZFB+aSAdVGG5N/oTMYz882ScS/SwB0XP0H119wT4cLoJI+Mw==
   dependencies:
     "@salesforce/core" "^5.2.0"
     "@salesforce/kit" "^3.0.9"
-    "@salesforce/ts-types" "^2.0.2"
+    "@salesforce/ts-types" "^2.0.6"
     "@types/shelljs" "^0.8.12"
     debug "^4.3.1"
     jszip "^3.10.1"
@@ -1925,20 +1924,20 @@
     open "^8.4.2"
     tslib "^2"
 
-"@salesforce/plugin-release-management@^4.1.19":
-  version "4.1.19"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-4.1.19.tgz#2ff5533a24dadf6b7f999462bf233ce5e817ef15"
-  integrity sha512-LflsY09sqbGay8/YszzGB62M8CRmoab5/LB0sFppvfBbTLgjDzCuPZkIWd+vR6d+v5nUfoR5OuLSV4l3zGXOOA==
+"@salesforce/plugin-release-management@^4.1.21":
+  version "4.1.21"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-4.1.21.tgz#1fb44a665a015f4fef351b58b8bae78987fd4f84"
+  integrity sha512-km1Ze9ns9EQ6pyzWl9x+kuHXRm/M4hFoVpbUXMnJwu3YL8K/0xZc0yhntyhHzBKR23OFAmmKRaznXOHxAPxRkg==
   dependencies:
     "@oclif/core" "^2.11.7"
     "@octokit/core" "^4.2.4"
     "@octokit/plugin-paginate-rest" "^6.1.2"
     "@octokit/plugin-throttling" "^5.2.3"
-    "@salesforce/cli-plugins-testkit" "^4.2.9"
+    "@salesforce/cli-plugins-testkit" "^4.3.0"
     "@salesforce/core" "^5.2.0"
     "@salesforce/kit" "^3.0.9"
     "@salesforce/plugin-command-reference" "^3.0.25"
-    "@salesforce/plugin-trust" "^2.4.2"
+    "@salesforce/plugin-trust" "^2.6.0"
     "@salesforce/sf-plugins-core" "^3.1.14"
     "@salesforce/ts-types" "^2.0.6"
     aws-sdk "^2.1413.0"
@@ -2032,7 +2031,7 @@
     yeoman-environment "^3.19.3"
     yeoman-generator "^5.9.0"
 
-"@salesforce/plugin-trust@2.6.0", "@salesforce/plugin-trust@^2.4.2":
+"@salesforce/plugin-trust@2.6.0", "@salesforce/plugin-trust@^2.6.0":
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-2.6.0.tgz#5c5cd41189d0937d0e8258b4048ad0db4f8ae828"
   integrity sha512-cQQ27me6kQxrqhUH1YTRNd+GqmO5jSvRoiW27gbBW+R9NS/GpOW4VgaBursAP5+T9SMfoiP5SE+3h7uKSZESTA==
@@ -2155,7 +2154,7 @@
     sinon "^5.1.1"
     tslib "^2.6.1"
 
-"@salesforce/ts-types@^2.0.2", "@salesforce/ts-types@^2.0.5", "@salesforce/ts-types@^2.0.6":
+"@salesforce/ts-types@^2.0.5", "@salesforce/ts-types@^2.0.6":
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/@salesforce/ts-types/-/ts-types-2.0.6.tgz#659590ee6ece45213bbdb23c9e244d206a2f912e"
   integrity sha512-hGSU3pwZKItAw567cD2hf+nwe4yPVANonb1E28bLVaRjYAI6FmdxjjTxA+wZRrTpTCpjd5TY67Lq2X1X1lY8bA==
@@ -5409,7 +5408,7 @@ fs-constants@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs-constants/-/fs-constants-1.0.0.tgz#6be0de9be998ce16af8afc24497b9ee9b7ccd9ad"
   integrity sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==
 
-fs-extra@^11.0.0:
+fs-extra@^11.0.0, fs-extra@^11.1.1:
   version "11.1.1"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-11.1.1.tgz#da69f7c39f3b002378b0954bb6ae7efdc0876e2d"
   integrity sha512-MGIE4HOvQCeUCzmlHs0vXpih4ysz4wg9qiSAu6cd42lVwPbTM1TjV7RusoyQqMmk/95gdQZX72u+YW+c3eEpFQ==
