@@ -1,7 +1,17 @@
 {
   "script": {
-    "prepare": "sf-install && yarn compile && yarn lint",
-    "pretest": "echo disable # sf-compile-test",
-    "lint": "eslint \"src/**/*.ts\""
+    "test:deprecation-policy": "wireit",
+    "prepare": "sf-install && yarn compile && yarn lint"
+  },
+  "wireit": {
+    "test": {
+      "dependencies": ["test:compile", "test:only", "lint"]
+    },
+    "test:deprecation-policy": {
+      "command": "sf-release cli:artifacts:compare",
+      "files": ["src/**/*.ts"],
+      "output": [],
+      "dependencies": ["compile"]
+    }
   }
 }
