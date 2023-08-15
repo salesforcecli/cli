@@ -2032,15 +2032,14 @@
     yeoman-environment "^3.19.3"
     yeoman-generator "^5.9.0"
 
-"@salesforce/plugin-trust@2.6.0", "@salesforce/plugin-trust@^2.4.2":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-2.6.0.tgz#5c5cd41189d0937d0e8258b4048ad0db4f8ae828"
-  integrity sha512-cQQ27me6kQxrqhUH1YTRNd+GqmO5jSvRoiW27gbBW+R9NS/GpOW4VgaBursAP5+T9SMfoiP5SE+3h7uKSZESTA==
+"@salesforce/plugin-trust@2.6.1", "@salesforce/plugin-trust@^2.4.2":
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-2.6.1.tgz#c7469833f6e2b5a2f866e1e865c8af0e8db1deb1"
+  integrity sha512-rcFq2Ci++aiiGNyX4E8o/OOCKm8hqxtLkfykCP9K8c2blLl4q0uLe8i9o1oaHTIgUBxSKhhZbq5sdgRL2DNV5Q==
   dependencies:
     "@oclif/core" "^2.11.8"
     "@salesforce/core" "^5.2.0"
     "@salesforce/sf-plugins-core" "^3.1.14"
-    "@salesforce/telemetry" "^4.1.0"
     got "^11"
     npm "^8.19.4"
     npm-run-path "^4.0.1"
