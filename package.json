@@ -10,7 +10,7 @@
   "homepage": "https://github.com/salesforcecli/cli",
   "bugs": "https://github.com/forcedotcom/cli/issues",
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "packageManager": "yarn@1.22.19",
   "files": [
@@ -149,7 +149,6 @@
     "@salesforce/plugin-user": "2.3.28",
     "@salesforce/sf-plugins-core": "3.1.15",
     "debug": "^4.3.4",
-    "semver": "^7.5.4",
     "tslib": "^2.4.1"
   },
   "pinnedDependencies": [
