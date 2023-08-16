@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.5.6",
+  "version": "2.5.7",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run",
@@ -10,7 +10,7 @@
   "homepage": "https://github.com/salesforcecli/cli",
   "bugs": "https://github.com/forcedotcom/cli/issues",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=14.0.0"
   },
   "packageManager": "yarn@1.22.19",
   "files": [
@@ -204,9 +204,9 @@
     "pack:tarballs:sequential": "oclif pack:tarballs --xz",
     "pack:verify": "sf-release cli:tarballs:verify --cli sf --windows-username-buffer 34",
     "pack:win": "oclif pack:win",
+    "postinstall": "node ./scripts/post-install-release-notes.js",
     "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
     "preinstall": "node ./scripts/preinstall.js",
-    "postinstall": "node ./scripts/post-install-release-notes.js",
     "prepack": "sf-prepack",
     "prepare": "sf-install && yarn compile && yarn lint",
     "prepublishOnly": "npm shrinkwrap",
