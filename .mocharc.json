@@ -1,8 +1,9 @@
 {
-  "require": "ts-node/register,source-map-support/register",
+  "require": "ts-node/register",
   "watch-extensions": "ts",
   "recursive": true,
   "reporter": "spec",
   "timeout": 5000,
-  "exclude": "node_modules/**/*"
+  "exclude": "node_modules/**/*",
+  "node-option": ["loader=ts-node/esm"]
 }

@@ -8,7 +8,7 @@
 
 import { expect } from 'chai';
 import { EnvironmentVariable } from '@salesforce/core';
-import { Env } from '../src/util/env';
+import { Env } from '../src/util/env.js';
 
 describe('Env', () => {
   let env: Env;

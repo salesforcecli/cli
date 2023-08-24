@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-  extends: '../.eslintrc.js',
+  extends: '../.eslintrc.cjs',
   // Allow describe and it
   env: { mocha: true },
   rules: {

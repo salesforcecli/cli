@@ -7,11 +7,10 @@
 // the below, there's lots of un-awaited promises for testing
 
 import { Config, Interfaces } from '@oclif/core';
-import { LoadOptions } from '@oclif/core/lib/interfaces/config';
 import { stubInterface } from '@salesforce/ts-sinon';
 import { getString } from '@salesforce/ts-types';
 import { expect } from 'chai';
-import * as sinon from 'sinon';
+import { createSandbox } from 'sinon';
 import { VersionCommand } from '@oclif/plugin-version';
 import { Doctor } from '@salesforce/plugin-info';
 import {
@@ -21,12 +20,12 @@ import {
   UPDATE_DISABLED_DEMO,
   UPDATE_DISABLED_INSTALLER,
   UPDATE_DISABLED_NPM,
-} from '../src/cli';
+} from '../src/cli.js';
 
-import { Env } from '../src/util/env';
+import { Env } from '../src/util/env.js';
 
 describe('cli', () => {
-  const sandbox = sinon.createSandbox();
+  const sandbox = createSandbox();
   const versionDetailMock = {
     architecture: 'darwin-x64',
     cliVersion: '@salesforce/cli/1.48.0',
@@ -50,12 +49,18 @@ describe('cli', () => {
   describe('create', () => {
     it('should create a runnable CLI instance', async () => {
       sandbox.stub(Config.prototype, 'load').callsFake(() => Promise.resolve());
-      let config: LoadOptions;
-      const exec = async (argv?: string[], opts?: LoadOptions): Promise<void> => {
+      let config: Interfaces.LoadOptions;
+      const exec = async (argv?: string[], opts?: Interfaces.LoadOptions): Promise<void> => {
         config = opts;
       };
       const env = new Env({});
-      await create('test', 'test', exec, env).run();
+      await create({
+        version: 'test',
+        channel: 'test',
+        bin: 'test',
+        run: exec,
+        env,
+      }).run();
       expect(config).to.exist;
       expect(config).to.have.property('options');
       expect(config).to.have.nested.property('options.version').and.equal('test');

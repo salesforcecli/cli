@@ -2,7 +2,14 @@
   "extends": "@salesforce/dev-config/tsconfig-strict",
   "compilerOptions": {
     "outDir": "dist",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "module": "ES2020",
+    "target": "es2019",
+    "moduleResolution": "node16"
   },
-  "include": ["./src/**/*.ts"]
+  "include": ["./src/**/*.ts"],
+  "ts-node": {
+    "esm": true,
+    "scope": true
+  }
 }

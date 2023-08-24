@@ -4,7 +4,7 @@
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import { CommandHelp, Command, HelpSection, HelpSectionRenderer, Interfaces } from '@oclif/core';
+import { Command, CommandHelp, HelpSection, HelpSectionRenderer, Interfaces } from '@oclif/core';
 import { SfCommandInterface } from '@salesforce/sf-plugins-core';
 type SectionType = { header: string; generate: HelpSectionRenderer };
 
@@ -35,6 +35,7 @@ export class SfCommandHelp extends CommandHelp {
       {
         header: 'CONFIGURATION VARIABLES',
         generate: ({ cmd }): HelpSection => {
+          // @ts-expect-error because sf-plugins-core is on @oclif/core v2 still
           const sfCommand = cmd as SfCommandInterface;
           return sfCommand.configurationVariablesSection;
         },
@@ -42,6 +43,7 @@ export class SfCommandHelp extends CommandHelp {
       {
         header: 'ENVIRONMENT VARIABLES',
         generate: ({ cmd }): HelpSection => {
+          // @ts-expect-error because sf-plugins-core is on @oclif/core v2 still
           const sfCommand = cmd as SfCommandInterface;
           return sfCommand.envVariablesSection;
         },
@@ -49,6 +51,7 @@ export class SfCommandHelp extends CommandHelp {
       {
         header: 'ERROR CODES',
         generate: ({ cmd }): HelpSection => {
+          // @ts-expect-error because sf-plugins-core is on @oclif/core v2 still
           const sfCommand = cmd as SfCommandInterface;
           return sfCommand.errorCodes;
         },

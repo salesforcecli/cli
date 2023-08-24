@@ -14,7 +14,7 @@ const hook: Hook.PluginsPreinstall = async function (options) {
   );
 
   if (pluginTrustFailure !== undefined) {
-    Errors.handle(pluginTrustFailure.error);
+    await Errors.handle(pluginTrustFailure.error);
   }
 };
 

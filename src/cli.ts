@@ -9,9 +9,8 @@ import * as os from 'os';
 import * as path from 'path';
 import { Config, Interfaces, run as oclifRun, settings } from '@oclif/core';
 import { set } from '@salesforce/kit';
-import { AnyJson, get } from '@salesforce/ts-types';
-import * as Debug from 'debug';
-import { default as nodeEnv, Env } from './util/env';
+import Debug from 'debug';
+import { default as nodeEnv, Env } from './util/env.js';
 
 const debug = Debug('sf');
 
@@ -112,32 +111,33 @@ function debugCliInfo(version: string, channel: string, env: Env, config: Interf
   );
 }
 
-export function create(
-  version: string,
-  channel: string,
-  run: typeof oclifRun,
-  env = nodeEnv
-): { run: () => Promise<unknown> } {
-  settings.performanceEnabled = true;
-  const root = path.resolve(__dirname, '..');
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const pjson = require(path.resolve(__dirname, '..', 'package.json')) as AnyJson;
-  const args = process.argv.slice(2);
+type CreateOptions = {
+  version: string;
+  bin: string | undefined;
+  channel: string;
+  run?: typeof oclifRun;
+  env?: typeof nodeEnv;
+};
 
+export function create(opts: CreateOptions): { run: () => Promise<unknown> } {
+  settings.performanceEnabled = true;
+  const root = path.resolve(import.meta.url, '..');
+  const args = process.argv.slice(2);
+  const env = opts.env ?? nodeEnv;
   return {
     async run(): Promise<unknown> {
       const config = new Config({
-        name: get(pjson, 'oclif.bin') as string | undefined,
+        name: opts.bin,
         root,
-        version,
-        channel,
+        version: opts.version,
+        channel: opts.channel,
       });
       await config.load();
-      configureUpdateSites(config, env);
+      configureUpdateSites(config, opts.env);
       configureAutoUpdate(env);
-      debugCliInfo(version, channel, env, config);
+      debugCliInfo(opts.version, opts.channel, env, config);
       // Example of how run is used in a test https://github.com/salesforcecli/cli/pull/171/files#diff-1deee0a575599b2df117c280da319f7938aaf6fdb0c04bcdbde769dbf464be69R46
-      return run ? run(args, config) : oclifRun(args, config);
+      return opts.run ? opts.run(args, config) : oclifRun(args, config);
     },
   };
 }
