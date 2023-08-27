@@ -1322,12 +1322,12 @@
     ts-json-schema-generator "^1.2.0"
     tslib "^2.5.0"
 
-"@oclif/plugin-commands@2.2.23":
-  version "2.2.23"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-commands/-/plugin-commands-2.2.23.tgz#b15c12861feec4013944ab099269bdb85486246c"
-  integrity sha512-R7YTqL3bj1gP+YsI6vEBm+9FFzL8UplDJZbn79glKFAMBkTfLvS6lxbdqjtPJHZdDPv+/ecEaozDQXiZXE++rQ==
+"@oclif/plugin-commands@2.2.24":
+  version "2.2.24"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-commands/-/plugin-commands-2.2.24.tgz#86bcc1e9a40c98970f26309156bdc51afb8497ee"
+  integrity sha512-bUZOBefMPR59oHngWNHDn+zGRQctVR5iMkO3qRWFUSVYt1VQtqOwAPBtpTIuIxL17/iGTG+U2b8jafn09lQNxA==
   dependencies:
-    "@oclif/core" "^2.11.8"
+    "@oclif/core" "^2.11.10"
     lodash "^4.17.11"
 
 "@oclif/plugin-help@3.2.18":
@@ -1354,13 +1354,13 @@
   dependencies:
     "@oclif/core" "^2.11.8"
 
-"@oclif/plugin-not-found@2.3.37", "@oclif/plugin-not-found@^2.3.32":
-  version "2.3.37"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-2.3.37.tgz#0405fe24f6a706a4616bf510bc7fce98556a25fe"
-  integrity sha512-P3D56ElnJQeztmkCmMqdr9QWyOlF/C/+Dl8QNFX+agGnGdumdyr28n4xDyFHsw7hm3o9TMYpLDLThKy95lXFsw==
+"@oclif/plugin-not-found@2.3.38", "@oclif/plugin-not-found@^2.3.32":
+  version "2.3.38"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-2.3.38.tgz#7baf17f5804411778af2d5952122f094e83480ab"
+  integrity sha512-NaEaSU64IiDpPQK2RylZ3rMmu20xE1X1pUlXn82xdOMS2Izkj6OCuDuy2OkLjT1Bwoe9SswrS+aJz3E8shyUUg==
   dependencies:
     "@oclif/color" "^1.0.10"
-    "@oclif/core" "^2.11.7"
+    "@oclif/core" "^2.11.10"
     fast-levenshtein "^3.0.0"
 
 "@oclif/plugin-plugins@3.3.0":
@@ -1411,12 +1411,12 @@
     semver "^7.5.4"
     tar-fs "^2.1.1"
 
-"@oclif/plugin-version@1.3.8":
-  version "1.3.8"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-version/-/plugin-version-1.3.8.tgz#4672b0098c2fe2317413234c70eaa063e64af132"
-  integrity sha512-FeNTt8k6DY2PRTNAYFY+fofk2wvoEoym5G9wAkMwO/ZnST5c5T9iLV7tSape+HJMUj//WffkPLWW5ox8+oNPaA==
+"@oclif/plugin-version@1.3.9":
+  version "1.3.9"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-version/-/plugin-version-1.3.9.tgz#35e7e23d12471b736b962ca92ad081da08a80cf2"
+  integrity sha512-hJpB8wMFqz3u580TQhXsiIV30AWCMI1Hs7FoBYhcfL86prJPNBybp5l6Kl0DjeeA01VK00kEBQDkEBKi9a7Z8w==
   dependencies:
-    "@oclif/core" "^2.11.1"
+    "@oclif/core" "^2.11.10"
 
 "@oclif/plugin-warn-if-update-available@2.0.48", "@oclif/plugin-warn-if-update-available@^2.0.44":
   version "2.0.48"
@@ -1805,15 +1805,15 @@
     chalk "^4.1.0"
     tslib "^2"
 
-"@salesforce/plugin-auth@2.8.13":
-  version "2.8.13"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-2.8.13.tgz#084b5fcccbf35b3c84aecb9f7f589a3f6ec30bb2"
-  integrity sha512-tTIYhAuDmYmTYvqCKMJJN2PO1v9f4ZeyQwRRGHaYKn8Nfl07rxNpKd/NKZoVXRi82We5J6w6awajacp91vL3Xg==
+"@salesforce/plugin-auth@2.8.14":
+  version "2.8.14"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-2.8.14.tgz#63e903c2d7ddfff124d63cabf7ec4b3791c2a87a"
+  integrity sha512-fhTyNyU/X6qatzJREhmA/G+5qTXaSBQTKlRbrEA6p25bCgSDpp+Y0Q69wmM1952tIdSs61/wUPAOq7/CkBUjXQ==
   dependencies:
     "@oclif/core" "^2.11.8"
     "@salesforce/core" "^5.2.0"
     "@salesforce/kit" "^3.0.9"
-    "@salesforce/sf-plugins-core" "^3.1.14"
+    "@salesforce/sf-plugins-core" "^3.1.18"
     "@salesforce/ts-types" "^2.0.6"
     chalk "^4.1.2"
     inquirer "^8.2.5"
