@@ -534,10 +534,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@eslint/js@^8.47.0":
-  version "8.47.0"
-  resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.47.0.tgz#5478fdf443ff8158f9de171c704ae45308696c7d"
-  integrity sha512-P6omY1zv5MItm93kLM8s2vr1HICJH8v0dvddDhysbIuZ+vcjOHg5Zbkf1mTkcmi2JA9oBG2anOkRnW8WJTS8Og==
+"@eslint/js@8.48.0":
+  version "8.48.0"
+  resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.48.0.tgz#642633964e217905436033a2bd08bf322849b7fb"
+  integrity sha512-ZSjtmelB7IJfWD2Fvb7+Z+ChTIKWq6kjda95fLcQKNS5aheVHn4IkfgRQE3sIIzTcSLwLcLZUD9UBt+V7+h+Pw==
 
 "@gar/promisify@^1.0.1", "@gar/promisify@^1.1.3":
   version "1.1.3"
@@ -1071,10 +1071,10 @@
     is-wsl "^2.1.1"
     tslib "^2.5.0"
 
-"@oclif/core@2.11.10", "@oclif/core@^2.11.10", "@oclif/core@^2.11.4", "@oclif/core@^2.11.7", "@oclif/core@^2.11.8", "@oclif/core@^2.8.5", "@oclif/core@^2.9.3":
-  version "2.11.10"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.11.10.tgz#638128034b8b4bdf4b23480a7278426f85130170"
-  integrity sha512-/7Umij3OU++6o+z4U+waJ5nP6IvK9KKEVzz+xsla68YoECLQwz43boUKqYizlNMtTfiwNkiYb5QE+OU/q5qEtA==
+"@oclif/core@2.12.0", "@oclif/core@^2.11.10", "@oclif/core@^2.11.4", "@oclif/core@^2.11.7", "@oclif/core@^2.11.8", "@oclif/core@^2.12.0", "@oclif/core@^2.8.5", "@oclif/core@^2.9.3":
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.12.0.tgz#ee2b450cc9c1a54a2445eb192e7881e370178943"
+  integrity sha512-RSfEQzYAmex/dVW/3afIMsaB2n5kG26tniAla+HSAQS7MHqM7LpCrDz5FG9VX5ygSPmQcknWPRmD96N5kyUt1g==
   dependencies:
     "@types/cli-progress" "^3.11.0"
     ansi-escapes "^4.3.2"
@@ -1948,12 +1948,12 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.6.0.tgz#14505ebad2fb2d4f7b14837545d662766d293561"
   integrity sha512-SwhDTLucj/GRbPpxlEoDZeqlX22o+G6fiebTXTu1cZKmd1oE0W2L7SlTTgJnWck8bhTeBIgQi9cpD8c2t5ISKA==
 
-"@salesforce/sf-plugins-core@3.1.18", "@salesforce/sf-plugins-core@^3.1.14", "@salesforce/sf-plugins-core@^3.1.15", "@salesforce/sf-plugins-core@^3.1.16", "@salesforce/sf-plugins-core@^3.1.18":
-  version "3.1.18"
-  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-3.1.18.tgz#a3c47c02a8ffe774f09daac2fc641b9eee72b3d6"
-  integrity sha512-c0uhR9lcufRTz6UmEgZfAItoHVweYrJIllXtEU4Mr5qb3E03rJy0GHHf0TbO5PIH5tP1nxj9ABODoSMZBdewIw==
+"@salesforce/sf-plugins-core@3.1.19", "@salesforce/sf-plugins-core@^3.1.14", "@salesforce/sf-plugins-core@^3.1.15", "@salesforce/sf-plugins-core@^3.1.16", "@salesforce/sf-plugins-core@^3.1.18":
+  version "3.1.19"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-3.1.19.tgz#fa5d9d0aaf2a66de649b9f4acd8c8a13cd197b00"
+  integrity sha512-LOypm9js9xGI2IpHC66YMP8RjsfuQf7iKTaRhlYusTniDbzMV87i/9BV1V+wtBWWlr44REHxGe1k5zjWrQvGsA==
   dependencies:
-    "@oclif/core" "^2.11.10"
+    "@oclif/core" "^2.12.0"
     "@salesforce/core" "^5.2.1"
     "@salesforce/kit" "^3.0.9"
     "@salesforce/ts-types" "^2.0.7"
@@ -2928,10 +2928,10 @@ available-typed-arrays@^1.0.5:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
 
-aws-sdk@^2.1231.0, aws-sdk@^2.1413.0, aws-sdk@^2.1440.0:
-  version "2.1440.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1440.0.tgz#ae32dd90f0ddc5ff0facda087c65956ee8d94fe3"
-  integrity sha512-ijHaRFZIKLYUDqOGTNrwncXF5vzJPU6VJpbRr7eNBAvo+nFtEHY4BZkldWYuhELCbWz0U5/+qMtF2T/JgPjfWQ==
+aws-sdk@^2.1231.0, aws-sdk@^2.1413.0, aws-sdk@^2.1446.0:
+  version "2.1446.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1446.0.tgz#589cacd8a241ea0d3516fe329d3c9166279ceda9"
+  integrity sha512-QaIyQz9csPSgujM+asHNWHh6uw1FDh+SxpUERLbePDYwqycQha/0BkOxTciGh/Jhp26tKMnHL7rwrYl37H6RYA==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -3293,10 +3293,10 @@ cardinal@^2.1.1:
     ansicolors "~0.3.2"
     redeyed "~2.1.0"
 
-chai@^4.2.0, chai@^4.3.7:
-  version "4.3.7"
-  resolved "https://registry.yarnpkg.com/chai/-/chai-4.3.7.tgz#ec63f6df01829088e8bf55fca839bcd464a8ec51"
-  integrity sha512-HLnAzZ2iupm25PlN0xFreAlBA5zaBSv3og0DdeGA4Ar6h6rJ3A0rolRUKJhSF2V10GZKDgWF/VmAEsNWjCRB+A==
+chai@^4.2.0, chai@^4.3.8:
+  version "4.3.8"
+  resolved "https://registry.yarnpkg.com/chai/-/chai-4.3.8.tgz#40c59718ad6928da6629c70496fe990b2bb5b17c"
+  integrity sha512-vX4YvVVtxlfSZ2VecZgFUTU5qPCYsobVI2O9FmwEXBhDigYGQA6jRXCycIs1yJnnWbZ6/+a2zNIF5DfVCcJBFQ==
   dependencies:
     assertion-error "^1.1.0"
     check-error "^1.0.2"
@@ -4869,15 +4869,15 @@ eslint@^7.27.0:
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
 
-eslint@^8.47.0:
-  version "8.47.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.47.0.tgz#c95f9b935463fb4fad7005e626c7621052e90806"
-  integrity sha512-spUQWrdPt+pRVP1TTJLmfRNJJHHZryFmptzcafwSvHsceV81djHOdnEeDmkdotZyLNjDhrOasNK8nikkoG1O8Q==
+eslint@^8.48.0:
+  version "8.48.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.48.0.tgz#bf9998ba520063907ba7bfe4c480dc8be03c2155"
+  integrity sha512-sb6DLeIuRXxeM1YljSe1KEx9/YYeZFQWcV8Rq9HfigmdDEugjLEVEa1ozDjL6YDjBpQHPJxJzze+alxi4T3OLg==
   dependencies:
     "@eslint-community/eslint-utils" "^4.2.0"
     "@eslint-community/regexpp" "^4.6.1"
     "@eslint/eslintrc" "^2.1.2"
-    "@eslint/js" "^8.47.0"
+    "@eslint/js" "8.48.0"
     "@humanwhocodes/config-array" "^0.11.10"
     "@humanwhocodes/module-importer" "^1.0.1"
     "@nodelib/fs.walk" "^1.2.8"
