@@ -1012,17 +1012,6 @@
     read-package-json-fast "^3.0.0"
     which "^3.0.0"
 
-"@oclif/color@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@oclif/color/-/color-1.0.10.tgz#e83e3a30fffc93076281398cbeaa4f761c4df09e"
-  integrity sha512-INWEDAL3SzzR3pIhkrqk22HV6JravLUeRZXAIpoQqIeLReauaibCVcNTzOlt0z0S8YrqRhksc54ZxZC4Oa8xBw==
-  dependencies:
-    ansi-styles "^4.2.1"
-    chalk "^4.1.0"
-    strip-ansi "^6.0.1"
-    supports-color "^8.1.1"
-    tslib "^2"
-
 "@oclif/command@^1.8.14", "@oclif/command@^1.8.15":
   version "1.8.30"
   resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.8.30.tgz#3e20c8ebe5c9b1056a97e825f5e4f939d461ede9"
@@ -1071,10 +1060,10 @@
     is-wsl "^2.1.1"
     tslib "^2.5.0"
 
-"@oclif/core@2.12.0", "@oclif/core@^2.11.10", "@oclif/core@^2.11.4", "@oclif/core@^2.11.7", "@oclif/core@^2.11.8", "@oclif/core@^2.12.0", "@oclif/core@^2.8.5", "@oclif/core@^2.9.3":
-  version "2.12.0"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.12.0.tgz#ee2b450cc9c1a54a2445eb192e7881e370178943"
-  integrity sha512-RSfEQzYAmex/dVW/3afIMsaB2n5kG26tniAla+HSAQS7MHqM7LpCrDz5FG9VX5ygSPmQcknWPRmD96N5kyUt1g==
+"@oclif/core@2.13.0", "@oclif/core@^2.11.10", "@oclif/core@^2.11.4", "@oclif/core@^2.11.7", "@oclif/core@^2.11.8", "@oclif/core@^2.12.0", "@oclif/core@^2.8.5", "@oclif/core@^2.9.3":
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.13.0.tgz#8af6d62349f42471c91655074726191b75c669b1"
+  integrity sha512-U/AgA/Jcqc04VwmsO/xSc3gJjVKkST8SB3wC3o3kzTAE4UWTOTMkHTtLujYZA5sUvBLhs66+A4dfrjz2sZQBdA==
   dependencies:
     "@types/cli-progress" "^3.11.0"
     ansi-escapes "^4.3.2"
@@ -1233,13 +1222,13 @@
   dependencies:
     "@oclif/core" "^2.11.10"
 
-"@oclif/plugin-not-found@2.3.38", "@oclif/plugin-not-found@^2.3.32":
-  version "2.3.38"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-2.3.38.tgz#7baf17f5804411778af2d5952122f094e83480ab"
-  integrity sha512-NaEaSU64IiDpPQK2RylZ3rMmu20xE1X1pUlXn82xdOMS2Izkj6OCuDuy2OkLjT1Bwoe9SswrS+aJz3E8shyUUg==
+"@oclif/plugin-not-found@2.4.0", "@oclif/plugin-not-found@^2.3.32":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-2.4.0.tgz#9270056157cd203d473b43b1517624ac81d5954e"
+  integrity sha512-EOoesBEgyj4TMdHUpnCqN7qqH0f1NHh7buTdWfhwlSjbfrL9rAuodiART5/zgtsj5b8uao3aXdcx1gPxWOogEw==
   dependencies:
-    "@oclif/color" "^1.0.10"
     "@oclif/core" "^2.11.10"
+    chalk "^4"
     fast-levenshtein "^3.0.0"
 
 "@oclif/plugin-plugins@3.3.2":
@@ -1272,13 +1261,13 @@
     inquirer "^8.2.6"
     rxjs "^7.8.1"
 
-"@oclif/plugin-update@3.1.32":
-  version "3.1.32"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-3.1.32.tgz#134e716f3b68aea0b611079ecf297393b0d7beda"
-  integrity sha512-x8ND74rXXP74OOQ8y9UAWK6cTx9XgBuHnpKMTS1JGCJ3Y887uT9ccsQC03ezCyPN0+IQqexNk2lCs+FCpLKk9w==
+"@oclif/plugin-update@3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-3.2.0.tgz#769d1ab02e87e943d60c5d3b2a03711853324770"
+  integrity sha512-naQIw/sjbNBNdYnoQOudYMJc1Im2fpyQAh87ZN8tR/6Wuf4fyxfLUENm8Gy8jqBM3GN4rw/yg0uW7tDH5wY0qg==
   dependencies:
-    "@oclif/color" "^1.0.10"
     "@oclif/core" "^2.11.8"
+    chalk "^4"
     cross-spawn "^7.0.3"
     debug "^4.3.1"
     filesize "^6.1.0"
@@ -2662,7 +2651,7 @@ ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-ansi-styles@^4.0.0, ansi-styles@^4.1.0, ansi-styles@^4.2.0, ansi-styles@^4.2.1, ansi-styles@^4.3.0:
+ansi-styles@^4.0.0, ansi-styles@^4.1.0, ansi-styles@^4.2.0, ansi-styles@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-4.3.0.tgz#edd803628ae71c04c85ae7a0906edad34b648937"
   integrity sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==
