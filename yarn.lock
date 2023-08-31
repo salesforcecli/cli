@@ -1775,6 +1775,19 @@
     inquirer "^8.2.6"
     tslib "^2"
 
+"@salesforce/plugin-marketplace@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-marketplace/-/plugin-marketplace-0.1.1.tgz#850e8c47755c1b7e8f00af0d1e3c7dc22e8716cd"
+  integrity sha512-dDY5ukaD3m+aZg+a0InonHWDr7/mnnwZmefa2Vhwlq0Wrg2bF6atbydybzUD3G2Ud6j6bo7lhuTXXa9gCA+jyw==
+  dependencies:
+    "@oclif/core" "^2.11.7"
+    "@salesforce/core" "^5.2.0"
+    "@salesforce/kit" "^3.0.9"
+    "@salesforce/sf-plugins-core" "^3.1.14"
+    got "^11"
+    proxy-agent "^6.3.0"
+    tslib "^2"
+
 "@salesforce/plugin-org@2.10.5":
   version "2.10.5"
   resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-2.10.5.tgz#dde2cf557807869f0c99481b6bbb146b7a2491c2"
