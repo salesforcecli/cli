@@ -1060,10 +1060,10 @@
     is-wsl "^2.1.1"
     tslib "^2.5.0"
 
-"@oclif/core@2.13.0", "@oclif/core@^2.11.10", "@oclif/core@^2.11.4", "@oclif/core@^2.11.7", "@oclif/core@^2.11.8", "@oclif/core@^2.12.0", "@oclif/core@^2.8.5", "@oclif/core@^2.9.3":
-  version "2.13.0"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.13.0.tgz#8af6d62349f42471c91655074726191b75c669b1"
-  integrity sha512-U/AgA/Jcqc04VwmsO/xSc3gJjVKkST8SB3wC3o3kzTAE4UWTOTMkHTtLujYZA5sUvBLhs66+A4dfrjz2sZQBdA==
+"@oclif/core@2.14.0", "@oclif/core@^2.11.10", "@oclif/core@^2.11.4", "@oclif/core@^2.11.7", "@oclif/core@^2.11.8", "@oclif/core@^2.12.0", "@oclif/core@^2.8.5", "@oclif/core@^2.9.3":
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.14.0.tgz#9289174b47fc0ef5f23ea7fe0e2380b5d3c88ad4"
+  integrity sha512-LlOM8okLrKNkCCiqOA+9tojwueVHRY/zM8PXUxT1hz1n4Xv1lj9aphWennx1pPnwUMJ3texbEPOkt57o+aDYPA==
   dependencies:
     "@types/cli-progress" "^3.11.0"
     ansi-escapes "^4.3.2"
@@ -1074,7 +1074,6 @@
     cli-progress "^3.12.0"
     debug "^4.3.4"
     ejs "^3.1.8"
-    fs-extra "^9.1.0"
     get-package-type "^0.1.0"
     globby "^11.1.0"
     hyperlinker "^1.0.0"
@@ -1084,7 +1083,7 @@
     natural-orderby "^2.0.3"
     object-treeify "^1.1.33"
     password-prompt "^1.1.2"
-    semver "^7.5.3"
+    semver "^7.5.4"
     slice-ansi "^4.0.0"
     string-width "^4.2.3"
     strip-ansi "^6.0.1"
@@ -1718,10 +1717,10 @@
     jsforce "^2.0.0-beta.27"
     tslib "^2"
 
-"@salesforce/plugin-deploy-retrieve@1.17.6":
-  version "1.17.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.17.6.tgz#1f431f07aa0791c9463c26ef40233311131b89a8"
-  integrity sha512-8wLUwYwb49PDBGpfpoCFA3za8aVSxYOweGRf09dbkai2Ph3yEWsuFvc6Iy+vt753J6Entm1Vv/+UidrEgdvBxA==
+"@salesforce/plugin-deploy-retrieve@1.17.7":
+  version "1.17.7"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.17.7.tgz#8c131bf5fb706fcfccfa6de967a2a5feae47afc6"
+  integrity sha512-7312I7mGySEVRmFrVPtJOEGaJ5/b3JqcUE44OhbgpfpaQPY+trKgTEUa5U2M6qnaMh2Z6xLxldKWVq+XPUrNtQ==
   dependencies:
     "@oclif/core" "^2.11.7"
     "@salesforce/apex-node" "^2.1.0"
@@ -5302,7 +5301,7 @@ fs-extra@^8.1, fs-extra@^8.1.0:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
-fs-extra@^9.0, fs-extra@^9.0.1, fs-extra@^9.1.0:
+fs-extra@^9.0, fs-extra@^9.0.1:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.1.0.tgz#5954460c764a8da2094ba3554bf839e6b9a7c86d"
   integrity sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==
