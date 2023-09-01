@@ -10,7 +10,7 @@
   "homepage": "https://github.com/salesforcecli/cli",
   "bugs": "https://github.com/forcedotcom/cli/issues",
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "packageManager": "yarn@1.22.19",
   "files": [
@@ -217,8 +217,8 @@
     "promote:verify": "sf-release cli:versions:inspect --channels stable --locations archive --cli sf",
     "promote:verify-rc": "sf-release cli:versions:inspect --channels stable-rc --locations archive --cli sf",
     "test": "wireit",
-    "test:only": "wireit",
     "test:deprecation-policy": "sf-release cli:artifacts:compare",
+    "test:only": "wireit",
     "test:smoke-unix": "sf-release cli:tarballs:smoke --cli sf",
     "upload:deb": "oclif upload:deb",
     "upload:macos": "oclif upload:macos",
@@ -230,7 +230,7 @@
   "devDependencies": {
     "@oclif/plugin-command-snapshot": "^4.0.2",
     "@salesforce/dev-config": "^4.0.1",
-    "@salesforce/dev-scripts": "^5.8.0",
+    "@salesforce/dev-scripts": "^5.9.0",
     "@salesforce/plugin-release-management": "^4.1.19",
     "@salesforce/prettier-config": "^0.0.3",
     "@salesforce/ts-sinon": "^1.4.15",
