@@ -8,9 +8,6 @@ process.setMaxListeners(parseInt(process.env.SF_MAX_EVENT_LISTENERS, 10) || 1000
 // Don't let other plugins override the CLI specified max listener count
 process.setMaxListeners = () => {};
 
-// Check node version before requiring additional packages
-require('../dist/versions').checkNodeVersion();
-
 // Pre-process/prune flags before creating or running the actual CLI
 require('../dist/flags').preprocessCliFlags(process);
 
