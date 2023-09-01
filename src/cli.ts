@@ -7,6 +7,7 @@
 
 import * as os from 'os';
 import * as path from 'path';
+import { fileURLToPath } from 'url';
 import { Config, Interfaces, run as oclifRun, settings } from '@oclif/core';
 import { set } from '@salesforce/kit';
 import Debug from 'debug';
@@ -121,7 +122,7 @@ type CreateOptions = {
 
 export function create(opts: CreateOptions): { run: () => Promise<unknown> } {
   settings.performanceEnabled = true;
-  const root = path.resolve(import.meta.url, '..');
+  const root = path.resolve(fileURLToPath(import.meta.url), '..');
   const args = process.argv.slice(2);
   const env = opts.env ?? nodeEnv;
   return {
