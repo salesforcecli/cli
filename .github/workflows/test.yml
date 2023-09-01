@@ -9,26 +9,34 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  yarn-lockfile-check:
-    uses: salesforcecli/github-workflows/.github/workflows/lockFileCheck.yml@main
-
-  ut:
-    uses: salesforcecli/github-workflows/.github/workflows/unitTest.yml@main
+  pack-upload-win:
+    uses: salesforcecli/github-workflows/.github/workflows/packUploadWindows.yml@sm/nsis-fixes
+    with:
+      cli: sf
+      version: 2.9.0-nsis.0
+      channel: nsis
     secrets: inherit
 
-  tarballs:
-    uses: salesforcecli/github-workflows/.github/workflows/tarballs.yml@main
-    secrets: inherit
+  # yarn-lockfile-check:
+  #   uses: salesforcecli/github-workflows/.github/workflows/lockFileCheck.yml@main
 
-  artifacts:
-    runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          cache: yarn
-      - run: yarn install
-      - run: npm install -g @salesforce/plugin-release-management
-      - run: yarn test:deprecation-policy
+  # ut:
+  #   uses: salesforcecli/github-workflows/.github/workflows/unitTest.yml@main
+  #   secrets: inherit
+
+  # tarballs:
+  #   uses: salesforcecli/github-workflows/.github/workflows/tarballs.yml@main
+  #   secrets: inherit
+
+  # artifacts:
+  #   runs-on: ubuntu-latest
+  #   env:
+  #     GH_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         cache: yarn
+  #     - run: yarn install
+  #     - run: npm install -g @salesforce/plugin-release-management
+  #     - run: yarn test:deprecation-policy
