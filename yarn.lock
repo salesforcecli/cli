@@ -1786,13 +1786,13 @@
     typedoc-plugin-missing-exports "0.23.0"
     typescript "^4.1.3"
 
-"@salesforce/kit@^3.0.9":
-  version "3.0.9"
-  resolved "https://registry.yarnpkg.com/@salesforce/kit/-/kit-3.0.9.tgz#6674559e27914a9c79dd4283eb94eaea6177fe87"
-  integrity sha512-L9xeKGdwT4q40JOZteUWgyul+xpRENNIVg336cgXYrFWs+/+7hrWlV4YZdMkLg9WRCZb1HjERJ9gHNiEKXXriA==
+"@salesforce/kit@^3.0.11", "@salesforce/kit@^3.0.9":
+  version "3.0.11"
+  resolved "https://registry.yarnpkg.com/@salesforce/kit/-/kit-3.0.11.tgz#d03160b658da9817c05e62479ca18283087a0fc0"
+  integrity sha512-ar44uFJfc/RCDWjz7LlrOtFCFHgNNUpddxe0eJCLqQuR/Xs3IlLZKuovWTx322Rzu+V9IIKrIdpz2IqA95/ClA==
   dependencies:
-    "@salesforce/ts-types" "^2.0.6"
-    tslib "^2.6.1"
+    "@salesforce/ts-types" "^2.0.7"
+    tslib "^2.6.2"
 
 "@salesforce/plugin-apex@2.3.11":
   version "2.3.11"
@@ -2082,13 +2082,13 @@
     chalk "^4"
     inquirer "^8.2.5"
 
-"@salesforce/source-deploy-retrieve@9.7.7", "@salesforce/source-deploy-retrieve@^9.7.2", "@salesforce/source-deploy-retrieve@^9.7.4", "@salesforce/source-deploy-retrieve@^9.7.6":
-  version "9.7.7"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-9.7.7.tgz#7e418118cba20ba25efd5e6ecf01e89147915bf6"
-  integrity sha512-goSUKH8DKScummtoOmFjxfRZewebClmhJXHD9s7d2BoWOZyjRc0zEC04m4nPT8jwEUPCaa7DiS+jeQc28kHHRQ==
+"@salesforce/source-deploy-retrieve@9.7.9", "@salesforce/source-deploy-retrieve@^9.7.2", "@salesforce/source-deploy-retrieve@^9.7.4", "@salesforce/source-deploy-retrieve@^9.7.6":
+  version "9.7.9"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-9.7.9.tgz#ec24124950ec1365ad48b38bc0b8898b9eceb524"
+  integrity sha512-lp166IZX3Me8I2YUIZS4uAgKLnbGp1MdbAUlpUL5VhAQBh7dNuPcjDFSueTEVG/4vfGPkM4s+65WMi2sJfx8pg==
   dependencies:
     "@salesforce/core" "^5.2.1"
-    "@salesforce/kit" "^3.0.9"
+    "@salesforce/kit" "^3.0.11"
     "@salesforce/ts-types" "^2.0.7"
     fast-levenshtein "^3.0.0"
     fast-xml-parser "^4.2.7"
