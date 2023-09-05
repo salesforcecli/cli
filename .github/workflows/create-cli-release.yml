@@ -96,6 +96,15 @@ jobs:
       nodeVersion: ${{ vars.TARBALL_NODE_VERSION }}
     secrets: inherit
 
+  stampy-upload-win:
+    needs: [pack-upload-win]
+    uses: salesforcecli/github-workflows/.github/workflows/stampyUpload.yml@main
+    secrets: inherit
+    with:
+      version: ${{ github.event.release.tag_name }}
+      cli: sf
+      clipkg: '@salesforce/cli'
+
   build-docker-slim:
     needs: [get-channel, pack-verify-upload-tarballs]
     uses: ./.github/workflows/build-docker-slim.yml
