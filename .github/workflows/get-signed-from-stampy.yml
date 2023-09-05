@@ -8,6 +8,8 @@ jobs:
   get-signed-from-stampy:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
       - name: download
         env:
           STAMPY_ARN: ${{ secrets.STAMPY_ARN }}
