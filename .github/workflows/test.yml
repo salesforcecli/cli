@@ -4,11 +4,31 @@ on:
   pull_request:
     types: [opened, reopened, synchronize]
 
+concurrency:
+  group: ut-tarballs-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  stampy-upload:
-    uses: salesforcecli/github-workflows/.github/workflows/stampyUpload.yml@sm/stampy
+  yarn-lockfile-check:
+    uses: salesforcecli/github-workflows/.github/workflows/lockFileCheck.yml@main
+
+  ut:
+    uses: salesforcecli/github-workflows/.github/workflows/unitTest.yml@main
     secrets: inherit
-    with:
-      version: 2.8.8
-      cli: sf
-      clipkg: '@salesforce/cli'
+
+  tarballs:
+    uses: salesforcecli/github-workflows/.github/workflows/tarballs.yml@main
+    secrets: inherit
+
+  artifacts:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: yarn
+      - run: yarn install
+      - run: npm install -g @salesforce/plugin-release-management
+      - run: yarn test:deprecation-policy
