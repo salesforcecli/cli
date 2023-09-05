@@ -63,3 +63,4 @@ jobs:
             ${{ inputs.start-from-npm-dist-tag && format('--start-from-npm-dist-tag {0}', inputs.start-from-npm-dist-tag) || '' }} \
             ${{ inputs.patch && '--patch' || '' }} \
             ${{ inputs.only && format('--only {0}', inputs.only) || '' }}
+            ${{ inputs.empty && '--empty' || '' }} \
