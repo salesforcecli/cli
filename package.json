@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.6.8",
+  "version": "2.6.9",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run",
@@ -108,8 +108,7 @@
       "identifier": "com.salesforce.cli"
     },
     "windows": {
-      "name": "Salesforce CLI",
-      "keypath": "/tmp/windows-signing.pfx"
+      "name": "Salesforce CLI"
     },
     "additionalVersionFlags": [
       "-v"
