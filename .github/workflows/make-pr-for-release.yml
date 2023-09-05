@@ -62,5 +62,5 @@ jobs:
             ${{ inputs.start-from-github-ref && format('--start-from-github-ref {0}', inputs.start-from-github-ref) || '' }} \
             ${{ inputs.start-from-npm-dist-tag && format('--start-from-npm-dist-tag {0}', inputs.start-from-npm-dist-tag) || '' }} \
             ${{ inputs.patch && '--patch' || '' }} \
-            ${{ inputs.only && format('--only {0}', inputs.only) || '' }}
-            ${{ inputs.empty && '--empty' || '' }} \
+            ${{ inputs.only && format('--only {0}', inputs.only) || '' }} \
+            ${{ inputs.empty && '--empty' || '' }}
