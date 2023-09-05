@@ -1229,15 +1229,14 @@
     chalk "^4"
     fast-levenshtein "^3.0.0"
 
-"@oclif/plugin-plugins@3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-3.4.0.tgz#da0499f9d3ee41812f2c887cc30808ad0cb10a95"
-  integrity sha512-oErF7B+75TEheNWMvVfrCtlaHhnCnx41B4pN6cDQWeW4AZc11N45aNYFU55jPN0q20nUkzlVjhb/5M4zMDqQ7w==
+"@oclif/plugin-plugins@3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-3.4.2.tgz#63888867b9a29f66a38560e175cea3709fc934d4"
+  integrity sha512-0goaZY8XOk6gH/c5nZ4k3DYnNdY0ZHCqe2bvSaT7rH2UCgeo/sS70gGYqbnn+TVIVxN6mIL9ogzsLtpQy02U3A==
   dependencies:
     "@oclif/core" "^2.11.10"
     chalk "^4.1.2"
     debug "^4.3.4"
-    fs-extra "^9.0"
     http-call "^5.2.2"
     load-json-file "^5.3.0"
     npm "9.6.7"
@@ -1259,10 +1258,10 @@
     inquirer "^8.2.6"
     rxjs "^7.8.1"
 
-"@oclif/plugin-update@3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-3.2.0.tgz#769d1ab02e87e943d60c5d3b2a03711853324770"
-  integrity sha512-naQIw/sjbNBNdYnoQOudYMJc1Im2fpyQAh87ZN8tR/6Wuf4fyxfLUENm8Gy8jqBM3GN4rw/yg0uW7tDH5wY0qg==
+"@oclif/plugin-update@3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-3.2.1.tgz#807d83abcfd399bf3f80aa5340667007c2d4e931"
+  integrity sha512-c2Ftg8/7TOCUK7zHq/o9/hnd3X+NwU/9EtoVV4X/2/q6h4HVjzN1aICIqbJr2AMLC9fw75jU1u0aBCAHJ6GBGQ==
   dependencies:
     "@oclif/core" "^2.11.8"
     chalk "^4"
@@ -1284,17 +1283,16 @@
   dependencies:
     "@oclif/core" "^2.15.0"
 
-"@oclif/plugin-warn-if-update-available@2.0.50", "@oclif/plugin-warn-if-update-available@^2.0.44":
-  version "2.0.50"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-2.0.50.tgz#cfbec336089ca9f8bf9472cea18f1e2610e08b1d"
-  integrity sha512-+VtxuK31PX49suwkwcR8no0P55KUjvZzfKURTYhveLGAeGHSPLnA60TqB+94+FQN88nlPZncw3867zfwgw6rfw==
+"@oclif/plugin-warn-if-update-available@2.1.0", "@oclif/plugin-warn-if-update-available@^2.0.44":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-2.1.0.tgz#1390b3a7c789ae1c4eeaefd6eef119db099e0bda"
+  integrity sha512-liTWd/qSIqALsikr88CAB9o2xGFt0LdT5REbhxtrx16/trRmkxQ+0RHK1FieGZAzEENx/4D3YcC/Y67a0uyO0g==
   dependencies:
     "@oclif/core" "^2.15.0"
     chalk "^4.1.0"
     debug "^4.1.0"
-    fs-extra "^9.0.1"
     http-call "^5.2.2"
-    lodash "^4.17.21"
+    lodash.template "^4.5.0"
     semver "^7.5.4"
 
 "@oclif/plugin-which@2.2.32":
@@ -1948,10 +1946,10 @@
     chalk "^4"
     inquirer "^8.2.5"
 
-"@salesforce/source-deploy-retrieve@9.7.8", "@salesforce/source-deploy-retrieve@^9.7.2", "@salesforce/source-deploy-retrieve@^9.7.4", "@salesforce/source-deploy-retrieve@^9.7.8":
-  version "9.7.8"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-9.7.8.tgz#34119f33cf93b3991e2dbf33a0f223bb4ea57f1e"
-  integrity sha512-bDmn7ccYfcnmj2Meotk/TABcleVffK/cBiefdKrND+8eKKLWoZpb8VPCgoVaiShvOmKIy0tqrZ1oEF4AzFcn9g==
+"@salesforce/source-deploy-retrieve@9.7.9", "@salesforce/source-deploy-retrieve@^9.7.2", "@salesforce/source-deploy-retrieve@^9.7.4", "@salesforce/source-deploy-retrieve@^9.7.8":
+  version "9.7.9"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-9.7.9.tgz#ec24124950ec1365ad48b38bc0b8898b9eceb524"
+  integrity sha512-lp166IZX3Me8I2YUIZS4uAgKLnbGp1MdbAUlpUL5VhAQBh7dNuPcjDFSueTEVG/4vfGPkM4s+65WMi2sJfx8pg==
   dependencies:
     "@salesforce/core" "^5.2.1"
     "@salesforce/kit" "^3.0.11"
@@ -5301,7 +5299,7 @@ fs-extra@^8.1, fs-extra@^8.1.0:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
-fs-extra@^9.0, fs-extra@^9.0.1:
+fs-extra@^9.0.1:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.1.0.tgz#5954460c764a8da2094ba3554bf839e6b9a7c86d"
   integrity sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==
@@ -6949,6 +6947,11 @@ locate-path@^6.0.0:
   dependencies:
     p-locate "^5.0.0"
 
+lodash._reinterpolate@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
+  integrity sha512-xYHt68QRoYGjeeM/XOE1uJtvXQAgvszfBhjV4yvsQH0u2i9I6cI6c6/eG4Hh3UAOVn0y/xAXwmTzEay49Q//HA==
+
 lodash.camelcase@^4.1.1, lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
@@ -7033,6 +7036,21 @@ lodash.startcase@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.startcase/-/lodash.startcase-4.4.0.tgz#9436e34ed26093ed7ffae1936144350915d9add8"
   integrity sha512-+WKqsK294HMSc2jEbNgpHpd0JfIBhp7rEV4aqXWqFr6AlXov+SlcgB1Fv01y2kGe3Gc8nMW7VA0SrGuSkRfIEg==
+
+lodash.template@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.template/-/lodash.template-4.5.0.tgz#f976195cf3f347d0d5f52483569fe8031ccce8ab"
+  integrity sha512-84vYFxIkmidUiFxidA/KjjH9pAycqW+h980j7Fuz5qxRtO9pgB7MDFTdys1N7A5mcucRiDyEq4fusljItR1T/A==
+  dependencies:
+    lodash._reinterpolate "^3.0.0"
+    lodash.templatesettings "^4.0.0"
+
+lodash.templatesettings@^4.0.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.templatesettings/-/lodash.templatesettings-4.2.0.tgz#e481310f049d3cf6d47e912ad09313b154f0fb33"
+  integrity sha512-stgLz+i3Aa9mZgnjr/O+v9ruKZsPsndy7qPZOchbqk2cnTU1ZaldKK+v7m54WoKIyxiuMZTKT2H81F8BeAc3ZQ==
+  dependencies:
+    lodash._reinterpolate "^3.0.0"
 
 lodash.throttle@^4.1.1:
   version "4.1.1"
