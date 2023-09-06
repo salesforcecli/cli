@@ -35,7 +35,6 @@ export class SfCommandHelp extends CommandHelp {
       {
         header: 'CONFIGURATION VARIABLES',
         generate: ({ cmd }): HelpSection => {
-          // @ts-expect-error because sf-plugins-core is on @oclif/core v2 still
           const sfCommand = cmd as SfCommandInterface;
           return sfCommand.configurationVariablesSection;
         },
@@ -43,7 +42,6 @@ export class SfCommandHelp extends CommandHelp {
       {
         header: 'ENVIRONMENT VARIABLES',
         generate: ({ cmd }): HelpSection => {
-          // @ts-expect-error because sf-plugins-core is on @oclif/core v2 still
           const sfCommand = cmd as SfCommandInterface;
           return sfCommand.envVariablesSection;
         },
@@ -51,7 +49,6 @@ export class SfCommandHelp extends CommandHelp {
       {
         header: 'ERROR CODES',
         generate: ({ cmd }): HelpSection => {
-          // @ts-expect-error because sf-plugins-core is on @oclif/core v2 still
           const sfCommand = cmd as SfCommandInterface;
           return sfCommand.errorCodes;
         },
