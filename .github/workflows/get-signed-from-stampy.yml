@@ -1,18 +1,18 @@
-name: get signed installer from stampy
+name: get-signed-installers-from-stampy
 on:
   workflow_dispatch:
-#   schedule:
-# - cron: '23 1,4,7,10 * * *'
+  # schedule:
+  # - cron: '25 * * * *'
 
 jobs:
   get-signed-from-stampy:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
       - name: download
         env:
           STAMPY_ARN: ${{ secrets.STAMPY_ARN }}
-          STAMPY_UNSIGNED_BUCKET: ${{ secrets.STAMPY_UNSIGNED_BUCKET }}
-          STAMPY_SIGNED_BUCKET: ${{ secrets.STAMPY_SIGNED_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           AWS_EC2_METADATA_DISABLED: true
@@ -23,15 +23,18 @@ jobs:
           export AWS_ACCESS_KEY_ID=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.AccessKeyId')
           export AWS_SECRET_ACCESS_KEY=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SecretAccessKey')
           export AWS_SESSION_TOKEN=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SessionToken')
-          aws s3 ls $STAMPY_SIGNED_BUCKET
+          aws s3 cp --recursive ${{ secrets.STAMPY_SIGNED_BUCKET }}/ .
       - name: upload to CLI s3
         env:
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           AWS_EC2_METADATA_DISABLED: true
         run: |
-          echo "TBD"
-      - name: clean up stampy
+          node scripts/stampy-signed-upload.js
+      - name: clean up stampy in/out buckets
+        # waiting on Stampy to enable delete permission on these buckets
+        # at that point, we can make this an hourly job
+        if: false
         env:
           STAMPY_UNSIGNED_BUCKET: ${{ secrets.STAMPY_UNSIGNED_BUCKET }}
           STAMPY_SIGNED_BUCKET: ${{ secrets.STAMPY_SIGNED_BUCKET }}
@@ -44,5 +47,4 @@ jobs:
           export AWS_ACCESS_KEY_ID=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.AccessKeyId')
           export AWS_SECRET_ACCESS_KEY=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SecretAccessKey')
           export AWS_SESSION_TOKEN=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SessionToken')
-          aws s3 ls $STAMPY_SIGNED_BUCKET
-          aws s3 ls $STAMPY_UNSIGNED_BUCKET
+          node scripts/stampy-signed-delete.js
