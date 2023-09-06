@@ -1165,15 +1165,14 @@
     chalk "^4.1.0"
     tslib "^2.6.0"
 
-"@oclif/plugin-autocomplete@2.3.7":
-  version "2.3.7"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-2.3.7.tgz#08e0cfca32572bb5d83d208664a05ca923765698"
-  integrity sha512-pFgMwBgzCGsG8Rk+/x2dmfjA4T4Z8BziWhkr4sYUcQTPvxWZ6YXd2+1Kp4+PDb6ttn0w5M801F97kYhbNLD6VQ==
+"@oclif/plugin-autocomplete@2.3.8":
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-2.3.8.tgz#b651d6d2f3d251b473387f4b78dbae5917afde8f"
+  integrity sha512-cmRPss9OQxz8sRoaw5C/4t/Da7eBEIDJWKRsuzUSQBcPJCN3kTgjp24VTjPHT3j86197s/qkjCRct+3P0IGArg==
   dependencies:
     "@oclif/core" "^2.15.0"
     chalk "^4.1.0"
     debug "^4.3.4"
-    fs-extra "^9.0.1"
 
 "@oclif/plugin-command-snapshot@^3.3.0":
   version "3.3.15"
@@ -1258,10 +1257,10 @@
     inquirer "^8.2.6"
     rxjs "^7.8.1"
 
-"@oclif/plugin-update@3.2.1":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-3.2.1.tgz#807d83abcfd399bf3f80aa5340667007c2d4e931"
-  integrity sha512-c2Ftg8/7TOCUK7zHq/o9/hnd3X+NwU/9EtoVV4X/2/q6h4HVjzN1aICIqbJr2AMLC9fw75jU1u0aBCAHJ6GBGQ==
+"@oclif/plugin-update@3.2.3":
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-3.2.3.tgz#133b42efff532d62be1f260612fd2c23ae44be25"
+  integrity sha512-JVKwp4ysG9GU4RmG59MZYMunz8onRI+wEQzJThyYkUFd0VfZviYt2FHsyoNtxi30l0tInC8APgKp1pCCO4e+FQ==
   dependencies:
     "@oclif/core" "^2.11.8"
     chalk "^4"
@@ -1770,6 +1769,19 @@
     "@salesforce/sf-plugins-core" "^3.1.16"
     chalk "^4.1.2"
     inquirer "^8.2.6"
+    tslib "^2"
+
+"@salesforce/plugin-marketplace@0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-marketplace/-/plugin-marketplace-0.1.3.tgz#7bd99ca5d56cf04cb6aba6deb55bd5bc61f1b9c8"
+  integrity sha512-z196F42jObSln7aN2mAuPZ7ecrdBhR/ie0Fo6UTy3Vtck/Nx37jJtW/mx2QWhFIfSGbcAOEpo45Q30wYv8MwHg==
+  dependencies:
+    "@oclif/core" "^2.15.0"
+    "@salesforce/core" "^5.2.0"
+    "@salesforce/kit" "^3.0.9"
+    "@salesforce/sf-plugins-core" "^3.1.14"
+    got "^11"
+    proxy-agent "^6.3.0"
     tslib "^2"
 
 "@salesforce/plugin-org@2.10.6":
