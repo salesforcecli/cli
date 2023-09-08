@@ -20,13 +20,8 @@ jobs:
     uses: salesforcecli/github-workflows/.github/workflows/tarballs.yml@main
     secrets: inherit
 
-  jit-install:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-    runs-on: ${{matrix.os}}
-    env:
-      GH_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
+  manifest:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -34,6 +29,28 @@ jobs:
           cache: yarn
       - run: yarn install
       - run: yarn build
+      - run: yarn oclif manifest
+      - uses: actions/upload-artifact@v2
+        with:
+          name: manifest
+          path: oclif.manifest.json
+
+  jit-install:
+    needs: [manifest]
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{matrix.os}}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: yarn
+      - run: yarn install
+      - run: yarn build
+      - uses: actions/download-artifact@v2
+        with:
+          name: manifest
       - run: yarn sf-release cli:install:jit:test
 
   artifacts:
