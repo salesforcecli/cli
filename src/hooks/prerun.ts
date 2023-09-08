@@ -9,6 +9,7 @@ import { Hook, ux } from '@oclif/core';
 
 // eslint-disable-next-line @typescript-eslint/require-await
 const hook: Hook.Prerun = async function ({ Command, config }) {
+  if (process.argv.includes('--json')) return;
   const { plugin } = Command;
   if (!plugin) return;
   if (plugin.type === 'link') return;
