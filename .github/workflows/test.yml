@@ -34,7 +34,6 @@ jobs:
           cache: yarn
       - run: yarn install
       - run: yarn build
-      - run: sf-release cli:install:jit:test
       - run: yarn sf-release cli:install:jit:test
 
   artifacts:
