@@ -1228,10 +1228,10 @@
     chalk "^4"
     fast-levenshtein "^3.0.0"
 
-"@oclif/plugin-plugins@3.4.2":
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-3.4.2.tgz#63888867b9a29f66a38560e175cea3709fc934d4"
-  integrity sha512-0goaZY8XOk6gH/c5nZ4k3DYnNdY0ZHCqe2bvSaT7rH2UCgeo/sS70gGYqbnn+TVIVxN6mIL9ogzsLtpQy02U3A==
+"@oclif/plugin-plugins@3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-3.5.0.tgz#48f4ec8d17bd3c76e87da581e40ef8f05b03817d"
+  integrity sha512-eE1P5jaFLLAeJvs2ilnGIHbxlhr7Z+3qgn/2uQoAGyozbSltAVkRRQ0LGPrGsqiwdgpgSpR2fPcvaskFanKfyA==
   dependencies:
     "@oclif/core" "^2.11.10"
     chalk "^4.1.2"
@@ -1714,16 +1714,16 @@
     jsforce "^2.0.0-beta.27"
     tslib "^2"
 
-"@salesforce/plugin-deploy-retrieve@1.17.8":
-  version "1.17.8"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.17.8.tgz#e3d1b3e766ca70d6f856ed7089e93af14da658dd"
-  integrity sha512-7EILp+1Xj27Ha3J1IEIOqdP9T0E+fwH07wSxQhifZN6pnUMth0G3V5/DnKUfJLYcZY3a4mTgPXxdNMYGVJZZCQ==
+"@salesforce/plugin-deploy-retrieve@1.17.9":
+  version "1.17.9"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.17.9.tgz#3e7dedeec617868bf32440ba2bf6a301972a977f"
+  integrity sha512-vpeP0HPh7uQQoQj9sqcsEUt8Qj8azZ1k4ZEVm5BGEe+0mm2SKHOIMicuYFliEgSygiipdrgSBNWZovqbwcTy7A==
   dependencies:
-    "@oclif/core" "^2.11.7"
+    "@oclif/core" "^2.15.0"
     "@salesforce/apex-node" "^2.1.0"
     "@salesforce/core" "^5.2.5"
     "@salesforce/kit" "^3.0.9"
-    "@salesforce/sf-plugins-core" "^3.1.14"
+    "@salesforce/sf-plugins-core" "^3.1.20"
     "@salesforce/source-deploy-retrieve" "^9.7.2"
     "@salesforce/source-tracking" "^4.2.10"
     chalk "^4.1.2"
@@ -1771,10 +1771,10 @@
     inquirer "^8.2.6"
     tslib "^2"
 
-"@salesforce/plugin-marketplace@0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-marketplace/-/plugin-marketplace-0.1.3.tgz#7bd99ca5d56cf04cb6aba6deb55bd5bc61f1b9c8"
-  integrity sha512-z196F42jObSln7aN2mAuPZ7ecrdBhR/ie0Fo6UTy3Vtck/Nx37jJtW/mx2QWhFIfSGbcAOEpo45Q30wYv8MwHg==
+"@salesforce/plugin-marketplace@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-marketplace/-/plugin-marketplace-0.2.0.tgz#ac5493bc1af02d6fba1fd4e0a15c92c9b4207f5a"
+  integrity sha512-CpkqkBWs0c5ltpPHNyIS/mwb41c4fHhmkxzcNppacTevKgu0KCzya24BCsK1xGVR0fHIMU+TySZBRGpTySDTrw==
   dependencies:
     "@oclif/core" "^2.15.0"
     "@salesforce/core" "^5.2.0"
@@ -1958,10 +1958,10 @@
     chalk "^4"
     inquirer "^8.2.5"
 
-"@salesforce/source-deploy-retrieve@9.7.9", "@salesforce/source-deploy-retrieve@^9.7.2", "@salesforce/source-deploy-retrieve@^9.7.4", "@salesforce/source-deploy-retrieve@^9.7.8":
-  version "9.7.9"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-9.7.9.tgz#ec24124950ec1365ad48b38bc0b8898b9eceb524"
-  integrity sha512-lp166IZX3Me8I2YUIZS4uAgKLnbGp1MdbAUlpUL5VhAQBh7dNuPcjDFSueTEVG/4vfGPkM4s+65WMi2sJfx8pg==
+"@salesforce/source-deploy-retrieve@9.7.10", "@salesforce/source-deploy-retrieve@^9.7.2", "@salesforce/source-deploy-retrieve@^9.7.4", "@salesforce/source-deploy-retrieve@^9.7.8":
+  version "9.7.10"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-9.7.10.tgz#ce500519acebcab92edf947230dafbd883b53624"
+  integrity sha512-QbMrFq0V3YpHuI0Ad5kmltfs/ocMfms/NUpHr+pWZ5dbeXg7BcQWo3MgrfonzG5AWfSQ9YQs4AjJdQB0CeK+lw==
   dependencies:
     "@salesforce/core" "^5.2.1"
     "@salesforce/kit" "^3.0.11"
