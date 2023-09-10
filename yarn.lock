@@ -1576,10 +1576,10 @@
     strip-ansi "6.0.1"
     ts-retry-promise "^0.7.0"
 
-"@salesforce/core@^5.2.0", "@salesforce/core@^5.2.1", "@salesforce/core@^5.2.5", "@salesforce/core@^5.2.6":
-  version "5.2.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-5.2.6.tgz#e3a563410f46c116fad0b6c999ea47fb7ec96a9c"
-  integrity sha512-DIUg+RfdnJggbw0YU2mI7JZ7RjqAcWmr/TCUp4VQ9bWQ4T/xAkwnYd3TMle8fPBYVJxGbyvQo22SGcXLBCf7xA==
+"@salesforce/core@^5.2.0", "@salesforce/core@^5.2.1", "@salesforce/core@^5.2.5", "@salesforce/core@^5.2.6", "@salesforce/core@^5.2.7":
+  version "5.2.7"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-5.2.7.tgz#aa9c3a92e14abe12695e06f326e072d49e2b958c"
+  integrity sha512-3tRWuPCSx4oTyD00fJUuxhulPMtaEF0BVvNvYcm38Axj/0WeLGOw7CFvoTupmmcCALHJFnxB1Kl20jDvrbB/7w==
   dependencies:
     "@salesforce/kit" "^3.0.11"
     "@salesforce/schemas" "^1.6.0"
@@ -1598,7 +1598,7 @@
     pino-pretty "^10.2.0"
     proper-lockfile "^4.1.2"
     semver "^7.5.4"
-    ts-retry-promise "^0.7.0"
+    ts-retry-promise "^0.7.1"
 
 "@salesforce/dev-config@^3.0.0":
   version "3.1.0"
@@ -1714,18 +1714,18 @@
     jsforce "^2.0.0-beta.27"
     tslib "^2"
 
-"@salesforce/plugin-deploy-retrieve@1.17.9":
-  version "1.17.9"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.17.9.tgz#3e7dedeec617868bf32440ba2bf6a301972a977f"
-  integrity sha512-vpeP0HPh7uQQoQj9sqcsEUt8Qj8azZ1k4ZEVm5BGEe+0mm2SKHOIMicuYFliEgSygiipdrgSBNWZovqbwcTy7A==
+"@salesforce/plugin-deploy-retrieve@1.17.12":
+  version "1.17.12"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-1.17.12.tgz#3ecb538a0b27804575fab1f8894a19b742f7939f"
+  integrity sha512-R8LqVumWv9uK9xCZiVyctCf8KgjADL/HWyvVImQY6HsgqAaBpXIP40xAqeHXp8sd+rHZrDwB2NoqtuubRgkQyw==
   dependencies:
     "@oclif/core" "^2.15.0"
     "@salesforce/apex-node" "^2.1.0"
-    "@salesforce/core" "^5.2.5"
+    "@salesforce/core" "^5.2.7"
     "@salesforce/kit" "^3.0.9"
     "@salesforce/sf-plugins-core" "^3.1.20"
-    "@salesforce/source-deploy-retrieve" "^9.7.2"
-    "@salesforce/source-tracking" "^4.2.10"
+    "@salesforce/source-deploy-retrieve" "^9.7.10"
+    "@salesforce/source-tracking" "^4.2.12"
     chalk "^4.1.2"
     shelljs "^0.8.5"
     tslib "^2"
@@ -1879,15 +1879,15 @@
     proxy-agent "^6.3.0"
     tslib "^2"
 
-"@salesforce/plugin-telemetry@2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-2.3.1.tgz#8202496c717f156eb4e77d3a7b5e8a98ff9d3b23"
-  integrity sha512-AZg5OYanEF3ATqO7dsvpXNY7+fRLGF2cSKKcLJtioI95XBpKmO1RqmRs4cafGi4bN6+MVCmBgUwcIyzbIv2Ohw==
+"@salesforce/plugin-telemetry@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-2.3.2.tgz#ba6d6b9600a7390663c03c33b62cf35d49dd64da"
+  integrity sha512-C6lDdnDtFldS+P/lyErjtc/NAJxaZGg0CXqlsKRZEy+TOt+Na2qOlvrxzIn4OVm0bkREExtlQMebVmGJoNOEFg==
   dependencies:
-    "@oclif/core" "^2.11.7"
+    "@oclif/core" "^2.15.0"
     "@salesforce/core" "^5.2.0"
-    "@salesforce/sf-plugins-core" "^3.1.14"
-    "@salesforce/telemetry" "^4.1.2"
+    "@salesforce/sf-plugins-core" "^3.1.20"
+    "@salesforce/telemetry" "^4.1.3"
     debug "^4.3.4"
     tslib "^2"
 
@@ -1904,14 +1904,14 @@
     yeoman-environment "^3.19.3"
     yeoman-generator "^5.9.0"
 
-"@salesforce/plugin-trust@2.6.9", "@salesforce/plugin-trust@^2.4.2":
-  version "2.6.9"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-2.6.9.tgz#8bcdd3e87c414ffd80da3a5ec0aadd4f9db5642d"
-  integrity sha512-kVQixGAZUxkBKSvbdsEB3rjo2X8k2G9EjzLTaL53NWL2vNxwjZvmzPkw2rmZm1Wr5ed1TA1lEIm1jwLvh2kPPg==
+"@salesforce/plugin-trust@2.6.10", "@salesforce/plugin-trust@^2.4.2":
+  version "2.6.10"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-2.6.10.tgz#4b52fc2d994ca84c4d9dfe5bd50adff871cd7b84"
+  integrity sha512-aLVIRJyo280sEvyOGvCpAWtsT0YVIbKlOO6Muan2BbwRMmjy6rpFK8/SRgLNz/Mf69qNosQoyozjW9gSZsaByg==
   dependencies:
-    "@oclif/core" "^2.11.10"
+    "@oclif/core" "^2.15.0"
     "@salesforce/core" "^5.2.1"
-    "@salesforce/sf-plugins-core" "^3.1.20"
+    "@salesforce/sf-plugins-core" "^3.1.22"
     got "^11"
     npm "9.6.7"
     npm-run-path "^4.0.1"
@@ -1946,7 +1946,7 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.6.0.tgz#14505ebad2fb2d4f7b14837545d662766d293561"
   integrity sha512-SwhDTLucj/GRbPpxlEoDZeqlX22o+G6fiebTXTu1cZKmd1oE0W2L7SlTTgJnWck8bhTeBIgQi9cpD8c2t5ISKA==
 
-"@salesforce/sf-plugins-core@3.1.22", "@salesforce/sf-plugins-core@^3.1.14", "@salesforce/sf-plugins-core@^3.1.15", "@salesforce/sf-plugins-core@^3.1.16", "@salesforce/sf-plugins-core@^3.1.18", "@salesforce/sf-plugins-core@^3.1.20":
+"@salesforce/sf-plugins-core@3.1.22", "@salesforce/sf-plugins-core@^3.1.14", "@salesforce/sf-plugins-core@^3.1.15", "@salesforce/sf-plugins-core@^3.1.16", "@salesforce/sf-plugins-core@^3.1.18", "@salesforce/sf-plugins-core@^3.1.20", "@salesforce/sf-plugins-core@^3.1.22":
   version "3.1.22"
   resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-3.1.22.tgz#caade6439366fe9a28c819bd3b8fef0cbb2a712a"
   integrity sha512-t8IvC+8LLzCU+skT3/FGjpkB6qm+VaL3uCbwrqgmZivzQc5tpRQpVcW9YbTgJUgkQrD58yurbkwX/jA9hMR6yg==
@@ -1958,7 +1958,7 @@
     chalk "^4"
     inquirer "^8.2.5"
 
-"@salesforce/source-deploy-retrieve@9.7.10", "@salesforce/source-deploy-retrieve@^9.7.2", "@salesforce/source-deploy-retrieve@^9.7.4", "@salesforce/source-deploy-retrieve@^9.7.8":
+"@salesforce/source-deploy-retrieve@9.7.10", "@salesforce/source-deploy-retrieve@^9.7.10", "@salesforce/source-deploy-retrieve@^9.7.4", "@salesforce/source-deploy-retrieve@^9.7.8":
   version "9.7.10"
   resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-9.7.10.tgz#ce500519acebcab92edf947230dafbd883b53624"
   integrity sha512-QbMrFq0V3YpHuI0Ad5kmltfs/ocMfms/NUpHr+pWZ5dbeXg7BcQWo3MgrfonzG5AWfSQ9YQs4AjJdQB0CeK+lw==
@@ -1977,7 +1977,7 @@
     proxy-agent "^6.3.0"
     unzipper "0.10.14"
 
-"@salesforce/source-tracking@4.2.12", "@salesforce/source-tracking@^4.2.10":
+"@salesforce/source-tracking@4.2.12", "@salesforce/source-tracking@^4.2.10", "@salesforce/source-tracking@^4.2.12":
   version "4.2.12"
   resolved "https://registry.yarnpkg.com/@salesforce/source-tracking/-/source-tracking-4.2.12.tgz#91250ac48f70985c8529d601fd9237d7b5193269"
   integrity sha512-hxN4rMmyOmZoUJTy5fyg33ovhKc0ffCqX6j0EqAX90gHO4OQqNMWvweogbzX7h8nkFyNv+ZLyDeJBAdMnTgnWw==
@@ -1991,16 +1991,16 @@
     isomorphic-git "1.23.0"
     ts-retry-promise "^0.7.0"
 
-"@salesforce/telemetry@^4.1.2":
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-4.1.2.tgz#40185f9ebf9184bcd11dad4f8999598d65674697"
-  integrity sha512-8DYVjem2EUfePJSVT/dxbLaOn0SmFFgeaY/OA3JiMUebsVQVUON1MvqHpcErYrmTJ30o3MOWLoTZ3RsbFt1SUQ==
+"@salesforce/telemetry@^4.1.3":
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-4.1.5.tgz#460d5af55d384b859cab5953a14de0f317830372"
+  integrity sha512-Xu8tuXYyA7stnc6RNyona4dPaxgKkgVmWsllFzeloaKi89buCIsVmUTnt3sv3ERAHRno83bARMUEeh9tEaZLKw==
   dependencies:
-    "@salesforce/core" "^5.2.1"
+    "@salesforce/core" "^5.2.7"
     "@salesforce/ts-types" "^2.0.6"
     applicationinsights "^2.7.3"
     got "^11"
-    proxy-agent "^6.3.0"
+    proxy-agent "^6.3.1"
 
 "@salesforce/templates@59.0.1", "@salesforce/templates@^59.0.1":
   version "59.0.1"
@@ -2577,7 +2577,7 @@ agent-base@6, agent-base@^6.0.2:
   dependencies:
     debug "4"
 
-agent-base@^7.0.1, agent-base@^7.0.2, agent-base@^7.1.0:
+agent-base@^7.0.2, agent-base@^7.1.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-7.1.0.tgz#536802b76bc0b34aa50195eb2442276d613e3434"
   integrity sha512-o/zjMZRhJxny7OyEF+Op8X+efiELC7k7yOjMzgfzVqOzXqkBkWI79YoTdOtsuWd5BWhAGAuOY/Xa6xpiaWXiNg==
@@ -5890,10 +5890,10 @@ https-proxy-agent@^5.0.0:
     agent-base "6"
     debug "4"
 
-https-proxy-agent@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-7.0.0.tgz#75cb70d04811685667183b31ab158d006750418a"
-  integrity sha512-0euwPCRyAPSgGdzD1IVN9nJYHtBhJwb6XPfbpQcYbPCwrBidX6GzxmchnaF4sfF/jPb74Ojx5g4yTg3sixlyPw==
+https-proxy-agent@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-7.0.2.tgz#e2645b846b90e96c6e6f347fb5b2e41f1590b09b"
+  integrity sha512-NmLNjm6ucYwtcUmL7JQC1ZQ57LmHP4lT15FQ8D61nak1rO6DH+fz5qNK2Ap5UN4ZapYICE3/0KodcLYSPsPbaA==
   dependencies:
     agent-base "^7.0.2"
     debug "4"
@@ -8409,19 +8409,19 @@ p-try@^2.0.0:
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
 
-pac-proxy-agent@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/pac-proxy-agent/-/pac-proxy-agent-7.0.0.tgz#db42120c64292685dafaf2bd921e223c56bfb13b"
-  integrity sha512-t4tRAMx0uphnZrio0S0Jw9zg3oDbz1zVhQ/Vy18FjLfP1XOLNUEjaVxYCYRI6NS+BsMBXKIzV6cTLOkO9AtywA==
+pac-proxy-agent@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/pac-proxy-agent/-/pac-proxy-agent-7.0.1.tgz#6b9ddc002ec3ff0ba5fdf4a8a21d363bcc612d75"
+  integrity sha512-ASV8yU4LLKBAjqIPMbrgtaKIvxQri/yh2OpI+S6hVa9JRkUI3Y3NPFbfngDtY7oFtSMD3w31Xns89mDa3Feo5A==
   dependencies:
     "@tootallnate/quickjs-emscripten" "^0.23.0"
     agent-base "^7.0.2"
     debug "^4.3.4"
     get-uri "^6.0.1"
     http-proxy-agent "^7.0.0"
-    https-proxy-agent "^7.0.0"
+    https-proxy-agent "^7.0.2"
     pac-resolver "^7.0.0"
-    socks-proxy-agent "^8.0.1"
+    socks-proxy-agent "^8.0.2"
 
 pac-resolver@^7.0.0:
   version "7.0.0"
@@ -8841,19 +8841,19 @@ proper-lockfile@^4.1.2:
     retry "^0.12.0"
     signal-exit "^3.0.2"
 
-proxy-agent@^6.2.1, proxy-agent@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/proxy-agent/-/proxy-agent-6.3.0.tgz#72f7bb20eb06049db79f7f86c49342c34f9ba08d"
-  integrity sha512-0LdR757eTj/JfuU7TL2YCuAZnxWXu3tkJbg4Oq3geW/qFNT/32T0sp2HnZ9O0lMR4q3vwAt0+xCA8SR0WAD0og==
+proxy-agent@^6.2.1, proxy-agent@^6.3.0, proxy-agent@^6.3.1:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/proxy-agent/-/proxy-agent-6.3.1.tgz#40e7b230552cf44fd23ffaf7c59024b692612687"
+  integrity sha512-Rb5RVBy1iyqOtNl15Cw/llpeLH8bsb37gM1FUfKQ+Wck6xHlbAhWGUFiTRHtkjqGTA5pSHz6+0hrPW/oECihPQ==
   dependencies:
     agent-base "^7.0.2"
     debug "^4.3.4"
     http-proxy-agent "^7.0.0"
-    https-proxy-agent "^7.0.0"
+    https-proxy-agent "^7.0.2"
     lru-cache "^7.14.1"
-    pac-proxy-agent "^7.0.0"
+    pac-proxy-agent "^7.0.1"
     proxy-from-env "^1.1.0"
-    socks-proxy-agent "^8.0.1"
+    socks-proxy-agent "^8.0.2"
 
 proxy-from-env@^1.1.0:
   version "1.1.0"
@@ -9613,12 +9613,12 @@ socks-proxy-agent@^7.0.0:
     debug "^4.3.3"
     socks "^2.6.2"
 
-socks-proxy-agent@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/socks-proxy-agent/-/socks-proxy-agent-8.0.1.tgz#ffc5859a66dac89b0c4dab90253b96705f3e7120"
-  integrity sha512-59EjPbbgg8U3x62hhKOFVAmySQUcfRQ4C7Q/D5sEHnZTQRrQlNKINks44DMR1gwXp0p4LaVIeccX2KHTTcHVqQ==
+socks-proxy-agent@^8.0.2:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/socks-proxy-agent/-/socks-proxy-agent-8.0.2.tgz#5acbd7be7baf18c46a3f293a840109a430a640ad"
+  integrity sha512-8zuqoLv1aP/66PHF5TqwJ7Czm3Yv32urJQHrVyhD7mmA6d61Zv8cIXQYPTWwmg6qlupnPvs/QKDmfa4P/qct2g==
   dependencies:
-    agent-base "^7.0.1"
+    agent-base "^7.0.2"
     debug "^4.3.4"
     socks "^2.7.1"
 
@@ -10139,10 +10139,10 @@ ts-node@^10.0.0, ts-node@^10.8.1, ts-node@^10.9.1:
     v8-compile-cache-lib "^3.0.1"
     yn "3.1.1"
 
-ts-retry-promise@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/ts-retry-promise/-/ts-retry-promise-0.7.0.tgz#08f2dcbbf5d2981495841cb63389a268324e8147"
-  integrity sha512-x6yWZXC4BfXy4UyMweOFvbS1yJ/Y5biSz/mEPiILtJZLrqD3ZxIpzVOGGgifHHdaSe3WxzFRtsRbychI6zofOg==
+ts-retry-promise@^0.7.0, ts-retry-promise@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/ts-retry-promise/-/ts-retry-promise-0.7.1.tgz#176d6eee6415f07b6c7c286d3657355e284a6906"
+  integrity sha512-NhHOCZ2AQORvH42hOPO5UZxShlcuiRtm7P2jIq2L2RY3PBxw2mLnUsEdHrIslVBFya1v5aZmrR55lWkzo13LrQ==
 
 tsconfig-paths@^3.14.1, tsconfig-paths@^3.14.2:
   version "3.14.2"
