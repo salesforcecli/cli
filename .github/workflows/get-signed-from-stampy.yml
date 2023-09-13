@@ -32,9 +32,6 @@ jobs:
         run: |
           node scripts/stampy-signed-upload.js
       - name: clean up stampy in/out buckets
-        # waiting on Stampy to enable delete permission on these buckets
-        # at that point, we can make this an hourly job
-        if: false
         env:
           STAMPY_UNSIGNED_BUCKET: ${{ secrets.STAMPY_UNSIGNED_BUCKET }}
           STAMPY_SIGNED_BUCKET: ${{ secrets.STAMPY_SIGNED_BUCKET }}
