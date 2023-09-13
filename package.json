@@ -221,7 +221,7 @@
     "promote:verify-rc": "sf-release cli:versions:inspect --channels stable-rc --locations archive --cli sf",
     "test": "sf-test",
     "test:deprecation-policy": "sf-release cli:artifacts:compare",
-    "test:smoke-unix": "sf-release cli:tarballs:smoke --cli sf",
+    "test:smoke-unix": "sf-release cli:tarballs:smoke",
     "upload:deb": "oclif upload:deb",
     "upload:macos": "oclif upload:macos",
     "upload:tarballs": "oclif upload:tarballs --xz",
