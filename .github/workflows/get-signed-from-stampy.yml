@@ -33,6 +33,7 @@ jobs:
           node scripts/stampy-signed-upload.js
       - name: clean up stampy in/out buckets
         env:
+          STAMPY_ARN: ${{ secrets.STAMPY_ARN }}
           STAMPY_UNSIGNED_BUCKET: ${{ secrets.STAMPY_UNSIGNED_BUCKET }}
           STAMPY_SIGNED_BUCKET: ${{ secrets.STAMPY_SIGNED_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
