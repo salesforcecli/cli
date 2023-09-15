@@ -24,16 +24,11 @@ jobs:
         os: [ubuntu-latest, windows-latest]
         repository:
           - salesforcecli/plugin-auth
-          - salesforcecli/plugin-community
-          - salesforcecli/plugin-custom-metadata
           - salesforcecli/plugin-data
-          - salesforcecli/plugin-dev
-          - salesforcecli/plugin-env
           - salesforcecli/plugin-limits
           - salesforcecli/plugin-org
           - salesforcecli/plugin-schema
           - salesforcecli/plugin-settings
-          - salesforcecli/plugin-signups
           - salesforcecli/plugin-sobject
           - salesforcecli/plugin-templates
           - salesforcecli/plugin-user
@@ -42,6 +37,30 @@ jobs:
       repository: ${{matrix.repository}}
       channel-or-version: ${{ inputs.channel-or-version }}
       os: ${{matrix.os}}
+    secrets: inherit
+
+  jit:
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        repository:
+          - salesforcecli/plugin-custom-metadata
+          - salesforcecli/plugin-community
+          - salesforcecli/plugin-dev
+          - salesforcecli/plugin-signups
+          # - salesforce/plugin-devops-center
+          # - salesforcecli/plugin-env
+          # - salesforce/plugin-functions
+          # - salesforce/sfdx-plugin-lwc-test
+          # - salesforce/sfdx-scanner
+    uses: ./.github/workflows/just-nut.yml
+    with:
+      repository: ${{matrix.repository}}
+      channel-or-version: ${{ inputs.channel-or-version }}
+      os: ${{matrix.os}}
+      jit: true
     secrets: inherit
 
   packaging:
@@ -58,6 +77,7 @@ jobs:
       channel-or-version: ${{ inputs.channel-or-version }}
       os: ${{matrix.os}}
       command: ${{matrix.command}}
+      jit: true
     secrets: inherit
 
   source:
