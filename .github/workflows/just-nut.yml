@@ -56,7 +56,7 @@ jobs:
     name: ${{inputs.repository}}
     runs-on: ${{inputs.os}}
     env:
-      GH_TOKEN: ${{ github.token }} # Generic token provided by Github to use the 'gh' cli
+      GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
       TESTKIT_EXECUTABLE_PATH: sf
       TESTKIT_AUTH_URL: ${{ secrets.TESTKIT_AUTH_URL}}
       TESTKIT_HUB_USERNAME: ${{ secrets.TESTKIT_HUB_USERNAME}}
