@@ -85,22 +85,18 @@ jobs:
           command: npm install -g @salesforce/cli@${{ inputs.channel-or-version }} --omit=dev
           timeout_minutes: 60
       - uses: salesforcecli/github-workflows/.github/actions/yarnInstallWithRetries@main
+      # We set SF_DATA_DIR to ensure JIT plugins are only installed once
+      # Otherwise each TestSession reinstalls the JIT plugin in its custom HOME dir
       - name: Set SF_DATA_DIR for JIT
         if: ${{ inputs.jit }}
         run: echo "SF_DATA_DIR=${{ runner.temp }}/sf-data-dir" >> "$GITHUB_ENV"
       - name: Install JIT plugin
         if: ${{ inputs.jit }}
-        # We set SF_DATA_DIR to ensure JIT plugins are only installed once
-        # Otherwise each TestSession reinstalls the JIT plugin in its custom HOME dir
         # The --jit flag ensures we get the JIT plugin version set in the sf package.json
         run: |
           RAW_URL=$(gh browse package.json --repo "${{ inputs.repository }}" --no-browser | sed 's/github.com/raw.githubusercontent.com/' | sed 's/tree\/main/main/')
           NPM_NAME=$(curl --silent "$RAW_URL" | jq -r '.name')
           sf plugins install "$NPM_NAME" --jit
-      - name: Log SF_DATA_DIR
-        run: |
-          echo "SF_DATA_DIR is: ${{ env.SF_DATA_DIR }}"
-          ls -la "${{ env.SF_DATA_DIR }}"
           cat "${{ env.SF_DATA_DIR }}/package.json"
       - name: Run NUT (with retries)
         uses: nick-fields/retry@943e742917ac94714d2f408a0e8320f2d1fcafcd
