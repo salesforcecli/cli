@@ -66,6 +66,7 @@ jobs:
       ONEGP_TESTKIT_AUTH_URL: ${{ secrets.ONEGP_TESTKIT_AUTH_URL }}
       TESTKIT_SETUP_RETRIES: 2
       SF_DISABLE_TELEMETRY: true
+      SF_DATA_DIR: ${{ runner.temp }}/sf-data-dir
 
     steps:
       - uses: actions/checkout@v3
@@ -90,8 +91,8 @@ jobs:
         # We set SF_DATA_DIR to ensure JIT plugins are only installed once
         # Otherwise each TestSession reinstalls the JIT plugin in its custom HOME dir
         # The --jit flag ensures we get the JIT plugin version set in the sf package.json
+        # echo "SF_DATA_DIR=${{ runner.temp }}/sf-data-dir" >> "$GITHUB_ENV"
         run: |
-          echo "SF_DATA_DIR=${{ runner.temp }}/sf-data-dir" >> "$GITHUB_ENV"
           RAW_URL=$(gh browse package.json --repo "${{ inputs.repository }}" --no-browser | sed 's/github.com/raw.githubusercontent.com/' | sed 's/tree\/main/main/')
           NPM_NAME=$(curl --silent "$RAW_URL" | jq -r '.name')
           sf plugins install "$NPM_NAME" --jit
