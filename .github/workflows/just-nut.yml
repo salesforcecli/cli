@@ -98,6 +98,8 @@ jobs:
       - name: Log SF_DATA_DIR
         run: |
           echo "SF_DATA_DIR=${{ env.SF_DATA_DIR }}"
+          ls -la "${{ env.SF_DATA_DIR }}"
+          cat "${{ env.SF_DATA_DIR }}/package.json"
       - name: Run NUT (with retries)
         uses: nick-fields/retry@943e742917ac94714d2f408a0e8320f2d1fcafcd
         with:
