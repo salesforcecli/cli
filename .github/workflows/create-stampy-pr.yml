@@ -1,0 +1,15 @@
+name: create-stampy-pr
+
+on:
+  workflow_dispatch:
+
+jobs:
+  stampy-pr:
+    runs-on: salesforcecli-ubuntu
+    steps:
+      - name: Clone the stampy repo
+        uses: actions/checkout@v3
+        with:
+          github-server-url: 'https://git.soma.salesforce.com'
+          token: ${{ secrets.SHANE_SOMA_PAT }}
+          repository: 'Kuleana/stampy-p3'
