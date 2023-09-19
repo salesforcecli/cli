@@ -94,10 +94,7 @@ jobs:
         if: ${{ inputs.jit }}
         # The --jit flag ensures we get the JIT plugin version set in the sf package.json
         run: |
-          RAW_URL=$(gh browse package.json --repo "${{ inputs.repository }}" --no-browser | sed 's/github.com/raw.githubusercontent.com/' | sed 's/tree\/main/main/')
-          NPM_NAME=$(curl --silent "$RAW_URL" | jq -r '.name')
-          sf plugins install "$NPM_NAME" --jit
-          cat "${{ env.SF_DATA_DIR }}/package.json"
+          sf plugins install $(jq -r '.name' package.json) --jit
       - name: Run NUT (with retries)
         uses: nick-fields/retry@943e742917ac94714d2f408a0e8320f2d1fcafcd
         with:
