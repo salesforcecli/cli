@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env ts-node
 
 void (async () => {
   const oclif = await import('@oclif/core');

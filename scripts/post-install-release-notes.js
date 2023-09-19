@@ -1,4 +1,4 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env node
 
 void (async () => {
   if (process.env.SF_HIDE_RELEASE_NOTES === 'true') process.exit(0);
