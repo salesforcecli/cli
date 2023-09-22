@@ -40,7 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          JIT=$(jq '.oclif.jitPlugins | keys' package.json | tr -d '\n')
+          JIT=$(jq -c '.oclif.jitPlugins | keys' package.json)
           echo "Found JIT plugins:"
           echo "$JIT"
           echo "jit=$JIT" >> "$GITHUB_OUTPUT"
