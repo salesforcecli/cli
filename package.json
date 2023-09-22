@@ -10,7 +10,7 @@
   "homepage": "https://github.com/salesforcecli/cli",
   "bugs": "https://github.com/forcedotcom/cli/issues",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=16.0.0"
   },
   "packageManager": "yarn@1.22.19",
   "files": [
@@ -122,7 +122,7 @@
     ]
   },
   "dependencies": {
-    "@oclif/core": "3.0.0-beta.13",
+    "@oclif/core": "3.0.0-beta.16",
     "@oclif/plugin-autocomplete": "2.3.8",
     "@oclif/plugin-commands": "2.2.25",
     "@oclif/plugin-help": "5.2.19",
@@ -151,7 +151,7 @@
     "@salesforce/plugin-templates": "55.5.11",
     "@salesforce/plugin-trust": "2.6.10",
     "@salesforce/plugin-user": "2.3.32",
-    "@salesforce/sf-plugins-core": "4.0.0-beta.2",
+    "@salesforce/sf-plugins-core": "4.0.0-beta.3",
     "debug": "^4.3.4",
     "tslib": "^2.4.1"
   },
