@@ -41,14 +41,14 @@ jobs:
       - uses: actions/checkout@v3
       - run: |
           JIT=$(jq '.oclif.jitPlugins | keys' package.json)
-          echo "jit='$JIT'" >> "$GITHUB_OUTPUT"
+          echo "jit=$JIT" >> "$GITHUB_OUTPUT"
 
   jit-install:
     needs: [manifest]
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        jitPlugins: ${{ fromJSON(needs.get-jit-plugins.outputs.jit) }}
+        jitPlugins: ${{ needs.get-jit-plugins.outputs.jit }}
     runs-on: ${{matrix.os}}
     steps:
       - uses: actions/checkout@v3
