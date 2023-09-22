@@ -35,11 +35,20 @@ jobs:
           name: manifest
           path: oclif.manifest.json
 
+  get-jit-plugins:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          JIT=$(jq '.oclif.jitPlugins | keys' package.json)
+          echo "jit=$JIT" >> "$GITHUB_OUTPUT"
+
   jit-install:
     needs: [manifest]
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
+        jitPlugins: ${{ fromJSON(needs.get-jit-plugins.outputs.jit) }}
     runs-on: ${{matrix.os}}
     steps:
       - uses: actions/checkout@v3
@@ -51,7 +60,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: manifest
-      - run: yarn sf-release cli:install:jit:test
+      - run: yarn sf-release cli:install:jit:test --jit-plugins ${{matrix.jitPlugins}}
 
   artifacts:
     runs-on: ubuntu-latest
