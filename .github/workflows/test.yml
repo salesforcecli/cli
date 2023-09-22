@@ -44,7 +44,7 @@ jobs:
           echo "jit=$JIT" >> "$GITHUB_OUTPUT"
 
   jit-install:
-    needs: [manifest]
+    needs: [manifest, get-jit-plugins]
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
