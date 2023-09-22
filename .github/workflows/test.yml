@@ -49,6 +49,20 @@ jobs:
           echo "$JIT"
           echo "jit='$JIT'" >> "$GITHUB_OUTPUT"
 
+  get-jit-plugins-json:
+    runs-on: ubuntu-latest
+    needs: get-jit-plugins
+    outputs:
+      jitJson: ${{ steps.jitJson.outputs.jitJson }}
+    steps:
+      - name: Get JIT plugins JSON
+        id: jitJson
+        run: |
+          JSON='${{ toJSON(steps.plugins.outputs.jit) }}'
+          echo "JIT JSON:"
+          echo "$JSON"
+          echo "jitJson=$JSON" >> "$GITHUB_OUTPUT"
+
   echo-jit-plugins:
     needs: get-jit-plugins
     runs-on: ubuntu-latest
@@ -65,11 +79,11 @@ jobs:
           echo ${{ fromJSON(needs.get-jit-plugins.outputs.jit) }}
 
   jit-install:
-    needs: [manifest, get-jit-plugins]
+    needs: [manifest, get-jit-plugins-json]
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        jitPlugins: ${{ needs.get-jit-plugins.outputs.jit }}
+        jitPlugins: ${{ fromJSON(needs.get-jit-plugins-json.outputs.jitJson) }}
     runs-on: ${{matrix.os}}
     steps:
       - uses: actions/checkout@v3
