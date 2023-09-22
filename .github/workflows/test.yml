@@ -69,7 +69,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        jitPlugins: ${{ fromJSON(needs.get-jit-plugins.outputs.jit) }}
+        jitPlugins: ${{ toJSON(fromJSON(needs.get-jit-plugins.outputs.jit)) }}
     runs-on: ${{matrix.os}}
     steps:
       - uses: actions/checkout@v3
