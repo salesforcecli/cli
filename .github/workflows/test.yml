@@ -50,7 +50,9 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        jitPlugins: ${{ fromJSON(needs.get-jit-plugins.outputs.jit) }}
+        jitPlugins:
+          - '@salesforce/plugin-community'
+          - '@salesforce/plugin-env'
     runs-on: ${{matrix.os}}
     steps:
       - uses: actions/checkout@v3
@@ -62,7 +64,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: manifest
-      - run: yarn sf-release cli:install:jit:test --jit-plugins ${{matrix.jitPlugins}}
+      - run: yarn sf-release cli:install:jit:test --jit-plugin ${{matrix.jitPlugins}}
 
   artifacts:
     runs-on: ubuntu-latest
