@@ -37,6 +37,8 @@ jobs:
 
   get-jit-plugins:
     runs-on: ubuntu-latest
+    outputs:
+      jit: ${{ steps.get-jit-plugins.outputs.jit }}
     steps:
       - uses: actions/checkout@v3
       - run: |
@@ -50,6 +52,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: |
+          echo "JIT:"
+          echo ${{ needs.get-jit-plugins.outputs.jit }}
+      - run: |
+          echo "Steps":
+          echo ${{ toJSON(job)}}
       - run: |
           echo "JIT to JSON:"
           echo ${{ toJSON(needs.get-jit-plugins.outputs.jit) }}
