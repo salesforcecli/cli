@@ -44,7 +44,6 @@ jobs:
           echo "Found JIT plugins:"
           echo "$JIT"
           echo "jit=$JIT" >> "$GITHUB_OUTPUT"
-          echo "$GITHUB_OUTPUT"
 
   echo-jit-plugins:
     needs: get-jit-plugins
@@ -52,8 +51,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          echo "JIT JSON:"
-          echo ${{ toJson(needs.get-jit-plugins.outputs.jit) }}
+          echo "JIT to JSON:"
+          echo ${{ toJSON(needs.get-jit-plugins.outputs.jit) }}
+      - run: |
           echo "JIT from JSON:"
           echo ${{ fromJSON(needs.get-jit-plugins.outputs.jit) }}
 
