@@ -44,10 +44,11 @@ jobs:
       - name: Get JIT plugins
         id: plugins
         run: |
-          JIT=$(jq -c '.oclif.jitPlugins | keys' package.json)
+          JIT=$(jq -c '.oclif.jitPlugins | keys | tostring' package.json)
           echo "Found JIT plugins:"
           echo "$JIT"
-          echo "jit='$JIT'" >> "$GITHUB_OUTPUT"
+          echo $JIT
+          echo "jit=$JIT" >> "$GITHUB_OUTPUT"
 
   get-jit-plugins-json:
     runs-on: ubuntu-latest
@@ -83,7 +84,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        jitPlugins: ${{ fromJSON(needs.get-jit-plugins-json.outputs.jitJson) }}
+        jitPlugins: ${{ needs.get-jit-plugins.outputs.jit }}
     runs-on: ${{matrix.os}}
     steps:
       - uses: actions/checkout@v3
