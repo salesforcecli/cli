@@ -45,6 +45,13 @@ jobs:
           echo "$JIT"
           echo "jit=$JIT" >> "$GITHUB_OUTPUT"
 
+  echo-jit-plugins:
+    needs: get-jit-plugins
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo ${{ fromJSON(needs.get-jit-plugins.outputs.jit) }}
+
   jit-install:
     needs: [manifest, get-jit-plugins]
     strategy:
