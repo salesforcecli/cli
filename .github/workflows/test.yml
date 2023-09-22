@@ -43,7 +43,7 @@ jobs:
           JIT=$(jq -c '{ plugins: .oclif.jitPlugins | keys }' package.json)
           echo "Found JIT plugins:"
           echo "$JIT"
-          echo "jit=$JIT" >> "$GITHUB_OUTPUT"
+          echo "jit='$JIT'" >> "$GITHUB_OUTPUT"
 
   echo-jit-plugins:
     needs: get-jit-plugins
