@@ -50,7 +50,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: echo ${{ fromJSON(needs.get-jit-plugins.outputs.jit) }}
+      - run: |
+          echo "JIT to JSON:"
+          echo ${{ toJson(needs.get-jit-plugins.outputs.jit) }}
+          echo "JIT from JSON:"
+          echo ${{ fromJSON(needs.get-jit-plugins.outputs.jit) }}
 
   jit-install:
     needs: [manifest, get-jit-plugins]
