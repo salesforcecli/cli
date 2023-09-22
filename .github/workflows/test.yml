@@ -40,9 +40,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          JIT=$(jq -c '.oclif.jitPlugins | keys' package.json)
+          JIT=$(jq '.oclif.jitPlugins | keys' package.json)
           echo "Found JIT plugins:"
-          echo "$JIT"
+          echo "'$JIT'"
           echo "jit='$JIT'" >> "$GITHUB_OUTPUT"
 
   echo-jit-plugins:
@@ -61,9 +61,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        jitPlugins:
-          - '@salesforce/plugin-community'
-          - '@salesforce/plugin-env'
+        jitPlugins: ${{ fromJSON(needs.get-jit-plugins.outputs.jit) }}
     runs-on: ${{matrix.os}}
     steps:
       - uses: actions/checkout@v3
