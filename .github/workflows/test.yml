@@ -38,10 +38,12 @@ jobs:
   get-jit-plugins:
     runs-on: ubuntu-latest
     outputs:
-      jit: ${{ steps.get-jit-plugins.outputs.jit }}
+      jit: ${{ steps.plugins.outputs.jit }}
     steps:
       - uses: actions/checkout@v3
-      - run: |
+      - name: Get JIT plugins
+        id: plugins
+        run: |
           JIT=$(jq -c '.oclif.jitPlugins | keys' package.json)
           echo "Found JIT plugins:"
           echo "$JIT"
