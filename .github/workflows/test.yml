@@ -53,12 +53,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: get-jit-plugins
     outputs:
-      jitJson: ${{ needs.jitJson.outputs.jitJson }}
+      jitJson: ${{ steps.jitJson.outputs.jitJson }}
     steps:
       - name: Get JIT plugins JSON
         id: jitJson
         run: |
-          JSON='${{ toJSON(steps.plugins.outputs.jit) }}'
+          JSON='${{ toJSON(needs.get-jit-plugins.outputs.jit) }}'
           echo "JIT JSON:"
           echo "$JSON"
           echo "jitJson=$JSON" >> "$GITHUB_OUTPUT"
