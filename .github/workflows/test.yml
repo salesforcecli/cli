@@ -61,7 +61,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        jitPlugins: ${{ needs.get-jit-plugins.outputs.jit }}
+        jitPlugins: ['@salesforce/plugin-community', '@salesforce/plugin-custom-metadata']
     runs-on: ${{matrix.os}}
     steps:
       - uses: actions/checkout@v3
