@@ -40,10 +40,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          JIT=$(jq -c '{ plugins: .oclif.jitPlugins | keys }' package.json)
+          JIT=$(jq -c '.oclif.jitPlugins | keys' package.json)
+          JIT_JSON='${{ toJson($JIT) }}'
           echo "Found JIT plugins:"
-          echo "$JIT"
-          echo "jit='$JIT'" >> "$GITHUB_OUTPUT"
+          echo "$JIT_JSON"
+          echo "jit=$JIT_JSON" >> "$GITHUB_OUTPUT"
 
   echo-jit-plugins:
     needs: get-jit-plugins
@@ -51,15 +52,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
+          echo "JIT JSON:"
+          echo ${{ needs.get-jit-plugins.outputs.jit }}
           echo "JIT from JSON:"
-          echo ${{ fromJSON(needs.get-jit-plugins.outputs.jit).plugins }}
+          echo ${{ fromJSON(needs.get-jit-plugins.outputs.jit) }}
 
   jit-install:
     needs: [manifest, get-jit-plugins]
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        jitPlugins: echo ${{ fromJSON(needs.get-jit-plugins.outputs.jit).plugins }}
+        jitPlugins: echo ${{ fromJSON(needs.get-jit-plugins.outputs.jit) }}
     runs-on: ${{matrix.os}}
     steps:
       - uses: actions/checkout@v3
