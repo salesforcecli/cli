@@ -1863,31 +1863,31 @@
     js2xmlparser "^4.0.2"
     tslib "^2"
 
-"@salesforce/plugin-source@2.10.34":
-  version "2.10.34"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-source/-/plugin-source-2.10.34.tgz#a73f91c2902858ae73b9e4b9b6b8b8b5d1a741eb"
-  integrity sha512-gHV4XU8+iEV7xeK5YOctK9k/VkRPS40nnMK6FAoVUu53xGeY/bxxiPiRLJPkbIe4IHOk3Ovs4+X3XF+bNiegYg==
+"@salesforce/plugin-source@2.10.36":
+  version "2.10.36"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-source/-/plugin-source-2.10.36.tgz#16e85f2c2530915303c9a40cefc99ad621917d56"
+  integrity sha512-zX/BPSQceFDlokaMqtUM+Tb/xLlG3FE5U1p9XQbqcXn+T51UM1u6OFcRAuBzueFprnXpzrOdSn9kt5mIOdGamQ==
   dependencies:
     "@oclif/core" "^2.15.0"
     "@salesforce/apex-node" "^2.1.0"
     "@salesforce/core" "^5.2.0"
     "@salesforce/kit" "^3.0.9"
-    "@salesforce/sf-plugins-core" "^3.1.20"
+    "@salesforce/sf-plugins-core" "^3.1.23"
     "@salesforce/source-deploy-retrieve" "^9.7.4"
     "@salesforce/source-tracking" "^4.2.10"
     chalk "^4.1.2"
     got "^11.8.6"
-    proxy-agent "^6.3.0"
+    proxy-agent "^6.3.1"
     tslib "^2"
 
-"@salesforce/plugin-telemetry@2.3.3":
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-2.3.3.tgz#7f6771358515862e80bda953640e806e61cd6da1"
-  integrity sha512-1DSYpJt4LdYDFku5G34xlck4dMPDuWKl6L/jGEnwM0dzERC+8YXwLsHfoOtnUNBQrTp2MXs5vxK6nV9vHVZmYg==
+"@salesforce/plugin-telemetry@2.3.4":
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-2.3.4.tgz#3a168ef2ba15ffd2a18b0319f414a635279c0ca3"
+  integrity sha512-wyiK583/zFtu+KqYjmvZhe9SJZjLh567c24NSiYzPie/EW0F6N4JJLx8kJ+g6o9kJbRdXNyx9bTzKIEJwr/M0A==
   dependencies:
     "@oclif/core" "^2.15.0"
     "@salesforce/core" "^5.2.9"
-    "@salesforce/sf-plugins-core" "^3.1.20"
+    "@salesforce/sf-plugins-core" "^3.1.23"
     "@salesforce/telemetry" "^4.1.3"
     debug "^4.3.4"
     tslib "^2"
@@ -1947,7 +1947,7 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.6.0.tgz#14505ebad2fb2d4f7b14837545d662766d293561"
   integrity sha512-SwhDTLucj/GRbPpxlEoDZeqlX22o+G6fiebTXTu1cZKmd1oE0W2L7SlTTgJnWck8bhTeBIgQi9cpD8c2t5ISKA==
 
-"@salesforce/sf-plugins-core@3.1.23", "@salesforce/sf-plugins-core@^3.1.14", "@salesforce/sf-plugins-core@^3.1.20", "@salesforce/sf-plugins-core@^3.1.22":
+"@salesforce/sf-plugins-core@3.1.23", "@salesforce/sf-plugins-core@^3.1.14", "@salesforce/sf-plugins-core@^3.1.20", "@salesforce/sf-plugins-core@^3.1.22", "@salesforce/sf-plugins-core@^3.1.23":
   version "3.1.23"
   resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-3.1.23.tgz#c458b4a24d16d6bf1de084cf76cf085623cfcb7c"
   integrity sha512-cGa1jh6VBQhiqz2LyBqNkex0rVLmK1Xl/jRCj0odr6CApWz10AqgshqusQX2JEqkP/uxiH4n0aDZ/3y+n+ny/A==
@@ -1978,14 +1978,14 @@
     proxy-agent "^6.3.1"
     unzipper "0.10.14"
 
-"@salesforce/source-tracking@4.2.13", "@salesforce/source-tracking@^4.2.10", "@salesforce/source-tracking@^4.2.12":
-  version "4.2.13"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-tracking/-/source-tracking-4.2.13.tgz#cdebd77782483b854f70ca2a6d839f08eecb8725"
-  integrity sha512-vz9jVVkQU0nNq/+/gLzBcRhchMWD322Ch15QP/C8QVjn7I+0EsHEJqToxpjeKMf18sX7Fpg0q558fyx606khcQ==
+"@salesforce/source-tracking@4.2.14", "@salesforce/source-tracking@^4.2.10", "@salesforce/source-tracking@^4.2.12":
+  version "4.2.14"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-tracking/-/source-tracking-4.2.14.tgz#27772df901efc81aa1f1c0a9f08d427d5c25b2ef"
+  integrity sha512-Oa9StBkvNlA5ER+n6hbgmQY991c6Pv0ms8SLMKh9s4EIA8lfZfqzSCNXOskMdO4zPnoJKPRfZNG0119krfbuhQ==
   dependencies:
     "@salesforce/core" "^5.2.0"
     "@salesforce/kit" "^3.0.9"
-    "@salesforce/source-deploy-retrieve" "^9.7.13"
+    "@salesforce/source-deploy-retrieve" "^9.7.15"
     "@salesforce/ts-types" "^2.0.6"
     fast-xml-parser "^4.2.5"
     graceful-fs "^4.2.11"
@@ -8850,7 +8850,7 @@ proper-lockfile@^4.1.2:
     retry "^0.12.0"
     signal-exit "^3.0.2"
 
-proxy-agent@^6.2.1, proxy-agent@^6.3.0, proxy-agent@^6.3.1:
+proxy-agent@^6.2.1, proxy-agent@^6.3.1:
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/proxy-agent/-/proxy-agent-6.3.1.tgz#40e7b230552cf44fd23ffaf7c59024b692612687"
   integrity sha512-Rb5RVBy1iyqOtNl15Cw/llpeLH8bsb37gM1FUfKQ+Wck6xHlbAhWGUFiTRHtkjqGTA5pSHz6+0hrPW/oECihPQ==
