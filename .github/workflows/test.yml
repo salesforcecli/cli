@@ -48,7 +48,7 @@ jobs:
           JIT=$(jq -c '.oclif.jitPlugins | keys' package.json)
           echo "Found JIT plugins:"
           echo "$JIT"
-          echo "jit=$JIT" >> "$GITHUB_OUTPUT"
+          echo "jit=$JIT" >> $GITHUB_OUTPUT
 
   # get-jit-plugins-json:
   #   runs-on: ubuntu-latest
