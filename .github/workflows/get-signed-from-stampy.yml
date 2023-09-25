@@ -2,7 +2,8 @@ name: get-signed-installers-from-stampy
 on:
   workflow_dispatch:
   schedule:
-    - cron: '25 * * * *'
+    # 2:35 am central time
+    - cron: '35 7 * * *'
 
 jobs:
   get-signed-from-stampy:
