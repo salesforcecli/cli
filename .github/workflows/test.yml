@@ -48,10 +48,11 @@ jobs:
       - name: Get JIT plugins
         id: plugins
         run: |
-          JIT=$(jq '.oclif.jitPlugins | keys' package.json)
-          echo "jit<<EOF" >> "$GITHUB_OUTPUT"
-          echo "$JIT" >> "$GITHUB_OUTPUT"
-          echo "EOF" >> "$GITHUB_OUTPUT"
+          {
+            echo 'jit<<EOF'
+            jq '.oclif.jitPlugins | keys' package.json
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
 
   # get-jit-plugins-json:
   #   runs-on: ubuntu-latest
