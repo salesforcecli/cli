@@ -41,17 +41,17 @@ jobs:
       jit: ${{ toJSON(steps.*.outputs.jit) }}
     steps:
       - uses: actions/checkout@v3
-      - id: comm
-        run: echo "jit=@salesforce/plugin-community" >> $GITHUB_OUTPUT
-      - id: env
-        run: echo "jit=@salesforce/plugin-env" >> $GITHUB_OUTPUT
-      # - name: Get JIT plugins
-      #   id: plugins
-      #   run: |
-      #     JIT=$(jq -c '.oclif.jitPlugins | keys' package.json)
-      #     echo "Found JIT plugins:"
-      #     echo "$JIT"
-      #     echo "jit='$JIT'" >> $GITHUB_OUTPUT
+      # - id: comm
+      #   run: echo "jit=@salesforce/plugin-community" >> $GITHUB_OUTPUT
+      # - id: env
+      #   run: echo "jit=@salesforce/plugin-env" >> $GITHUB_OUTPUT
+      - name: Get JIT plugins
+        id: plugins
+        run: |
+          JIT=$(jq '.oclif.jitPlugins | keys' package.json)
+          echo "Found JIT plugins:"
+          echo "$JIT"
+          echo "jit='$JIT'" >> $GITHUB_OUTPUT
 
   # get-jit-plugins-json:
   #   runs-on: ubuntu-latest
