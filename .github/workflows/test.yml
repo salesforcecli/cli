@@ -36,7 +36,6 @@ jobs:
           path: oclif.manifest.json
 
   get-jit-plugins:
-    needs: manifest
     runs-on: ubuntu-latest
     outputs:
       jit: ${{ toJSON(steps.*.outputs.jit) }}
@@ -84,7 +83,7 @@ jobs:
           echo ${{ fromJSON(needs.get-jit-plugins.outputs.jit) }}
 
   jit-install:
-    needs: [get-jit-plugins]
+    needs: [manifest, get-jit-plugins]
     strategy:
       matrix:
         jitPlugins: ${{ fromJSON(needs.get-jit-plugins.outputs.jit) }}
