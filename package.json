@@ -213,7 +213,7 @@
     "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
     "preinstall": "node ./scripts/preinstall.js",
     "prepack": "sf-prepack",
-    "prepare": "sf-install",
+    "prepare": "sf-install && yarn compile && yarn lint",
     "prepublishOnly": "npm shrinkwrap",
     "pretarball": "sf-release cli:tarballs:prepare --types",
     "promote": "oclif promote",
