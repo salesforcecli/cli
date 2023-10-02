@@ -1637,15 +1637,15 @@
     open "^8.2.1"
     tslib "^2"
 
-"@salesforce/plugin-command-reference@^3.0.33":
-  version "3.0.35"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-command-reference/-/plugin-command-reference-3.0.35.tgz#4257db5883392e43f673c26ceaa1905f920b49e1"
-  integrity sha512-YDl3XJ48J1UVVmEKAv/u4rAlkhvAU8blXMduw+VuuAKUXIMp20619L6H5oVmMQPLiFHAGCyIpH0q9ZE2BKRp0A==
+"@salesforce/plugin-command-reference@^3.0.36":
+  version "3.0.39"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-command-reference/-/plugin-command-reference-3.0.39.tgz#818c0ccc199115caf2a6a1c22858097af33c98e3"
+  integrity sha512-ap5BqvfoyGKic5p36RcFSKYWblyTWjFRZO/vq+NJVCQdJffEGFSJsGGM2axiWLTt8yfLJnjGDAtRk5cSMqOK2Q==
   dependencies:
     "@oclif/core" "^2.15.0"
-    "@salesforce/core" "^5.2.10"
-    "@salesforce/kit" "^3.0.9"
-    "@salesforce/sf-plugins-core" "^3.1.23"
+    "@salesforce/core" "^5.3.1"
+    "@salesforce/kit" "^3.0.13"
+    "@salesforce/sf-plugins-core" "^3.1.26"
     "@salesforce/ts-types" "^2.0.7"
     chalk "^4"
     handlebars "^4.7.8"
@@ -1750,23 +1750,23 @@
     open "^8.4.2"
     tslib "^2"
 
-"@salesforce/plugin-release-management@^4.4.0":
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-4.4.0.tgz#fe0f4eb4a42e463de1a55981db870638860f8599"
-  integrity sha512-kudJEHykS3CR8B1tkdxIbHVYRX5Gym1eemmf0XcKa1PaAEO/1Bx11riC/Ak7pYVgVNMgFXoOzKOsiXcmdPkybg==
+"@salesforce/plugin-release-management@^4.4.6":
+  version "4.4.6"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-release-management/-/plugin-release-management-4.4.6.tgz#9ed745213b3ae3a86508c6f016bb06c22e60dc84"
+  integrity sha512-y5LLFPOGVB1KO3ZJ5VXVa0ZFGEwHwy+jCMkxvuYRZ8BgXVO0TJtN8/P499lDHZxHoqxJLbrUdU8MrYbHtuTDdg==
   dependencies:
     "@oclif/core" "^2.15.0"
     "@octokit/core" "^4.2.4"
     "@octokit/plugin-paginate-rest" "^6.1.2"
     "@octokit/plugin-throttling" "^5.2.3"
     "@salesforce/cli-plugins-testkit" "^4.3.6"
-    "@salesforce/core" "^5.2.10"
+    "@salesforce/core" "^5.3.1"
     "@salesforce/kit" "^3.0.9"
-    "@salesforce/plugin-command-reference" "^3.0.33"
+    "@salesforce/plugin-command-reference" "^3.0.36"
     "@salesforce/plugin-trust" "^2.6.8"
     "@salesforce/sf-plugins-core" "^3.1.22"
-    "@salesforce/ts-types" "^2.0.6"
-    aws-sdk "^2.1440.0"
+    "@salesforce/ts-types" "^2.0.8"
+    aws-sdk "^2.1467.0"
     chalk "^4.1.0"
     fast-glob "^3.3.1"
     got "^11.8.6"
@@ -2983,10 +2983,10 @@ aws-sdk@^2.1231.0, aws-sdk@^2.1464.0:
     uuid "8.0.0"
     xml2js "0.5.0"
 
-aws-sdk@^2.1440.0:
-  version "2.1455.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1455.0.tgz#d4b98912e54ffdc06e868287d87c8bc6b4c3f00a"
-  integrity sha512-OCH3YcWZ1mqePNRcOxvnB4F270++X44K+/cKA7op2HYRKjTkIJjFVqJGVdMDPQAHlc0GTCKYD6CJOUEhR2pp7w==
+aws-sdk@^2.1467.0:
+  version "2.1467.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1467.0.tgz#e3f2217ca8592b06021286bac304a58d2635fdb2"
+  integrity sha512-XJNbV2ORQB6XanyBLPJBjvm6axWlblFdyFHa+ZaUK4Kp3cZBggy53+0PMxS3bAGJKcP6h2pZQio9xZMCoebAKQ==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
