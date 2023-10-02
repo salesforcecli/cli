@@ -8,7 +8,6 @@
 import * as os from 'os';
 import { Command, Hook, toConfiguredId, toStandardizedId, Interfaces, loadHelpClass } from '@oclif/core';
 import { Prompter } from '@salesforce/sf-plugins-core';
-import { Lifecycle } from '@salesforce/core';
 
 function buildChoices(
   matches: Command.Loadable[],
@@ -27,7 +26,6 @@ function buildChoices(
 }
 
 async function determineCommand(config: Interfaces.Config, matches: Command.Loadable[]): Promise<string> {
-  if (matches.length === 1) return matches[0].id;
   const prompter = new Prompter();
   const choices = buildChoices(matches, config);
   const { command } = await prompter.timedPrompt<{ command: Command.Loadable }>([
@@ -50,15 +48,6 @@ const hook: Hook.CommandIncomplete = async function ({ config, matches, argv }) 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const help = new Help(config, config.pjson.helpOptions);
     return help.showHelp([toStandardizedId(command, config), ...argv]);
-  }
-
-  if (matches.length === 1) {
-    await Lifecycle.getInstance().emitWarning(
-      `One command matches the partial command entered, running command:${os.EOL}${config.bin} ${toConfiguredId(
-        command,
-        config
-      )} ${argv.join(' ')}`
-    );
   }
 
   return config.runCommand(toStandardizedId(command, config), argv);
