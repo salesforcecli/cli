@@ -508,6 +508,11 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@eslint/js@8.49.0":
+  version "8.49.0"
+  resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.49.0.tgz#86f79756004a97fa4df866835093f1df3d03c333"
+  integrity sha512-1S8uAY/MTJqVx0SC4epBq+N2yhuwtNwLbJYNZyhL2pO1ZVKn5HFXav5T41Ryzy9K9V7ZId2JB2oy/W4aCd9/2w==
+
 "@eslint/js@8.50.0":
   version "8.50.0"
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.50.0.tgz#9e93b850f0f3fa35f5fa59adfd03adae8488e484"
@@ -1075,12 +1080,11 @@
     read-package-json-fast "^3.0.0"
     which "^4.0.0"
 
-"@oclif/core@3.0.0-beta.16":
-  version "3.0.0-beta.16"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.0.0-beta.16.tgz#da231238d34b1971c455e9e990b2b48680fa2510"
-  integrity sha512-z/GUi+qJ0CRflIRiKLlnmNS/uaftgrFwXPmROHVHBCAoaxBNsudDbyGxCZlWn0n2n2cyjXX4zqdxX3OLb36TDw==
+"@oclif/core@3.0.0-beta.22":
+  version "3.0.0-beta.22"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.0.0-beta.22.tgz#9d29d38885a77d478cdcdacd9f684440a147d8f9"
+  integrity sha512-uUuYAEfYCQWrluB1/SELdjLTzBoXPCGFm+BSDdUZy7itTd6O0j86/05SG/bdsXgSgRGykIyZi58O++vaTHcy/A==
   dependencies:
-    "@types/cli-progress" "^3.11.0"
     ansi-escapes "^4.3.2"
     ansi-styles "^4.3.0"
     cardinal "^2.1.1"
@@ -1103,8 +1107,6 @@
     strip-ansi "^6.0.1"
     supports-color "^8.1.1"
     supports-hyperlinks "^2.2.0"
-    ts-node "^10.9.1"
-    tslib "^2.5.0"
     widest-line "^3.1.0"
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
@@ -1893,7 +1895,19 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.6.0.tgz#14505ebad2fb2d4f7b14837545d662766d293561"
   integrity sha512-SwhDTLucj/GRbPpxlEoDZeqlX22o+G6fiebTXTu1cZKmd1oE0W2L7SlTTgJnWck8bhTeBIgQi9cpD8c2t5ISKA==
 
-"@salesforce/sf-plugins-core@3.1.27", "@salesforce/sf-plugins-core@^3.1.14", "@salesforce/sf-plugins-core@^3.1.20", "@salesforce/sf-plugins-core@^3.1.22", "@salesforce/sf-plugins-core@^3.1.23", "@salesforce/sf-plugins-core@^3.1.25", "@salesforce/sf-plugins-core@^3.1.26":
+"@salesforce/sf-plugins-core@4.0.0-beta.4":
+  version "4.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-4.0.0-beta.4.tgz#3ab305688ccc0ca015ef79088329d9c035816fd0"
+  integrity sha512-FeW04CtA9EfyvYx8twrM7KT/RoKp8GtA5sNc7EEhZVsNQ9O+cZHZTIYxgVNju7yxU2EwRx58BXarHsnPU6NAqw==
+  dependencies:
+    "@oclif/core" "3.0.0-beta.22"
+    "@salesforce/core" "^5.3.1"
+    "@salesforce/kit" "^3.0.13"
+    "@salesforce/ts-types" "^2.0.7"
+    chalk "^4"
+    inquirer "^8.2.5"
+
+"@salesforce/sf-plugins-core@^3.1.14", "@salesforce/sf-plugins-core@^3.1.20", "@salesforce/sf-plugins-core@^3.1.22", "@salesforce/sf-plugins-core@^3.1.23", "@salesforce/sf-plugins-core@^3.1.25", "@salesforce/sf-plugins-core@^3.1.26":
   version "3.1.27"
   resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-3.1.27.tgz#71046b2d7d840e0da84c0308dc8435f60d414466"
   integrity sha512-sFp66VM6HMIQPhGJldEyMhSFrXblWIDEoJo8Cbz3Z5Bm70UAk0CYF/DBo2TOL67IZlhzb2GgbMP/68OaFBaUqg==
