@@ -1800,10 +1800,10 @@
     fast-levenshtein "^3.0.0"
     tslib "^2"
 
-"@salesforce/plugin-sobject@0.2.9":
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-sobject/-/plugin-sobject-0.2.9.tgz#7cc3c6b097c68aef8c3ead6b8b4ef109a94557e7"
-  integrity sha512-Hsig6PsRgJw74lWns2JQsOvGWmvvVPY3ZF5GTb6eTNRN+yNR1WSIClckrTlk9Dx0euYXxnq/Qu8s5J6O+f2eSw==
+"@salesforce/plugin-sobject@0.2.10":
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-sobject/-/plugin-sobject-0.2.10.tgz#5ed8ec0662591031efb06f8f09b60cedd48d5f41"
+  integrity sha512-Akpm6AN5cgd+5NYgerlodXKptcyEPmkTuAPpciqfikUOTqmYkxTV8qkRe4SU+hk4Hkq7N+SnAnxJF5gUm+eMLg==
   dependencies:
     "@oclif/core" "^2.15.0"
     "@salesforce/core" "^5.3.1"
@@ -1811,7 +1811,7 @@
     "@salesforce/sf-plugins-core" "^3.1.22"
     change-case "^4.1.2"
     fast-glob "^3.3.1"
-    fast-xml-parser "^4.2.7"
+    fast-xml-parser "^4.3.1"
     inquirer "^8.2.6"
     js2xmlparser "^4.0.2"
     tslib "^2"
@@ -5012,10 +5012,10 @@ fast-safe-stringify@^2.1.1:
   resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-2.1.1.tgz#c406a83b6e70d9e35ce3b30a81141df30aeba884"
   integrity sha512-W+KJc2dmILlPplD/H4K9l9LcAHAfPtP6BY84uVLXQ6Evcz9Lcg33Y2z1IVblT6xdY54PXYVHEv+0Wpq8Io6zkA==
 
-fast-xml-parser@^4.2.5, fast-xml-parser@^4.2.7:
-  version "4.2.7"
-  resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-4.2.7.tgz#871f2ca299dc4334b29f8da3658c164e68395167"
-  integrity sha512-J8r6BriSLO1uj2miOk1NW0YVm8AGOOu3Si2HQp/cSmo6EA4m3fcwu2WKjJ4RK9wMLBtg69y1kS8baDiQBR41Ig==
+fast-xml-parser@^4.2.5, fast-xml-parser@^4.2.7, fast-xml-parser@^4.3.1:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-4.3.2.tgz#761e641260706d6e13251c4ef8e3f5694d4b0d79"
+  integrity sha512-rmrXUXwbJedoXkStenj1kkljNF7ugn5ZjR9FJcwmCfcCbtOMDghPajbc+Tck6vE6F5XsDmx+Pr2le9fw8+pXBg==
   dependencies:
     strnum "^1.0.5"
 
