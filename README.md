@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.12.6 linux-x64 node-v18.18.0
+@salesforce/cli/2.12.7 linux-x64 node-v18.18.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -192,7 +192,7 @@ EXAMPLES
     $ sf alias list
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.32/src/commands/alias/list.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.33/src/commands/alias/list.ts)_
 
 ## `sf alias set`
 
@@ -240,7 +240,7 @@ EXAMPLES
     $ sf alias set my-scratch-org test-ss0xut7txzxf@example.com
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.32/src/commands/alias/set.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.33/src/commands/alias/set.ts)_
 
 ## `sf alias unset`
 
@@ -279,7 +279,7 @@ EXAMPLES
     $ sf alias unset --all [--no-prompt]
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.32/src/commands/alias/unset.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.33/src/commands/alias/unset.ts)_
 
 ## `sf analytics generate template`
 
@@ -865,6 +865,9 @@ DESCRIPTION
   displayed; local ones are displayed if you run the command in a project directory. Run "sf config set" to set a
   configuration variable.
 
+  For the full list of available configuration variables, see
+  https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_dev_cli_config_values.htm.
+
 ALIASES
   $ sf force config get
 
@@ -888,7 +891,7 @@ CONFIGURATION VARIABLES
   org-max-query-limit            Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.32/src/commands/config/get.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.33/src/commands/config/get.ts)_
 
 ## `sf config list`
 
@@ -907,6 +910,9 @@ DESCRIPTION
   Global configuration variables apply to any Salesforce DX project and are always displayed. If you run this command
   from a project directory, local configuration variables are also displayed.
 
+  For the full list of available configuration variables, see
+  https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_dev_cli_config_values.htm.
+
 ALIASES
   $ sf force config list
 
@@ -916,7 +922,7 @@ EXAMPLES
     $ sf config list
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.32/src/commands/config/list.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.33/src/commands/config/list.ts)_
 
 ## `sf config set`
 
@@ -950,6 +956,9 @@ DESCRIPTION
 
   Run "sf config list" to see the configuration variables you've already set and their level (local or global).
 
+  For the full list of available configuration variables, see
+  https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_dev_cli_config_values.htm.
+
 ALIASES
   $ sf force config set
 
@@ -982,7 +991,7 @@ CONFIGURATION VARIABLES
   org-max-query-limit            Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.32/src/commands/config/set.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.33/src/commands/config/set.ts)_
 
 ## `sf config unset`
 
@@ -1004,6 +1013,9 @@ DESCRIPTION
 
   Local configuration variables apply only to your current project. Global configuration variables apply in any
   Salesforce DX project.
+
+  For the full list of available configuration variables, see
+  https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_dev_cli_config_values.htm.
 
 ALIASES
   $ sf force config unset
@@ -1028,7 +1040,7 @@ CONFIGURATION VARIABLES
   org-max-query-limit            Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.32/src/commands/config/unset.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.33/src/commands/config/unset.ts)_
 
 ## `sf data create record`
 
@@ -2331,7 +2343,7 @@ FLAG DESCRIPTIONS
     for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.9/src/commands/force/org/clone.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.10/src/commands/force/org/clone.ts)_
 
 ## `sf force org create`
 
@@ -2379,7 +2391,7 @@ EXAMPLES
   $ sf force org create -t sandbox -f config/dev-sandbox-def.json -a MyDevSandbox -u prodOrg
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.9/src/commands/force/org/create.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.10/src/commands/force/org/create.ts)_
 
 ## `sf force org delete`
 
@@ -2411,7 +2423,7 @@ EXAMPLES
   $ sf force org delete -u MyOrgAlias -p
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.9/src/commands/force/org/delete.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.10/src/commands/force/org/delete.ts)_
 
 ## `sf force org status`
 
@@ -2449,7 +2461,7 @@ EXAMPLES
   $ sf force org status --sandboxname DevSbx1 --wait 45 --setdefaultusername -u prodOrg
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.9/src/commands/force/org/status.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.10/src/commands/force/org/status.ts)_
 
 ## `sf force source deploy`
 
@@ -3792,7 +3804,7 @@ FLAG DESCRIPTIONS
     sandbox.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.9/src/commands/org/create/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.10/src/commands/org/create/sandbox.ts)_
 
 ## `sf org create scratch`
 
@@ -3945,7 +3957,7 @@ FLAG DESCRIPTIONS
     Omit this flag to have Salesforce generate a unique username for your org.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.9/src/commands/org/create/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.10/src/commands/org/create/scratch.ts)_
 
 ## `sf org create user`
 
@@ -4085,7 +4097,7 @@ EXAMPLES
     $ sf org delete sandbox --target-org my-sandbox --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.9/src/commands/org/delete/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.10/src/commands/org/delete/sandbox.ts)_
 
 ## `sf org delete scratch`
 
@@ -4127,7 +4139,7 @@ EXAMPLES
     $ sf org delete scratch --target-org my-scratch-org --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.9/src/commands/org/delete/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.10/src/commands/org/delete/scratch.ts)_
 
 ## `sf org display`
 
@@ -4170,7 +4182,7 @@ EXAMPLES
     $ sf org display --target-org TestOrg1 --verbose
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.9/src/commands/org/display.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.10/src/commands/org/display.ts)_
 
 ## `sf org display user`
 
@@ -4304,7 +4316,7 @@ EXAMPLES
     $ sf org list --clean
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.9/src/commands/org/list.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.10/src/commands/org/list.ts)_
 
 ## `sf org list auth`
 
@@ -4399,7 +4411,7 @@ FLAG DESCRIPTIONS
     Examples of metadata types that use folders are Dashboard, Document, EmailTemplate, and Report.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.9/src/commands/org/list/metadata.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.10/src/commands/org/list/metadata.ts)_
 
 ## `sf org list metadata-types`
 
@@ -4452,7 +4464,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.9/src/commands/org/list/metadata-types.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.10/src/commands/org/list/metadata-types.ts)_
 
 ## `sf org list users`
 
@@ -4953,7 +4965,7 @@ EXAMPLES
     $ sf org open --source-path force-app/main/default/flexipages/Hello.flexipage-meta.xml
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.9/src/commands/org/open.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.10/src/commands/org/open.ts)_
 
 ## `sf org resume sandbox`
 
@@ -5015,7 +5027,7 @@ FLAG DESCRIPTIONS
     returns the job ID. To resume checking the sandbox creation, rerun this command.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.9/src/commands/org/resume/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.10/src/commands/org/resume/sandbox.ts)_
 
 ## `sf org resume scratch`
 
@@ -5061,7 +5073,7 @@ FLAG DESCRIPTIONS
     The job ID is valid for 24 hours after you start the scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.9/src/commands/org/resume/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.10/src/commands/org/resume/scratch.ts)_
 
 ## `sf plugins`
 
@@ -5330,7 +5342,7 @@ FLAG DESCRIPTIONS
     If you specify this parameter, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.4/src/commands/project/convert/mdapi.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.5/src/commands/project/convert/mdapi.ts)_
 
 ## `sf project convert source`
 
@@ -5342,7 +5354,7 @@ USAGE
     <value> | -m <value>]
 
 FLAGS
-  -d, --output-dir=<value>     [default: metadataPackage_1696014058357] Output directory to store the Metadata
+  -d, --output-dir=<value>     [default: metadataPackage_1696284244069] Output directory to store the Metadata
                                API–formatted files in.
   -m, --metadata=<value>...    Metadata component names to convert.
   -n, --package-name=<value>   Name of the package to associate with the metadata-formatted files.
@@ -5402,7 +5414,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.4/src/commands/project/convert/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.5/src/commands/project/convert/source.ts)_
 
 ## `sf project delete source`
 
@@ -5540,7 +5552,7 @@ FLAG DESCRIPTIONS
     - Separate the test names with spaces: --tests Test1 Test2 "Test With Space"
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.4/src/commands/project/delete/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.5/src/commands/project/delete/source.ts)_
 
 ## `sf project delete tracking`
 
@@ -5575,7 +5587,7 @@ EXAMPLES
     $ sf project delete tracking --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.4/src/commands/project/delete/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.5/src/commands/project/delete/tracking.ts)_
 
 ## `sf project deploy cancel`
 
@@ -5645,7 +5657,7 @@ FLAG DESCRIPTIONS
     project deploy report".
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.4/src/commands/project/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.5/src/commands/project/deploy/cancel.ts)_
 
 ## `sf project deploy preview`
 
@@ -5728,7 +5740,7 @@ FLAG DESCRIPTIONS
     All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.4/src/commands/project/deploy/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.5/src/commands/project/deploy/preview.ts)_
 
 ## `sf project deploy quick`
 
@@ -5821,7 +5833,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.4/src/commands/project/deploy/quick.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.5/src/commands/project/deploy/quick.ts)_
 
 ## `sf project deploy report`
 
@@ -5916,7 +5928,7 @@ FLAG DESCRIPTIONS
     --coverage-formatters lcov --coverage-formatters clover
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.4/src/commands/project/deploy/report.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.5/src/commands/project/deploy/report.ts)_
 
 ## `sf project deploy resume`
 
@@ -6012,7 +6024,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.4/src/commands/project/deploy/resume.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.5/src/commands/project/deploy/resume.ts)_
 
 ## `sf project deploy start`
 
@@ -6042,8 +6054,8 @@ FLAGS
 
 SOURCE FORMAT FLAGS
   -d, --source-dir=<value>...  Path to the local source files to deploy.
-  -m, --metadata=<value>...    Metadata component names to deploy. Wildcards ( * ) supported as long as you use quotes,
-                               such as 'ApexClass:MyClass*'
+  -m, --metadata=<value>...    Metadata component names to deploy. Wildcards ( `*` ) supported as long as you use
+                               quotes, such as `ApexClass:MyClass*`
   -x, --manifest=<value>       Full file path for manifest (package.xml) of components to deploy.
 
 TEST FLAGS
@@ -6240,7 +6252,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.4/src/commands/project/deploy/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.5/src/commands/project/deploy/start.ts)_
 
 ## `sf project deploy validate`
 
@@ -6412,7 +6424,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.4/src/commands/project/deploy/validate.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.5/src/commands/project/deploy/validate.ts)_
 
 ## `sf project generate`
 
@@ -6591,7 +6603,7 @@ EXAMPLES
     $ sf project generate manifest --from-org test@myorg.com --include-packages unlocked
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.4/src/commands/project/generate/manifest.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.5/src/commands/project/generate/manifest.ts)_
 
 ## `sf project list ignored`
 
@@ -6632,7 +6644,7 @@ EXAMPLES
     $ sf project list ignored --source-dir package.xml
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.4/src/commands/project/list/ignored.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.5/src/commands/project/list/ignored.ts)_
 
 ## `sf project reset tracking`
 
@@ -6679,7 +6691,7 @@ EXAMPLES
     $ sf project reset tracking --revision 30
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.4/src/commands/project/reset/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.5/src/commands/project/reset/tracking.ts)_
 
 ## `sf project retrieve preview`
 
@@ -6734,7 +6746,7 @@ FLAG DESCRIPTIONS
     Overrides your default org.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.4/src/commands/project/retrieve/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.5/src/commands/project/retrieve/preview.ts)_
 
 ## `sf project retrieve start`
 
@@ -6888,7 +6900,7 @@ ENVIRONMENT VARIABLES
   SF_USE_PROGRESS_BAR  Set to false to disable the progress bar when running the metadata deploy command.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.4/src/commands/project/retrieve/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/1.18.5/src/commands/project/retrieve/start.ts)_
 
 ## `sf schema generate field`
 
