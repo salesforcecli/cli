@@ -1080,7 +1080,7 @@
     read-package-json-fast "^3.0.0"
     which "^4.0.0"
 
-"@oclif/core@3.0.0", "@oclif/core@^3.0.0", "@oclif/core@^3.0.0-beta.22":
+"@oclif/core@3.0.0", "@oclif/core@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.0.0.tgz#9326d1cbd036ce20a1cda5e1854c1ec4d50dd717"
   integrity sha512-zFHDOizZxRmmuPe6Jba3lLPXpjBxDNWIWSiV87E5DdSbzBPiUsWgXUNfDQENP2EL1vdRIPOeTPmFyob7K1tbBg==
@@ -1141,6 +1141,37 @@
     supports-hyperlinks "^2.2.0"
     ts-node "^10.9.1"
     tslib "^2.5.0"
+    widest-line "^3.1.0"
+    wordwrap "^1.0.0"
+    wrap-ansi "^7.0.0"
+
+"@oclif/core@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.0.1.tgz#a4618723070871c65dd12a93935f61043131839d"
+  integrity sha512-OFFb228qBLgBGDctc0+kjOEw2U91TJZ7apwNihCLgUKjL8sVUZvxT6ydFurcNUeJIRpn/4vLzZ+67mFnpV7I0w==
+  dependencies:
+    ansi-escapes "^4.3.2"
+    ansi-styles "^4.3.0"
+    cardinal "^2.1.1"
+    chalk "^4.1.2"
+    clean-stack "^3.0.1"
+    cli-progress "^3.12.0"
+    debug "^4.3.4"
+    ejs "^3.1.8"
+    get-package-type "^0.1.0"
+    globby "^11.1.0"
+    hyperlinker "^1.0.0"
+    indent-string "^4.0.0"
+    is-wsl "^2.2.0"
+    js-yaml "^3.14.1"
+    natural-orderby "^2.0.3"
+    object-treeify "^1.1.33"
+    password-prompt "^1.1.2"
+    slice-ansi "^4.0.0"
+    string-width "^4.2.3"
+    strip-ansi "^6.0.1"
+    supports-color "^8.1.1"
+    supports-hyperlinks "^2.2.0"
     widest-line "^3.1.0"
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
@@ -8284,12 +8315,12 @@ object.values@^1.1.6:
     define-properties "^1.1.4"
     es-abstract "^1.20.4"
 
-oclif@^4.0.0-beta.2:
-  version "4.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/oclif/-/oclif-4.0.0-beta.2.tgz#5449a6b81a905cae5315bbc622c561bc70409df6"
-  integrity sha512-20RV6HnUbBz5LESX37jqj3Z5oHyRJwOPO+HC3CQaLwmfnWhd50UpD0iqpRSWGWHkonvQ/50y2TGYJkO0LczkMg==
+oclif@^4.0.0-beta.3:
+  version "4.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/oclif/-/oclif-4.0.0-beta.3.tgz#0c4ecbce7b7b1ff3ae256e598c5883da793a41e0"
+  integrity sha512-cwEVd4wYpcXvDRtt0ijEenl0qep9J6pGFT0+zY7UNgCAwtR8QJixwvXijkbQM/NxZAuIc6rbikzWqc37O7xjOQ==
   dependencies:
-    "@oclif/core" "^3.0.0-beta.22"
+    "@oclif/core" "^3.0.1"
     "@oclif/plugin-help" "^5.2.14"
     "@oclif/plugin-not-found" "^2.3.32"
     "@oclif/plugin-warn-if-update-available" "^2.0.44"
