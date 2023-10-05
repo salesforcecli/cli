@@ -29,7 +29,7 @@ export default class SfHelp extends Help {
     return super.showHelp(argv);
   }
 
-  protected getCommandHelpClass(command: Command.Cached): CommandHelp {
+  protected getCommandHelpClass(command: Command.Loadable): CommandHelp {
     this.commandHelpClass = super.getCommandHelpClass(command) as SfCommandHelp;
     this.commandHelpClass.showShortHelp = this.showShortHelp;
     return this.commandHelpClass;
