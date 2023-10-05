@@ -5,9 +5,9 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import * as os from 'os';
-import * as path from 'path';
-import { fileURLToPath } from 'url';
+import { platform, arch, release } from 'node:os';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { Config, Interfaces, run as oclifRun, settings } from '@oclif/core';
 import { set } from '@salesforce/kit';
 import Debug from 'debug';
@@ -84,9 +84,9 @@ function debugCliInfo(version: string, channel: string, env: Env, config: Interf
   }
 
   debugSection('OS', [
-    ['platform', os.platform()],
-    ['architecture', os.arch()],
-    ['release', os.release()],
+    ['platform', platform()],
+    ['architecture', arch()],
+    ['release', release()],
     ['shell', config.shell],
   ]);
 
@@ -120,25 +120,25 @@ type CreateOptions = {
   env?: typeof nodeEnv;
 };
 
-export function create(opts: CreateOptions): { run: () => Promise<unknown> } {
+export function create({ version, bin, channel, run, env }: CreateOptions): { run: () => Promise<unknown> } {
   settings.performanceEnabled = true;
-  const root = path.resolve(fileURLToPath(import.meta.url), '..');
+  const root = resolve(fileURLToPath(import.meta.url), '..');
   const args = process.argv.slice(2);
-  const env = opts.env ?? nodeEnv;
+  const environment = env ?? nodeEnv;
   return {
     async run(): Promise<unknown> {
       const config = new Config({
-        name: opts.bin,
+        name: bin,
         root,
-        version: opts.version,
-        channel: opts.channel,
+        version,
+        channel,
       });
       await config.load();
-      configureUpdateSites(config, opts.env);
-      configureAutoUpdate(env);
-      debugCliInfo(opts.version, opts.channel, env, config);
+      configureUpdateSites(config, environment);
+      configureAutoUpdate(environment);
+      debugCliInfo(version, channel, environment, config);
       // Example of how run is used in a test https://github.com/salesforcecli/cli/pull/171/files#diff-1deee0a575599b2df117c280da319f7938aaf6fdb0c04bcdbde769dbf464be69R46
-      return opts.run ? opts.run(args, config) : oclifRun(args, config);
+      return run ? run(args, config) : oclifRun(args, config);
     },
   };
 }

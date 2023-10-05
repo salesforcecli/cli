@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
-void (async () => {
+const { spawn } = await import('node:child_process');
+const { join } = await import('node:path');
+const { fileURLToPath } = await import('node:url');
+
+async function main() {
   if (process.env.SF_HIDE_RELEASE_NOTES === 'true') process.exit(0);
 
-  const { spawn } = await import('node:child_process');
-  const { join } = await import('node:path');
-  const { fileURLToPath } = await import('node:url');
   /*
    * NOTE: Please read "Notes about the hook scripts" in this PR before making changes:
    * https://github.com/salesforcecli/sfdx-cli/pull/407
@@ -38,4 +39,6 @@ void (async () => {
       resolve();
     });
   });
-})();
+}
+
+await main();
