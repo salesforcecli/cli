@@ -1,7 +1,3 @@
 {
-  "script": {
-    "prepare": "sf-install && yarn compile && yarn lint",
-    "pretest": "echo disable # sf-compile-test",
-    "lint": "eslint \"src/**/*.ts\""
-  }
+  "exclude-scripts": ["test", "test:deprecation-policy", "test:command-reference", "test:json-schema"]
 }

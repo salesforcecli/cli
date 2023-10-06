@@ -4,9 +4,9 @@
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import { CommandHelp, Help, Command } from '@oclif/core';
-import * as chalk from 'chalk';
-import { SfCommandHelp } from './sfCommandHelp';
+import { Command, CommandHelp, Help } from '@oclif/core';
+import chalk from 'chalk';
+import { SfCommandHelp } from './sfCommandHelp.js';
 
 export default class SfHelp extends Help {
   protected CommandHelpClass: typeof CommandHelp = SfCommandHelp;
@@ -29,7 +29,7 @@ export default class SfHelp extends Help {
     return super.showHelp(argv);
   }
 
-  protected getCommandHelpClass(command: Command.Cached): CommandHelp {
+  protected getCommandHelpClass(command: Command.Loadable): CommandHelp {
     this.commandHelpClass = super.getCommandHelpClass(command) as SfCommandHelp;
     this.commandHelpClass.showShortHelp = this.showShortHelp;
     return this.commandHelpClass;

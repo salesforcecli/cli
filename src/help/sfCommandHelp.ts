@@ -4,14 +4,13 @@
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import { CommandHelp, Command, HelpSection, HelpSectionRenderer, Interfaces } from '@oclif/core';
-import { SfCommandInterface } from '@salesforce/sf-plugins-core';
+import { Command, CommandHelp, HelpSection, HelpSectionRenderer, Interfaces } from '@oclif/core';
 type SectionType = { header: string; generate: HelpSectionRenderer };
 
 export class SfCommandHelp extends CommandHelp {
   private shortHelp = false;
   public constructor(
-    public command: Command.Cached,
+    public command: Command.Loadable,
     public config: Interfaces.Config,
     public opts: Interfaces.HelpOptions
   ) {
@@ -31,34 +30,25 @@ export class SfCommandHelp extends CommandHelp {
     if (this.shortHelp) {
       return sections.filter(({ header }) => ['USAGE', 'ARGUMENTS', 'FLAGS'].includes(header));
     }
-    const additionaSfSections: SectionType[] = [
+    const additionalSfSections: SectionType[] = [
       {
         header: 'CONFIGURATION VARIABLES',
-        generate: ({ cmd }): HelpSection => {
-          const sfCommand = cmd as SfCommandInterface;
-          return sfCommand.configurationVariablesSection;
-        },
+        generate: ({ cmd }) => cmd.configurationVariablesSection as HelpSection,
       },
       {
         header: 'ENVIRONMENT VARIABLES',
-        generate: ({ cmd }): HelpSection => {
-          const sfCommand = cmd as SfCommandInterface;
-          return sfCommand.envVariablesSection;
-        },
+        generate: ({ cmd }) => cmd.envVariablesSection as HelpSection,
       },
       {
         header: 'ERROR CODES',
-        generate: ({ cmd }): HelpSection => {
-          const sfCommand = cmd as SfCommandInterface;
-          return sfCommand.errorCodes;
-        },
+        generate: ({ cmd }) => cmd.errorCodes as HelpSection,
       },
     ];
     const flagsIndex =
       (sections.findIndex((section) => section.header === 'FLAG DESCRIPTIONS') || sections.length - 1) + 1;
-    sections.splice(flagsIndex, 0, additionaSfSections[0]);
-    sections.splice(flagsIndex + 1, 0, additionaSfSections[1]);
-    sections.splice(flagsIndex + 2, 0, additionaSfSections[2]);
+    sections.splice(flagsIndex, 0, additionalSfSections[0]);
+    sections.splice(flagsIndex + 1, 0, additionalSfSections[1]);
+    sections.splice(flagsIndex + 2, 0, additionalSfSections[2]);
     return sections;
   }
 }

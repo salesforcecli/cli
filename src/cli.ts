@@ -5,13 +5,13 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import * as os from 'os';
-import * as path from 'path';
+import { platform, arch, release } from 'node:os';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { Config, Interfaces, run as oclifRun, settings } from '@oclif/core';
 import { set } from '@salesforce/kit';
-import { AnyJson, get } from '@salesforce/ts-types';
-import * as Debug from 'debug';
-import { default as nodeEnv, Env } from './util/env';
+import Debug from 'debug';
+import { default as nodeEnv, Env } from './util/env.js';
 
 const debug = Debug('sf');
 
@@ -84,9 +84,9 @@ function debugCliInfo(version: string, channel: string, env: Env, config: Interf
   }
 
   debugSection('OS', [
-    ['platform', os.platform()],
-    ['architecture', os.arch()],
-    ['release', os.release()],
+    ['platform', platform()],
+    ['architecture', arch()],
+    ['release', release()],
     ['shell', config.shell],
   ]);
 
@@ -112,30 +112,31 @@ function debugCliInfo(version: string, channel: string, env: Env, config: Interf
   );
 }
 
-export function create(
-  version: string,
-  channel: string,
-  run: typeof oclifRun,
-  env = nodeEnv
-): { run: () => Promise<unknown> } {
-  settings.performanceEnabled = true;
-  const root = path.resolve(__dirname, '..');
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const pjson = require(path.resolve(__dirname, '..', 'package.json')) as AnyJson;
-  const args = process.argv.slice(2);
+type CreateOptions = {
+  version: string;
+  bin: string | undefined;
+  channel: string;
+  run?: typeof oclifRun;
+  env?: typeof nodeEnv;
+};
 
+export function create({ version, bin, channel, run, env }: CreateOptions): { run: () => Promise<unknown> } {
+  settings.performanceEnabled = true;
+  const root = resolve(fileURLToPath(import.meta.url), '..');
+  const args = process.argv.slice(2);
+  const environment = env ?? nodeEnv;
   return {
     async run(): Promise<unknown> {
       const config = new Config({
-        name: get(pjson, 'oclif.bin') as string | undefined,
+        name: bin,
         root,
         version,
         channel,
       });
       await config.load();
-      configureUpdateSites(config, env);
-      configureAutoUpdate(env);
-      debugCliInfo(version, channel, env, config);
+      configureUpdateSites(config, environment);
+      configureAutoUpdate(environment);
+      debugCliInfo(version, channel, environment, config);
       // Example of how run is used in a test https://github.com/salesforcecli/cli/pull/171/files#diff-1deee0a575599b2df117c280da319f7938aaf6fdb0c04bcdbde769dbf464be69R46
       return run ? run(args, config) : oclifRun(args, config);
     },

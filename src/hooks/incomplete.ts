@@ -6,7 +6,7 @@
  */
 
 import * as os from 'os';
-import { Hook, toConfiguredId, toStandardizedId, Interfaces, Command, loadHelpClass } from '@oclif/core';
+import { Command, Hook, toConfiguredId, toStandardizedId, Interfaces, loadHelpClass } from '@oclif/core';
 import { Prompter } from '@salesforce/sf-plugins-core';
 
 function buildChoices(
