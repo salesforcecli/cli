@@ -11,7 +11,6 @@ import { stubInterface } from '@salesforce/ts-sinon';
 import { getString } from '@salesforce/ts-types';
 import { expect } from 'chai';
 import { createSandbox } from 'sinon';
-import { VersionCommand } from '@oclif/plugin-version';
 import { Doctor } from '@salesforce/plugin-info';
 import {
   configureAutoUpdate,
@@ -26,19 +25,10 @@ import { Env } from '../src/util/env.js';
 
 describe('cli', () => {
   const sandbox = createSandbox();
-  const versionDetailMock = {
-    architecture: 'darwin-x64',
-    cliVersion: '@salesforce/cli/1.48.0',
-    nodeVersion: 'node-v16.17.0',
-  };
 
-  let versionCommandRunStub: sinon.SinonStub;
   let doctorInitStub: sinon.SinonStub;
 
   beforeEach(() => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    versionCommandRunStub = sandbox.stub(VersionCommand, 'run').resolves(versionDetailMock);
     doctorInitStub = sandbox.stub(Doctor, 'init');
   });
 
@@ -66,8 +56,6 @@ describe('cli', () => {
       expect(config).to.have.nested.property('options.version').and.equal('test');
       expect(config).to.have.nested.property('options.channel').and.equal('test');
 
-      // does not call Doctor.init or VersionCommand.run()
-      expect(versionCommandRunStub.called).to.be.false;
       expect(doctorInitStub.called).to.be.false;
     });
   });
