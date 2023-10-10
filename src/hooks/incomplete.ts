@@ -41,7 +41,10 @@ async function determineCommand(config: Interfaces.Config, matches: Command.Load
 }
 
 const hook: Hook.CommandIncomplete = async function ({ config, matches, argv }) {
-  const command = await determineCommand(config, matches);
+  const command = await determineCommand(
+    config,
+    matches.filter((m) => !m.hidden)
+  );
 
   if (argv.includes('--help') || argv.includes('-h')) {
     const Help = await loadHelpClass(config);
