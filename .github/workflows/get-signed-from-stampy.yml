@@ -31,7 +31,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           AWS_EC2_METADATA_DISABLED: true
         run: |
-          node scripts/stampy-signed-upload.js
+          node scripts/stampy-signed-upload.cjs
       - name: clean up stampy in/out buckets
         env:
           STAMPY_ARN: ${{ secrets.STAMPY_ARN }}
@@ -46,4 +46,4 @@ jobs:
           export AWS_ACCESS_KEY_ID=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.AccessKeyId')
           export AWS_SECRET_ACCESS_KEY=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SecretAccessKey')
           export AWS_SESSION_TOKEN=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SessionToken')
-          node scripts/stampy-signed-delete.js
+          node scripts/stampy-signed-delete.cjs
