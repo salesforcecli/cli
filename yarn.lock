@@ -1058,7 +1058,7 @@
     read-package-json-fast "^3.0.0"
     which "^4.0.0"
 
-"@oclif/core@3.0.3", "@oclif/core@^3.0.0", "@oclif/core@^3.0.1":
+"@oclif/core@3.0.3":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.0.3.tgz#dbed0b2d819cd86f3733a2311a7278a304e089e4"
   integrity sha512-5xdT3xFXOSsR8AtE2VNswTjCxFQFLptfnkmhhgWqKbSkFBmtix0n5EN560xmeasVku/5eZdA6juEZunS5ZKIXg==
@@ -1119,6 +1119,37 @@
     supports-hyperlinks "^2.2.0"
     ts-node "^10.9.1"
     tslib "^2.5.0"
+    widest-line "^3.1.0"
+    wordwrap "^1.0.0"
+    wrap-ansi "^7.0.0"
+
+"@oclif/core@^3.0.0", "@oclif/core@^3.0.1", "@oclif/core@^3.0.4":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.0.5.tgz#7449e41c3b4465049da8ad569ef7502f1dbc4ecf"
+  integrity sha512-P2zr0viYDHxP3Q0+9z4Lr2g5xsLN5i/QmQTPxgCW7RJu8BB608RMm8xk/K60vW/vjwJdM7Zz1GZtGWltCvRq4Q==
+  dependencies:
+    ansi-escapes "^4.3.2"
+    ansi-styles "^4.3.0"
+    cardinal "^2.1.1"
+    chalk "^4.1.2"
+    clean-stack "^3.0.1"
+    cli-progress "^3.12.0"
+    debug "^4.3.4"
+    ejs "^3.1.8"
+    get-package-type "^0.1.0"
+    globby "^11.1.0"
+    hyperlinker "^1.0.0"
+    indent-string "^4.0.0"
+    is-wsl "^2.2.0"
+    js-yaml "^3.14.1"
+    natural-orderby "^2.0.3"
+    object-treeify "^1.1.33"
+    password-prompt "^1.1.2"
+    slice-ansi "^4.0.0"
+    string-width "^4.2.3"
+    strip-ansi "^6.0.1"
+    supports-color "^8.1.1"
+    supports-hyperlinks "^2.2.0"
     widest-line "^3.1.0"
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
@@ -1216,12 +1247,12 @@
     semver "^7.5.4"
     tar-fs "^2.1.1"
 
-"@oclif/plugin-version@1.3.10":
-  version "1.3.10"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-version/-/plugin-version-1.3.10.tgz#262adba3f5b047be887f0373ec42eab1c98f5ad9"
-  integrity sha512-TiRZALUcv4hwGTPoTyA3nOWtRew9DT4Ge1FeYx16xnuAsWryvJe3IHXmCm6b1VYhzTJhV2XH5U1DqllrQB2YaA==
+"@oclif/plugin-version@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-version/-/plugin-version-2.0.1.tgz#60c9bca750028d56a491da9f63f08d1c2144e74e"
+  integrity sha512-5gEwB74Mqbe5ob5f1Agvb8ebBH0xm/jt0iqaOEYGrYN2gLu32UgqsLpccu+LCd89C2LdzIRIQ8DR5Yro3IY8jQ==
   dependencies:
-    "@oclif/core" "^2.15.0"
+    "@oclif/core" "^3.0.4"
 
 "@oclif/plugin-warn-if-update-available@2.1.1", "@oclif/plugin-warn-if-update-available@^2.0.44":
   version "2.1.1"
