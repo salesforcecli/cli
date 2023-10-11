@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.13.7 linux-x64 node-v18.18.0
+@salesforce/cli/2.13.8 linux-x64 node-v18.18.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
