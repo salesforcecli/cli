@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.13.9 linux-x64 node-v18.18.0
+@salesforce/cli/2.14.0 linux-x64 node-v18.18.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -1094,7 +1094,7 @@ EXAMPLES
       TracedEntityId=01p17000000R6bLAAS"
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.16/src/commands/data/create/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.17/src/commands/data/create/record.ts)_
 
 ## `sf data delete bulk`
 
@@ -1106,10 +1106,10 @@ USAGE
 
 FLAGS
   -a, --async               Run the command asynchronously.
-  -f, --file=<value>        (required) CSV file that contains the IDs of the records to delete.
+  -f, --file=<value>        (required) CSV file that contains the IDs of the records to update or delete.
   -o, --target-org=<value>  (required) Username or alias of the target org.
   -s, --sobject=<value>     (required) API name of the Salesforce object, either standard or custom, that you want to
-                            delete records from.
+                            update or delete records from.
   -w, --wait=<value>        [default: [object Object]] Number of minutes to wait for the command to complete before
                             displaying the results.
   --api-version=<value>     Override the api version used for api requests made by this command
@@ -1138,7 +1138,7 @@ EXAMPLES
     $ sf data delete bulk --sobject MyObject__c --file files/delete.csv --wait 5 --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.16/src/commands/data/delete/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.17/src/commands/data/delete/bulk.ts)_
 
 ## `sf data delete record`
 
@@ -1196,7 +1196,7 @@ EXAMPLES
     $ sf data delete record --use-tooling-api --sobject TraceFlag --record-id 7tf8c
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.16/src/commands/data/delete/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.17/src/commands/data/delete/record.ts)_
 
 ## `sf data delete resume`
 
@@ -1233,7 +1233,7 @@ EXAMPLES
     $ sf data delete resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.16/src/commands/data/delete/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.17/src/commands/data/delete/resume.ts)_
 
 ## `sf data export tree`
 
@@ -1290,7 +1290,7 @@ EXAMPLES
       my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.16/src/commands/data/export/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.17/src/commands/data/export/tree.ts)_
 
 ## `sf data get record`
 
@@ -1351,7 +1351,7 @@ EXAMPLES
     $ sf data get record --use-tooling-api --sobject TraceFlag --record-id 7tf8c
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.16/src/commands/data/get/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.17/src/commands/data/get/record.ts)_
 
 ## `sf data import tree`
 
@@ -1401,7 +1401,7 @@ EXAMPLES
     $ sf data import tree --plan Account-Contact-plan.json
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.16/src/commands/data/import/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.17/src/commands/data/import/tree.ts)_
 
 ## `sf data query`
 
@@ -1463,7 +1463,7 @@ EXAMPLES
     $ sf data query --query "SELECT Id FROM Contact" --bulk --wait 0
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.16/src/commands/data/query.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.17/src/commands/data/query.ts)_
 
 ## `sf data query resume`
 
@@ -1499,7 +1499,7 @@ EXAMPLES
     $ sf data query resume --bulk-query-id 7500x000005BdFzXXX
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.16/src/commands/data/query/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.17/src/commands/data/query/resume.ts)_
 
 ## `sf data resume`
 
@@ -1534,7 +1534,7 @@ EXAMPLES
     $ sf data resume --job-id 750xx000000005sAAA --batch-id 751xx000000005nAAA
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.16/src/commands/data/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.17/src/commands/data/resume.ts)_
 
 ## `sf data update record`
 
@@ -1562,7 +1562,7 @@ DESCRIPTION
   Updates a single record of a Salesforce or Tooling API object.
 
   Specify the record you want to update with either its ID or with a list of field-value pairs that identify the record.
-  If your list of fields identifies more than one record, the delete fails; the error displays how many records were
+  If your list of fields identifies more than one record, the update fails; the error displays how many records were
   found.
 
   When using field-value pairs for both identifying the record and specifiyng the new field values, use the format
@@ -1594,7 +1594,7 @@ EXAMPLES
       "ExpirationDate=2017-12-01T00:58:04.000+0000"
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.16/src/commands/data/update/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.17/src/commands/data/update/record.ts)_
 
 ## `sf data upsert bulk`
 
@@ -1607,11 +1607,11 @@ USAGE
 
 FLAGS
   -a, --async                Run the command asynchronously.
-  -f, --file=<value>         (required) CSV file that contains the IDs of the records to delete.
+  -f, --file=<value>         (required) CSV file that contains the IDs of the records to update or delete.
   -i, --external-id=<value>  (required) Name of the external ID field, or the Id field.
   -o, --target-org=<value>   (required) Username or alias of the target org.
   -s, --sobject=<value>      (required) API name of the Salesforce object, either standard or custom, that you want to
-                             delete records from.
+                             update or delete records from.
   -w, --wait=<value>         [default: [object Object]] Number of minutes to wait for the command to complete before
                              displaying the results.
   --api-version=<value>      Override the api version used for api requests made by this command
@@ -1645,7 +1645,7 @@ EXAMPLES
       my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.16/src/commands/data/upsert/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.17/src/commands/data/upsert/bulk.ts)_
 
 ## `sf data upsert resume`
 
@@ -1682,7 +1682,7 @@ EXAMPLES
     $ sf data upsert resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.16/src/commands/data/upsert/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.17/src/commands/data/upsert/resume.ts)_
 
 ## `sf doctor`
 
@@ -1773,7 +1773,7 @@ EXAMPLES
     $ sf force data bulk delete --sobject MyObject__c --file files/delete.csv --wait 5 --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.16/src/commands/force/data/bulk/delete.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.17/src/commands/force/data/bulk/delete.ts)_
 
 ## `sf force data bulk status`
 
@@ -1808,7 +1808,7 @@ EXAMPLES
     $ sf force data bulk status --job-id 750xx000000005sAAA --batch-id 751xx000000005nAAA --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.16/src/commands/force/data/bulk/status.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.17/src/commands/force/data/bulk/status.ts)_
 
 ## `sf force data bulk upsert`
 
@@ -1864,7 +1864,7 @@ EXAMPLES
       --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.16/src/commands/force/data/bulk/upsert.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/2.5.17/src/commands/force/data/bulk/upsert.ts)_
 
 ## `sf force mdapi deploy`
 
@@ -5248,7 +5248,7 @@ EXAMPLES
   $ sf plugins trust verify --npm @scope/npmName
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/2.6.18/src/commands/plugins/trust/verify.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/2.6.19/src/commands/plugins/trust/verify.ts)_
 
 ## `sf plugins:uninstall PLUGIN...`
 
@@ -7108,7 +7108,7 @@ DESCRIPTION
   Once you select a command, hit enter and it will show the help for that command.
 ```
 
-_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/0.0.23/src/commands/search.ts)_
+_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/0.0.24/src/commands/search.ts)_
 
 ## `sf sobject describe`
 
