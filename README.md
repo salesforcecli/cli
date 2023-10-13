@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.14.0 linux-x64 node-v18.18.0
+@salesforce/cli/2.14.1 linux-x64 node-v18.18.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -3163,7 +3163,7 @@ DESCRIPTION
   Display help for sf.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/5.2.20/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/6.0.2/src/commands/help.ts)_
 
 ## `sf info releasenotes display`
 
@@ -7108,7 +7108,7 @@ DESCRIPTION
   Once you select a command, hit enter and it will show the help for that command.
 ```
 
-_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/0.0.24/src/commands/search.ts)_
+_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/1.0.2/src/commands/search.ts)_
 
 ## `sf sobject describe`
 
@@ -7258,10 +7258,10 @@ update the sf CLI
 
 ```
 USAGE
-  $ sf update [CHANNEL] [-a] [-v <value> | -i] [--force]
+  $ sf update [CHANNEL] [-a] [--force] [-i | -v <value>]
 
 FLAGS
-  -a, --available        Install a specific version.
+  -a, --available        See available versions.
   -i, --interactive      Interactively select version to install. This is ignored if a channel is provided.
   -v, --version=<value>  Install a specific version.
   --force                Force a re-download of the requested version.
@@ -7287,7 +7287,7 @@ EXAMPLES
     $ sf update --available
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/3.2.4/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.1.1/src/commands/update.ts)_
 
 ## `sf version`
 
@@ -7307,7 +7307,7 @@ FLAG DESCRIPTIONS
     Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
 ```
 
-_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.0.1/src/commands/version.ts)_
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.0.2/src/commands/version.ts)_
 
 ## `sf visualforce generate component`
 
@@ -7429,6 +7429,6 @@ EXAMPLES
     $ sf which help
 ```
 
-_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/2.2.34/src/commands/which.ts)_
+_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.0.2/src/commands/which.ts)_
 
 <!-- commandsstop -->
