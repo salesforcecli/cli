@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.14.1 linux-x64 node-v18.18.0
+@salesforce/cli/2.14.2 linux-x64 node-v18.18.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -818,8 +818,8 @@ list all the commands
 
 ```
 USAGE
-  $ sf commands [--json] [-h] [--hidden] [--tree] [--columns <value> | -x] [--sort <value>] [--filter <value>]
-    [--output csv|json|yaml |  | [--csv | --no-truncate]] [--no-header | ]
+  $ sf commands [--json] [-h] [--hidden] [--tree] [--columns <value> | -x] [--filter <value>] [--no-header |
+    [--csv | --no-truncate]] [--output csv|json|yaml |  | ] [--sort <value>]
 
 FLAGS
   -h, --help         Show CLI help.
@@ -842,7 +842,7 @@ DESCRIPTION
   list all the commands
 ```
 
-_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/2.2.28/src/commands/commands.ts)_
+_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/3.0.1/src/commands/commands.ts)_
 
 ## `sf config get`
 
@@ -2343,7 +2343,7 @@ FLAG DESCRIPTIONS
     for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.12/src/commands/force/org/clone.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/force/org/clone.ts)_
 
 ## `sf force org create`
 
@@ -2391,7 +2391,7 @@ EXAMPLES
   $ sf force org create -t sandbox -f config/dev-sandbox-def.json -a MyDevSandbox -u prodOrg
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.12/src/commands/force/org/create.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/force/org/create.ts)_
 
 ## `sf force org delete`
 
@@ -2423,7 +2423,7 @@ EXAMPLES
   $ sf force org delete -u MyOrgAlias -p
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.12/src/commands/force/org/delete.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/force/org/delete.ts)_
 
 ## `sf force org status`
 
@@ -2461,7 +2461,7 @@ EXAMPLES
   $ sf force org status --sandboxname DevSbx1 --wait 45 --setdefaultusername -u prodOrg
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.12/src/commands/force/org/status.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/force/org/status.ts)_
 
 ## `sf force source deploy`
 
@@ -3577,6 +3577,8 @@ USAGE
 DESCRIPTION
   Log interactively into an environment.
 
+  NOTE: This general command is deprecated. Use specific commands instead, such as "org login web" or "org login jwt".
+
   Logging into an environment authorizes the CLI to run other commands that connect to that environment.
 
 EXAMPLES
@@ -3585,7 +3587,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/1.2.35/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/1.2.36/src/commands/login.ts)_
 
 ## `sf logout`
 
@@ -3604,6 +3606,8 @@ GLOBAL FLAGS
 DESCRIPTION
   Log out interactively from environments.
 
+  NOTE: This general command is deprecated. Use specific commands instead, such as "org login web" or "org login jwt".
+
   By default, the command prompts you to select which environments you want to log out of. Use --no-prompt to not be
   prompted and log out of all environments.
 
@@ -3617,7 +3621,7 @@ EXAMPLES
     $ sf logout --no-prompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/1.2.35/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/1.2.36/src/commands/logout.ts)_
 
 ## `sf org assign permset`
 
@@ -3809,7 +3813,7 @@ FLAG DESCRIPTIONS
     sandbox.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.12/src/commands/org/create/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/create/sandbox.ts)_
 
 ## `sf org create scratch`
 
@@ -3962,7 +3966,7 @@ FLAG DESCRIPTIONS
     Omit this flag to have Salesforce generate a unique username for your org.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.12/src/commands/org/create/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/create/scratch.ts)_
 
 ## `sf org create user`
 
@@ -4102,7 +4106,7 @@ EXAMPLES
     $ sf org delete sandbox --target-org my-sandbox --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.12/src/commands/org/delete/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/delete/sandbox.ts)_
 
 ## `sf org delete scratch`
 
@@ -4144,7 +4148,7 @@ EXAMPLES
     $ sf org delete scratch --target-org my-scratch-org --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.12/src/commands/org/delete/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/delete/scratch.ts)_
 
 ## `sf org display`
 
@@ -4187,7 +4191,7 @@ EXAMPLES
     $ sf org display --target-org TestOrg1 --verbose
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.12/src/commands/org/display.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/display.ts)_
 
 ## `sf org display user`
 
@@ -4326,7 +4330,7 @@ EXAMPLES
     $ sf org list --clean
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.12/src/commands/org/list.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/list.ts)_
 
 ## `sf org list auth`
 
@@ -4421,7 +4425,7 @@ FLAG DESCRIPTIONS
     Examples of metadata types that use folders are Dashboard, Document, EmailTemplate, and Report.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.12/src/commands/org/list/metadata.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/list/metadata.ts)_
 
 ## `sf org list metadata-types`
 
@@ -4474,7 +4478,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.12/src/commands/org/list/metadata-types.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/list/metadata-types.ts)_
 
 ## `sf org list users`
 
@@ -4973,9 +4977,13 @@ EXAMPLES
   Open a local Lightning page in your default org's Lightning App Builder:
 
     $ sf org open --source-path force-app/main/default/flexipages/Hello.flexipage-meta.xml
+
+  Open a local Flow in Flow Builder:
+
+    $ sf org open --source-path force-app/main/default/flows/Hello.flow-meta.xml
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.12/src/commands/org/open.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/open.ts)_
 
 ## `sf org resume sandbox`
 
@@ -5037,7 +5045,7 @@ FLAG DESCRIPTIONS
     returns the job ID. To resume checking the sandbox creation, rerun this command.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.12/src/commands/org/resume/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/resume/sandbox.ts)_
 
 ## `sf org resume scratch`
 
@@ -5083,7 +5091,7 @@ FLAG DESCRIPTIONS
     The job ID is valid for 24 hours after you start the scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.10.12/src/commands/org/resume/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/resume/scratch.ts)_
 
 ## `sf plugins`
 
@@ -7287,7 +7295,7 @@ EXAMPLES
     $ sf update --available
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.1.1/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.1.2/src/commands/update.ts)_
 
 ## `sf version`
 
@@ -7429,6 +7437,6 @@ EXAMPLES
     $ sf which help
 ```
 
-_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.0.2/src/commands/which.ts)_
+_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.0.3/src/commands/which.ts)_
 
 <!-- commandsstop -->

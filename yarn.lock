@@ -1207,13 +1207,16 @@
     ts-json-schema-generator "^1.3.0"
     tslib "^2.6.2"
 
-"@oclif/plugin-commands@2.2.28":
-  version "2.2.28"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-commands/-/plugin-commands-2.2.28.tgz#07e8635a5c134d55a9ccc8fc2a7931a89573788f"
-  integrity sha512-w1vQ6WGltMnyjJnnt6Vo/VVtyhz1V0O9McCy0qKIY+os7SunjnUMRNS/y8MZ7b6AjMSdbLGV9/VAYSlWyQg9SQ==
+"@oclif/plugin-commands@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-commands/-/plugin-commands-3.0.1.tgz#4bf8a02d8fc0c2beb16e8013ba4a0dff586487e8"
+  integrity sha512-JDSOtQq7C+aaV6qYC7Hqb46WJ5xcEIy0EknS8OEyptjO3Gn1wAcVIkoeGBmSprqv76AzFLisvBIEwTMd6TSI9Q==
   dependencies:
-    "@oclif/core" "^2.15.0"
-    lodash "^4.17.11"
+    "@oclif/core" "^3.0.9"
+    lodash.pickby "^4.6.0"
+    lodash.sortby "^4.7.0"
+    lodash.template "^4.5.0"
+    lodash.uniqby "^4.7.0"
 
 "@oclif/plugin-help@6.0.2":
   version "6.0.2"
@@ -1273,10 +1276,10 @@
     "@oclif/core" "^3.0.9"
     inquirer-autocomplete-standalone "^0.7.0"
 
-"@oclif/plugin-update@4.1.1":
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.1.1.tgz#cc161e5b34df1bc013831ddfd185a2d019665a79"
-  integrity sha512-SP+hdzHOU1UmwV3rR3zP8+mcDOkQAUf6Z19Pb4y36BrOUVhcI9qKGnDa5OJjFdWhuxN+kUbKPNw0kvdusWQNNQ==
+"@oclif/plugin-update@4.1.2":
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.1.2.tgz#bd6d9669c97b74dd7ded8175314de449c1571a77"
+  integrity sha512-2S2q+NT8M2SyqzDjB7ZIZYHQ923Xvnul5EE8epV3jC8Br8EoMDJRBXXJsPjhz33DsJDTeFJpa7ScwcxB92fxGA==
   dependencies:
     "@oclif/core" "^3.0.9"
     chalk "^5"
@@ -1308,10 +1311,10 @@
     lodash.template "^4.5.0"
     semver "^7.5.4"
 
-"@oclif/plugin-which@3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-which/-/plugin-which-3.0.2.tgz#de7db6434fe6254bb65e6742fa12b4477f4ae99b"
-  integrity sha512-ghqkNAIiawjbhFob1JkH3yT1gKKwZiVJY1jUSkARN4uyWGmwM7siziWHhpDWkWyaR/HcIYXRzbLV7qslYwtRbw==
+"@oclif/plugin-which@3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-which/-/plugin-which-3.0.3.tgz#19688393b2ce60d97d9bee01d318922334e7b47c"
+  integrity sha512-o3NrdrQbBfccLAGjwIEkYX5QNH8oT4bR4ZqtLnkohivuZc5cERsTwb9bHCwoX95YwlNaXqUyXmHywDd0FIMruQ==
   dependencies:
     "@oclif/core" "^3.0.9"
 
@@ -1762,10 +1765,10 @@
     "@salesforce/ts-types" "^2.0.6"
     tslib "^2"
 
-"@salesforce/plugin-login@1.2.35":
-  version "1.2.35"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-login/-/plugin-login-1.2.35.tgz#2280a23b9294e9c94585b7b7f2a78032292db80f"
-  integrity sha512-dX4gfexjx0beQTrZVv1DYz3SFDxb99uJcgUrAjzZaiFg4W1b5ETRfX94XEvBrmlLRqJVWTCTErJr6htvWU917g==
+"@salesforce/plugin-login@1.2.36":
+  version "1.2.36"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-login/-/plugin-login-1.2.36.tgz#3a847accf4a3254e0f51a2871a93acfa4c0dfd55"
+  integrity sha512-rXpq8LkaZs+1axUW1XcMARy9Xh+MEw+1PVXrqu8g3Yn9NSdAoIw35srqPTyqX72E09/yqwmEfV1yJcmTB20j8w==
   dependencies:
     "@oclif/core" "^2.15.0"
     "@salesforce/core" "^5.3.1"
@@ -1787,10 +1790,10 @@
     proxy-agent "^6.3.1"
     tslib "^2"
 
-"@salesforce/plugin-org@2.10.12":
-  version "2.10.12"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-2.10.12.tgz#b358571719e2ca862d482c8671ffc0fa1604fd41"
-  integrity sha512-5uxZouvsvsrzaCiMSWgxb/uclT87B+GIS/mbvLW35yJ9Pkv6VgAYl0iZzwbzdDSPQ0yT3sqy+HpqmteyL2qZTA==
+"@salesforce/plugin-org@2.11.0":
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-2.11.0.tgz#36a86349685d2533215a55854f9a89e89d8d042d"
+  integrity sha512-NiQwSjh4fIBAH9NL+aO4NeIlNiD/jhOc3SqET2RBNx4H+lzCnzJhlkTQbuAWSEj5ZcrWQXlVceA/hOPeboT7fQ==
   dependencies:
     "@oclif/core" "^2.15.0"
     "@salesforce/core" "^5.3.4"
@@ -7011,10 +7014,20 @@ lodash.once@^4.0.0:
   resolved "https://registry.yarnpkg.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
   integrity sha512-Sb487aTOCr9drQVL8pIxOzVhafOjZN9UU54hiN8PU3uAiSV7lx1yYNpbNmex2PK6dSJoNTSJUUswT651yww3Mg==
 
+lodash.pickby@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.pickby/-/lodash.pickby-4.6.0.tgz#7dea21d8c18d7703a27c704c15d3b84a67e33aff"
+  integrity sha512-AZV+GsS/6ckvPOVQPXSiFFacKvKB4kOQu6ynt9wz0F3LO4R9Ij4K1ddYsIytDpSgLz88JHd9P+oaLeej5/Sl7Q==
+
 lodash.snakecase@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.snakecase/-/lodash.snakecase-4.1.1.tgz#39d714a35357147837aefd64b5dcbb16becd8f8d"
   integrity sha512-QZ1d4xoBHYUeuouhEq3lk3Uq7ldgyFXGBhg04+oRLnIz8o9T65Eh+8YdroUwn846zchkA9yDsDl5CVVaV2nqYw==
+
+lodash.sortby@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
+  integrity sha512-HDWXG8isMntAyRF5vZ7xKuEvOhT4AhlRt/3czTSjvGUxjYCBVRQY48ViDHyfYz9VIoBkW4TMGQNapx+l3RUwdA==
 
 lodash.startcase@^4.4.0:
   version "4.4.0"
@@ -7045,6 +7058,11 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==
+
+lodash.uniqby@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/lodash.uniqby/-/lodash.uniqby-4.7.0.tgz#d99c07a669e9e6d24e1362dfe266c67616af1302"
+  integrity sha512-e/zcLx6CSbmaEgFHCA7BnoQKyCtKMxnuWrJygbwPs/AIn+IMKl66L8/s+wBUn5LRw2pZx3bUHibiV1b6aTWIww==
 
 lodash.upperfirst@^4.3.1:
   version "4.3.1"
