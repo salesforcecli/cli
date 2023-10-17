@@ -23,7 +23,7 @@ jobs:
         with:
           max_attempts: 3
           retry_wait_seconds: 60
-          command: node ./dockerfiles/update-docker-node-version.js
+          command: node ./dockerfiles/update-docker-node-version.cjs
           timeout_minutes: 60
       - uses: salesforcecli/github-workflows/.github/actions/gitConfig@main
       # Push changes if 'git status' is not empty
