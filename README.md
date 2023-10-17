@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.14.4 linux-x64 node-v18.18.0
+@salesforce/cli/2.14.5 linux-x64 node-v18.18.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -192,7 +192,7 @@ EXAMPLES
     $ sf alias list
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.33/src/commands/alias/list.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.34/src/commands/alias/list.ts)_
 
 ## `sf alias set`
 
@@ -240,7 +240,7 @@ EXAMPLES
     $ sf alias set my-scratch-org test-ss0xut7txzxf@example.com
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.33/src/commands/alias/set.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.34/src/commands/alias/set.ts)_
 
 ## `sf alias unset`
 
@@ -279,7 +279,7 @@ EXAMPLES
     $ sf alias unset --all [--no-prompt]
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.33/src/commands/alias/unset.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.34/src/commands/alias/unset.ts)_
 
 ## `sf analytics generate template`
 
@@ -861,11 +861,9 @@ GLOBAL FLAGS
 DESCRIPTION
   Get the value of a configuration variable.
 
-  Run "sf config list" to see all the configuration variables you've set. Global configuration variable are always
-  displayed; local ones are displayed if you run the command in a project directory. Run "sf config set" to set a
-  configuration variable.
+  Run "sf config list" to see the configuration variables you've already set and their level (local or global).
 
-  For the full list of available configuration variables, see
+  Run "sf config set" to set a configuration variable. For the full list of available configuration variables, see
   https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_dev_cli_config_values.htm.
 
 ALIASES
@@ -891,7 +889,7 @@ CONFIGURATION VARIABLES
   org-max-query-limit            Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.33/src/commands/config/get.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.34/src/commands/config/get.ts)_
 
 ## `sf config list`
 
@@ -907,8 +905,16 @@ GLOBAL FLAGS
 DESCRIPTION
   List the configuration variables that you've previously set.
 
-  Global configuration variables apply to any Salesforce DX project and are always displayed. If you run this command
-  from a project directory, local configuration variables are also displayed.
+  A config variable can be global or local, depending on whether you used the --global flag when you set it. Local
+  config variables apply only to the current project and override global config variables, which apply to all projects.
+  You can set all config variables as environment variables. Environment variables override their equivalent local and
+  global config variables.
+
+  The output of this command takes into account your current context. For example, let's say you run this command from a
+  Salesforce DX project in which you've locally set the "target-org" config variable. The command displays the local
+  value, even if you've also set "target-org" globally. If you haven't set the config variable locally, then the global
+  value is displayed, if set. If you set the SF_TARGET_ORG environment variable, it's displayed as such and overrides
+  any locally or globally set "target-org" config variable.
 
   For the full list of available configuration variables, see
   https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_dev_cli_config_values.htm.
@@ -917,12 +923,12 @@ ALIASES
   $ sf force config list
 
 EXAMPLES
-  List both global configuration variables and those local to your project:
+  List the global and local configuration variables that apply to your current context:
 
     $ sf config list
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.33/src/commands/config/list.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.34/src/commands/config/list.ts)_
 
 ## `sf config set`
 
@@ -956,6 +962,9 @@ DESCRIPTION
 
   Run "sf config list" to see the configuration variables you've already set and their level (local or global).
 
+  If you're setting a single config variable, you don't need to use an equal sign between the variable and value. But
+  you must use the equal sign if setting multiple config variables.
+
   For the full list of available configuration variables, see
   https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_dev_cli_config_values.htm.
 
@@ -965,20 +974,15 @@ ALIASES
 EXAMPLES
   Set the local target-org configuration variable to an org username:
 
-    $ sf config set target-org=me@my.org
+    $ sf config set target-org me@my.org
 
   Set the local target-org configuration variable to an alias:
 
-    $ sf config set target-org=my-scratch-org
+    $ sf config set target-org my-scratch-org
 
-  Set the global target-org configuration variable:
+  Set the global target-org and target-dev-hub configuration variables using aliases:
 
-    $ sf config set --global target-org=my-scratch-org
-
-  Set a single configuration variable without using an equal sign; this syntax doesn't work when setting multiple
-  configuration variables:
-
-    $ sf config set target-org me@my.com
+    $ sf config set --global target-org=my-scratch-org target-dev-hub=my-dev-hub
 
 CONFIGURATION VARIABLES
   org-instance-url               URL of the Salesforce instance hosting your org. Default: https://login.salesforce.com.
@@ -991,7 +995,7 @@ CONFIGURATION VARIABLES
   org-max-query-limit            Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.33/src/commands/config/set.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.34/src/commands/config/set.ts)_
 
 ## `sf config unset`
 
@@ -1002,8 +1006,7 @@ USAGE
   $ sf config unset [--json] [-g]
 
 FLAGS
-  -g, --global  Unset the configuration variables globally, so they can no longer be used from any Salesforce DX
-                project.
+  -g, --global  Unset the configuration variables globally.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1040,7 +1043,7 @@ CONFIGURATION VARIABLES
   org-max-query-limit            Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.33/src/commands/config/unset.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.34/src/commands/config/unset.ts)_
 
 ## `sf data create record`
 
@@ -2343,7 +2346,7 @@ FLAG DESCRIPTIONS
     for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/force/org/clone.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.2/src/commands/force/org/clone.ts)_
 
 ## `sf force org create`
 
@@ -2391,7 +2394,7 @@ EXAMPLES
   $ sf force org create -t sandbox -f config/dev-sandbox-def.json -a MyDevSandbox -u prodOrg
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/force/org/create.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.2/src/commands/force/org/create.ts)_
 
 ## `sf force org delete`
 
@@ -2423,7 +2426,7 @@ EXAMPLES
   $ sf force org delete -u MyOrgAlias -p
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/force/org/delete.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.2/src/commands/force/org/delete.ts)_
 
 ## `sf force org status`
 
@@ -2461,7 +2464,7 @@ EXAMPLES
   $ sf force org status --sandboxname DevSbx1 --wait 45 --setdefaultusername -u prodOrg
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/force/org/status.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.2/src/commands/force/org/status.ts)_
 
 ## `sf force source deploy`
 
@@ -3813,7 +3816,7 @@ FLAG DESCRIPTIONS
     sandbox.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/create/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.2/src/commands/org/create/sandbox.ts)_
 
 ## `sf org create scratch`
 
@@ -3966,7 +3969,7 @@ FLAG DESCRIPTIONS
     Omit this flag to have Salesforce generate a unique username for your org.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/create/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.2/src/commands/org/create/scratch.ts)_
 
 ## `sf org create user`
 
@@ -4106,7 +4109,7 @@ EXAMPLES
     $ sf org delete sandbox --target-org my-sandbox --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/delete/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.2/src/commands/org/delete/sandbox.ts)_
 
 ## `sf org delete scratch`
 
@@ -4148,7 +4151,7 @@ EXAMPLES
     $ sf org delete scratch --target-org my-scratch-org --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/delete/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.2/src/commands/org/delete/scratch.ts)_
 
 ## `sf org display`
 
@@ -4191,7 +4194,7 @@ EXAMPLES
     $ sf org display --target-org TestOrg1 --verbose
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/display.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.2/src/commands/org/display.ts)_
 
 ## `sf org display user`
 
@@ -4330,7 +4333,7 @@ EXAMPLES
     $ sf org list --clean
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/list.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.2/src/commands/org/list.ts)_
 
 ## `sf org list auth`
 
@@ -4361,7 +4364,7 @@ EXAMPLES
     $ sf org list auth
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.20/src/commands/org/list/auth.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.21/src/commands/org/list/auth.ts)_
 
 ## `sf org list metadata`
 
@@ -4425,7 +4428,7 @@ FLAG DESCRIPTIONS
     Examples of metadata types that use folders are Dashboard, Document, EmailTemplate, and Report.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/list/metadata.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.2/src/commands/org/list/metadata.ts)_
 
 ## `sf org list metadata-types`
 
@@ -4478,7 +4481,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/list/metadata-types.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.2/src/commands/org/list/metadata-types.ts)_
 
 ## `sf org list users`
 
@@ -4567,7 +4570,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.20/src/commands/org/login/access-token.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.21/src/commands/org/login/access-token.ts)_
 
 ## `sf org login device`
 
@@ -4626,7 +4629,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.20/src/commands/org/login/device.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.21/src/commands/org/login/device.ts)_
 
 ## `sf org login jwt`
 
@@ -4715,7 +4718,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.20/src/commands/org/login/jwt.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.21/src/commands/org/login/jwt.ts)_
 
 ## `sf org login sfdx-url`
 
@@ -4773,7 +4776,7 @@ EXAMPLES
     $ sf org login sfdx-url --sfdx-url-file files/authFile.json --set-default --alias MyDefaultOrg
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.20/src/commands/org/login/sfdx-url.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.21/src/commands/org/login/sfdx-url.ts)_
 
 ## `sf org login web`
 
@@ -4858,7 +4861,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.20/src/commands/org/login/web.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.21/src/commands/org/login/web.ts)_
 
 ## `sf org logout`
 
@@ -4918,7 +4921,7 @@ FLAG DESCRIPTIONS
     All orgs includes Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.20/src/commands/org/logout.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.21/src/commands/org/logout.ts)_
 
 ## `sf org open`
 
@@ -4983,7 +4986,7 @@ EXAMPLES
     $ sf org open --source-path force-app/main/default/flows/Hello.flow-meta.xml
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/open.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.2/src/commands/org/open.ts)_
 
 ## `sf org resume sandbox`
 
@@ -5045,7 +5048,7 @@ FLAG DESCRIPTIONS
     returns the job ID. To resume checking the sandbox creation, rerun this command.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/resume/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.2/src/commands/org/resume/sandbox.ts)_
 
 ## `sf org resume scratch`
 
@@ -5091,7 +5094,7 @@ FLAG DESCRIPTIONS
     The job ID is valid for 24 hours after you start the scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.0/src/commands/org/resume/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.2/src/commands/org/resume/scratch.ts)_
 
 ## `sf plugins`
 
