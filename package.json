@@ -119,7 +119,10 @@
     ],
     "additionalHelpFlags": [
       "-h"
-    ]
+    ],
+    "warn-if-update-available": {
+      "timeoutInDays": 7
+    }
   },
   "dependencies": {
     "@oclif/core": "3.0.3",
