@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.15.2 linux-x64 node-v18.18.2
+@salesforce/cli/2.15.3 linux-x64 node-v18.18.2
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -842,7 +842,7 @@ DESCRIPTION
   list all the commands
 ```
 
-_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/3.0.3/src/commands/commands.ts)_
+_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/3.0.4/src/commands/commands.ts)_
 
 ## `sf config get`
 
@@ -2067,7 +2067,7 @@ FLAG DESCRIPTIONS
     Indicates that you want verbose output from the deploy operation.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.43/src/commands/force/mdapi/deploy.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.44/src/commands/force/mdapi/deploy.ts)_
 
 ## `sf force mdapi deploy cancel`
 
@@ -2110,7 +2110,7 @@ FLAG DESCRIPTIONS
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.43/src/commands/force/mdapi/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.44/src/commands/force/mdapi/deploy/cancel.ts)_
 
 ## `sf force mdapi deploy report`
 
@@ -2181,7 +2181,7 @@ FLAG DESCRIPTIONS
     use the ID of the most recent metadata deployment.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.43/src/commands/force/mdapi/deploy/report.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.44/src/commands/force/mdapi/deploy/report.ts)_
 
 ## `sf force mdapi retrieve`
 
@@ -2245,7 +2245,7 @@ FLAG DESCRIPTIONS
     By default, the CLI assumes the directory is structured for a set of packages.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.43/src/commands/force/mdapi/retrieve.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.44/src/commands/force/mdapi/retrieve.ts)_
 
 ## `sf force mdapi retrieve report`
 
@@ -2299,7 +2299,7 @@ FLAG DESCRIPTIONS
     You must specify a --retrievetargetdir. Use with --wait to resume waiting.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.43/src/commands/force/mdapi/retrieve/report.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.44/src/commands/force/mdapi/retrieve/report.ts)_
 
 ## `sf force org clone`
 
@@ -2730,7 +2730,7 @@ FLAG DESCRIPTIONS
     If you specify this parameter, don’t specify --metadata or --sourcepath.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.43/src/commands/force/source/deploy.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.44/src/commands/force/source/deploy.ts)_
 
 ## `sf force source deploy cancel`
 
@@ -2775,7 +2775,7 @@ FLAG DESCRIPTIONS
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.43/src/commands/force/source/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.44/src/commands/force/source/deploy/cancel.ts)_
 
 ## `sf force source deploy report`
 
@@ -2838,7 +2838,7 @@ FLAG DESCRIPTIONS
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.43/src/commands/force/source/deploy/report.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.44/src/commands/force/source/deploy/report.ts)_
 
 ## `sf force source pull`
 
@@ -2881,7 +2881,7 @@ FLAG DESCRIPTIONS
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.43/src/commands/force/source/pull.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.44/src/commands/force/source/pull.ts)_
 
 ## `sf force source push`
 
@@ -2926,7 +2926,7 @@ FLAG DESCRIPTIONS
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.43/src/commands/force/source/push.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.44/src/commands/force/source/push.ts)_
 
 ## `sf force source retrieve`
 
@@ -3051,7 +3051,7 @@ FLAG DESCRIPTIONS
     If you specify this parameter, don’t specify --metadata or --sourcepath.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.43/src/commands/force/source/retrieve.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.44/src/commands/force/source/retrieve.ts)_
 
 ## `sf force source status`
 
@@ -3081,7 +3081,7 @@ EXAMPLES
     $ sf force source status --remote
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.43/src/commands/force/source/status.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.44/src/commands/force/source/status.ts)_
 
 ## `sf force user password generate`
 
