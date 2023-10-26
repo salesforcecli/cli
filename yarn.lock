@@ -1155,10 +1155,10 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/core@^3.0.0", "@oclif/core@^3.0.4", "@oclif/core@^3.2.1", "@oclif/core@^3.3.1", "@oclif/core@^3.5.0":
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.5.0.tgz#ce12e264f6eab051391489bf4df0340a133fc3fb"
-  integrity sha512-u1X8KguaIoLClbTWgnvXeVb6bu+GUCbmrY/1e1E6Xl3P8zw1cj8nm57RkvBnAHLVixnZ+4maVJrJ2vRVro/S+g==
+"@oclif/core@^3.0.0", "@oclif/core@^3.0.4", "@oclif/core@^3.2.1", "@oclif/core@^3.3.1", "@oclif/core@^3.5.0", "@oclif/core@^3.7.1":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.8.0.tgz#45f5f630b3b593c3486e7835953ad6fb2af01bcb"
+  integrity sha512-fKqg9QzjIflDcYljZkZEeY6zoRyk4AZ5e2V4LUIsSOR7+B78qpqNqDPJFTI8TvrEU3+Q+ssELntOL2VA3SMsqQ==
   dependencies:
     ansi-escapes "^4.3.2"
     ansi-styles "^4.3.0"
@@ -1251,21 +1251,18 @@
     chalk "^4"
     fast-levenshtein "^3.0.0"
 
-"@oclif/plugin-plugins@3.9.4":
-  version "3.9.4"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-3.9.4.tgz#e4fe13882f927360c543e53c9548a5aaf856c90a"
-  integrity sha512-JtumjspRdzJgHk1S10wu68tdlqSnyYRmSgCsmsc6AEvU+Orb0DQfrAgJEO77rPKPNo5MfnVAj0WyCDTi0JT/vw==
+"@oclif/plugin-plugins@4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-4.0.1.tgz#11c2f869682d5b0651685bad1302a79ceb2b57d9"
+  integrity sha512-eXMuP2E8BO0rs8Z4eIMFxQM8aVqz/H2to5NZ/EDWLeMxAo8krekBRe3AG5HBlgZmPEjmbEGpPbHx/l4f91dWnA==
   dependencies:
-    "@oclif/core" "^2.15.0"
-    chalk "^4.1.2"
+    "@oclif/core" "^3.7.1"
+    chalk "^5.3.0"
     debug "^4.3.4"
-    http-call "^5.2.2"
-    load-json-file "^5.3.0"
     npm "9.8.1"
     npm-run-path "^4.0.1"
     semver "^7.5.4"
     shelljs "^0.8.5"
-    tslib "^2.6.2"
     validate-npm-package-name "^5.0.0"
     yarn "^1.22.18"
 
@@ -6887,17 +6884,6 @@ load-json-file@^4.0.0:
     pify "^3.0.0"
     strip-bom "^3.0.0"
 
-load-json-file@^5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-5.3.0.tgz#4d3c1e01fa1c03ea78a60ac7af932c9ce53403f3"
-  integrity sha512-cJGP40Jc/VXUsp8/OrnyKyTZ1y6v/dphm3bioS+RrKXjK2BB6wHUd6JptZEFDGgGahMT+InnZO5i1Ei9mpC8Bw==
-  dependencies:
-    graceful-fs "^4.1.15"
-    parse-json "^4.0.0"
-    pify "^4.0.1"
-    strip-bom "^3.0.0"
-    type-fest "^0.3.0"
-
 load-yaml-file@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/load-yaml-file/-/load-yaml-file-0.2.0.tgz#af854edaf2bea89346c07549122753c07372f64d"
@@ -10294,11 +10280,6 @@ type-fest@^0.21.3:
   version "0.21.3"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.21.3.tgz#d260a24b0198436e133fa26a524a6d65fa3b2e37"
   integrity sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==
-
-type-fest@^0.3.0:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.3.1.tgz#63d00d204e059474fe5e1b7c011112bbd1dc29e1"
-  integrity sha512-cUGJnCdr4STbePCgqNFbpVNCepa+kAVohJs1sLhxzdH+gnEoOd8VhbYa7pD3zZYGiURWM2xzEII3fQcRizDkYQ==
 
 type-fest@^0.6.0:
   version "0.6.0"
