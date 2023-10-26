@@ -31,6 +31,11 @@ export function preprocessCliFlags(process: ProcessLike): void {
       process.env.SF_DEBUG = '1';
       process.env.SF_ENV = 'development';
 
+      // set `SF_LOG_LEVEL` to `trace` if it wasn't specified
+      if (process.env.SF_LOG_LEVEL === undefined) {
+        process.env.SF_LOG_LEVEL = 'trace';
+      }
+
       // need to calculate indexOf --dev-debug here because it might've changed based on --debug-filter
       process.argv.splice(process.argv.indexOf('--dev-debug'), 1);
     }
