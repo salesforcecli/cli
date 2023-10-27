@@ -1187,6 +1187,37 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
+"@oclif/core@^3.5.0":
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.9.0.tgz#51c53ea4eafd3d643a55a37477f3e7c9d2cc2942"
+  integrity sha512-9UT0ySJgaUvERUQwDFh0u9Q5cfoBttfyaJ1sorSms6H5AELIjQ2Yvu2QfzPmnAit2rod+hdcDZ+O1Hia5Zcz+Q==
+  dependencies:
+    ansi-escapes "^4.3.2"
+    ansi-styles "^4.3.0"
+    cardinal "^2.1.1"
+    chalk "^4.1.2"
+    clean-stack "^3.0.1"
+    cli-progress "^3.12.0"
+    debug "^4.3.4"
+    ejs "^3.1.9"
+    get-package-type "^0.1.0"
+    globby "^11.1.0"
+    hyperlinker "^1.0.0"
+    indent-string "^4.0.0"
+    is-wsl "^2.2.0"
+    js-yaml "^3.14.1"
+    natural-orderby "^2.0.3"
+    object-treeify "^1.1.33"
+    password-prompt "^1.1.2"
+    slice-ansi "^4.0.0"
+    string-width "^4.2.3"
+    strip-ansi "^6.0.1"
+    supports-color "^8.1.1"
+    supports-hyperlinks "^2.2.0"
+    widest-line "^3.1.0"
+    wordwrap "^1.0.0"
+    wrap-ansi "^7.0.0"
+
 "@oclif/dev-cli@^1":
   version "1.26.10"
   resolved "https://registry.yarnpkg.com/@oclif/dev-cli/-/dev-cli-1.26.10.tgz#d8df3a79009b68552f5e7f249d1d19ca52278382"
@@ -1258,14 +1289,15 @@
     chalk "^4.1.0"
     tslib "^2.6.0"
 
-"@oclif/plugin-autocomplete@2.3.9":
-  version "2.3.9"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-2.3.9.tgz#7a8204cd4904cd00edc769ddc42455f2b3b197e4"
-  integrity sha512-MLmJtyp2iVnihDaogMDy+U323wI5vlV2raHOHKfe6mwzq6ObowimiOXnT9l2a0HELGHI0Fmd1tKeCgPrJE152A==
+"@oclif/plugin-autocomplete@2.3.11-dev.1":
+  version "2.3.11-dev.1"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-2.3.11-dev.1.tgz#cf1ff1a1b70b2b0a7848e077c8a215162b7235f6"
+  integrity sha512-XZE8qa/gVspTkwO18qeXBL3TIRPQXTZZ751s73CPpXo0aOj4tYSEwK0zCy6/x4XIomlZS47dSYLOfDNVvX2qmg==
   dependencies:
-    "@oclif/core" "^2.15.0"
-    chalk "^4.1.0"
+    "@oclif/core" "^3.5.0"
+    chalk "^5.3.0"
     debug "^4.3.4"
+    ejs "^3.1.9"
 
 "@oclif/plugin-command-snapshot@^3.3.0":
   version "3.3.15"
@@ -4493,7 +4525,7 @@ ecdsa-sig-formatter@1.0.11:
   dependencies:
     safe-buffer "^5.0.1"
 
-ejs@^3.1.8:
+ejs@^3.1.8, ejs@^3.1.9:
   version "3.1.9"
   resolved "https://registry.yarnpkg.com/ejs/-/ejs-3.1.9.tgz#03c9e8777fe12686a9effcef22303ca3d8eeb361"
   integrity sha512-rC+QVNMJWv+MtPgkt0y+0rVEIdbtxVADApW9JXrUVlzHetgcyczP/E7DJmWJ4fJCZF2cPcBk0laWO9ZHMG3DmQ==
