@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.16.1 linux-x64 node-v20.9.0
+@salesforce/cli/2.16.2 linux-x64 node-v20.9.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -7156,16 +7156,16 @@ EXAMPLES
 
     $ sf sobject describe --sobject Account
 
-  Display the metadata of the "MyObject__c" custom object in the org with alias "my-scratch-org":
+  Display the metadata of the "MyObject\_\_c" custom object in the org with alias "my-scratch-org":
 
-    $ sf sobject describe --sobject MyObject__c --target-org my-scratch-org
+    $ sf sobject describe --sobject MyObject\_\_c --target-org my-scratch-org
 
   Display the metadata of the ApexCodeCoverage Tooling API object in your default org:
 
     $ sf sobject describe --sobject ApexCodeCoverage --use-tooling-api
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/2.3.31/src/commands/sobject/describe.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/2.3.32/src/commands/sobject/describe.ts)_
 
 ## `sf sobject list`
 
@@ -7202,7 +7202,7 @@ EXAMPLES
     $ sf sobject list --sobject custom --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/2.3.31/src/commands/sobject/list.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/2.3.32/src/commands/sobject/list.ts)_
 
 ## `sf static-resource generate`
 
