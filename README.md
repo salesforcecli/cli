@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.16.2 linux-x64 node-v20.9.0
+@salesforce/cli/2.16.3 linux-x64 node-v20.9.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -192,7 +192,7 @@ EXAMPLES
     $ sf alias list
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.36/src/commands/alias/list.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.37/src/commands/alias/list.ts)_
 
 ## `sf alias set`
 
@@ -240,7 +240,7 @@ EXAMPLES
     $ sf alias set my-scratch-org test-ss0xut7txzxf@example.com
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.36/src/commands/alias/set.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.37/src/commands/alias/set.ts)_
 
 ## `sf alias unset`
 
@@ -279,7 +279,7 @@ EXAMPLES
     $ sf alias unset --all [--no-prompt]
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.36/src/commands/alias/unset.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.37/src/commands/alias/unset.ts)_
 
 ## `sf analytics generate template`
 
@@ -842,7 +842,7 @@ DESCRIPTION
   list all the commands
 ```
 
-_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/3.0.4/src/commands/commands.ts)_
+_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/3.0.5/src/commands/commands.ts)_
 
 ## `sf config get`
 
@@ -889,7 +889,7 @@ CONFIGURATION VARIABLES
   org-max-query-limit            Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.36/src/commands/config/get.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.37/src/commands/config/get.ts)_
 
 ## `sf config list`
 
@@ -928,7 +928,7 @@ EXAMPLES
     $ sf config list
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.36/src/commands/config/list.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.37/src/commands/config/list.ts)_
 
 ## `sf config set`
 
@@ -995,7 +995,7 @@ CONFIGURATION VARIABLES
   org-max-query-limit            Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.36/src/commands/config/set.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.37/src/commands/config/set.ts)_
 
 ## `sf config unset`
 
@@ -1043,7 +1043,7 @@ CONFIGURATION VARIABLES
   org-max-query-limit            Maximum number of Salesforce records returned by a CLI command. Default: 10,000.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.36/src/commands/config/unset.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/1.4.37/src/commands/config/unset.ts)_
 
 ## `sf data create record`
 
@@ -2067,7 +2067,7 @@ FLAG DESCRIPTIONS
     Indicates that you want verbose output from the deploy operation.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.45/src/commands/force/mdapi/deploy.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.46/src/commands/force/mdapi/deploy.ts)_
 
 ## `sf force mdapi deploy cancel`
 
@@ -2110,7 +2110,7 @@ FLAG DESCRIPTIONS
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.45/src/commands/force/mdapi/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.46/src/commands/force/mdapi/deploy/cancel.ts)_
 
 ## `sf force mdapi deploy report`
 
@@ -2181,7 +2181,7 @@ FLAG DESCRIPTIONS
     use the ID of the most recent metadata deployment.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.45/src/commands/force/mdapi/deploy/report.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.46/src/commands/force/mdapi/deploy/report.ts)_
 
 ## `sf force mdapi retrieve`
 
@@ -2245,7 +2245,7 @@ FLAG DESCRIPTIONS
     By default, the CLI assumes the directory is structured for a set of packages.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.45/src/commands/force/mdapi/retrieve.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.46/src/commands/force/mdapi/retrieve.ts)_
 
 ## `sf force mdapi retrieve report`
 
@@ -2299,7 +2299,7 @@ FLAG DESCRIPTIONS
     You must specify a --retrievetargetdir. Use with --wait to resume waiting.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.45/src/commands/force/mdapi/retrieve/report.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.46/src/commands/force/mdapi/retrieve/report.ts)_
 
 ## `sf force org clone`
 
@@ -2730,7 +2730,7 @@ FLAG DESCRIPTIONS
     If you specify this parameter, don’t specify --metadata or --sourcepath.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.45/src/commands/force/source/deploy.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.46/src/commands/force/source/deploy.ts)_
 
 ## `sf force source deploy cancel`
 
@@ -2775,7 +2775,7 @@ FLAG DESCRIPTIONS
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.45/src/commands/force/source/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.46/src/commands/force/source/deploy/cancel.ts)_
 
 ## `sf force source deploy report`
 
@@ -2838,7 +2838,7 @@ FLAG DESCRIPTIONS
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.45/src/commands/force/source/deploy/report.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.46/src/commands/force/source/deploy/report.ts)_
 
 ## `sf force source pull`
 
@@ -2881,7 +2881,7 @@ FLAG DESCRIPTIONS
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.45/src/commands/force/source/pull.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.46/src/commands/force/source/pull.ts)_
 
 ## `sf force source push`
 
@@ -2926,7 +2926,7 @@ FLAG DESCRIPTIONS
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.45/src/commands/force/source/push.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.46/src/commands/force/source/push.ts)_
 
 ## `sf force source retrieve`
 
@@ -3051,7 +3051,7 @@ FLAG DESCRIPTIONS
     If you specify this parameter, don’t specify --metadata or --sourcepath.
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.45/src/commands/force/source/retrieve.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.46/src/commands/force/source/retrieve.ts)_
 
 ## `sf force source status`
 
@@ -3081,7 +3081,7 @@ EXAMPLES
     $ sf force source status --remote
 ```
 
-_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.45/src/commands/force/source/status.ts)_
+_See code: [@salesforce/plugin-source](https://github.com/salesforcecli/plugin-source/blob/2.10.46/src/commands/force/source/status.ts)_
 
 ## `sf force user password generate`
 
@@ -3166,7 +3166,7 @@ DESCRIPTION
   Display help for sf.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/6.0.4/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/6.0.5/src/commands/help.ts)_
 
 ## `sf info releasenotes display`
 
@@ -4364,7 +4364,7 @@ EXAMPLES
     $ sf org list auth
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.23/src/commands/org/list/auth.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.24/src/commands/org/list/auth.ts)_
 
 ## `sf org list metadata`
 
@@ -4570,7 +4570,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.23/src/commands/org/login/access-token.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.24/src/commands/org/login/access-token.ts)_
 
 ## `sf org login device`
 
@@ -4629,7 +4629,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.23/src/commands/org/login/device.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.24/src/commands/org/login/device.ts)_
 
 ## `sf org login jwt`
 
@@ -4718,7 +4718,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.23/src/commands/org/login/jwt.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.24/src/commands/org/login/jwt.ts)_
 
 ## `sf org login sfdx-url`
 
@@ -4776,7 +4776,7 @@ EXAMPLES
     $ sf org login sfdx-url --sfdx-url-file files/authFile.json --set-default --alias MyDefaultOrg
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.23/src/commands/org/login/sfdx-url.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.24/src/commands/org/login/sfdx-url.ts)_
 
 ## `sf org login web`
 
@@ -4861,7 +4861,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.23/src/commands/org/login/web.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.24/src/commands/org/login/web.ts)_
 
 ## `sf org logout`
 
@@ -4921,7 +4921,7 @@ FLAG DESCRIPTIONS
     All orgs includes Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.23/src/commands/org/logout.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.24/src/commands/org/logout.ts)_
 
 ## `sf org open`
 
@@ -7319,7 +7319,7 @@ FLAG DESCRIPTIONS
     Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
 ```
 
-_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.0.3/src/commands/version.ts)_
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.0.4/src/commands/version.ts)_
 
 ## `sf visualforce generate component`
 
