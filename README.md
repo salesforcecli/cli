@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.16.3 linux-x64 node-v20.9.0
+@salesforce/cli/2.16.4 linux-x64 node-v20.9.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -2346,7 +2346,7 @@ FLAG DESCRIPTIONS
     for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.5/src/commands/force/org/clone.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.6/src/commands/force/org/clone.ts)_
 
 ## `sf force org create`
 
@@ -2394,7 +2394,7 @@ EXAMPLES
   $ sf force org create -t sandbox -f config/dev-sandbox-def.json -a MyDevSandbox -u prodOrg
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.5/src/commands/force/org/create.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.6/src/commands/force/org/create.ts)_
 
 ## `sf force org delete`
 
@@ -2426,7 +2426,7 @@ EXAMPLES
   $ sf force org delete -u MyOrgAlias -p
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.5/src/commands/force/org/delete.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.6/src/commands/force/org/delete.ts)_
 
 ## `sf force org status`
 
@@ -2464,7 +2464,7 @@ EXAMPLES
   $ sf force org status --sandboxname DevSbx1 --wait 45 --setdefaultusername -u prodOrg
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.5/src/commands/force/org/status.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.6/src/commands/force/org/status.ts)_
 
 ## `sf force source deploy`
 
@@ -3146,7 +3146,7 @@ EXAMPLES
       user3@my.org
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/2.3.39/src/commands/force/user/password/generate.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/2.3.40/src/commands/force/user/password/generate.ts)_
 
 ## `sf help [COMMANDS]`
 
@@ -3590,7 +3590,7 @@ EXAMPLES
     $ sf login
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/1.2.39/src/commands/login.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/1.2.40/src/commands/login.ts)_
 
 ## `sf logout`
 
@@ -3624,7 +3624,7 @@ EXAMPLES
     $ sf logout --no-prompt
 ```
 
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/1.2.39/src/commands/logout.ts)_
+_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/1.2.40/src/commands/logout.ts)_
 
 ## `sf org assign permset`
 
@@ -3667,7 +3667,7 @@ EXAMPLES
     $ sf org assign permset --name DreamHouse --on-behalf-of user1@my.org --on-behalf-of user2 --on-behalf-of user
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/2.3.39/src/commands/org/assign/permset.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/2.3.40/src/commands/org/assign/permset.ts)_
 
 ## `sf org assign permsetlicense`
 
@@ -3711,7 +3711,7 @@ EXAMPLES
       user3
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/2.3.39/src/commands/org/assign/permsetlicense.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/2.3.40/src/commands/org/assign/permsetlicense.ts)_
 
 ## `sf org create sandbox`
 
@@ -3816,7 +3816,7 @@ FLAG DESCRIPTIONS
     sandbox.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.5/src/commands/org/create/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.6/src/commands/org/create/sandbox.ts)_
 
 ## `sf org create scratch`
 
@@ -3969,7 +3969,7 @@ FLAG DESCRIPTIONS
     Omit this flag to have Salesforce generate a unique username for your org.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.5/src/commands/org/create/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.6/src/commands/org/create/scratch.ts)_
 
 ## `sf org create user`
 
@@ -4067,7 +4067,7 @@ FLAG DESCRIPTIONS
     might be different than what you specify in the definition file.
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/2.3.39/src/commands/org/create/user.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/2.3.40/src/commands/org/create/user.ts)_
 
 ## `sf org delete sandbox`
 
@@ -4109,7 +4109,7 @@ EXAMPLES
     $ sf org delete sandbox --target-org my-sandbox --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.5/src/commands/org/delete/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.6/src/commands/org/delete/sandbox.ts)_
 
 ## `sf org delete scratch`
 
@@ -4151,7 +4151,7 @@ EXAMPLES
     $ sf org delete scratch --target-org my-scratch-org --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.5/src/commands/org/delete/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.6/src/commands/org/delete/scratch.ts)_
 
 ## `sf org display`
 
@@ -4194,7 +4194,7 @@ EXAMPLES
     $ sf org display --target-org TestOrg1 --verbose
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.5/src/commands/org/display.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.6/src/commands/org/display.ts)_
 
 ## `sf org display user`
 
@@ -4231,7 +4231,7 @@ EXAMPLES
     $ sf org display user --target-org me@my.org --json
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/2.3.39/src/commands/org/display/user.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/2.3.40/src/commands/org/display/user.ts)_
 
 ## `sf org generate password`
 
@@ -4295,7 +4295,7 @@ EXAMPLES
     $ sf org generate password --on-behalf-of user1@my.org --on-behalf-of user2@my.org --on-behalf-of user3@my.org
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/2.3.39/src/commands/org/generate/password.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/2.3.40/src/commands/org/generate/password.ts)_
 
 ## `sf org list`
 
@@ -4333,7 +4333,7 @@ EXAMPLES
     $ sf org list --clean
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.5/src/commands/org/list.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.6/src/commands/org/list.ts)_
 
 ## `sf org list auth`
 
@@ -4364,7 +4364,7 @@ EXAMPLES
     $ sf org list auth
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.24/src/commands/org/list/auth.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.25/src/commands/org/list/auth.ts)_
 
 ## `sf org list metadata`
 
@@ -4428,7 +4428,7 @@ FLAG DESCRIPTIONS
     Examples of metadata types that use folders are Dashboard, Document, EmailTemplate, and Report.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.5/src/commands/org/list/metadata.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.6/src/commands/org/list/metadata.ts)_
 
 ## `sf org list metadata-types`
 
@@ -4481,7 +4481,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.5/src/commands/org/list/metadata-types.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.6/src/commands/org/list/metadata-types.ts)_
 
 ## `sf org list users`
 
@@ -4517,7 +4517,7 @@ EXAMPLES
     $ sf org list users --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/2.3.39/src/commands/org/list/users.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/2.3.40/src/commands/org/list/users.ts)_
 
 ## `sf org login access-token`
 
@@ -4570,7 +4570,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.24/src/commands/org/login/access-token.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.25/src/commands/org/login/access-token.ts)_
 
 ## `sf org login device`
 
@@ -4629,7 +4629,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.24/src/commands/org/login/device.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.25/src/commands/org/login/device.ts)_
 
 ## `sf org login jwt`
 
@@ -4718,7 +4718,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.24/src/commands/org/login/jwt.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.25/src/commands/org/login/jwt.ts)_
 
 ## `sf org login sfdx-url`
 
@@ -4776,7 +4776,7 @@ EXAMPLES
     $ sf org login sfdx-url --sfdx-url-file files/authFile.json --set-default --alias MyDefaultOrg
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.24/src/commands/org/login/sfdx-url.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.25/src/commands/org/login/sfdx-url.ts)_
 
 ## `sf org login web`
 
@@ -4861,7 +4861,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.24/src/commands/org/login/web.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.25/src/commands/org/login/web.ts)_
 
 ## `sf org logout`
 
@@ -4921,7 +4921,7 @@ FLAG DESCRIPTIONS
     All orgs includes Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.24/src/commands/org/logout.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.25/src/commands/org/logout.ts)_
 
 ## `sf org open`
 
@@ -4986,7 +4986,7 @@ EXAMPLES
     $ sf org open --source-file force-app/main/default/flows/Hello.flow-meta.xml
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.5/src/commands/org/open.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.6/src/commands/org/open.ts)_
 
 ## `sf org resume sandbox`
 
@@ -5048,7 +5048,7 @@ FLAG DESCRIPTIONS
     returns the job ID. To resume checking the sandbox creation, rerun this command.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.5/src/commands/org/resume/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.6/src/commands/org/resume/sandbox.ts)_
 
 ## `sf org resume scratch`
 
@@ -5094,7 +5094,7 @@ FLAG DESCRIPTIONS
     The job ID is valid for 24 hours after you start the scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.5/src/commands/org/resume/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.6/src/commands/org/resume/scratch.ts)_
 
 ## `sf plugins`
 
@@ -5134,7 +5134,7 @@ EXAMPLES
   $ sf plugins discover
 ```
 
-_See code: [@salesforce/plugin-marketplace](https://github.com/salesforcecli/plugin-template-sf/blob/0.3.1/src/commands/plugins/discover.ts)_
+_See code: [@salesforce/plugin-marketplace](https://github.com/salesforcecli/plugin-template-sf/blob/0.3.2/src/commands/plugins/discover.ts)_
 
 ## `sf plugins:inspect PLUGIN...`
 
@@ -7120,7 +7120,7 @@ DESCRIPTION
   Once you select a command, hit enter and it will show the help for that command.
 ```
 
-_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/1.0.4/src/commands/search.ts)_
+_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/1.0.5/src/commands/search.ts)_
 
 ## `sf sobject describe`
 
@@ -7441,6 +7441,6 @@ EXAMPLES
     $ sf which help
 ```
 
-_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.0.6/src/commands/which.ts)_
+_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.0.7/src/commands/which.ts)_
 
 <!-- commandsstop -->
