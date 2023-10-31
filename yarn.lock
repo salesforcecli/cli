@@ -1599,14 +1599,14 @@
     strip-ansi "6.0.1"
     ts-retry-promise "^0.7.1"
 
-"@salesforce/core@^5.2.0", "@salesforce/core@^5.2.9", "@salesforce/core@^5.3.1", "@salesforce/core@^5.3.10", "@salesforce/core@^5.3.5", "@salesforce/core@^5.3.9":
-  version "5.3.10"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-5.3.10.tgz#897d315dcfbe025ff7d69f6c127577611154a6ee"
-  integrity sha512-PVBLRt28CBbDHbElChDsFIy+hMfc66pg/Vz0EzWiwL0XImN8Cw6n+viPV8uX7FGQVeA2P2RHGdRb83NCDt58dA==
+"@salesforce/core@5.3.16", "@salesforce/core@^5.2.0", "@salesforce/core@^5.2.9", "@salesforce/core@^5.3.1", "@salesforce/core@^5.3.10", "@salesforce/core@^5.3.14", "@salesforce/core@^5.3.5", "@salesforce/core@^5.3.9":
+  version "5.3.16"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-5.3.16.tgz#93987b0bbe37b73146929ceab658b653215adbe6"
+  integrity sha512-Q5BOFPwACXe/ebwROzpacwPA/WSRfOM7W63exX4b0Gv2rQoMB2NZLxHBQP3FZ4eH4PMHvBB16IzmtNq8vSJktw==
   dependencies:
-    "@salesforce/kit" "^3.0.13"
-    "@salesforce/schemas" "^1.6.0"
-    "@salesforce/ts-types" "^2.0.8"
+    "@salesforce/kit" "^3.0.15"
+    "@salesforce/schemas" "^1.6.1"
+    "@salesforce/ts-types" "^2.0.9"
     "@types/semver" "^7.5.3"
     ajv "^8.12.0"
     change-case "^4.1.2"
@@ -1616,7 +1616,7 @@
     jsforce "^2.0.0-beta.28"
     jsonwebtoken "9.0.2"
     jszip "3.10.1"
-    pino "^8.15.6"
+    pino "^8.16.0"
     pino-abstract-transport "^1.0.0"
     pino-pretty "^10.2.3"
     proper-lockfile "^4.1.2"
@@ -1687,14 +1687,14 @@
     chalk "^4.1.0"
     tslib "^2"
 
-"@salesforce/plugin-auth@2.8.23":
-  version "2.8.23"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-2.8.23.tgz#0d810acee98d4491ef50c63929182b921f525d71"
-  integrity sha512-2TsXJoD7mOATwnhdtCCMlwikvoBzOe7E+Jz3u7IFWoU8StYknc+liVOV4IAgUt/IfygHWf8g1UyZLWWWgSCW1A==
+"@salesforce/plugin-auth@2.8.25":
+  version "2.8.25"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-2.8.25.tgz#45a7fe917e704453028e83d2ae3e3bd8d9e03f43"
+  integrity sha512-usOwqPCHrtXZUMJS/xQjmPDIEZtPDVC/dCPmRJZMQ8iQglauSfinxoI2o8eTv/aDIckZbktM7p4UxXb+FPq92w==
   dependencies:
     "@oclif/core" "^2.15.0"
-    "@salesforce/core" "^5.3.9"
-    "@salesforce/kit" "^3.0.9"
+    "@salesforce/core" "^5.3.14"
+    "@salesforce/kit" "^3.0.15"
     "@salesforce/sf-plugins-core" "^3.1.28"
     "@salesforce/ts-types" "^2.0.9"
     chalk "^4.1.2"
@@ -1955,7 +1955,7 @@
   resolved "https://registry.yarnpkg.com/@salesforce/prettier-config/-/prettier-config-0.0.3.tgz#ba648d4886bb38adabe073dbea0b3a91b3753bb0"
   integrity sha512-hYOhoPTCSYMDYn+U1rlEk16PoBeAJPkrdg4/UtAzupM1mRRJOwEPMG1d7U8DxJFKuXW3DMEYWr2MwAIBDaHmFg==
 
-"@salesforce/schemas@1.6.0", "@salesforce/schemas@^1.6.0":
+"@salesforce/schemas@1.6.0", "@salesforce/schemas@^1.6.1":
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.6.0.tgz#14505ebad2fb2d4f7b14837545d662766d293561"
   integrity sha512-SwhDTLucj/GRbPpxlEoDZeqlX22o+G6fiebTXTu1cZKmd1oE0W2L7SlTTgJnWck8bhTeBIgQi9cpD8c2t5ISKA==
@@ -8781,10 +8781,10 @@ pino-std-serializers@^6.0.0:
   resolved "https://registry.yarnpkg.com/pino-std-serializers/-/pino-std-serializers-6.2.2.tgz#d9a9b5f2b9a402486a5fc4db0a737570a860aab3"
   integrity sha512-cHjPPsE+vhj/tnhCy/wiMh3M3z3h/j15zHQX+S9GkTBgqJuTuJzYJ4gUyACLhDaJ7kk9ba9iRDmbH2tJU03OiA==
 
-pino@^8.15.6:
-  version "8.16.0"
-  resolved "https://registry.yarnpkg.com/pino/-/pino-8.16.0.tgz#2465012a1d11fa2e7a0545032f636e203990ae26"
-  integrity sha512-UUmvQ/7KTZt/vHjhRrnyS7h+J7qPBQnpG80V56xmIC+o9IqYmQOw/UIny9S9zYDfRBR0ClouCr464EkBMIT7Fw==
+pino@^8.16.0:
+  version "8.16.1"
+  resolved "https://registry.yarnpkg.com/pino/-/pino-8.16.1.tgz#dcaf82764b1a27f24101317cdd6453e96290f1d9"
+  integrity sha512-3bKsVhBmgPjGV9pyn4fO/8RtoVDR8ssW1ev819FsRXlRNgW8gR/9Kx+gCK4UPWd4JjrRDLWpzd/pb1AyWm3MGA==
   dependencies:
     atomic-sleep "^1.0.0"
     fast-redact "^3.1.1"
