@@ -11,6 +11,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
+          node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
           cache: yarn
       - run: yarn install
       - run: yarn build
@@ -26,6 +27,7 @@ jobs:
       jit: ${{ steps.plugins.outputs.jit }}
     steps:
       - uses: actions/checkout@v3
+
       - name: Get JIT plugins
         id: plugins
         # This was a pain to get working, be weary of changing it...
@@ -49,20 +51,22 @@ jobs:
     runs-on: ${{matrix.os}}
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-node@v3
         with:
-          node-version: lts/*
+          node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
+
       - uses: salesforcecli/github-workflows/.github/actions/yarnInstallWithRetries@main
         with:
           ignore-scripts: true
+
       - run: yarn build
+
       - uses: actions/download-artifact@v3
         with:
           name: manifest
+
       - name: Install JIT plugin
-        uses: nick-fields/retry@943e742917ac94714d2f408a0e8320f2d1fcafcd
+        uses: salesforcecli/github-workflows/.github/actions/retry@main
         with:
-          max_attempts: 3
-          retry_wait_seconds: 60
           command: yarn sf-release cli:install:jit:test --jit-plugin ${{matrix.jitPlugins}}
-          timeout_minutes: 60

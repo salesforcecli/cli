@@ -27,7 +27,7 @@ jobs:
           # https://regex101.com/r/66VrAs/1
           regex: 'as ([a-z-]+)$'
 
-      # Exit the build if no channel is match
+      # Exit the build if no channel is found
       - name: Confirm regex channel match
         if: ${{ !steps.release-channel.outputs.group1 }}
         uses: actions/github-script@v3

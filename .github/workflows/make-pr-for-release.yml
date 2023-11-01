@@ -45,14 +45,17 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
       - uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
+
       - uses: actions/setup-node@v3
         with:
-          node-version: lts/*
+          node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
+
       - run: npm install -g @salesforce/plugin-release-management --omit=dev
+
       - uses: salesforcecli/github-workflows/.github/actions/gitConfig@main
+
       - run: git fetch --tag
+
       - run: |
           sf-release cli:release:build \
             --release-channel ${{ inputs.release-channel }} \
@@ -64,3 +67,7 @@ jobs:
             ${{ inputs.patch && '--patch' || '' }} \
             ${{ inputs.only && format('--only {0}', inputs.only) || '' }} \
             ${{ inputs.empty && '--empty' || '' }}
+
+      # TODO: We could convert it to an Action to avoid node-setup duplication
+      # Set the node version in the Dockerfile_full image for this release
+      - uses: ./.github/workflows/update-docker-node-version.yml
