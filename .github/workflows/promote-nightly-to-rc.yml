@@ -30,21 +30,21 @@ jobs:
           cache: yarn
 
       - name: Verify promote scripts
-        uses: salesforcecli/github-workflows/.github/actions/retry@main
+        uses: salesforcecli/github-workflows/.github/actions/retry@ew/retry-wrapper
         with:
           max_attempts: 5
           retry_wait_seconds: 120
           command: ./scripts/verify-promote nightly latest-rc
 
       - name: Install plugin-release-management
-        uses: salesforcecli/github-workflows/.github/actions/retry@main
+        uses: salesforcecli/github-workflows/.github/actions/retry@ew/retry-wrapper
         with:
           max_attempts: 5
           retry_wait_seconds: 120
           command: npm install -g @salesforce/plugin-release-management --omit=dev
 
       - name: Version inspect (with retries)
-        uses: salesforcecli/github-workflows/.github/actions/retry@main
+        uses: salesforcecli/github-workflows/.github/actions/retry@ew/retry-wrapper
         with:
           max_attempts: 5
           retry_wait_seconds: 120

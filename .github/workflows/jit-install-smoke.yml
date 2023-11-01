@@ -67,6 +67,6 @@ jobs:
           name: manifest
 
       - name: Install JIT plugin
-        uses: salesforcecli/github-workflows/.github/actions/retry@main
+        uses: salesforcecli/github-workflows/.github/actions/retry@ew/retry-wrapper
         with:
           command: yarn sf-release cli:install:jit:test --jit-plugin ${{matrix.jitPlugins}}

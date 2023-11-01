@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
       - name: Update node version in dockerfile_full
-        uses: salesforcecli/github-workflows/.github/actions/retry@main
+        uses: salesforcecli/github-workflows/.github/actions/retry@ew/retry-wrapper
         with:
           command: node ./dockerfiles/update-docker-node-version.cjs
       - uses: salesforcecli/github-workflows/.github/actions/gitConfig@main

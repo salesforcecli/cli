@@ -27,14 +27,14 @@ jobs:
           cache: yarn
 
       - name: Verify promote scripts
-        uses: salesforcecli/github-workflows/.github/actions/retry@main
+        uses: salesforcecli/github-workflows/.github/actions/retry@ew/retry-wrapper
         with:
           max_attempts: 5
           retry_wait_seconds: 120
           command: ./scripts/verify-promote latest-rc latest
 
       - name: Install plugin-release-management
-        uses: salesforcecli/github-workflows/.github/actions/retry@main
+        uses: salesforcecli/github-workflows/.github/actions/retry@ew/retry-wrapper
         with:
           max_attempts: 5
           retry_wait_seconds: 120
@@ -42,7 +42,7 @@ jobs:
 
       # Retry several times because the S3 cache can cause failures
       - name: Version inspect (with retries)
-        uses: salesforcecli/github-workflows/.github/actions/retry@main
+        uses: salesforcecli/github-workflows/.github/actions/retry@ew/retry-wrapper
         with:
           max_attempts: 5
           retry_wait_seconds: 120
