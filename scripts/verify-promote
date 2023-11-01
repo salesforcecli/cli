@@ -16,6 +16,8 @@ function banner() {
   printf "\n%s\n%s\n%s\n" "$CHAR" "$1" "$CHAR"
 }
 
+export SF_HIDE_RELEASE_NOTES=true
+
 # Versions for the old and new channels should match after promotion
 banner "Verifying promote of npm dist tags: $OLD_CHANNEL -> $NEW_CHANNEL"
 TAGS=$(npm view @salesforce/cli --json | jq -cr '."dist-tags"')
@@ -53,9 +55,9 @@ if [ "$NEW_VERSION" != "$OLD_MANIFEST_VERSION" ]; then
   exit 1
 fi
 
+VERSIONS_URL="https://developer.salesforce.com/media/salesforce-cli/sf/versions/sf-linux-x64-tar-xz.json"
 # Uncomment for testing on a M1 Mac
 # VERSIONS_URL="https://developer.salesforce.com/media/salesforce-cli/sf/versions/sf-darwin-arm64-tar-xz.json"
-VERSIONS_URL="https://developer.salesforce.com/media/salesforce-cli/sf/versions/sf-linux-x64-tar-xz.json"
 VERSION_CONTENT=$(curl -s "$VERSIONS_URL" | jq -cr)
 
 
@@ -104,11 +106,17 @@ banner "Verify tarball install and that 'sf update $NEW_CHANNEL' version matches
 # If you are testing this locally, you'll need to use a tarball built for your OS
 #   There is a VERSIONS_URL for M1 macs above that you can uncomment
 #   Other URLs can be found here: https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm#sfdx_setup_install_cli_olderversions
-OLDER_VERSION_URL=$(echo "$VERSION_CONTENT" | jq 'to_entries[7]' | jq -r '.value')
+OLDER_VERSION_URL=$(echo "$VERSION_CONTENT" | jq 'to_entries[15]' | jq -r '.value')
 echo "Downloading old cli version from: $OLDER_VERSION_URL"
 
 if [[ -d "$HOME/sf" ]]; then
-  echo "!! $HOME/sf directory already exists. Delete it and try again." && exit 1
+  # If the CI env var is set, delete the directory and continue
+  if [[ -n "$CI" ]]; then
+    echo "!! $HOME/sf directory already exists. Deleting it and continuing."
+    rm -rf "$HOME/sf"
+  else
+    echo "!! $HOME/sf directory already exists. Delete it and try again." && echo 1
+  fi
 fi
 
 curl -s "$OLDER_VERSION_URL" --output sf-tarball.tar.xz && mkdir "$HOME/sf" && tar xJf sf-tarball.tar.xz -C "$HOME/sf" --strip-components 1 && rm -f sf-tarball.tar.xz
