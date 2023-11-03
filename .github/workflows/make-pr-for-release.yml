@@ -68,8 +68,17 @@ jobs:
             ${{ inputs.only && format('--only {0}', inputs.only) || '' }} \
             ${{ inputs.empty && '--empty' || '' }}
 
-  update-docker-node-version:
-    needs: make-pr
-    # TODO: We could convert this to an Action to avoid node-setup duplication and separate `job`
-    # Set the node version in the Dockerfile_full image for this release
-    uses: ./.github/workflows/update-docker-node-version.yml
+      - name: Update node version in dockerfile_full
+        uses: salesforcecli/github-workflows/.github/actions/retry@main
+        with:
+          command: node ./dockerfiles/update-docker-node-version.cjs
+
+      # Push Dockerfile changes if 'git status' is not empty
+      - run: |
+          if [[ -n $(git status --short) ]]; then
+            git add dockerfiles/Dockerfile_full
+            git commit -m "chore: update node in dockerfile_full" --no-verify
+            git push --no-verify
+          else
+            echo "Already up to date"
+          fi
