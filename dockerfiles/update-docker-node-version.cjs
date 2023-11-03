@@ -5,7 +5,6 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-const got = require('got');
 const fs = require('fs').promises;
 const path = require('path');
 
@@ -26,7 +25,7 @@ const execPromise = promisify(execSync);
   const url = `https://nodejs.org/dist/v${nodeVersion}/SHASUMS256.txt`;
   console.log('Retrieving SHA data from:', url);
 
-  const distData = await got(url).text();
+  const distData = await execPromise(`curl -s ${url}`);
   const distRegex = new RegExp(`^([A-z0-9]+)  (node-(v${nodeVersion})-linux-x64.tar.gz)$`, 'm');
 
   const [, sha, tar, version] = distRegex.exec(distData);
