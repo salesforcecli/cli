@@ -69,6 +69,7 @@ jobs:
             ${{ inputs.empty && '--empty' || '' }}
 
   update-docker-node-version:
+    needs: make-pr
     # TODO: We could convert this to an Action to avoid node-setup duplication and separate `job`
     # Set the node version in the Dockerfile_full image for this release
     uses: ./.github/workflows/update-docker-node-version.yml
