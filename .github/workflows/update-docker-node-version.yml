@@ -12,6 +12,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
+      - uses: salesforcecli/github-workflows/.github/actions/yarnInstallWithRetries@main
       - name: Update node version in dockerfile_full
         uses: salesforcecli/github-workflows/.github/actions/retry@main
         with:
