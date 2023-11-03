@@ -89,6 +89,7 @@ jobs:
         # If the package.json 'minor' IS GREATER THAN the latest-rc 'minor', we want to bump 'patch'
         if: ${{ steps.package-json-semver-info.outputs.minor > steps.latest-rc-semver-info.outputs.minor }}
 
-      # TODO: We could convert it to an Action to avoid node-setup duplication
-      # Set the node version in the Dockerfile_full image for this release
-      - uses: ./.github/workflows/update-docker-node-version.yml
+  update-docker-node-version:
+    # TODO: We could convert this to an Action to avoid node-setup duplication and separate `job`
+    # Set the node version in the Dockerfile_full image for this release
+    uses: ./.github/workflows/update-docker-node-version.yml
