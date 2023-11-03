@@ -16,7 +16,7 @@ jobs:
         run: npm install -g @salesforce/plugin-release-management --omit=dev
 
       - name: Automerge
-        uses: salesforcecli/github-workflows/.github/actions/retry@ew/retry-wrapper
+        uses: salesforcecli/github-workflows/.github/actions/retry@main
         with:
           max_attempts: 30
           retry_wait_seconds: 120 # 30 attempts every two minutes

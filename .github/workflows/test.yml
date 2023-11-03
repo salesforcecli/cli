@@ -13,7 +13,7 @@ jobs:
     uses: salesforcecli/github-workflows/.github/workflows/lockFileCheck.yml@main
 
   ut:
-    uses: salesforcecli/github-workflows/.github/workflows/unitTest.yml@ew/retry-wrapper
+    uses: salesforcecli/github-workflows/.github/workflows/unitTest.yml@main
     secrets: inherit
 
   tarballs:

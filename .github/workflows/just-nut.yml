@@ -78,7 +78,7 @@ jobs:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
           # cache: yarn
       - name: Install CLI
-        uses: salesforcecli/github-workflows/.github/actions/retry@ew/retry-wrapper
+        uses: salesforcecli/github-workflows/.github/actions/retry@main
         with:
           command: npm install -g @salesforce/cli@${{ inputs.channel-or-version }} --omit=dev
 
@@ -97,7 +97,7 @@ jobs:
           sf plugins install $(jq -r '.name' package.json) --jit
 
       - name: Run NUT (with retries)
-        uses: salesforcecli/github-workflows/.github/actions/retry@ew/retry-wrapper
+        uses: salesforcecli/github-workflows/.github/actions/retry@main
         with:
           retry_wait_seconds: 1
           command: ${{ inputs.command }}
