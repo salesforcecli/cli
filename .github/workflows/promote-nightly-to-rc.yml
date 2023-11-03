@@ -23,31 +23,32 @@ jobs:
     needs: [promote]
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-node@v3
         with:
-          node-version: lts/*
+          node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
           cache: yarn
-      - uses: nick-fields/retry@943e742917ac94714d2f408a0e8320f2d1fcafcd
-        name: verify promote scripts
+
+      - name: Verify promote scripts
+        uses: salesforcecli/github-workflows/.github/actions/retry@main
         with:
           max_attempts: 5
           retry_wait_seconds: 120
           command: ./scripts/verify-promote nightly latest-rc
-          timeout_minutes: 60
+
       - name: Install plugin-release-management
-        uses: nick-fields/retry@943e742917ac94714d2f408a0e8320f2d1fcafcd
+        uses: salesforcecli/github-workflows/.github/actions/retry@main
         with:
           max_attempts: 5
           retry_wait_seconds: 120
           command: npm install -g @salesforce/plugin-release-management --omit=dev
-          timeout_minutes: 60
+
       - name: Version inspect (with retries)
-        uses: nick-fields/retry@943e742917ac94714d2f408a0e8320f2d1fcafcd
+        uses: salesforcecli/github-workflows/.github/actions/retry@main
         with:
           max_attempts: 5
           retry_wait_seconds: 120
           command: sf-release cli:versions:inspect -c stable-rc -l archive --cli sf
-          timeout_minutes: 60
 
   verify-docker-version:
     needs: [promote-verify]

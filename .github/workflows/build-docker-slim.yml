@@ -20,11 +20,12 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: lts/*
+          node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
           cache: yarn
 
       # for whatever version got passed in, we need the download url for the linux xz tarball
-      - uses: salesforcecli/github-workflows/.github/actions/versionInfo@main
+      - name: Collect version info
+        uses: salesforcecli/github-workflows/.github/actions/versionInfo@main
         id: version-info
         with:
           version: ${{ inputs.version }}
