@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.17.1 linux-x64 node-v20.9.0
+@salesforce/cli/2.17.2 linux-x64 node-v20.9.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -100,8 +100,6 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf lightning generate event`](#sf-lightning-generate-event)
 - [`sf lightning generate interface`](#sf-lightning-generate-interface)
 - [`sf lightning generate test`](#sf-lightning-generate-test)
-- [`sf limits api display`](#sf-limits-api-display)
-- [`sf limits recordcounts display`](#sf-limits-recordcounts-display)
 - [`sf login`](#sf-login)
 - [`sf logout`](#sf-logout)
 - [`sf org assign permset`](#sf-org-assign-permset)
@@ -116,8 +114,10 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf org generate password`](#sf-org-generate-password)
 - [`sf org list`](#sf-org-list)
 - [`sf org list auth`](#sf-org-list-auth)
+- [`sf org list limits`](#sf-org-list-limits)
 - [`sf org list metadata`](#sf-org-list-metadata)
 - [`sf org list metadata-types`](#sf-org-list-metadata-types)
+- [`sf org list sobject record-counts`](#sf-org-list-sobject-record-counts)
 - [`sf org list users`](#sf-org-list-users)
 - [`sf org login access-token`](#sf-org-login-access-token)
 - [`sf org login device`](#sf-org-login-device)
@@ -3487,88 +3487,6 @@ FLAG DESCRIPTIONS
 
 _See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/55.5.17/src/commands/lightning/generate/test.ts)_
 
-## `sf limits api display`
-
-Display information about limits in your org.
-
-```
-USAGE
-  $ sf limits api display -o <value> [--json] [--api-version <value>]
-
-FLAGS
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  --api-version=<value>     Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --json  Format output as json.
-
-DESCRIPTION
-  Display information about limits in your org.
-
-  For each limit, this command returns the maximum allocation and the remaining allocation based on usage. See this
-  topic for a description of each limit:
-  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_limits.htm.
-
-ALIASES
-  $ sf force limits api display
-  $ sf org list limits
-
-EXAMPLES
-  Display limits in your default org:
-
-    $ sf limits api display
-
-  Display limits in the org with alias "my-scratch-org":
-
-    $ sf limits api display --target-org my-scratch-org
-```
-
-_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/2.3.41/src/commands/limits/api/display.ts)_
-
-## `sf limits recordcounts display`
-
-Display record counts for the specified standard or custom objects.
-
-```
-USAGE
-  $ sf limits recordcounts display -o <value> [--json] [-s <value>] [--api-version <value>]
-
-FLAGS
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -s, --sobject=<value>...  [default: ] API name of the standard or custom object for which to display record counts.
-  --api-version=<value>     Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --json  Format output as json.
-
-DESCRIPTION
-  Display record counts for the specified standard or custom objects.
-
-  Use this command to get an approximate count of the records in standard or custom objects in your org. These record
-  counts are the same as the counts listed in the Storage Usage page in the Setup UI. The record counts are approximate
-  because they're calculated asynchronously and your org's storage usage isn't updated immediately. To display all
-  available record counts, run the command without the --sobject flag.
-
-ALIASES
-  $ sf force limits recordcounts display
-  $ sf org list sobject record-counts
-
-EXAMPLES
-  Display all available record counts in your default org:
-
-    $ sf limits recordcounts display
-
-  Display record counts for the Account, Contact, Lead, and Opportunity objects in your default org:
-
-    $ sf limits recordcounts display --sobject Account --sobject Contact --sobject Lead --sobject Opportunity
-
-  Display record counts for the Account and Lead objects for the org with alias "my-scratch-org":
-
-    $ sf limits recordcounts display --sobject Account --sobject Lead --target-org my-scratch-org
-```
-
-_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/2.3.41/src/commands/limits/recordcounts/display.ts)_
-
 ## `sf login`
 
 Log interactively into an environment.
@@ -4366,6 +4284,44 @@ EXAMPLES
 
 _See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/2.8.25/src/commands/org/list/auth.ts)_
 
+## `sf org list limits`
+
+Display information about limits in your org.
+
+```
+USAGE
+  $ sf org list limits -o <value> [--json] [--api-version <value>]
+
+FLAGS
+  -o, --target-org=<value>  (required) Username or alias of the target org.
+  --api-version=<value>     Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Display information about limits in your org.
+
+  For each limit, this command returns the maximum allocation and the remaining allocation based on usage. See this
+  topic for a description of each limit:
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_limits.htm.
+
+ALIASES
+  $ sf force limits api display
+  $ sf limits api display
+
+EXAMPLES
+  Display limits in your default org:
+
+    $ sf org list limits
+
+  Display limits in the org with alias "my-scratch-org":
+
+    $ sf org list limits --target-org my-scratch-org
+```
+
+_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.0.1/src/commands/org/list/limits.ts)_
+
 ## `sf org list metadata`
 
 List the metadata components and properties of a specified type.
@@ -4482,6 +4438,50 @@ FLAG DESCRIPTIONS
 ```
 
 _See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/2.11.7/src/commands/org/list/metadata-types.ts)_
+
+## `sf org list sobject record-counts`
+
+Display record counts for the specified standard or custom objects.
+
+```
+USAGE
+  $ sf org list sobject record-counts -o <value> [--json] [-s <value>] [--api-version <value>]
+
+FLAGS
+  -o, --target-org=<value>  (required) Username or alias of the target org.
+  -s, --sobject=<value>...  [default: ] API name of the standard or custom object for which to display record counts.
+  --api-version=<value>     Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Display record counts for the specified standard or custom objects.
+
+  Use this command to get an approximate count of the records in standard or custom objects in your org. These record
+  counts are the same as the counts listed in the Storage Usage page in the Setup UI. The record counts are approximate
+  because they're calculated asynchronously and your org's storage usage isn't updated immediately. To display all
+  available record counts, run the command without the --sobject flag.
+
+ALIASES
+  $ sf force limits recordcounts display
+  $ sf limits recordcounts display
+
+EXAMPLES
+  Display all available record counts in your default org:
+
+    $ sf org list sobject record-counts
+
+  Display record counts for the Account, Contact, Lead, and Opportunity objects in your default org:
+
+    $ sf org list sobject record-counts --sobject Account --sobject Contact --sobject Lead --sobject Opportunity
+
+  Display record counts for the Account and Lead objects for the org with alias "my-scratch-org":
+
+    $ sf org list sobject record-counts --sobject Account --sobject Lead --target-org my-scratch-org
+```
+
+_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.0.1/src/commands/org/list/sobject/record-counts.ts)_
 
 ## `sf org list users`
 
@@ -5134,7 +5134,7 @@ EXAMPLES
   $ sf plugins discover
 ```
 
-_See code: [@salesforce/plugin-marketplace](https://github.com/salesforcecli/plugin-template-sf/blob/0.3.2/src/commands/plugins/discover.ts)_
+_See code: [@salesforce/plugin-marketplace](https://github.com/salesforcecli/plugin-template-sf/blob/1.0.1/src/commands/plugins/discover.ts)_
 
 ## `sf plugins:inspect PLUGIN...`
 
@@ -7156,16 +7156,16 @@ EXAMPLES
 
     $ sf sobject describe --sobject Account
 
-  Display the metadata of the "MyObject\_\_c" custom object in the org with alias "my-scratch-org":
+  Display the metadata of the "MyObject__c" custom object in the org with alias "my-scratch-org":
 
-    $ sf sobject describe --sobject MyObject\_\_c --target-org my-scratch-org
+    $ sf sobject describe --sobject MyObject__c --target-org my-scratch-org
 
   Display the metadata of the ApexCodeCoverage Tooling API object in your default org:
 
     $ sf sobject describe --sobject ApexCodeCoverage --use-tooling-api
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/2.3.32/src/commands/sobject/describe.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/2.3.33/src/commands/sobject/describe.ts)_
 
 ## `sf sobject list`
 
@@ -7202,7 +7202,7 @@ EXAMPLES
     $ sf sobject list --sobject custom --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/2.3.32/src/commands/sobject/list.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/2.3.33/src/commands/sobject/list.ts)_
 
 ## `sf static-resource generate`
 
