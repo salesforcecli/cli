@@ -1090,7 +1090,7 @@
     read-package-json-fast "^3.0.0"
     which "^4.0.0"
 
-"@oclif/core@3.10.1", "@oclif/core@^3.0.0", "@oclif/core@^3.0.4", "@oclif/core@^3.10.0", "@oclif/core@^3.2.1", "@oclif/core@^3.3.1", "@oclif/core@^3.5.0", "@oclif/core@^3.7.1", "@oclif/core@^3.8.0", "@oclif/core@^3.9.0", "@oclif/core@^3.9.1":
+"@oclif/core@3.10.1", "@oclif/core@^3.0.0", "@oclif/core@^3.0.4", "@oclif/core@^3.10.0", "@oclif/core@^3.10.1", "@oclif/core@^3.2.1", "@oclif/core@^3.3.1", "@oclif/core@^3.5.0", "@oclif/core@^3.7.1", "@oclif/core@^3.8.0", "@oclif/core@^3.9.0", "@oclif/core@^3.9.1":
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.10.1.tgz#c8e6c7a557983de1c55990177c16c78d26e10083"
   integrity sha512-zBjujYmLyEu7T6PBlaPqmsum/Cc5KMwc6XmcKzUC/PUQspENGd4z0n4eBlNlKjfO/1sLdts99xUlSoIYXoFimg==
@@ -1179,12 +1179,12 @@
     ts-json-schema-generator "^1.3.0"
     tslib "^2.6.2"
 
-"@oclif/plugin-commands@3.0.5":
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-commands/-/plugin-commands-3.0.5.tgz#a1b870747c5f023d05c34df7efd873d577f51d6a"
-  integrity sha512-Q3YCF5+nayT+yDSUQQ5acqaD1yS0OaRCx/FrWwZHC8dwVB/tFDz/nCfvfi0yoHpG6N+66/WhOwxU/52NdHy+zA==
+"@oclif/plugin-commands@3.0.6":
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-commands/-/plugin-commands-3.0.6.tgz#f2115c2998185fb3bf2812c3ddd892a44a5685cc"
+  integrity sha512-OSUlyGU+aB6S0ANNzFT3F3DbOYX69dqYzU/Aw0ZFFS2pcCdkX0kiw0a27oBMizQHNo/+ttzJwgPRKRkW2cuyZg==
   dependencies:
-    "@oclif/core" "^3.9.1"
+    "@oclif/core" "^3.10.1"
     lodash.pickby "^4.6.0"
     lodash.sortby "^4.7.0"
     lodash.template "^4.5.0"
@@ -1261,12 +1261,12 @@
     semver "^7.5.4"
     tar-fs "^2.1.1"
 
-"@oclif/plugin-version@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-version/-/plugin-version-2.0.4.tgz#584e3a3aca0178a6ad4c2059f70a473a919c8a2b"
-  integrity sha512-zMufYMcyXhHb/FHnkgf2xcmceSgWDPPFVnBhBkpG3iEefD3WxaZPxSYm2NZhQUjS4Y5re7bKmuCmAtzxL5GAuA==
+"@oclif/plugin-version@2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-version/-/plugin-version-2.0.5.tgz#a32595f30d9c70bf26ab5be3532f16b2ce502fe7"
+  integrity sha512-3T9K+bkYz5gryzr1OtQKLu88kqiQCT8VELy6wt9UtVfz8qZ+751KkFAEcEgsQu03ITLXjKbGUASnfhuQ4FuwPg==
   dependencies:
-    "@oclif/core" "^3.9.1"
+    "@oclif/core" "^3.10.1"
 
 "@oclif/plugin-warn-if-update-available@3.0.2", "@oclif/plugin-warn-if-update-available@^3.0.0":
   version "3.0.2"
@@ -1643,13 +1643,13 @@
     chalk "^4.1.0"
     tslib "^2"
 
-"@salesforce/plugin-auth@2.8.25":
-  version "2.8.25"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-2.8.25.tgz#45a7fe917e704453028e83d2ae3e3bd8d9e03f43"
-  integrity sha512-usOwqPCHrtXZUMJS/xQjmPDIEZtPDVC/dCPmRJZMQ8iQglauSfinxoI2o8eTv/aDIckZbktM7p4UxXb+FPq92w==
+"@salesforce/plugin-auth@2.8.26":
+  version "2.8.26"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-2.8.26.tgz#8bc968271701a3349259c75bc6bc8087a72e6547"
+  integrity sha512-ZuXg537zDyQioGec4T2oIWCerrkNgrr0OgFgFyrNz2gGWLUw3h7eYxdE+7SzTvPj2lTG2eg2OZ/+1vx5JcSxeQ==
   dependencies:
     "@oclif/core" "^2.15.0"
-    "@salesforce/core" "^5.3.14"
+    "@salesforce/core" "^5.3.17"
     "@salesforce/kit" "^3.0.15"
     "@salesforce/sf-plugins-core" "^3.1.28"
     "@salesforce/ts-types" "^2.0.9"
@@ -1890,13 +1890,13 @@
     shelljs "^0.8.4"
     tslib "^2"
 
-"@salesforce/plugin-user@2.3.41":
-  version "2.3.41"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-user/-/plugin-user-2.3.41.tgz#719e9574f300e3cadb7942d90aa05e9f7ad170de"
-  integrity sha512-dWkdVl4wTu1Lz7AoAkqQmOZ/dEVAh4SUbGMac6AXS7sG9rw/UV7/JVjiTM/hs3QJsdM2W1hpJY+U1Qa5GN1MDg==
+"@salesforce/plugin-user@2.3.42":
+  version "2.3.42"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-user/-/plugin-user-2.3.42.tgz#5cd13765c5ff72944c83c2378a9b6ef595bb41e2"
+  integrity sha512-aeDeBDKTt2TpXL6OYSz+yLYL2YwqvIXWdu0qy8mcUsDSMW3AZUKlK1WS2MVwjCzLA3MnQ7Dmi80R5c5XejOBxA==
   dependencies:
     "@oclif/core" "^2.15.0"
-    "@salesforce/core" "^5.3.10"
+    "@salesforce/core" "^5.3.17"
     "@salesforce/kit" "^3.0.15"
     "@salesforce/sf-plugins-core" "^3.1.20"
     "@salesforce/ts-types" "^2.0.9"
