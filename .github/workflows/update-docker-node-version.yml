@@ -24,5 +24,5 @@ jobs:
             git commit -m "chore: update node in dockerfile_full" --no-verify
             git push --no-verify
           else
-            echo "Already up to date"
+            echo "Already up to date..."
           fi
