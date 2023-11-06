@@ -78,7 +78,7 @@ jobs:
           if [[ -n $(git status --short) ]]; then
             git add dockerfiles/Dockerfile_full
             git commit -m "chore: update node in dockerfile_full" --no-verify
-            sleep 30
+            sleep 300
             git push --no-verify
           else
             echo "Already up to date"
