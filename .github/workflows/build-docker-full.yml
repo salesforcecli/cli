@@ -37,18 +37,16 @@ jobs:
 
       - name: Collect Node checksum
         id: node-checksum
-        uses: salesforcecli/github-workflows/.github/actions/retry@main
-        with:
-          command: |
-            NODE_VERSION="${{ steps.setup-node.outputs.node-version }}"
+        run: |
+          NODE_VERSION="${{ steps.setup-node.outputs.node-version }}"
 
-            URL="https://nodejs.org/dist/$NODE_VERSION/SHASUMS256.txt"
-            echo "Retrieving SHA data from: $URL"
+          URL="https://nodejs.org/dist/$NODE_VERSION/SHASUMS256.txt"
+          echo "Retrieving SHA data from: $URL"
 
-            SHA=$(curl -s "$URL" | awk "/[0-9a-f]{64}  node-$NODE_VERSION-linux-x64.tar.gz/ { print \$1 }")
-            echo "Checksum found: $SHA"
+          SHA=$(curl -s "$URL" | awk "/[0-9a-f]{64}  node-$NODE_VERSION-linux-x64.tar.gz/ { print \$1 }")
+          echo "Checksum found: $SHA"
 
-            echo "sha=$SHA" >> "$GITHUB_OUTPUT"
+          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
 
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
