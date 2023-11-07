@@ -2,11 +2,15 @@ FROM heroku/heroku:22
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# this will typically be nightly
+# This will typically be nightly
 ARG SF_CLI_VERSION=nightly
+# Full semver version with `v` prefix. e.g. v20.9.0
+ARG NODE_VERSION
+# sha256 checksum for the nodejs.tar.gz file
+ARG NODE_CHECKSUM
 
-RUN echo 'f0919f092fbf74544438907fa083c21e76b2d7a4bc287f0607ada1553ef16f60  ./nodejs.tar.gz' > node-file-lock.sha \
-  && curl -s -o nodejs.tar.gz https://nodejs.org/dist/v20.9.0/node-v20.9.0-linux-x64.tar.gz \
+RUN echo '${NODE_CHECKSUM}  ./nodejs.tar.gz' > node-file-lock.sha \
+  && curl -s -o nodejs.tar.gz https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}-linux-x64.tar.gz \
   && shasum --check node-file-lock.sha
 RUN mkdir /usr/local/lib/nodejs \
   && tar xf nodejs.tar.gz -C /usr/local/lib/nodejs/ --strip-components 1 \
