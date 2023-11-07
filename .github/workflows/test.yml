@@ -19,7 +19,7 @@ jobs:
   tarballs:
     uses: salesforcecli/github-workflows/.github/workflows/tarballs.yml@main
     with:
-      nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE }} # default is 'lts/*'
+      nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
     secrets: inherit
 
   # DONE
