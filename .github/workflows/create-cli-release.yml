@@ -45,7 +45,7 @@ jobs:
     with:
       tag: ${{ needs.get-channel.outputs.channel }}
       githubTag: ${{ github.event.release.tag_name }}
-      nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE }} # default is 'lts/*'
+      nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
 
   pack-verify-upload-tarballs:
     needs: [get-channel, npm-release]
@@ -55,7 +55,7 @@ jobs:
       cli: sf
       version: ${{ github.event.release.tag_name }}
       channel: ${{ needs.get-channel.outputs.s3-channel }}
-      nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE }} # default is 'lts/*'
+      nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
     secrets: inherit
 
   archives-verify:
@@ -90,7 +90,7 @@ jobs:
       cli: sf
       version: ${{ github.event.release.tag_name }}
       channel: ${{ needs.get-channel.outputs.s3-channel }}
-      nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE }} # default is 'lts/*'
+      nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
     secrets: inherit
 
   pack-upload-win:
@@ -100,7 +100,7 @@ jobs:
       cli: sf
       version: ${{ github.event.release.tag_name }}
       channel: ${{ needs.get-channel.outputs.s3-channel }}
-      nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE }} # default is 'lts/*'
+      nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
     secrets: inherit
 
   stampy-upload-win:
