@@ -18,6 +18,11 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v3
 
+      - uses: actions/setup-node@v3
+        id: setup-node
+        with:
+          node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
+
       - name: Log in to Docker Hub
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
         with:
@@ -30,6 +35,21 @@ jobs:
         with:
           images: salesforce/cli
 
+      - name: Collect Node checksum
+        id: node-checksum
+        uses: salesforcecli/github-workflows/.github/actions/retry@main
+        with:
+          command: |
+            NODE_VERSION="${{ steps.setup-node.outputs.node-version }}"
+
+            URL="https://nodejs.org/dist/$NODE_VERSION/SHASUMS256.txt"
+            echo "Retrieving SHA data from: $URL"
+
+            SHA=$(curl -s "$URL" | awk "/[0-9a-f]{64}  node-$NODE_VERSION-linux-x64.tar.gz/ { print \$1 }")
+            echo "Checksum found: $SHA"
+
+            echo "sha=$SHA" >> "$GITHUB_OUTPUT"
+
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
@@ -38,6 +58,8 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           file: dockerfiles/Dockerfile_full
           build-args: |
+            NODE_VERSION=${{ steps.setup-node.outputs.node-version }}
+            NODE_CHECKSUM=${{ steps.node-checksum.outputs.sha }}
             SF_CLI_VERSION=${{ inputs.version }}
           tags: salesforce/cli:${{ inputs.channel }}-full, salesforce/cli:${{ inputs.version }}-full
 
