@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Get release channel from PR title
         id: release-channel
-        uses: actions-ecosystem/action-regex-match@9e6c4fb3d5e898f505be7a1fb6e7b0a278f6665b
+        uses: actions-ecosystem/action-regex-match@d50fd2e7a37d0e617aea3d7ada663bd56862b9cc
         with:
           text: ${{ github.event.pull_request.title }}
           # https://regex101.com/r/66VrAs/1
@@ -38,7 +38,7 @@ jobs:
       # Checkout needed to validate prerelease version in package.json
       - name: Check out the repo
         if: ${{ !contains(fromJSON('["latest", "latest-rc", "nightly"]'), steps.release-channel.outputs.group1) }}
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Get prerelease from package.json
         id: check-prerelease
@@ -67,8 +67,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
-      - uses: notiz-dev/github-action-json-property@2192e246737701f108a4571462b76c75e7376216
+        uses: actions/checkout@v4
+      - uses: notiz-dev/github-action-json-property@7a701887f4b568b23eb7b78bb0fc49aaeb1b68d3
         id: packageVersion
         with:
           path: 'package.json'

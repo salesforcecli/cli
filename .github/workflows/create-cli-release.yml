@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Get release channel Github release
         id: release-channel
-        uses: actions-ecosystem/action-regex-match@9e6c4fb3d5e898f505be7a1fb6e7b0a278f6665b
+        uses: actions-ecosystem/action-regex-match@d50fd2e7a37d0e617aea3d7ada663bd56862b9cc
         with:
           text: ${{ github.event.release.body }}
           # https://regex101.com/r/tYAJ8L/1
@@ -64,9 +64,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: [get-channel, pack-verify-upload-tarballs]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
           cache: npm
@@ -143,7 +143,7 @@ jobs:
       - build-docker-full
     steps:
       - name: Announce patch in Slack
-        uses: slackapi/slack-github-action@v1.21.0
+        uses: slackapi/slack-github-action@v1.24.0
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.PLATFORM_CLI_CHANNEL_SLACK_INCOMING_WEBHOOK }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK

@@ -24,12 +24,12 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
       - name: Check out repository as our bot user
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
 
       - name: Set up NodeJS
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
 
@@ -41,20 +41,20 @@ jobs:
           npmPackage: '@salesforce/cli'
 
       - name: Parse latest-rc semver
-        uses: booxmedialtd/ws-action-parse-semver@e4a833cf5d612066a210bd9b62d1c3b20be3b325
+        uses: booxmedialtd/ws-action-parse-semver@7784200024d6b3fc01253e617ec0168daf603de3
         id: latest-rc-semver-info
         with:
           input_string: ${{ steps.latest-rc-version.outputs.version }}
 
       - name: Look up sf package.json version
-        uses: notiz-dev/github-action-json-property@2192e246737701f108a4571462b76c75e7376216
+        uses: notiz-dev/github-action-json-property@7a701887f4b568b23eb7b78bb0fc49aaeb1b68d3
         id: package-json-version
         with:
           path: 'package.json'
           prop_path: 'version'
 
       - name: Parse package.json semver
-        uses: booxmedialtd/ws-action-parse-semver@e4a833cf5d612066a210bd9b62d1c3b20be3b325
+        uses: booxmedialtd/ws-action-parse-semver@7784200024d6b3fc01253e617ec0168daf603de3
         id: package-json-semver-info
         with:
           input_string: ${{ steps.package-json-version.outputs.prop }}

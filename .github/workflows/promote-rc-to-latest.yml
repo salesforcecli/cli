@@ -19,9 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: [promote]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
           cache: yarn
@@ -93,7 +93,7 @@ jobs:
 
       - name: Announce promotion
         id: slack
-        uses: slackapi/slack-github-action@v1.21.0
+        uses: slackapi/slack-github-action@v1.24.0
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.PLATFORM_CLI_CHANNEL_SLACK_INCOMING_WEBHOOK }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
