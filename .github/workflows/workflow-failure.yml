@@ -27,7 +27,7 @@ jobs:
       conclusion: ${{ fromJson(steps.get_conclusion.outputs.data).conclusion }}
     steps:
       - name: Get Workflow Run
-        uses: octokit/request-action@v2.1.0
+        uses: octokit/request-action@v2.1.9
         id: get_conclusion
         with:
           route: GET /repos/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}
@@ -40,7 +40,7 @@ jobs:
     steps:
       - name: Announce Failure
         id: slack
-        uses: slackapi/slack-github-action@v1.21.0
+        uses: slackapi/slack-github-action@v1.24.0
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.CLI_ALERTS_SLACK_WEBHOOK }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK

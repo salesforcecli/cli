@@ -68,12 +68,12 @@ jobs:
       SF_DISABLE_TELEMETRY: true
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           repository: ${{ inputs.repository }}
           token: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
           path: .
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
           # cache: yarn
