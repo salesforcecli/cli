@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.18.5",
+  "version": "2.18.6",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run.js",
@@ -125,7 +125,7 @@
     }
   },
   "dependencies": {
-    "@oclif/core": "3.10.8",
+    "@oclif/core": "3.11.0",
     "@oclif/plugin-autocomplete": "3.0.1",
     "@oclif/plugin-commands": "3.0.6",
     "@oclif/plugin-help": "6.0.6",
@@ -148,13 +148,13 @@
     "@salesforce/plugin-org": "3.0.4",
     "@salesforce/plugin-schema": "3.0.3",
     "@salesforce/plugin-settings": "2.0.5",
-    "@salesforce/plugin-sobject": "0.2.18",
+    "@salesforce/plugin-sobject": "1.0.1",
     "@salesforce/plugin-source": "2.11.3",
     "@salesforce/plugin-telemetry": "3.1.1",
     "@salesforce/plugin-templates": "55.5.19",
     "@salesforce/plugin-trust": "3.0.3",
     "@salesforce/plugin-user": "3.0.3",
-    "@salesforce/sf-plugins-core": "4.1.1",
+    "@salesforce/sf-plugins-core": "4.1.2",
     "debug": "^4.3.4"
   },
   "pinnedDependencies": [
