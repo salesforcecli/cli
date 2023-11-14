@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.18.5 linux-x64 node-v20.9.0
+@salesforce/cli/2.18.6 linux-x64 node-v20.9.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -291,9 +291,9 @@ USAGE
   $ sf analytics generate template -n <value> [--json] [-d <value>] [--api-version <value>]
 
 FLAGS
-  -d, --output-dir=<value>  [default: .] Directory for saving the created files.
-  -n, --name=<value>        (required) Name of the Analytics template.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -n, --name=<value>         (required) Name of the Analytics template.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -333,11 +333,11 @@ USAGE
     <value>] [--api-version <value>]
 
 FLAGS
-  -d, --output-dir=<value>  [default: .] Directory for saving the created files.
-  -n, --name=<value>        (required) Name of the generated Apex class.
-  -t, --template=<option>   [default: DefaultApexClass] Template to use for file creation.
-                            <options: ApexException|ApexUnitTest|DefaultApexClass|InboundEmailService>
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -n, --name=<value>         (required) Name of the generated Apex class.
+  -t, --template=<option>    [default: DefaultApexClass] Template to use for file creation.
+                             <options: ApexException|ApexUnitTest|DefaultApexClass|InboundEmailService>
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -389,15 +389,15 @@ USAGE
     before insert|before update|before delete|after insert|after update|after delete|after undelete]
 
 FLAGS
-  -d, --output-dir=<value>  [default: .] Directory for saving the created files.
-  -e, --event=<option>...   [default: before insert] Events that fire the trigger.
-                            <options: before insert|before update|before delete|after insert|after update|after
-                            delete|after undelete>
-  -n, --name=<value>        (required) Name of the generated Apex trigger
-  -s, --sobject=<value>     [default: SOBJECT] Salesforce object to generate a trigger on.
-  -t, --template=<option>   [default: ApexTrigger] Template to use for file creation.
-                            <options: ApexTrigger>
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -e, --event=<option>...    [default: before insert] Events that fire the trigger.
+                             <options: before insert|before update|before delete|after insert|after update|after
+                             delete|after undelete>
+  -n, --name=<value>         (required) Name of the generated Apex trigger
+  -s, --sobject=<value>      [default: SOBJECT] Salesforce object to generate a trigger on.
+  -t, --template=<option>    [default: ApexTrigger] Template to use for file creation.
+                             <options: ApexTrigger>
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -455,11 +455,11 @@ USAGE
   $ sf apex get log -o <value> [--json] [--api-version <value>] [-i <value>] [-n <value>] [-d <value>]
 
 FLAGS
-  -d, --output-dir=<value>  Directory for saving the log files.
-  -i, --log-id=<value>      ID of the specific log to display.
-  -n, --number=<value>      Number of the most recent logs to display.
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -d, --output-dir=<value>   Directory for saving the log files.
+  -i, --log-id=<value>       ID of the specific log to display.
+  -n, --number=<value>       Number of the most recent logs to display.
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -515,7 +515,7 @@ FLAGS
   -o, --target-org=<value>      (required) Username or alias of the target org.
   -r, --result-format=<option>  [default: human] Format of the results.
                                 <options: human|tap|junit|json>
-  --api-version=<value>         Override the api version used for api requests made by this command
+      --api-version=<value>     Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -560,8 +560,8 @@ USAGE
   $ sf apex list log -o <value> [--json] [--api-version <value>]
 
 FLAGS
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -598,9 +598,9 @@ USAGE
   $ sf apex run -o <value> [--json] [--api-version <value>] [-f <value>]
 
 FLAGS
-  -f, --file=<value>        Path to a local file that contains Apex code.
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -f, --file=<value>         Path to a local file that contains Apex code.
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -661,7 +661,7 @@ FLAGS
                                 timeouts occur frequently.
   -y, --synchronous             Runs test methods from a single Apex class synchronously; if not specified, tests are
                                 run asynchronously.
-  --api-version=<value>         Override the api version used for api requests made by this command
+      --api-version=<value>     Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -753,7 +753,7 @@ FLAGS
   -d, --debug-level=<value>  Debug level to set on the DEVELOPER_LOG trace flag for your user.
   -o, --target-org=<value>   (required) Username or alias of the target org.
   -s, --skip-trace-flag      Skip trace flag setup. Assumes that a trace flag and debug level are fully set up.
-  --api-version=<value>      Override the api version used for api requests made by this command
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -823,18 +823,18 @@ USAGE
     [--csv | --no-truncate]] [--output csv|json|yaml |  | ] [--sort <value>]
 
 FLAGS
-  -h, --help         Show CLI help.
-  -x, --extended     show extra columns
-  --columns=<value>  only show provided columns (comma-separated)
-  --csv              output is csv format [alias: --output=csv]
-  --filter=<value>   filter property by partial string matching, ex: name=foo
-  --hidden           show hidden commands
-  --no-header        hide table header from output
-  --no-truncate      do not truncate output to fit screen
-  --output=<option>  output in a more machine friendly format
-                     <options: csv|json|yaml>
-  --sort=<value>     property to sort by (prepend '-' for descending)
-  --tree             show tree of commands
+  -h, --help             Show CLI help.
+  -x, --extended         show extra columns
+      --columns=<value>  only show provided columns (comma-separated)
+      --csv              output is csv format [alias: --output=csv]
+      --filter=<value>   filter property by partial string matching, ex: name=foo
+      --hidden           show hidden commands
+      --no-header        hide table header from output
+      --no-truncate      do not truncate output to fit screen
+      --output=<option>  output in a more machine friendly format
+                         <options: csv|json|yaml>
+      --sort=<value>     property to sort by (prepend '-' for descending)
+      --tree             show tree of commands
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1055,13 +1055,13 @@ USAGE
   $ sf data create record -o <value> -s <value> -v <value> [--json] [--api-version <value>] [-t]
 
 FLAGS
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -s, --sobject=<value>     (required) API name of the Salesforce or Tooling API object that you're inserting a record
-                            into.
-  -t, --use-tooling-api     Use Tooling API so you can insert a record in a Tooling API object.
-  -v, --values=<value>      (required) Values for the flags in the form <fieldName>=<value>, separate multiple pairs
-                            with spaces.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -s, --sobject=<value>      (required) API name of the Salesforce or Tooling API object that you're inserting a record
+                             into.
+  -t, --use-tooling-api      Use Tooling API so you can insert a record in a Tooling API object.
+  -v, --values=<value>       (required) Values for the flags in the form <fieldName>=<value>, separate multiple pairs
+                             with spaces.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1109,15 +1109,15 @@ USAGE
   $ sf data delete bulk -o <value> -f <value> -s <value> [--json] [--api-version <value>] [-w <value> | -a] [--verbose]
 
 FLAGS
-  -a, --async               Run the command asynchronously.
-  -f, --file=<value>        (required) CSV file that contains the IDs of the records to update or delete.
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -s, --sobject=<value>     (required) API name of the Salesforce object, either standard or custom, that you want to
-                            update or delete records from.
-  -w, --wait=<value>        [default: [object Object]] Number of minutes to wait for the command to complete before
-                            displaying the results.
-  --api-version=<value>     Override the api version used for api requests made by this command
-  --verbose                 Print verbose output of failed records if result is available.
+  -a, --async                Run the command asynchronously.
+  -f, --file=<value>         (required) CSV file that contains the IDs of the records to update or delete.
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -s, --sobject=<value>      (required) API name of the Salesforce object, either standard or custom, that you want to
+                             update or delete records from.
+  -w, --wait=<value>         [default: [object Object]] Number of minutes to wait for the command to complete before
+                             displaying the results.
+      --api-version=<value>  Override the api version used for api requests made by this command
+      --verbose              Print verbose output of failed records if result is available.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1153,13 +1153,13 @@ USAGE
   $ sf data delete record -o <value> -s <value> [--json] [--api-version <value>] [-i <value>] [-w <value>] [-t]
 
 FLAGS
-  -i, --record-id=<value>   ID of the record you’re deleting.
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -s, --sobject=<value>     (required) API name of the Salesforce or Tooling API object that you're deleting a record
-                            from.
-  -t, --use-tooling-api     Use Tooling API so you can delete a record from a Tooling API object.
-  -w, --where=<value>       List of <fieldName>=<value> pairs that identify the record you want to delete.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -i, --record-id=<value>    ID of the record you’re deleting.
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -s, --sobject=<value>      (required) API name of the Salesforce or Tooling API object that you're deleting a record
+                             from.
+  -t, --use-tooling-api      Use Tooling API so you can delete a record from a Tooling API object.
+  -w, --where=<value>        List of <fieldName>=<value> pairs that identify the record you want to delete.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1212,12 +1212,12 @@ USAGE
   <value>]
 
 FLAGS
-  -i, --job-id=<value>      ID of the job you want to resume.
-  -o, --target-org=<value>  Org alias or username to use for the target org.
-  --api-version=<value>     Override the api version used for api requests made by this command
-  --use-most-recent         Use the ID of the most recently-run bulk job.
-  --wait=<value>            [default: [object Object]] Number of minutes to wait for the command to complete before
-                            displaying the results.
+  -i, --job-id=<value>       ID of the job you want to resume.
+  -o, --target-org=<value>   Org alias or username to use for the target org.
+      --api-version=<value>  Override the api version used for api requests made by this command
+      --use-most-recent      Use the ID of the most recently-run bulk job.
+      --wait=<value>         [default: [object Object]] Number of minutes to wait for the command to complete before
+                             displaying the results.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1248,12 +1248,12 @@ USAGE
   $ sf data export tree -o <value> -q <value> [--json] [--api-version <value>] [-p] [-x <value>] [-d <value>]
 
 FLAGS
-  -d, --output-dir=<value>  Directory in which to generate the JSON files; default is current directory.
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -p, --plan                Generate multiple sObject tree files and a plan definition file for aggregated import.
-  -q, --query=<value>       (required) SOQL query, or filepath of a file that contains the query, to retrieve records.
-  -x, --prefix=<value>      Prefix of generated files.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -d, --output-dir=<value>   Directory in which to generate the JSON files; default is current directory.
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -p, --plan                 Generate multiple sObject tree files and a plan definition file for aggregated import.
+  -q, --query=<value>        (required) SOQL query, or filepath of a file that contains the query, to retrieve records.
+  -x, --prefix=<value>       Prefix of generated files.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1305,13 +1305,13 @@ USAGE
   $ sf data get record -o <value> -s <value> [--json] [--api-version <value>] [-i <value>] [-w <value>] [-t]
 
 FLAGS
-  -i, --record-id=<value>   ID of the record you’re retrieving.
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -s, --sobject=<value>     (required) API name of the Salesforce or Tooling API object that you're retrieving a record
-                            from.
-  -t, --use-tooling-api     Use Tooling API so you can retrieve a record from a Tooling API object.
-  -w, --where=<value>       List of <fieldName>=<value> pairs that identify the record you want to display.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -i, --record-id=<value>    ID of the record you’re retrieving.
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -s, --sobject=<value>      (required) API name of the Salesforce or Tooling API object that you're retrieving a record
+                             from.
+  -t, --use-tooling-api      Use Tooling API so you can retrieve a record from a Tooling API object.
+  -w, --where=<value>        List of <fieldName>=<value> pairs that identify the record you want to display.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1366,13 +1366,13 @@ USAGE
   $ sf data import tree -o <value> [--json] [--api-version <value>] [-f <value> | -p <value>] [--config-help]
 
 FLAGS
-  -f, --files=<value>...    Comma-separated and in-order JSON files that contain the records, in sObject tree format,
-                            that you want to insert.
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -p, --plan=<value>        Plan definition file to insert multiple data files.
-  --api-version=<value>     Override the api version used for api requests made by this command
-  --config-help             Display schema information for the --plan configuration file to stdout; if you specify this
-                            flag, all other flags except --json are ignored.
+  -f, --files=<value>...     Comma-separated and in-order JSON files that contain the records, in sObject tree format,
+                             that you want to insert.
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -p, --plan=<value>         Plan definition file to insert multiple data files.
+      --api-version=<value>  Override the api version used for api requests made by this command
+      --config-help          Display schema information for the --plan configuration file to stdout; if you specify this
+                             flag, all other flags except --json are ignored.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1425,9 +1425,9 @@ FLAGS
                                 <options: human|json|csv>
   -t, --use-tooling-api         Use Tooling API so you can run queries on Tooling API objects.
   -w, --wait=<value>            Time to wait for the command to finish, in minutes.
-  --all-rows                    Include deleted records. By default, deleted records are not returned.
-  --api-version=<value>         Override the api version used for api requests made by this command
-  --async                       Use Bulk API 2.0, but don't wait for the job to complete.
+      --all-rows                Include deleted records. By default, deleted records are not returned.
+      --api-version=<value>     Override the api version used for api requests made by this command
+      --async                   Use Bulk API 2.0, but don't wait for the job to complete.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1483,8 +1483,8 @@ FLAGS
   -o, --target-org=<value>      Org alias or username to use for the target org.
   -r, --result-format=<option>  [default: human] Format to display the results; the --json flag overrides this flag.
                                 <options: human|json|csv>
-  --api-version=<value>         Override the api version used for api requests made by this command
-  --use-most-recent             Use the most recent bulk query ID from cache.
+      --api-version=<value>     Override the api version used for api requests made by this command
+      --use-most-recent         Use the most recent bulk query ID from cache.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1514,10 +1514,10 @@ USAGE
   $ sf data resume -o <value> -i <value> [--json] [--api-version <value>] [-b <value>]
 
 FLAGS
-  -b, --batch-id=<value>    ID of the batch whose status you want to view; you must also specify the job ID.
-  -i, --job-id=<value>      (required) ID of the job whose status you want to view.
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -b, --batch-id=<value>     ID of the batch whose status you want to view; you must also specify the job ID.
+  -i, --job-id=<value>       (required) ID of the job whose status you want to view.
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1550,14 +1550,14 @@ USAGE
     [-t]
 
 FLAGS
-  -i, --record-id=<value>   ID of the record you’re updating.
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -s, --sobject=<value>     (required) API name of the Salesforce or Tooling API object that contains the record you're
-                            updating.
-  -t, --use-tooling-api     Use Tooling API so you can update a record in a Tooling API object.
-  -v, --values=<value>      (required) Fields that you're updating, in the format of <fieldName>=<value> pairs.
-  -w, --where=<value>       List of <fieldName>=<value> pairs that identify the record you want to update.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -i, --record-id=<value>    ID of the record you’re updating.
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -s, --sobject=<value>      (required) API name of the Salesforce or Tooling API object that contains the record you're
+                             updating.
+  -t, --use-tooling-api      Use Tooling API so you can update a record in a Tooling API object.
+  -v, --values=<value>       (required) Fields that you're updating, in the format of <fieldName>=<value> pairs.
+  -w, --where=<value>        List of <fieldName>=<value> pairs that identify the record you want to update.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1618,8 +1618,8 @@ FLAGS
                              update or delete records from.
   -w, --wait=<value>         [default: [object Object]] Number of minutes to wait for the command to complete before
                              displaying the results.
-  --api-version=<value>      Override the api version used for api requests made by this command
-  --verbose                  Print verbose output of failed records if result is available.
+      --api-version=<value>  Override the api version used for api requests made by this command
+      --verbose              Print verbose output of failed records if result is available.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1661,12 +1661,12 @@ USAGE
   <value>]
 
 FLAGS
-  -i, --job-id=<value>      ID of the job you want to resume.
-  -o, --target-org=<value>  Org alias or username to use for the target org.
-  --api-version=<value>     Override the api version used for api requests made by this command
-  --use-most-recent         Use the ID of the most recently-run bulk job.
-  --wait=<value>            [default: [object Object]] Number of minutes to wait for the command to complete before
-                            displaying the results.
+  -i, --job-id=<value>       ID of the job you want to resume.
+  -o, --target-org=<value>   Org alias or username to use for the target org.
+      --api-version=<value>  Override the api version used for api requests made by this command
+      --use-most-recent      Use the ID of the most recently-run bulk job.
+      --wait=<value>         [default: [object Object]] Number of minutes to wait for the command to complete before
+                             displaying the results.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1744,13 +1744,13 @@ USAGE
   $ sf force data bulk delete -o <value> -f <value> -s <value> [--json] [--api-version <value>] [-w <value>]
 
 FLAGS
-  -f, --file=<value>        (required) CSV file that contains the IDs of the records to delete.
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -s, --sobject=<value>     (required) API name of the Salesforce object, either standard or custom, that you want to
-                            delete records from.
-  -w, --wait=<value>        [default: [object Object]] Number of minutes to wait for the command to complete before
-                            displaying the results.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -f, --file=<value>         (required) CSV file that contains the IDs of the records to delete.
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -s, --sobject=<value>      (required) API name of the Salesforce object, either standard or custom, that you want to
+                             delete records from.
+  -w, --wait=<value>         [default: [object Object]] Number of minutes to wait for the command to complete before
+                             displaying the results.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1788,10 +1788,10 @@ USAGE
   $ sf force data bulk status -o <value> -i <value> [--json] [--api-version <value>] [-b <value>]
 
 FLAGS
-  -b, --batch-id=<value>    ID of the batch whose status you want to view; you must also specify the job ID.
-  -i, --job-id=<value>      (required) ID of the job whose status you want to view.
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -b, --batch-id=<value>     ID of the batch whose status you want to view; you must also specify the job ID.
+  -i, --job-id=<value>       (required) ID of the job whose status you want to view.
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -1832,7 +1832,7 @@ FLAGS
                              upsert records to.
   -w, --wait=<value>         [default: [object Object]] Number of minutes to wait for the command to complete before
                              displaying the results.
-  --api-version=<value>      Override the api version used for api requests made by this command
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -2079,11 +2079,11 @@ USAGE
   $ sf force mdapi deploy cancel -o <value> [--json] [--api-version <value>] [-w <value>] [-i <value>]
 
 FLAGS
-  -i, --jobid=<value>       Job ID of the deployment you want to cancel; defaults to your most recent CLI deployment.
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -w, --wait=<value>        [default: [object Object]] Number of minutes for the command to complete and display results
-                            to the terminal window.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -i, --jobid=<value>        Job ID of the deployment you want to cancel; defaults to your most recent CLI deployment.
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -w, --wait=<value>         [default: [object Object]] Number of minutes for the command to complete and display
+                             results to the terminal window.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -2206,7 +2206,7 @@ FLAGS
   -s, --singlepackage              Specify that the zip file points to a directory structure for a single package.
   -w, --wait=<value>               [default: [object Object]] Number of minutes to wait for the command to complete.
   -z, --unzip                      Extract all files from the retrieved zip file.
-  --verbose                        Display verbose output of retrieve result.
+      --verbose                    Display verbose output of retrieve result.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -2265,8 +2265,8 @@ FLAGS
                                    retrieved.
   -w, --wait=<value>               [default: [object Object]] Number of minutes to wait for the command to complete.
   -z, --unzip                      Extract all files from the retrieved zip file.
-  --api-version=<value>            Override the api version used for api requests made by this command
-  --verbose                        Display verbose output of retrieve result.
+      --api-version=<value>        Override the api version used for api requests made by this command
+      --verbose                    Display verbose output of retrieve result.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -2319,7 +2319,7 @@ FLAGS
   -t, --type=<option>           (required) Type of org to create.
                                 <options: sandbox>
   -w, --wait=<value>            [default: [object Object]] Number of minutes to wait while polling for status.
-  --api-version=<value>         Override the api version used for api requests made by this command
+      --api-version=<value>     Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -2371,7 +2371,7 @@ FLAGS
                                 <options: scratch|sandbox>
   -v, --target-dev-hub=<value>  Username or alias of the Dev Hub org.
   -w, --wait=<value>            [default: [object Object]] Streaming client socket timeout (in minutes).
-  --api-version=<value>         Override the api version used for api requests made by this command
+      --api-version=<value>     Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -2406,9 +2406,9 @@ USAGE
   $ sf force org delete -o <value> [--json] [--api-version <value>] [-p]
 
 FLAGS
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -p, --no-prompt           No prompt to confirm deletion.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -p, --no-prompt            No prompt to confirm deletion.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -2443,7 +2443,7 @@ FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org.
   -s, --setdefaultusername   Set the created or cloned org as your default.
   -w, --wait=<value>         [default: [object Object]] Number of minutes to wait while polling for status.
-  --api-version=<value>      Override the api version used for api requests made by this command
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -2742,12 +2742,12 @@ USAGE
   $ sf force source deploy cancel -o <value> [--json] [--api-version <value>] [-w <value>] [-i <value>]
 
 FLAGS
-  -i, --jobid=<value>       Job ID of the deployment you want to cancel; defaults to your most recent CLI deployment if
-                            not specified.
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -w, --wait=<value>        [default: [object Object]] Number of minutes to wait for the command to complete and display
-                            results.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -i, --jobid=<value>        Job ID of the deployment you want to cancel; defaults to your most recent CLI deployment if
+                             not specified.
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -w, --wait=<value>         [default: [object Object]] Number of minutes to wait for the command to complete and
+                             display results.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -2850,12 +2850,12 @@ USAGE
   $ sf force source pull -o <value> [--json] [--verbose] [--api-version <value>] [-f] [-w <value>]
 
 FLAGS
-  -f, --forceoverwrite      Ignore conflict warnings; changes in the org overwrite changes in the project.
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -w, --wait=<value>        [default: [object Object]] Number of minutes to wait for the command to complete and display
-                            results to the terminal window.
-  --api-version=<value>     Override the api version used for api requests made by this command
-  --verbose                 Display additional details about the command results.
+  -f, --forceoverwrite       Ignore conflict warnings; changes in the org overwrite changes in the project.
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -w, --wait=<value>         [default: [object Object]] Number of minutes to wait for the command to complete and
+                             display results to the terminal window.
+      --api-version=<value>  Override the api version used for api requests made by this command
+      --verbose              Display additional details about the command results.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -2893,14 +2893,14 @@ USAGE
   $ sf force source push -o <value> [--json] [--api-version <value>] [-f] [-w <value>] [-g] [--quiet]
 
 FLAGS
-  -f, --forceoverwrite      Ignore conflict warnings and push source anyway; changes in the project overwrite changes in
-                            the org.
-  -g, --ignorewarnings      Deploy changes even if warnings are generated.
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -w, --wait=<value>        [default: [object Object]] Number of minutes to wait for the command to complete and display
-                            results to the terminal window.
-  --api-version=<value>     Override the api version used for api requests made by this command
-  --quiet                   Minimize JSON and sdtout output on success.
+  -f, --forceoverwrite       Ignore conflict warnings and push source anyway; changes in the project overwrite changes
+                             in the org.
+  -g, --ignorewarnings       Deploy changes even if warnings are generated.
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -w, --wait=<value>         [default: [object Object]] Number of minutes to wait for the command to complete and
+                             display results to the terminal window.
+      --api-version=<value>  Override the api version used for api requests made by this command
+      --quiet                Minimize JSON and sdtout output on success.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -2952,7 +2952,7 @@ FLAGS
                                    display results to the terminal window.
   -x, --manifest=<value>           Complete path for the manifest (package.xml) file that specifies the components to
                                    retrieve.
-  --verbose                        Verbose output of retrieve result.
+      --verbose                    Verbose output of retrieve result.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -3063,11 +3063,11 @@ USAGE
   $ sf force source status -o <value> [--json] [--api-version <value>] [-l | -r] [--concise]
 
 FLAGS
-  -l, --local               List the changes that have been made locally.
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -r, --remote              List the changes that have been made in the org.
-  --api-version=<value>     Override the api version used for api requests made by this command
-  --concise                 Show only the changes that will be pushed or pulled; omits files that are forceignored.
+  -l, --local                List the changes that have been made locally.
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -r, --remote               List the changes that have been made in the org.
+      --api-version=<value>  Override the api version used for api requests made by this command
+      --concise              Show only the changes that will be pushed or pulled; omits files that are forceignored.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -3100,7 +3100,7 @@ FLAGS
   -o, --on-behalf-of=<value>...  Comma-separated list of usernames or aliases to assign the password to; must have been
                                  created locally with the "org create user" command.
   -u, --target-org=<value>       (required) Scratch org alias or login user.
-  --api-version=<value>          Override the api version used for api requests made by this command
+      --api-version=<value>      Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -3217,11 +3217,11 @@ USAGE
   $ sf lightning generate app -n <value> [--json] [-t DefaultLightningApp] [-d <value>] [--api-version <value>]
 
 FLAGS
-  -d, --output-dir=<value>  [default: .] Directory for saving the created files.
-  -n, --name=<value>        (required) Name of the generated Lightning App.
-  -t, --template=<option>   [default: DefaultLightningApp] Template to use for file creation.
-                            <options: DefaultLightningApp>
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -n, --name=<value>         (required) Name of the generated Lightning App.
+  -t, --template=<option>    [default: DefaultLightningApp] Template to use for file creation.
+                             <options: DefaultLightningApp>
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -3271,13 +3271,13 @@ USAGE
     [--api-version <value>] [--type aura|lwc]
 
 FLAGS
-  -d, --output-dir=<value>  [default: .] Directory for saving the created files.
-  -n, --name=<value>        (required) Name of the generated Lightning Component.
-  -t, --template=<option>   [default: default] Template to use for file creation.
-                            <options: default|analyticsDashboard|analyticsDashboardWithStep>
-  --api-version=<value>     Override the api version used for api requests made by this command
-  --type=<option>           [default: aura] Type of the component bundle.
-                            <options: aura|lwc>
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -n, --name=<value>         (required) Name of the generated Lightning Component.
+  -t, --template=<option>    [default: default] Template to use for file creation.
+                             <options: default|analyticsDashboard|analyticsDashboardWithStep>
+      --api-version=<value>  Override the api version used for api requests made by this command
+      --type=<option>        [default: aura] Type of the component bundle.
+                             <options: aura|lwc>
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -3338,11 +3338,11 @@ USAGE
   $ sf lightning generate event -n <value> [--json] [-t DefaultLightningEvt] [-d <value>] [--api-version <value>]
 
 FLAGS
-  -d, --output-dir=<value>  [default: .] Directory for saving the created files.
-  -n, --name=<value>        (required) Name of the generated Lightning Event.
-  -t, --template=<option>   [default: DefaultLightningEvt] Template to use for file creation.
-                            <options: DefaultLightningEvt>
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -n, --name=<value>         (required) Name of the generated Lightning Event.
+  -t, --template=<option>    [default: DefaultLightningEvt] Template to use for file creation.
+                             <options: DefaultLightningEvt>
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -3391,11 +3391,11 @@ USAGE
   $ sf lightning generate interface -n <value> [--json] [-t DefaultLightningIntf] [-d <value>] [--api-version <value>]
 
 FLAGS
-  -d, --output-dir=<value>  [default: .] Directory for saving the created files.
-  -n, --name=<value>        (required) Name of the generated Lightning Interface.
-  -t, --template=<option>   [default: DefaultLightningIntf] Template to use for file creation.
-                            <options: DefaultLightningIntf>
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -n, --name=<value>         (required) Name of the generated Lightning Interface.
+  -t, --template=<option>    [default: DefaultLightningIntf] Template to use for file creation.
+                             <options: DefaultLightningIntf>
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -3444,11 +3444,11 @@ USAGE
   $ sf lightning generate test -n <value> [--json] [-t DefaultLightningTest] [-d <value>] [--api-version <value>]
 
 FLAGS
-  -d, --output-dir=<value>  [default: .] Directory for saving the created files.
-  -n, --name=<value>        (required) Name of the generated Lightning Test.
-  -t, --template=<option>   [default: DefaultLightningTest] Template to use for file creation.
-                            <options: DefaultLightningTest>
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -n, --name=<value>         (required) Name of the generated Lightning Test.
+  -t, --template=<option>    [default: DefaultLightningTest] Template to use for file creation.
+                             <options: DefaultLightningTest>
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -3557,7 +3557,7 @@ FLAGS
   -b, --on-behalf-of=<value>...  Username or alias to assign the permission set to.
   -n, --name=<value>...          (required) Permission set to assign.
   -o, --target-org=<value>       (required) Scratch org alias or login user.
-  --api-version=<value>          Override the api version used for api requests made by this command
+      --api-version=<value>      Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -3600,7 +3600,7 @@ FLAGS
   -b, --on-behalf-of=<value>...  Usernames or alias to assign the permission set license to.
   -n, --name=<value>             (required) Name of the permission set license to assign.
   -o, --target-org=<value>       (required) Scratch org alias or login user.
-  --api-version=<value>          Override the api version used for api requests made by this command
+      --api-version=<value>      Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -3652,9 +3652,9 @@ FLAGS
   -o, --target-org=<value>       (required) Username or alias of the production org that contains the sandbox license.
   -s, --set-default              Set the sandbox org as your default org.
   -w, --wait=<minutes>           [default: [object Object]] Number of minutes to wait for the sandbox org to be ready.
-  --async                        Request the sandbox creation, but don't wait for it to complete.
-  --no-prompt                    Don't prompt for confirmation about the sandbox configuration.
-  --no-track-source              Do not use source tracking for this sandbox.
+      --async                    Request the sandbox creation, but don't wait for it to complete.
+      --no-prompt                Don't prompt for confirmation about the sandbox configuration.
+      --no-track-source          Do not use source tracking for this sandbox.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -3758,30 +3758,30 @@ FLAGS
   -v, --target-dev-hub=<value>   (required) Username or alias of the Dev Hub org.
   -w, --wait=<minutes>           [default: [object Object]] Number of minutes to wait for the scratch org to be ready.
   -y, --duration-days=<days>     [default: [object Object]] Number of days before the org expires.
-  --api-version=<value>          Override the api version used for api requests made by this command
-  --async                        Request the org, but don't wait for it to complete.
+      --api-version=<value>      Override the api version used for api requests made by this command
+      --async                    Request the org, but don't wait for it to complete.
 
 PACKAGING FLAGS
   -c, --no-ancestors  Don't include second-generation managed package (2GP) ancestors in the scratch org.
   -m, --no-namespace  Create the scratch org with no namespace, even if the Dev Hub has a namespace.
 
 DEFINITION FILE OVERRIDE FLAGS
-  -e, --edition=<option>  Salesforce edition of the scratch org. Overrides the value of the "edition" option in the
-                          definition file, if set.
-                          <options: developer|enterprise|group|professional|partner-developer|partner-enterprise|partner
-                          -group|partner-professional>
-  --admin-email=<value>   Email address that will be applied to the org's admin user. Overrides the value of the
-                          "adminEmail" option in the definition file, if set.
-  --description=<value>   Description of the scratch org in the Dev Hub. Overrides the value of the "description" option
-                          in the definition file, if set.
-  --name=<value>          Name of the org, such as "Acme Company". Overrides the value of the "orgName" option in the
-                          definition file, if set.
-  --release=<option>      Release of the scratch org as compared to the Dev Hub release.
-                          <options: preview|previous>
-  --source-org=<value>    15-character ID of the org whose shape the new scratch org will be based on. Overrides the
-                          value of the "sourceOrg" option in the definition file, if set.
-  --username=<value>      Username of the scratch org admin user. Overrides the value of the "username" option in the
-                          definition file, if set.
+  -e, --edition=<option>     Salesforce edition of the scratch org. Overrides the value of the "edition" option in the
+                             definition file, if set.
+                             <options: developer|enterprise|group|professional|partner-developer|partner-enterprise|part
+                             ner-group|partner-professional>
+      --admin-email=<value>  Email address that will be applied to the org's admin user. Overrides the value of the
+                             "adminEmail" option in the definition file, if set.
+      --description=<value>  Description of the scratch org in the Dev Hub. Overrides the value of the "description"
+                             option in the definition file, if set.
+      --name=<value>         Name of the org, such as "Acme Company". Overrides the value of the "orgName" option in the
+                             definition file, if set.
+      --release=<option>     Release of the scratch org as compared to the Dev Hub release.
+                             <options: preview|previous>
+      --source-org=<value>   15-character ID of the org whose shape the new scratch org will be based on. Overrides the
+                             value of the "sourceOrg" option in the definition file, if set.
+      --username=<value>     Username of the scratch org admin user. Overrides the value of the "username" option in the
+                             definition file, if set.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -3904,7 +3904,7 @@ FLAGS
   -o, --target-org=<value>       (required) Username or alias of the target org.
   -s, --set-unique-username      Force the username, if specified in the definition file or at the command line, to be
                                  unique by appending the org ID.
-  --api-version=<value>          Override the api version used for api requests made by this command
+      --api-version=<value>      Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -4083,9 +4083,9 @@ USAGE
   $ sf org display -o <value> [--json] [--api-version <value>] [--verbose]
 
 FLAGS
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  --api-version=<value>     Override the api version used for api requests made by this command
-  --verbose                 Display the sfdxAuthUrl property.
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+      --api-version=<value>  Override the api version used for api requests made by this command
+      --verbose              Display the sfdxAuthUrl property.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -4126,8 +4126,8 @@ USAGE
   $ sf org display user -o <value> [--json] [--api-version <value>]
 
 FLAGS
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -4170,7 +4170,7 @@ FLAGS
   -l, --length=<value>           [default: 13] Number of characters in the generated password; valid values are between
                                  8 and 100.
   -o, --target-org=<value>       (required) Username or alias of the target org.
-  --api-version=<value>          Override the api version used for api requests made by this command
+      --api-version=<value>      Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -4227,12 +4227,12 @@ USAGE
   $ sf org list [--json] [--verbose] [--all] [-p --clean] [--skip-connection-status]
 
 FLAGS
-  -p, --no-prompt           Don't prompt for confirmation.
-  --all                     Include expired, deleted, and unknown-status scratch orgs.
-  --clean                   Remove all local org authorizations for non-active scratch orgs. Use "org logout" to remove
-                            non-scratch orgs.
-  --skip-connection-status  Skip retrieving the connection status of non-scratch orgs.
-  --verbose                 List more information about each org.
+  -p, --no-prompt               Don't prompt for confirmation.
+      --all                     Include expired, deleted, and unknown-status scratch orgs.
+      --clean                   Remove all local org authorizations for non-active scratch orgs. Use "org logout" to
+                                remove non-scratch orgs.
+      --skip-connection-status  Skip retrieving the connection status of non-scratch orgs.
+      --verbose                 List more information about each org.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -4296,8 +4296,8 @@ USAGE
   $ sf org list limits -o <value> [--json] [--api-version <value>]
 
 FLAGS
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -4338,8 +4338,8 @@ FLAGS
   -m, --metadata-type=<value>  (required) Metadata type to be retrieved, such as CustomObject; metadata type names are
                                case-sensitive.
   -o, --target-org=<value>     (required) Username or alias of the target org.
-  --api-version=<value>        API version to use; default is the most recent API version.
-  --folder=<value>             Folder associated with the component; required for components that use folders; folder
+      --api-version=<value>    API version to use; default is the most recent API version.
+      --folder=<value>         Folder associated with the component; required for components that use folders; folder
                                names are case-sensitive.
 
 GLOBAL FLAGS
@@ -4400,7 +4400,7 @@ USAGE
 FLAGS
   -f, --output-file=<value>  Pathname of the file in which to write the results.
   -o, --target-org=<value>   (required) Username or alias of the target org.
-  --api-version=<value>      API version to use; default is the most recent API version.
+      --api-version=<value>  API version to use; default is the most recent API version.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -4451,9 +4451,9 @@ USAGE
   $ sf org list sobject record-counts -o <value> [--json] [-s <value>] [--api-version <value>]
 
 FLAGS
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -s, --sobject=<value>...  [default: ] API name of the standard or custom object for which to display record counts.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -s, --sobject=<value>...   [default: ] API name of the standard or custom object for which to display record counts.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -4495,8 +4495,8 @@ USAGE
   $ sf org list users -o <value> [--json] [--api-version <value>]
 
 FLAGS
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -4942,7 +4942,7 @@ FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org.
   -p, --path=<value>         Navigation URL path to open a specific page.
   -r, --url-only             Display navigation URL, but don’t launch browser.
-  --api-version=<value>      Override the api version used for api requests made by this command
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -5222,9 +5222,9 @@ ARGUMENTS
   PATH  [default: .] path to plugin
 
 FLAGS
-  -h, --help      Show CLI help.
+  -h, --help          Show CLI help.
   -v, --verbose
-  --[no-]install  Install dependencies after linking the plugin.
+      --[no-]install  Install dependencies after linking the plugin.
 
 DESCRIPTION
   Links a plugin into the CLI for development.
@@ -5341,7 +5341,7 @@ FLAGS
   -p, --metadata-dir=<value>...  Root of directory or zip file of metadata formatted files to convert.
   -r, --root-dir=<value>         (required) Root directory that contains the Metadata API–formatted metadata.
   -x, --manifest=<value>         File path to manifest (package.xml) of metadata types to convert.
-  --api-version=<value>          Override the api version used for api requests made by this command
+      --api-version=<value>      Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -5404,7 +5404,7 @@ FLAGS
   -p, --source-dir=<value>...  Paths to the local source files to convert.
   -r, --root-dir=<value>       Source directory other than the default package to convert.
   -x, --manifest=<value>       Path to the manifest (package.xml) file that specifies the metadata types to convert.
-  --api-version=<value>        API Version to use in the generated project's manifest. By default, will use the version
+      --api-version=<value>    API Version to use in the generated project's manifest. By default, will use the version
                                from sfdx-project.json
 
 GLOBAL FLAGS
@@ -5478,13 +5478,13 @@ FLAGS
   -r, --no-prompt              Don't prompt for delete confirmation.
   -t, --track-source           If the delete succeeds, update the source tracking information.
   -w, --wait=<value>           [default: [object Object]] Number of minutes to wait for the command to finish.
-  --api-version=<value>        Override the api version used for api requests made by this command
-  --verbose                    Verbose output of the delete result.
+      --api-version=<value>    Override the api version used for api requests made by this command
+      --verbose                Verbose output of the delete result.
 
 TEST FLAGS
   -l, --test-level=<option>  Deployment Apex testing level.
                              <options: NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg>
-  --tests=<value>...         Apex tests to run when --test-level is RunSpecifiedTests.
+      --tests=<value>...     Apex tests to run when --test-level is RunSpecifiedTests.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -5606,9 +5606,9 @@ USAGE
   $ sf project delete tracking -o <value> [--json] [--api-version <value>] [-p]
 
 FLAGS
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -p, --no-prompt           Don't prompt for source tracking override confirmation.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -p, --no-prompt            Don't prompt for source tracking override confirmation.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -5644,7 +5644,7 @@ FLAGS
   -i, --job-id=<value>   Job ID of the deploy operation you want to cancel.
   -r, --use-most-recent  Use the job ID of the most recent deploy operation.
   -w, --wait=<minutes>   Number of minutes to wait for the command to complete and display results.
-  --async                Run the command asynchronously.
+      --async            Run the command asynchronously.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -5801,9 +5801,9 @@ FLAGS
   -r, --use-most-recent      Use the job ID of the most recently validated deployment.
   -w, --wait=<minutes>       [default: [object Object]] Number of minutes to wait for the command to complete and
                              display results.
-  --async                    Run the command asynchronously.
-  --concise                  Show concise output of the deploy result.
-  --verbose                  Show verbose output of the deploy result.
+      --async                Run the command asynchronously.
+      --concise              Show concise output of the deploy result.
+      --verbose              Show verbose output of the deploy result.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -5987,8 +5987,8 @@ FLAGS
   -i, --job-id=<value>   Job ID of the deploy operation you want to resume.
   -r, --use-most-recent  Use the job ID of the most recent deploy operation.
   -w, --wait=<minutes>   Number of minutes to wait for the command to complete and display results.
-  --concise              Show concise output of the deploy operation result.
-  --verbose              Show verbose output of the deploy operation result.
+      --concise          Show concise output of the deploy operation result.
+      --verbose          Show verbose output of the deploy operation result.
 
 TEST FLAGS
   --coverage-formatters=<option>...  Format of the code coverage results.
@@ -6090,10 +6090,10 @@ FLAGS
   -r, --ignore-errors        Ignore any errors and don’t roll back deployment.
   -w, --wait=<minutes>       [default: [object Object]] Number of minutes to wait for command to complete and display
                              results.
-  --async                    Run the command asynchronously.
-  --concise                  Show concise output of the deploy result.
-  --dry-run                  Validate deploy and run Apex tests but don’t save to the org.
-  --verbose                  Show verbose output of the deploy result.
+      --async                Run the command asynchronously.
+      --concise              Show concise output of the deploy result.
+      --dry-run              Validate deploy and run Apex tests but don’t save to the org.
+      --verbose              Show verbose output of the deploy result.
 
 SOURCE FORMAT FLAGS
   -d, --source-dir=<value>...  Path to the local source files to deploy.
@@ -6102,14 +6102,15 @@ SOURCE FORMAT FLAGS
   -x, --manifest=<value>       Full file path for manifest (package.xml) of components to deploy.
 
 TEST FLAGS
-  -l, --test-level=<option>          Deployment Apex testing level.
-                                     <options: NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg>
-  -t, --tests=<value>...             Apex tests to run when --test-level is RunSpecifiedTests.
-  --coverage-formatters=<option>...  Format of the code coverage results.
-                                     <options: clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamcity|t
-                                     ext|text-summary>
-  --junit                            Output JUnit test results.
-  --results-dir=<value>              Output directory for code coverage and JUnit results; defaults to the deploy ID.
+  -l, --test-level=<option>              Deployment Apex testing level.
+                                         <options: NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg>
+  -t, --tests=<value>...                 Apex tests to run when --test-level is RunSpecifiedTests.
+      --coverage-formatters=<option>...  Format of the code coverage results.
+                                         <options: clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamci
+                                         ty|text|text-summary>
+      --junit                            Output JUnit test results.
+      --results-dir=<value>              Output directory for code coverage and JUnit results; defaults to the deploy
+                                         ID.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -6315,9 +6316,9 @@ FLAGS
   -o, --target-org=<value>   (required) Login username or alias for the target org.
   -w, --wait=<minutes>       [default: [object Object]] Number of minutes to wait for the command to complete and
                              display results.
-  --async                    Run the command asynchronously.
-  --concise                  Show concise output of the validation result.
-  --verbose                  Show verbose output of the validation result.
+      --async                Run the command asynchronously.
+      --concise              Show concise output of the validation result.
+      --verbose              Show verbose output of the validation result.
 
 SOURCE FORMAT FLAGS
   -d, --source-dir=<value>...  Path to the local source files to validate for deployment.
@@ -6325,14 +6326,15 @@ SOURCE FORMAT FLAGS
   -x, --manifest=<value>       Full file path for manifest (package.xml) of components to validate for deployment.
 
 TEST FLAGS
-  -l, --test-level=<option>          [default: RunLocalTests] Deployment Apex testing level.
-                                     <options: RunAllTestsInOrg|RunLocalTests|RunSpecifiedTests>
-  -t, --tests=<value>...             Apex tests to run when --test-level is RunSpecifiedTests.
-  --coverage-formatters=<option>...  Format of the code coverage results.
-                                     <options: clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamcity|t
-                                     ext|text-summary>
-  --junit                            Output JUnit test results.
-  --results-dir=<value>              Output directory for code coverage and JUnit results; defaults to the deploy ID.
+  -l, --test-level=<option>              [default: RunLocalTests] Deployment Apex testing level.
+                                         <options: RunAllTestsInOrg|RunLocalTests|RunSpecifiedTests>
+  -t, --tests=<value>...                 Apex tests to run when --test-level is RunSpecifiedTests.
+      --coverage-formatters=<option>...  Format of the code coverage results.
+                                         <options: clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamci
+                                         ty|text|text-summary>
+      --junit                            Output JUnit test results.
+      --results-dir=<value>              Output directory for code coverage and JUnit results; defaults to the deploy
+                                         ID.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -6492,7 +6494,7 @@ FLAGS
   -t, --template=<option>            [default: standard] Template to use for project creation.
                                      <options: standard|empty|analytics>
   -x, --manifest                     Generate a manifest (package.xml) for change-set based development.
-  --api-version=<value>              Will set this version as sourceApiVersion in the sfdx-project.json file
+      --api-version=<value>          Will set this version as sourceApiVersion in the sfdx-project.json file
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -6598,8 +6600,8 @@ FLAGS
   -p, --source-dir=<value>...         Paths to the local source files to include in the manifest.
   -t, --type=<option>                 Type of manifest to create; the type determines the name of the created file.
                                       <options: pre|post|destroy|package>
-  --api-version=<value>               Override the api version used for api requests made by this command
-  --from-org=<value>                  Username or alias of the org that contains the metadata components from which to
+      --api-version=<value>           Override the api version used for api requests made by this command
+      --from-org=<value>              Username or alias of the org that contains the metadata components from which to
                                       build a manifest.
 
 GLOBAL FLAGS
@@ -6704,10 +6706,10 @@ USAGE
   $ sf project reset tracking -o <value> [--json] [--api-version <value>] [-r <value>] [-p]
 
 FLAGS
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -p, --no-prompt           Don't prompt for source tracking override confirmation.
-  -r, --revision=<value>    SourceMember revision counter number to reset to.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -p, --no-prompt            Don't prompt for source tracking override confirmation.
+  -r, --revision=<value>     SourceMember revision counter number to reset to.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -6823,8 +6825,8 @@ FLAGS
 METADATA API FORMAT FLAGS
   -t, --target-metadata-dir=<value>  Directory that will contain the retrieved metadata format files or ZIP.
   -z, --unzip                        Extract all files from the retrieved zip file.
-  --single-package                   Indicates that the zip file points to a directory structure for a single package.
-  --zip-file-name=<value>            File name to use for the retrieved zip file.
+      --single-package               Indicates that the zip file points to a directory structure for a single package.
+      --zip-file-name=<value>        File name to use for the retrieved zip file.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -7000,7 +7002,7 @@ FLAG DESCRIPTIONS
     If you don't specify this flag, the command prompts you to choose from your local objects.
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/0.2.18/src/commands/schema/generate/field.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.0.1/src/commands/schema/generate/field.ts)_
 
 ## `sf schema generate platformevent`
 
@@ -7029,7 +7031,7 @@ EXAMPLES
     $ sf schema generate platformevent --label "My Platform Event"
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/0.2.18/src/commands/schema/generate/platformevent.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.0.1/src/commands/schema/generate/platformevent.ts)_
 
 ## `sf schema generate sobject`
 
@@ -7083,7 +7085,7 @@ FLAG DESCRIPTIONS
     * Streaming API: With Bulk API and Sharing, classifies the custom object as an Enterprise Application object.
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/0.2.18/src/commands/schema/generate/sobject.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.0.1/src/commands/schema/generate/sobject.ts)_
 
 ## `sf schema generate tab`
 
@@ -7130,7 +7132,7 @@ FLAG DESCRIPTIONS
     The API name for a custom object always ends in "__c", such as "MyObject__c".
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/0.2.18/src/commands/schema/generate/tab.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.0.1/src/commands/schema/generate/tab.ts)_
 
 ## `sf search`
 
@@ -7157,10 +7159,10 @@ USAGE
   $ sf sobject describe -o <value> -s <value> [--json] [--api-version <value>] [-t]
 
 FLAGS
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -s, --sobject=<value>     (required) API name of the object to describe.
-  -t, --use-tooling-api     Use Tooling API to display metadata for Tooling API objects.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -s, --sobject=<value>      (required) API name of the object to describe.
+  -t, --use-tooling-api      Use Tooling API to display metadata for Tooling API objects.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -7202,9 +7204,9 @@ USAGE
   $ sf sobject list -o <value> [--json] [--api-version <value>] [-s <value>]
 
 FLAGS
-  -o, --target-org=<value>  (required) Username or alias of the target org.
-  -s, --sobject=<value>     [default: ALL] Category of objects to list.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -s, --sobject=<value>      [default: ALL] Category of objects to list.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -7239,10 +7241,10 @@ USAGE
   $ sf static-resource generate -n <value> [--json] [--type <value>] [-d <value>] [--api-version <value>]
 
 FLAGS
-  -d, --output-dir=<value>  [default: .] Directory for saving the created files.
-  -n, --name=<value>        (required) Name of the generated static resource.
-  --api-version=<value>     Override the api version used for api requests made by this command
-  --type=<value>            [default: application/zip] Content type (mime type) of the generated static resource.
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -n, --name=<value>         (required) Name of the generated static resource.
+      --api-version=<value>  Override the api version used for api requests made by this command
+      --type=<value>         [default: application/zip] Content type (mime type) of the generated static resource.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -7302,7 +7304,7 @@ FLAGS
   -a, --available        See available versions.
   -i, --interactive      Interactively select version to install. This is ignored if a channel is provided.
   -v, --version=<value>  Install a specific version.
-  --force                Force a re-download of the requested version.
+      --force            Force a re-download of the requested version.
 
 DESCRIPTION
   update the sf CLI
@@ -7357,12 +7359,12 @@ USAGE
   <value>]
 
 FLAGS
-  -d, --output-dir=<value>  [default: .] Directory for saving the created files.
-  -l, --label=<value>       (required) Visualforce Component label.
-  -n, --name=<value>        (required) Name of the generated Visualforce Component.
-  -t, --template=<option>   [default: DefaultVFComponent] Template to use for file creation.
-                            <options: DefaultVFComponent>
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -l, --label=<value>        (required) Visualforce Component label.
+  -n, --name=<value>         (required) Name of the generated Visualforce Component.
+  -t, --template=<option>    [default: DefaultVFComponent] Template to use for file creation.
+                             <options: DefaultVFComponent>
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -7411,10 +7413,10 @@ USAGE
   $ sf visualforce generate page -n <value> -l <value> [--json] [-d <value>] [--api-version <value>]
 
 FLAGS
-  -d, --output-dir=<value>  [default: .] Directory for saving the created files.
-  -l, --label=<value>       (required) Visualforce Page label.
-  -n, --name=<value>        (required) Name of the generated Visualforce Page.
-  --api-version=<value>     Override the api version used for api requests made by this command
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -l, --label=<value>        (required) Visualforce Page label.
+  -n, --name=<value>         (required) Name of the generated Visualforce Page.
+      --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --json  Format output as json.
