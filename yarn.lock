@@ -1872,12 +1872,12 @@
     chalk "^4"
     inquirer "^8.2.5"
 
-"@salesforce/source-deploy-retrieve@9.8.6", "@salesforce/source-deploy-retrieve@^9.8.4", "@salesforce/source-deploy-retrieve@^9.8.5", "@salesforce/source-deploy-retrieve@^9.8.6":
-  version "9.8.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-9.8.6.tgz#3b9240bc776a44bc740e59acbd86da3072f3efdc"
-  integrity sha512-avsfR/hB54ZdSOI3bYdUqRPQbjExKEwAZfsIbs6N1vtidPrc1TSHvloCZhY0Clou+vLgjabIHEHVyQJUln0FKA==
+"@salesforce/source-deploy-retrieve@10.0.0", "@salesforce/source-deploy-retrieve@^10.0.0", "@salesforce/source-deploy-retrieve@^9.8.4", "@salesforce/source-deploy-retrieve@^9.8.5", "@salesforce/source-deploy-retrieve@^9.8.6":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-10.0.0.tgz#572642bb3bfb1d7421afb201d7dc7de0a43271d9"
+  integrity sha512-6d9F1jTkD4fXYd5i+xowTey//Vns3ZlOhNNNqkQv7UlfZA8ttoxY5aYQAsAv8A/q/IcMx3UoeIKJZxUE2zNgPQ==
   dependencies:
-    "@salesforce/core" "^5.3.17"
+    "@salesforce/core" "^6.1.0"
     "@salesforce/kit" "^3.0.15"
     "@salesforce/ts-types" "^2.0.9"
     fast-levenshtein "^3.0.0"
@@ -1890,15 +1890,15 @@
     minimatch "^5.1.6"
     proxy-agent "^6.3.1"
 
-"@salesforce/source-tracking@4.4.3", "@salesforce/source-tracking@^4.4.0", "@salesforce/source-tracking@^4.4.3":
-  version "4.4.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-tracking/-/source-tracking-4.4.3.tgz#3e83f5afd3935650e358410122cf1611f859d1b3"
-  integrity sha512-98XA3NKDmIauloX8PUQZ/fjDm/Llm8fW7Ro4U+VwF8zLFi4LQX3+hZPNlY1LesT08YfWmcLMtgek4ycDIrPeyQ==
+"@salesforce/source-tracking@5.0.0", "@salesforce/source-tracking@^4.4.0", "@salesforce/source-tracking@^4.4.3":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-tracking/-/source-tracking-5.0.0.tgz#54fa3adfc48fb476daac9167125425a5ae9e3986"
+  integrity sha512-v1AOBJvKC2nVbgzwtbJCWNV3SiQ1cV62pw5yrjKXTPKZJbyj71kK1tvQO3iyf4SVZvbI+bV44JwQStQgEp1xDg==
   dependencies:
     "@oclif/core" "^3.10.8"
-    "@salesforce/core" "^5.3.20"
+    "@salesforce/core" "^6.1.0"
     "@salesforce/kit" "^3.0.15"
-    "@salesforce/source-deploy-retrieve" "^9.8.5"
+    "@salesforce/source-deploy-retrieve" "^10.0.0"
     "@salesforce/ts-types" "^2.0.9"
     fast-xml-parser "^4.2.5"
     graceful-fs "^4.2.11"
@@ -8731,24 +8731,7 @@ pino-std-serializers@^6.0.0:
   resolved "https://registry.yarnpkg.com/pino-std-serializers/-/pino-std-serializers-6.2.2.tgz#d9a9b5f2b9a402486a5fc4db0a737570a860aab3"
   integrity sha512-cHjPPsE+vhj/tnhCy/wiMh3M3z3h/j15zHQX+S9GkTBgqJuTuJzYJ4gUyACLhDaJ7kk9ba9iRDmbH2tJU03OiA==
 
-pino@^8.16.0:
-  version "8.16.1"
-  resolved "https://registry.yarnpkg.com/pino/-/pino-8.16.1.tgz#dcaf82764b1a27f24101317cdd6453e96290f1d9"
-  integrity sha512-3bKsVhBmgPjGV9pyn4fO/8RtoVDR8ssW1ev819FsRXlRNgW8gR/9Kx+gCK4UPWd4JjrRDLWpzd/pb1AyWm3MGA==
-  dependencies:
-    atomic-sleep "^1.0.0"
-    fast-redact "^3.1.1"
-    on-exit-leak-free "^2.1.0"
-    pino-abstract-transport v1.1.0
-    pino-std-serializers "^6.0.0"
-    process-warning "^2.0.0"
-    quick-format-unescaped "^4.0.3"
-    real-require "^0.2.0"
-    safe-stable-stringify "^2.3.1"
-    sonic-boom "^3.7.0"
-    thread-stream "^2.0.0"
-
-pino@^8.16.1:
+pino@^8.16.0, pino@^8.16.1:
   version "8.16.2"
   resolved "https://registry.yarnpkg.com/pino/-/pino-8.16.2.tgz#7a906f2d9a8c5b4c57412c9ca95d6820bd2090cd"
   integrity sha512-2advCDGVEvkKu9TTVSa/kWW7Z3htI/sBKEZpqiHk6ive0i/7f5b1rsU8jn0aimxqfnSz5bj/nOYkwhBUn5xxvg==
