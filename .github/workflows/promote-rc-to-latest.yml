@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
   schedule:
     # Wednesdays 1pm central
-    # - cron: '0 18 * * 3'
-    - cron: '0 12 * * 3'
+    - cron: '0 18 * * 3'
+
 jobs:
   promote:
     uses: ./.github/workflows/promote.yml
