@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.19.0 linux-x64 node-v20.9.0
+@salesforce/cli/2.19.1 linux-x64 node-v20.9.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -100,8 +100,6 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf lightning generate event`](#sf-lightning-generate-event)
 - [`sf lightning generate interface`](#sf-lightning-generate-interface)
 - [`sf lightning generate test`](#sf-lightning-generate-test)
-- [`sf login`](#sf-login)
-- [`sf logout`](#sf-logout)
 - [`sf org assign permset`](#sf-org-assign-permset)
 - [`sf org assign permsetlicense`](#sf-org-assign-permsetlicense)
 - [`sf org create sandbox`](#sf-org-create-sandbox)
@@ -3452,63 +3450,6 @@ FLAG DESCRIPTIONS
 
 _See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.1/src/commands/lightning/generate/test.ts)_
 
-## `sf login`
-
-Log interactively into an environment.
-
-```
-USAGE
-  $ sf login
-
-DESCRIPTION
-  Log interactively into an environment.
-
-  NOTE: This general command is deprecated. Use specific commands instead, such as "org login web" or "org login jwt".
-
-  Logging into an environment authorizes the CLI to run other commands that connect to that environment.
-
-EXAMPLES
-  Log in interactively:
-
-    $ sf login
-```
-
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/2.0.4/src/commands/login.ts)_
-
-## `sf logout`
-
-Log out interactively from environments.
-
-```
-USAGE
-  $ sf logout [--json] [--no-prompt]
-
-FLAGS
-  --no-prompt  Don't prompt for confirmation; logs you out of all environments.
-
-GLOBAL FLAGS
-  --json  Format output as json.
-
-DESCRIPTION
-  Log out interactively from environments.
-
-  NOTE: This general command is deprecated. Use specific commands instead, such as "org login web" or "org login jwt".
-
-  By default, the command prompts you to select which environments you want to log out of. Use --no-prompt to not be
-  prompted and log out of all environments.
-
-EXAMPLES
-  Interactively select the environments to log out of:
-
-    $ sf logout
-
-  Log out of all environments, without being prompted:
-
-    $ sf logout --no-prompt
-```
-
-_See code: [@salesforce/plugin-login](https://github.com/salesforcecli/plugin-login/blob/2.0.4/src/commands/logout.ts)_
-
 ## `sf org assign permset`
 
 Assign a permission set to one or more users of a scratch org.
@@ -4249,7 +4190,7 @@ EXAMPLES
     $ sf org list auth
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.5/src/commands/org/list/auth.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.6/src/commands/org/list/auth.ts)_
 
 ## `sf org list limits`
 
@@ -4537,7 +4478,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.5/src/commands/org/login/access-token.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.6/src/commands/org/login/access-token.ts)_
 
 ## `sf org login device`
 
@@ -4596,7 +4537,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.5/src/commands/org/login/device.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.6/src/commands/org/login/device.ts)_
 
 ## `sf org login jwt`
 
@@ -4685,7 +4626,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.5/src/commands/org/login/jwt.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.6/src/commands/org/login/jwt.ts)_
 
 ## `sf org login sfdx-url`
 
@@ -4743,7 +4684,7 @@ EXAMPLES
     $ sf org login sfdx-url --sfdx-url-file files/authFile.json --set-default --alias MyDefaultOrg
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.5/src/commands/org/login/sfdx-url.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.6/src/commands/org/login/sfdx-url.ts)_
 
 ## `sf org login web`
 
@@ -4828,7 +4769,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.5/src/commands/org/login/web.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.6/src/commands/org/login/web.ts)_
 
 ## `sf org logout`
 
@@ -4888,7 +4829,7 @@ FLAG DESCRIPTIONS
     All orgs includes Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.5/src/commands/org/logout.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.6/src/commands/org/logout.ts)_
 
 ## `sf org open`
 
@@ -5084,7 +5025,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.7/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.8/src/commands/plugins/index.ts)_
 
 ## `sf plugins discover`
 
@@ -5128,7 +5069,7 @@ EXAMPLES
   $ sf plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.7/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.8/src/commands/plugins/inspect.ts)_
 
 ## `sf plugins:install PLUGIN...`
 
@@ -5172,7 +5113,7 @@ EXAMPLES
   $ sf plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.7/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.8/src/commands/plugins/install.ts)_
 
 ## `sf plugins:link PLUGIN`
 
@@ -5202,7 +5143,7 @@ EXAMPLES
   $ sf plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.7/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.8/src/commands/plugins/link.ts)_
 
 ## `sf plugins reset`
 
@@ -5213,7 +5154,7 @@ USAGE
   $ sf plugins reset
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.7/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.8/src/commands/plugins/reset.ts)_
 
 ## `sf plugins trust verify`
 
@@ -5269,7 +5210,7 @@ EXAMPLES
   $ sf plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.7/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.8/src/commands/plugins/uninstall.ts)_
 
 ## `sf plugins update`
 
@@ -5287,7 +5228,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.7/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.8/src/commands/plugins/update.ts)_
 
 ## `sf project convert mdapi`
 
