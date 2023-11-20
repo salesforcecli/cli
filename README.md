@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.19.3 linux-x64 node-v20.9.0
+@salesforce/cli/2.19.4 linux-x64 node-v20.9.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -495,7 +495,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.4/src/commands/apex/get/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.6/src/commands/apex/get/log.ts)_
 
 ## `sf apex get test`
 
@@ -547,7 +547,7 @@ EXAMPLES
       me@myorg',
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.4/src/commands/apex/get/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.6/src/commands/apex/get/test.ts)_
 
 ## `sf apex list log`
 
@@ -585,7 +585,7 @@ EXAMPLES
     $ sf apex list log --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.4/src/commands/apex/list/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.6/src/commands/apex/list/log.ts)_
 
 ## `sf apex run`
 
@@ -630,7 +630,7 @@ EXAMPLES
     $ sf apex run
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.4/src/commands/apex/run.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.6/src/commands/apex/run.ts)_
 
 ## `sf apex run test`
 
@@ -736,7 +736,7 @@ FLAG DESCRIPTIONS
     --tests Test1 --tests Test2
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.4/src/commands/apex/run/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.6/src/commands/apex/run/test.ts)_
 
 ## `sf apex tail log`
 
@@ -744,7 +744,7 @@ Activate debug logging and display logs in the terminal.
 
 ```
 USAGE
-  $ sf apex tail log -o <value> [--json] [--api-version <value>] [-c] [-d <value> | -s]
+  $ sf apex tail log -o <value> [--api-version <value>] [-c] [-d <value> | -s]
 
 FLAGS
   -c, --color                Apply default colors to noteworthy log lines.
@@ -752,9 +752,6 @@ FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org.
   -s, --skip-trace-flag      Skip trace flag setup. Assumes that a trace flag and debug level are fully set up.
       --api-version=<value>  Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --json  Format output as json.
 
 DESCRIPTION
   Activate debug logging and display logs in the terminal.
@@ -778,7 +775,7 @@ EXAMPLES
     $ sf apex tail log --color --skip-trace-flag
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.4/src/commands/apex/tail/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.6/src/commands/apex/tail/log.ts)_
 
 ## `sf autocomplete [SHELL]`
 
@@ -841,7 +838,7 @@ DESCRIPTION
   list all the commands
 ```
 
-_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/3.0.6/src/commands/commands.ts)_
+_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/3.0.7/src/commands/commands.ts)_
 
 ## `sf config get`
 
@@ -3129,7 +3126,7 @@ DESCRIPTION
   Display help for sf.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/6.0.6/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/6.0.7/src/commands/help.ts)_
 
 ## `sf info releasenotes display`
 
@@ -7053,7 +7050,7 @@ DESCRIPTION
   Once you select a command, hit enter and it will show the help for that command.
 ```
 
-_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/1.0.7/src/commands/search.ts)_
+_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/1.0.8/src/commands/search.ts)_
 
 ## `sf sobject describe`
 
@@ -7374,6 +7371,6 @@ EXAMPLES
     $ sf which help
 ```
 
-_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.0.9/src/commands/which.ts)_
+_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.0.10/src/commands/which.ts)_
 
 <!-- commandsstop -->
