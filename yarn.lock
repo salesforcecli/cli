@@ -1475,10 +1475,10 @@
     semver "^7.5.4"
     ts-retry-promise "^0.7.1"
 
-"@salesforce/core@^6.1.0", "@salesforce/core@^6.1.3":
-  version "6.1.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-6.1.3.tgz#32e71846cad033e0d2b369ecf0fafb4f76d63ad7"
-  integrity sha512-M7EQ4+LSXU4ZqD4R5ttY4RqSaYNaNBGDG0KC51IdDfpGtL4kJXeQHdr5HfMfgyCyYNM9LqqfBS7zQTBY1rf+Yg==
+"@salesforce/core@^6.1.0", "@salesforce/core@^6.1.3", "@salesforce/core@^6.1.4":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-6.1.4.tgz#5c9d90490ab8688f9497fef63134a43f1cbe0f70"
+  integrity sha512-/1hhcpMyx3DaFrxZ/il0a8yUapRRuWzUlxUntahp9ELo/Fx7FiE7o2g0jh8AxAqfb4LKu1mV8sV656liClx6sA==
   dependencies:
     "@salesforce/kit" "^3.0.15"
     "@salesforce/schemas" "^1.6.1"
@@ -1492,7 +1492,7 @@
     jsforce "^2.0.0-beta.28"
     jsonwebtoken "9.0.2"
     jszip "3.10.1"
-    pino "^8.16.1"
+    pino "^8.16.2"
     pino-abstract-transport "^1.1.0"
     pino-pretty "^10.2.3"
     proper-lockfile "^4.1.2"
@@ -8736,7 +8736,7 @@ pino-std-serializers@^6.0.0:
   resolved "https://registry.yarnpkg.com/pino-std-serializers/-/pino-std-serializers-6.2.2.tgz#d9a9b5f2b9a402486a5fc4db0a737570a860aab3"
   integrity sha512-cHjPPsE+vhj/tnhCy/wiMh3M3z3h/j15zHQX+S9GkTBgqJuTuJzYJ4gUyACLhDaJ7kk9ba9iRDmbH2tJU03OiA==
 
-pino@^8.16.0, pino@^8.16.1:
+pino@^8.16.0, pino@^8.16.2:
   version "8.16.2"
   resolved "https://registry.yarnpkg.com/pino/-/pino-8.16.2.tgz#7a906f2d9a8c5b4c57412c9ca95d6820bd2090cd"
   integrity sha512-2advCDGVEvkKu9TTVSa/kWW7Z3htI/sBKEZpqiHk6ive0i/7f5b1rsU8jn0aimxqfnSz5bj/nOYkwhBUn5xxvg==
