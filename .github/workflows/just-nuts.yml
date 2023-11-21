@@ -77,7 +77,6 @@ jobs:
       channel-or-version: ${{ inputs.channel-or-version }}
       os: ${{matrix.os}}
       command: ${{matrix.command}}
-      jit: true
     secrets: inherit
 
   source:
