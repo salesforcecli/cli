@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.19.5 linux-x64 node-v20.9.0
+@salesforce/cli/2.19.6 linux-x64 node-v20.9.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -107,8 +107,10 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf org create user`](#sf-org-create-user)
 - [`sf org delete sandbox`](#sf-org-delete-sandbox)
 - [`sf org delete scratch`](#sf-org-delete-scratch)
+- [`sf org disable tracking`](#sf-org-disable-tracking)
 - [`sf org display`](#sf-org-display)
 - [`sf org display user`](#sf-org-display-user)
+- [`sf org enable tracking`](#sf-org-enable-tracking)
 - [`sf org generate password`](#sf-org-generate-password)
 - [`sf org list`](#sf-org-list)
 - [`sf org list auth`](#sf-org-list-auth)
@@ -2327,7 +2329,7 @@ FLAG DESCRIPTIONS
     for a number of minutes, the client exits. Specify a longer wait time if timeouts occur frequently.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.5/src/commands/force/org/clone.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.6/src/commands/force/org/clone.ts)_
 
 ## `sf force org create`
 
@@ -2375,7 +2377,7 @@ EXAMPLES
   $ sf force org create -t sandbox -f config/dev-sandbox-def.json -a MyDevSandbox -u prodOrg
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.5/src/commands/force/org/create.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.6/src/commands/force/org/create.ts)_
 
 ## `sf force org delete`
 
@@ -2407,7 +2409,7 @@ EXAMPLES
   $ sf force org delete -u MyOrgAlias -p
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.5/src/commands/force/org/delete.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.6/src/commands/force/org/delete.ts)_
 
 ## `sf force org status`
 
@@ -2445,7 +2447,7 @@ EXAMPLES
   $ sf force org status --sandboxname DevSbx1 --wait 45 --setdefaultusername -u prodOrg
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.5/src/commands/force/org/status.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.6/src/commands/force/org/status.ts)_
 
 ## `sf force source deploy`
 
@@ -3637,7 +3639,7 @@ FLAG DESCRIPTIONS
     sandbox.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.5/src/commands/org/create/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.6/src/commands/org/create/sandbox.ts)_
 
 ## `sf org create scratch`
 
@@ -3790,7 +3792,7 @@ FLAG DESCRIPTIONS
     Omit this flag to have Salesforce generate a unique username for your org.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.5/src/commands/org/create/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.6/src/commands/org/create/scratch.ts)_
 
 ## `sf org create user`
 
@@ -3932,7 +3934,7 @@ EXAMPLES
     $ sf org delete sandbox --target-org my-sandbox --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.5/src/commands/org/delete/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.6/src/commands/org/delete/sandbox.ts)_
 
 ## `sf org delete scratch`
 
@@ -3974,7 +3976,38 @@ EXAMPLES
     $ sf org delete scratch --target-org my-scratch-org --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.5/src/commands/org/delete/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.6/src/commands/org/delete/scratch.ts)_
+
+## `sf org disable tracking`
+
+Disable source tracking in local auth file.
+
+```
+USAGE
+  $ sf org disable tracking -o <value> [--json]
+
+FLAGS
+  -o, --target-org=<value>  (required) Username or alias of the target org.
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Disable source tracking in local auth file.
+
+  This has no effect on the org. It stores the setting in the CLI's configuration file for this org so that no source
+  tracking operations are executed when working with this org.
+
+EXAMPLES
+  Disable tracking on an org using an alias
+  - sf org disable tracking -o someAlias
+  Disable tracking on an org using a username
+  - sf org disable tracking -o you@example.com
+  Disable tracking on your default org
+  - sf org disable tracking
+```
+
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.6/src/commands/org/disable/tracking.ts)_
 
 ## `sf org display`
 
@@ -4017,7 +4050,7 @@ EXAMPLES
     $ sf org display --target-org TestOrg1 --verbose
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.5/src/commands/org/display.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.6/src/commands/org/display.ts)_
 
 ## `sf org display user`
 
@@ -4055,6 +4088,39 @@ EXAMPLES
 ```
 
 _See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.0.4/src/commands/org/display/user.ts)_
+
+## `sf org enable tracking`
+
+Enable source tracking in local auth file.
+
+```
+USAGE
+  $ sf org enable tracking -o <value> [--json]
+
+FLAGS
+  -o, --target-org=<value>  (required) Username or alias of the target org.
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  Enable source tracking in local auth file.
+
+  This has no effect on the org. It stores the setting in the CLI's configuration file for this org so that source
+  tracking operations are executed when working with this org.
+
+  This command will throw an error if the org does not support tracking.
+
+EXAMPLES
+  Enable tracking on an org using an alias
+  - sf org enable tracking -o someAlias
+  Enable tracking on an org using a username
+  - sf org enable tracking -o you@example.com
+  Enable tracking on your default org
+  - sf org enable tracking
+```
+
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.6/src/commands/org/enable/tracking.ts)_
 
 ## `sf org generate password`
 
@@ -4156,7 +4222,7 @@ EXAMPLES
     $ sf org list --clean
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.5/src/commands/org/list.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.6/src/commands/org/list.ts)_
 
 ## `sf org list auth`
 
@@ -4187,7 +4253,7 @@ EXAMPLES
     $ sf org list auth
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.6/src/commands/org/list/auth.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.7/src/commands/org/list/auth.ts)_
 
 ## `sf org list limits`
 
@@ -4289,7 +4355,7 @@ FLAG DESCRIPTIONS
     Examples of metadata types that use folders are Dashboard, Document, EmailTemplate, and Report.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.5/src/commands/org/list/metadata.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.6/src/commands/org/list/metadata.ts)_
 
 ## `sf org list metadata-types`
 
@@ -4342,7 +4408,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.5/src/commands/org/list/metadata-types.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.6/src/commands/org/list/metadata-types.ts)_
 
 ## `sf org list sobject record-counts`
 
@@ -4460,7 +4526,7 @@ EXAMPLES
 
     $ sf org login access-token --instance-url https://mycompany.my.salesforce.com
 
-  Authorize the org without being prompted; you must have previously set the SFDX_ACCESS_TOKEN environment variable to
+  Authorize the org without being prompted; you must have previously set the SF_ACCESS_TOKEN environment variable to
   the access token:
 
     $ sf org login access-token --instance-url https://dev-hub.my.salesforce.com --no-prompt
@@ -4475,7 +4541,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.6/src/commands/org/login/access-token.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.7/src/commands/org/login/access-token.ts)_
 
 ## `sf org login device`
 
@@ -4534,7 +4600,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.6/src/commands/org/login/device.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.7/src/commands/org/login/device.ts)_
 
 ## `sf org login jwt`
 
@@ -4623,7 +4689,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.6/src/commands/org/login/jwt.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.7/src/commands/org/login/jwt.ts)_
 
 ## `sf org login sfdx-url`
 
@@ -4681,7 +4747,7 @@ EXAMPLES
     $ sf org login sfdx-url --sfdx-url-file files/authFile.json --set-default --alias MyDefaultOrg
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.6/src/commands/org/login/sfdx-url.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.7/src/commands/org/login/sfdx-url.ts)_
 
 ## `sf org login web`
 
@@ -4766,7 +4832,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.6/src/commands/org/login/web.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.7/src/commands/org/login/web.ts)_
 
 ## `sf org logout`
 
@@ -4826,7 +4892,7 @@ FLAG DESCRIPTIONS
     All orgs includes Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.6/src/commands/org/logout.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.0.7/src/commands/org/logout.ts)_
 
 ## `sf org open`
 
@@ -4891,7 +4957,7 @@ EXAMPLES
     $ sf org open --source-file force-app/main/default/flows/Hello.flow-meta.xml
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.5/src/commands/org/open.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.6/src/commands/org/open.ts)_
 
 ## `sf org resume sandbox`
 
@@ -4953,7 +5019,7 @@ FLAG DESCRIPTIONS
     returns the job ID. To resume checking the sandbox creation, rerun this command.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.5/src/commands/org/resume/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.6/src/commands/org/resume/sandbox.ts)_
 
 ## `sf org resume scratch`
 
@@ -4999,7 +5065,7 @@ FLAG DESCRIPTIONS
     The job ID is valid for 24 hours after you start the scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.5/src/commands/org/resume/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.0.6/src/commands/org/resume/scratch.ts)_
 
 ## `sf plugins`
 
