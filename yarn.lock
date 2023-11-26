@@ -986,7 +986,7 @@
     read-package-json-fast "^3.0.0"
     which "^3.0.0"
 
-"@oclif/core@3.12.0", "@oclif/core@^3.0.0", "@oclif/core@^3.0.4", "@oclif/core@^3.10.1", "@oclif/core@^3.10.2", "@oclif/core@^3.10.7", "@oclif/core@^3.10.8", "@oclif/core@^3.11.0", "@oclif/core@^3.12.0", "@oclif/core@^3.5.0", "@oclif/core@^3.8.0", "@oclif/core@^3.9.0", "@oclif/core@^3.9.2":
+"@oclif/core@3.12.0", "@oclif/core@^3.0.0", "@oclif/core@^3.0.4", "@oclif/core@^3.10.2", "@oclif/core@^3.10.7", "@oclif/core@^3.10.8", "@oclif/core@^3.11.0", "@oclif/core@^3.12.0", "@oclif/core@^3.5.0", "@oclif/core@^3.8.0", "@oclif/core@^3.9.0", "@oclif/core@^3.9.2":
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.12.0.tgz#4b38b1b5dab2f7585f89c3927a8a157b258b4bd6"
   integrity sha512-mT1Vpd1E20IJ7P6GDYOivylPdTHq/xVgFjeCDjitFW86UAklFM8BEFyFB7KpsTvpmjRbCoda3yU10lSI1224lw==
@@ -1476,10 +1476,10 @@
     semver "^7.5.4"
     ts-retry-promise "^0.7.1"
 
-"@salesforce/core@^6.1.0", "@salesforce/core@^6.1.3", "@salesforce/core@^6.1.4":
-  version "6.1.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-6.1.4.tgz#5c9d90490ab8688f9497fef63134a43f1cbe0f70"
-  integrity sha512-/1hhcpMyx3DaFrxZ/il0a8yUapRRuWzUlxUntahp9ELo/Fx7FiE7o2g0jh8AxAqfb4LKu1mV8sV656liClx6sA==
+"@salesforce/core@^6.1.0", "@salesforce/core@^6.1.3", "@salesforce/core@^6.1.4", "@salesforce/core@^6.2.0":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-6.2.0.tgz#9bac72c0b48c733cf1d32d19f9775c34d895f207"
+  integrity sha512-HuggjBCLA18yXYHChnsrPDGbM+fAPx+9NeS7Dkx3/o1VhJ2hok5BUkvdaeoAVex/0Oc2J+KcvX/gqrjY51iOhQ==
   dependencies:
     "@salesforce/kit" "^3.0.15"
     "@salesforce/schemas" "^1.6.1"
@@ -1584,13 +1584,13 @@
     color-convert "^2.0.1"
     color-name "^2.0.0"
 
-"@salesforce/plugin-auth@3.0.7":
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.0.7.tgz#27849794f7baec71b8a9efb90c646e575b6e388c"
-  integrity sha512-4fHg4ZyMXpJUbH6AGhDdeioF6ATMHoye7QHjcdIELZ8T/ETAaFnrspKiWey/XosFmnZoOMqpuNNy2xwF6zbdsA==
+"@salesforce/plugin-auth@3.0.8":
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.0.8.tgz#bd0fd236daf0603054cf4cb3b5e49df7d89073ea"
+  integrity sha512-XpfsxvLXcSEFAC6bpQsVJWMLQIbWWLpupEYL2uo/NYbeX/di/GcWFnPV7txAwNPEPUMtWCs4FhQkUEqqmWG1FA==
   dependencies:
     "@oclif/core" "^3.10.8"
-    "@salesforce/core" "^6.1.3"
+    "@salesforce/core" "^6.2.0"
     "@salesforce/kit" "^3.0.15"
     "@salesforce/sf-plugins-core" "^5.0.1"
     "@salesforce/ts-types" "^2.0.9"
@@ -1691,16 +1691,16 @@
     "@salesforce/source-deploy-retrieve" "^10.0.0"
     open "^9.1.0"
 
-"@salesforce/plugin-packaging@1.27.2":
-  version "1.27.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-1.27.2.tgz#5f3497badc286caed3021bc08444f278d3a816f5"
-  integrity sha512-yN8WvP9HaG3dh6nF/3OpaUGoiYy8ipx4F1EdPIXA5nHLkdk9pEHHZCLiLWtMlVDdfEo1uwa9/j/Z9cfP77Uh+A==
+"@salesforce/plugin-packaging@1.27.3":
+  version "1.27.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-1.27.3.tgz#473521e117ac900d02b33eb162ba8f6ca7b0e2cd"
+  integrity sha512-4CzF1j+zLHQkss1Ydsf0W4UWKfd+9A2C+bg27NZra5S2dxRgoab8bDrFQSHEbrC3ikTFTtxPv77K5lMTN01KOA==
   dependencies:
     "@oclif/core" "^3.11.0"
     "@salesforce/core" "^6.1.3"
     "@salesforce/kit" "^3.0.15"
     "@salesforce/packaging" "^3.0.0"
-    "@salesforce/sf-plugins-core" "^5.0.1"
+    "@salesforce/sf-plugins-core" "^5.0.3"
     chalk "^4.1.2"
     tslib "^2"
 
@@ -1742,13 +1742,13 @@
     "@salesforce/core" "^6.1.3"
     "@salesforce/sf-plugins-core" "^5.0.1"
 
-"@salesforce/plugin-settings@2.0.6":
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-settings/-/plugin-settings-2.0.6.tgz#8803453314b70db88833ea20beb4ceae7724d883"
-  integrity sha512-rSF2lVBRazJfttqr4fYweyjAxrLKLlROkBBT4Jj/ZlODrjvHeteOV8hfzKlsgNOeDiWs3UrRst76PJFTM6cbyQ==
+"@salesforce/plugin-settings@2.0.7":
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-settings/-/plugin-settings-2.0.7.tgz#bd8b9646530d0d071980896d4898ec92606dcb57"
+  integrity sha512-Nv2yvZA006h7sMHmamRsjV8Ihy+xBiCg42dnwb4DfoPnbX0PP/uIgCaPImoLEckL3uNROMmJCrI1XHsR7Vbefg==
   dependencies:
-    "@oclif/core" "^3.10.8"
-    "@salesforce/core" "^6.1.0"
+    "@oclif/core" "^3.12.0"
+    "@salesforce/core" "^6.1.3"
     "@salesforce/sf-plugins-core" "^5.0.1"
     fast-levenshtein "^3.0.0"
 
@@ -1783,14 +1783,14 @@
     proxy-agent "^6.3.1"
     tslib "^2"
 
-"@salesforce/plugin-telemetry@3.1.2":
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.1.2.tgz#5b71a367eebbe4d162b84d5c1ab7f9ac8d422dc3"
-  integrity sha512-n/ZCsdckXKzY6kCPtkghthvhqTJJI8Buiw4amACfFmLytYkYhIgDxR21TgWdCVW8PazeKWsqrFSwbHh6ZgcKHA==
+"@salesforce/plugin-telemetry@3.1.3":
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.1.3.tgz#2845326672548c2680bc617b80eb00e03672f55c"
+  integrity sha512-+VjsC2SJgq0CfeXhlexWA9d5TnwHIqq/zu++VGDh7b/jw1FNZGRJdtGph3GNTnlXNBG8rDZElwJORh+N48oyvg==
   dependencies:
     "@oclif/core" "^3.8.0"
-    "@salesforce/core" "^6.1.0"
-    "@salesforce/sf-plugins-core" "^5.0.1"
+    "@salesforce/core" "^6.1.3"
+    "@salesforce/sf-plugins-core" "^5.0.3"
     "@salesforce/telemetry" "^5.0.0"
     debug "^4.3.4"
 
@@ -1806,13 +1806,13 @@
     yeoman-environment "^3"
     yeoman-generator "^5"
 
-"@salesforce/plugin-trust@3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-3.0.4.tgz#242e9d742273cdb7706cfb7af7a862ca7d604aaf"
-  integrity sha512-UMxsfISgHLuEN+fClFzfb+ay28inMdItvpoq8jqHPvMs/5BiMGE4IMt5oCVZxbOkKkhFDyWkp5dCNQ9cIXzkLQ==
+"@salesforce/plugin-trust@3.0.5":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-3.0.5.tgz#dac71d11d437d5c45bee598182a59dadc2897382"
+  integrity sha512-JsLFdzVajyerZI1GU9mWjaTyUww2YLDZv1HFs+4wxd3p9ov7g8ChlkdKkdIrhr337OPubm5JEKPQaS3UMIYIBA==
   dependencies:
-    "@oclif/core" "^3.10.1"
-    "@salesforce/core" "^6.1.0"
+    "@oclif/core" "^3.12.0"
+    "@salesforce/core" "^6.1.3"
     "@salesforce/sf-plugins-core" "^5.0.1"
     got "^13.0.0"
     npm "9.8.1"
@@ -1856,7 +1856,7 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.6.1.tgz#7d1c071e1e509ca9d2d8a6e48ac7447dd67a534d"
   integrity sha512-eVy947ZMxCJReKJdgfddUIsBIbPTa/i8RwQGwxq4/ss38H5sLOAeSTaun9V7HpJ1hkpDznWKfgzYvjsst9K6ig==
 
-"@salesforce/sf-plugins-core@5.0.3", "@salesforce/sf-plugins-core@^5.0.1", "@salesforce/sf-plugins-core@^5.0.2":
+"@salesforce/sf-plugins-core@5.0.3", "@salesforce/sf-plugins-core@^5.0.1", "@salesforce/sf-plugins-core@^5.0.2", "@salesforce/sf-plugins-core@^5.0.3":
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-5.0.3.tgz#a771dc887c0a13ac23a5b1c16a6965791914f3aa"
   integrity sha512-D+RCUzrYIWpJakNfxtHXJd6LZr6bK4gA4e7jLPR1G1FmDFss13PT7hOdFRxmAqTPbcp1jf65vwYZzu5nbqzmvQ==
