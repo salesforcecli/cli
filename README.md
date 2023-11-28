@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.20.4 linux-x64 node-v20.9.0
+@salesforce/cli/2.20.5 linux-x64 node-v20.9.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -519,7 +519,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.7/src/commands/apex/get/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.8/src/commands/apex/get/log.ts)_
 
 ## `sf apex get test`
 
@@ -571,7 +571,7 @@ EXAMPLES
       me@myorg',
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.7/src/commands/apex/get/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.8/src/commands/apex/get/test.ts)_
 
 ## `sf apex list log`
 
@@ -609,7 +609,7 @@ EXAMPLES
     $ sf apex list log --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.7/src/commands/apex/list/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.8/src/commands/apex/list/log.ts)_
 
 ## `sf apex run`
 
@@ -654,7 +654,7 @@ EXAMPLES
     $ sf apex run
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.7/src/commands/apex/run.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.8/src/commands/apex/run.ts)_
 
 ## `sf apex run test`
 
@@ -675,7 +675,7 @@ FLAGS
   -o, --target-org=<value>      (required) Username or alias of the target org.
   -r, --result-format=<option>  [default: human] Format of the test results.
                                 <options: human|tap|junit|json>
-  -s, --suite-names=<value>...  Apex test suite names to run; default is all suites.
+  -s, --suite-names=<value>...  Apex test suite names to run.
   -t, --tests=<value>...        Apex test class names or IDs and, if applicable, test methods to run; default is all
                                 tests.
   -v, --detailed-coverage       Display detailed code coverage per test.
@@ -747,7 +747,7 @@ FLAG DESCRIPTIONS
     For multiple classes, repeat the flag for each.
     --class-names Class1 --class-names Class2
 
-  -s, --suite-names=<value>...  Apex test suite names to run; default is all suites.
+  -s, --suite-names=<value>...  Apex test suite names to run.
 
     If you select --suite-names, you can't specify --class-names or --tests.
     For multiple suites, repeat the flag for each.
@@ -760,7 +760,7 @@ FLAG DESCRIPTIONS
     --tests Test1 --tests Test2
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.7/src/commands/apex/run/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.8/src/commands/apex/run/test.ts)_
 
 ## `sf apex tail log`
 
@@ -799,7 +799,7 @@ EXAMPLES
     $ sf apex tail log --color --skip-trace-flag
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.7/src/commands/apex/tail/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.8/src/commands/apex/tail/log.ts)_
 
 ## `sf autocomplete [SHELL]`
 
@@ -6555,7 +6555,7 @@ FLAG DESCRIPTIONS
     If you specify this parameter, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.3/src/commands/project/convert/mdapi.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.4/src/commands/project/convert/mdapi.ts)_
 
 ## `sf project convert source`
 
@@ -6567,7 +6567,7 @@ USAGE
     <value> | -m <value>]
 
 FLAGS
-  -d, --output-dir=<value>     [default: metadataPackage_1700509416605] Output directory to store the Metadata
+  -d, --output-dir=<value>     [default: metadataPackage_1701117076789] Output directory to store the Metadata
                                API–formatted files in.
   -m, --metadata=<value>...    Metadata component names to convert.
   -n, --package-name=<value>   Name of the package to associate with the metadata-formatted files.
@@ -6627,7 +6627,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.3/src/commands/project/convert/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.4/src/commands/project/convert/source.ts)_
 
 ## `sf project delete source`
 
@@ -6643,7 +6643,8 @@ FLAGS
   -c, --check-only             Validate delete command but don't delete anything from the org or the local project.
   -f, --force-overwrite        Ignore conflict warnings and overwrite changes to the org.
   -m, --metadata=<value>...    Metadata components to delete.
-  -o, --target-org=<value>     (required) Username or alias of the target org.
+  -o, --target-org=<value>     (required) Username or alias of the target org. Not required if the `target-org`
+                               configuration variable is already set.
   -p, --source-dir=<value>...  Source file paths to delete.
   -r, --no-prompt              Don't prompt for delete confirmation.
   -t, --track-source           If the delete succeeds, update the source tracking information.
@@ -6765,7 +6766,7 @@ FLAG DESCRIPTIONS
     - Separate the test names with spaces: --tests Test1 Test2 "Test With Space"
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.3/src/commands/project/delete/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.4/src/commands/project/delete/source.ts)_
 
 ## `sf project delete tracking`
 
@@ -6776,7 +6777,8 @@ USAGE
   $ sf project delete tracking -o <value> [--json] [--api-version <value>] [-p]
 
 FLAGS
-  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
   -p, --no-prompt            Don't prompt for source tracking override confirmation.
       --api-version=<value>  Override the api version used for api requests made by this command
 
@@ -6800,7 +6802,7 @@ EXAMPLES
     $ sf project delete tracking --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.3/src/commands/project/delete/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.4/src/commands/project/delete/tracking.ts)_
 
 ## `sf project deploy cancel`
 
@@ -6870,7 +6872,7 @@ FLAG DESCRIPTIONS
     project deploy report".
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.3/src/commands/project/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.4/src/commands/project/deploy/cancel.ts)_
 
 ## `sf project deploy preview`
 
@@ -6953,7 +6955,7 @@ FLAG DESCRIPTIONS
     All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.3/src/commands/project/deploy/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.4/src/commands/project/deploy/preview.ts)_
 
 ## `sf project deploy quick`
 
@@ -7046,7 +7048,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.3/src/commands/project/deploy/quick.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.4/src/commands/project/deploy/quick.ts)_
 
 ## `sf project deploy report`
 
@@ -7141,7 +7143,7 @@ FLAG DESCRIPTIONS
     --coverage-formatters lcov --coverage-formatters clover
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.3/src/commands/project/deploy/report.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.4/src/commands/project/deploy/report.ts)_
 
 ## `sf project deploy resume`
 
@@ -7237,7 +7239,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.3/src/commands/project/deploy/resume.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.4/src/commands/project/deploy/resume.ts)_
 
 ## `sf project deploy start`
 
@@ -7466,7 +7468,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.3/src/commands/project/deploy/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.4/src/commands/project/deploy/start.ts)_
 
 ## `sf project deploy validate`
 
@@ -7645,7 +7647,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.3/src/commands/project/deploy/validate.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.4/src/commands/project/deploy/validate.ts)_
 
 ## `sf project generate`
 
@@ -7824,7 +7826,7 @@ EXAMPLES
     $ sf project generate manifest --from-org test@myorg.com --include-packages unlocked
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.3/src/commands/project/generate/manifest.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.4/src/commands/project/generate/manifest.ts)_
 
 ## `sf project list ignored`
 
@@ -7865,7 +7867,7 @@ EXAMPLES
     $ sf project list ignored --source-dir package.xml
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.3/src/commands/project/list/ignored.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.4/src/commands/project/list/ignored.ts)_
 
 ## `sf project reset tracking`
 
@@ -7876,7 +7878,8 @@ USAGE
   $ sf project reset tracking -o <value> [--json] [--api-version <value>] [-r <value>] [-p]
 
 FLAGS
-  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
   -p, --no-prompt            Don't prompt for source tracking override confirmation.
   -r, --revision=<value>     SourceMember revision counter number to reset to.
       --api-version=<value>  Override the api version used for api requests made by this command
@@ -7912,7 +7915,7 @@ EXAMPLES
     $ sf project reset tracking --revision 30
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.3/src/commands/project/reset/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.4/src/commands/project/reset/tracking.ts)_
 
 ## `sf project retrieve preview`
 
@@ -7967,7 +7970,7 @@ FLAG DESCRIPTIONS
     Overrides your default org.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.3/src/commands/project/retrieve/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.4/src/commands/project/retrieve/preview.ts)_
 
 ## `sf project retrieve start`
 
@@ -8121,7 +8124,7 @@ ENVIRONMENT VARIABLES
   SF_USE_PROGRESS_BAR  Set to false to disable the progress bar when running the metadata deploy command.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.3/src/commands/project/retrieve/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/2.1.4/src/commands/project/retrieve/start.ts)_
 
 ## `sf schema generate field`
 
