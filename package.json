@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.20.5",
+  "version": "2.21.1",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run.js",
@@ -74,7 +74,7 @@
       "@salesforce/plugin-custom-metadata": "3.0.6",
       "@salesforce/plugin-community": "3.0.4",
       "@salesforce/plugin-dev": "2.0.4",
-      "@salesforce/plugin-devops-center": "1.2.4",
+      "@salesforce/plugin-devops-center": "1.2.5",
       "@salesforce/plugin-env": "3.0.7",
       "@salesforce/plugin-functions": "1.22.10",
       "@salesforce/plugin-signups": "2.0.4",
@@ -139,7 +139,7 @@
     "@salesforce/plugin-apex": "3.0.8",
     "@salesforce/plugin-auth": "3.0.8",
     "@salesforce/plugin-data": "3.0.2",
-    "@salesforce/plugin-deploy-retrieve": "2.1.4",
+    "@salesforce/plugin-deploy-retrieve": "2.2.0",
     "@salesforce/plugin-info": "3.0.5",
     "@salesforce/plugin-limits": "3.0.4",
     "@salesforce/plugin-marketplace": "1.0.7",
@@ -151,7 +151,7 @@
     "@salesforce/plugin-source": "3.0.1",
     "@salesforce/plugin-telemetry": "3.1.3",
     "@salesforce/plugin-templates": "56.0.3",
-    "@salesforce/plugin-trust": "3.0.6",
+    "@salesforce/plugin-trust": "3.0.7",
     "@salesforce/plugin-user": "3.0.6",
     "@salesforce/sf-plugins-core": "5.0.4",
     "debug": "^4.3.4"
@@ -191,7 +191,7 @@
     "@salesforce/schemas": "1.6.1",
     "@salesforce/templates": "59.0.2",
     "@salesforce/source-deploy-retrieve": "10.0.3",
-    "@salesforce/source-tracking": "5.0.1"
+    "@salesforce/source-tracking": "5.1.0"
   },
   "repository": "salesforcecli/cli",
   "scripts": {
@@ -236,7 +236,7 @@
     "@oclif/plugin-command-snapshot": "^4.0.2",
     "@salesforce/dev-config": "^4.1.0",
     "@salesforce/dev-scripts": "^5.10.0",
-    "@salesforce/plugin-release-management": "^4.4.7",
+    "@salesforce/plugin-release-management": "^4.5.4",
     "@salesforce/prettier-config": "^0.0.3",
     "@salesforce/ts-sinon": "^1.4.19",
     "@types/debug": "^4.1.12",
