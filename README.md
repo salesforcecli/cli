@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.21.1 linux-x64 node-v20.9.0
+@salesforce/cli/2.21.2 linux-x64 node-v20.10.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -5168,8 +5168,8 @@ Create a first-generation package version in the release org.
 
 ```
 USAGE
-  $ sf package1 version create -o <value> -i <value> -n <value> [--api-version <value>] [-d <value>] [-v <value>] [-m] [-r
-    <value>] [-p <value>] [-k <value>] [-w <value>]
+  $ sf package1 version create -o <value> -i <value> -n <value> [--json] [--api-version <value>] [-d <value>] [-v <value>]
+    [-m] [-r <value>] [-p <value>] [-k <value>] [-w <value>]
 
 FLAGS
   -d, --description=<value>        Package version description.
@@ -5185,6 +5185,9 @@ FLAGS
   -v, --version=<value>            Package version in major.minor format, for example, 3.2.
   -w, --wait=<value>               Minutes to wait for the package version to be created (default: 2 minutes).
       --api-version=<value>        Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   Create a first-generation package version in the release org.
@@ -5223,7 +5226,7 @@ FLAG DESCRIPTIONS
     subscribers.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package1/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package1/version/create.ts)_
 
 ## `sf package1 version create get`
 
@@ -5231,13 +5234,16 @@ Retrieve the status of a package version creation request.
 
 ```
 USAGE
-  $ sf package1 version create get -o <value> -i <value> [--api-version <value>]
+  $ sf package1 version create get -o <value> -i <value> [--json] [--api-version <value>]
 
 FLAGS
   -i, --request-id=<value>   (required) ID of the PackageUploadRequest (starts with 0HD).
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
                              configuration variable is already set.
       --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 ALIASES
   $ sf force package1 version create get
@@ -5252,7 +5258,7 @@ EXAMPLES
     $ sf package1 version create get --request-id 0HD... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package1/version/create/get.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package1/version/create/get.ts)_
 
 ## `sf package1 version display`
 
@@ -5260,7 +5266,7 @@ Display details about a first-generation package version.
 
 ```
 USAGE
-  $ sf package1 version display -o <value> -i <value> [--api-version <value>]
+  $ sf package1 version display -o <value> -i <value> [--json] [--api-version <value>]
 
 FLAGS
   -i, --package-version-id=<value>  (required) ID (starts with 04t) of the metadata package version whose details you
@@ -5268,6 +5274,9 @@ FLAGS
   -o, --target-org=<value>          (required) Username or alias of the target org. Not required if the `target-org`
                                     configuration variable is already set.
       --api-version=<value>         Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 ALIASES
   $ sf force package1 version display
@@ -5282,7 +5291,7 @@ EXAMPLES
     $ sf package1 version display --package-version-id 04t... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package1/version/display.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package1/version/display.ts)_
 
 ## `sf package1 version list`
 
@@ -5290,13 +5299,16 @@ List package versions for the specified first-generation package or for the org.
 
 ```
 USAGE
-  $ sf package1 version list -o <value> [--api-version <value>] [-i <value>]
+  $ sf package1 version list -o <value> [--json] [--api-version <value>] [-i <value>]
 
 FLAGS
   -i, --package-id=<value>   Metadata package ID (starts with 033) whose package versions you want to list.
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
                              configuration variable is already set.
       --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 ALIASES
   $ sf force package1 version list
@@ -5316,7 +5328,7 @@ FLAG DESCRIPTIONS
     If not specified, shows all versions for all packages (managed and unmanaged) in the org.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package1/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package1/version/list.ts)_
 
 ## `sf package create`
 
@@ -5324,8 +5336,8 @@ Create a package.
 
 ```
 USAGE
-  $ sf package create -v <value> -n <value> -t Managed|Unlocked -r <value> [--api-version <value>] [-d <value>] [-e]
-    [--org-dependent] [-o <value>]
+  $ sf package create -v <value> -n <value> -t Managed|Unlocked -r <value> [--json] [--api-version <value>] [-d
+    <value>] [-e] [--org-dependent] [-o <value>]
 
 FLAGS
   -d, --description=<value>                  Description of the package.
@@ -5341,6 +5353,9 @@ FLAGS
       --api-version=<value>                  Override the api version used for api requests made by this command
       --org-dependent                        Depends on unpackaged metadata in the installation org; applies to unlocked
                                              packages only.
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   Create a package.
@@ -5391,7 +5406,7 @@ FLAG DESCRIPTIONS
     Org-Dependent Unlocked Packages" in the Salesforce DX Developer Guide.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/create.ts)_
 
 ## `sf package delete`
 
@@ -5399,7 +5414,7 @@ Delete a package.
 
 ```
 USAGE
-  $ sf package delete -v <value> -p <value> [--api-version <value>] [-n]
+  $ sf package delete -v <value> -p <value> [--json] [--api-version <value>] [-n]
 
 FLAGS
   -n, --no-prompt               Don’t prompt before deleting the package.
@@ -5407,6 +5422,9 @@ FLAGS
   -v, --target-dev-hub=<value>  (required) Username or alias of the Dev Hub org. Not required if the `target-dev-hub`
                                 configuration variable is already set.
       --api-version=<value>     Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   Delete a package.
@@ -5429,7 +5447,7 @@ EXAMPLES
     $ sf package delete --package 0Ho... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/delete.ts)_
 
 ## `sf package install`
 
@@ -5437,8 +5455,8 @@ Install a version of a package in the target org.
 
 ```
 USAGE
-  $ sf package install -o <value> -p <value> [--api-version <value>] [-w <value>] [-k <value>] [-b <value>] [-r] [-a
-    all|package] [-s AllUsers|AdminsOnly] [-t DeprecateOnly|Mixed|Delete]
+  $ sf package install -o <value> -p <value> [--json] [--api-version <value>] [-w <value>] [-k <value>] [-b <value>]
+    [-r] [-a all|package] [-s AllUsers|AdminsOnly] [-t DeprecateOnly|Mixed|Delete]
 
 FLAGS
   -a, --apex-compile=<option>     [default: all] Compile all Apex in the org and package, or only Apex in the package;
@@ -5461,6 +5479,9 @@ FLAGS
                                   <options: DeprecateOnly|Mixed|Delete>
   -w, --wait=<value>              [default: [object Object]] Number of minutes to wait for installation status.
       --api-version=<value>       Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   Install a version of a package in the target org.
@@ -5524,7 +5545,7 @@ FLAG DESCRIPTIONS
     specify DeprecateOnly or Delete only for unlocked package upgrades.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/install.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/install.ts)_
 
 ## `sf package install report`
 
@@ -5532,13 +5553,16 @@ Retrieve the status of a package installation request.
 
 ```
 USAGE
-  $ sf package install report -o <value> -i <value> [--api-version <value>]
+  $ sf package install report -o <value> -i <value> [--json] [--api-version <value>]
 
 FLAGS
   -i, --request-id=<value>   (required) ID of the package install request you want to check; starts with 0Hf.
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
                              configuration variable is already set.
       --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 ALIASES
   $ sf force package install report
@@ -5553,7 +5577,7 @@ EXAMPLES
     $ sf package install report --request-id 0Hf... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/install/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/install/report.ts)_
 
 ## `sf package installed list`
 
@@ -5561,12 +5585,15 @@ List the org’s installed packages.
 
 ```
 USAGE
-  $ sf package installed list -o <value> [--api-version <value>]
+  $ sf package installed list -o <value> [--json] [--api-version <value>]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
                              configuration variable is already set.
       --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 ALIASES
   $ sf force package installed list
@@ -5581,7 +5608,7 @@ EXAMPLES
     $ sf package installed list --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/installed/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/installed/list.ts)_
 
 ## `sf package list`
 
@@ -5589,13 +5616,16 @@ List all packages in the Dev Hub org.
 
 ```
 USAGE
-  $ sf package list -v <value> [--api-version <value>] [--verbose]
+  $ sf package list -v <value> [--json] [--api-version <value>] [--verbose]
 
 FLAGS
   -v, --target-dev-hub=<value>  (required) Username or alias of the Dev Hub org. Not required if the `target-dev-hub`
                                 configuration variable is already set.
       --api-version=<value>     Override the api version used for api requests made by this command
       --verbose                 Display extended package detail.
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   List all packages in the Dev Hub org.
@@ -5615,7 +5645,7 @@ EXAMPLES
     $ sf package list --target-dev-hub devhub@example.com --verbose
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/list.ts)_
 
 ## `sf package uninstall`
 
@@ -5623,7 +5653,7 @@ Uninstall a second-generation package from the target org.
 
 ```
 USAGE
-  $ sf package uninstall -o <value> -p <value> [--api-version <value>] [-w <value>]
+  $ sf package uninstall -o <value> -p <value> [--json] [--api-version <value>] [-w <value>]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
@@ -5631,6 +5661,9 @@ FLAGS
   -p, --package=<value>      (required) ID (starts with 04t) or alias of the package version to uninstall.
   -w, --wait=<value>         [default: [object Object]] Number of minutes to wait for uninstall status.
       --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   Uninstall a second-generation package from the target org.
@@ -5659,7 +5692,7 @@ EXAMPLES
     $ sf package uninstall --package "Undesirable Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/uninstall.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/uninstall.ts)_
 
 ## `sf package uninstall report`
 
@@ -5667,13 +5700,16 @@ Retrieve the status of a package uninstall request.
 
 ```
 USAGE
-  $ sf package uninstall report -o <value> -i <value> [--api-version <value>]
+  $ sf package uninstall report -o <value> -i <value> [--json] [--api-version <value>]
 
 FLAGS
   -i, --request-id=<value>   (required) ID of the package uninstall request you want to check; starts with 06y.
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
                              configuration variable is already set.
       --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 ALIASES
   $ sf force package uninstall report
@@ -5688,7 +5724,7 @@ EXAMPLES
     $ sf package uninstall report --request-id 06y... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/uninstall/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/uninstall/report.ts)_
 
 ## `sf package update`
 
@@ -5696,7 +5732,7 @@ Update package details.
 
 ```
 USAGE
-  $ sf package update -v <value> -p <value> [--api-version <value>] [-n <value>] [-d <value>] [-o <value>]
+  $ sf package update -v <value> -p <value> [--json] [--api-version <value>] [-n <value>] [-d <value>] [-o <value>]
     [--enable-app-analytics]
 
 FLAGS
@@ -5710,6 +5746,9 @@ FLAGS
       --api-version=<value>                  Override the api version used for api requests made by this command
       --[no-]enable-app-analytics            Enable AppExchange App Analytics usage data collection on this managed
                                              package and its components.
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   Update package details.
@@ -5739,7 +5778,7 @@ FLAG DESCRIPTIONS
     associated with your package.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/update.ts)_
 
 ## `sf package version create`
 
@@ -5747,8 +5786,8 @@ Create a package version in the Dev Hub org.
 
 ```
 USAGE
-  $ sf package version create -v <value> [--api-version <value>] [-b <value>] [-c | --skip-validation] [-f <value>] [-k
-    <value>] [-x] [-p <value>] [-d <value>] [--post-install-script <value>] [--post-install-url <value>]
+  $ sf package version create -v <value> [--json] [--api-version <value>] [-b <value>] [-c | --skip-validation] [-f <value>]
+    [-k <value>] [-x] [-p <value>] [-d <value>] [--post-install-script <value>] [--post-install-url <value>]
     [--releasenotes-url <value>] [--skip-ancestor-check] [-t <value>] [--uninstall-script <value>] [-e <value>] [-a
     <value>] [-n <value>] [-w <value>] [--language <value>] [--verbose]
 
@@ -5787,6 +5826,9 @@ FLAGS
                                      package versions.
       --uninstall-script=<value>     Uninstall script name; applies to managed packages only.
       --verbose                      Display verbose command output.
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   Create a package version in the Dev Hub org.
@@ -5891,7 +5933,7 @@ FLAG DESCRIPTIONS
     periods of no output from commands.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/version/create.ts)_
 
 ## `sf package version create list`
 
@@ -5899,7 +5941,7 @@ List package version creation requests.
 
 ```
 USAGE
-  $ sf package version create list -v <value> [--api-version <value>] [-c <value>] [-s Queued|InProgress|Success|Error]
+  $ sf package version create list -v <value> [--json] [--api-version <value>] [-c <value>] [-s Queued|InProgress|Success|Error]
     [--show-conversions-only] [--verbose]
 
 FLAGS
@@ -5913,6 +5955,9 @@ FLAGS
       --show-conversions-only      Filter the list output to display only converted package version.
       --verbose                    Displays additional information at a slight performance cost, such as the version
                                    name and number for each package version create request.
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   List package version creation requests.
@@ -5948,7 +5993,7 @@ EXAMPLES
     $ sf package version create list --created-last-days 0 --status Success
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/version/create/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/version/create/list.ts)_
 
 ## `sf package version create report`
 
@@ -5956,7 +6001,7 @@ Retrieve details about a package version creation request.
 
 ```
 USAGE
-  $ sf package version create report -v <value> -i <value> [--api-version <value>]
+  $ sf package version create report -v <value> -i <value> [--json] [--api-version <value>]
 
 FLAGS
   -i, --package-create-request-id=<value>  (required) ID (starts with 08c) of the package version creation request you
@@ -5964,6 +6009,9 @@ FLAGS
   -v, --target-dev-hub=<value>             (required) Username or alias of the Dev Hub org. Not required if the
                                            `target-dev-hub` configuration variable is already set.
       --api-version=<value>                Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   Retrieve details about a package version creation request.
@@ -5987,7 +6035,7 @@ EXAMPLES
     $ sf package version create report --package-create-request-id 08c... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/version/create/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/version/create/report.ts)_
 
 ## `sf package version delete`
 
@@ -5995,7 +6043,7 @@ Delete a package version.
 
 ```
 USAGE
-  $ sf package version delete -v <value> -p <value> [--api-version <value>] [-n]
+  $ sf package version delete -v <value> -p <value> [--json] [--api-version <value>] [-n]
 
 FLAGS
   -n, --no-prompt               Don’t prompt before deleting the package version.
@@ -6003,6 +6051,9 @@ FLAGS
   -v, --target-dev-hub=<value>  (required) Username or alias of the Dev Hub org. Not required if the `target-dev-hub`
                                 configuration variable is already set.
       --api-version=<value>     Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   Delete a package version.
@@ -6022,7 +6073,7 @@ EXAMPLES
     $ sf package version delete --package 04t... --target-org devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/version/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/version/delete.ts)_
 
 ## `sf package version displayancestry`
 
@@ -6030,7 +6081,7 @@ Display the ancestry tree for a 2GP managed package version.
 
 ```
 USAGE
-  $ sf package version displayancestry -v <value> -p <value> [--api-version <value>] [--dot-code] [--verbose]
+  $ sf package version displayancestry -v <value> -p <value> [--json] [--api-version <value>] [--dot-code] [--verbose]
 
 FLAGS
   -p, --package=<value>         (required) ID or alias of the package (starts with 0Ho) or package version (starts with
@@ -6041,6 +6092,9 @@ FLAGS
       --dot-code                Display the ancestry tree in DOT code.
       --verbose                 Display both the package version ID (starts with 04t) and the version number
                                 (major.minor.patch.build) in the ancestry tree.
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 ALIASES
   $ sf force package version displayancestry
@@ -6077,7 +6131,7 @@ FLAG DESCRIPTIONS
     You can use the DOT code output in graph visualization software to create tree visualizations.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/version/displayancestry.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/version/displayancestry.ts)_
 
 ## `sf package version list`
 
@@ -6085,8 +6139,8 @@ List all package versions in the Dev Hub org.
 
 ```
 USAGE
-  $ sf package version list -v <value> [--api-version <value>] [-c <value>] [--concise] [--show-conversions-only] [-m
-    <value>] [-p <value>] [-r] [-o <value>] [--verbose]
+  $ sf package version list -v <value> [--json] [--api-version <value>] [-c <value>] [--concise] [--show-conversions-only]
+    [-m <value>] [-p <value>] [-r] [-o <value>] [--verbose]
 
 FLAGS
   -c, --created-last-days=<value>   Number of days since the request was created, starting at 00:00:00 of first day to
@@ -6102,6 +6156,9 @@ FLAGS
       --concise                     Display limited package version details.
       --show-conversions-only       Filter the list output to display only converted package version.
       --verbose                     Display extended package version details.
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   List all package versions in the Dev Hub org.
@@ -6142,7 +6199,7 @@ EXAMPLES
     $ sf package version list --packages exp-mgr,exp-mgr-util --released --modified-last-days 0
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/version/list.ts)_
 
 ## `sf package version promote`
 
@@ -6150,7 +6207,7 @@ Promote a package version to released.
 
 ```
 USAGE
-  $ sf package version promote -v <value> -p <value> [--api-version <value>] [-n]
+  $ sf package version promote -v <value> -p <value> [--json] [--api-version <value>] [-n]
 
 FLAGS
   -n, --no-prompt               Don't prompt to confirm setting the package version as released.
@@ -6158,6 +6215,9 @@ FLAGS
   -v, --target-dev-hub=<value>  (required) Username or alias of the Dev Hub org. Not required if the `target-dev-hub`
                                 configuration variable is already set.
       --api-version=<value>     Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   Promote a package version to released.
@@ -6182,7 +6242,7 @@ EXAMPLES
     $ sf package version promote --package "Awesome Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/version/promote.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/version/promote.ts)_
 
 ## `sf package version report`
 
@@ -6190,7 +6250,7 @@ Retrieve details about a package version in the Dev Hub org.
 
 ```
 USAGE
-  $ sf package version report -v <value> -p <value> [--api-version <value>] [--verbose]
+  $ sf package version report -v <value> -p <value> [--json] [--api-version <value>] [--verbose]
 
 FLAGS
   -p, --package=<value>         (required) ID (starts with 04t) or alias of the package to retrieve details for.
@@ -6198,6 +6258,9 @@ FLAGS
                                 configuration variable is already set.
       --api-version=<value>     Override the api version used for api requests made by this command
       --verbose                 Display extended package version details.
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   Retrieve details about a package version in the Dev Hub org.
@@ -6218,7 +6281,7 @@ EXAMPLES
     $ sf package version report --package "Your Package Alias" --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/version/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/version/report.ts)_
 
 ## `sf package version update`
 
@@ -6226,8 +6289,8 @@ Update a package version.
 
 ```
 USAGE
-  $ sf package version update -v <value> -p <value> [--api-version <value>] [-a <value>] [-e <value>] [-b <value>] [-t
-    <value>] [-k <value>]
+  $ sf package version update -v <value> -p <value> [--json] [--api-version <value>] [-a <value>] [-e <value>] [-b <value>]
+    [-t <value>] [-k <value>]
 
 FLAGS
   -a, --version-name=<value>         New package version name.
@@ -6239,6 +6302,9 @@ FLAGS
   -v, --target-dev-hub=<value>       (required) Username or alias of the Dev Hub org. Not required if the
                                      `target-dev-hub` configuration variable is already set.
       --api-version=<value>          Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   Update a package version.
@@ -6267,7 +6333,7 @@ EXAMPLES
     $ sf package version update --package 04t... --version-description "New Package Version Description"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.3/src/commands/package/version/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.6/src/commands/package/version/update.ts)_
 
 ## `sf plugins`
 
@@ -6447,7 +6513,7 @@ EXAMPLES
   $ sf plugins trust verify --npm @scope/npmName
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.0.7/src/commands/plugins/trust/verify.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.1.0/src/commands/plugins/trust/verify.ts)_
 
 ## `sf plugins:uninstall PLUGIN...`
 
