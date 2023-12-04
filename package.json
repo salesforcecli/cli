@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.21.1",
+  "version": "2.21.5",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run.js",
@@ -71,13 +71,13 @@
       "@salesforce/plugin-user"
     ],
     "jitPlugins": {
-      "@salesforce/plugin-custom-metadata": "3.0.6",
-      "@salesforce/plugin-community": "3.0.4",
+      "@salesforce/plugin-custom-metadata": "3.0.7",
+      "@salesforce/plugin-community": "3.0.5",
       "@salesforce/plugin-dev": "2.0.4",
       "@salesforce/plugin-devops-center": "1.2.5",
-      "@salesforce/plugin-env": "3.0.7",
+      "@salesforce/plugin-env": "3.0.8",
       "@salesforce/plugin-functions": "1.22.10",
-      "@salesforce/plugin-signups": "2.0.4",
+      "@salesforce/plugin-signups": "2.0.5",
       "@salesforce/sfdx-plugin-lwc-test": "1.1.1",
       "@salesforce/sfdx-scanner": "3.18.0"
     },
@@ -124,7 +124,7 @@
     }
   },
   "dependencies": {
-    "@oclif/core": "3.12.0",
+    "@oclif/core": "3.13.1",
     "@oclif/plugin-autocomplete": "3.0.2",
     "@oclif/plugin-commands": "3.0.7",
     "@oclif/plugin-help": "6.0.7",
@@ -133,27 +133,27 @@
     "@oclif/plugin-search": "1.0.8",
     "@oclif/plugin-update": "4.1.4",
     "@oclif/plugin-version": "2.0.8",
-    "@oclif/plugin-warn-if-update-available": "3.0.4",
+    "@oclif/plugin-warn-if-update-available": "3.0.5",
     "@oclif/plugin-which": "3.0.11",
     "@salesforce/core": "^6.1.4",
     "@salesforce/plugin-apex": "3.0.8",
-    "@salesforce/plugin-auth": "3.0.8",
-    "@salesforce/plugin-data": "3.0.2",
-    "@salesforce/plugin-deploy-retrieve": "2.2.0",
-    "@salesforce/plugin-info": "3.0.5",
-    "@salesforce/plugin-limits": "3.0.4",
-    "@salesforce/plugin-marketplace": "1.0.7",
-    "@salesforce/plugin-org": "3.0.9",
-    "@salesforce/plugin-packaging": "1.27.3",
-    "@salesforce/plugin-schema": "3.0.6",
+    "@salesforce/plugin-auth": "3.0.10",
+    "@salesforce/plugin-data": "3.0.5",
+    "@salesforce/plugin-deploy-retrieve": "2.2.2",
+    "@salesforce/plugin-info": "3.0.7",
+    "@salesforce/plugin-limits": "3.0.5",
+    "@salesforce/plugin-marketplace": "1.0.9",
+    "@salesforce/plugin-org": "3.1.1",
+    "@salesforce/plugin-packaging": "1.27.7",
+    "@salesforce/plugin-schema": "3.0.8",
     "@salesforce/plugin-settings": "2.0.9",
-    "@salesforce/plugin-sobject": "1.0.2",
-    "@salesforce/plugin-source": "3.0.1",
-    "@salesforce/plugin-telemetry": "3.1.3",
-    "@salesforce/plugin-templates": "56.0.3",
-    "@salesforce/plugin-trust": "3.0.7",
-    "@salesforce/plugin-user": "3.0.6",
-    "@salesforce/sf-plugins-core": "5.0.4",
+    "@salesforce/plugin-sobject": "1.0.5",
+    "@salesforce/plugin-source": "3.0.3",
+    "@salesforce/plugin-telemetry": "3.1.4",
+    "@salesforce/plugin-templates": "56.0.4",
+    "@salesforce/plugin-trust": "3.1.1",
+    "@salesforce/plugin-user": "3.0.7",
+    "@salesforce/sf-plugins-core": "5.0.5",
     "debug": "^4.3.4"
   },
   "pinnedDependencies": [
@@ -190,8 +190,8 @@
   "resolutions": {
     "@salesforce/schemas": "1.6.1",
     "@salesforce/templates": "59.0.2",
-    "@salesforce/source-deploy-retrieve": "10.0.3",
-    "@salesforce/source-tracking": "5.1.0"
+    "@salesforce/source-deploy-retrieve": "10.0.4",
+    "@salesforce/source-tracking": "5.1.2"
   },
   "repository": "salesforcecli/cli",
   "scripts": {
