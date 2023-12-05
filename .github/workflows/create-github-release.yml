@@ -74,13 +74,14 @@ jobs:
           path: 'package.json'
           prop_path: 'version'
       - name: Create Github Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
+        uses: ncipollo/release-action@v1.13.0
         with:
-          tag_name: ${{ steps.packageVersion.outputs.prop }}
-          release_name: ${{ steps.packageVersion.outputs.prop }}
-          prerelease: ${{ !contains(fromJSON('["latest", "latest-rc", "nightly"]'), needs.validate-channel.outputs.channel) }}
+          name: ${{ steps.packageVersion.outputs.prop }}
+          tag: ${{ steps.packageVersion.outputs.prop }}
+          commit: ${{ github.ref_name }}
           # This channel value is read from the Github Release body to determine the channel. Be cautious editing
           body: |
             !! Release as ${{ needs.validate-channel.outputs.channel }} !!
+          prerelease: ${{ !contains(fromJSON('["latest", "latest-rc", "nightly"]'), needs.validate-channel.outputs.channel) }}
+          token: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
+          skipIfReleaseExists: true
