@@ -121,6 +121,15 @@
     ],
     "warn-if-update-available": {
       "timeoutInDays": 7
+    },
+    "exitCodes": {
+      "default": 1,
+      "failedFlagParsing": 2,
+      "failedFlagValidation": 2,
+      "invalidArgsSpec": 2,
+      "nonExistentFlag": 2,
+      "requiredArgs": 2,
+      "unexpectedArgs": 2
     }
   },
   "dependencies": {
