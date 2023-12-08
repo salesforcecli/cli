@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.22.0 linux-x64 node-v20.10.0
+@salesforce/cli/2.22.1 linux-x64 node-v20.10.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -6517,7 +6517,7 @@ EXAMPLES
   $ sf plugins trust verify --npm @scope/npmName
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.1.2/src/commands/plugins/trust/verify.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.2.0/src/commands/plugins/trust/verify.ts)_
 
 ## `sf plugins:uninstall PLUGIN...`
 
