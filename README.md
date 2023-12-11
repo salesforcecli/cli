@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.22.4 linux-x64 node-v20.10.0
+@salesforce/cli/2.22.4 darwin-arm64 node-v20.10.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -753,7 +753,9 @@ FLAG DESCRIPTIONS
     For multiple suites, repeat the flag for each.
     --suite-names Suite1 --suite-names Suite2
 
-  -t, --tests=<value>...  Apex test class names or IDs and, if applicable, test methods to run; default is all tests.
+  -t, --tests=<value>...
+
+    Apex test class names or IDs and, if applicable, test methods to run; default is all tests.
 
     If you specify --tests, you can't specify --class-names or --suite-names
     For multiple tests, repeat the flag for each.
@@ -2759,7 +2761,9 @@ FLAG DESCRIPTIONS
 
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 
-  -x, --manifest=<value>  Complete path for the manifest (package.xml) file that specifies the components to deploy.
+  -x, --manifest=<value>
+
+    Complete path for the manifest (package.xml) file that specifies the components to deploy.
 
     All child components are included.
 
@@ -2869,7 +2873,9 @@ EXAMPLES
     $ sf force source deploy report --jobid <id> --junit --coverageformatters cobertura
 
 FLAG DESCRIPTIONS
-  -w, --wait=<value>  Number of minutes to wait for the command to complete and display results to the terminal window.
+  -w, --wait=<value>
+
+    Number of minutes to wait for the command to complete and display results to the terminal window.
 
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 ```
@@ -2912,7 +2918,9 @@ EXAMPLES
     $ sf force source pull --target-org myscratch --wait 5 --forceoverwrite
 
 FLAG DESCRIPTIONS
-  -w, --wait=<value>  Number of minutes to wait for the command to complete and display results to the terminal window.
+  -w, --wait=<value>
+
+    Number of minutes to wait for the command to complete and display results to the terminal window.
 
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 ```
@@ -2957,7 +2965,9 @@ EXAMPLES
     $ sf force source push --target-org myscratch --wait 5 --forceoverwrite
 
 FLAG DESCRIPTIONS
-  -w, --wait=<value>  Number of minutes to wait for the command to complete and display results to the terminal window.
+  -w, --wait=<value>
+
+    Number of minutes to wait for the command to complete and display results to the terminal window.
 
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 ```
@@ -3078,11 +3088,15 @@ FLAG DESCRIPTIONS
 
     Running the command multiple times with the same target adds new files and overwrites existing files.
 
-  -w, --wait=<value>  Number of minutes to wait for the command to complete and display results to the terminal window.
+  -w, --wait=<value>
+
+    Number of minutes to wait for the command to complete and display results to the terminal window.
 
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 
-  -x, --manifest=<value>  Complete path for the manifest (package.xml) file that specifies the components to retrieve.
+  -x, --manifest=<value>
+
+    Complete path for the manifest (package.xml) file that specifies the components to retrieve.
 
     If you specify this parameter, don’t specify --metadata or --sourcepath.
 ```
@@ -6377,7 +6391,7 @@ EXAMPLES
   $ sf plugins discover
 ```
 
-_See code: [@salesforce/plugin-marketplace](https://github.com/salesforcecli/plugin-template-sf/blob/1.0.10/src/commands/plugins/discover.ts)_
+_See code: [@salesforce/plugin-marketplace](https://github.com/salesforcecli/plugin-marketplace/blob/1.0.10/src/commands/plugins/discover.ts)_
 
 ## `sf plugins:inspect PLUGIN...`
 
@@ -8178,7 +8192,9 @@ FLAG DESCRIPTIONS
     If the target directory matches one of the package directories in your sfdx-project.json file, the command fails.
     Running the command multiple times with the same target adds new files and overwrites existing files.
 
-  -w, --wait=<value>  Number of minutes to wait for the command to complete and display results to the terminal window.
+  -w, --wait=<value>
+
+    Number of minutes to wait for the command to complete and display results to the terminal window.
 
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 

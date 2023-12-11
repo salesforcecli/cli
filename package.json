@@ -144,14 +144,14 @@
     "@oclif/plugin-version": "2.0.9",
     "@oclif/plugin-warn-if-update-available": "3.0.6",
     "@oclif/plugin-which": "3.0.12",
-    "@salesforce/core": "^6.1.4",
+    "@salesforce/core": "^6.4.0",
     "@salesforce/plugin-apex": "3.0.8",
     "@salesforce/plugin-auth": "3.0.12",
     "@salesforce/plugin-data": "3.0.6",
     "@salesforce/plugin-deploy-retrieve": "2.2.6",
     "@salesforce/plugin-info": "3.0.8",
     "@salesforce/plugin-limits": "3.0.6",
-    "@salesforce/plugin-marketplace": "1.0.10",
+    "@salesforce/plugin-marketplace": "1.0.11",
     "@salesforce/plugin-org": "3.1.2",
     "@salesforce/plugin-packaging": "1.27.7",
     "@salesforce/plugin-schema": "3.0.8",
@@ -211,6 +211,7 @@
     "compile": "wireit",
     "docs": "sf-docs",
     "format": "wireit",
+    "link-check": "wireit",
     "lint": "wireit",
     "oclif-artifacts": "oclif manifest",
     "pack:deb": "oclif pack:deb",
@@ -238,41 +239,22 @@
     "upload:macos": "oclif upload:macos",
     "upload:tarballs": "oclif upload:tarballs --xz",
     "upload:win": "oclif upload:win",
+    "readme": "oclif readme --no-aliases --repository-prefix '<%- repo %>/blob/<%- version %>/<%- commandPath %>'",
     "version": "oclif readme"
   },
   "types": "dist/index.d.ts",
   "devDependencies": {
     "@oclif/plugin-command-snapshot": "^4.0.2",
-    "@salesforce/dev-config": "^4.1.0",
-    "@salesforce/dev-scripts": "^5.10.0",
+    "@salesforce/dev-scripts": "^8.1.0",
     "@salesforce/plugin-release-management": "^4.5.4",
-    "@salesforce/prettier-config": "^0.0.3",
     "@salesforce/ts-sinon": "^1.4.19",
     "@types/debug": "^4.1.12",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
     "aws-sdk": "^2.1511.0",
-    "chai": "^4.3.10",
-    "eslint": "^8.55.0",
     "eslint-config-oclif": "^5",
     "eslint-config-oclif-typescript": "^2.0.1",
-    "eslint-config-prettier": "^8.10.0",
-    "eslint-config-salesforce": "^2.0.2",
-    "eslint-config-salesforce-license": "^0.2.0",
-    "eslint-config-salesforce-typescript": "^1.1.1",
-    "eslint-plugin-header": "^3.1.1",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-jsdoc": "^46.9.0",
-    "husky": "^7.0.4",
-    "mocha": "^10",
-    "nyc": "^15.1.0",
     "oclif": "^4.0.4",
-    "prettier": "^2.8.8",
-    "pretty-quick": "^3.1.3",
-    "sinon": "^15.2.0",
     "ts-node": "^10.9.1",
-    "typescript": "^5",
-    "wireit": "^0.14.1"
+    "typescript": "^5"
   },
   "wireit": {
     "build": {
@@ -343,6 +325,15 @@
         ".mocha*",
         "!*.nut.ts",
         ".nycrc"
+      ],
+      "output": []
+    },
+    "link-check": {
+      "command": "node -e \"process.exit(process.env.CI ? 0 : 1)\" || linkinator \"**/*.md\" --skip \"CHANGELOG.md|node_modules|test/|confluence.internal.salesforce.com|%s\" --markdown --retry --directory-listing --verbosity error",
+      "files": [
+        "./*.md",
+        "./!(CHANGELOG).md",
+        "messages/**/*.md"
       ],
       "output": []
     }

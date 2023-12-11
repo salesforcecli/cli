@@ -74,7 +74,7 @@ jobs:
           path: 'package.json'
           prop_path: 'version'
       - name: Create Github Release
-        uses: ncipollo/release-action@v1.13.0
+        uses: ncipollo/release-action@6c75be85e571768fa31b40abf38de58ba0397db5
         with:
           name: ${{ steps.packageVersion.outputs.prop }}
           tag: ${{ steps.packageVersion.outputs.prop }}
