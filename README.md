@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.22.6 linux-x64 node-v20.10.0
+@salesforce/cli/2.22.7-qa.0 linux-x64 node-v20.10.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -6366,7 +6366,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.10/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.11-qa.0/src/commands/plugins/index.ts)_
 
 ## `sf plugins discover`
 
@@ -6410,7 +6410,7 @@ EXAMPLES
   $ sf plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.10/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.11-qa.0/src/commands/plugins/inspect.ts)_
 
 ## `sf plugins:install PLUGIN...`
 
@@ -6454,7 +6454,7 @@ EXAMPLES
   $ sf plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.10/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.11-qa.0/src/commands/plugins/install.ts)_
 
 ## `sf plugins:link PLUGIN`
 
@@ -6484,7 +6484,7 @@ EXAMPLES
   $ sf plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.10/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.11-qa.0/src/commands/plugins/link.ts)_
 
 ## `sf plugins reset`
 
@@ -6495,7 +6495,7 @@ USAGE
   $ sf plugins reset
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.10/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.11-qa.0/src/commands/plugins/reset.ts)_
 
 ## `sf plugins trust verify`
 
@@ -6518,12 +6518,12 @@ DESCRIPTION
   Verifies the digital signature on an npm package matches the signature and key stored at the expected URLs.
 
 EXAMPLES
-  $ sf plugins trust verify --npm @scope/npmName --registry http://my.repo.org:4874
+  $ sf plugins trust verify --npm @scope/npmName --registry https://npm.pkg.github.com
 
   $ sf plugins trust verify --npm @scope/npmName
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.2.0/src/commands/plugins/trust/verify.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.2.1-qa.0/src/commands/plugins/trust/verify.ts)_
 
 ## `sf plugins:uninstall PLUGIN...`
 
@@ -6551,7 +6551,7 @@ EXAMPLES
   $ sf plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.10/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.11-qa.0/src/commands/plugins/uninstall.ts)_
 
 ## `sf plugins update`
 
@@ -6569,7 +6569,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.10/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.1.11-qa.0/src/commands/plugins/update.ts)_
 
 ## `sf project convert mdapi`
 
