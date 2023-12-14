@@ -10,7 +10,7 @@ import { Config, Interfaces } from '@oclif/core';
 import { stubInterface } from '@salesforce/ts-sinon';
 import { getString } from '@salesforce/ts-types';
 import { expect } from 'chai';
-import { createSandbox } from 'sinon';
+import sinon from 'sinon';
 import { Doctor } from '@salesforce/plugin-info';
 import {
   configureAutoUpdate,
@@ -24,7 +24,7 @@ import {
 import { Env } from '../src/util/env.js';
 
 describe('cli', () => {
-  const sandbox = createSandbox();
+  const sandbox = sinon.createSandbox();
 
   let doctorInitStub: sinon.SinonStub;
 
