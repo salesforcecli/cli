@@ -1688,23 +1688,23 @@
     "@salesforce/ts-types" "^2.0.9"
     tslib "^2.6.2"
 
-"@salesforce/packaging@^3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-3.0.4.tgz#14ab3bfb9218bf0d1fd124931e47e21ab3a20128"
-  integrity sha512-7AnBhS17MABCxCR9nyv2BmOfLtBXhOJbhnfKMS5FXZkBCNR4UzmiFMem5bCHBOghkcHyk34p6CESMLBBFGtojQ==
+"@salesforce/packaging@^3.0.10":
+  version "3.0.10"
+  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-3.0.10.tgz#cbb2e90ebebae82192a749f5a808b47741347645"
+  integrity sha512-nlj830SFX/5KsV6phCLbpYRoE/d7DhEBb2V32sF0TFN8GQEt1D/fcpSehZ+l/zz707S9b2alnqWB3DOKctBm1g==
   dependencies:
     "@oclif/core" "^3"
-    "@salesforce/core" "^6.2.0"
+    "@salesforce/core" "^6.2.2"
     "@salesforce/kit" "^3.0.15"
     "@salesforce/schemas" "^1.6.1"
-    "@salesforce/source-deploy-retrieve" "^10.0.2"
+    "@salesforce/source-deploy-retrieve" "^10.0.3"
     "@salesforce/ts-types" "^2.0.9"
     fast-xml-parser "^4.3.1"
     globby "^11"
     graphology "^0.25.4"
     graphology-traversal "^0.3.1"
     graphology-types "^0.24.7"
-    jsforce "^2.0.0-beta.28"
+    jsforce "^2.0.0-beta.29"
     jszip "^3.10.1"
 
 "@salesforce/plugin-apex@3.0.9":
@@ -1827,16 +1827,16 @@
     "@salesforce/source-deploy-retrieve" "^10.0.3"
     open "^9.1.0"
 
-"@salesforce/plugin-packaging@1.27.8":
-  version "1.27.8"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-1.27.8.tgz#a532ab3ec5c3e72026b62c91e5aa9011ad76cbe8"
-  integrity sha512-717UqQ8f348n154Qe8ImRGSM1w7/2xu1NjoaXyLXtBLux2me+pKKWiM8CE9LFntZlVD62CLnNhpiC1xJlvbIXA==
+"@salesforce/plugin-packaging@1.27.10":
+  version "1.27.10"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-1.27.10.tgz#01293383c4764ae35138f5eb286765780dc6a634"
+  integrity sha512-6tlTXWHJu4CKvawBIvOPm1o0+dNnfyOd8hTr6ZWq6pYbVyoxFNvPUzbZW/X/5fE00Lk96F3E2QsRyDebfhdL0A==
   dependencies:
     "@oclif/core" "^3.14.1"
-    "@salesforce/core" "^6.1.3"
+    "@salesforce/core" "^6.4.0"
     "@salesforce/kit" "^3.0.15"
-    "@salesforce/packaging" "^3.0.4"
-    "@salesforce/sf-plugins-core" "^5.0.5"
+    "@salesforce/packaging" "^3.0.10"
+    "@salesforce/sf-plugins-core" "^5.0.8"
     chalk "^4.1.2"
     tslib "^2"
 
@@ -2016,7 +2016,7 @@
     chalk "^4"
     inquirer "^8.2.5"
 
-"@salesforce/source-deploy-retrieve@10.2.1", "@salesforce/source-deploy-retrieve@^10.0.0", "@salesforce/source-deploy-retrieve@^10.0.2", "@salesforce/source-deploy-retrieve@^10.0.3", "@salesforce/source-deploy-retrieve@^10.2.0", "@salesforce/source-deploy-retrieve@^10.2.1":
+"@salesforce/source-deploy-retrieve@10.2.1", "@salesforce/source-deploy-retrieve@^10.0.0", "@salesforce/source-deploy-retrieve@^10.0.3", "@salesforce/source-deploy-retrieve@^10.2.0", "@salesforce/source-deploy-retrieve@^10.2.1":
   version "10.2.1"
   resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-10.2.1.tgz#fe5ba3006761ecc462b427c26619cdff26512e1e"
   integrity sha512-KaslYNh0oZTKGklECIPRM4SwciPIZqQdjOe/YttCLh0JDchVVeu/Qv8VCldHGnhGUpZ83bSvWG/YWXeEtoY/2w==
