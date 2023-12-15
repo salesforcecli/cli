@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.23.0 darwin-arm64 node-v20.10.0
+@salesforce/cli/2.23.1 linux-x64 node-v20.10.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -758,9 +758,7 @@ FLAG DESCRIPTIONS
     For multiple suites, repeat the flag for each.
     --suite-names Suite1 --suite-names Suite2
 
-  -t, --tests=<value>...
-
-    Apex test class names or IDs and, if applicable, test methods to run; default is all tests.
+  -t, --tests=<value>...  Apex test class names or IDs and, if applicable, test methods to run; default is all tests.
 
     If you specify --tests, you can't specify --class-names or --suite-names
     For multiple tests, repeat the flag for each.
@@ -1126,7 +1124,7 @@ EXAMPLES
       TracedEntityId=01p17000000R6bLAAS"
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.6/src/commands/data/create/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.7/src/commands/data/create/record.ts)_
 
 ## `sf data delete bulk`
 
@@ -1171,7 +1169,7 @@ EXAMPLES
     $ sf data delete bulk --sobject MyObject__c --file files/delete.csv --wait 5 --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.6/src/commands/data/delete/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.7/src/commands/data/delete/bulk.ts)_
 
 ## `sf data delete record`
 
@@ -1230,7 +1228,7 @@ EXAMPLES
     $ sf data delete record --use-tooling-api --sobject TraceFlag --record-id 7tf8c
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.6/src/commands/data/delete/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.7/src/commands/data/delete/record.ts)_
 
 ## `sf data delete resume`
 
@@ -1267,7 +1265,7 @@ EXAMPLES
     $ sf data delete resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.6/src/commands/data/delete/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.7/src/commands/data/delete/resume.ts)_
 
 ## `sf data export tree`
 
@@ -1325,7 +1323,7 @@ EXAMPLES
       my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.6/src/commands/data/export/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.7/src/commands/data/export/tree.ts)_
 
 ## `sf data get record`
 
@@ -1387,7 +1385,7 @@ EXAMPLES
     $ sf data get record --use-tooling-api --sobject TraceFlag --record-id 7tf8c
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.6/src/commands/data/get/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.7/src/commands/data/get/record.ts)_
 
 ## `sf data import tree`
 
@@ -1438,7 +1436,7 @@ EXAMPLES
     $ sf data import tree --plan Account-Contact-plan.json
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.6/src/commands/data/import/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.7/src/commands/data/import/tree.ts)_
 
 ## `sf data query`
 
@@ -1501,7 +1499,7 @@ EXAMPLES
     $ sf data query --query "SELECT Id FROM Contact" --bulk --wait 0
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.6/src/commands/data/query.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.7/src/commands/data/query.ts)_
 
 ## `sf data query resume`
 
@@ -1537,7 +1535,7 @@ EXAMPLES
     $ sf data query resume --bulk-query-id 7500x000005BdFzXXX
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.6/src/commands/data/query/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.7/src/commands/data/query/resume.ts)_
 
 ## `sf data resume`
 
@@ -1573,7 +1571,7 @@ EXAMPLES
     $ sf data resume --job-id 750xx000000005sAAA --batch-id 751xx000000005nAAA
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.6/src/commands/data/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.7/src/commands/data/resume.ts)_
 
 ## `sf data update record`
 
@@ -1634,7 +1632,7 @@ EXAMPLES
       "ExpirationDate=2017-12-01T00:58:04.000+0000"
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.6/src/commands/data/update/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.7/src/commands/data/update/record.ts)_
 
 ## `sf data upsert bulk`
 
@@ -1686,7 +1684,7 @@ EXAMPLES
       my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.6/src/commands/data/upsert/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.7/src/commands/data/upsert/bulk.ts)_
 
 ## `sf data upsert resume`
 
@@ -1723,7 +1721,7 @@ EXAMPLES
     $ sf data upsert resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.6/src/commands/data/upsert/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.7/src/commands/data/upsert/resume.ts)_
 
 ## `sf doctor`
 
@@ -1815,7 +1813,7 @@ EXAMPLES
     $ sf force data bulk delete --sobject MyObject__c --file files/delete.csv --wait 5 --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.6/src/commands/force/data/bulk/delete.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.7/src/commands/force/data/bulk/delete.ts)_
 
 ## `sf force data bulk status`
 
@@ -1851,7 +1849,7 @@ EXAMPLES
     $ sf force data bulk status --job-id 750xx000000005sAAA --batch-id 751xx000000005nAAA --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.6/src/commands/force/data/bulk/status.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.7/src/commands/force/data/bulk/status.ts)_
 
 ## `sf force data bulk upsert`
 
@@ -1908,7 +1906,7 @@ EXAMPLES
       --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.6/src/commands/force/data/bulk/upsert.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.0.7/src/commands/force/data/bulk/upsert.ts)_
 
 ## `sf force mdapi deploy`
 
@@ -2771,9 +2769,7 @@ FLAG DESCRIPTIONS
 
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 
-  -x, --manifest=<value>
-
-    Complete path for the manifest (package.xml) file that specifies the components to deploy.
+  -x, --manifest=<value>  Complete path for the manifest (package.xml) file that specifies the components to deploy.
 
     All child components are included.
 
@@ -2885,9 +2881,7 @@ EXAMPLES
     $ sf force source deploy report --jobid <id> --junit --coverageformatters cobertura
 
 FLAG DESCRIPTIONS
-  -w, --wait=<value>
-
-    Number of minutes to wait for the command to complete and display results to the terminal window.
+  -w, --wait=<value>  Number of minutes to wait for the command to complete and display results to the terminal window.
 
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 ```
@@ -2931,9 +2925,7 @@ EXAMPLES
     $ sf force source pull --target-org myscratch --wait 5 --forceoverwrite
 
 FLAG DESCRIPTIONS
-  -w, --wait=<value>
-
-    Number of minutes to wait for the command to complete and display results to the terminal window.
+  -w, --wait=<value>  Number of minutes to wait for the command to complete and display results to the terminal window.
 
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 ```
@@ -2979,9 +2971,7 @@ EXAMPLES
     $ sf force source push --target-org myscratch --wait 5 --forceoverwrite
 
 FLAG DESCRIPTIONS
-  -w, --wait=<value>
-
-    Number of minutes to wait for the command to complete and display results to the terminal window.
+  -w, --wait=<value>  Number of minutes to wait for the command to complete and display results to the terminal window.
 
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 ```
@@ -3103,15 +3093,11 @@ FLAG DESCRIPTIONS
 
     Running the command multiple times with the same target adds new files and overwrites existing files.
 
-  -w, --wait=<value>
-
-    Number of minutes to wait for the command to complete and display results to the terminal window.
+  -w, --wait=<value>  Number of minutes to wait for the command to complete and display results to the terminal window.
 
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 
-  -x, --manifest=<value>
-
-    Complete path for the manifest (package.xml) file that specifies the components to retrieve.
+  -x, --manifest=<value>  Complete path for the manifest (package.xml) file that specifies the components to retrieve.
 
     If you specify this parameter, don’t specify --metadata or --sourcepath.
 ```
@@ -5260,7 +5246,7 @@ FLAG DESCRIPTIONS
     subscribers.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package1/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package1/version/create.ts)_
 
 ## `sf package1 version create get`
 
@@ -5292,7 +5278,7 @@ EXAMPLES
     $ sf package1 version create get --request-id 0HD... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package1/version/create/get.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package1/version/create/get.ts)_
 
 ## `sf package1 version display`
 
@@ -5325,7 +5311,7 @@ EXAMPLES
     $ sf package1 version display --package-version-id 04t... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package1/version/display.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package1/version/display.ts)_
 
 ## `sf package1 version list`
 
@@ -5362,7 +5348,7 @@ FLAG DESCRIPTIONS
     If not specified, shows all versions for all packages (managed and unmanaged) in the org.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package1/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package1/version/list.ts)_
 
 ## `sf package create`
 
@@ -5440,7 +5426,7 @@ FLAG DESCRIPTIONS
     Org-Dependent Unlocked Packages" in the Salesforce DX Developer Guide.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/create.ts)_
 
 ## `sf package delete`
 
@@ -5481,7 +5467,7 @@ EXAMPLES
     $ sf package delete --package 0Ho... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/delete.ts)_
 
 ## `sf package install`
 
@@ -5579,7 +5565,7 @@ FLAG DESCRIPTIONS
     specify DeprecateOnly or Delete only for unlocked package upgrades.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/install.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/install.ts)_
 
 ## `sf package install report`
 
@@ -5611,7 +5597,7 @@ EXAMPLES
     $ sf package install report --request-id 0Hf... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/install/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/install/report.ts)_
 
 ## `sf package installed list`
 
@@ -5642,7 +5628,7 @@ EXAMPLES
     $ sf package installed list --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/installed/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/installed/list.ts)_
 
 ## `sf package list`
 
@@ -5679,7 +5665,7 @@ EXAMPLES
     $ sf package list --target-dev-hub devhub@example.com --verbose
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/list.ts)_
 
 ## `sf package uninstall`
 
@@ -5726,7 +5712,7 @@ EXAMPLES
     $ sf package uninstall --package "Undesirable Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/uninstall.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/uninstall.ts)_
 
 ## `sf package uninstall report`
 
@@ -5758,7 +5744,7 @@ EXAMPLES
     $ sf package uninstall report --request-id 06y... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/uninstall/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/uninstall/report.ts)_
 
 ## `sf package update`
 
@@ -5812,7 +5798,7 @@ FLAG DESCRIPTIONS
     associated with your package.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/update.ts)_
 
 ## `sf package version create`
 
@@ -5967,7 +5953,7 @@ FLAG DESCRIPTIONS
     periods of no output from commands.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/version/create.ts)_
 
 ## `sf package version create list`
 
@@ -6027,7 +6013,7 @@ EXAMPLES
     $ sf package version create list --created-last-days 0 --status Success
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/version/create/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/version/create/list.ts)_
 
 ## `sf package version create report`
 
@@ -6069,7 +6055,7 @@ EXAMPLES
     $ sf package version create report --package-create-request-id 08c... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/version/create/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/version/create/report.ts)_
 
 ## `sf package version delete`
 
@@ -6107,7 +6093,7 @@ EXAMPLES
     $ sf package version delete --package 04t... --target-org devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/version/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/version/delete.ts)_
 
 ## `sf package version displayancestry`
 
@@ -6165,7 +6151,7 @@ FLAG DESCRIPTIONS
     You can use the DOT code output in graph visualization software to create tree visualizations.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/version/displayancestry.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/version/displayancestry.ts)_
 
 ## `sf package version list`
 
@@ -6233,7 +6219,7 @@ EXAMPLES
     $ sf package version list --packages exp-mgr,exp-mgr-util --released --modified-last-days 0
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/version/list.ts)_
 
 ## `sf package version promote`
 
@@ -6276,7 +6262,7 @@ EXAMPLES
     $ sf package version promote --package "Awesome Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/version/promote.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/version/promote.ts)_
 
 ## `sf package version report`
 
@@ -6315,7 +6301,7 @@ EXAMPLES
     $ sf package version report --package "Your Package Alias" --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/version/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/version/report.ts)_
 
 ## `sf package version update`
 
@@ -6367,7 +6353,7 @@ EXAMPLES
     $ sf package version update --package 04t... --version-description "New Package Version Description"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.9/src/commands/package/version/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/1.27.10/src/commands/package/version/update.ts)_
 
 ## `sf plugins`
 
@@ -8208,9 +8194,7 @@ FLAG DESCRIPTIONS
     If the target directory matches one of the package directories in your sfdx-project.json file, the command fails.
     Running the command multiple times with the same target adds new files and overwrites existing files.
 
-  -w, --wait=<value>
-
-    Number of minutes to wait for the command to complete and display results to the terminal window.
+  -w, --wait=<value>  Number of minutes to wait for the command to complete and display results to the terminal window.
 
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 
