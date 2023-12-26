@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.23.11 linux-x64 node-v20.10.0
+@salesforce/cli/2.23.12 linux-x64 node-v20.10.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -836,7 +836,7 @@ EXAMPLES
   $ sf autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/3.0.3/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/3.0.4/src/commands/autocomplete/index.ts)_
 
 ## `sf commands`
 
