@@ -55,6 +55,9 @@ jobs:
           # - salesforce/plugin-functions
           # - salesforce/sfdx-plugin-lwc-test
           # - salesforce/sfdx-scanner
+        exclude:
+          - os: windows-latest
+            repository: salesforcecli/plugin-dev # These are flakey on Windows
     uses: ./.github/workflows/just-nut.yml
     with:
       repository: ${{matrix.repository}}
