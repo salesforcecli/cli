@@ -7,37 +7,41 @@
 
 import * as os from 'node:os';
 import { Command, Hook, toConfiguredId, toStandardizedId, Interfaces, loadHelpClass } from '@oclif/core';
-import { Prompter } from '@salesforce/sf-plugins-core';
 
 function buildChoices(
   matches: Command.Loadable[],
   config: Interfaces.Config
-): Array<{ name: string; value: Command.Loadable }> {
+): Array<{ name: string; value: Command.Loadable['id'] }> {
   const configuredIds = matches.map((p) => toConfiguredId(p.id, config));
   const maxCommandLength = configuredIds.reduce((max, id) => Math.max(max, id.length), 0);
   return matches.map((p, i) => {
     const summary = p.summary ?? p.description?.split(os.EOL)[0] ?? '';
     return {
       name: `${configuredIds[i].padEnd(maxCommandLength + 5, ' ')}${summary}`,
-      value: p,
+      value: p.id,
       short: configuredIds[i],
     };
   });
 }
 
 async function determineCommand(config: Interfaces.Config, matches: Command.Loadable[]): Promise<string> {
-  const prompter = new Prompter();
-  const choices = buildChoices(matches, config);
-  const { command } = await prompter.timedPrompt<{ command: Command.Loadable }>([
-    {
-      name: 'command',
-      type: 'list',
-      message: 'Which of these commands do you mean',
-      choices,
-    },
+  const [{ setTimeout }, { SfError }, select] = await Promise.all([
+    import('node:timers/promises'),
+    import('@salesforce/core'),
+    import('@inquirer/select'),
   ]);
 
-  return command.id;
+  const choices = buildChoices(matches, config);
+  const answer = select.default({
+    message: 'Which of these commands do you mean',
+    choices,
+  });
+
+  const timeout = setTimeout(60_000, undefined, { ref: false }).then(() => {
+    answer.cancel();
+    throw new SfError('Prompt timed out.');
+  });
+  return Promise.race([answer, timeout]);
 }
 
 const hook: Hook.CommandIncomplete = async function ({ config, matches, argv }) {
