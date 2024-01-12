@@ -1,7 +1,7 @@
-const fs = require('fs');
-const exec = require('child_process').exec;
+import { readdirSync } from 'node:fs';
+import { exec } from 'node:child_process';
 
-fs.readdirSync('.')
+readdirSync('.')
   .filter((f) => f.startsWith('sf-v') && f.endsWith('.exe'))
   .map((f) => ({
     filename: f,
@@ -20,8 +20,12 @@ fs.readdirSync('.')
     exec(f, (error, stdout) => {
       if (error) {
         console.error(`exec error: ${error}`);
-        return;
       }
-      console.log(stdout);
+      console.log(
+        stdout
+          .split('\n')
+          .filter((l) => l.includes('upload:'))
+          .join('\n')
+      );
     });
   });
