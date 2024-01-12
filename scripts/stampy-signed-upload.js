@@ -1,8 +1,13 @@
 import { readdirSync } from 'node:fs';
 import { exec } from 'node:child_process';
 
-readdirSync('.')
-  .filter((f) => f.startsWith('sf-v') && f.endsWith('.exe'))
+const files = readdirSync('.').filter((f) => f.startsWith('sf-v') && f.endsWith('.exe'));
+
+if (files.length === 0) {
+  throw new Error('The stampy signed bucket contains no sf files.');
+}
+
+files
   .map((f) => ({
     filename: f,
     cli: f.split('-')[0],
@@ -19,7 +24,7 @@ readdirSync('.')
   .map((f) => {
     exec(f, (error, stdout) => {
       if (error) {
-        console.error(`exec error: ${error}`);
+        throw error;
       }
       console.log(
         stdout
