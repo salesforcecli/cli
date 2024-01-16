@@ -1340,12 +1340,12 @@
     http-call "^5.2.2"
     lodash.template "^4.5.0"
 
-"@oclif/plugin-which@3.0.14":
-  version "3.0.14"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-which/-/plugin-which-3.0.14.tgz#7b287c5c89bfd89e93df90cbf212a8ddaa0b4db7"
-  integrity sha512-v4ZfC0h/8pptFALOeIL++LFChtBQF8EBMCYGxVnD9mygYu5FQH7/gTaPT04wcssyDpHzU2We+Mbzpbk4zguR3A==
+"@oclif/plugin-which@3.0.15":
+  version "3.0.15"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-which/-/plugin-which-3.0.15.tgz#852b8a0e9f1d675d51f9ba8d9451d1f5a9ed79a6"
+  integrity sha512-3ndjO7HdFmyYWZUaUemYEBXCRrbmxDvGknSUF1Ezqv83eRCPEjLma8IOb1/5uHP5mmizmqMQboDAiSsWa2X9yw==
   dependencies:
-    "@oclif/core" "^3.15.1"
+    "@oclif/core" "^3.18.1"
 
 "@octokit/auth-token@^2.4.4":
   version "2.5.0"
@@ -1844,10 +1844,10 @@
     got "^13.0.0"
     proxy-agent "^6.3.1"
 
-"@salesforce/plugin-org@3.3.3":
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-3.3.3.tgz#5344e85d6d31c460045e50a95a66b1014182cf93"
-  integrity sha512-4alDIE3QYEOHSQwMObY/qgaLzOraglqsSEllCqZZ/AK2gszJa0jEtZ0VpEB2EJhFyPq6F4Lkvd0OJXkQyZTwaA==
+"@salesforce/plugin-org@3.3.4":
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-3.3.4.tgz#24133335b341c0cd9d9c99311b97c4d351041b87"
+  integrity sha512-XxlPocIYTOC7xOqgKUufRZUttZvhMKwjVJbthHjwxrwPjF58cyVl76zYhlhJSFhhcm6U4imGI6nwsV7sdghIvw==
   dependencies:
     "@oclif/core" "^3.18.1"
     "@salesforce/core" "^6.4.4"
@@ -1855,7 +1855,7 @@
     "@salesforce/sf-plugins-core" "^7.1.2"
     "@salesforce/source-deploy-retrieve" "^10.2.11"
     chalk "^5.3.0"
-    change-case "^5.3.0"
+    change-case "^5.4.1"
     is-wsl "^3.1.0"
     open "^10.0.3"
 
@@ -3505,7 +3505,7 @@ change-case@^4, change-case@^4.1.2:
     snake-case "^3.0.4"
     tslib "^2.0.3"
 
-change-case@^5.3.0, change-case@^5.4.1:
+change-case@^5.4.1:
   version "5.4.2"
   resolved "https://registry.yarnpkg.com/change-case/-/change-case-5.4.2.tgz#0b3e4d9746fb16b83f3a8b68a9411bc4a8a61863"
   integrity sha512-WB3UiTDpT+vrTilAWaJS4gaIH/jc1He4H9f6erQvraUYas90uWT0JOYFkG1imdNv710XJ6gJvqynrgOHc4ihDA==
