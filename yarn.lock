@@ -2214,10 +2214,10 @@
   resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
 
-"@salesforce/apex-node@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/apex-node/-/apex-node-3.0.1.tgz#0374133b4c53393f47f342e29c0073f2f939ad35"
-  integrity sha512-zQKr4+vddu/OWH1RJSZBE0kflmyurGhUu34uR4PyI3F0mLEfkZPTTzMY8OsbsxtYRCd0oN1psL/t0xrjlF16DQ==
+"@salesforce/apex-node@^3.0.1", "@salesforce/apex-node@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/apex-node/-/apex-node-3.0.2.tgz#fd4b9dc72b31baa732de39b106bb0bbed8c96949"
+  integrity sha512-lHa7XnQCivuwTtO0RBTqw+nZ4Qm4ymodqpNJwefFLk6KBEva9sMV9Ksj2x6kBGGbLyO6ZiJiUMSAN6Gcny60zg==
   dependencies:
     "@salesforce/core" "^6.1.0"
     "@salesforce/kit" "^3.0.15"
@@ -2356,13 +2356,13 @@
     jsforce "^2.0.0-beta.29"
     jszip "^3.10.1"
 
-"@salesforce/plugin-apex@3.0.18":
-  version "3.0.18"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-apex/-/plugin-apex-3.0.18.tgz#5d1fcdaf6b3007ab571b700f2c12a12656b24d0c"
-  integrity sha512-Tht8Yu9eMCFFC3mPugcCUDDAJMYlqHAHWA3p3EJOzFyBKKKVLQQWr/88tJ/slAKGVt2a/O3/h3o1OJJ2+roMUg==
+"@salesforce/plugin-apex@3.0.19":
+  version "3.0.19"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-apex/-/plugin-apex-3.0.19.tgz#d955815da1bb4e42b2afb90685bdfb442cc0c1c4"
+  integrity sha512-TXYnNNSv4qDP/oFihE/msQhxeQmy1SIAcJIV6+eAU/t+U2AWBEy6uYp+zSxdcfT8MUsArTUkiYVCZzVWO8TahQ==
   dependencies:
     "@oclif/core" "^3.16.0"
-    "@salesforce/apex-node" "^3.0.1"
+    "@salesforce/apex-node" "^3.0.2"
     "@salesforce/core" "^6.4.4"
     "@salesforce/kit" "^3.0.15"
     "@salesforce/sf-plugins-core" "^7.1.2"
