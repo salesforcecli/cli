@@ -1,5 +1,6 @@
 import { readdirSync } from 'node:fs';
 import { exec } from 'node:child_process';
+import os from 'node:os';
 
 const files = readdirSync('.').filter((f) => f.startsWith('sf-v') && f.endsWith('.exe'));
 
@@ -28,9 +29,9 @@ files
       }
       console.log(
         stdout
-          .split('\n')
+          .split(os.EOL)
           .filter((l) => l.includes('upload:'))
-          .join(' \\\n')
+          .join(` \\${os.EOL}`)
       );
     });
   });
