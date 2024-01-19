@@ -28,12 +28,13 @@ jobs:
           aws s3 cp --recursive ${{ secrets.STAMPY_SIGNED_BUCKET }}/ .
 
       - name: upload to CLI s3
+        id: upload
         env:
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           AWS_EC2_METADATA_DISABLED: true
         run: |
-          node scripts/stampy-signed-upload.cjs
+          echo "output=$(node scripts/stampy-signed-upload.js)" >> "$GITHUB_OUTPUT"
 
       - name: clean up stampy in/out buckets
         env:
@@ -49,4 +50,21 @@ jobs:
           export AWS_ACCESS_KEY_ID=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.AccessKeyId')
           export AWS_SECRET_ACCESS_KEY=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SecretAccessKey')
           export AWS_SESSION_TOKEN=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SessionToken')
-          node scripts/stampy-signed-delete.cjs
+          node scripts/stampy-signed-delete.js
+
+      - name: notify
+        uses: slackapi/slack-github-action@v1.24.0
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.CLI_TEAM_SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+        with:
+          payload: |
+            {
+              "blocks": [{
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "Stampy signed and uploaded the following files\n ${{ steps.upload.outputs.output }}"
+                }
+              }]
+            }
