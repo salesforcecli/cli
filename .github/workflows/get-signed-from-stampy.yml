@@ -64,7 +64,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "Stampy signed and uploaded the follwing files\n ${{ steps.upload.outputs.output }}"
+                  "text": "Stampy signed and uploaded the following files\n ${{ steps.upload.outputs.output }}"
                 }
               }]
             }
