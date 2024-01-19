@@ -34,7 +34,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           AWS_EC2_METADATA_DISABLED: true
         run: |
-          echo "output=$(node scripts/stampy-signed-upload.js)" >> "$GITHUB_OUTPUT"
+          echo -e "output<<EOF$(node scripts/stampy-signed-upload.js)EOF" >> "$GITHUB_OUTPUT"
 
       - name: clean up stampy in/out buckets
         env:
