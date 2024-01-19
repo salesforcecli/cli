@@ -34,7 +34,19 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           AWS_EC2_METADATA_DISABLED: true
         run: |
-          echo -e "output<<EOF\n$(node scripts/stampy-signed-upload.js)\nEOF" >> "$GITHUB_OUTPUT"
+          # Run script and redirect stderr to stdout
+          OUTPUT=$(node scripts/stampy-signed-upload.js 2>&1)
+
+          # Check for non-zero exit code and stop the workflow if an error occured
+          if [ $? -ne 0 ]; then
+            echo "An error occured:"
+            echo $OUTPUT
+            exit 1
+          fi
+
+          # Set multiline string output
+          # https://stackoverflow.com/questions/74137120/how-to-fix-or-avoid-error-unable-to-process-file-command-output-successfully#comment131739699_74232400
+          echo -e "output<<EOF\n$OUTPUT\nEOF" >> "$GITHUB_OUTPUT"
 
       - name: clean up stampy in/out buckets
         env:
