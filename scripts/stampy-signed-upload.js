@@ -30,7 +30,7 @@ files
         stdout
           .split('\n')
           .filter((l) => l.includes('upload:'))
-          .join('\n')
+          .join(', ')
       );
     });
   });
