@@ -31,7 +31,7 @@ files
         stdout
           .split('\r')
           .filter((l) => l.includes('upload:'))
-          .join(` \\\r`)
+          .join(` \\\n`)
       );
     });
   });
