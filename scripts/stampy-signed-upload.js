@@ -25,7 +25,8 @@ files
   .map((f) => {
     exec(f, (error, stdout) => {
       console.log('↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧');
-      console.log(stdout);
+      console.log('Split output');
+      console.log(stdout.split(os.EOL));
       console.log('↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥');
       if (error) {
         throw error;
