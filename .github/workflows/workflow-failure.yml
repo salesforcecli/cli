@@ -12,7 +12,7 @@ on:
       - promote-nightly-to-rc
       - promote-rc-to-latest
       - update-docker-node-version
-      # - get-signed-installers-from-stampy
+      - get-signed-installers-from-stampy
     types:
       - completed
 

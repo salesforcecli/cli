@@ -37,13 +37,6 @@ jobs:
           # Run script and redirect stderr to stdout
           OUTPUT=$(node scripts/stampy-signed-upload.js 2>&1)
 
-          # Temp output the result
-          echo "-v-----------------"
-          echo "Exit code: $?"
-          echo "Output:"
-          echo $OUTPUT
-          echo "-^-----------------"
-
           # Check for non-zero exit code and stop the workflow if an error occured
           if [ $? -ne 0 ]; then
             echo "An error occured:"
