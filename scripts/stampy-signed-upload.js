@@ -26,16 +26,16 @@ files
     exec(f, (error, stdout) => {
       console.log('↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧');
       console.log('Split output');
-      console.log(stdout.split(os.EOL));
+      console.log(stdout.split('\r'));
       console.log('↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥');
       if (error) {
         throw error;
       }
       console.log(
         stdout
-          .split(os.EOL)
+          .split('\r')
           .filter((l) => l.includes('upload:'))
-          .join(` \\${os.EOL}`)
+          .join(` \\\r`)
       );
     });
   });
