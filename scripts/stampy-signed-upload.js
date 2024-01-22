@@ -31,6 +31,11 @@ files
       if (error) {
         throw error;
       }
-      console.log(stdout.split('\r').filter((l) => l.includes('upload:')));
+      console.log(
+        stdout
+          .split('\r')
+          .filter((l) => l.includes('upload:'))
+          .join()
+      );
     });
   });
