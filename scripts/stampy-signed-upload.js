@@ -31,6 +31,6 @@ files
       if (error) {
         throw error;
       }
-      console.log(`${stdout.split('\r').filter((l) => l.includes('upload:'))} \\${os.EOL}`);
+      console.log(stdout.split('\r').filter((l) => l.includes('upload:')));
     });
   });
