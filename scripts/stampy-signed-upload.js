@@ -31,9 +31,9 @@ files
         stdout
           .split('\r')
           .filter((l) => l.includes('upload:'))
+          .join()
           .replace('upload: ./', '`')
           .replace('.exe to', '.exe` to')
-          .join()
       );
     });
   });
