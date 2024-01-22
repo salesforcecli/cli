@@ -79,11 +79,21 @@ jobs:
         with:
           payload: |
             {
-              "blocks": [{
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": ${{ toJson(steps.upload.outputs.output) }}
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Stampy signed and uploaded the following files:",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": ${{ toJson(steps.upload.outputs.output) }}
+                  }
                 }
-              }]
+              ]
             }

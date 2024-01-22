@@ -24,10 +24,6 @@ files
   )
   .map((f) => {
     exec(f, (error, stdout) => {
-      // console.log('-vvv-');
-      // console.log('Split and filtered stdout:');
-      // console.log(stdout.split('\r').filter((l) => l.includes('upload:')));
-      // console.log('-^^^-');
       if (error) {
         throw error;
       }
@@ -35,6 +31,8 @@ files
         stdout
           .split('\r')
           .filter((l) => l.includes('upload:'))
+          .replace('upload: ./', '`')
+          .replace('.exe to', '.exe` to')
           .join()
       );
     });
