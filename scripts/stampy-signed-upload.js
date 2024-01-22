@@ -24,10 +24,6 @@ files
   )
   .map((f) => {
     exec(f, (error, stdout) => {
-      console.log('↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧');
-      console.log('Split output');
-      console.log(stdout.split('\r'));
-      console.log('↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥');
       if (error) {
         throw error;
       }
