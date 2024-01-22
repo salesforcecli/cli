@@ -83,7 +83,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "Stampy signed and uploaded the following files\n ${{ toJson(steps.upload.outputs.output) }}"
+                  "text": ${{ toJson(steps.upload.outputs.output) }}
                 }
               }]
             }
