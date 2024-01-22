@@ -24,6 +24,9 @@ files
   )
   .map((f) => {
     exec(f, (error, stdout) => {
+      console.log('↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧');
+      console.log(stdout);
+      console.log('↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥');
       if (error) {
         throw error;
       }
