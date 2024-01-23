@@ -29,9 +29,11 @@ files
       }
       console.log(
         stdout
-          .split(os.EOL)
+          .split('\r')
           .filter((l) => l.includes('upload:'))
-          .join(` \\${os.EOL}`)
+          .join()
+          .replace('upload: ./', '`')
+          .replace('.exe to', '.exe` to')
       );
     });
   });
