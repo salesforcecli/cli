@@ -19,7 +19,8 @@
     "/oclif.manifest.json",
     "/npm-shrinkwrap.json",
     "/scripts/preinstall.js",
-    "/scripts/post-install-release-notes.js"
+    "/scripts/post-install-release-notes.js",
+    "/theme.json"
   ],
   "keywords": [
     "oclif",
@@ -41,6 +42,7 @@
     "flexibleTaxonomy": true,
     "commands": "./dist/commands",
     "helpClass": "./dist/help/sfHelp.js",
+    "theme": "theme.json",
     "plugins": [
       "@oclif/plugin-autocomplete",
       "@oclif/plugin-commands",
