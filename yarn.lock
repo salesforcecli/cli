@@ -2357,16 +2357,16 @@
     "@salesforce/ts-types" "^2.0.9"
     tslib "^2.6.2"
 
-"@salesforce/packaging@^3.2.5":
-  version "3.2.5"
-  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-3.2.5.tgz#106a754aece9e753b32254e46373d9eb4cf8a742"
-  integrity sha512-vEydpa7gjr8vn35MezRPxoJE3b7f/fzIU9uBwgONf8THCJ7PMhj9PPfWOXfNp+/7qorqmYIVCJxMFWpJrMStlQ==
+"@salesforce/packaging@^3.2.6":
+  version "3.2.8"
+  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-3.2.8.tgz#b2548568c774d67928a1d48849d014598a9103b7"
+  integrity sha512-gIhEBq7E+5pcNK+Jp8NFsfQV0W9XvlmAJlXlPafyglWxnhOhMIcR6xzOxR9CwbSFVlHAX7lSBFpbbOPsLVJaPg==
   dependencies:
     "@oclif/core" "^3"
-    "@salesforce/core" "^6.4.7"
+    "@salesforce/core" "^6.5.1"
     "@salesforce/kit" "^3.0.15"
     "@salesforce/schemas" "^1.6.1"
-    "@salesforce/source-deploy-retrieve" "^10.2.11"
+    "@salesforce/source-deploy-retrieve" "^10.2.13"
     "@salesforce/ts-types" "^2.0.9"
     fast-xml-parser "^4.3.3"
     globby "^11"
@@ -2390,10 +2390,10 @@
     color-convert "^2.0.1"
     color-name "^2.0.0"
 
-"@salesforce/plugin-auth@3.3.5":
-  version "3.3.5"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.3.5.tgz#3ac3083d56da6e99a8075f76f117854878fcc62d"
-  integrity sha512-MrI9rB3z4+AYBU19+zYaqbCmC7R5O+Mi6FVZXt0E+qYGzhqhe5zL4LBga+91A+tvk9ZT6M/Zm3K3ouQ2EjGJvw==
+"@salesforce/plugin-auth@3.3.6":
+  version "3.3.6"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.3.6.tgz#b9459c08448229c8a3ffa556e9fcfce07c925288"
+  integrity sha512-Fddgq75iA+PZHNEXG/83ww15d1AAHQsjQjDy4c5Sf+vWcSlP9aQqmyYw1b1UmvLUsqURClanzMh6av66WC13ow==
   dependencies:
     "@inquirer/checkbox" "^1.5.0"
     "@inquirer/select" "^1.3.1"
@@ -2505,15 +2505,15 @@
     is-wsl "^3.1.0"
     open "^10.0.3"
 
-"@salesforce/plugin-packaging@2.1.3":
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.1.3.tgz#1e70c0c739ac97cd2301e3ea6c3873d8ddd64d6a"
-  integrity sha512-DGntBKjRa5NmwyRMsAItEpiPTyyMeOqqfMqOtJ/5aQqb2m7BNxCqBbml5jrdR/APrL2G5BF2uq4Iwpzv8P0I8A==
+"@salesforce/plugin-packaging@2.1.4":
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.1.4.tgz#9a910dd051724c7591f30a3303f8dff48067e77e"
+  integrity sha512-lgym/msjK2l5pjye4YvthRXicT9I2pLycug+exnVaweC4X9l+JA5gyrZ3g+ZoMa2BjzgS7tJIYvLEy7PQsB8aw==
   dependencies:
     "@oclif/core" "^3.14.1"
     "@salesforce/core" "^6.4.4"
     "@salesforce/kit" "^3.0.15"
-    "@salesforce/packaging" "^3.2.5"
+    "@salesforce/packaging" "^3.2.6"
     "@salesforce/sf-plugins-core" "^7.0.0"
     chalk "^5.3.0"
 
