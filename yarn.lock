@@ -2684,7 +2684,7 @@
     "@salesforce/ts-types" "^2.0.9"
     tslib "^2.6.2"
 
-"@salesforce/packaging@^3.2.6":
+"@salesforce/packaging@^3.2.8":
   version "3.2.8"
   resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-3.2.8.tgz#b2548568c774d67928a1d48849d014598a9103b7"
   integrity sha512-gIhEBq7E+5pcNK+Jp8NFsfQV0W9XvlmAJlXlPafyglWxnhOhMIcR6xzOxR9CwbSFVlHAX7lSBFpbbOPsLVJaPg==
@@ -2832,15 +2832,15 @@
     is-wsl "^3.1.0"
     open "^10.0.3"
 
-"@salesforce/plugin-packaging@2.1.4":
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.1.4.tgz#9a910dd051724c7591f30a3303f8dff48067e77e"
-  integrity sha512-lgym/msjK2l5pjye4YvthRXicT9I2pLycug+exnVaweC4X9l+JA5gyrZ3g+ZoMa2BjzgS7tJIYvLEy7PQsB8aw==
+"@salesforce/plugin-packaging@2.1.5":
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.1.5.tgz#06a94d55d23b5cd7f3bf2bf27173dd1d99c5d402"
+  integrity sha512-RBsvL31nB0NW6ByjUNsTmSUWc6BR4K/Gr6SWdlQ0kNLCYhxO63Icn94ugpOZLlUVemCQTHjGPNNujDYDKS5iiw==
   dependencies:
     "@oclif/core" "^3.14.1"
-    "@salesforce/core" "^6.4.4"
+    "@salesforce/core" "^6.5.1"
     "@salesforce/kit" "^3.0.15"
-    "@salesforce/packaging" "^3.2.6"
+    "@salesforce/packaging" "^3.2.8"
     "@salesforce/sf-plugins-core" "^7.0.0"
     chalk "^5.3.0"
 
@@ -2947,10 +2947,10 @@
     yeoman-environment "^3"
     yeoman-generator "^5"
 
-"@salesforce/plugin-trust@3.3.4":
-  version "3.3.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-3.3.4.tgz#6c572d8cfcebe1ad71c42a3043b2b5d4fd7b6e7c"
-  integrity sha512-Z8DBxgA+LOcIrbirS6qai9Ur1P+A/gl2cgreiEDzGJPH6I9m2DD6gbi5rPHwujyLLbLBhn365RSHrhblIiCkRw==
+"@salesforce/plugin-trust@3.3.5":
+  version "3.3.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-3.3.5.tgz#fa3ca383b15a9427e85e8ceee2885fb9839bf3e6"
+  integrity sha512-7cHWhPnR8jiPrrCkyUNJnzEsr+LTB7CPCes3P6RlHXJWi3CSiYTAJpTtCHUUyypGu+A82XkbMdiFkrCRbmn5uw==
   dependencies:
     "@oclif/core" "^3.15.0"
     "@salesforce/core" "^6.5.1"
@@ -2959,6 +2959,7 @@
     npm "10.2.3"
     npm-run-path "^4.0.1"
     proxy-agent "^6.3.1"
+    semver "^7.5.4"
     shelljs "^0.8.4"
 
 "@salesforce/plugin-trust@^2.6.23":
