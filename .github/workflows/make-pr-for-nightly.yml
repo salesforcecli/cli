@@ -70,8 +70,17 @@ jobs:
       - name: Install @salesforce/plugin-release-management
         run: npm install -g @salesforce/plugin-release-management --omit=dev
 
+      - name: Get Github user info
+        id: github-user-info
+        uses: salesforcecli/github-workflows/.github/actions/getGithubUserInfo@main
+        with:
+          token: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
+
       - name: Set git config defaults
         uses: salesforcecli/github-workflows/.github/actions/gitConfig@main
+        with:
+          username: ${{ steps.github-user-info.outputs.username }}
+          email: ${{ steps.github-user-info.outputs.email }}
 
       - name: Fetch all branches
         run: git fetch
