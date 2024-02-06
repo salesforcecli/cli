@@ -1357,7 +1357,7 @@
     chalk "^4.1.2"
     figures "^3.2.0"
 
-"@inquirer/confirm@^2.0.15", "@inquirer/confirm@^2.0.17":
+"@inquirer/confirm@^2.0.17":
   version "2.0.17"
   resolved "https://registry.yarnpkg.com/@inquirer/confirm/-/confirm-2.0.17.tgz#a45eb1b973c51c993a3c093a0114e960b1cf09a4"
   integrity sha512-EqzhGryzmGpy2aJf6LxJVhndxYmFs+m8cxXzf8nejb1DE3sabf6mUgBcp4J0jAUEiAcYzqmkqRr7LPFh/WdnXA==
@@ -1907,7 +1907,7 @@
     node-gyp "^10.0.0"
     which "^4.0.0"
 
-"@oclif/core@3.19.0":
+"@oclif/core@3.19.0", "@oclif/core@^3", "@oclif/core@^3.10.2", "@oclif/core@^3.14.1", "@oclif/core@^3.15.1", "@oclif/core@^3.16.0", "@oclif/core@^3.18.1", "@oclif/core@^3.18.2":
   version "3.19.0"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.19.0.tgz#b275daa260d3d24e6e6c10ed2a0ec4b243b61107"
   integrity sha512-Vup9DGMWlPeRVSpC76XCByfDwu1/09Xo2YTyzsquD9vnkeqIl0j0nxEjaYb6Ui3cifozLyKc/Td0+z/zz15/og==
@@ -1970,39 +1970,6 @@
     supports-hyperlinks "^2.2.0"
     ts-node "^10.9.1"
     tslib "^2.5.0"
-    widest-line "^3.1.0"
-    wordwrap "^1.0.0"
-    wrap-ansi "^7.0.0"
-
-"@oclif/core@^3", "@oclif/core@^3.10.2", "@oclif/core@^3.14.1", "@oclif/core@^3.15.1", "@oclif/core@^3.16.0", "@oclif/core@^3.18.1", "@oclif/core@^3.18.2":
-  version "3.18.2"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.18.2.tgz#3c665ad65d0d5c752a6deb91c4ef60330094625c"
-  integrity sha512-gfWxCS7dTNzdtvlBEEPUXJj+znzDMjSHfgTIx2IuQ9O3JPxWBrlOj9rgyNxyulVWVKKkuwFFkM4NZA+yiKA9ow==
-  dependencies:
-    "@types/cli-progress" "^3.11.5"
-    ansi-escapes "^4.3.2"
-    ansi-styles "^4.3.0"
-    cardinal "^2.1.1"
-    chalk "^4.1.2"
-    clean-stack "^3.0.1"
-    cli-progress "^3.12.0"
-    color "^4.2.3"
-    debug "^4.3.4"
-    ejs "^3.1.9"
-    get-package-type "^0.1.0"
-    globby "^11.1.0"
-    hyperlinker "^1.0.0"
-    indent-string "^4.0.0"
-    is-wsl "^2.2.0"
-    js-yaml "^3.14.1"
-    natural-orderby "^2.0.3"
-    object-treeify "^1.1.33"
-    password-prompt "^1.1.3"
-    slice-ansi "^4.0.0"
-    string-width "^4.2.3"
-    strip-ansi "^6.0.1"
-    supports-color "^8.1.1"
-    supports-hyperlinks "^2.2.0"
     widest-line "^3.1.0"
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
@@ -2080,12 +2047,12 @@
     "@oclif/core" "^3.18.2"
     inquirer-autocomplete-standalone "^0.8.1"
 
-"@oclif/plugin-update@4.1.9":
-  version "4.1.9"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.1.9.tgz#3c1ec172e0c656da896daf9bcbce3cac2a95d044"
-  integrity sha512-AvPBRAZmXxnXGSbHuPERf0YLU5EmEh7xVsbA4uAzpZf4MQGBE9NJ90l7dR9a/EkvKvCS9F1qgHrlNd15BszCEA==
+"@oclif/plugin-update@4.1.10":
+  version "4.1.10"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.1.10.tgz#10dbbb69c6ac8adcd3bf89e495e5f7f48b8cb08f"
+  integrity sha512-Wtr1TQTgenoD4BVukmEF/kx77wC0pdbP+McRzqbZmqGDWTzcLDwKW3JECanQGfUwO87ofD92W9aLohhV+Yu2Ug==
   dependencies:
-    "@oclif/core" "^3.18.1"
+    "@oclif/core" "^3.18.2"
     chalk "^5"
     cross-spawn "^7.0.3"
     debug "^4.3.1"
@@ -2783,12 +2750,12 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.6.1.tgz#7d1c071e1e509ca9d2d8a6e48ac7447dd67a534d"
   integrity sha512-eVy947ZMxCJReKJdgfddUIsBIbPTa/i8RwQGwxq4/ss38H5sLOAeSTaun9V7HpJ1hkpDznWKfgzYvjsst9K6ig==
 
-"@salesforce/sf-plugins-core@7.1.7", "@salesforce/sf-plugins-core@^7.0.0", "@salesforce/sf-plugins-core@^7.1.1", "@salesforce/sf-plugins-core@^7.1.4", "@salesforce/sf-plugins-core@^7.1.5":
-  version "7.1.7"
-  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-7.1.7.tgz#10c77c6861e95888f9b51cf728de83a69aaaa316"
-  integrity sha512-QZZRI6coYAAlJ8/Af8sXqi5Ksli2jEO49ZBU+L08O/yT32H+PTVLWAhg8fUI2uFsgodCjYkmwiygJ4n57D91tw==
+"@salesforce/sf-plugins-core@7.1.8", "@salesforce/sf-plugins-core@^7.0.0", "@salesforce/sf-plugins-core@^7.1.1", "@salesforce/sf-plugins-core@^7.1.4", "@salesforce/sf-plugins-core@^7.1.5":
+  version "7.1.8"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-7.1.8.tgz#b7f4a01b1212d7aedb592f49c1fad07fcf942225"
+  integrity sha512-5QAcxCQ/YX1hywfKHRIe6RAVsHM27nMUOJlIW9+H2pdJeZbXg1TtMITjv7oQfxmGFlRG2UzgAm5ZfUlrl0IHtQ==
   dependencies:
-    "@inquirer/confirm" "^2.0.15"
+    "@inquirer/confirm" "^2.0.17"
     "@inquirer/password" "^1.1.16"
     "@oclif/core" "^3.18.2"
     "@salesforce/core" "^6.5.2"
@@ -4275,23 +4242,7 @@ available-typed-arrays@^1.0.5:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
 
-aws-sdk@^2.1545.0:
-  version "2.1545.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1545.0.tgz#8678ae8117a426d4a6602408e7f47f176356d7ca"
-  integrity sha512-iDUv6ksG7lTA0l/HlOgYdO6vfYFA1D2/JzAEXSdgKY0C901WgJqBtfs2CncOkCgDe2CjmlMuqciBzAfxCIiKFA==
-  dependencies:
-    buffer "4.9.2"
-    events "1.1.1"
-    ieee754 "1.1.13"
-    jmespath "0.16.0"
-    querystring "0.2.0"
-    sax "1.2.1"
-    url "0.10.3"
-    util "^0.12.4"
-    uuid "8.0.0"
-    xml2js "0.6.2"
-
-aws-sdk@^2.1550.0:
+aws-sdk@^2.1545.0, aws-sdk@^2.1550.0:
   version "2.1551.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1551.0.tgz#82097af6a84cc1eeff4c3ca92a01f8f235c5454d"
   integrity sha512-nUaAzS7cheaKF8lV0AVJBqteuoYIgQ5UgpZaoRR44D7HA1f6iCYFISF6WH6d0hQvpxPDIXr5NlVt0cHyp/Sx1g==
