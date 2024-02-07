@@ -4,7 +4,8 @@
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import { Command, CommandHelp, Help } from '@oclif/core';
+import { Command, CommandHelp, Help, toConfiguredId } from '@oclif/core';
+import stripAnsi from 'strip-ansi';
 import chalk from 'chalk';
 import { SfCommandHelp } from './sfCommandHelp.js';
 
@@ -13,18 +14,10 @@ export default class SfHelp extends Help {
   protected commandHelpClass: SfCommandHelp | undefined;
   private showShortHelp = false;
   private commands: string[] = [];
-  private subCommands: Record<string, string[]> = {};
 
   public async showHelp(argv: string[]): Promise<void> {
     this.showShortHelp = argv.includes('-h');
-    this.commands = this.config.commandIDs.map(
-      (c) => `${this.config.bin} ${c.replace(/:/g, this.config.topicSeparator)}`
-    );
-    for (const cmd of this.commands) {
-      this.subCommands[cmd] = this.commands
-        .filter((c) => c.startsWith(cmd) && c !== cmd)
-        .map((c) => `${c.replace(cmd, '')}`);
-    }
+    this.commands = this.config.commandIDs.map((c) => `${this.config.bin} ${toConfiguredId(c, this.config)}`);
 
     return super.showHelp(argv);
   }
@@ -38,12 +31,22 @@ export default class SfHelp extends Help {
   protected log(...args: string[]): void {
     const formatted = args.map((arg) => {
       for (const cmd of this.commands) {
-        const regex =
-          this.subCommands[cmd].length > 0
-            ? new RegExp(`(?<!\\$ )${cmd}(?!${this.subCommands[cmd].join('|')})`, 'g')
-            : new RegExp(`(?<!\\$ )${cmd}`, 'g');
+        /**
+         * This regex matches any command in the help output.
+         * It will continue to match until the next space, quote, or period.
+         *
+         * Examples that will match:
+         * - sf deploy project start
+         * - "sf deploy project start"
+         * - sf org create scratch|sandbox
+         * - "sf org create scratch|sandbox"
+         */
+        const regex = new RegExp(`${cmd}([^\\s".]+)?`, 'g');
+        const [match] = stripAnsi(arg.slice()).match(regex) ?? [];
 
-        arg = arg.replace(regex, chalk.dim(cmd));
+        if (match) {
+          arg = arg.replace(regex, chalk.dim(match));
+        }
       }
 
       return arg;
