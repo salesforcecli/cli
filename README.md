@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.28.5 linux-x64 node-v20.11.0
+@salesforce/cli/2.28.6 linux-x64 node-v20.11.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -3064,7 +3064,7 @@ EXAMPLES
     $ sf org list auth
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.9/src/commands/org/list/auth.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.11/src/commands/org/list/auth.ts)_
 
 ## `sf org list limits`
 
@@ -3357,7 +3357,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.9/src/commands/org/login/access-token.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.11/src/commands/org/login/access-token.ts)_
 
 ## `sf org login device`
 
@@ -3416,7 +3416,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.9/src/commands/org/login/device.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.11/src/commands/org/login/device.ts)_
 
 ## `sf org login jwt`
 
@@ -3505,7 +3505,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.9/src/commands/org/login/jwt.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.11/src/commands/org/login/jwt.ts)_
 
 ## `sf org login sfdx-url`
 
@@ -3520,8 +3520,7 @@ FLAGS
   -d, --set-default-dev-hub     Set the authenticated org as the default Dev Hub.
   -f, --sfdx-url-file=<value>   Path to a file that contains the Salesforce DX authorization URL.
   -s, --set-default             Set the authenticated org as the default that all org-related commands run against.
-  -u, --sfdx-url-stdin=<value>  Specify '-' as this flag's value to pipe the Salesforce DX authorization URL through
-                                standard input (stdin).
+  -u, --sfdx-url-stdin=<value>  Pipe the Salesforce DX authorization URL through standard input (stdin).
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -3551,8 +3550,7 @@ DESCRIPTION
   You can also create a JSON file that has a top-level property named sfdxAuthUrl whose value is the authorization URL.
   Finally, you can create a normal text file that includes just the URL and nothing else.
 
-  Alternatively, you can pipe the SFDX authorization URL through standard input by using the --sfdx-url-stdin flag and
-  providing the '-' character as the value.
+  Alternatively, you can pipe the SFDX authorization URL through standard input by specifying the --sfdx-url-stdin flag.
 
 ALIASES
   $ sf force auth sfdxurl store
@@ -3567,12 +3565,12 @@ EXAMPLES
 
     $ sf org login sfdx-url --sfdx-url-file files/authFile.json --set-default --alias MyDefaultOrg
 
-  Pipe the SFDX authorization URL from stdin by specifying the '-' value.
+  Pipe the SFDX authorization URL from stdin:
 
-   $ echo url | sf org login sfdx-url --sfdx-url-stdin -
+   $ echo url | sf org login sfdx-url --sfdx-url-stdin
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.9/src/commands/org/login/sfdx-url.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.11/src/commands/org/login/sfdx-url.ts)_
 
 ## `sf org login web`
 
@@ -3657,7 +3655,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to https://MyDomainName--SandboxName.sandbox.my.salesforce.com.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.9/src/commands/org/login/web.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.11/src/commands/org/login/web.ts)_
 
 ## `sf org logout`
 
@@ -3717,7 +3715,7 @@ FLAG DESCRIPTIONS
     All orgs includes Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.9/src/commands/org/logout.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.11/src/commands/org/logout.ts)_
 
 ## `sf org open`
 
@@ -3962,7 +3960,7 @@ FLAG DESCRIPTIONS
     subscribers.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package1/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package1/version/create.ts)_
 
 ## `sf package1 version create get`
 
@@ -3994,7 +3992,7 @@ EXAMPLES
     $ sf package1 version create get --request-id 0HD... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package1/version/create/get.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package1/version/create/get.ts)_
 
 ## `sf package1 version display`
 
@@ -4027,7 +4025,7 @@ EXAMPLES
     $ sf package1 version display --package-version-id 04t... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package1/version/display.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package1/version/display.ts)_
 
 ## `sf package1 version list`
 
@@ -4064,7 +4062,7 @@ FLAG DESCRIPTIONS
     If not specified, shows all versions for all packages (managed and unmanaged) in the org.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package1/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package1/version/list.ts)_
 
 ## `sf package create`
 
@@ -4142,7 +4140,7 @@ FLAG DESCRIPTIONS
     Org-Dependent Unlocked Packages" in the Salesforce DX Developer Guide.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/create.ts)_
 
 ## `sf package delete`
 
@@ -4183,7 +4181,7 @@ EXAMPLES
     $ sf package delete --package 0Ho... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/delete.ts)_
 
 ## `sf package install`
 
@@ -4281,7 +4279,7 @@ FLAG DESCRIPTIONS
     specify DeprecateOnly or Delete only for unlocked package upgrades.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/install.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/install.ts)_
 
 ## `sf package install report`
 
@@ -4313,7 +4311,7 @@ EXAMPLES
     $ sf package install report --request-id 0Hf... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/install/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/install/report.ts)_
 
 ## `sf package installed list`
 
@@ -4344,7 +4342,7 @@ EXAMPLES
     $ sf package installed list --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/installed/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/installed/list.ts)_
 
 ## `sf package list`
 
@@ -4381,7 +4379,7 @@ EXAMPLES
     $ sf package list --target-dev-hub devhub@example.com --verbose
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/list.ts)_
 
 ## `sf package uninstall`
 
@@ -4428,7 +4426,7 @@ EXAMPLES
     $ sf package uninstall --package "Undesirable Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/uninstall.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/uninstall.ts)_
 
 ## `sf package uninstall report`
 
@@ -4460,7 +4458,7 @@ EXAMPLES
     $ sf package uninstall report --request-id 06y... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/uninstall/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/uninstall/report.ts)_
 
 ## `sf package update`
 
@@ -4514,7 +4512,7 @@ FLAG DESCRIPTIONS
     associated with your package.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/update.ts)_
 
 ## `sf package version create`
 
@@ -4669,7 +4667,7 @@ FLAG DESCRIPTIONS
     periods of no output from commands.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/version/create.ts)_
 
 ## `sf package version create list`
 
@@ -4729,7 +4727,7 @@ EXAMPLES
     $ sf package version create list --created-last-days 0 --status Success
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/version/create/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/version/create/list.ts)_
 
 ## `sf package version create report`
 
@@ -4771,7 +4769,7 @@ EXAMPLES
     $ sf package version create report --package-create-request-id 08c... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/version/create/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/version/create/report.ts)_
 
 ## `sf package version delete`
 
@@ -4809,7 +4807,7 @@ EXAMPLES
     $ sf package version delete --package 04t... --target-org devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/version/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/version/delete.ts)_
 
 ## `sf package version displayancestry`
 
@@ -4867,7 +4865,7 @@ FLAG DESCRIPTIONS
     You can use the DOT code output in graph visualization software to create tree visualizations.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/version/displayancestry.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/version/displayancestry.ts)_
 
 ## `sf package version list`
 
@@ -4935,7 +4933,7 @@ EXAMPLES
     $ sf package version list --packages exp-mgr,exp-mgr-util --released --modified-last-days 0
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/version/list.ts)_
 
 ## `sf package version promote`
 
@@ -4978,7 +4976,7 @@ EXAMPLES
     $ sf package version promote --package "Awesome Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/version/promote.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/version/promote.ts)_
 
 ## `sf package version report`
 
@@ -5017,7 +5015,7 @@ EXAMPLES
     $ sf package version report --package "Your Package Alias" --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/version/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/version/report.ts)_
 
 ## `sf package version update`
 
@@ -5069,7 +5067,7 @@ EXAMPLES
     $ sf package version update --package 04t... --version-description "New Package Version Description"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.5/src/commands/package/version/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.6/src/commands/package/version/update.ts)_
 
 ## `sf plugins`
 
