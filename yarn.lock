@@ -1907,10 +1907,10 @@
     node-gyp "^10.0.0"
     which "^4.0.0"
 
-"@oclif/core@3.19.0", "@oclif/core@^3", "@oclif/core@^3.10.2", "@oclif/core@^3.14.1", "@oclif/core@^3.15.1", "@oclif/core@^3.16.0", "@oclif/core@^3.18.1", "@oclif/core@^3.18.2":
-  version "3.19.0"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.19.0.tgz#b275daa260d3d24e6e6c10ed2a0ec4b243b61107"
-  integrity sha512-Vup9DGMWlPeRVSpC76XCByfDwu1/09Xo2YTyzsquD9vnkeqIl0j0nxEjaYb6Ui3cifozLyKc/Td0+z/zz15/og==
+"@oclif/core@3.19.1", "@oclif/core@^3", "@oclif/core@^3.10.2", "@oclif/core@^3.15.1", "@oclif/core@^3.16.0", "@oclif/core@^3.18.1", "@oclif/core@^3.18.2", "@oclif/core@^3.19.1":
+  version "3.19.1"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.19.1.tgz#18af989f4b086ba9b6dfac891fb27f8281664084"
+  integrity sha512-dd1h4Hz+LwpuYhKvgBjDmW3/HgUAm93JM95cnbzSv5VcmiBeC+utjLvY96PmPbYxxDoz7XazEOl8oOpSLSEgcg==
   dependencies:
     "@types/cli-progress" "^3.11.5"
     ansi-escapes "^4.3.2"
@@ -2279,17 +2279,17 @@
   dependencies:
     "@octokit/openapi-types" "^18.0.0"
 
-"@opentelemetry/api@^1.4.1":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/api/-/api-1.4.1.tgz#ff22eb2e5d476fbc2450a196e40dd243cc20c28f"
-  integrity sha512-O2yRJce1GOc6PAy3QxFM4NzFiWzvScDC1/5ihYBL6BUEVdq0XMWN01sppE+H6bBXbaFYipjwFLEWLg5PaSOThA==
+"@opentelemetry/api@^1.4.1", "@opentelemetry/api@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@opentelemetry/api/-/api-1.7.0.tgz#b139c81999c23e3c8d3c0a7234480e945920fc40"
+  integrity sha512-AdY5wvN0P2vXBi3b29hxZgSFvdhdxPB9+f0B6s//P9Q8nibRWeA3cHm8UmLpio9ABigkVHJ5NMPk+Mz8VCCyrw==
 
-"@opentelemetry/core@1.15.2", "@opentelemetry/core@^1.15.2":
-  version "1.15.2"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/core/-/core-1.15.2.tgz#5b170bf223a2333884bbc2d29d95812cdbda7c9f"
-  integrity sha512-+gBv15ta96WqkHZaPpcDHiaz0utiiHZVfm2YOYSqFGrUaJpPkMoSuLBB58YFQGi6Rsb9EHos84X6X5+9JspmLw==
+"@opentelemetry/core@1.21.0", "@opentelemetry/core@^1.15.2", "@opentelemetry/core@^1.19.0":
+  version "1.21.0"
+  resolved "https://registry.yarnpkg.com/@opentelemetry/core/-/core-1.21.0.tgz#8c16faf16edf861b073c03c9d45977b3f4003ee1"
+  integrity sha512-KP+OIweb3wYoP7qTYL/j5IpOlu52uxBv5M4+QhSmmUfLyTgu1OIS71msK3chFo1D6Y61BIH3wMiMYRCxJCQctA==
   dependencies:
-    "@opentelemetry/semantic-conventions" "1.15.2"
+    "@opentelemetry/semantic-conventions" "1.21.0"
 
 "@opentelemetry/instrumentation@^0.41.2":
   version "0.41.2"
@@ -2302,27 +2302,27 @@
     semver "^7.5.1"
     shimmer "^1.2.1"
 
-"@opentelemetry/resources@1.15.2":
-  version "1.15.2"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/resources/-/resources-1.15.2.tgz#0c9e26cb65652a1402834a3c030cce6028d6dd9d"
-  integrity sha512-xmMRLenT9CXmm5HMbzpZ1hWhaUowQf8UB4jMjFlAxx1QzQcsD3KFNAVX/CAWzFPtllTyTplrA4JrQ7sCH3qmYw==
+"@opentelemetry/resources@1.21.0":
+  version "1.21.0"
+  resolved "https://registry.yarnpkg.com/@opentelemetry/resources/-/resources-1.21.0.tgz#e773e918cc8ca26493a987dfbfc6b8a315a2ab45"
+  integrity sha512-1Z86FUxPKL6zWVy2LdhueEGl9AHDJcx+bvHStxomruz6Whd02mE3lNUMjVJ+FGRoktx/xYQcxccYb03DiUP6Yw==
   dependencies:
-    "@opentelemetry/core" "1.15.2"
-    "@opentelemetry/semantic-conventions" "1.15.2"
+    "@opentelemetry/core" "1.21.0"
+    "@opentelemetry/semantic-conventions" "1.21.0"
 
-"@opentelemetry/sdk-trace-base@^1.15.2":
-  version "1.15.2"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/sdk-trace-base/-/sdk-trace-base-1.15.2.tgz#4821f94033c55a6c8bbd35ae387b715b6108517a"
-  integrity sha512-BEaxGZbWtvnSPchV98qqqqa96AOcb41pjgvhfzDij10tkBhIu9m0Jd6tZ1tJB5ZHfHbTffqYVYE0AOGobec/EQ==
+"@opentelemetry/sdk-trace-base@^1.19.0":
+  version "1.21.0"
+  resolved "https://registry.yarnpkg.com/@opentelemetry/sdk-trace-base/-/sdk-trace-base-1.21.0.tgz#ffad912e453a92044fb220bd5d2f6743bf37bb8a"
+  integrity sha512-yrElGX5Fv0umzp8Nxpta/XqU71+jCAyaLk34GmBzNcrW43nqbrqvdPs4gj4MVy/HcTjr6hifCDCYA3rMkajxxA==
   dependencies:
-    "@opentelemetry/core" "1.15.2"
-    "@opentelemetry/resources" "1.15.2"
-    "@opentelemetry/semantic-conventions" "1.15.2"
+    "@opentelemetry/core" "1.21.0"
+    "@opentelemetry/resources" "1.21.0"
+    "@opentelemetry/semantic-conventions" "1.21.0"
 
-"@opentelemetry/semantic-conventions@1.15.2", "@opentelemetry/semantic-conventions@^1.15.2":
-  version "1.15.2"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/semantic-conventions/-/semantic-conventions-1.15.2.tgz#3bafb5de3e20e841dff6cb3c66f4d6e9694c4241"
-  integrity sha512-CjbOKwk2s+3xPIMcd5UNYQzsf+v94RczbdNix9/kQh38WiQkM90sUOi3if8eyHFgiBjBjhwXrA7W3ydiSQP9mw==
+"@opentelemetry/semantic-conventions@1.21.0", "@opentelemetry/semantic-conventions@^1.19.0":
+  version "1.21.0"
+  resolved "https://registry.yarnpkg.com/@opentelemetry/semantic-conventions/-/semantic-conventions-1.21.0.tgz#83f7479c524ab523ac2df702ade30b9724476c72"
+  integrity sha512-lkC8kZYntxVKr7b8xmjCVUgE0a8xgDakPyDo9uSWavXPyYqLgYYGdEd2j8NxihRyb6UwpX3G/hFUF4/9q2V+/g==
 
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
@@ -2452,18 +2452,18 @@
     "@salesforce/ts-types" "^2.0.9"
     tslib "^2.6.2"
 
-"@salesforce/packaging@^3.2.8":
-  version "3.2.8"
-  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-3.2.8.tgz#b2548568c774d67928a1d48849d014598a9103b7"
-  integrity sha512-gIhEBq7E+5pcNK+Jp8NFsfQV0W9XvlmAJlXlPafyglWxnhOhMIcR6xzOxR9CwbSFVlHAX7lSBFpbbOPsLVJaPg==
+"@salesforce/packaging@^3.2.12":
+  version "3.2.12"
+  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-3.2.12.tgz#295bf8678549e6da09fb9a462f4059d7c8dfdeb6"
+  integrity sha512-jOtSB/Hrq/kfY5uo5p5eQwYNear3XZkzqLS5wSWtQYeMvg1rg+SueKMfePrG1OAIBR4DEi1AhDuxtq+DL96YQQ==
   dependencies:
     "@oclif/core" "^3"
     "@salesforce/core" "^6.5.1"
     "@salesforce/kit" "^3.0.15"
     "@salesforce/schemas" "^1.6.1"
-    "@salesforce/source-deploy-retrieve" "^10.2.13"
+    "@salesforce/source-deploy-retrieve" "^10.3.1"
     "@salesforce/ts-types" "^2.0.9"
-    fast-xml-parser "^4.3.3"
+    fast-xml-parser "^4.3.4"
     globby "^11"
     graphology "^0.25.4"
     graphology-traversal "^0.3.1"
@@ -2485,17 +2485,17 @@
     color-convert "^2.0.1"
     color-name "^2.0.0"
 
-"@salesforce/plugin-auth@3.3.9":
-  version "3.3.9"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.3.9.tgz#2613a6890cb51135117f2f859e89ae5fda15c00c"
-  integrity sha512-hOmnV1DGdUTr3/71OAZ+790NO72+FIe9yCWWDsZB9aYa8qKR7J2q4wYco+R6Tq/sgQ7TaSW6Xw15S9JhHJ+NvQ==
+"@salesforce/plugin-auth@3.3.11":
+  version "3.3.11"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.3.11.tgz#38826462efcd949688102d9d8111dacb02506634"
+  integrity sha512-uC2g4no4M/FPm7F2hxkgwmFd3PCSYll61uheY0ri37VjWGeoLGNgVISaRRpTEFEGCLdEDIsCOUx/p7Ahoo2dOg==
   dependencies:
     "@inquirer/checkbox" "^1.5.2"
     "@inquirer/select" "^1.3.3"
-    "@oclif/core" "^3.18.2"
+    "@oclif/core" "^3.19.1"
     "@salesforce/core" "^6.5.1"
     "@salesforce/kit" "^3.0.15"
-    "@salesforce/sf-plugins-core" "^7.1.4"
+    "@salesforce/sf-plugins-core" "^7.1.9"
     "@salesforce/ts-types" "^2.0.9"
     chalk "^5.3.0"
     open "^9.1.0"
@@ -2600,16 +2600,16 @@
     is-wsl "^3.1.0"
     open "^10.0.3"
 
-"@salesforce/plugin-packaging@2.1.5":
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.1.5.tgz#06a94d55d23b5cd7f3bf2bf27173dd1d99c5d402"
-  integrity sha512-RBsvL31nB0NW6ByjUNsTmSUWc6BR4K/Gr6SWdlQ0kNLCYhxO63Icn94ugpOZLlUVemCQTHjGPNNujDYDKS5iiw==
+"@salesforce/plugin-packaging@2.1.6":
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.1.6.tgz#c8f5be01e2123b7b54ac10670099b9a4ab881836"
+  integrity sha512-bFq/C7Q5Gk3SjN1MUbwRQFmcfWP6HM5c4G1H9/eHDAJt+l4xIX9BX3lSmFIvzV3BDdGK9Nn4Aak/L8589i+0Ug==
   dependencies:
-    "@oclif/core" "^3.14.1"
-    "@salesforce/core" "^6.5.1"
+    "@oclif/core" "^3.18.2"
+    "@salesforce/core" "^6.5.2"
     "@salesforce/kit" "^3.0.15"
-    "@salesforce/packaging" "^3.2.8"
-    "@salesforce/sf-plugins-core" "^7.0.0"
+    "@salesforce/packaging" "^3.2.12"
+    "@salesforce/sf-plugins-core" "^7.1.8"
     chalk "^5.3.0"
 
 "@salesforce/plugin-release-management@^4.7.7":
@@ -2691,15 +2691,15 @@
     got "^13.0.0"
     proxy-agent "^6.3.1"
 
-"@salesforce/plugin-telemetry@3.1.10":
-  version "3.1.10"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.1.10.tgz#7f458a29a76d0c1d5bc4317fcee378fa42d09af9"
-  integrity sha512-t2qmMWMHwGfW8AudJ8JYk+glVfJoYSJQykpac6P2FF+/bWdKA6wFaA1KRsv2pSc+nBYkxDRJ6YQtJyIlCwIgKQ==
+"@salesforce/plugin-telemetry@3.1.11":
+  version "3.1.11"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.1.11.tgz#99e80ed3055261736ef6ebb51e00f895d9e1b19b"
+  integrity sha512-xSkgTlzk5GT11d/hRmgB39d+BADFbgIlAEZgovxPv6D/YvPF+r+O5PzYjp4DQbSvpJdqpBgC2BUyBxJckhB38w==
   dependencies:
-    "@oclif/core" "^3.15.1"
-    "@salesforce/core" "^6.4.7"
-    "@salesforce/sf-plugins-core" "^7.0.0"
-    "@salesforce/telemetry" "^5.0.5"
+    "@oclif/core" "^3.19.1"
+    "@salesforce/core" "^6.5.2"
+    "@salesforce/sf-plugins-core" "^7.1.9"
+    "@salesforce/telemetry" "^5.0.10"
     debug "^4.3.4"
 
 "@salesforce/plugin-templates@56.0.13":
@@ -2750,14 +2750,14 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.6.1.tgz#7d1c071e1e509ca9d2d8a6e48ac7447dd67a534d"
   integrity sha512-eVy947ZMxCJReKJdgfddUIsBIbPTa/i8RwQGwxq4/ss38H5sLOAeSTaun9V7HpJ1hkpDznWKfgzYvjsst9K6ig==
 
-"@salesforce/sf-plugins-core@7.1.8", "@salesforce/sf-plugins-core@^7.0.0", "@salesforce/sf-plugins-core@^7.1.1", "@salesforce/sf-plugins-core@^7.1.4", "@salesforce/sf-plugins-core@^7.1.5":
-  version "7.1.8"
-  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-7.1.8.tgz#b7f4a01b1212d7aedb592f49c1fad07fcf942225"
-  integrity sha512-5QAcxCQ/YX1hywfKHRIe6RAVsHM27nMUOJlIW9+H2pdJeZbXg1TtMITjv7oQfxmGFlRG2UzgAm5ZfUlrl0IHtQ==
+"@salesforce/sf-plugins-core@7.1.9", "@salesforce/sf-plugins-core@^7.1.1", "@salesforce/sf-plugins-core@^7.1.4", "@salesforce/sf-plugins-core@^7.1.5", "@salesforce/sf-plugins-core@^7.1.8", "@salesforce/sf-plugins-core@^7.1.9":
+  version "7.1.9"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-7.1.9.tgz#b4ea2005096f2289160cfd4452afb51d53bdefb3"
+  integrity sha512-nyl6Kh1IHbGxcbQSUoJcte3t4fvozaXuHQWkHExIMGKjvSp8fCnx4pra8NZRdg/HnbWWu6eIHV4b/cHdzKWjnQ==
   dependencies:
     "@inquirer/confirm" "^2.0.17"
     "@inquirer/password" "^1.1.16"
-    "@oclif/core" "^3.18.2"
+    "@oclif/core" "^3.19.1"
     "@salesforce/core" "^6.5.2"
     "@salesforce/kit" "^3.0.15"
     "@salesforce/ts-types" "^2.0.9"
@@ -2776,10 +2776,10 @@
     chalk "^4"
     inquirer "^8.2.5"
 
-"@salesforce/source-deploy-retrieve@10.3.3", "@salesforce/source-deploy-retrieve@^10.2.11", "@salesforce/source-deploy-retrieve@^10.2.13", "@salesforce/source-deploy-retrieve@^10.3.1":
-  version "10.3.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-10.3.3.tgz#f33741bea3abca712f08553aa4413178fba2d3a9"
-  integrity sha512-eugVWykEQNheOqGkYvCcGXmO8eCieEsGtMe0wZvwBjvclUYx8tFDOlWhOhF0XaSWuhv1/lxjp9oUxaBr6s7zYA==
+"@salesforce/source-deploy-retrieve@10.3.5", "@salesforce/source-deploy-retrieve@^10.2.11", "@salesforce/source-deploy-retrieve@^10.2.13", "@salesforce/source-deploy-retrieve@^10.3.1":
+  version "10.3.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-10.3.5.tgz#884cb24e5b84b16ea37b323704a897e2e9229986"
+  integrity sha512-XugaXUguN/YwER44Ya7fHjjvkrmeoPNGa2pg4Oz6t1/ZHY9+2eaUdIoNV8cs/YbrSJmtEEBKV8wSusrI+RvFLg==
   dependencies:
     "@salesforce/core" "^6.5.1"
     "@salesforce/kit" "^3.0.15"
@@ -2810,14 +2810,14 @@
     isomorphic-git "1.23.0"
     ts-retry-promise "^0.8.0"
 
-"@salesforce/telemetry@^5.0.5":
-  version "5.0.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-5.0.6.tgz#98c97d328c10d69c102a26cc77e0b49c199bb880"
-  integrity sha512-XPjtJqDyIM3ob/q6FDBB3eQSTtneEpxxltdGmjDvJ/cZ5ktWDj6vQct7sB8VQ8d903nZt974XJjEF40AHWdxdw==
+"@salesforce/telemetry@^5.0.10":
+  version "5.0.10"
+  resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-5.0.10.tgz#c33ae6e771403218fc72f271e500a60999565075"
+  integrity sha512-nIVKwCTurfV9xJeeLWNHZQ4ZYFGDe+x9P/bMdCO4GxM86HASE+GSuv8K6jcSSIOBE+yyOEf+1m1e6313NiDjlg==
   dependencies:
-    "@salesforce/core" "^6.4.2"
+    "@salesforce/core" "^6.5.1"
     "@salesforce/ts-types" "^2.0.9"
-    applicationinsights "^2.9.1"
+    applicationinsights "^2.9.2"
     got "^11"
     proxy-agent "^6.3.1"
 
@@ -4005,24 +4005,24 @@ append-transform@^2.0.0:
   dependencies:
     default-require-extensions "^3.0.0"
 
-applicationinsights@^2.9.1:
-  version "2.9.1"
-  resolved "https://registry.yarnpkg.com/applicationinsights/-/applicationinsights-2.9.1.tgz#769412f809d6a072487e4b41c4c3a29678344d82"
-  integrity sha512-hrpe/OvHFZlq+SQERD1fxaYICyunxzEBh9SolJebzYnIXkyA9zxIR87dZAh+F3+weltbqdIP8W038cvtpMNhQg==
+applicationinsights@^2.9.2:
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/applicationinsights/-/applicationinsights-2.9.2.tgz#a83b4bb3201da350cf438015d1e5032cb9978fe1"
+  integrity sha512-wlDiD7v0BQNM8oNzsf9C836R5ze25u+CuCEZsbA5xMIXYYBxkqkWE/mo9GFJM7rsKaiGqpxEwWmePHKD2Lwy2w==
   dependencies:
     "@azure/core-auth" "^1.5.0"
     "@azure/core-rest-pipeline" "1.10.1"
     "@azure/core-util" "1.2.0"
     "@azure/opentelemetry-instrumentation-azure-sdk" "^1.0.0-beta.5"
     "@microsoft/applicationinsights-web-snippet" "^1.0.1"
-    "@opentelemetry/api" "^1.4.1"
-    "@opentelemetry/core" "^1.15.2"
-    "@opentelemetry/sdk-trace-base" "^1.15.2"
-    "@opentelemetry/semantic-conventions" "^1.15.2"
+    "@opentelemetry/api" "^1.7.0"
+    "@opentelemetry/core" "^1.19.0"
+    "@opentelemetry/sdk-trace-base" "^1.19.0"
+    "@opentelemetry/semantic-conventions" "^1.19.0"
     cls-hooked "^4.2.2"
     continuation-local-storage "^3.2.1"
     diagnostic-channel "1.1.1"
-    diagnostic-channel-publishers "1.0.7"
+    diagnostic-channel-publishers "1.0.8"
 
 "aproba@^1.0.3 || ^2.0.0", aproba@^2.0.0:
   version "2.0.0"
@@ -5564,10 +5564,10 @@ dezalgo@^1.0.0:
     asap "^2.0.0"
     wrappy "1"
 
-diagnostic-channel-publishers@1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/diagnostic-channel-publishers/-/diagnostic-channel-publishers-1.0.7.tgz#9b7f8d5ee1295481aee19c827d917e96fedf2c4a"
-  integrity sha512-SEECbY5AiVt6DfLkhkaHNeshg1CogdLLANA8xlG/TKvS+XUgvIKl7VspJGYiEdL5OUyzMVnr7o0AwB7f+/Mjtg==
+diagnostic-channel-publishers@1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/diagnostic-channel-publishers/-/diagnostic-channel-publishers-1.0.8.tgz#700557a902c443cb11f999f19f50a8bb3be490a0"
+  integrity sha512-HmSm9hXxSPxA9BaLGY98QU1zsdjeCk113KjAYGPCen1ZP6mhVaTPzHd6UYv5r21DnWANi+f+NyPOHruGT9jpqQ==
 
 diagnostic-channel@1.1.1:
   version "1.1.1"
@@ -6221,7 +6221,7 @@ fast-xml-parser@4.2.5:
   dependencies:
     strnum "^1.0.5"
 
-fast-xml-parser@^4.2.5, fast-xml-parser@^4.3.3, fast-xml-parser@^4.3.4:
+fast-xml-parser@^4.2.5, fast-xml-parser@^4.3.4:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-4.3.4.tgz#385cc256ad7bbc57b91515a38a22502a9e1fca0d"
   integrity sha512-utnwm92SyozgA3hhH2I8qldf2lBqm6qHOICawRNRFu1qMe3+oqr+GcXjGqTmXTMGE5T4eC03kr/rlh5C1IRdZA==
