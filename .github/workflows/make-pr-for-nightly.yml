@@ -74,7 +74,7 @@ jobs:
         id: github-user-info
         uses: salesforcecli/github-workflows/.github/actions/getGithubUserInfo@main
         with:
-          token: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
+          SVC_CLI_BOT_GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
 
       - name: Set git config defaults
         uses: salesforcecli/github-workflows/.github/actions/gitConfig@main
