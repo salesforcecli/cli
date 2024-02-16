@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.30.0 linux-x64 node-v20.11.0
+@salesforce/cli/2.30.1 linux-x64 node-v20.11.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -7439,7 +7439,10 @@ Show which plugin a command is in.
 
 ```
 USAGE
-  $ sf which
+  $ sf which [--json]
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
   Show which plugin a command is in.
@@ -7450,6 +7453,6 @@ EXAMPLES
     $ sf which help
 ```
 
-_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.0.15/src/commands/which.ts)_
+_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.1.0/src/commands/which.ts)_
 
 <!-- commandsstop -->
