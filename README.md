@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.31.0 linux-x64 node-v20.11.1
+@salesforce/cli/2.31.1 linux-x64 node-v20.11.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -821,7 +821,7 @@ EXAMPLES
   $ sf autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/3.0.9/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/3.0.10/src/commands/autocomplete/index.ts)_
 
 ## `sf commands`
 
@@ -854,7 +854,7 @@ DESCRIPTION
   list all the commands
 ```
 
-_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/3.1.4/src/commands/commands.ts)_
+_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/3.1.5/src/commands/commands.ts)_
 
 ## `sf config get`
 
@@ -2011,7 +2011,7 @@ DESCRIPTION
   Display help for sf.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/6.0.13/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/6.0.14/src/commands/help.ts)_
 
 ## `sf info releasenotes display`
 
@@ -7271,7 +7271,7 @@ EXAMPLES
     $ sf sobject describe --sobject ApexCodeCoverage --use-tooling-api
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.1.3/src/commands/sobject/describe.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.1.4/src/commands/sobject/describe.ts)_
 
 ## `sf sobject list`
 
@@ -7309,7 +7309,7 @@ EXAMPLES
     $ sf sobject list --sobject custom --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.1.3/src/commands/sobject/list.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.1.4/src/commands/sobject/list.ts)_
 
 ## `sf static-resource generate`
 
@@ -7406,7 +7406,7 @@ EXAMPLES
     $ sf update --available
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.1.13/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.1.14/src/commands/update.ts)_
 
 ## `sf version`
 
@@ -7551,6 +7551,6 @@ EXAMPLES
     $ sf which help
 ```
 
-_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.1.0/src/commands/which.ts)_
+_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.1.1/src/commands/which.ts)_
 
 <!-- commandsstop -->
