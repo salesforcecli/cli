@@ -2131,10 +2131,10 @@
     node-gyp "^10.0.0"
     which "^4.0.0"
 
-"@oclif/core@3.19.4", "@oclif/core@^3", "@oclif/core@^3.10.2", "@oclif/core@^3.15.1", "@oclif/core@^3.18.1", "@oclif/core@^3.18.2", "@oclif/core@^3.19.1", "@oclif/core@^3.19.2", "@oclif/core@^3.19.3":
-  version "3.19.4"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.19.4.tgz#e0fcf1b44106639f25f612183b84ae3bdb5c3125"
-  integrity sha512-Q8JWPbz3YusttsBi+GngxtuhXQ9esAPQbhpp0ABxX9fcOeNPa2EA66oSxpOExxFjI3H3KFSHBUNPeDlp8syRog==
+"@oclif/core@3.19.5", "@oclif/core@^3", "@oclif/core@^3.10.2", "@oclif/core@^3.15.1", "@oclif/core@^3.18.1", "@oclif/core@^3.18.2", "@oclif/core@^3.19.1", "@oclif/core@^3.19.2", "@oclif/core@^3.19.3":
+  version "3.19.5"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.19.5.tgz#6523684c1ca94e05479569532177121cef35be21"
+  integrity sha512-banrxfcaWo0/xEk9LfDLt+jV+4+tR7bUBFRFXPIA9AAjikRWGV+mpSN5M3UvoaZM6aj4q5mZN7bhegxTzQcDtQ==
   dependencies:
     "@types/cli-progress" "^3.11.5"
     ansi-escapes "^4.3.2"
@@ -2198,10 +2198,10 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/plugin-autocomplete@3.0.9":
-  version "3.0.9"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-3.0.9.tgz#87e697477e2c23ee5c7710f81df8f7e65b0d58ce"
-  integrity sha512-r6Z9jimPbWyo+l8wKGfj2Xr2W8SKvLUcjd4khR+1oZgTpTVlmjywUkkT/2cwd2wswqk3wIb0meCCtXHPy4l8Xw==
+"@oclif/plugin-autocomplete@3.0.10":
+  version "3.0.10"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-3.0.10.tgz#f0b60a1907622179ad7f4c754372d97eab207e9a"
+  integrity sha512-15uFfe47Lspvsb9vUyPiQpYRmHE3quOPPYkcFy2w9JNWU4Jyi8PBYAQKcoAPT8thS/YYPDjYdAuAN7XJZj00CA==
   dependencies:
     "@oclif/core" "^3.19.2"
     chalk "^5.3.0"
@@ -2221,10 +2221,10 @@
     ts-json-schema-generator "^1.3.0"
     tslib "^2.6.2"
 
-"@oclif/plugin-commands@3.1.4":
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-commands/-/plugin-commands-3.1.4.tgz#824d0458104bd71ef74cf3888f03de302a1cb004"
-  integrity sha512-Bfj+/2WVdDULK9/2cMSSjifbcPt/khnipPdZRQsGIdoJEox54J4QwBXTTUQzHh+//vmB1ulZEtROZ4q2gwL7Ag==
+"@oclif/plugin-commands@3.1.5":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-commands/-/plugin-commands-3.1.5.tgz#db150002ddbb414d769e651113a1ad09cf358efc"
+  integrity sha512-zIOzwC7LGxUbvc7qrlOInxAd9zLJFTe4yZ8xawiJhwtm+7cWotTRbNqyXlv1K07Sll1UMJGRGzbKikktyO8BPw==
   dependencies:
     "@oclif/core" "^3.19.2"
     lodash.pickby "^4.6.0"
@@ -2232,17 +2232,17 @@
     lodash.template "^4.5.0"
     lodash.uniqby "^4.7.0"
 
-"@oclif/plugin-help@6.0.13", "@oclif/plugin-help@^6.0.12":
-  version "6.0.13"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-6.0.13.tgz#36e3eaeb5552b375d44630ef6abfb8a6b9ab7ba4"
-  integrity sha512-D/hiHmg+c6eOny95VfbhBcdgGxbi4AU2I3s1nFit0wpV2YziZnjmD7NQvYUCUJB052RcVmni6NiegttLgM4y5g==
+"@oclif/plugin-help@6.0.14", "@oclif/plugin-help@^6.0.12":
+  version "6.0.14"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-6.0.14.tgz#9e572fb8394e9cbe2da3465c029eb9521f9c9198"
+  integrity sha512-orKUsV8hYtbnPf1W7y5wnnR2X6UFOl7hqTh/Uj4E+3ju/8TnvpavZXFA2UQecKWcfdbYjuTwxuZdeh8vBWFLIQ==
   dependencies:
     "@oclif/core" "^3.19.2"
 
-"@oclif/plugin-not-found@3.0.11", "@oclif/plugin-not-found@^3.0.10":
-  version "3.0.11"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-3.0.11.tgz#222515ff74f52d354e9cd49ae5bf0984823c2ae8"
-  integrity sha512-bmZHh5INkqnouz8E/8QiZ2q+hXeela4s8cnxdtcCNEc2vb5JIYYa0JAPR/LVmE2q19LyKStIOOpDy/eVdonpPg==
+"@oclif/plugin-not-found@3.0.12", "@oclif/plugin-not-found@^3.0.10":
+  version "3.0.12"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-3.0.12.tgz#30808bd5255f377c62d4df95a1872f0432ef5dca"
+  integrity sha512-FSYzaXGTzV8AXOQZM+i9CMUlR11Pv87buOwp9kL7NNyWVotUxhk1pUezlXrN0aBSKJ2b96Qbc2jW35h6ybeH2g==
   dependencies:
     "@oclif/core" "^3.19.3"
     chalk "^5.3.0"
@@ -2271,10 +2271,10 @@
     "@oclif/core" "^3.19.2"
     inquirer-autocomplete-standalone "^0.8.1"
 
-"@oclif/plugin-update@4.1.13":
-  version "4.1.13"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.1.13.tgz#f720fcef941a8d97fd890093cef5d30b974b3c81"
-  integrity sha512-wqLLRsOpAqrkXWaagSmgnWuFOcg2+3GyoyXF2hxBZq6tLkC6eR1t2p6/LkSnxZvKiGsjv6lYTnrsz9jqXVTDLQ==
+"@oclif/plugin-update@4.1.14":
+  version "4.1.14"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.1.14.tgz#db22b80effe7397d2086eee9bba6dd5f7946604d"
+  integrity sha512-R8V3x7jQAhpmkHAJmMxk2aTo50Jmeei+q/pzsM59lUWEeZiMG/Eb2arVNeMKEa/MIxx7mqdxOQ5FrHsDk9ZD/g==
   dependencies:
     "@oclif/core" "^3.19.2"
     chalk "^5"
@@ -2305,10 +2305,10 @@
     http-call "^5.2.2"
     lodash.template "^4.5.0"
 
-"@oclif/plugin-which@3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-which/-/plugin-which-3.1.0.tgz#7256b3e001704c5ff05a0b7a88babd3145e6abae"
-  integrity sha512-pTAOAATqnLvikCUbbn/8W1uOSHJ+2CxF9m+v4qguX+6XwPvju7EgKDZiy8lBI3TOll2I90O0PkQ1kTsQlSKbNQ==
+"@oclif/plugin-which@3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-which/-/plugin-which-3.1.1.tgz#0cdba8863bd655621282a2ab573433c0734697fd"
+  integrity sha512-8Zqwu579rOhzCfULEyhLQBsKK9l3/tnYlONppKwzNWhJEl3uA9LxlXCHF2K70Ug9msXyFbl+5QU8cRtAODbt1w==
   dependencies:
     "@oclif/core" "^3.18.1"
 
@@ -2864,10 +2864,10 @@
     strip-ansi "^6"
     yarn-deduplicate "^3.1.0"
 
-"@salesforce/plugin-schema@3.1.3":
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-schema/-/plugin-schema-3.1.3.tgz#3cfc7190b2dc9bedafcef741082f88f7b23f7fd1"
-  integrity sha512-7qpR4Au8uCxhOYIImqUth+A396yUxfV5LbPlijEiB5/WeApywsW+p/Gfn6unhr1gw+2NTErDAhLTFLbnk73D6w==
+"@salesforce/plugin-schema@3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-schema/-/plugin-schema-3.1.4.tgz#176d1cb53d9f23913a07f57db54fd4732c365b78"
+  integrity sha512-nhgxblNWTTE6a2o83mYCK1E0Sk4f23ySdCo5y5+Ia2HD/ups4J7EOqgEwDXsisDqKF3mvykwni8dlHjJ8WUJSQ==
   dependencies:
     "@oclif/core" "^3.19.1"
     "@salesforce/core" "^6.5.3"
