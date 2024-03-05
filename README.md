@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.32.4 linux-x64 node-v20.11.1
+@salesforce/cli/2.32.5 linux-x64 node-v20.11.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -329,7 +329,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.20/src/commands/analytics/generate/template.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.21/src/commands/analytics/generate/template.ts)_
 
 ## `sf apex generate class`
 
@@ -385,7 +385,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.20/src/commands/apex/generate/class.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.21/src/commands/apex/generate/class.ts)_
 
 ## `sf apex generate trigger`
 
@@ -452,7 +452,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.20/src/commands/apex/generate/trigger.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.21/src/commands/apex/generate/trigger.ts)_
 
 ## `sf apex get log`
 
@@ -2104,7 +2104,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.20/src/commands/lightning/generate/app.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.21/src/commands/lightning/generate/app.ts)_
 
 ## `sf lightning generate component`
 
@@ -2172,7 +2172,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.20/src/commands/lightning/generate/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.21/src/commands/lightning/generate/component.ts)_
 
 ## `sf lightning generate event`
 
@@ -2225,7 +2225,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.20/src/commands/lightning/generate/event.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.21/src/commands/lightning/generate/event.ts)_
 
 ## `sf lightning generate interface`
 
@@ -2278,7 +2278,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.20/src/commands/lightning/generate/interface.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.21/src/commands/lightning/generate/interface.ts)_
 
 ## `sf lightning generate test`
 
@@ -2331,7 +2331,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.20/src/commands/lightning/generate/test.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.21/src/commands/lightning/generate/test.ts)_
 
 ## `sf org assign permset`
 
@@ -5271,7 +5271,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.2.7/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.0/src/commands/plugins/index.ts)_
 
 ## `sf plugins discover`
 
@@ -5315,7 +5315,7 @@ EXAMPLES
   $ sf plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.2.7/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.0/src/commands/plugins/inspect.ts)_
 
 ## `sf plugins:install PLUGIN...`
 
@@ -5359,7 +5359,7 @@ EXAMPLES
   $ sf plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.2.7/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.0/src/commands/plugins/install.ts)_
 
 ## `sf plugins:link PLUGIN`
 
@@ -5389,7 +5389,7 @@ EXAMPLES
   $ sf plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.2.7/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.0/src/commands/plugins/link.ts)_
 
 ## `sf plugins reset`
 
@@ -5404,7 +5404,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.2.7/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.0/src/commands/plugins/reset.ts)_
 
 ## `sf plugins trust verify`
 
@@ -5460,7 +5460,7 @@ EXAMPLES
   $ sf plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.2.7/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.0/src/commands/plugins/uninstall.ts)_
 
 ## `sf plugins update`
 
@@ -5478,7 +5478,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.2.7/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.0/src/commands/plugins/update.ts)_
 
 ## `sf project convert mdapi`
 
@@ -5540,7 +5540,7 @@ FLAG DESCRIPTIONS
     If you specify this parameter, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.23/src/commands/project/convert/mdapi.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.25/src/commands/project/convert/mdapi.ts)_
 
 ## `sf project convert source`
 
@@ -5552,7 +5552,7 @@ USAGE
     <value> | -m <value>]
 
 FLAGS
-  -d, --output-dir=<value>     [default: metadataPackage_1709380111509] Output directory to store the Metadata
+  -d, --output-dir=<value>     [default: metadataPackage_1709594365139] Output directory to store the Metadata
                                API–formatted files in.
   -m, --metadata=<value>...    Metadata component names to convert.
   -n, --package-name=<value>   Name of the package to associate with the metadata-formatted files.
@@ -5612,7 +5612,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.23/src/commands/project/convert/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.25/src/commands/project/convert/source.ts)_
 
 ## `sf project delete source`
 
@@ -5751,7 +5751,7 @@ FLAG DESCRIPTIONS
     - Separate the test names with spaces: --tests Test1 Test2 "Test With Space"
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.23/src/commands/project/delete/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.25/src/commands/project/delete/source.ts)_
 
 ## `sf project delete tracking`
 
@@ -5787,7 +5787,7 @@ EXAMPLES
     $ sf project delete tracking --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.23/src/commands/project/delete/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.25/src/commands/project/delete/tracking.ts)_
 
 ## `sf project deploy cancel`
 
@@ -5857,7 +5857,7 @@ FLAG DESCRIPTIONS
     project deploy report".
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.23/src/commands/project/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.25/src/commands/project/deploy/cancel.ts)_
 
 ## `sf project deploy preview`
 
@@ -5941,7 +5941,7 @@ FLAG DESCRIPTIONS
     All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.23/src/commands/project/deploy/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.25/src/commands/project/deploy/preview.ts)_
 
 ## `sf project deploy quick`
 
@@ -5980,6 +5980,9 @@ DESCRIPTION
 
   This command doesn't support source-tracking. The source you deploy overwrites the corresponding metadata in your org.
   This command doesn’t attempt to merge your source with the versions in your org.
+
+  Note: Don't use this command on sandboxes; the command is intended to be used on production orgs.  By default,
+  sandboxes don't run tests during a deploy. Use `sf project deploy start` instead.
 
 ALIASES
   $ sf deploy metadata quick
@@ -6034,7 +6037,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.23/src/commands/project/deploy/quick.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.25/src/commands/project/deploy/quick.ts)_
 
 ## `sf project deploy report`
 
@@ -6129,7 +6132,7 @@ FLAG DESCRIPTIONS
     --coverage-formatters lcov --coverage-formatters clover
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.23/src/commands/project/deploy/report.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.25/src/commands/project/deploy/report.ts)_
 
 ## `sf project deploy resume`
 
@@ -6225,7 +6228,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.23/src/commands/project/deploy/resume.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.25/src/commands/project/deploy/resume.ts)_
 
 ## `sf project deploy start`
 
@@ -6255,8 +6258,8 @@ FLAGS
 
 SOURCE FORMAT FLAGS
   -d, --source-dir=<value>...  Path to the local source files to deploy.
-  -m, --metadata=<value>...    Metadata component names to deploy. Wildcards ( `*` ) supported as long as you use
-                               quotes, such as `ApexClass:MyClass*`
+  -m, --metadata=<value>...    Metadata component names to deploy. Wildcards (`*` ) supported as long as you use quotes,
+                               such as `ApexClass:MyClass*`.
   -x, --manifest=<value>       Full file path for manifest (package.xml) of components to deploy.
 
 TEST FLAGS
@@ -6281,7 +6284,7 @@ DELETE FLAGS
   --post-destructive-changes=<value>  File path for a manifest (destructiveChangesPost.xml) of components to delete
                                       after the deploy.
   --pre-destructive-changes=<value>   File path for a manifest (destructiveChangesPre.xml) of components to delete
-                                      before the deploy
+                                      before the deploy.
   --purge-on-delete                   Specify that deleted components in the destructive changes manifest file are
                                       immediately eligible for deletion rather than being stored in the Recycle Bin.
 
@@ -6295,7 +6298,7 @@ DESCRIPTION
   want to deploy.
 
   If your org allows source tracking, then this command tracks the changes in your source. Some orgs, such as production
-  org, never allow source tracking. Source tracking is enabled by default on scratch and sandbox orgs; you can disable
+  orgs, never allow source tracking. Source tracking is enabled by default on scratch and sandbox orgs; you can disable
   source tracking when you create the orgs by specifying the --no-track-source flag on the "sf org create
   scratch|sandbox" commands.
 
@@ -6311,29 +6314,34 @@ EXAMPLES
 
     $ sf project deploy start
 
-  Deploy the source files in a directory to an org with alias "my-scratch":
+  Deploy all source files in the "force-app" directory to an org with alias "my-scratch"; show only concise output, in
+  other words don't print a list of all the source that was deployed:
 
-    $ sf project deploy start  --source-dir path/to/source --target-org my-scratch
+    $ sf project deploy start  --source-dir force-app --target-org my-scratch --concise
 
-  Deploy a specific Apex class and the objects whose source is in a directory (both examples are equivalent):
+  Deploy all the Apex classes and custom objects that are in the "force-app" directory. The list views, layouts, etc,
+  that are associated with the custom objects are also deployed. Both examples are equivalent:
 
-    $ sf project deploy start --source-dir path/to/apex/classes/MyClass.cls path/to/source/objects
-    $ sf project deploy start --source-dir path/to/apex/classes/MyClass.cls --source-dir path/to/source/objects
+    $ sf project deploy start --source-dir force-app/main/default/classes force-app/main/default/objects
+    $ sf project deploy start --source-dir force-app/main/default/classes --source-dir \
+      force-app/main/default/objects
 
-  Deploy all Apex classes:
+  Deploy all Apex classes that are in all package directories defined in the "sfdx-project.json" file:
 
     $ sf project deploy start --metadata ApexClass
 
-  Deploy a specific Apex class:
+  Deploy a specific Apex class; ignore any conflicts between the local project and org (be careful with this flag,
+  because it will overwrite the Apex class in the org if there are conflicts!):
 
-    $ sf project deploy start --metadata ApexClass:MyApexClass
+    $ sf project deploy start --metadata ApexClass:MyApexClass --ignore-conflicts
 
   Deploy specific Apex classes that match a pattern; in this example, deploy Apex classes whose names contain the
-  string "MyApex":
+  string "MyApex". Also ignore any deployment warnings (again, be careful with this flag! You typically want to see
+  the warnings):
 
-    $ sf project deploy start --metadata 'ApexClass:MyApex*'
+    $ sf project deploy start --metadata 'ApexClass:MyApex*' --ignore-warnings
 
-  Deploy all custom objects and Apex classes (both examples are equivalent):
+  Deploy all custom objects and Apex classes found in all defined package directories (both examples are equivalent):
 
     $ sf project deploy start --metadata CustomObject ApexClass
     $ sf project deploy start --metadata CustomObject --metadata ApexClass
@@ -6370,8 +6378,13 @@ FLAG DESCRIPTIONS
 
   -g, --ignore-warnings  Ignore warnings and allow a deployment to complete successfully.
 
-    If a warning occurs and this flag is set to true, the success status of the deployment is set to true. When this
-    flag is set to false, success is set to false, and the warning is treated like an error.
+    If you specify this flag, and a warning occurs, the success status of the deployment is set to true. If you don't
+    specify this flag, and a warning occurs, then the success status is set to false, and the warning is treated like an
+    error.
+
+    This flag is useful in a CI environment and your deployment includes destructive changes; if you try to delete a
+    component that doesn't exist in the org, you get a warning. In this case, to ensure that the command returns a
+    success value of true, specify this flag.
 
   -l, --test-level=NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg  Deployment Apex testing level.
 
@@ -6401,9 +6414,8 @@ FLAG DESCRIPTIONS
 
   -r, --ignore-errors  Ignore any errors and don’t roll back deployment.
 
-    When deploying to a production org, keep this flag set to false (default value). When set to true, components
-    without errors are deployed and components with errors are skipped, and could result in an inconsistent production
-    org.
+    Never use this flag when deploying to a production org. If you specify it, components without errors are deployed
+    and components with errors are skipped, and could result in an inconsistent production org.
 
   -t, --tests=<value>...  Apex tests to run when --test-level is RunSpecifiedTests.
 
@@ -6454,7 +6466,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.23/src/commands/project/deploy/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.25/src/commands/project/deploy/start.ts)_
 
 ## `sf project deploy validate`
 
@@ -6528,20 +6540,28 @@ DESCRIPTION
   --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double
   quotes. The same syntax applies to --manifest and --source-dir.
 
+  Note: Don't use this command on sandboxes; the command is intended to be used on production orgs. By default,
+  sandboxes don't run tests during a deploy.  If you want to validate a deployment with tests on a sandbox, use "sf
+  project deploy start --dry-run --test-level RunLocalTests" instead.
+
 ALIASES
   $ sf deploy metadata validate
 
 EXAMPLES
   NOTE: These examples focus on validating large deployments. See the help for "sf project deploy start" for examples of deploying smaller sets of metadata which you can also use to validate.
 
-  Validate the deployment of all source files in a directory to the default org:
+  Validate the deployment of all source files in the "force-app" directory to the default org:
 
-    $ sf project deploy validate --source-dir path/to/source
+    $ sf project deploy validate --source-dir force-app
+
+  Validate the deployment of all source files in two directories: "force-app" and "force-app-utils":
+
+    $ sf project deploy validate --source-dir force-app --source-dir force-app-utils
 
   Asynchronously validate the deployment and run all tests in the org with alias "my-prod-org"; command immediately
   returns the job ID:
 
-    $ sf project deploy validate --source-dir path/to/source --async --test-level RunAllTestsInOrg --target-org \
+    $ sf project deploy validate --source-dir force-app --async --test-level RunAllTestsInOrg --target-org \
       my-prod-org
 
   Validate the deployment of all components listed in a manifest:
@@ -6563,8 +6583,13 @@ FLAG DESCRIPTIONS
 
   -g, --ignore-warnings  Ignore warnings and allow a deployment to complete successfully.
 
-    If a warning occurs and this flag is set to true, the success status of the deployment is set to true. When this
-    flag is set to false, success is set to false, and the warning is treated like an error.
+    If you specify this flag, and a warning occurs, the success status of the deployment is set to true. If you don't
+    specify this flag, and a warning occurs, then the success status is set to false, and the warning is treated like an
+    error.
+
+    This flag is useful in a CI environment and your deployment includes destructive changes; if you try to delete a
+    component that doesn't exist in the org, you get a warning. In this case, to ensure that the command returns a
+    success value of true, specify this flag.
 
   -l, --test-level=RunAllTestsInOrg|RunLocalTests|RunSpecifiedTests  Deployment Apex testing level.
 
@@ -6633,7 +6658,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.23/src/commands/project/deploy/validate.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.25/src/commands/project/deploy/validate.ts)_
 
 ## `sf project generate`
 
@@ -6737,7 +6762,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.20/src/commands/project/generate.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.21/src/commands/project/generate.ts)_
 
 ## `sf project generate manifest`
 
@@ -6812,7 +6837,7 @@ EXAMPLES
     $ sf project generate manifest --from-org test@myorg.com --include-packages unlocked
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.23/src/commands/project/generate/manifest.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.25/src/commands/project/generate/manifest.ts)_
 
 ## `sf project list ignored`
 
@@ -6853,7 +6878,7 @@ EXAMPLES
     $ sf project list ignored --source-dir package.xml
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.23/src/commands/project/list/ignored.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.25/src/commands/project/list/ignored.ts)_
 
 ## `sf project reset tracking`
 
@@ -6901,7 +6926,7 @@ EXAMPLES
     $ sf project reset tracking --revision 30
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.23/src/commands/project/reset/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.25/src/commands/project/reset/tracking.ts)_
 
 ## `sf project retrieve preview`
 
@@ -6957,7 +6982,7 @@ FLAG DESCRIPTIONS
     Overrides your default org.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.23/src/commands/project/retrieve/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.25/src/commands/project/retrieve/preview.ts)_
 
 ## `sf project retrieve start`
 
@@ -6973,8 +6998,8 @@ FLAGS
   -c, --ignore-conflicts         Ignore conflicts and retrieve and save files to your local filesystem, even if they
                                  overwrite your local changes.
   -d, --source-dir=<value>...    File paths for source to retrieve from the org.
-  -m, --metadata=<value>...      Metadata component names to retrieve. Wildcards ( `*` ) supported as long as you use
-                                 quotes, such as `ApexClass:MyClass*`
+  -m, --metadata=<value>...      Metadata component names to retrieve. Wildcards (`*`) supported as long as you use
+                                 quotes, such as `ApexClass:MyClass*`.
   -n, --package-name=<value>...  Package names to retrieve.
   -o, --target-org=<value>       (required) Login username or alias for the target org.
   -r, --output-dir=<value>       Directory root for the retrieved source files.
@@ -7000,7 +7025,7 @@ DESCRIPTION
   --target-metadata-dir flag, which retrieves the components into a ZIP file in the specified directory.
 
   If your org allows source tracking, then this command tracks the changes in your source. Some orgs, such as production
-  org, never allow source tracking. Source tracking is enabled by default on scratch and sandbox orgs; you can disable
+  orgs, never allow source tracking. Source tracking is enabled by default on scratch and sandbox orgs; you can disable
   source tracking when you create the orgs by specifying the --no-track-source flag on the "sf org create
   scratch|sandbox" commands.
 
@@ -7012,33 +7037,37 @@ ALIASES
   $ sf retrieve metadata
 
 EXAMPLES
-  Retrieve remote changes from your default org:
+  Retrieve all remote changes from your default org:
 
     $ sf project retrieve start
 
-  Retrieve the source files in a directory from an org with alias "my-scratch":
+  Retrieve the source files in the "force-app" directory from an org with alias "my-scratch":
 
-    $ sf project retrieve start --source-dir path/to/source --target-org my-scratch
+    $ sf project retrieve start --source-dir force-app --target-org my-scratch
 
-  Retrieve a specific Apex class and the objects whose source is in a directory (both examples are equivalent):
+  Retrieve all the Apex classes and custom objects whose source is in the "force-app" directory. The list views,
+  layouts, etc, that are associated with the custom objects are also retrieved. Both examples are equivalent:
 
-    $ sf project retrieve start --source-dir path/to/apex/classes/MyClass.cls path/to/source/objects
-    $ sf project retrieve start --source-dir path/to/apex/classes/MyClass.cls --source-dir path/to/source/objects
+    $ sf project retrieve start --source-dir force-app/main/default/classes force-app/main/default/objects
+    $ sf project retrieve start --source-dir force-app/main/default/classes --source-dir \
+      force-app/main/default/objects
 
-  Retrieve all Apex classes:
+  Retrieve all Apex classes that are in all package directories defined in the "sfdx-project.json" file:
 
     $ sf project retrieve start --metadata ApexClass
 
-  Retrieve a specific Apex class:
+  Retrieve a specific Apex class; ignore any conflicts between the local project and org (be careful with this flag,
+  because it will overwrite the Apex class source files in your local project if there are conflicts!):
 
-    $ sf project retrieve start --metadata ApexClass:MyApexClass
+    $ sf project retrieve start --metadata ApexClass:MyApexClass --ignore-conflicts
 
   Retrieve specific Apex classes that match a pattern; in this example, retrieve Apex classes whose names contain the
   string "MyApex":
 
     $ sf project retrieve start --metadata 'ApexClass:MyApex*'
 
-  Retrieve all custom objects and Apex classes (both examples are equivalent):
+  Retrieve all custom objects and Apex classes found in all defined package directories (both examples are
+  equivalent):
 
     $ sf project retrieve start --metadata CustomObject ApexClass
     $ sf project retrieve start --metadata CustomObject --metadata ApexClass
@@ -7111,7 +7140,7 @@ ENVIRONMENT VARIABLES
   SF_USE_PROGRESS_BAR  Set to false to disable the progress bar when running the metadata deploy command.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.23/src/commands/project/retrieve/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.25/src/commands/project/retrieve/start.ts)_
 
 ## `sf schema generate field`
 
@@ -7308,7 +7337,7 @@ DESCRIPTION
   Once you select a command, hit enter and it will show the help for that command.
 ```
 
-_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/1.0.18/src/commands/search.ts)_
+_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/1.0.19/src/commands/search.ts)_
 
 ## `sf sobject describe`
 
@@ -7452,7 +7481,7 @@ FLAG DESCRIPTIONS
     etc.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.20/src/commands/static-resource/generate.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.21/src/commands/static-resource/generate.ts)_
 
 ## `sf update [CHANNEL]`
 
@@ -7489,7 +7518,7 @@ EXAMPLES
     $ sf update --available
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.1.15/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.1.16/src/commands/update.ts)_
 
 ## `sf version`
 
@@ -7564,7 +7593,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.20/src/commands/visualforce/generate/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.21/src/commands/visualforce/generate/component.ts)_
 
 ## `sf visualforce generate page`
 
@@ -7612,7 +7641,7 @@ FLAG DESCRIPTIONS
     The name can be up to 40 characters and must start with a letter.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.20/src/commands/visualforce/generate/page.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.21/src/commands/visualforce/generate/page.ts)_
 
 ## `sf which`
 
