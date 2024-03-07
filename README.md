@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.32.6 linux-x64 node-v20.11.1
+@salesforce/cli/2.32.7 linux-x64 node-v20.11.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -78,7 +78,7 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf force data bulk delete`](#sf-force-data-bulk-delete)
 - [`sf force data bulk status`](#sf-force-data-bulk-status)
 - [`sf force data bulk upsert`](#sf-force-data-bulk-upsert)
-- [`sf help [COMMANDS]`](#sf-help-commands)
+- [`sf help [COMMAND]`](#sf-help-command)
 - [`sf info releasenotes display`](#sf-info-releasenotes-display)
 - [`sf lightning generate app`](#sf-lightning-generate-app)
 - [`sf lightning generate component`](#sf-lightning-generate-component)
@@ -822,7 +822,7 @@ EXAMPLES
   $ sf autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/3.0.11/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/3.0.12/src/commands/autocomplete/index.ts)_
 
 ## `sf commands`
 
@@ -855,7 +855,7 @@ DESCRIPTION
   list all the commands
 ```
 
-_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/3.1.7/src/commands/commands.ts)_
+_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/3.2.0/src/commands/commands.ts)_
 
 ## `sf config get`
 
@@ -1994,16 +1994,16 @@ EXAMPLES
 
 _See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.1.7/src/commands/force/data/bulk/upsert.ts)_
 
-## `sf help [COMMANDS]`
+## `sf help [COMMAND]`
 
 Display help for sf.
 
 ```
 USAGE
-  $ sf help [COMMANDS] [-n]
+  $ sf help [COMMAND] [-n]
 
 ARGUMENTS
-  COMMANDS  Command to show help for.
+  COMMAND  Command to show help for.
 
 FLAGS
   -n, --nested-commands  Include all nested commands in the output.
@@ -2012,7 +2012,7 @@ DESCRIPTION
   Display help for sf.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/6.0.15/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/6.0.17/src/commands/help.ts)_
 
 ## `sf info releasenotes display`
 
@@ -5271,7 +5271,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.1/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.2/src/commands/plugins/index.ts)_
 
 ## `sf plugins discover`
 
@@ -5315,7 +5315,7 @@ EXAMPLES
   $ sf plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.1/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.2/src/commands/plugins/inspect.ts)_
 
 ## `sf plugins:install PLUGIN...`
 
@@ -5359,7 +5359,7 @@ EXAMPLES
   $ sf plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.1/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.2/src/commands/plugins/install.ts)_
 
 ## `sf plugins:link PLUGIN`
 
@@ -5389,7 +5389,7 @@ EXAMPLES
   $ sf plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.1/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.2/src/commands/plugins/link.ts)_
 
 ## `sf plugins reset`
 
@@ -5404,7 +5404,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.1/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.2/src/commands/plugins/reset.ts)_
 
 ## `sf plugins trust verify`
 
@@ -5460,7 +5460,7 @@ EXAMPLES
   $ sf plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.1/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.2/src/commands/plugins/uninstall.ts)_
 
 ## `sf plugins update`
 
@@ -5478,7 +5478,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.1/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.2/src/commands/plugins/update.ts)_
 
 ## `sf project convert mdapi`
 
@@ -7337,7 +7337,7 @@ DESCRIPTION
   Once you select a command, hit enter and it will show the help for that command.
 ```
 
-_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/1.0.19/src/commands/search.ts)_
+_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/1.0.20/src/commands/search.ts)_
 
 ## `sf sobject describe`
 
@@ -7518,7 +7518,7 @@ EXAMPLES
     $ sf update --available
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.1.16/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.2.0/src/commands/update.ts)_
 
 ## `sf version`
 
@@ -7538,7 +7538,7 @@ FLAG DESCRIPTIONS
     Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
 ```
 
-_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.0.13/src/commands/version.ts)_
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.0.14/src/commands/version.ts)_
 
 ## `sf visualforce generate component`
 
@@ -7663,6 +7663,6 @@ EXAMPLES
     $ sf which help
 ```
 
-_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.1.2/src/commands/which.ts)_
+_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.1.3/src/commands/which.ts)_
 
 <!-- commandsstop -->
