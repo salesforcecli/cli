@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.34.0 linux-x64 node-v20.11.1
+@salesforce/cli/2.34.1-qa.0 linux-x64 node-v20.11.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -140,10 +140,10 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf plugins discover`](#sf-plugins-discover)
 - [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
 - [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
-- [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
+- [`sf plugins link PATH`](#sf-plugins-link-path)
 - [`sf plugins reset`](#sf-plugins-reset)
 - [`sf plugins trust verify`](#sf-plugins-trust-verify)
-- [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
+- [`sf plugins uninstall [PLUGIN]`](#sf-plugins-uninstall-plugin)
 - [`sf plugins update`](#sf-plugins-update)
 - [`sf project convert mdapi`](#sf-project-convert-mdapi)
 - [`sf project convert source`](#sf-project-convert-source)
@@ -5275,7 +5275,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.5/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.0-beta.4/src/commands/plugins/index.ts)_
 
 ## `sf plugins discover`
 
@@ -5319,7 +5319,7 @@ EXAMPLES
   $ sf plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.5/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.0-beta.4/src/commands/plugins/inspect.ts)_
 
 ## `sf plugins:install PLUGIN...`
 
@@ -5333,10 +5333,10 @@ ARGUMENTS
   PLUGIN...  Plugin to install.
 
 FLAGS
-  -f, --force    Run yarn install with force flag.
+  -f, --force    Force npm to fetch remote resources even if a local copy exists on disk.
   -h, --help     Show CLI help.
-  -s, --silent   Silences yarn output.
-  -v, --verbose  Show verbose yarn output.
+  -s, --silent   Silences npm output.
+  -v, --verbose  Show verbose npm output.
 
 GLOBAL FLAGS
   --json  Format output as json.
@@ -5363,15 +5363,15 @@ EXAMPLES
   $ sf plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.5/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.0-beta.4/src/commands/plugins/install.ts)_
 
-## `sf plugins:link PLUGIN`
+## `sf plugins link PATH`
 
 Links a plugin into the CLI for development.
 
 ```
 USAGE
-  $ sf plugins link PLUGIN
+  $ sf plugins link PATH [-h] [--install] [-v]
 
 ARGUMENTS
   PATH  [default: .] path to plugin
@@ -5393,7 +5393,7 @@ EXAMPLES
   $ sf plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.5/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.0-beta.4/src/commands/plugins/link.ts)_
 
 ## `sf plugins reset`
 
@@ -5408,7 +5408,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.5/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.0-beta.4/src/commands/plugins/reset.ts)_
 
 ## `sf plugins trust verify`
 
@@ -5438,13 +5438,13 @@ EXAMPLES
 
 _See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.3.16/src/commands/plugins/trust/verify.ts)_
 
-## `sf plugins:uninstall PLUGIN...`
+## `sf plugins uninstall [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ sf plugins uninstall PLUGIN...
+  $ sf plugins uninstall [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -5464,7 +5464,7 @@ EXAMPLES
   $ sf plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.5/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.0-beta.4/src/commands/plugins/uninstall.ts)_
 
 ## `sf plugins update`
 
@@ -5482,7 +5482,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.5/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.0-beta.4/src/commands/plugins/update.ts)_
 
 ## `sf project convert mdapi`
 
