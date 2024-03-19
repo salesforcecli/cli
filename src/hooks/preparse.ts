@@ -73,14 +73,14 @@ const hook: Hook<'preparse'> = async function ({ argv, options, context }) {
         if (contents === undefined) {
           return [name, undefined] satisfies [string, undefined];
         }
-        const values = ext === '.json' ? [JSON.stringify(JSON.parse(contents))] : contents?.split('\n');
+        const values = ext === '.json' ? [JSON.stringify(JSON.parse(contents))] : contents?.trim().split('\n');
         return [name, values] satisfies [string, string[]];
       })
   );
   context.debug('Flags to insert', flagsToInsert);
   for (const [flag, values] of flagsToInsert) {
     for (const value of values ?? []) {
-      argv.push(`--${flag}`);
+      argv.push(flag.length === 1 ? `-${flag}` : `--${flag}`);
       if (value) argv.push(value);
     }
   }

@@ -197,6 +197,30 @@ describe('preparse hook test', () => {
       expect(results.successes[0]).to.be.ok;
       expect(results.successes[0].result).to.deep.equal(['arg', '--str', JSON.stringify(json)]);
     });
+
+    it('should handle single value with new line', async () => {
+      const argv = ['arg', '--flags-dir', 'flags'];
+      const flags = {
+        ...baseFlags,
+        str: Flags.string(),
+      };
+      makeStubs([{ name: 'str', content: 'value\n' }]);
+      const results = await config.runHook('preparse', { argv, options: { flags } });
+      expect(results.successes[0]).to.be.ok;
+      expect(results.successes[0].result).to.deep.equal(['arg', '--str', 'value']);
+    });
+
+    it('should add string from directory using short char as file name', async () => {
+      const argv = ['arg', '--flags-dir', 'flags'];
+      const flags = {
+        ...baseFlags,
+        str: Flags.string({ char: 's' }),
+      };
+      makeStubs([{ name: 's', content: 'value' }]);
+      const results = await config.runHook('preparse', { argv, options: { flags } });
+      expect(results.successes[0]).to.be.ok;
+      expect(results.successes[0].result).to.deep.equal(['arg', '-s', 'value']);
+    });
   });
 
   describe('multiple flags', () => {
