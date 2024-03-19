@@ -4,15 +4,14 @@
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import fs from 'node:fs/promises';
-import { join, parse } from 'node:path';
-
 import type { Hook } from '@oclif/core';
 
 const hook: Hook<'preparse'> = async function ({ argv, options, context }) {
-  // TODO validate that value was provided for --flags-dir
-  if (!argv.includes('--flags-dir')) return argv;
+  // Skip this hook if command does not have a --flags-dir flag or if it is not present in argv
+  if (!argv.includes('--flags-dir') || !options.flags?.['flags-dir']) return argv;
 
+  const { default: fs } = await import('node:fs/promises');
+  const { default: path } = await import('node:path');
   context.debug('Initial argv', argv.join(' '));
   const flagsToIgnore = new Set(
     Object.entries(options.flags ?? {})
@@ -44,20 +43,21 @@ const hook: Hook<'preparse'> = async function ({ argv, options, context }) {
     return argv;
   }
 
-  async function safeReadDir(path: string): Promise<string[]> {
+  async function safeReadDir(filePath: string): Promise<string[]> {
     try {
-      return await fs.readdir(path);
-    } catch {
+      return await fs.readdir(filePath);
+    } catch (err) {
       context.debug('No flags dir found');
+      context.debug(err);
       return [];
     }
   }
 
-  async function safeReadFile(path: string): Promise<string | undefined> {
+  async function safeReadFile(filePath: string): Promise<string | undefined> {
     try {
-      return await fs.readFile(path, 'utf8');
+      return await fs.readFile(filePath, 'utf8');
     } catch (err) {
-      context.debug(path, err);
+      context.debug(filePath, err);
     }
   }
 
@@ -68,8 +68,8 @@ const hook: Hook<'preparse'> = async function ({ argv, options, context }) {
       // ignore files that were provided as flags
       .filter((f) => !flagsToIgnore.has(f))
       .map(async (file) => {
-        const { name, ext } = parse(file);
-        const contents = await safeReadFile(join(flagsDir, file));
+        const { name, ext } = path.parse(file);
+        const contents = await safeReadFile(path.join(flagsDir, file));
         if (contents === undefined) {
           return [name, undefined] satisfies [string, undefined];
         }
@@ -85,8 +85,6 @@ const hook: Hook<'preparse'> = async function ({ argv, options, context }) {
     }
   }
 
-  const flagsDirIndex = argv.indexOf('--flags-dir');
-  argv.splice(flagsDirIndex, 2);
   context.debug(`Returning argv: ${argv.join(' ')}`);
   return argv;
 };

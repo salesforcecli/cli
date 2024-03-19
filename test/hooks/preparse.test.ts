@@ -39,6 +39,8 @@ describe('preparse hook test', () => {
     'flags-dir': Flags.directory(),
   };
 
+  const baseArgs = ['arg', '--flags-dir', 'flags'];
+
   it('should not modify argv if --flags-dir is not present', async () => {
     const argv = ['arg'];
     const flags = {
@@ -71,9 +73,17 @@ describe('preparse hook test', () => {
     expect(results.successes[0].result).to.deep.equal(argv);
   });
 
+  it('should not modify argv if the command does not have a --flags-dir flag', async () => {
+    const argv = ['arg'];
+    const flags = {};
+    const results = await config.runHook('preparse', { argv, options: { flags } });
+    expect(results.successes[0]).to.be.ok;
+    expect(results.successes[0].result).to.deep.equal(argv);
+  });
+
   describe('boolean flags', () => {
     it('should add boolean from directory', async () => {
-      const argv = ['arg', '--flags-dir', 'flags'];
+      const argv = [...baseArgs];
       const flags = {
         ...baseFlags,
         bool: Flags.boolean(),
@@ -81,11 +91,11 @@ describe('preparse hook test', () => {
       makeStubs([{ name: 'bool', content: '' }]);
       const results = await config.runHook('preparse', { argv, options: { flags } });
       expect(results.successes[0]).to.be.ok;
-      expect(results.successes[0].result).to.deep.equal(['arg', '--bool']);
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '--bool']);
     });
 
     it('should add boolean from directory and allow flag overrides', async () => {
-      const argv = ['arg', '--flags-dir', 'flags', '--bool'];
+      const argv = [...baseArgs, '--bool'];
       const flags = {
         ...baseFlags,
         bool: Flags.boolean(),
@@ -93,11 +103,11 @@ describe('preparse hook test', () => {
       makeStubs([{ name: 'bool', content: '' }]);
       const results = await config.runHook('preparse', { argv, options: { flags } });
       expect(results.successes[0]).to.be.ok;
-      expect(results.successes[0].result).to.deep.equal(['arg', '--bool']);
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '--bool']);
     });
 
     it('should add boolean from directory and allow short char flag overrides', async () => {
-      const argv = ['arg', '--flags-dir', 'flags', '-b'];
+      const argv = [...baseArgs, '-b'];
       const flags = {
         ...baseFlags,
         bool: Flags.boolean({ char: 'b' }),
@@ -105,13 +115,13 @@ describe('preparse hook test', () => {
       makeStubs([{ name: 'bool', content: '' }]);
       const results = await config.runHook('preparse', { argv, options: { flags } });
       expect(results.successes[0]).to.be.ok;
-      expect(results.successes[0].result).to.deep.equal(['arg', '-b']);
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '-b']);
     });
   });
 
   describe('string flags', () => {
     it('should add string from directory', async () => {
-      const argv = ['arg', '--flags-dir', 'flags'];
+      const argv = [...baseArgs];
       const flags = {
         ...baseFlags,
         str: Flags.string(),
@@ -119,11 +129,11 @@ describe('preparse hook test', () => {
       makeStubs([{ name: 'str', content: 'value' }]);
       const results = await config.runHook('preparse', { argv, options: { flags } });
       expect(results.successes[0]).to.be.ok;
-      expect(results.successes[0].result).to.deep.equal(['arg', '--str', 'value']);
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '--str', 'value']);
     });
 
     it('should add string from directory to override default', async () => {
-      const argv = ['arg', '--flags-dir', 'flags'];
+      const argv = [...baseArgs];
       const flags = {
         ...baseFlags,
         str: Flags.string({ default: 'default' }),
@@ -131,11 +141,11 @@ describe('preparse hook test', () => {
       makeStubs([{ name: 'str', content: 'value' }]);
       const results = await config.runHook('preparse', { argv, options: { flags } });
       expect(results.successes[0]).to.be.ok;
-      expect(results.successes[0].result).to.deep.equal(['arg', '--str', 'value']);
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '--str', 'value']);
     });
 
     it('should add string from directory and allow flag overrides', async () => {
-      const argv = ['arg', '--flags-dir', 'flags', '--str', 'value'];
+      const argv = [...baseArgs, '--str', 'value'];
       const flags = {
         ...baseFlags,
         str: Flags.string(),
@@ -143,11 +153,11 @@ describe('preparse hook test', () => {
       makeStubs([{ name: 'str', content: 'value' }]);
       const results = await config.runHook('preparse', { argv, options: { flags } });
       expect(results.successes[0]).to.be.ok;
-      expect(results.successes[0].result).to.deep.equal(['arg', '--str', 'value']);
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '--str', 'value']);
     });
 
     it('should add string from directory and allow short char flag overrides', async () => {
-      const argv = ['arg', '--flags-dir', 'flags', '-s', 'value'];
+      const argv = [...baseArgs, '-s', 'value'];
       const flags = {
         ...baseFlags,
         str: Flags.string({ char: 's' }),
@@ -155,11 +165,11 @@ describe('preparse hook test', () => {
       makeStubs([{ name: 'str', content: 'value' }]);
       const results = await config.runHook('preparse', { argv, options: { flags } });
       expect(results.successes[0]).to.be.ok;
-      expect(results.successes[0].result).to.deep.equal(['arg', '-s', 'value']);
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '-s', 'value']);
     });
 
     it('should handle single line json string', async () => {
-      const argv = ['arg', '--flags-dir', 'flags'];
+      const argv = [...baseArgs];
       const flags = {
         ...baseFlags,
         str: Flags.string(),
@@ -175,11 +185,11 @@ describe('preparse hook test', () => {
       makeStubs([{ name: 'str', content: JSON.stringify(json) }]);
       const results = await config.runHook('preparse', { argv, options: { flags } });
       expect(results.successes[0]).to.be.ok;
-      expect(results.successes[0].result).to.deep.equal(['arg', '--str', JSON.stringify(json)]);
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '--str', JSON.stringify(json)]);
     });
 
     it('should handle multi line json string', async () => {
-      const argv = ['arg', '--flags-dir', 'flags'];
+      const argv = [...baseArgs];
       const flags = {
         ...baseFlags,
         str: Flags.string(),
@@ -195,11 +205,11 @@ describe('preparse hook test', () => {
       makeStubs([{ name: 'str.json', content: JSON.stringify(json, null, 2) }]);
       const results = await config.runHook('preparse', { argv, options: { flags } });
       expect(results.successes[0]).to.be.ok;
-      expect(results.successes[0].result).to.deep.equal(['arg', '--str', JSON.stringify(json)]);
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '--str', JSON.stringify(json)]);
     });
 
     it('should handle single value with new line', async () => {
-      const argv = ['arg', '--flags-dir', 'flags'];
+      const argv = [...baseArgs];
       const flags = {
         ...baseFlags,
         str: Flags.string(),
@@ -207,11 +217,11 @@ describe('preparse hook test', () => {
       makeStubs([{ name: 'str', content: 'value\n' }]);
       const results = await config.runHook('preparse', { argv, options: { flags } });
       expect(results.successes[0]).to.be.ok;
-      expect(results.successes[0].result).to.deep.equal(['arg', '--str', 'value']);
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '--str', 'value']);
     });
 
     it('should add string from directory using short char as file name', async () => {
-      const argv = ['arg', '--flags-dir', 'flags'];
+      const argv = [...baseArgs];
       const flags = {
         ...baseFlags,
         str: Flags.string({ char: 's' }),
@@ -219,13 +229,13 @@ describe('preparse hook test', () => {
       makeStubs([{ name: 's', content: 'value' }]);
       const results = await config.runHook('preparse', { argv, options: { flags } });
       expect(results.successes[0]).to.be.ok;
-      expect(results.successes[0].result).to.deep.equal(['arg', '-s', 'value']);
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '-s', 'value']);
     });
   });
 
   describe('multiple flags', () => {
     it('should combine values from directory with values from argv', async () => {
-      const argv = ['arg', '--flags-dir', 'flags', '--multiple', 'thing1'];
+      const argv = [...baseArgs, '--multiple', 'thing1'];
       const flags = {
         ...baseFlags,
         multiple: Flags.string({ multiple: true }),
@@ -233,11 +243,11 @@ describe('preparse hook test', () => {
       makeStubs([{ name: 'multiple', content: 'thing2' }]);
       const results = await config.runHook('preparse', { argv, options: { flags } });
       expect(results.successes[0]).to.be.ok;
-      expect(results.successes[0].result).to.deep.equal(['arg', '--multiple', 'thing1', '--multiple', 'thing2']);
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '--multiple', 'thing1', '--multiple', 'thing2']);
     });
 
     it('should add values split by new line', async () => {
-      const argv = ['arg', '--flags-dir', 'flags', '--multiple', 'thing1'];
+      const argv = [...baseArgs, '--multiple', 'thing1'];
       const flags = {
         ...baseFlags,
         multiple: Flags.string({ multiple: true }),
@@ -246,7 +256,7 @@ describe('preparse hook test', () => {
       const results = await config.runHook('preparse', { argv, options: { flags } });
       expect(results.successes[0]).to.be.ok;
       expect(results.successes[0].result).to.deep.equal([
-        'arg',
+        ...baseArgs,
         '--multiple',
         'thing1',
         '--multiple',
