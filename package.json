@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.34.5",
+  "version": "2.34.6",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run.js",
@@ -136,12 +136,12 @@
   },
   "dependencies": {
     "@inquirer/select": "^1.3.1",
-    "@oclif/core": "3.25.2",
+    "@oclif/core": "3.25.3",
     "@oclif/plugin-autocomplete": "3.0.13",
     "@oclif/plugin-commands": "3.2.0",
     "@oclif/plugin-help": "6.0.18",
     "@oclif/plugin-not-found": "3.0.14",
-    "@oclif/plugin-plugins": "4.3.7",
+    "@oclif/plugin-plugins": "4.3.8",
     "@oclif/plugin-search": "1.0.20",
     "@oclif/plugin-update": "4.2.0",
     "@oclif/plugin-version": "2.0.14",
@@ -151,7 +151,7 @@
     "@salesforce/plugin-apex": "3.0.31",
     "@salesforce/plugin-auth": "3.3.26",
     "@salesforce/plugin-data": "3.1.11",
-    "@salesforce/plugin-deploy-retrieve": "3.2.34",
+    "@salesforce/plugin-deploy-retrieve": "3.2.35",
     "@salesforce/plugin-info": "3.0.33",
     "@salesforce/plugin-limits": "3.1.14",
     "@salesforce/plugin-marketplace": "1.0.29",
@@ -204,8 +204,8 @@
   "resolutions": {
     "@salesforce/schemas": "1.6.1",
     "@salesforce/templates": "60.1.0",
-    "@salesforce/source-deploy-retrieve": "10.5.2",
-    "@salesforce/source-tracking": "5.1.17"
+    "@salesforce/source-deploy-retrieve": "10.5.4",
+    "@salesforce/source-tracking": "5.1.18"
   },
   "repository": "salesforcecli/cli",
   "scripts": {
