@@ -29,7 +29,14 @@ const hook: Hook<'preparse'> = async function ({ argv, options, context }) {
           // ignore if --no- flag is present
           (flagOptions.type === 'boolean' && flagOptions.allowNo && argv.includes(`--no-${flagName}`))
       )
-      .map(([flagName]) => flagName)
+      .flatMap(([flagName, flagOptions]) => {
+        // Also ignore the --no- flag if boolean flag allows it
+        if (flagOptions.type === 'boolean' && flagOptions.allowNo) {
+          return [flagName, `no-${flagName}`];
+        }
+
+        return [flagName];
+      })
   );
   context.debug('Flags to ignore', flagsToIgnore);
 

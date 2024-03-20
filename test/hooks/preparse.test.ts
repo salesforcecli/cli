@@ -117,6 +117,30 @@ describe('preparse hook test', () => {
       expect(results.successes[0]).to.be.ok;
       expect(results.successes[0].result).to.deep.equal([...baseArgs, '-b']);
     });
+
+    it('should add --no- boolean from directory', async () => {
+      const argv = [...baseArgs];
+      const flags = {
+        ...baseFlags,
+        bool: Flags.boolean({ allowNo: true }),
+      };
+      makeStubs([{ name: 'no-bool', content: '' }]);
+      const results = await config.runHook('preparse', { argv, options: { flags } });
+      expect(results.successes[0]).to.be.ok;
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '--no-bool']);
+    });
+
+    it('should add --no- boolean from directory and allow flag overrides', async () => {
+      const argv = [...baseArgs, '--bool'];
+      const flags = {
+        ...baseFlags,
+        bool: Flags.boolean({ allowNo: true }),
+      };
+      makeStubs([{ name: 'no-bool', content: '' }]);
+      const results = await config.runHook('preparse', { argv, options: { flags } });
+      expect(results.successes[0]).to.be.ok;
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '--bool']);
+    });
   });
 
   describe('string flags', () => {
