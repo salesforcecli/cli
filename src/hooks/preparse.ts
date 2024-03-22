@@ -9,9 +9,19 @@ import type { Hook } from '@oclif/core';
 const hook: Hook<'preparse'> = async function ({ argv, options, context }) {
   // Skip this hook if command does not have a --flags-dir flag or if it is not present in argv
   if (!argv.includes('--flags-dir') || !options.flags?.['flags-dir']) return argv;
+  const flagsDir = argv[argv.indexOf('--flags-dir') + 1];
+  if (!flagsDir) {
+    context.debug('No flags dir provided');
+    return argv;
+  }
+  if (flagsDir.startsWith('-')) {
+    context.debug(`No flags dir provided, got ${flagsDir}`);
+    return argv;
+  }
 
   const { default: fs } = await import('node:fs/promises');
   const { default: path } = await import('node:path');
+
   context.debug('Initial argv', argv.join(' '));
   const flagsToIgnore = new Set(
     Object.entries(options.flags ?? {})
@@ -39,16 +49,6 @@ const hook: Hook<'preparse'> = async function ({ argv, options, context }) {
       })
   );
   context.debug('Flags to ignore', flagsToIgnore);
-
-  const flagsDir = argv[argv.indexOf('--flags-dir') + 1];
-  if (!flagsDir) {
-    context.debug('No flags dir provided');
-    return argv;
-  }
-  if (flagsDir.startsWith('-')) {
-    context.debug(`No flags dir provided, got ${flagsDir}`);
-    return argv;
-  }
 
   async function safeReadDir(filePath: string): Promise<string[]> {
     try {
@@ -84,16 +84,18 @@ const hook: Hook<'preparse'> = async function ({ argv, options, context }) {
         return [name, values] satisfies [string, string[]];
       })
   );
+
+  const newArgv = [...argv];
   context.debug('Flags to insert', flagsToInsert);
   for (const [flag, values] of flagsToInsert) {
     for (const value of values ?? []) {
-      argv.push(flag.length === 1 ? `-${flag}` : `--${flag}`);
-      if (value) argv.push(value);
+      newArgv.push(flag.length === 1 ? `-${flag}` : `--${flag}`);
+      if (value) newArgv.push(value);
     }
   }
 
-  context.debug(`Returning argv: ${argv.join(' ')}`);
-  return argv;
+  context.debug(`Returning argv: ${newArgv.join(' ')}`);
+  return newArgv;
 };
 
 export default hook;
