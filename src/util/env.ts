@@ -5,7 +5,6 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 import { EnvVars } from '@salesforce/core/lib/config/envVars.js';
-import { Optional } from '@salesforce/ts-types';
 
 export class Env extends EnvVars {
   public static SF_AUTOUPDATE_DISABLE = 'SF_AUTOUPDATE_DISABLE';
@@ -46,7 +45,7 @@ export class Env extends EnvVars {
     return this.getBoolean(Env.SF_INSTALLER);
   }
 
-  public getNpmRegistryOverride(): Optional<string> {
+  public getNpmRegistryOverride(): string | undefined {
     return this.getString(Env.SF_NPM_REGISTRY);
   }
 
