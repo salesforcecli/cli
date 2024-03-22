@@ -1205,6 +1205,14 @@
     "@inquirer/type" "^1.1.6"
     chalk "^4.1.2"
 
+"@inquirer/confirm@^3.0.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@inquirer/confirm/-/confirm-3.1.0.tgz#526cb71ceab28ba827ea287aa81c969e437017b6"
+  integrity sha512-nH5mxoTEoqk6WpoBz80GMpDSm9jH5V9AF8n+JZAZfMzd9gHeEG9w1o3KawPRR72lfzpP+QxBHLkOKLEApwhDiQ==
+  dependencies:
+    "@inquirer/core" "^7.1.0"
+    "@inquirer/type" "^1.2.1"
+
 "@inquirer/core@^3.1.1":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@inquirer/core/-/core-3.1.2.tgz#d9691e6ffae85935685641550b8370ab7e599caa"
@@ -1389,6 +1397,26 @@
   dependencies:
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
+
+"@jsforce/jsforce-node@^3.0.0-next.2":
+  version "3.0.0-next.2"
+  resolved "https://registry.yarnpkg.com/@jsforce/jsforce-node/-/jsforce-node-3.0.0-next.2.tgz#866d852bded2384a474d42906e267b3d0b6b32ce"
+  integrity sha512-tsvCTEB8Hfr1ZFC6Db9rIovNmUtO+xN2R3BRLUjyH34i5y5emwrVsLBL5JzSRAXgsTLjp8I/BqJuG4f+6wM/uw==
+  dependencies:
+    "@sindresorhus/is" "^4"
+    "@types/node" "^18.15.3"
+    abort-controller "^3.0.0"
+    base64url "^3.0.1"
+    csv-parse "^5.5.2"
+    csv-stringify "^6.4.4"
+    faye "^1.4.0"
+    form-data "^4.0.0"
+    fs-extra "^8.1.0"
+    https-proxy-agent "^5.0.0"
+    multistream "^3.1.0"
+    node-fetch "^2.6.1"
+    strip-ansi "^6.0.0"
+    xml2js "^0.6.2"
 
 "@ljharb/through@^2.3.12":
   version "2.3.12"
@@ -1883,11 +1911,12 @@
   dependencies:
     "@oclif/core" "^3.23.0"
 
-"@oclif/plugin-not-found@3.0.14", "@oclif/plugin-not-found@^3.0.14":
-  version "3.0.14"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-3.0.14.tgz#a5eb6d38cd185e9d30178f5fbd0dc674dbae9b01"
-  integrity sha512-HLz04cmS+5F6Tsx1zQEoYV6wamDC/0cM2NqklPIEg8pq/JHPhktmhpzsGaRyBrtx4Pv+uNCo3s+mrTz2v5v03w==
+"@oclif/plugin-not-found@3.1.0", "@oclif/plugin-not-found@^3.0.14":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-3.1.0.tgz#1f9c0c1d3fcb7ee747c7c3ab61f64bb7eed99e19"
+  integrity sha512-sWTSHj1jf8w2kQtOEZpuUjy5zRcLPxuvkKQQniaGKg7JMgCADo1bRoiXdFVPth7f+AdhSNRPYhYCbqtydWjI8A==
   dependencies:
+    "@inquirer/confirm" "^3.0.0"
     "@oclif/core" "^3.21.0"
     chalk "^5.3.0"
     fast-levenshtein "^3.0.0"
@@ -2382,11 +2411,12 @@
     handlebars "^4.7.8"
     tslib "^2"
 
-"@salesforce/plugin-data@3.1.11":
-  version "3.1.11"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-3.1.11.tgz#20a8df72ee7e0f7d950b14241bd6e8faa88abc04"
-  integrity sha512-O8AJLU9M5rPMYOg65fW/cVZ6KnPbxdsVEbXYQ1W4diHOGB1i6N/nRhdMvDkR0J8NuP9kTYikyfyJ63Os9Ljg0g==
+"@salesforce/plugin-data@3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-3.2.0.tgz#3f48de5c3d75f0f6204c8103e8f2c0ac62d50a6f"
+  integrity sha512-UwB592qsVjwDv3WFOLp3oXqGzFWdSZu/FwQGO+sudwo9f8myYlPv/WvKYdAmvHWuQTmFPhApKif4HieaguktDA==
   dependencies:
+    "@jsforce/jsforce-node" "^3.0.0-next.2"
     "@oclif/core" "^3.23.0"
     "@salesforce/core" "^6.7.1"
     "@salesforce/kit" "^3.0.15"
@@ -2396,7 +2426,6 @@
     change-case "^5.4.3"
     csv-parse "^4.16.3"
     csv-stringify "^6.4.6"
-    jsforce "^2.0.0-beta.29"
 
 "@salesforce/plugin-deploy-retrieve@3.2.35":
   version "3.2.35"
@@ -2794,7 +2823,7 @@
     "@sigstore/core" "^1.0.0"
     "@sigstore/protobuf-specs" "^0.3.0"
 
-"@sindresorhus/is@^4.0.0":
+"@sindresorhus/is@^4", "@sindresorhus/is@^4.0.0":
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-4.6.0.tgz#3c7c9c46e678feefe7a2e5bb609d3dbd665ffb3f"
   integrity sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==
@@ -3543,10 +3572,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-15.14.9.tgz#bc43c990c3c9be7281868bbc7b8fdd6e2b57adfa"
   integrity sha512-qjd88DrCxupx/kJD5yQgZdcYKZKSIGBVDIBE1/LTGcNm3d2Np/jxojkdePDdfnBHJc5W7vSMpbJ1aB7p/Py69A==
 
-"@types/node@^18":
-  version "18.19.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.3.tgz#e4723c4cb385641d61b983f6fe0b716abd5f8fc0"
-  integrity sha512-k5fggr14DwAytoA/t8rPrIz++lXK7/DqckthCmoZOKNsEbJkId4Z//BqgApXBUGrGddrigYa1oqheo/7YmW4rg==
+"@types/node@^18", "@types/node@^18.15.3":
+  version "18.19.26"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.26.tgz#18991279d0a0e53675285e8cf4a0823766349729"
+  integrity sha512-+wiMJsIwLOYCvUqSdKTrfkS8mpTp+MPINe6+Np4TAGFWWRWiBQ5kSq9nZGCSPkzx9mvT+uEukzpX4MOSCydcvw==
   dependencies:
     undici-types "~5.26.4"
 
@@ -5205,12 +5234,17 @@ csv-parse@^4.16.3, csv-parse@^4.8.2:
   resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-4.16.3.tgz#7ca624d517212ebc520a36873c3478fa66efbaf7"
   integrity sha512-cO1I/zmz4w2dcKHVvpCr7JVRu8/FymG5OEpmvsZYlccYolPBLoVGKUHgNoc4ZGkFeFlWGEDmMyBM+TTqRdW/wg==
 
+csv-parse@^5.5.2:
+  version "5.5.5"
+  resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-5.5.5.tgz#68a271a9092877b830541805e14c8a80e6a22517"
+  integrity sha512-erCk7tyU3yLWAhk6wvKxnyPtftuy/6Ak622gOO7BCJ05+TYffnPCJF905wmOQm+BpkX54OdAl8pveJwUdpnCXQ==
+
 csv-stringify@^5.3.4:
   version "5.6.5"
   resolved "https://registry.yarnpkg.com/csv-stringify/-/csv-stringify-5.6.5.tgz#c6d74badda4b49a79bf4e72f91cce1e33b94de00"
   integrity sha512-PjiQ659aQ+fUTQqSrd1XEDnOr52jh30RBurfzkscaE2tPaFsDH5wOAHJiw8XAHphRknCwMUE9KRayc4K/NbO8A==
 
-csv-stringify@^6.4.6:
+csv-stringify@^6.4.4, csv-stringify@^6.4.6:
   version "6.4.6"
   resolved "https://registry.yarnpkg.com/csv-stringify/-/csv-stringify-6.4.6.tgz#9ccf87cb8b017c96673a9fa061768c8ba83e8b98"
   integrity sha512-h2V2XZ3uOTLilF5dPIptgUfN/o2ia/80Ie0Lly18LAnw5s8Eb7kt8rfxSUy24AztJZas9f6DPZpVlzDUtFt/ag==
@@ -12021,7 +12055,7 @@ write-file-atomic@^5.0.0, write-file-atomic@^5.0.1:
     imurmurhash "^0.1.4"
     signal-exit "^4.0.1"
 
-xml2js@0.6.2:
+xml2js@0.6.2, xml2js@^0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/xml2js/-/xml2js-0.6.2.tgz#dd0b630083aa09c161e25a4d0901e2b2a929b499"
   integrity sha512-T4rieHaC1EXcES0Kxxj4JWgaUQHDk+qwHcYOCFHfiwKz7tOVPLq7Hjq9dM1WCMhylqMEfP7hMcOIChvotiZegA==
