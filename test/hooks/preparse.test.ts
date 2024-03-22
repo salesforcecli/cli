@@ -6,6 +6,9 @@
  */
 
 import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 import { Config, Flags } from '@oclif/core';
 import { expect } from 'chai';
 import sinon from 'sinon';
@@ -15,7 +18,7 @@ describe('preparse hook test', () => {
   let config: Config;
 
   before(async () => {
-    config = await Config.load({ root: import.meta.dirname });
+    config = await Config.load({ root: path.dirname(fileURLToPath(import.meta.url)) });
   });
 
   beforeEach(async () => {
