@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.35.1 linux-x64 node-v20.11.1
+@salesforce/cli/2.35.2 linux-x64 node-v20.11.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -1067,7 +1067,7 @@ Create and insert a record into a Salesforce or Tooling API object.
 
 ```
 USAGE
-  $ sf data create record -o <value> -s <value> -v <value> [--json] [--api-version <value>] [-t]
+  $ sf data create record -o <value> -s <value> -v <value> [--json] [--flags-dir <value>] [--api-version <value>] [-t]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
@@ -1080,7 +1080,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Create and insert a record into a Salesforce or Tooling API object.
@@ -1114,7 +1115,7 @@ EXAMPLES
       TracedEntityId=01p17000000R6bLAAS"
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/data/create/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/data/create/record.ts)_
 
 ## `sf data delete bulk`
 
@@ -1122,7 +1123,8 @@ Bulk delete records from an org using a CSV file. Uses Bulk API 2.0.
 
 ```
 USAGE
-  $ sf data delete bulk -o <value> -f <value> -s <value> [--json] [--api-version <value>] [-w <value> | -a] [--verbose]
+  $ sf data delete bulk -o <value> -f <value> -s <value> [--json] [--flags-dir <value>] [--api-version <value>] [-w
+    <value> | -a] [--verbose]
 
 FLAGS
   -a, --async                Run the command asynchronously.
@@ -1131,13 +1133,14 @@ FLAGS
                              configuration variable is already set.
   -s, --sobject=<value>      (required) API name of the Salesforce object, either standard or custom, that you want to
                              update or delete records from.
-  -w, --wait=<value>         [default: [object Object]] Number of minutes to wait for the command to complete before
+  -w, --wait=<value>         [default: 0 minutes] Number of minutes to wait for the command to complete before
                              displaying the results.
       --api-version=<value>  Override the api version used for api requests made by this command
       --verbose              Print verbose output of failed records if result is available.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Bulk delete records from an org using a CSV file. Uses Bulk API 2.0.
@@ -1159,7 +1162,7 @@ EXAMPLES
     $ sf data delete bulk --sobject MyObject__c --file files/delete.csv --wait 5 --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/data/delete/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/data/delete/bulk.ts)_
 
 ## `sf data delete record`
 
@@ -1167,7 +1170,8 @@ Deletes a single record from a Salesforce or Tooling API object.
 
 ```
 USAGE
-  $ sf data delete record -o <value> -s <value> [--json] [--api-version <value>] [-i <value>] [-w <value>] [-t]
+  $ sf data delete record -o <value> -s <value> [--json] [--flags-dir <value>] [--api-version <value>] [-i <value>] [-w
+    <value>] [-t]
 
 FLAGS
   -i, --record-id=<value>    ID of the record you’re deleting.
@@ -1180,7 +1184,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Deletes a single record from a Salesforce or Tooling API object.
@@ -1218,7 +1223,7 @@ EXAMPLES
     $ sf data delete record --use-tooling-api --sobject TraceFlag --record-id 7tf8c
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/data/delete/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/data/delete/record.ts)_
 
 ## `sf data delete resume`
 
@@ -1226,19 +1231,20 @@ Resume a bulk delete job that you previously started. Uses Bulk API 2.0.
 
 ```
 USAGE
-  $ sf data delete resume [--json] [-o <value>] [--use-most-recent | -i <value>] [--wait <value>] [--api-version
-  <value>]
+  $ sf data delete resume [--json] [--flags-dir <value>] [-o <value>] [--use-most-recent | -i <value>] [--wait <value>]
+    [--api-version <value>]
 
 FLAGS
   -i, --job-id=<value>       ID of the job you want to resume.
   -o, --target-org=<value>
       --api-version=<value>  Override the api version used for api requests made by this command
       --use-most-recent      Use the ID of the most recently-run bulk job.
-      --wait=<value>         [default: [object Object]] Number of minutes to wait for the command to complete before
+      --wait=<value>         [default: 0 minutes] Number of minutes to wait for the command to complete before
                              displaying the results.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Resume a bulk delete job that you previously started. Uses Bulk API 2.0.
@@ -1255,7 +1261,7 @@ EXAMPLES
     $ sf data delete resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/data/delete/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/data/delete/resume.ts)_
 
 ## `sf data export beta tree`
 
@@ -1263,7 +1269,8 @@ Export data from an org into one or more JSON files.
 
 ```
 USAGE
-  $ sf data export beta tree -o <value> -q <value> [--json] [--api-version <value>] [-p] [-x <value>] [-d <value>]
+  $ sf data export beta tree -o <value> -q <value> [--json] [--flags-dir <value>] [--api-version <value>] [-p] [-x <value>]
+    [-d <value>]
 
 FLAGS
   -d, --output-dir=<value>   Directory in which to generate the JSON files; default is current directory.
@@ -1275,7 +1282,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Export data from an org into one or more JSON files.
@@ -1311,7 +1319,7 @@ EXAMPLES
       my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/data/export/beta/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/data/export/beta/tree.ts)_
 
 ## `sf data export tree`
 
@@ -1319,7 +1327,8 @@ Export data from an org into one or more JSON files.
 
 ```
 USAGE
-  $ sf data export tree -o <value> -q <value> [--json] [--api-version <value>] [-p] [-x <value>] [-d <value>]
+  $ sf data export tree -o <value> -q <value> [--json] [--flags-dir <value>] [--api-version <value>] [-p] [-x <value>]
+    [-d <value>]
 
 FLAGS
   -d, --output-dir=<value>   Directory in which to generate the JSON files; default is current directory.
@@ -1331,7 +1340,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Export data from an org into one or more JSON files.
@@ -1369,7 +1379,7 @@ EXAMPLES
       my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/data/export/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/data/export/tree.ts)_
 
 ## `sf data get record`
 
@@ -1377,7 +1387,8 @@ Retrieve and display a single record of a Salesforce or Tooling API object.
 
 ```
 USAGE
-  $ sf data get record -o <value> -s <value> [--json] [--api-version <value>] [-i <value>] [-w <value>] [-t]
+  $ sf data get record -o <value> -s <value> [--json] [--flags-dir <value>] [--api-version <value>] [-i <value>] [-w
+    <value>] [-t]
 
 FLAGS
   -i, --record-id=<value>    ID of the record you’re retrieving.
@@ -1390,7 +1401,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Retrieve and display a single record of a Salesforce or Tooling API object.
@@ -1431,7 +1443,7 @@ EXAMPLES
     $ sf data get record --use-tooling-api --sobject TraceFlag --record-id 7tf8c
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/data/get/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/data/get/record.ts)_
 
 ## `sf data import beta tree`
 
@@ -1439,7 +1451,7 @@ Import data from one or more JSON files into an org.
 
 ```
 USAGE
-  $ sf data import beta tree -o <value> [--json] [--api-version <value>] [-f <value>] [-p <value>]
+  $ sf data import beta tree -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-f <value>] [-p <value>]
 
 FLAGS
   -f, --files=<value>...     Comma-separated and in-order JSON files that contain the records, in sObject tree format,
@@ -1450,7 +1462,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Import data from one or more JSON files into an org.
@@ -1473,7 +1486,7 @@ EXAMPLES
     $ sf data import beta tree --plan Account-Contact-plan.json
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/data/import/beta/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/data/import/beta/tree.ts)_
 
 ## `sf data import tree`
 
@@ -1481,7 +1494,7 @@ Import data from one or more JSON files into an org.
 
 ```
 USAGE
-  $ sf data import tree -o <value> [--json] [--api-version <value>] [-f <value> | -p <value>]
+  $ sf data import tree -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-f <value> | -p <value>]
 
 FLAGS
   -f, --files=<value>...     Comma-separated and in-order JSON files that contain the records, in sObject tree format,
@@ -1492,7 +1505,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Import data from one or more JSON files into an org.
@@ -1522,7 +1536,7 @@ EXAMPLES
     $ sf data import tree --plan Account-Contact-plan.json
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/data/import/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/data/import/tree.ts)_
 
 ## `sf data query`
 
@@ -1530,8 +1544,8 @@ Execute a SOQL query.
 
 ```
 USAGE
-  $ sf data query -o <value> [--json] [--api-version <value>] [-q <value>] [-f <value>] [-t | -b] [-w <value> ]
-    [--async ] [--all-rows] [-r human|csv|json]
+  $ sf data query -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-q <value>] [-f <value>]
+    [-t | -b] [-w <value> ] [--async ] [--all-rows] [-r human|csv|json]
 
 FLAGS
   -b, --bulk                    Use Bulk API 2.0 to run the query.
@@ -1548,7 +1562,8 @@ FLAGS
       --async                   Use Bulk API 2.0, but don't wait for the job to complete.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Execute a SOQL query.
@@ -1585,7 +1600,7 @@ EXAMPLES
     $ sf data query --query "SELECT Id FROM Contact" --bulk --wait 0
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/data/query.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/data/query.ts)_
 
 ## `sf data query resume`
 
@@ -1593,8 +1608,8 @@ View the status of a bulk query.
 
 ```
 USAGE
-  $ sf data query resume [--json] [-o <value>] [--api-version <value>] [-r human|csv|json] [-i <value>]
-    [--use-most-recent]
+  $ sf data query resume [--json] [--flags-dir <value>] [-o <value>] [--api-version <value>] [-r human|csv|json] [-i
+    <value>] [--use-most-recent]
 
 FLAGS
   -i, --bulk-query-id=<value>   Job ID of the bulk query.
@@ -1605,7 +1620,8 @@ FLAGS
       --use-most-recent         Use the most recent bulk query ID from cache.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   View the status of a bulk query.
@@ -1621,7 +1637,7 @@ EXAMPLES
     $ sf data query resume --bulk-query-id 7500x000005BdFzXXX
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/data/query/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/data/query/resume.ts)_
 
 ## `sf data resume`
 
@@ -1629,7 +1645,7 @@ View the status of a bulk data load job or batch.
 
 ```
 USAGE
-  $ sf data resume -o <value> -i <value> [--json] [--api-version <value>] [-b <value>]
+  $ sf data resume -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>] [-b <value>]
 
 FLAGS
   -b, --batch-id=<value>     ID of the batch whose status you want to view; you must also specify the job ID.
@@ -1639,7 +1655,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   View the status of a bulk data load job or batch.
@@ -1657,7 +1674,7 @@ EXAMPLES
     $ sf data resume --job-id 750xx000000005sAAA --batch-id 751xx000000005nAAA
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/data/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/data/resume.ts)_
 
 ## `sf data update record`
 
@@ -1665,8 +1682,8 @@ Updates a single record of a Salesforce or Tooling API object.
 
 ```
 USAGE
-  $ sf data update record -o <value> -s <value> -v <value> [--json] [--api-version <value>] [-i <value>] [-w <value>]
-    [-t]
+  $ sf data update record -o <value> -s <value> -v <value> [--json] [--flags-dir <value>] [--api-version <value>] [-i
+    <value>] [-w <value>] [-t]
 
 FLAGS
   -i, --record-id=<value>    ID of the record you’re updating.
@@ -1680,7 +1697,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Updates a single record of a Salesforce or Tooling API object.
@@ -1718,7 +1736,7 @@ EXAMPLES
       "ExpirationDate=2017-12-01T00:58:04.000+0000"
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/data/update/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/data/update/record.ts)_
 
 ## `sf data upsert bulk`
 
@@ -1726,8 +1744,8 @@ Bulk upsert records to an org from a CSV file. Uses Bulk API 2.0.
 
 ```
 USAGE
-  $ sf data upsert bulk -o <value> -f <value> -s <value> -i <value> [--json] [--api-version <value>] [-w <value> | -a]
-    [--verbose]
+  $ sf data upsert bulk -o <value> -f <value> -s <value> -i <value> [--json] [--flags-dir <value>] [--api-version
+    <value>] [-w <value> | -a] [--verbose]
 
 FLAGS
   -a, --async                Run the command asynchronously.
@@ -1737,13 +1755,14 @@ FLAGS
                              configuration variable is already set.
   -s, --sobject=<value>      (required) API name of the Salesforce object, either standard or custom, that you want to
                              update or delete records from.
-  -w, --wait=<value>         [default: [object Object]] Number of minutes to wait for the command to complete before
+  -w, --wait=<value>         [default: 0 minutes] Number of minutes to wait for the command to complete before
                              displaying the results.
       --api-version=<value>  Override the api version used for api requests made by this command
       --verbose              Print verbose output of failed records if result is available.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Bulk upsert records to an org from a CSV file. Uses Bulk API 2.0.
@@ -1770,7 +1789,7 @@ EXAMPLES
       my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/data/upsert/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/data/upsert/bulk.ts)_
 
 ## `sf data upsert resume`
 
@@ -1778,19 +1797,20 @@ Resume a bulk upsert job that you previously started. Uses Bulk API 2.0.
 
 ```
 USAGE
-  $ sf data upsert resume [--json] [-o <value>] [--use-most-recent | -i <value>] [--wait <value>] [--api-version
-  <value>]
+  $ sf data upsert resume [--json] [--flags-dir <value>] [-o <value>] [--use-most-recent | -i <value>] [--wait <value>]
+    [--api-version <value>]
 
 FLAGS
   -i, --job-id=<value>       ID of the job you want to resume.
   -o, --target-org=<value>
       --api-version=<value>  Override the api version used for api requests made by this command
       --use-most-recent      Use the ID of the most recently-run bulk job.
-      --wait=<value>         [default: [object Object]] Number of minutes to wait for the command to complete before
+      --wait=<value>         [default: 0 minutes] Number of minutes to wait for the command to complete before
                              displaying the results.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Resume a bulk upsert job that you previously started. Uses Bulk API 2.0.
@@ -1807,7 +1827,7 @@ EXAMPLES
     $ sf data upsert resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/data/upsert/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/data/upsert/resume.ts)_
 
 ## `sf doctor`
 
@@ -1862,7 +1882,8 @@ Bulk delete records from an org using a CSV file. Uses Bulk API 1.0.
 
 ```
 USAGE
-  $ sf force data bulk delete -o <value> -f <value> -s <value> [--json] [--api-version <value>] [-w <value>]
+  $ sf force data bulk delete -o <value> -f <value> -s <value> [--json] [--flags-dir <value>] [--api-version <value>] [-w
+    <value>]
 
 FLAGS
   -f, --file=<value>         (required) CSV file that contains the IDs of the records to delete.
@@ -1870,12 +1891,13 @@ FLAGS
                              configuration variable is already set.
   -s, --sobject=<value>      (required) API name of the Salesforce object, either standard or custom, that you want to
                              delete records from.
-  -w, --wait=<value>         [default: [object Object]] Number of minutes to wait for the command to complete before
+  -w, --wait=<value>         [default: 0 minutes] Number of minutes to wait for the command to complete before
                              displaying the results.
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Bulk delete records from an org using a CSV file. Uses Bulk API 1.0.
@@ -1899,7 +1921,7 @@ EXAMPLES
     $ sf force data bulk delete --sobject MyObject__c --file files/delete.csv --wait 5 --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/force/data/bulk/delete.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/force/data/bulk/delete.ts)_
 
 ## `sf force data bulk status`
 
@@ -1907,7 +1929,7 @@ View the status of a bulk data load job or batch. Uses Bulk API 1.0.
 
 ```
 USAGE
-  $ sf force data bulk status -o <value> -i <value> [--json] [--api-version <value>] [-b <value>]
+  $ sf force data bulk status -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>] [-b <value>]
 
 FLAGS
   -b, --batch-id=<value>     ID of the batch whose status you want to view; you must also specify the job ID.
@@ -1917,7 +1939,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   View the status of a bulk data load job or batch. Uses Bulk API 1.0.
@@ -1935,7 +1958,7 @@ EXAMPLES
     $ sf force data bulk status --job-id 750xx000000005sAAA --batch-id 751xx000000005nAAA --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/force/data/bulk/status.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/force/data/bulk/status.ts)_
 
 ## `sf force data bulk upsert`
 
@@ -1943,8 +1966,8 @@ Bulk upsert records to an org from a CSV file. Uses Bulk API 1.0.
 
 ```
 USAGE
-  $ sf force data bulk upsert -o <value> -i <value> -f <value> -s <value> [--json] [--api-version <value>] [-w <value>]
-  [-r]
+  $ sf force data bulk upsert -o <value> -i <value> -f <value> -s <value> [--json] [--flags-dir <value>] [--api-version
+    <value>] [-w <value>] [-r]
 
 FLAGS
   -f, --file=<value>         (required) CSV file that contains the records to upsert.
@@ -1954,12 +1977,13 @@ FLAGS
   -r, --serial               Run batches in serial mode.
   -s, --sobject=<value>      (required) API name of the Salesforce object, either standard or custom, that you want to
                              upsert records to.
-  -w, --wait=<value>         [default: [object Object]] Number of minutes to wait for the command to complete before
+  -w, --wait=<value>         [default: 0 minutes] Number of minutes to wait for the command to complete before
                              displaying the results.
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Bulk upsert records to an org from a CSV file. Uses Bulk API 1.0.
@@ -1992,7 +2016,7 @@ EXAMPLES
       --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.0/src/commands/force/data/bulk/upsert.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.2.1/src/commands/force/data/bulk/upsert.ts)_
 
 ## `sf help [COMMAND]`
 
@@ -3173,7 +3197,7 @@ EXAMPLES
     $ sf org list auth
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.26/src/commands/org/list/auth.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.27/src/commands/org/list/auth.ts)_
 
 ## `sf org list limits`
 
@@ -3466,7 +3490,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.26/src/commands/org/login/access-token.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.27/src/commands/org/login/access-token.ts)_
 
 ## `sf org login device`
 
@@ -3525,7 +3549,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.26/src/commands/org/login/device.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.27/src/commands/org/login/device.ts)_
 
 ## `sf org login jwt`
 
@@ -3614,7 +3638,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.26/src/commands/org/login/jwt.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.27/src/commands/org/login/jwt.ts)_
 
 ## `sf org login sfdx-url`
 
@@ -3679,7 +3703,7 @@ EXAMPLES
    $ echo url | sf org login sfdx-url --sfdx-url-stdin
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.26/src/commands/org/login/sfdx-url.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.27/src/commands/org/login/sfdx-url.ts)_
 
 ## `sf org login web`
 
@@ -3764,7 +3788,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.26/src/commands/org/login/web.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.27/src/commands/org/login/web.ts)_
 
 ## `sf org logout`
 
@@ -3824,7 +3848,7 @@ FLAG DESCRIPTIONS
     All orgs includes Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.26/src/commands/org/logout.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.27/src/commands/org/logout.ts)_
 
 ## `sf org open`
 
@@ -5490,8 +5514,8 @@ Convert metadata retrieved via Metadata API into the source format used in Sales
 
 ```
 USAGE
-  $ sf project convert mdapi -r <value> [--json] [--api-version <value>] [-d <value>] [-p <value> | -x <value> | -m
-  <value>]
+  $ sf project convert mdapi -r <value> [--json] [--flags-dir <value>] [--api-version <value>] [-d <value>] [-p <value> |
+    -x <value> | -m <value>]
 
 FLAGS
   -d, --output-dir=<value>       Directory to store your files in after they’re converted to source format; can be an
@@ -5503,7 +5527,8 @@ FLAGS
       --api-version=<value>      Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Convert metadata retrieved via Metadata API into the source format used in Salesforce DX projects.
@@ -5544,7 +5569,7 @@ FLAG DESCRIPTIONS
     If you specify this parameter, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.35/src/commands/project/convert/mdapi.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.0/src/commands/project/convert/mdapi.ts)_
 
 ## `sf project convert source`
 
@@ -5552,11 +5577,11 @@ Convert source-formatted files into metadata that you can deploy using Metadata 
 
 ```
 USAGE
-  $ sf project convert source [--json] [--api-version <value>] [-r <value>] [-d <value>] [-n <value>] [-p <value> | -x
-    <value> | -m <value>]
+  $ sf project convert source [--json] [--flags-dir <value>] [--api-version <value>] [-r <value>] [-d <value>] [-n <value>]
+    [-p <value> | -x <value> | -m <value>]
 
 FLAGS
-  -d, --output-dir=<value>     [default: metadataPackage_1710885805080] Output directory to store the Metadata
+  -d, --output-dir=<value>     [default: metadataPackage_1711142855338] Output directory to store the Metadata
                                API–formatted files in.
   -m, --metadata=<value>...    Metadata component names to convert.
   -n, --package-name=<value>   Name of the package to associate with the metadata-formatted files.
@@ -5567,7 +5592,8 @@ FLAGS
                                from sfdx-project.json
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Convert source-formatted files into metadata that you can deploy using Metadata API.
@@ -5616,7 +5642,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.35/src/commands/project/convert/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.0/src/commands/project/convert/source.ts)_
 
 ## `sf project delete source`
 
@@ -5624,9 +5650,9 @@ Delete source from your project and from a non-source-tracked org.
 
 ```
 USAGE
-  $ sf project delete source -o <value> [--json] [--api-version <value>] [-w <value>] [--tests <value>] [-l
-    NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [-r] [-m <value>] [-p <value>] [-f [-t | -c]]
-    [--verbose]
+  $ sf project delete source -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-w <value>] [--tests
+    <value>] [-l NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [-r] [-m <value>] [-p <value>] [-f [-t |
+    -c]] [--verbose]
 
 FLAGS
   -c, --check-only             Validate delete command but don't delete anything from the org or the local project.
@@ -5637,7 +5663,7 @@ FLAGS
   -p, --source-dir=<value>...  Source file paths to delete.
   -r, --no-prompt              Don't prompt for delete confirmation.
   -t, --track-source           If the delete succeeds, update the source tracking information.
-  -w, --wait=<value>           [default: [object Object]] Number of minutes to wait for the command to finish.
+  -w, --wait=<value>           Number of minutes to wait for the command to finish.
       --api-version=<value>    Override the api version used for api requests made by this command
       --verbose                Verbose output of the delete result.
 
@@ -5647,7 +5673,8 @@ TEST FLAGS
       --tests=<value>...     Apex tests to run when --test-level is RunSpecifiedTests.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Delete source from your project and from a non-source-tracked org.
@@ -5755,7 +5782,7 @@ FLAG DESCRIPTIONS
     - Separate the test names with spaces: --tests Test1 Test2 "Test With Space"
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.35/src/commands/project/delete/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.0/src/commands/project/delete/source.ts)_
 
 ## `sf project delete tracking`
 
@@ -5763,7 +5790,7 @@ Delete all local source tracking information.
 
 ```
 USAGE
-  $ sf project delete tracking -o <value> [--json] [--api-version <value>] [-p]
+  $ sf project delete tracking -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-p]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
@@ -5772,7 +5799,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Delete all local source tracking information.
@@ -5791,7 +5819,7 @@ EXAMPLES
     $ sf project delete tracking --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.35/src/commands/project/delete/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.0/src/commands/project/delete/tracking.ts)_
 
 ## `sf project deploy cancel`
 
@@ -5799,7 +5827,7 @@ Cancel a deploy operation.
 
 ```
 USAGE
-  $ sf project deploy cancel [--json] [--async | -w <value>] [-i <value>] [-r]
+  $ sf project deploy cancel [--json] [--flags-dir <value>] [--async | -w <value>] [-i <value>] [-r]
 
 FLAGS
   -i, --job-id=<value>   Job ID of the deploy operation you want to cancel.
@@ -5808,7 +5836,8 @@ FLAGS
       --async            Run the command asynchronously.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Cancel a deploy operation.
@@ -5861,7 +5890,7 @@ FLAG DESCRIPTIONS
     project deploy report".
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.35/src/commands/project/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.0/src/commands/project/deploy/cancel.ts)_
 
 ## `sf project deploy preview`
 
@@ -5869,7 +5898,8 @@ Preview a deployment to see what will deploy to the org, the potential conflicts
 
 ```
 USAGE
-  $ sf project deploy preview -o <value> [--json] [-c] [-x <value> | -d <value> | -m <value>] [--concise]
+  $ sf project deploy preview -o <value> [--json] [--flags-dir <value>] [-c] [-x <value> | -d <value> | -m <value>]
+    [--concise]
 
 FLAGS
   -c, --ignore-conflicts       Don't display conflicts in preview of the deployment.
@@ -5880,7 +5910,8 @@ FLAGS
       --concise                Show only the changes that will be deployed; omits files that are forceignored.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Preview a deployment to see what will deploy to the org, the potential conflicts, and the ignored files.
@@ -5945,7 +5976,7 @@ FLAG DESCRIPTIONS
     All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.35/src/commands/project/deploy/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.0/src/commands/project/deploy/preview.ts)_
 
 ## `sf project deploy quick`
 
@@ -5953,22 +5984,23 @@ Quickly deploy a validated deployment to an org.
 
 ```
 USAGE
-  $ sf project deploy quick [--json] [--async | -w <value>] [--concise | --verbose] [-i <value>] [-o <value>] [-r] [-a
-    <value>]
+  $ sf project deploy quick [--json] [--flags-dir <value>] [--async | -w <value>] [--concise | --verbose] [-i <value>] [-o
+    <value>] [-r] [-a <value>]
 
 FLAGS
   -a, --api-version=<value>  Target API version for the deploy.
   -i, --job-id=<value>       Job ID of the deployment you want to quick deploy.
   -o, --target-org=<value>   Login username or alias for the target org.
   -r, --use-most-recent      Use the job ID of the most recently validated deployment.
-  -w, --wait=<minutes>       [default: [object Object]] Number of minutes to wait for the command to complete and
-                             display results.
+  -w, --wait=<minutes>       [default: 33 minutes] Number of minutes to wait for the command to complete and display
+                             results.
       --async                Run the command asynchronously.
       --concise              Show concise output of the deploy result.
       --verbose              Show verbose output of the deploy result.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Quickly deploy a validated deployment to an org.
@@ -6041,7 +6073,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.35/src/commands/project/deploy/quick.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.0/src/commands/project/deploy/quick.ts)_
 
 ## `sf project deploy report`
 
@@ -6049,7 +6081,7 @@ Check or poll for the status of a deploy operation.
 
 ```
 USAGE
-  $ sf project deploy report [--json] [-o <value>] [-i <value>] [-r] [--coverage-formatters
+  $ sf project deploy report [--json] [--flags-dir <value>] [-o <value>] [-i <value>] [-r] [--coverage-formatters
     clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamcity|text|text-summary] [--junit] [--results-dir
     <value>] [-w <value>]
 
@@ -6067,7 +6099,8 @@ TEST FLAGS
   --results-dir=<value>              Output directory for code coverage and JUnit results; defaults to the deploy ID.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Check or poll for the status of a deploy operation.
@@ -6136,7 +6169,7 @@ FLAG DESCRIPTIONS
     --coverage-formatters lcov --coverage-formatters clover
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.35/src/commands/project/deploy/report.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.0/src/commands/project/deploy/report.ts)_
 
 ## `sf project deploy resume`
 
@@ -6144,9 +6177,9 @@ Resume watching a deploy operation and update source tracking when the deploy co
 
 ```
 USAGE
-  $ sf project deploy resume [--json] [--concise | --verbose] [-i <value>] [-r] [-w <value>] [--coverage-formatters
-    clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamcity|text|text-summary] [--junit] [--results-dir
-    <value>]
+  $ sf project deploy resume [--json] [--flags-dir <value>] [--concise | --verbose] [-i <value>] [-r] [-w <value>]
+    [--coverage-formatters clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamcity|text|text-summary]
+    [--junit] [--results-dir <value>]
 
 FLAGS
   -i, --job-id=<value>   Job ID of the deploy operation you want to resume.
@@ -6163,7 +6196,8 @@ TEST FLAGS
   --results-dir=<value>              Output directory for code coverage and JUnit results; defaults to the deploy ID.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Resume watching a deploy operation and update source tracking when the deploy completes.
@@ -6232,7 +6266,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.35/src/commands/project/deploy/resume.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.0/src/commands/project/deploy/resume.ts)_
 
 ## `sf project deploy start`
 
@@ -6240,12 +6274,12 @@ Deploy metadata to an org from your local project.
 
 ```
 USAGE
-  $ sf project deploy start -o <value> [--json] [-a <value>] [--async | -w <value>] [--concise | --verbose] [--dry-run]
-    [-c] [-r] [-g] [--single-package ] [-t <value>] [-l NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg]
-    [--purge-on-delete [-x <value> | -d <value> | -m <value> | --metadata-dir <value>]] [--pre-destructive-changes
-    <value> ] [--post-destructive-changes <value> ] [--coverage-formatters
-    clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamcity|text|text-summary] [--junit] [--results-dir
-    <value>]
+  $ sf project deploy start -o <value> [--json] [--flags-dir <value>] [-a <value>] [--async | -w <value>] [--concise |
+    --verbose] [--dry-run] [-c] [-r] [-g] [--single-package ] [-t <value>] [-l
+    NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [--purge-on-delete [-x <value> | -d <value> | -m <value>
+    | --metadata-dir <value>]] [--pre-destructive-changes <value> ] [--post-destructive-changes <value> ]
+    [--coverage-formatters clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamcity|text|text-summary]
+    [--junit] [--results-dir <value>]
 
 FLAGS
   -a, --api-version=<value>  Target API version for the deploy.
@@ -6253,8 +6287,7 @@ FLAGS
   -g, --ignore-warnings      Ignore warnings and allow a deployment to complete successfully.
   -o, --target-org=<value>   (required) Login username or alias for the target org.
   -r, --ignore-errors        Ignore any errors and don’t roll back deployment.
-  -w, --wait=<minutes>       [default: [object Object]] Number of minutes to wait for command to complete and display
-                             results.
+  -w, --wait=<minutes>       Number of minutes to wait for command to complete and display results.
       --async                Run the command asynchronously.
       --concise              Show concise output of the deploy result.
       --dry-run              Validate deploy and run Apex tests but don’t save to the org.
@@ -6278,7 +6311,8 @@ TEST FLAGS
                                          ID.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 METADATA API FORMAT FLAGS
   --metadata-dir=<value>  Root of directory or zip file of metadata formatted files to deploy.
@@ -6470,7 +6504,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.35/src/commands/project/deploy/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.0/src/commands/project/deploy/start.ts)_
 
 ## `sf project deploy validate`
 
@@ -6478,9 +6512,9 @@ Validate a metadata deployment without actually executing it.
 
 ```
 USAGE
-  $ sf project deploy validate -o <value> [--json] [-a <value>] [--async] [--concise | --verbose] [-m <value>] [-d <value>]
-    [--single-package --metadata-dir <value>] [-t <value>] [-l RunAllTestsInOrg|RunLocalTests|RunSpecifiedTests] [-w
-    <value>] [-g] [--coverage-formatters
+  $ sf project deploy validate -o <value> [--json] [--flags-dir <value>] [-a <value>] [--async] [--concise | --verbose] [-m
+    <value>] [-d <value>] [--single-package --metadata-dir <value>] [-t <value>] [-l
+    RunAllTestsInOrg|RunLocalTests|RunSpecifiedTests] [-w <value>] [-g] [--coverage-formatters
     clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamcity|text|text-summary] [--junit] [--results-dir
     <value>] [--purge-on-delete -x <value>] [--pre-destructive-changes <value> ] [--post-destructive-changes <value> ]
 
@@ -6488,8 +6522,7 @@ FLAGS
   -a, --api-version=<value>  Target API version for the validation.
   -g, --ignore-warnings      Ignore warnings and allow a deployment to complete successfully.
   -o, --target-org=<value>   (required) Login username or alias for the target org.
-  -w, --wait=<minutes>       [default: [object Object]] Number of minutes to wait for the command to complete and
-                             display results.
+  -w, --wait=<minutes>       Number of minutes to wait for the command to complete and display results.
       --async                Run the command asynchronously.
       --concise              Show concise output of the validation result.
       --verbose              Show verbose output of the validation result.
@@ -6511,7 +6544,8 @@ TEST FLAGS
                                          ID.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 METADATA API FORMAT FLAGS
   --metadata-dir=<value>  Root of directory or zip file of metadata formatted files to deploy.
@@ -6662,7 +6696,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.35/src/commands/project/deploy/validate.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.0/src/commands/project/deploy/validate.ts)_
 
 ## `sf project generate`
 
@@ -6774,8 +6808,8 @@ Create a project manifest that lists the metadata components you want to deploy 
 
 ```
 USAGE
-  $ sf project generate manifest [--json] [--api-version <value>] [-m <value>] [-p <value>] [-n <value> | -t
-    pre|post|destroy|package] [-c managed|unlocked --from-org <value>] [-d <value>]
+  $ sf project generate manifest [--json] [--flags-dir <value>] [--api-version <value>] [-m <value>] [-p <value>] [-n <value> |
+    -t pre|post|destroy|package] [-c managed|unlocked --from-org <value>] [-d <value>]
 
 FLAGS
   -c, --include-packages=<option>...  Package types (managed, unlocked) whose metadata is included in the manifest; by
@@ -6792,7 +6826,8 @@ FLAGS
                                       build a manifest.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Create a project manifest that lists the metadata components you want to deploy or retrieve.
@@ -6841,7 +6876,7 @@ EXAMPLES
     $ sf project generate manifest --from-org test@myorg.com --include-packages unlocked
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.35/src/commands/project/generate/manifest.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.0/src/commands/project/generate/manifest.ts)_
 
 ## `sf project list ignored`
 
@@ -6849,13 +6884,14 @@ Check your local project package directories for forceignored files.
 
 ```
 USAGE
-  $ sf project list ignored [--json] [-p <value>]
+  $ sf project list ignored [--json] [--flags-dir <value>] [-p <value>]
 
 FLAGS
   -p, --source-dir=<value>  File or directory of files that the command checks for foreceignored files.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Check your local project package directories for forceignored files.
@@ -6882,7 +6918,7 @@ EXAMPLES
     $ sf project list ignored --source-dir package.xml
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.35/src/commands/project/list/ignored.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.0/src/commands/project/list/ignored.ts)_
 
 ## `sf project reset tracking`
 
@@ -6890,7 +6926,7 @@ Reset local and remote source tracking.
 
 ```
 USAGE
-  $ sf project reset tracking -o <value> [--json] [--api-version <value>] [-r <value>] [-p]
+  $ sf project reset tracking -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-r <value>] [-p]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
@@ -6900,7 +6936,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Reset local and remote source tracking.
@@ -6930,7 +6967,7 @@ EXAMPLES
     $ sf project reset tracking --revision 30
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.35/src/commands/project/reset/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.0/src/commands/project/reset/tracking.ts)_
 
 ## `sf project retrieve preview`
 
@@ -6938,7 +6975,7 @@ Preview a retrieval to see what will be retrieved from the org, the potential co
 
 ```
 USAGE
-  $ sf project retrieve preview -o <value> [--json] [-c] [--concise]
+  $ sf project retrieve preview -o <value> [--json] [--flags-dir <value>] [-c] [--concise]
 
 FLAGS
   -c, --ignore-conflicts    Don't display conflicts in the preview of the retrieval.
@@ -6946,7 +6983,8 @@ FLAGS
       --concise             Show only the changes that will be retrieved; omits files that are forceignored.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Preview a retrieval to see what will be retrieved from the org, the potential conflicts, and the ignored files.
@@ -6986,7 +7024,7 @@ FLAG DESCRIPTIONS
     Overrides your default org.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.35/src/commands/project/retrieve/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.0/src/commands/project/retrieve/preview.ts)_
 
 ## `sf project retrieve start`
 
@@ -6994,8 +7032,8 @@ Retrieve metadata from an org to your local project.
 
 ```
 USAGE
-  $ sf project retrieve start -o <value> [--json] [-a <value>] [-c] [-x <value> | -m <value> | -d <value>] [-r <value> | -n
-    <value> | ] [--single-package -t <value>] [-w <value>] [-z ] [--zip-file-name <value> ]
+  $ sf project retrieve start -o <value> [--json] [--flags-dir <value>] [-a <value>] [-c] [-x <value> | -m <value> | -d
+    <value>] [-r <value> | -n <value> | ] [--single-package -t <value>] [-w <value>] [-z ] [--zip-file-name <value> ]
 
 FLAGS
   -a, --api-version=<value>      Target API version for the retrieve.
@@ -7007,8 +7045,8 @@ FLAGS
   -n, --package-name=<value>...  Package names to retrieve.
   -o, --target-org=<value>       (required) Login username or alias for the target org.
   -r, --output-dir=<value>       Directory root for the retrieved source files.
-  -w, --wait=<value>             [default: [object Object]] Number of minutes to wait for the command to complete and
-                                 display results to the terminal window.
+  -w, --wait=<value>             [default: 33 minutes] Number of minutes to wait for the command to complete and display
+                                 results to the terminal window.
   -x, --manifest=<value>         File path for the manifest (package.xml) that specifies the components to retrieve.
 
 METADATA API FORMAT FLAGS
@@ -7018,7 +7056,8 @@ METADATA API FORMAT FLAGS
       --zip-file-name=<value>        File name to use for the retrieved zip file.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Retrieve metadata from an org to your local project.
@@ -7144,7 +7183,7 @@ ENVIRONMENT VARIABLES
   SF_USE_PROGRESS_BAR  Set to false to disable the progress bar when running the metadata deploy command.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.2.35/src/commands/project/retrieve/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.0/src/commands/project/retrieve/start.ts)_
 
 ## `sf schema generate field`
 
