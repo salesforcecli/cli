@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.35.4 linux-x64 node-v20.11.1
+@salesforce/cli/2.35.5 linux-x64 node-v20.11.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -139,11 +139,11 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf plugins`](#sf-plugins)
 - [`sf plugins discover`](#sf-plugins-discover)
 - [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
-- [`sf plugins:install PLUGIN...`](#sf-pluginsinstall-plugin)
-- [`sf plugins:link PLUGIN`](#sf-pluginslink-plugin)
+- [`sf plugins install PLUGIN`](#sf-plugins-install-plugin)
+- [`sf plugins link PATH`](#sf-plugins-link-path)
 - [`sf plugins reset`](#sf-plugins-reset)
 - [`sf plugins trust verify`](#sf-plugins-trust-verify)
-- [`sf plugins:uninstall PLUGIN...`](#sf-pluginsuninstall-plugin)
+- [`sf plugins uninstall [PLUGIN]`](#sf-plugins-uninstall-plugin)
 - [`sf plugins update`](#sf-plugins-update)
 - [`sf project convert mdapi`](#sf-project-convert-mdapi)
 - [`sf project convert source`](#sf-project-convert-source)
@@ -182,10 +182,11 @@ List all aliases currently set on your local computer.
 
 ```
 USAGE
-  $ sf alias list [--json]
+  $ sf alias list [--json] [--flags-dir <value>]
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   List all aliases currently set on your local computer.
@@ -201,7 +202,7 @@ EXAMPLES
     $ sf alias list
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.0.33/src/commands/alias/list.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.1.0/src/commands/alias/list.ts)_
 
 ## `sf alias set`
 
@@ -209,10 +210,11 @@ Set one or more aliases on your local computer.
 
 ```
 USAGE
-  $ sf alias set [--json]
+  $ sf alias set [--json] [--flags-dir <value>]
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Set one or more aliases on your local computer.
@@ -249,7 +251,7 @@ EXAMPLES
     $ sf alias set my-scratch-org test-ss0xut7txzxf@example.com
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.0.33/src/commands/alias/set.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.1.0/src/commands/alias/set.ts)_
 
 ## `sf alias unset`
 
@@ -257,14 +259,15 @@ Unset one or more aliases that are currently set on your local computer.
 
 ```
 USAGE
-  $ sf alias unset [--json] [-a] [-p]
+  $ sf alias unset [--json] [--flags-dir <value>] [-a] [-p]
 
 FLAGS
   -a, --all        Unset all currently set aliases.
   -p, --no-prompt  Don't prompt the user for confirmation when unsetting all aliases.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Unset one or more aliases that are currently set on your local computer.
@@ -288,7 +291,7 @@ EXAMPLES
     $ sf alias unset --all [--no-prompt]
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.0.33/src/commands/alias/unset.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.1.0/src/commands/alias/unset.ts)_
 
 ## `sf analytics generate template`
 
@@ -296,7 +299,7 @@ Generate a simple Analytics template.
 
 ```
 USAGE
-  $ sf analytics generate template -n <value> [--json] [-d <value>] [--api-version <value>]
+  $ sf analytics generate template -n <value> [--json] [--flags-dir <value>] [-d <value>] [--api-version <value>]
 
 FLAGS
   -d, --output-dir=<value>   [default: .] Directory for saving the created files.
@@ -304,7 +307,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Generate a simple Analytics template.
@@ -329,7 +333,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.25/src/commands/analytics/generate/template.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.1.0/src/commands/analytics/generate/template.ts)_
 
 ## `sf apex generate class`
 
@@ -337,8 +341,8 @@ Generate an Apex class.
 
 ```
 USAGE
-  $ sf apex generate class -n <value> [--json] [-t ApexException|ApexUnitTest|DefaultApexClass|InboundEmailService] [-d
-    <value>] [--api-version <value>]
+  $ sf apex generate class -n <value> [--json] [--flags-dir <value>] [-t
+    ApexException|ApexUnitTest|DefaultApexClass|InboundEmailService] [-d <value>] [--api-version <value>]
 
 FLAGS
   -d, --output-dir=<value>   [default: .] Directory for saving the created files.
@@ -348,7 +352,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Generate an Apex class.
@@ -385,7 +390,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.25/src/commands/apex/generate/class.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.1.0/src/commands/apex/generate/class.ts)_
 
 ## `sf apex generate trigger`
 
@@ -393,8 +398,9 @@ Generate an Apex trigger.
 
 ```
 USAGE
-  $ sf apex generate trigger -n <value> [--json] [-t ApexTrigger] [-d <value>] [--api-version <value>] [-s <value>] [-e
-    before insert|before update|before delete|after insert|after update|after delete|after undelete]
+  $ sf apex generate trigger -n <value> [--json] [--flags-dir <value>] [-t ApexTrigger] [-d <value>] [--api-version
+    <value>] [-s <value>] [-e before insert|before update|before delete|after insert|after update|after delete|after
+    undelete]
 
 FLAGS
   -d, --output-dir=<value>   [default: .] Directory for saving the created files.
@@ -408,7 +414,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Generate an Apex trigger.
@@ -452,7 +459,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.25/src/commands/apex/generate/trigger.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.1.0/src/commands/apex/generate/trigger.ts)_
 
 ## `sf apex get log`
 
@@ -460,7 +467,8 @@ Fetch the specified log or given number of most recent logs from the org.
 
 ```
 USAGE
-  $ sf apex get log -o <value> [--json] [--api-version <value>] [-i <value>] [-n <value>] [-d <value>]
+  $ sf apex get log -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-i <value>] [-n <value>]
+    [-d <value>]
 
 FLAGS
   -d, --output-dir=<value>   Directory for saving the log files.
@@ -471,7 +479,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Fetch the specified log or given number of most recent logs from the org.
@@ -506,7 +515,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.31/src/commands/apex/get/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.1.0/src/commands/apex/get/log.ts)_
 
 ## `sf apex get test`
 
@@ -514,8 +523,8 @@ Display test results for a specific asynchronous test run.
 
 ```
 USAGE
-  $ sf apex get test -o <value> -i <value> [--json] [--api-version <value>] [-c] [-d <value>] [-r
-    human|tap|junit|json]
+  $ sf apex get test -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>] [-c] [-d <value>]
+    [-r human|tap|junit|json]
 
 FLAGS
   -c, --code-coverage           Retrieve code coverage results.
@@ -528,7 +537,8 @@ FLAGS
       --api-version=<value>     Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Display test results for a specific asynchronous test run.
@@ -559,7 +569,7 @@ EXAMPLES
       me@myorg',
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.31/src/commands/apex/get/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.1.0/src/commands/apex/get/test.ts)_
 
 ## `sf apex list log`
 
@@ -567,7 +577,7 @@ Display a list of IDs and general information about debug logs.
 
 ```
 USAGE
-  $ sf apex list log -o <value> [--json] [--api-version <value>]
+  $ sf apex list log -o <value> [--json] [--flags-dir <value>] [--api-version <value>]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
@@ -575,7 +585,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Display a list of IDs and general information about debug logs.
@@ -598,7 +609,7 @@ EXAMPLES
     $ sf apex list log --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.31/src/commands/apex/list/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.1.0/src/commands/apex/list/log.ts)_
 
 ## `sf apex run`
 
@@ -606,7 +617,7 @@ Execute anonymous Apex code entered on the command line or from a local file.
 
 ```
 USAGE
-  $ sf apex run -o <value> [--json] [--api-version <value>] [-f <value>]
+  $ sf apex run -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-f <value>]
 
 FLAGS
   -f, --file=<value>         Path to a local file that contains Apex code.
@@ -615,7 +626,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Execute anonymous Apex code entered on the command line or from a local file.
@@ -644,7 +656,7 @@ EXAMPLES
     $ sf apex run
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.31/src/commands/apex/run.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.1.0/src/commands/apex/run.ts)_
 
 ## `sf apex run test`
 
@@ -652,7 +664,7 @@ Invoke Apex tests in an org.
 
 ```
 USAGE
-  $ sf apex run test -o <value> [--json] [--api-version <value>] [-d <value>] [-l
+  $ sf apex run test -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-d <value>] [-l
     RunLocalTests|RunAllTestsInOrg|RunSpecifiedTests] [-n <value> | -s <value> | -t <value>] [-r human|tap|junit|json]
     [-w <value>] [-y] [-v -c]
 
@@ -677,7 +689,8 @@ FLAGS
       --api-version=<value>     Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Invoke Apex tests in an org.
@@ -751,7 +764,7 @@ FLAG DESCRIPTIONS
     --tests Test1 --tests Test2
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.31/src/commands/apex/run/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.1.0/src/commands/apex/run/test.ts)_
 
 ## `sf apex tail log`
 
@@ -759,7 +772,7 @@ Activate debug logging and display logs in the terminal.
 
 ```
 USAGE
-  $ sf apex tail log -o <value> [--api-version <value>] [-c] [-d <value> | -s]
+  $ sf apex tail log -o <value> [--flags-dir <value>] [--api-version <value>] [-c] [-d <value> | -s]
 
 FLAGS
   -c, --color                Apply default colors to noteworthy log lines.
@@ -768,6 +781,9 @@ FLAGS
                              configuration variable is already set.
   -s, --skip-trace-flag      Skip trace flag setup. Assumes that a trace flag and debug level are fully set up.
       --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
 
 DESCRIPTION
   Activate debug logging and display logs in the terminal.
@@ -791,7 +807,7 @@ EXAMPLES
     $ sf apex tail log --color --skip-trace-flag
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.0.31/src/commands/apex/tail/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.1.0/src/commands/apex/tail/log.ts)_
 
 ## `sf autocomplete [SHELL]`
 
@@ -855,7 +871,7 @@ DESCRIPTION
   list all the commands
 ```
 
-_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/3.2.1/src/commands/commands.ts)_
+_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/3.2.2/src/commands/commands.ts)_
 
 ## `sf config get`
 
@@ -863,13 +879,14 @@ Get the value of a configuration variable.
 
 ```
 USAGE
-  $ sf config get [--json] [--verbose]
+  $ sf config get [--json] [--flags-dir <value>] [--verbose]
 
 FLAGS
   --verbose  Display whether the configuration variables are set locally or globally.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Get the value of a configuration variable.
@@ -903,7 +920,7 @@ CONFIGURATION VARIABLES
   org-capitalize-record-types    Whether record types are capitalized on scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.0.33/src/commands/config/get.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.1.0/src/commands/config/get.ts)_
 
 ## `sf config list`
 
@@ -911,10 +928,11 @@ List the configuration variables that you've previously set.
 
 ```
 USAGE
-  $ sf config list [--json]
+  $ sf config list [--json] [--flags-dir <value>]
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   List the configuration variables that you've previously set.
@@ -942,7 +960,7 @@ EXAMPLES
     $ sf config list
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.0.33/src/commands/config/list.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.1.0/src/commands/config/list.ts)_
 
 ## `sf config set`
 
@@ -950,13 +968,14 @@ Set one or more configuration variables, such as your default org.
 
 ```
 USAGE
-  $ sf config set [--json] [-g]
+  $ sf config set [--json] [--flags-dir <value>] [-g]
 
 FLAGS
   -g, --global  Set the configuration variables globally, so they can be used from any Salesforce DX project.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Set one or more configuration variables, such as your default org.
@@ -1010,7 +1029,7 @@ CONFIGURATION VARIABLES
   org-capitalize-record-types    Whether record types are capitalized on scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.0.33/src/commands/config/set.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.1.0/src/commands/config/set.ts)_
 
 ## `sf config unset`
 
@@ -1018,13 +1037,14 @@ Unset local or global configuration variables.
 
 ```
 USAGE
-  $ sf config unset [--json] [-g]
+  $ sf config unset [--json] [--flags-dir <value>] [-g]
 
 FLAGS
   -g, --global  Unset the configuration variables globally.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Unset local or global configuration variables.
@@ -1059,7 +1079,7 @@ CONFIGURATION VARIABLES
   org-capitalize-record-types    Whether record types are capitalized on scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.0.33/src/commands/config/unset.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.1.0/src/commands/config/unset.ts)_
 
 ## `sf data create record`
 
@@ -1835,7 +1855,7 @@ Gather CLI configuration data and run diagnostic tests to discover and report po
 
 ```
 USAGE
-  $ sf doctor [--json] [-c <value>] [-p <value>] [-d <value>] [-i]
+  $ sf doctor [--json] [--flags-dir <value>] [-c <value>] [-p <value>] [-d <value>] [-i]
 
 FLAGS
   -c, --command=<value>     Command to run in debug mode; results are written to a log file.
@@ -1844,7 +1864,8 @@ FLAGS
   -p, --plugin=<value>      Specific plugin on which to run diagnostics.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Gather CLI configuration data and run diagnostic tests to discover and report potential problems in your environment.
@@ -1874,7 +1895,7 @@ EXAMPLES
     $ sf doctor --plugin @salesforce/plugin-source
 ```
 
-_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.0.34/src/commands/doctor.ts)_
+_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.1.0/src/commands/doctor.ts)_
 
 ## `sf force data bulk delete`
 
@@ -2036,7 +2057,7 @@ DESCRIPTION
   Display help for sf.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/6.0.19/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/6.0.20/src/commands/help.ts)_
 
 ## `sf info releasenotes display`
 
@@ -2044,13 +2065,14 @@ Display Salesforce CLI release notes on the command line.
 
 ```
 USAGE
-  $ sf info releasenotes display [--json] [-v <value>]
+  $ sf info releasenotes display [--json] [--flags-dir <value>] [-v <value>]
 
 FLAGS
   -v, --version=<value>  CLI version or tag for which to display release notes.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Display Salesforce CLI release notes on the command line.
@@ -2075,7 +2097,7 @@ EXAMPLES
     $ sf info releasenotes display --version latest
 ```
 
-_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.0.34/src/commands/info/releasenotes/display.ts)_
+_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.1.0/src/commands/info/releasenotes/display.ts)_
 
 ## `sf lightning generate app`
 
@@ -2083,7 +2105,8 @@ Generate a Lightning App.
 
 ```
 USAGE
-  $ sf lightning generate app -n <value> [--json] [-t DefaultLightningApp] [-d <value>] [--api-version <value>]
+  $ sf lightning generate app -n <value> [--json] [--flags-dir <value>] [-t DefaultLightningApp] [-d <value>] [--api-version
+    <value>]
 
 FLAGS
   -d, --output-dir=<value>   [default: .] Directory for saving the created files.
@@ -2093,7 +2116,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Generate a Lightning App.
@@ -2128,7 +2152,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.25/src/commands/lightning/generate/app.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.1.0/src/commands/lightning/generate/app.ts)_
 
 ## `sf lightning generate component`
 
@@ -2136,8 +2160,8 @@ Generate a bundle for an Aura component or a Lightning web component.
 
 ```
 USAGE
-  $ sf lightning generate component -n <value> [--json] [-t default|analyticsDashboard|analyticsDashboardWithStep] [-d <value>]
-    [--api-version <value>] [--type aura|lwc]
+  $ sf lightning generate component -n <value> [--json] [--flags-dir <value>] [-t
+    default|analyticsDashboard|analyticsDashboardWithStep] [-d <value>] [--api-version <value>] [--type aura|lwc]
 
 FLAGS
   -d, --output-dir=<value>   [default: .] Directory for saving the created files.
@@ -2149,7 +2173,8 @@ FLAGS
                              <options: aura|lwc>
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Generate a bundle for an Aura component or a Lightning web component.
@@ -2196,7 +2221,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.25/src/commands/lightning/generate/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.1.0/src/commands/lightning/generate/component.ts)_
 
 ## `sf lightning generate event`
 
@@ -2204,7 +2229,8 @@ Generate a Lightning Event.
 
 ```
 USAGE
-  $ sf lightning generate event -n <value> [--json] [-t DefaultLightningEvt] [-d <value>] [--api-version <value>]
+  $ sf lightning generate event -n <value> [--json] [--flags-dir <value>] [-t DefaultLightningEvt] [-d <value>] [--api-version
+    <value>]
 
 FLAGS
   -d, --output-dir=<value>   [default: .] Directory for saving the created files.
@@ -2214,7 +2240,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Generate a Lightning Event.
@@ -2249,7 +2276,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.25/src/commands/lightning/generate/event.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.1.0/src/commands/lightning/generate/event.ts)_
 
 ## `sf lightning generate interface`
 
@@ -2257,7 +2284,8 @@ Generate a Lightning Interface.
 
 ```
 USAGE
-  $ sf lightning generate interface -n <value> [--json] [-t DefaultLightningIntf] [-d <value>] [--api-version <value>]
+  $ sf lightning generate interface -n <value> [--json] [--flags-dir <value>] [-t DefaultLightningIntf] [-d <value>]
+    [--api-version <value>]
 
 FLAGS
   -d, --output-dir=<value>   [default: .] Directory for saving the created files.
@@ -2267,7 +2295,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Generate a Lightning Interface.
@@ -2302,7 +2331,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.25/src/commands/lightning/generate/interface.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.1.0/src/commands/lightning/generate/interface.ts)_
 
 ## `sf lightning generate test`
 
@@ -2310,7 +2339,8 @@ Generate a Lightning test.
 
 ```
 USAGE
-  $ sf lightning generate test -n <value> [--json] [-t DefaultLightningTest] [-d <value>] [--api-version <value>]
+  $ sf lightning generate test -n <value> [--json] [--flags-dir <value>] [-t DefaultLightningTest] [-d <value>]
+    [--api-version <value>]
 
 FLAGS
   -d, --output-dir=<value>   [default: .] Directory for saving the created files.
@@ -2320,7 +2350,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Generate a Lightning test.
@@ -2355,7 +2386,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.25/src/commands/lightning/generate/test.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.1.0/src/commands/lightning/generate/test.ts)_
 
 ## `sf org assign permset`
 
@@ -2363,7 +2394,7 @@ Assign a permission set to one or more users of a scratch org.
 
 ```
 USAGE
-  $ sf org assign permset -n <value> -o <value> [--json] [-b <value>] [--api-version <value>]
+  $ sf org assign permset -n <value> -o <value> [--json] [--flags-dir <value>] [-b <value>] [--api-version <value>]
 
 FLAGS
   -b, --on-behalf-of=<value>...  Username or alias to assign the permission set to.
@@ -2372,7 +2403,8 @@ FLAGS
       --api-version=<value>      Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Assign a permission set to one or more users of a scratch org.
@@ -2398,7 +2430,7 @@ EXAMPLES
     $ sf org assign permset --name DreamHouse --on-behalf-of user1@my.org --on-behalf-of user2 --on-behalf-of user
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.3.4/src/commands/org/assign/permset.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.4.0/src/commands/org/assign/permset.ts)_
 
 ## `sf org assign permsetlicense`
 
@@ -2406,7 +2438,8 @@ Assign a permission set license to one or more users of a scratch org.
 
 ```
 USAGE
-  $ sf org assign permsetlicense -n <value> -o <value> [--json] [-b <value>] [--api-version <value>]
+  $ sf org assign permsetlicense -n <value> -o <value> [--json] [--flags-dir <value>] [-b <value>] [--api-version
+  <value>]
 
 FLAGS
   -b, --on-behalf-of=<value>...  Usernames or alias to assign the permission set license to.
@@ -2415,7 +2448,8 @@ FLAGS
       --api-version=<value>      Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Assign a permission set license to one or more users of a scratch org.
@@ -2442,7 +2476,7 @@ EXAMPLES
       user3
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.3.4/src/commands/org/assign/permsetlicense.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.4.0/src/commands/org/assign/permsetlicense.ts)_
 
 ## `sf org create sandbox`
 
@@ -2450,26 +2484,28 @@ Create a sandbox org.
 
 ```
 USAGE
-  $ sf org create sandbox -o <value> [--json] [-f <value>] [-s] [-a <value>] [-w <value> | --async] [-i <value> | ] [-n
-    <value>] [-c <value> | -l Developer|Developer_Pro|Partial|Full] [--no-prompt] [--no-track-source]
+  $ sf org create sandbox -o <value> [--json] [--flags-dir <value>] [-f <value>] [-s] [-a <value>] [-w <value> |
+    --async] [-i <value> | ] [-n <value>] [-c <value> | -l Developer|Developer_Pro|Partial|Full] [--no-prompt]
+    [--no-track-source]
 
 FLAGS
   -a, --alias=<value>            Alias for the sandbox org.
   -c, --clone=<value>            Name of the sandbox org to clone.
   -f, --definition-file=<value>  Path to a sandbox definition file.
-  -i, --poll-interval=<seconds>  [default: [object Object]] Number of seconds to wait between retries.
+  -i, --poll-interval=<seconds>  Number of seconds to wait between retries.
   -l, --license-type=<option>    Type of sandbox license.
                                  <options: Developer|Developer_Pro|Partial|Full>
   -n, --name=<value>             Name of the sandbox org.
   -o, --target-org=<value>       (required) Username or alias of the production org that contains the sandbox license.
   -s, --set-default              Set the sandbox org as your default org.
-  -w, --wait=<minutes>           [default: [object Object]] Number of minutes to wait for the sandbox org to be ready.
+  -w, --wait=<minutes>           Number of minutes to wait for the sandbox org to be ready.
       --async                    Request the sandbox creation, but don't wait for it to complete.
       --no-prompt                Don't prompt for confirmation about the sandbox configuration.
       --no-track-source          Do not use source tracking for this sandbox.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Create a sandbox org.
@@ -2557,7 +2593,7 @@ FLAG DESCRIPTIONS
     sandbox.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.5.1/src/commands/org/create/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.6.0/src/commands/org/create/sandbox.ts)_
 
 ## `sf org create scratch`
 
@@ -2565,7 +2601,7 @@ Create a scratch org.
 
 ```
 USAGE
-  $ sf org create scratch -v <value> [--json] [-a <value>] [--async] [-d] [-f <value>] [-c] [-e
+  $ sf org create scratch -v <value> [--json] [--flags-dir <value>] [-a <value>] [--async] [-d] [-f <value>] [-c] [-e
     developer|enterprise|group|professional|partner-developer|partner-enterprise|partner-group|partner-professional]
     [-m] [-y <value>] [-w <value>] [--api-version <value>] [-i <value>] [-t] [--username <value>] [--description
     <value>] [--name <value>] [--release preview|previous] [--admin-email <value>] [--source-org <value>]
@@ -2578,8 +2614,8 @@ FLAGS
   -t, --[no-]track-source        Use source tracking for this scratch org. Set --no-track-source to disable source
                                  tracking.
   -v, --target-dev-hub=<value>   (required) Username or alias of the Dev Hub org.
-  -w, --wait=<minutes>           [default: [object Object]] Number of minutes to wait for the scratch org to be ready.
-  -y, --duration-days=<days>     [default: [object Object]] Number of days before the org expires.
+  -w, --wait=<minutes>           Number of minutes to wait for the scratch org to be ready.
+  -y, --duration-days=<days>     Number of days before the org expires.
       --api-version=<value>      Override the api version used for api requests made by this command
       --async                    Request the org, but don't wait for it to complete.
 
@@ -2606,7 +2642,8 @@ DEFINITION FILE OVERRIDE FLAGS
                              definition file, if set.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Create a scratch org.
@@ -2710,7 +2747,7 @@ FLAG DESCRIPTIONS
     Omit this flag to have Salesforce generate a unique username for your org.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.5.1/src/commands/org/create/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.6.0/src/commands/org/create/scratch.ts)_
 
 ## `sf org create user`
 
@@ -2718,7 +2755,8 @@ Create a user for a scratch org.
 
 ```
 USAGE
-  $ sf org create user -o <value> [--json] [-a <value>] [-f <value>] [-s] [--api-version <value>]
+  $ sf org create user -o <value> [--json] [--flags-dir <value>] [-a <value>] [-f <value>] [-s] [--api-version
+    <value>]
 
 FLAGS
   -a, --set-alias=<value>        Set an alias for the created username to reference in other CLI commands.
@@ -2730,7 +2768,8 @@ FLAGS
       --api-version=<value>      Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Create a user for a scratch org.
@@ -2816,7 +2855,7 @@ FLAG DESCRIPTIONS
     might be different than what you specify in the definition file.
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.3.4/src/commands/org/create/user.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.4.0/src/commands/org/create/user.ts)_
 
 ## `sf org delete sandbox`
 
@@ -2824,14 +2863,15 @@ Delete a sandbox.
 
 ```
 USAGE
-  $ sf org delete sandbox -o <value> [--json] [-p]
+  $ sf org delete sandbox -o <value> [--json] [--flags-dir <value>] [-p]
 
 FLAGS
   -o, --target-org=<value>  (required) Sandbox alias or login user.
   -p, --no-prompt           Don't prompt the user to confirm the deletion.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Delete a sandbox.
@@ -2860,7 +2900,7 @@ EXAMPLES
     $ sf org delete sandbox --target-org my-sandbox --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.5.1/src/commands/org/delete/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.6.0/src/commands/org/delete/sandbox.ts)_
 
 ## `sf org delete scratch`
 
@@ -2868,14 +2908,15 @@ Delete a scratch org.
 
 ```
 USAGE
-  $ sf org delete scratch -o <value> [--json] [-p]
+  $ sf org delete scratch -o <value> [--json] [--flags-dir <value>] [-p]
 
 FLAGS
   -o, --target-org=<value>  (required) Scratch org alias or login user.
   -p, --no-prompt           Don't prompt the user to confirm the deletion.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Delete a scratch org.
@@ -2902,7 +2943,7 @@ EXAMPLES
     $ sf org delete scratch --target-org my-scratch-org --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.5.1/src/commands/org/delete/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.6.0/src/commands/org/delete/scratch.ts)_
 
 ## `sf org disable tracking`
 
@@ -2910,14 +2951,15 @@ Prevent Salesforce CLI from tracking changes in your source files between your p
 
 ```
 USAGE
-  $ sf org disable tracking -o <value> [--json]
+  $ sf org disable tracking -o <value> [--json] [--flags-dir <value>]
 
 FLAGS
   -o, --target-org=<value>  (required) Username or alias of the target org. Not required if the `target-org`
                             configuration variable is already set.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Prevent Salesforce CLI from tracking changes in your source files between your project and an org.
@@ -2940,7 +2982,7 @@ EXAMPLES
     $ sf org disable tracking
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.5.1/src/commands/org/disable/tracking.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.6.0/src/commands/org/disable/tracking.ts)_
 
 ## `sf org display`
 
@@ -2948,7 +2990,7 @@ Display information about an org.
 
 ```
 USAGE
-  $ sf org display -o <value> [--json] [--api-version <value>] [--verbose]
+  $ sf org display -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [--verbose]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
@@ -2957,7 +2999,8 @@ FLAGS
       --verbose              Display the sfdxAuthUrl property.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Display information about an org.
@@ -2984,7 +3027,7 @@ EXAMPLES
     $ sf org display --target-org TestOrg1 --verbose
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.5.1/src/commands/org/display.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.6.0/src/commands/org/display.ts)_
 
 ## `sf org display user`
 
@@ -2992,7 +3035,7 @@ Display information about a Salesforce user.
 
 ```
 USAGE
-  $ sf org display user -o <value> [--json] [--api-version <value>]
+  $ sf org display user -o <value> [--json] [--flags-dir <value>] [--api-version <value>]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
@@ -3000,7 +3043,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Display information about a Salesforce user.
@@ -3022,7 +3066,7 @@ EXAMPLES
     $ sf org display user --target-org me@my.org --json
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.3.4/src/commands/org/display/user.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.4.0/src/commands/org/display/user.ts)_
 
 ## `sf org enable tracking`
 
@@ -3030,14 +3074,15 @@ Allow Salesforce CLI to track changes in your source files between your project 
 
 ```
 USAGE
-  $ sf org enable tracking -o <value> [--json]
+  $ sf org enable tracking -o <value> [--json] [--flags-dir <value>]
 
 FLAGS
   -o, --target-org=<value>  (required) Username or alias of the target org. Not required if the `target-org`
                             configuration variable is already set.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Allow Salesforce CLI to track changes in your source files between your project and an org.
@@ -3063,7 +3108,7 @@ EXAMPLES
     $ sf org enable tracking
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.5.1/src/commands/org/enable/tracking.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.6.0/src/commands/org/enable/tracking.ts)_
 
 ## `sf org generate password`
 
@@ -3071,7 +3116,8 @@ Generate a random password for scratch org users.
 
 ```
 USAGE
-  $ sf org generate password -o <value> [--json] [-b <value>] [-l <value>] [-c <value>] [--api-version <value>]
+  $ sf org generate password -o <value> [--json] [--flags-dir <value>] [-b <value>] [-l <value>] [-c <value>]
+    [--api-version <value>]
 
 FLAGS
   -b, --on-behalf-of=<value>...  Comma-separated list of usernames or aliases to assign the password to; must have been
@@ -3085,7 +3131,8 @@ FLAGS
       --api-version=<value>      Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Generate a random password for scratch org users.
@@ -3128,7 +3175,7 @@ EXAMPLES
     $ sf org generate password --on-behalf-of user1@my.org --on-behalf-of user2@my.org --on-behalf-of user3@my.org
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.3.4/src/commands/org/generate/password.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.4.0/src/commands/org/generate/password.ts)_
 
 ## `sf org list`
 
@@ -3136,7 +3183,7 @@ List all orgs you’ve created or authenticated to.
 
 ```
 USAGE
-  $ sf org list [--json] [--verbose] [--all] [-p --clean] [--skip-connection-status]
+  $ sf org list [--json] [--flags-dir <value>] [--verbose] [--all] [-p --clean] [--skip-connection-status]
 
 FLAGS
   -p, --no-prompt               Don't prompt for confirmation.
@@ -3147,7 +3194,8 @@ FLAGS
       --verbose                 List more information about each org.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 ALIASES
   $ sf force org list
@@ -3166,7 +3214,7 @@ EXAMPLES
     $ sf org list --clean
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.5.1/src/commands/org/list.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.6.0/src/commands/org/list.ts)_
 
 ## `sf org list auth`
 
@@ -3174,10 +3222,11 @@ List authorization information about the orgs you created or logged into.
 
 ```
 USAGE
-  $ sf org list auth [--json]
+  $ sf org list auth [--json] [--flags-dir <value>]
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   List authorization information about the orgs you created or logged into.
@@ -3197,7 +3246,7 @@ EXAMPLES
     $ sf org list auth
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.27/src/commands/org/list/auth.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.5.0/src/commands/org/list/auth.ts)_
 
 ## `sf org list limits`
 
@@ -3205,7 +3254,7 @@ Display information about limits in your org.
 
 ```
 USAGE
-  $ sf org list limits -o <value> [--json] [--api-version <value>]
+  $ sf org list limits -o <value> [--json] [--flags-dir <value>] [--api-version <value>]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
@@ -3213,7 +3262,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Display information about limits in your org.
@@ -3236,7 +3286,7 @@ EXAMPLES
     $ sf org list limits --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.1.15/src/commands/org/list/limits.ts)_
+_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.2.0/src/commands/org/list/limits.ts)_
 
 ## `sf org list metadata`
 
@@ -3244,7 +3294,8 @@ List the metadata components and properties of a specified type.
 
 ```
 USAGE
-  $ sf org list metadata -o <value> -m <value> [--json] [--api-version <value>] [-f <value>] [--folder <value>]
+  $ sf org list metadata -o <value> -m <value> [--json] [--flags-dir <value>] [--api-version <value>] [-f <value>]
+    [--folder <value>]
 
 FLAGS
   -f, --output-file=<value>    Pathname of the file in which to write the results.
@@ -3257,7 +3308,8 @@ FLAGS
                                names are case-sensitive.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   List the metadata components and properties of a specified type.
@@ -3301,7 +3353,7 @@ FLAG DESCRIPTIONS
     Examples of metadata types that use folders are Dashboard, Document, EmailTemplate, and Report.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.5.1/src/commands/org/list/metadata.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.6.0/src/commands/org/list/metadata.ts)_
 
 ## `sf org list metadata-types`
 
@@ -3309,7 +3361,7 @@ Display details about the metadata types that are enabled for your org.
 
 ```
 USAGE
-  $ sf org list metadata-types -o <value> [--json] [--api-version <value>] [-f <value>]
+  $ sf org list metadata-types -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-f <value>]
 
 FLAGS
   -f, --output-file=<value>  Pathname of the file in which to write the results.
@@ -3318,7 +3370,8 @@ FLAGS
       --api-version=<value>  API version to use; default is the most recent API version.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Display details about the metadata types that are enabled for your org.
@@ -3355,7 +3408,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.5.1/src/commands/org/list/metadata-types.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.6.0/src/commands/org/list/metadata-types.ts)_
 
 ## `sf org list sobject record-counts`
 
@@ -3363,7 +3416,7 @@ Display record counts for the specified standard or custom objects.
 
 ```
 USAGE
-  $ sf org list sobject record-counts -o <value> [--json] [-s <value>] [--api-version <value>]
+  $ sf org list sobject record-counts -o <value> [--json] [--flags-dir <value>] [-s <value>] [--api-version <value>]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
@@ -3372,7 +3425,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Display record counts for the specified standard or custom objects.
@@ -3400,7 +3454,7 @@ EXAMPLES
     $ sf org list sobject record-counts --sobject Account --sobject Lead --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.1.15/src/commands/org/list/sobject/record-counts.ts)_
+_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.2.0/src/commands/org/list/sobject/record-counts.ts)_
 
 ## `sf org list users`
 
@@ -3408,7 +3462,7 @@ List all locally-authenticated users of an org.
 
 ```
 USAGE
-  $ sf org list users -o <value> [--json] [--api-version <value>]
+  $ sf org list users -o <value> [--json] [--flags-dir <value>] [--api-version <value>]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
@@ -3416,7 +3470,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   List all locally-authenticated users of an org.
@@ -3437,7 +3492,7 @@ EXAMPLES
     $ sf org list users --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.3.4/src/commands/org/list/users.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.4.0/src/commands/org/list/users.ts)_
 
 ## `sf org login access-token`
 
@@ -3445,7 +3500,7 @@ Authorize an org using an existing Salesforce access token.
 
 ```
 USAGE
-  $ sf org login access-token -r <value> [--json] [-d] [-s] [-a <value>] [-p]
+  $ sf org login access-token -r <value> [--json] [--flags-dir <value>] [-d] [-s] [-a <value>] [-p]
 
 FLAGS
   -a, --alias=<value>         Alias for the org.
@@ -3455,7 +3510,8 @@ FLAGS
   -s, --set-default           Set the authenticated org as the default that all org-related commands run against.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Authorize an org using an existing Salesforce access token.
@@ -3490,7 +3546,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.27/src/commands/org/login/access-token.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.5.0/src/commands/org/login/access-token.ts)_
 
 ## `sf org login device`
 
@@ -3498,7 +3554,7 @@ Authorize an org using a device code.
 
 ```
 USAGE
-  $ sf org login device [--json] [-i <value>] [-r <value>] [-d] [-s] [-a <value>]
+  $ sf org login device [--json] [--flags-dir <value>] [-i <value>] [-r <value>] [-d] [-s] [-a <value>]
 
 FLAGS
   -a, --alias=<value>         Alias for the org.
@@ -3508,7 +3564,8 @@ FLAGS
   -s, --set-default           Set the authenticated org as the default that all org-related commands run against.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Authorize an org using a device code.
@@ -3549,7 +3606,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.27/src/commands/org/login/device.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.5.0/src/commands/org/login/device.ts)_
 
 ## `sf org login jwt`
 
@@ -3557,7 +3614,8 @@ Log in to a Salesforce org using a JSON web token (JWT).
 
 ```
 USAGE
-  $ sf org login jwt -o <value> -f <value> -i <value> [--json] [-r <value>] [-d] [-s] [-a <value>]
+  $ sf org login jwt -o <value> -f <value> -i <value> [--json] [--flags-dir <value>] [-r <value>] [-d] [-s] [-a
+    <value>]
 
 FLAGS
   -a, --alias=<value>         Alias for the org.
@@ -3569,7 +3627,8 @@ FLAGS
   -s, --set-default           Set the authenticated org as the default that all org-related commands run against.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Log in to a Salesforce org using a JSON web token (JWT).
@@ -3638,7 +3697,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.27/src/commands/org/login/jwt.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.5.0/src/commands/org/login/jwt.ts)_
 
 ## `sf org login sfdx-url`
 
@@ -3646,7 +3705,7 @@ Authorize an org using a Salesforce DX authorization URL stored in a file or thr
 
 ```
 USAGE
-  $ sf org login sfdx-url [--json] [-f <value>] [-u <value>] [-d] [-s] [-a <value>]
+  $ sf org login sfdx-url [--json] [--flags-dir <value>] [-f <value>] [-u <value>] [-d] [-s] [-a <value>]
 
 FLAGS
   -a, --alias=<value>           Alias for the org.
@@ -3656,7 +3715,8 @@ FLAGS
   -u, --sfdx-url-stdin=<value>  Pipe the Salesforce DX authorization URL through standard input (stdin).
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Authorize an org using a Salesforce DX authorization URL stored in a file or through standard input (stdin).
@@ -3703,7 +3763,7 @@ EXAMPLES
    $ echo url | sf org login sfdx-url --sfdx-url-stdin
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.27/src/commands/org/login/sfdx-url.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.5.0/src/commands/org/login/sfdx-url.ts)_
 
 ## `sf org login web`
 
@@ -3711,7 +3771,8 @@ Log in to a Salesforce org using the web server flow.
 
 ```
 USAGE
-  $ sf org login web [--json] [-b chrome|edge|firefox] [-i <value>] [-r <value>] [-d] [-s] [-a <value>]
+  $ sf org login web [--json] [--flags-dir <value>] [-b chrome|edge|firefox] [-i <value>] [-r <value>] [-d] [-s]
+    [-a <value>]
 
 FLAGS
   -a, --alias=<value>         Alias for the org.
@@ -3723,7 +3784,8 @@ FLAGS
   -s, --set-default           Set the authenticated org as the default that all org-related commands run against.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Log in to a Salesforce org using the web server flow.
@@ -3788,7 +3850,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.27/src/commands/org/login/web.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.5.0/src/commands/org/login/web.ts)_
 
 ## `sf org logout`
 
@@ -3796,7 +3858,7 @@ Log out of a Salesforce org.
 
 ```
 USAGE
-  $ sf org logout [--json] [-a | -o <value>] [-p]
+  $ sf org logout [--json] [--flags-dir <value>] [-a | -o <value>] [-p]
 
 FLAGS
   -a, --all                 Include all authenticated orgs.
@@ -3804,7 +3866,8 @@ FLAGS
   -p, --no-prompt           Don't prompt for confirmation.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Log out of a Salesforce org.
@@ -3848,7 +3911,7 @@ FLAG DESCRIPTIONS
     All orgs includes Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.3.27/src/commands/org/logout.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.5.0/src/commands/org/logout.ts)_
 
 ## `sf org open`
 
@@ -3856,8 +3919,8 @@ Open your default scratch org, or another specified org, in a browser.
 
 ```
 USAGE
-  $ sf org open -o <value> [--json] [--api-version <value>] [--private | -r | -b chrome|edge|firefox] [-p
-    <value> | -f <value>]
+  $ sf org open -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [--private | -r | -b
+    chrome|edge|firefox] [-p <value> | -f <value>]
 
 FLAGS
   -b, --browser=<option>     Browser where the org opens.
@@ -3871,7 +3934,8 @@ FLAGS
       --private              Open the org in the default browser using private (incognito) mode.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Open your default scratch org, or another specified org, in a browser.
@@ -3919,7 +3983,7 @@ EXAMPLES
     $ sf org open --source-file force-app/main/default/flows/Hello.flow-meta.xml
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.5.1/src/commands/org/open.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.6.0/src/commands/org/open.ts)_
 
 ## `sf org refresh sandbox`
 
@@ -3927,21 +3991,22 @@ Refresh a sandbox org using the sandbox name.
 
 ```
 USAGE
-  $ sf org refresh sandbox -o <value> [--json] [--no-auto-activate] [-w <value> | --async] [-i <value> | ] [-n <value>]
-    [-f <value>] [--no-prompt]
+  $ sf org refresh sandbox -o <value> [--json] [--flags-dir <value>] [--no-auto-activate] [-w <value> | --async] [-i
+    <value> | ] [-n <value>] [-f <value>] [--no-prompt]
 
 FLAGS
   -f, --definition-file=<value>  Path to a sandbox definition file for overriding its configuration when you refresh it.
-  -i, --poll-interval=<seconds>  [default: [object Object]] Number of seconds to wait between status polling requests.
+  -i, --poll-interval=<seconds>  Number of seconds to wait between status polling requests.
   -n, --name=<value>             Name of the existing sandbox org in your production org that you want to refresh.
   -o, --target-org=<value>       (required) Username or alias of the production org that contains the sandbox license.
-  -w, --wait=<minutes>           [default: [object Object]] Number of minutes to poll for sandbox refresh status.
+  -w, --wait=<minutes>           Number of minutes to poll for sandbox refresh status.
       --async                    Request the sandbox refresh, but don't wait for it to complete.
       --no-auto-activate         Disable auto-activation of the sandbox after a successful refresh.
       --no-prompt                Don't prompt for confirmation about the sandbox refresh.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Refresh a sandbox org using the sandbox name.
@@ -3995,7 +4060,7 @@ FLAG DESCRIPTIONS
     By default, a sandbox auto-activates after a refresh. Use this flag to control sandbox activation manually.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.5.1/src/commands/org/refresh/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.6.0/src/commands/org/refresh/sandbox.ts)_
 
 ## `sf org resume sandbox`
 
@@ -4003,17 +4068,18 @@ Check the status of a sandbox creation, and log in to it if it's ready.
 
 ```
 USAGE
-  $ sf org resume sandbox [--json] [-w <value>] [-n <value> | -i <value>] [-l] [-o <value>]
+  $ sf org resume sandbox [--json] [--flags-dir <value>] [-w <value>] [-n <value> | -i <value>] [-l] [-o <value>]
 
 FLAGS
   -i, --job-id=<value>      Job ID of the incomplete sandbox creation that you want to check the status of.
   -l, --use-most-recent     Use the most recent sandbox create request.
   -n, --name=<value>        Name of the sandbox org.
   -o, --target-org=<value>  Username or alias of the production org that contains the sandbox license.
-  -w, --wait=<minutes>      [default: [object Object]] Number of minutes to wait for the sandbox org to be ready.
+  -w, --wait=<minutes>      [default: 0 minutes] Number of minutes to wait for the sandbox org to be ready.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Check the status of a sandbox creation, and log in to it if it's ready.
@@ -4057,7 +4123,7 @@ FLAG DESCRIPTIONS
     returns the job ID. To resume checking the sandbox creation, rerun this command.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.5.1/src/commands/org/resume/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.6.0/src/commands/org/resume/sandbox.ts)_
 
 ## `sf org resume scratch`
 
@@ -4065,14 +4131,15 @@ Resume the creation of an incomplete scratch org.
 
 ```
 USAGE
-  $ sf org resume scratch [--json] [-i <value>] [-r]
+  $ sf org resume scratch [--json] [--flags-dir <value>] [-i <value>] [-r]
 
 FLAGS
   -i, --job-id=<value>   Job ID of the incomplete scratch org create that you want to resume.
   -r, --use-most-recent  Use the job ID of the most recent incomplete scratch org.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Resume the creation of an incomplete scratch org.
@@ -4103,7 +4170,7 @@ FLAG DESCRIPTIONS
     The job ID is valid for 24 hours after you start the scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.5.1/src/commands/org/resume/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/3.6.0/src/commands/org/resume/scratch.ts)_
 
 ## `sf package1 version create`
 
@@ -4111,8 +4178,8 @@ Create a first-generation package version in the release org.
 
 ```
 USAGE
-  $ sf package1 version create -o <value> -i <value> -n <value> [--json] [--api-version <value>] [-d <value>] [-v <value>]
-    [-m] [-r <value>] [-p <value>] [-k <value>] [-w <value>]
+  $ sf package1 version create -o <value> -i <value> -n <value> [--json] [--flags-dir <value>] [--api-version <value>] [-d
+    <value>] [-v <value>] [-m] [-r <value>] [-p <value>] [-k <value>] [-w <value>]
 
 FLAGS
   -d, --description=<value>        Package version description.
@@ -4130,7 +4197,8 @@ FLAGS
       --api-version=<value>        Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Create a first-generation package version in the release org.
@@ -4169,7 +4237,7 @@ FLAG DESCRIPTIONS
     subscribers.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package1/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package1/version/create.ts)_
 
 ## `sf package1 version create get`
 
@@ -4177,7 +4245,7 @@ Retrieve the status of a package version creation request.
 
 ```
 USAGE
-  $ sf package1 version create get -o <value> -i <value> [--json] [--api-version <value>]
+  $ sf package1 version create get -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
 
 FLAGS
   -i, --request-id=<value>   (required) ID of the PackageUploadRequest (starts with 0HD).
@@ -4186,7 +4254,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 ALIASES
   $ sf force package1 version create get
@@ -4201,7 +4270,7 @@ EXAMPLES
     $ sf package1 version create get --request-id 0HD... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package1/version/create/get.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package1/version/create/get.ts)_
 
 ## `sf package1 version display`
 
@@ -4209,7 +4278,7 @@ Display details about a first-generation package version.
 
 ```
 USAGE
-  $ sf package1 version display -o <value> -i <value> [--json] [--api-version <value>]
+  $ sf package1 version display -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
 
 FLAGS
   -i, --package-version-id=<value>  (required) ID (starts with 04t) of the metadata package version whose details you
@@ -4219,7 +4288,8 @@ FLAGS
       --api-version=<value>         Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 ALIASES
   $ sf force package1 version display
@@ -4234,7 +4304,7 @@ EXAMPLES
     $ sf package1 version display --package-version-id 04t... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package1/version/display.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package1/version/display.ts)_
 
 ## `sf package1 version list`
 
@@ -4242,7 +4312,7 @@ List package versions for the specified first-generation package or for the org.
 
 ```
 USAGE
-  $ sf package1 version list -o <value> [--json] [--api-version <value>] [-i <value>]
+  $ sf package1 version list -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-i <value>]
 
 FLAGS
   -i, --package-id=<value>   Metadata package ID (starts with 033) whose package versions you want to list.
@@ -4251,7 +4321,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 ALIASES
   $ sf force package1 version list
@@ -4271,7 +4342,7 @@ FLAG DESCRIPTIONS
     If not specified, shows all versions for all packages (managed and unmanaged) in the org.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package1/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package1/version/list.ts)_
 
 ## `sf package create`
 
@@ -4279,8 +4350,8 @@ Create a package.
 
 ```
 USAGE
-  $ sf package create -v <value> -n <value> -t Managed|Unlocked -r <value> [--json] [--api-version <value>] [-d
-    <value>] [-e] [--org-dependent] [-o <value>]
+  $ sf package create -v <value> -n <value> -t Managed|Unlocked -r <value> [--json] [--flags-dir <value>]
+    [--api-version <value>] [-d <value>] [-e] [--org-dependent] [-o <value>]
 
 FLAGS
   -d, --description=<value>                  Description of the package.
@@ -4298,7 +4369,8 @@ FLAGS
                                              packages only.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Create a package.
@@ -4349,7 +4421,7 @@ FLAG DESCRIPTIONS
     Org-Dependent Unlocked Packages" in the Salesforce DX Developer Guide.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/create.ts)_
 
 ## `sf package delete`
 
@@ -4357,7 +4429,7 @@ Delete a package.
 
 ```
 USAGE
-  $ sf package delete -v <value> -p <value> [--json] [--api-version <value>] [-n]
+  $ sf package delete -v <value> -p <value> [--json] [--flags-dir <value>] [--api-version <value>] [-n]
 
 FLAGS
   -n, --no-prompt               Don’t prompt before deleting the package.
@@ -4367,7 +4439,8 @@ FLAGS
       --api-version=<value>     Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Delete a package.
@@ -4390,7 +4463,7 @@ EXAMPLES
     $ sf package delete --package 0Ho... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/delete.ts)_
 
 ## `sf package install`
 
@@ -4398,16 +4471,15 @@ Install a version of a package in the target org.
 
 ```
 USAGE
-  $ sf package install -o <value> -p <value> [--json] [--api-version <value>] [-w <value>] [-k <value>] [-b <value>]
-    [-r] [-a all|package] [-s AllUsers|AdminsOnly] [-t DeprecateOnly|Mixed|Delete]
+  $ sf package install -o <value> -p <value> [--json] [--flags-dir <value>] [--api-version <value>] [-w <value>] [-k
+    <value>] [-b <value>] [-r] [-a all|package] [-s AllUsers|AdminsOnly] [-t DeprecateOnly|Mixed|Delete]
 
 FLAGS
   -a, --apex-compile=<option>     [default: all] Compile all Apex in the org and package, or only Apex in the package;
                                   unlocked packages only.
                                   <options: all|package>
-  -b, --publish-wait=<value>      [default: [object Object]] Maximum number of minutes to wait for the Subscriber
-                                  Package Version ID to become available in the target org before canceling the install
-                                  request.
+  -b, --publish-wait=<value>      Maximum number of minutes to wait for the Subscriber Package Version ID to become
+                                  available in the target org before canceling the install request.
   -k, --installation-key=<value>  Installation key for key-protected package (default: null).
   -o, --target-org=<value>        (required) Username or alias of the target org. Not required if the `target-org`
                                   configuration variable is already set.
@@ -4420,11 +4492,12 @@ FLAGS
   -t, --upgrade-type=<option>     [default: Mixed] Upgrade type for the package installation; available only for
                                   unlocked packages.
                                   <options: DeprecateOnly|Mixed|Delete>
-  -w, --wait=<value>              [default: [object Object]] Number of minutes to wait for installation status.
+  -w, --wait=<value>              Number of minutes to wait for installation status.
       --api-version=<value>       Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Install a version of a package in the target org.
@@ -4488,7 +4561,7 @@ FLAG DESCRIPTIONS
     specify DeprecateOnly or Delete only for unlocked package upgrades.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/install.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/install.ts)_
 
 ## `sf package install report`
 
@@ -4496,7 +4569,7 @@ Retrieve the status of a package installation request.
 
 ```
 USAGE
-  $ sf package install report -o <value> -i <value> [--json] [--api-version <value>]
+  $ sf package install report -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
 
 FLAGS
   -i, --request-id=<value>   (required) ID of the package install request you want to check; starts with 0Hf.
@@ -4505,7 +4578,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 ALIASES
   $ sf force package install report
@@ -4520,7 +4594,7 @@ EXAMPLES
     $ sf package install report --request-id 0Hf... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/install/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/install/report.ts)_
 
 ## `sf package installed list`
 
@@ -4528,7 +4602,7 @@ List the org’s installed packages.
 
 ```
 USAGE
-  $ sf package installed list -o <value> [--json] [--api-version <value>]
+  $ sf package installed list -o <value> [--json] [--flags-dir <value>] [--api-version <value>]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
@@ -4536,7 +4610,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 ALIASES
   $ sf force package installed list
@@ -4551,7 +4626,7 @@ EXAMPLES
     $ sf package installed list --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/installed/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/installed/list.ts)_
 
 ## `sf package list`
 
@@ -4559,7 +4634,7 @@ List all packages in the Dev Hub org.
 
 ```
 USAGE
-  $ sf package list -v <value> [--json] [--api-version <value>] [--verbose]
+  $ sf package list -v <value> [--json] [--flags-dir <value>] [--api-version <value>] [--verbose]
 
 FLAGS
   -v, --target-dev-hub=<value>  (required) Username or alias of the Dev Hub org. Not required if the `target-dev-hub`
@@ -4568,7 +4643,8 @@ FLAGS
       --verbose                 Display extended package detail.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   List all packages in the Dev Hub org.
@@ -4588,7 +4664,7 @@ EXAMPLES
     $ sf package list --target-dev-hub devhub@example.com --verbose
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/list.ts)_
 
 ## `sf package uninstall`
 
@@ -4596,17 +4672,18 @@ Uninstall a second-generation package from the target org.
 
 ```
 USAGE
-  $ sf package uninstall -o <value> -p <value> [--json] [--api-version <value>] [-w <value>]
+  $ sf package uninstall -o <value> -p <value> [--json] [--flags-dir <value>] [--api-version <value>] [-w <value>]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
                              configuration variable is already set.
   -p, --package=<value>      (required) ID (starts with 04t) or alias of the package version to uninstall.
-  -w, --wait=<value>         [default: [object Object]] Number of minutes to wait for uninstall status.
+  -w, --wait=<value>         Number of minutes to wait for uninstall status.
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Uninstall a second-generation package from the target org.
@@ -4635,7 +4712,7 @@ EXAMPLES
     $ sf package uninstall --package "Undesirable Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/uninstall.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/uninstall.ts)_
 
 ## `sf package uninstall report`
 
@@ -4643,7 +4720,7 @@ Retrieve the status of a package uninstall request.
 
 ```
 USAGE
-  $ sf package uninstall report -o <value> -i <value> [--json] [--api-version <value>]
+  $ sf package uninstall report -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
 
 FLAGS
   -i, --request-id=<value>   (required) ID of the package uninstall request you want to check; starts with 06y.
@@ -4652,7 +4729,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 ALIASES
   $ sf force package uninstall report
@@ -4667,7 +4745,7 @@ EXAMPLES
     $ sf package uninstall report --request-id 06y... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/uninstall/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/uninstall/report.ts)_
 
 ## `sf package update`
 
@@ -4675,8 +4753,8 @@ Update package details.
 
 ```
 USAGE
-  $ sf package update -v <value> -p <value> [--json] [--api-version <value>] [-n <value>] [-d <value>] [-o <value>]
-    [--enable-app-analytics]
+  $ sf package update -v <value> -p <value> [--json] [--flags-dir <value>] [--api-version <value>] [-n <value>] [-d
+    <value>] [-o <value>] [--enable-app-analytics]
 
 FLAGS
   -d, --description=<value>                  New description of the package.
@@ -4691,7 +4769,8 @@ FLAGS
                                              package and its components.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Update package details.
@@ -4721,7 +4800,7 @@ FLAG DESCRIPTIONS
     associated with your package.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/update.ts)_
 
 ## `sf package version create`
 
@@ -4729,10 +4808,10 @@ Create a package version in the Dev Hub org.
 
 ```
 USAGE
-  $ sf package version create -v <value> [--json] [--api-version <value>] [-b <value>] [-c | --skip-validation] [-f <value>]
-    [-k <value>] [-x] [-p <value>] [-d <value>] [--post-install-script <value>] [--post-install-url <value>]
-    [--releasenotes-url <value>] [--skip-ancestor-check] [-t <value>] [--uninstall-script <value>] [-e <value>] [-a
-    <value>] [-n <value>] [-w <value>] [--language <value>] [--verbose]
+  $ sf package version create -v <value> [--json] [--flags-dir <value>] [--api-version <value>] [-b <value>] [-c |
+    --skip-validation] [-f <value>] [-k <value>] [-x] [-p <value>] [-d <value>] [--post-install-script <value>]
+    [--post-install-url <value>] [--releasenotes-url <value>] [--skip-ancestor-check] [-t <value>] [--uninstall-script
+    <value>] [-e <value>] [-a <value>] [-n <value>] [-w <value>] [--language <value>] [--verbose]
 
 FLAGS
   -a, --version-name=<value>         Name of the package version to be created; overrides the sfdx-project.json value.
@@ -4754,8 +4833,7 @@ FLAGS
   -t, --tag=<value>                  Package version’s tag.
   -v, --target-dev-hub=<value>       (required) Username or alias of the Dev Hub org. Not required if the
                                      `target-dev-hub` configuration variable is already set.
-  -w, --wait=<value>                 [default: [object Object]] Number of minutes to wait for the package version to be
-                                     created.
+  -w, --wait=<value>                 Number of minutes to wait for the package version to be created.
   -x, --installation-key-bypass      Bypass the installation key requirement. (either --installation-key or
                                      --installation-key-bypass is required)
       --api-version=<value>          Override the api version used for api requests made by this command
@@ -4771,7 +4849,8 @@ FLAGS
       --verbose                      Display verbose command output.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Create a package version in the Dev Hub org.
@@ -4876,7 +4955,7 @@ FLAG DESCRIPTIONS
     periods of no output from commands.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/version/create.ts)_
 
 ## `sf package version create list`
 
@@ -4884,8 +4963,8 @@ List package version creation requests.
 
 ```
 USAGE
-  $ sf package version create list -v <value> [--json] [--api-version <value>] [-c <value>] [-s Queued|InProgress|Success|Error]
-    [--show-conversions-only] [--verbose]
+  $ sf package version create list -v <value> [--json] [--flags-dir <value>] [--api-version <value>] [-c <value>] [-s
+    Queued|InProgress|Success|Error] [--show-conversions-only] [--verbose]
 
 FLAGS
   -c, --created-last-days=<value>  Number of days since the request was created, starting at 00:00:00 of first day to
@@ -4900,7 +4979,8 @@ FLAGS
                                    name and number for each package version create request.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   List package version creation requests.
@@ -4936,7 +5016,7 @@ EXAMPLES
     $ sf package version create list --created-last-days 0 --status Success
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/version/create/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/version/create/list.ts)_
 
 ## `sf package version create report`
 
@@ -4944,7 +5024,7 @@ Retrieve details about a package version creation request.
 
 ```
 USAGE
-  $ sf package version create report -v <value> -i <value> [--json] [--api-version <value>]
+  $ sf package version create report -v <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
 
 FLAGS
   -i, --package-create-request-id=<value>  (required) ID (starts with 08c) of the package version creation request you
@@ -4954,7 +5034,8 @@ FLAGS
       --api-version=<value>                Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Retrieve details about a package version creation request.
@@ -4978,7 +5059,7 @@ EXAMPLES
     $ sf package version create report --package-create-request-id 08c... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/version/create/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/version/create/report.ts)_
 
 ## `sf package version delete`
 
@@ -4986,7 +5067,7 @@ Delete a package version.
 
 ```
 USAGE
-  $ sf package version delete -v <value> -p <value> [--json] [--api-version <value>] [-n]
+  $ sf package version delete -v <value> -p <value> [--json] [--flags-dir <value>] [--api-version <value>] [-n]
 
 FLAGS
   -n, --no-prompt               Don’t prompt before deleting the package version.
@@ -4996,7 +5077,8 @@ FLAGS
       --api-version=<value>     Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Delete a package version.
@@ -5016,7 +5098,7 @@ EXAMPLES
     $ sf package version delete --package 04t... --target-org devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/version/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/version/delete.ts)_
 
 ## `sf package version displayancestry`
 
@@ -5024,7 +5106,8 @@ Display the ancestry tree for a 2GP managed package version.
 
 ```
 USAGE
-  $ sf package version displayancestry -v <value> -p <value> [--json] [--api-version <value>] [--dot-code] [--verbose]
+  $ sf package version displayancestry -v <value> -p <value> [--json] [--flags-dir <value>] [--api-version <value>] [--dot-code]
+    [--verbose]
 
 FLAGS
   -p, --package=<value>         (required) ID or alias of the package (starts with 0Ho) or package version (starts with
@@ -5037,7 +5120,8 @@ FLAGS
                                 (major.minor.patch.build) in the ancestry tree.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 ALIASES
   $ sf force package version displayancestry
@@ -5074,7 +5158,7 @@ FLAG DESCRIPTIONS
     You can use the DOT code output in graph visualization software to create tree visualizations.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/version/displayancestry.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/version/displayancestry.ts)_
 
 ## `sf package version list`
 
@@ -5082,8 +5166,8 @@ List all package versions in the Dev Hub org.
 
 ```
 USAGE
-  $ sf package version list -v <value> [--json] [--api-version <value>] [-c <value>] [--concise] [--show-conversions-only]
-    [-m <value>] [-p <value>] [-r] [-o <value>] [--verbose]
+  $ sf package version list -v <value> [--json] [--flags-dir <value>] [--api-version <value>] [-c <value>] [--concise]
+    [--show-conversions-only] [-m <value>] [-p <value>] [-r] [-o <value>] [--verbose]
 
 FLAGS
   -c, --created-last-days=<value>   Number of days since the request was created, starting at 00:00:00 of first day to
@@ -5101,7 +5185,8 @@ FLAGS
       --verbose                     Display extended package version details.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   List all package versions in the Dev Hub org.
@@ -5142,7 +5227,7 @@ EXAMPLES
     $ sf package version list --packages exp-mgr,exp-mgr-util --released --modified-last-days 0
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/version/list.ts)_
 
 ## `sf package version promote`
 
@@ -5150,7 +5235,7 @@ Promote a package version to released.
 
 ```
 USAGE
-  $ sf package version promote -v <value> -p <value> [--json] [--api-version <value>] [-n]
+  $ sf package version promote -v <value> -p <value> [--json] [--flags-dir <value>] [--api-version <value>] [-n]
 
 FLAGS
   -n, --no-prompt               Don't prompt to confirm setting the package version as released.
@@ -5160,7 +5245,8 @@ FLAGS
       --api-version=<value>     Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Promote a package version to released.
@@ -5185,7 +5271,7 @@ EXAMPLES
     $ sf package version promote --package "Awesome Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/version/promote.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/version/promote.ts)_
 
 ## `sf package version report`
 
@@ -5193,7 +5279,7 @@ Retrieve details about a package version in the Dev Hub org.
 
 ```
 USAGE
-  $ sf package version report -v <value> -p <value> [--json] [--api-version <value>] [--verbose]
+  $ sf package version report -v <value> -p <value> [--json] [--flags-dir <value>] [--api-version <value>] [--verbose]
 
 FLAGS
   -p, --package=<value>         (required) ID (starts with 04t) or alias of the package to retrieve details for.
@@ -5203,7 +5289,8 @@ FLAGS
       --verbose                 Display extended package version details.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Retrieve details about a package version in the Dev Hub org.
@@ -5224,7 +5311,7 @@ EXAMPLES
     $ sf package version report --package "Your Package Alias" --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/version/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/version/report.ts)_
 
 ## `sf package version update`
 
@@ -5232,8 +5319,8 @@ Update a package version.
 
 ```
 USAGE
-  $ sf package version update -v <value> -p <value> [--json] [--api-version <value>] [-a <value>] [-e <value>] [-b <value>]
-    [-t <value>] [-k <value>]
+  $ sf package version update -v <value> -p <value> [--json] [--flags-dir <value>] [--api-version <value>] [-a <value>] [-e
+    <value>] [-b <value>] [-t <value>] [-k <value>]
 
 FLAGS
   -a, --version-name=<value>         New package version name.
@@ -5247,7 +5334,8 @@ FLAGS
       --api-version=<value>          Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Update a package version.
@@ -5276,7 +5364,7 @@ EXAMPLES
     $ sf package version update --package 04t... --version-description "New Package Version Description"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.1.12/src/commands/package/version/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.2.0/src/commands/package/version/update.ts)_
 
 ## `sf plugins`
 
@@ -5299,7 +5387,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.9/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.0/src/commands/plugins/index.ts)_
 
 ## `sf plugins discover`
 
@@ -5307,16 +5395,17 @@ See a list of 3rd-party sf plugins you can install.
 
 ```
 USAGE
-  $ sf plugins discover [--json]
+  $ sf plugins discover [--json] [--flags-dir <value>]
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 EXAMPLES
   $ sf plugins discover
 ```
 
-_See code: [@salesforce/plugin-marketplace](https://github.com/salesforcecli/plugin-marketplace/blob/1.0.29/src/commands/plugins/discover.ts)_
+_See code: [@salesforce/plugin-marketplace](https://github.com/salesforcecli/plugin-marketplace/blob/1.1.0/src/commands/plugins/discover.ts)_
 
 ## `sf plugins:inspect PLUGIN...`
 
@@ -5343,59 +5432,64 @@ EXAMPLES
   $ sf plugins inspect @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.9/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.0/src/commands/plugins/inspect.ts)_
 
-## `sf plugins:install PLUGIN...`
+## `sf plugins install PLUGIN`
 
-Installs a plugin into the CLI.
+Installs a plugin into sf.
 
 ```
 USAGE
-  $ sf plugins install PLUGIN...
+  $ sf plugins install PLUGIN... [--json] [-f] [-h] [-s | -v]
 
 ARGUMENTS
   PLUGIN...  Plugin to install.
 
 FLAGS
-  -f, --force    Run yarn install with force flag.
+  -f, --force    Force npm to fetch remote resources even if a local copy exists on disk.
   -h, --help     Show CLI help.
-  -s, --silent   Silences yarn output.
-  -v, --verbose  Show verbose yarn output.
+  -s, --silent   Silences npm output.
+  -v, --verbose  Show verbose npm output.
 
 GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Installs a plugin into the CLI.
-  Can be installed from npm or a git url.
+  Installs a plugin into sf.
+
+  Uses bundled npm executable to install plugins into /home/runner/.local/share/sf
 
   Installation of a user-installed plugin will override a core plugin.
 
-  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
-  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
-  the CLI without the need to patch and update the whole CLI.
-
+  Use the SF_NPM_LOG_LEVEL environment variable to set the npm loglevel.
+  Use the SF_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
   $ sf plugins add
 
 EXAMPLES
-  $ sf plugins install @salesforce/plugin-packaging
+  Install a plugin from npm registry.
 
-  $ sf plugins install https://github.com/someuser/someplugin
+    $ sf plugins install @salesforce/plugin-packaging
 
-  $ sf plugins install someuser/someplugin
+  Install a plugin from a github url.
+
+    $ sf plugins install https://github.com/someuser/someplugin
+
+  Install a plugin from a github slug.
+
+    $ sf plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.9/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.0/src/commands/plugins/install.ts)_
 
-## `sf plugins:link PLUGIN`
+## `sf plugins link PATH`
 
 Links a plugin into the CLI for development.
 
 ```
 USAGE
-  $ sf plugins link PLUGIN
+  $ sf plugins link PATH [-h] [--install] [-v]
 
 ARGUMENTS
   PATH  [default: .] path to plugin
@@ -5417,7 +5511,7 @@ EXAMPLES
   $ sf plugins link @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.9/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.0/src/commands/plugins/link.ts)_
 
 ## `sf plugins reset`
 
@@ -5432,7 +5526,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.9/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.0/src/commands/plugins/reset.ts)_
 
 ## `sf plugins trust verify`
 
@@ -5440,14 +5534,15 @@ Validate a digital signature.
 
 ```
 USAGE
-  $ sf plugins trust verify -n <value> [--json] [-r <value>]
+  $ sf plugins trust verify -n <value> [--json] [--flags-dir <value>] [-r <value>]
 
 FLAGS
   -n, --npm=<value>       (required) Specify the npm name. This can include a tag/version.
   -r, --registry=<value>  The registry name. The behavior is the same as npm.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Validate a digital signature.
@@ -5460,15 +5555,15 @@ EXAMPLES
   $ sf plugins trust verify --npm @scope/npmName
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.3.18/src/commands/plugins/trust/verify.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.4.0/src/commands/plugins/trust/verify.ts)_
 
-## `sf plugins:uninstall PLUGIN...`
+## `sf plugins uninstall [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ sf plugins uninstall PLUGIN...
+  $ sf plugins uninstall [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -5488,7 +5583,7 @@ EXAMPLES
   $ sf plugins uninstall @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.9/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.0/src/commands/plugins/uninstall.ts)_
 
 ## `sf plugins update`
 
@@ -5506,7 +5601,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/4.3.9/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.0/src/commands/plugins/update.ts)_
 
 ## `sf project convert mdapi`
 
@@ -5569,7 +5664,7 @@ FLAG DESCRIPTIONS
     If you specify this parameter, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.1/src/commands/project/convert/mdapi.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.4.0/src/commands/project/convert/mdapi.ts)_
 
 ## `sf project convert source`
 
@@ -5581,7 +5676,7 @@ USAGE
     [-p <value> | -x <value> | -m <value>]
 
 FLAGS
-  -d, --output-dir=<value>     [default: metadataPackage_1711162071503] Output directory to store the Metadata
+  -d, --output-dir=<value>     [default: metadataPackage_1711394913178] Output directory to store the Metadata
                                API–formatted files in.
   -m, --metadata=<value>...    Metadata component names to convert.
   -n, --package-name=<value>   Name of the package to associate with the metadata-formatted files.
@@ -5642,7 +5737,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.1/src/commands/project/convert/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.4.0/src/commands/project/convert/source.ts)_
 
 ## `sf project delete source`
 
@@ -5782,7 +5877,7 @@ FLAG DESCRIPTIONS
     - Separate the test names with spaces: --tests Test1 Test2 "Test With Space"
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.1/src/commands/project/delete/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.4.0/src/commands/project/delete/source.ts)_
 
 ## `sf project delete tracking`
 
@@ -5819,7 +5914,7 @@ EXAMPLES
     $ sf project delete tracking --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.1/src/commands/project/delete/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.4.0/src/commands/project/delete/tracking.ts)_
 
 ## `sf project deploy cancel`
 
@@ -5827,13 +5922,14 @@ Cancel a deploy operation.
 
 ```
 USAGE
-  $ sf project deploy cancel [--json] [--flags-dir <value>] [--async | -w <value>] [-i <value>] [-r]
+  $ sf project deploy cancel [--json] [--flags-dir <value>] [-o <value>] [--async | -w <value>] [-i <value>] [-r]
 
 FLAGS
-  -i, --job-id=<value>   Job ID of the deploy operation you want to cancel.
-  -r, --use-most-recent  Use the job ID of the most recent deploy operation.
-  -w, --wait=<minutes>   Number of minutes to wait for the command to complete and display results.
-      --async            Run the command asynchronously.
+  -i, --job-id=<value>      Job ID of the deploy operation you want to cancel.
+  -o, --target-org=<value>  Login username or alias for the target org.
+  -r, --use-most-recent     Use the job ID of the most recent deploy operation.
+  -w, --wait=<minutes>      Number of minutes to wait for the command to complete and display results.
+      --async               Run the command asynchronously.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
@@ -5872,6 +5968,10 @@ FLAG DESCRIPTIONS
 
     The job ID is valid for 10 days from when you started the deploy operation.
 
+  -o, --target-org=<value>  Login username or alias for the target org.
+
+    Overrides your default org.
+
   -r, --use-most-recent  Use the job ID of the most recent deploy operation.
 
     For performance reasons, this flag uses job IDs for deploy operations that started only in the past 3 days or less.
@@ -5890,7 +5990,7 @@ FLAG DESCRIPTIONS
     project deploy report".
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.1/src/commands/project/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.4.0/src/commands/project/deploy/cancel.ts)_
 
 ## `sf project deploy preview`
 
@@ -5976,7 +6076,7 @@ FLAG DESCRIPTIONS
     All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.1/src/commands/project/deploy/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.4.0/src/commands/project/deploy/preview.ts)_
 
 ## `sf project deploy quick`
 
@@ -6073,7 +6173,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.1/src/commands/project/deploy/quick.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.4.0/src/commands/project/deploy/quick.ts)_
 
 ## `sf project deploy report`
 
@@ -6169,7 +6269,7 @@ FLAG DESCRIPTIONS
     --coverage-formatters lcov --coverage-formatters clover
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.1/src/commands/project/deploy/report.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.4.0/src/commands/project/deploy/report.ts)_
 
 ## `sf project deploy resume`
 
@@ -6266,7 +6366,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.1/src/commands/project/deploy/resume.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.4.0/src/commands/project/deploy/resume.ts)_
 
 ## `sf project deploy start`
 
@@ -6504,7 +6604,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.1/src/commands/project/deploy/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.4.0/src/commands/project/deploy/start.ts)_
 
 ## `sf project deploy validate`
 
@@ -6696,7 +6796,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.1/src/commands/project/deploy/validate.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.4.0/src/commands/project/deploy/validate.ts)_
 
 ## `sf project generate`
 
@@ -6704,8 +6804,8 @@ Generate a Salesforce DX project.
 
 ```
 USAGE
-  $ sf project generate -n <value> [--json] [-t standard|empty|analytics] [-d <value>] [-s <value>] [-p <value>] [-x]
-    [--api-version <value>]
+  $ sf project generate -n <value> [--json] [--flags-dir <value>] [-t standard|empty|analytics] [-d <value>] [-s
+    <value>] [-p <value>] [-x] [--api-version <value>]
 
 FLAGS
   -d, --output-dir=<value>           [default: .] Directory for saving the created files.
@@ -6718,7 +6818,8 @@ FLAGS
       --api-version=<value>          Will set this version as sourceApiVersion in the sfdx-project.json file
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Generate a Salesforce DX project.
@@ -6800,7 +6901,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.25/src/commands/project/generate.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.1.0/src/commands/project/generate.ts)_
 
 ## `sf project generate manifest`
 
@@ -6876,7 +6977,7 @@ EXAMPLES
     $ sf project generate manifest --from-org test@myorg.com --include-packages unlocked
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.1/src/commands/project/generate/manifest.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.4.0/src/commands/project/generate/manifest.ts)_
 
 ## `sf project list ignored`
 
@@ -6918,7 +7019,7 @@ EXAMPLES
     $ sf project list ignored --source-dir package.xml
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.1/src/commands/project/list/ignored.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.4.0/src/commands/project/list/ignored.ts)_
 
 ## `sf project reset tracking`
 
@@ -6967,7 +7068,7 @@ EXAMPLES
     $ sf project reset tracking --revision 30
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.1/src/commands/project/reset/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.4.0/src/commands/project/reset/tracking.ts)_
 
 ## `sf project retrieve preview`
 
@@ -7024,7 +7125,7 @@ FLAG DESCRIPTIONS
     Overrides your default org.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.1/src/commands/project/retrieve/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.4.0/src/commands/project/retrieve/preview.ts)_
 
 ## `sf project retrieve start`
 
@@ -7183,7 +7284,7 @@ ENVIRONMENT VARIABLES
   SF_USE_PROGRESS_BAR  Set to false to disable the progress bar when running the metadata deploy command.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.3.1/src/commands/project/retrieve/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.4.0/src/commands/project/retrieve/start.ts)_
 
 ## `sf schema generate field`
 
@@ -7191,11 +7292,14 @@ Generate metadata source files for a new custom field on a specified object.
 
 ```
 USAGE
-  $ sf schema generate field -l <value> [-o <value>]
+  $ sf schema generate field -l <value> [--flags-dir <value>] [-o <value>]
 
 FLAGS
   -l, --label=<value>   (required) The field's label.
   -o, --object=<value>  The directory that contains the object's source files.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
 
 DESCRIPTION
   Generate metadata source files for a new custom field on a specified object.
@@ -7234,7 +7338,7 @@ FLAG DESCRIPTIONS
     If you don't specify this flag, the command prompts you to choose from your local objects.
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.1.21/src/commands/schema/generate/field.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.2.0/src/commands/schema/generate/field.ts)_
 
 ## `sf schema generate platformevent`
 
@@ -7242,10 +7346,13 @@ Generate metadata source files for a new platform event.
 
 ```
 USAGE
-  $ sf schema generate platformevent -l <value>
+  $ sf schema generate platformevent -l <value> [--flags-dir <value>]
 
 FLAGS
   -l, --label=<value>  (required) The platform event's label.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
 
 DESCRIPTION
   Generate metadata source files for a new platform event.
@@ -7263,7 +7370,7 @@ EXAMPLES
     $ sf schema generate platformevent --label "My Platform Event"
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.1.21/src/commands/schema/generate/platformevent.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.2.0/src/commands/schema/generate/platformevent.ts)_
 
 ## `sf schema generate sobject`
 
@@ -7271,11 +7378,14 @@ Generate metadata source files for a new custom object.
 
 ```
 USAGE
-  $ sf schema generate sobject -l <value> [-f]
+  $ sf schema generate sobject -l <value> [--flags-dir <value>] [-f]
 
 FLAGS
   -f, --use-default-features  Enable all optional features without prompting.
   -l, --label=<value>         (required) The custom object's label.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
 
 DESCRIPTION
   Generate metadata source files for a new custom object.
@@ -7317,7 +7427,7 @@ FLAG DESCRIPTIONS
     - Streaming API: With Bulk API and Sharing, classifies the custom object as an Enterprise Application object.
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.1.21/src/commands/schema/generate/sobject.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.2.0/src/commands/schema/generate/sobject.ts)_
 
 ## `sf schema generate tab`
 
@@ -7325,7 +7435,7 @@ Generate the metadata source files for a new custom tab on a custom object.
 
 ```
 USAGE
-  $ sf schema generate tab -o <value> -d <value> -i <value> [--json]
+  $ sf schema generate tab -o <value> -d <value> -i <value> [--json] [--flags-dir <value>]
 
 FLAGS
   -d, --directory=<value>  (required) Path to a "tabs" directory that will contain the source files for your new tab.
@@ -7334,7 +7444,8 @@ FLAGS
   -o, --object=<value>     (required) API name of the custom object you're generating a tab for.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Generate the metadata source files for a new custom tab on a custom object.
@@ -7364,7 +7475,7 @@ FLAG DESCRIPTIONS
     The API name for a custom object always ends in `__c`, such as `MyObject__c`.
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.1.21/src/commands/schema/generate/tab.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.2.0/src/commands/schema/generate/tab.ts)_
 
 ## `sf search`
 
@@ -7388,7 +7499,7 @@ Display the metadata for a standard or custom object or a Tooling API object.
 
 ```
 USAGE
-  $ sf sobject describe -o <value> -s <value> [--json] [--api-version <value>] [-t]
+  $ sf sobject describe -o <value> -s <value> [--json] [--flags-dir <value>] [--api-version <value>] [-t]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
@@ -7398,7 +7509,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Display the metadata for a standard or custom object or a Tooling API object.
@@ -7426,7 +7538,7 @@ EXAMPLES
     $ sf sobject describe --sobject ApexCodeCoverage --use-tooling-api
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.1.9/src/commands/sobject/describe.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.2.0/src/commands/sobject/describe.ts)_
 
 ## `sf sobject list`
 
@@ -7434,7 +7546,7 @@ List all Salesforce objects of a specified category.
 
 ```
 USAGE
-  $ sf sobject list -o <value> [--json] [--api-version <value>] [-s <value>]
+  $ sf sobject list -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-s <value>]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
@@ -7443,7 +7555,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   List all Salesforce objects of a specified category.
@@ -7464,7 +7577,7 @@ EXAMPLES
     $ sf sobject list --sobject custom --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.1.9/src/commands/sobject/list.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.2.0/src/commands/sobject/list.ts)_
 
 ## `sf static-resource generate`
 
@@ -7472,7 +7585,8 @@ Generate a static resource.
 
 ```
 USAGE
-  $ sf static-resource generate -n <value> [--json] [--type <value>] [-d <value>] [--api-version <value>]
+  $ sf static-resource generate -n <value> [--json] [--flags-dir <value>] [--type <value>] [-d <value>] [--api-version
+  <value>]
 
 FLAGS
   -d, --output-dir=<value>   [default: .] Directory for saving the created files.
@@ -7481,7 +7595,8 @@ FLAGS
       --type=<value>         [default: application/zip] Content type (mime type) of the generated static resource.
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Generate a static resource.
@@ -7524,7 +7639,7 @@ FLAG DESCRIPTIONS
     etc.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.25/src/commands/static-resource/generate.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.1.0/src/commands/static-resource/generate.ts)_
 
 ## `sf update [CHANNEL]`
 
@@ -7561,7 +7676,7 @@ EXAMPLES
     $ sf update --available
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.2.1/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.2.2/src/commands/update.ts)_
 
 ## `sf version`
 
@@ -7581,7 +7696,7 @@ FLAG DESCRIPTIONS
     Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
 ```
 
-_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.0.15/src/commands/version.ts)_
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.0.16/src/commands/version.ts)_
 
 ## `sf visualforce generate component`
 
@@ -7589,8 +7704,8 @@ Generate a Visualforce Component.
 
 ```
 USAGE
-  $ sf visualforce generate component -n <value> -l <value> [--json] [-t DefaultVFComponent] [-d <value>] [--api-version
-  <value>]
+  $ sf visualforce generate component -n <value> -l <value> [--json] [--flags-dir <value>] [-t DefaultVFComponent] [-d <value>]
+    [--api-version <value>]
 
 FLAGS
   -d, --output-dir=<value>   [default: .] Directory for saving the created files.
@@ -7601,7 +7716,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Generate a Visualforce Component.
@@ -7636,7 +7752,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.25/src/commands/visualforce/generate/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.1.0/src/commands/visualforce/generate/component.ts)_
 
 ## `sf visualforce generate page`
 
@@ -7644,7 +7760,8 @@ Generate a Visualforce Page.
 
 ```
 USAGE
-  $ sf visualforce generate page -n <value> -l <value> [--json] [-d <value>] [--api-version <value>]
+  $ sf visualforce generate page -n <value> -l <value> [--json] [--flags-dir <value>] [-d <value>] [--api-version
+  <value>]
 
 FLAGS
   -d, --output-dir=<value>   [default: .] Directory for saving the created files.
@@ -7653,7 +7770,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Generate a Visualforce Page.
@@ -7684,7 +7802,7 @@ FLAG DESCRIPTIONS
     The name can be up to 40 characters and must start with a letter.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.0.25/src/commands/visualforce/generate/page.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.1.0/src/commands/visualforce/generate/page.ts)_
 
 ## `sf which`
 
@@ -7706,6 +7824,6 @@ EXAMPLES
     $ sf which help
 ```
 
-_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.1.6/src/commands/which.ts)_
+_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.1.7/src/commands/which.ts)_
 
 <!-- commandsstop -->
