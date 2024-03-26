@@ -1310,6 +1310,17 @@
     chalk "^4.1.2"
     figures "^3.2.0"
 
+"@inquirer/select@^2.0.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@inquirer/select/-/select-2.2.0.tgz#f0a6c523f24a7eefd3b912a2a473a2dc82e561d9"
+  integrity sha512-Pml3DhVM1LnfqasUMIzaBtw+s5UjM5k0bzDeWrWOgqAMWe16AOg0DcAhXHf+SYbnj2CFBeP/TvkvedL4aAEWww==
+  dependencies:
+    "@inquirer/core" "^7.1.0"
+    "@inquirer/type" "^1.2.1"
+    ansi-escapes "^4.3.2"
+    chalk "^4.1.2"
+    figures "^3.2.0"
+
 "@inquirer/type@^1.1.2", "@inquirer/type@^1.1.6", "@inquirer/type@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@inquirer/type/-/type-1.2.1.tgz#fbc7ab3a2e5050d0c150642d5e8f5e88faa066b8"
@@ -1967,7 +1978,7 @@
   dependencies:
     "@oclif/core" "^3.26.0"
 
-"@oclif/plugin-warn-if-update-available@3.0.15", "@oclif/plugin-warn-if-update-available@^3.0.12":
+"@oclif/plugin-warn-if-update-available@3.0.15", "@oclif/plugin-warn-if-update-available@^3.0.14":
   version "3.0.15"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-3.0.15.tgz#533e5914c9efc46a1539b5a5e931dbf3c32ffb52"
   integrity sha512-JtPTJFjL6izMCe5dDS2ix2PyWAD2DeJ5Atzd2HHRifbPcmOxaUE62FKTnarIwfPHLMF/nN33liwo9InAdirozg==
@@ -9501,31 +9512,34 @@ obliterator@^2.0.1, obliterator@^2.0.2:
   resolved "https://registry.yarnpkg.com/obliterator/-/obliterator-2.0.4.tgz#fa650e019b2d075d745e44f1effeb13a2adbe816"
   integrity sha512-lgHwxlxV1qIg1Eap7LgIeoBWIMFibOjbrYPIPJZcI1mmGAI2m3lNYpK12Y+GBdPQ0U1hRwSord7GIaawz962qQ==
 
-oclif@^4.5.7:
-  version "4.5.7"
-  resolved "https://registry.yarnpkg.com/oclif/-/oclif-4.5.7.tgz#93189588bab3860223e457e87f77ce9d493eba05"
-  integrity sha512-We/j5WbemIw6DSbwFUpThrUGF2dv37CpyyAC83a+oAwBQELx2KddfrXxSR6Nv7hmkwf3nfuKGb89uLl35qOOLA==
+oclif@^4.6.3:
+  version "4.6.3"
+  resolved "https://registry.yarnpkg.com/oclif/-/oclif-4.6.3.tgz#08d45820c85a66b293b5a67af950269413d15052"
+  integrity sha512-T/61U0IcslqHwZTo1W/6//BoSz/rv24ckM0s7S+ROI7x/GzQyMcjq7NHGdytRISb6ripxU5GI2CsEc1Vo5vhnA==
   dependencies:
     "@aws-sdk/client-cloudfront" "^3.535.0"
     "@aws-sdk/client-s3" "^3.535.0"
+    "@inquirer/confirm" "^3.0.0"
+    "@inquirer/input" "^2.1.0"
+    "@inquirer/select" "^2.0.0"
     "@oclif/core" "^3.21.0"
     "@oclif/plugin-help" "^6.0.18"
     "@oclif/plugin-not-found" "^3.0.14"
-    "@oclif/plugin-warn-if-update-available" "^3.0.12"
+    "@oclif/plugin-warn-if-update-available" "^3.0.14"
     async-retry "^1.3.3"
+    chalk "^4"
     change-case "^4"
     debug "^4.3.3"
+    ejs "^3.1.9"
     find-yarn-workspace-root "^2.0.0"
     fs-extra "^8.1"
     github-slugger "^1.5.0"
-    got "^11"
+    got "^13"
     lodash.template "^4.5.0"
     normalize-package-data "^3.0.3"
     semver "^7.6.0"
     sort-package-json "^2.8.0"
     validate-npm-package-name "^5.0.0"
-    yeoman-environment "^3.15.1"
-    yeoman-generator "^5.8.0"
 
 on-exit-leak-free@^2.1.0:
   version "2.1.2"
@@ -11985,6 +11999,7 @@ workerpool@6.2.1:
   integrity sha512-ILEIE97kDZvF9Wb9f6h5aXK4swSlKGUcOEGiIYb2OOu/IrDU9iwj0fD//SsA6E5ibwJxpEvhullJY4Sl4GcpAw==
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+  name wrap-ansi-cjs
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
@@ -12188,7 +12203,7 @@ yarn@^1.22.21:
   resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.21.tgz#1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
   integrity sha512-ynXaJsADJ9JiZ84zU25XkPGOvVMmZ5b7tmTSpKURYwgELdjucAOydqIOrOfTxVYcNXe91xvLZwcRh68SR3liCg==
 
-yeoman-environment@^3, yeoman-environment@^3.15.1, yeoman-environment@^3.9.1:
+yeoman-environment@^3, yeoman-environment@^3.9.1:
   version "3.19.3"
   resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-3.19.3.tgz#49c2339805fdf695fac42c88334a1daa94ee8b6c"
   integrity sha512-/+ODrTUHtlDPRH9qIC0JREH8+7nsRcjDl3Bxn2Xo/rvAaVvixH5275jHwg0C85g4QsF4P6M2ojfScPPAl+pLAg==
@@ -12231,7 +12246,7 @@ yeoman-environment@^3, yeoman-environment@^3.15.1, yeoman-environment@^3.9.1:
     textextensions "^5.12.0"
     untildify "^4.0.0"
 
-yeoman-generator@^5, yeoman-generator@^5.6.1, yeoman-generator@^5.8.0:
+yeoman-generator@^5, yeoman-generator@^5.6.1:
   version "5.10.0"
   resolved "https://registry.yarnpkg.com/yeoman-generator/-/yeoman-generator-5.10.0.tgz#0dde5be9d815b01f77a7e77ee6f9047edcbeca04"
   integrity sha512-iDUKykV7L4nDNzeYSedRmSeJ5eMYFucnKDi6KN1WNASXErgPepKqsQw55TgXPHnmpcyOh2Dd/LAZkyc+f0qaAw==
