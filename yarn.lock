@@ -2290,7 +2290,7 @@
     semver "^7.5.4"
     ts-retry-promise "^0.7.1"
 
-"@salesforce/core@^6.1.0", "@salesforce/core@^6.1.4", "@salesforce/core@^6.4.1", "@salesforce/core@^6.4.4", "@salesforce/core@^6.5.1", "@salesforce/core@^6.5.2", "@salesforce/core@^6.5.3", "@salesforce/core@^6.5.5", "@salesforce/core@^6.6.0", "@salesforce/core@^6.7.1", "@salesforce/core@^6.7.3":
+"@salesforce/core@^6.1.0", "@salesforce/core@^6.1.4", "@salesforce/core@^6.4.1", "@salesforce/core@^6.4.4", "@salesforce/core@^6.5.1", "@salesforce/core@^6.5.3", "@salesforce/core@^6.5.5", "@salesforce/core@^6.6.0", "@salesforce/core@^6.7.1", "@salesforce/core@^6.7.3":
   version "6.7.3"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-6.7.3.tgz#5d8f30c40ac3cebb898c8e845fe9a067bc729268"
   integrity sha512-uU+PuZZGXxByhvnXLH1V3eY5P1caw401dIZ/QvhzYxoP/alPLk7dpChnZNJYH5Rw3dc/AhSPw+eg0cvUyjhP1Q==
@@ -2351,26 +2351,26 @@
     typescript "^4.9.5"
     wireit "^0.14.1"
 
-"@salesforce/kit@^3.0.15":
-  version "3.0.15"
-  resolved "https://registry.yarnpkg.com/@salesforce/kit/-/kit-3.0.15.tgz#713df3f5767f874c70a2e731c7cb5ba677989559"
-  integrity sha512-XkA8jsuLvVnyP460dAbU3pBFP2IkmmmsVxMQVifcKKbNWaIBbZBzAfj+vdaQfnvZyflLhsrFT3q2xkb0vHouPg==
+"@salesforce/kit@^3.0.15", "@salesforce/kit@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/kit/-/kit-3.1.0.tgz#aa42533084c676e865f0f9c1907a16fb6f74dee7"
+  integrity sha512-X2d9O/U2wdQBXIrtVqQdMwo872Cv+qkYFzF0W+AQKG/LEe9cngnOzUVDYNkGD9tq3jcl+oenHXYuVDpkMhxTwA==
   dependencies:
     "@salesforce/ts-types" "^2.0.9"
     tslib "^2.6.2"
 
-"@salesforce/packaging@^3.2.18":
-  version "3.2.21"
-  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-3.2.21.tgz#a697f1279ff5c6ef5bd7cdf5558d0cc62cc1ba88"
-  integrity sha512-nlx/O2xShZ7uF94yZ7MNAWoEY+AaYRuIIUfT0PcUdpLIYu5NmPxfyFlGvQGqdtp3oDivpoHgZeY8Ok+JkYR7qQ==
+"@salesforce/packaging@^3.2.34":
+  version "3.2.34"
+  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-3.2.34.tgz#aaca9338569f5d69f385f488b3b1df948fc79080"
+  integrity sha512-56+vumYMV3es/4GeDsRSM97dZBj1htKma3LHpAodguueYjQVqqIFJ4IH7Nx3y4JCAaRff9SBK5+mHs1RqUJnJg==
   dependencies:
     "@oclif/core" "^3"
-    "@salesforce/core" "^6.5.5"
+    "@salesforce/core" "^6.7.3"
     "@salesforce/kit" "^3.0.15"
     "@salesforce/schemas" "^1.6.1"
-    "@salesforce/source-deploy-retrieve" "^10.4.0"
+    "@salesforce/source-deploy-retrieve" "^10.6.1"
     "@salesforce/ts-types" "^2.0.9"
-    fast-xml-parser "^4.3.4"
+    fast-xml-parser "^4.3.6"
     globby "^11"
     graphology "^0.25.4"
     graphology-traversal "^0.3.1"
@@ -2507,16 +2507,16 @@
     is-wsl "^3.1.0"
     open "^10.0.3"
 
-"@salesforce/plugin-packaging@2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.2.0.tgz#95c737a33b7962be8398802713eba41aa3fb0178"
-  integrity sha512-UmI7ZvQbSTZvDUSaf2UX1UiQxR7Cw8pfhNTQPw4gejvjROQSOyPXqmlqmT5ZJNRHlyXU4l4zsRuE87WPJXAAXA==
+"@salesforce/plugin-packaging@2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.3.0.tgz#c067c4682b5f3d6e4992978b7f16c950bf2796ab"
+  integrity sha512-2kFOk9CQWfwCnc0y6VBF4oIOar7D0ldYTOE26fm2vfzPtJxhUzN7l5/fBkaB4kBfXteaTecnf53IEj7cmJUezg==
   dependencies:
-    "@oclif/core" "^3.23.0"
-    "@salesforce/core" "^6.5.2"
-    "@salesforce/kit" "^3.0.15"
-    "@salesforce/packaging" "^3.2.18"
-    "@salesforce/sf-plugins-core" "^8.0.1"
+    "@oclif/core" "^3.26.0"
+    "@salesforce/core" "^6.7.3"
+    "@salesforce/kit" "^3.1.0"
+    "@salesforce/packaging" "^3.2.34"
+    "@salesforce/sf-plugins-core" "^8.0.2"
     chalk "^5.3.0"
 
 "@salesforce/plugin-release-management@^4.7.7":
@@ -2621,10 +2621,10 @@
     yeoman-environment "^3"
     yeoman-generator "^5"
 
-"@salesforce/plugin-trust@3.4.0", "@salesforce/plugin-trust@^3.3.10":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-3.4.0.tgz#7bbd54e16b7ae8b2dcfc9c8b11fe27ed05e8973f"
-  integrity sha512-zfhG0gaa2YM32m1C+Ru9eJKPE+GsC23+k/CpAsjFabNzmzmfjI4WEC0YV6uRQV/eyDKtCovMHZ6iV/sY7HdBoQ==
+"@salesforce/plugin-trust@3.5.0", "@salesforce/plugin-trust@^3.3.10":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-3.5.0.tgz#eb9fc6b1d5d3a0432e372078bbf36e4dd60bea2c"
+  integrity sha512-cHvJd7Y+2QOtmcY2aH71+1Gq8wrJ4fUjheqetvbsxCiMQmtN6SdAMyBv4geDtXkO/kyyZ0BHDSf1QlQiQeybpA==
   dependencies:
     "@oclif/core" "^3.26.0"
     "@salesforce/core" "^6.5.5"
@@ -2657,7 +2657,7 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.6.1.tgz#7d1c071e1e509ca9d2d8a6e48ac7447dd67a534d"
   integrity sha512-eVy947ZMxCJReKJdgfddUIsBIbPTa/i8RwQGwxq4/ss38H5sLOAeSTaun9V7HpJ1hkpDznWKfgzYvjsst9K6ig==
 
-"@salesforce/sf-plugins-core@8.0.2", "@salesforce/sf-plugins-core@^8.0.0", "@salesforce/sf-plugins-core@^8.0.1":
+"@salesforce/sf-plugins-core@8.0.2", "@salesforce/sf-plugins-core@^8.0.0", "@salesforce/sf-plugins-core@^8.0.1", "@salesforce/sf-plugins-core@^8.0.2":
   version "8.0.2"
   resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-8.0.2.tgz#151437df675ff498110cffe00033cd8dcddce4a2"
   integrity sha512-/93DgM7eCqXYP91bJz/gQ9KsumNoqRPp5DZoltrhM3JPo1a5J6LwfITw56aEvERY+LeTVubH3wwpQuzt0+8nLg==
@@ -2696,13 +2696,13 @@
     "@salesforce/ts-types" "^2.0.9"
     chalk "^5.3.0"
 
-"@salesforce/source-deploy-retrieve@10.5.6", "@salesforce/source-deploy-retrieve@^10.4.0", "@salesforce/source-deploy-retrieve@^10.5.3", "@salesforce/source-deploy-retrieve@^10.5.5":
-  version "10.5.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-10.5.6.tgz#e6b7df348e5841b467adef7da88fde89ba0ed408"
-  integrity sha512-GdILZFHjd9ouxjkapOnik8y2BZhSr8hw+QtWOPy1pzQgYYduYs77QAB6dTkp6GjCnXBHfsUK9DVN4u4ItCcTSQ==
+"@salesforce/source-deploy-retrieve@10.6.1", "@salesforce/source-deploy-retrieve@^10.5.5", "@salesforce/source-deploy-retrieve@^10.6.1":
+  version "10.6.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-10.6.1.tgz#d153168c5870ce051a6e397df00083da1e6a8106"
+  integrity sha512-AdX0rlMNw88kD4jTqdW7uxl6wTd+WTESHEH5Vj8e9Fj2cC8pZj5BwDMYbU/cVFFbQoEBjqqnxwJC6ziPw83Bsw==
   dependencies:
     "@salesforce/core" "^6.7.3"
-    "@salesforce/kit" "^3.0.15"
+    "@salesforce/kit" "^3.1.0"
     "@salesforce/ts-types" "^2.0.9"
     fast-levenshtein "^3.0.0"
     fast-xml-parser "^4.3.5"
@@ -2715,15 +2715,15 @@
     proxy-agent "^6.4.0"
     ts-retry-promise "^0.7.1"
 
-"@salesforce/source-tracking@5.1.18", "@salesforce/source-tracking@^5.1.11", "@salesforce/source-tracking@^5.1.18":
-  version "5.1.18"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-tracking/-/source-tracking-5.1.18.tgz#aea622c04ac199b2288b3a94c6b8e8f207c438f7"
-  integrity sha512-V8itdxwfP72Kq26psNdxi3JI3tQRdxzViKUQM5w33B6vahWJS3P3nBOzIFJGu+J9/SMDUHRpPYTwUL84yXdoyA==
+"@salesforce/source-tracking@5.2.0", "@salesforce/source-tracking@^5.1.11", "@salesforce/source-tracking@^5.1.18":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-tracking/-/source-tracking-5.2.0.tgz#720defd3db6c56be9402eb995f4735f7effcbbcc"
+  integrity sha512-X7I65CP9CRfWwn8naSoOdlKRUDw49UtVZZhZe2VfAYHO9PzLmw7TJo/5Y0ByzSa+2+ssnPIgjY5QConARp8wcQ==
   dependencies:
-    "@oclif/core" "^3.25.2"
-    "@salesforce/core" "^6.7.1"
-    "@salesforce/kit" "^3.0.15"
-    "@salesforce/source-deploy-retrieve" "^10.5.3"
+    "@oclif/core" "^3.26.0"
+    "@salesforce/core" "^6.7.3"
+    "@salesforce/kit" "^3.1.0"
+    "@salesforce/source-deploy-retrieve" "^10.6.1"
     "@salesforce/ts-types" "^2.0.9"
     fast-xml-parser "^4.2.5"
     graceful-fs "^4.2.11"
@@ -6109,7 +6109,7 @@ fast-xml-parser@4.2.5:
   dependencies:
     strnum "^1.0.5"
 
-fast-xml-parser@^4.2.5, fast-xml-parser@^4.3.4, fast-xml-parser@^4.3.5, fast-xml-parser@^4.3.6:
+fast-xml-parser@^4.2.5, fast-xml-parser@^4.3.5, fast-xml-parser@^4.3.6:
   version "4.3.6"
   resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-4.3.6.tgz#190f9d99097f0c8f2d3a0e681a10404afca052ff"
   integrity sha512-M2SovcRxD4+vC493Uc2GZVcZaj66CCJhWurC4viynVSTvrpErCShNcDz1lAho6n9REQKvL/ll4A4/fw6Y9z8nw==
