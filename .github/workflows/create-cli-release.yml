@@ -26,6 +26,13 @@ jobs:
           script: |
             core.setFailed('Release channel was not found in release body. Exiting')
 
+      - name: Prevent legacy channel
+        if: ${{ steps.release-channel.outputs.group1 == 'legacy' }}
+        uses: actions/github-script@v3
+        with:
+          script: |
+            core.setFailed('Do not publish to the "legacy" channel! It is still bundled with "sfdx@v7", which is permanetly archived.')
+
       - name: Get release channel for s3
         id: s3-release-channel
         run: |

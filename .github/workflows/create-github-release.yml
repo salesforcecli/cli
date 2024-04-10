@@ -35,6 +35,13 @@ jobs:
           script: |
             core.setFailed('Release channel was not found in PR title. Exiting')
 
+      - name: Prevent legacy channel
+        if: ${{ steps.release-channel.outputs.group1 == 'legacy' }}
+        uses: actions/github-script@v3
+        with:
+          script: |
+            core.setFailed('Do not publish to the "legacy" channel! It is still bundled with "sfdx@v7", which is permanetly archived.')
+
       # Checkout needed to validate prerelease version in package.json
       - name: Check out the repo
         if: ${{ !contains(fromJSON('["latest", "latest-rc", "nightly"]'), steps.release-channel.outputs.group1) }}
