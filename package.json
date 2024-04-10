@@ -16,10 +16,10 @@
   "files": [
     "/bin",
     "/dist/**/*.js",
-    "/oclif.manifest.json",
     "/npm-shrinkwrap.json",
-    "/scripts/preinstall.js",
+    "/oclif.manifest.json",
     "/scripts/post-install-release-notes.js",
+    "/scripts/preinstall.js",
     "/theme.json"
   ],
   "keywords": [
@@ -149,7 +149,8 @@
     "@oclif/plugin-version": "2.0.16",
     "@oclif/plugin-warn-if-update-available": "3.0.15",
     "@oclif/plugin-which": "3.1.7",
-    "@salesforce/core": "^6.1.4",
+    "@salesforce/core": "^7.2.0",
+    "@salesforce/kit": "^3.1.0",
     "@salesforce/plugin-apex": "3.1.4",
     "@salesforce/plugin-auth": "3.5.5",
     "@salesforce/plugin-data": "3.2.5",
@@ -167,7 +168,7 @@
     "@salesforce/plugin-templates": "56.1.1",
     "@salesforce/plugin-trust": "3.5.4",
     "@salesforce/plugin-user": "3.4.3",
-    "@salesforce/sf-plugins-core": "8.0.4",
+    "@salesforce/sf-plugins-core": "^9.0.0",
     "chalk": "^5.3.0",
     "debug": "^4.3.4",
     "strip-ansi": "^7.1.0"
@@ -206,8 +207,8 @@
   "resolutions": {
     "@salesforce/schemas": "1.7.0",
     "@salesforce/templates": "60.1.1",
-    "@salesforce/source-deploy-retrieve": "10.9.1",
-    "@salesforce/source-tracking": "5.2.4"
+    "@salesforce/source-deploy-retrieve": "11.0.0",
+    "@salesforce/source-tracking": "6.0.0"
   },
   "repository": "salesforcecli/cli",
   "scripts": {
@@ -228,7 +229,7 @@
     "pack:verify": "sf-release cli:tarballs:verify --cli sf --windows-username-buffer 34",
     "pack:win": "oclif pack:win --defender-exclusion unchecked",
     "postinstall": "node ./scripts/post-install-release-notes.js",
-    "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
+    "postpack": "sf-clean --ignore-signing-artifacts",
     "preinstall": "node ./scripts/preinstall.js",
     "prepack": "sf-prepack",
     "prepare": "sf-install && yarn compile && yarn lint",
@@ -238,6 +239,7 @@
     "promote-dist-tags": "./scripts/promote-dist-tags",
     "promote:verify": "sf-release cli:versions:inspect --channels stable --locations archive --cli sf",
     "promote:verify-rc": "sf-release cli:versions:inspect --channels stable-rc --locations archive --cli sf",
+    "readme": "oclif readme --no-aliases --repository-prefix '<%- repo %>/blob/<%- version %>/<%- commandPath %>'",
     "test": "wireit",
     "test:deprecation-policy": "sf-release cli:artifacts:compare",
     "test:only": "wireit",
@@ -246,21 +248,20 @@
     "upload:macos": "oclif upload:macos",
     "upload:tarballs": "oclif upload:tarballs --xz",
     "upload:win": "oclif upload:win",
-    "readme": "oclif readme --no-aliases --repository-prefix '<%- repo %>/blob/<%- version %>/<%- commandPath %>'",
     "version": "oclif readme"
   },
   "types": "dist/index.d.ts",
   "devDependencies": {
     "@oclif/plugin-command-snapshot": "^4.0.2",
-    "@salesforce/dev-scripts": "^8.1.0",
+    "@salesforce/dev-scripts": "^9.0.0",
     "@salesforce/plugin-release-management": "^4.7.7",
     "@salesforce/ts-sinon": "^1.4.19",
     "@salesforce/ts-types": "^2.0.9",
     "@types/debug": "^4.1.12",
     "aws-sdk": "^2.1589.0",
     "oclif": "^4.7.5",
-    "ts-node": "^10.9.1",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
   },
   "wireit": {
     "build": {
@@ -335,7 +336,7 @@
       "output": []
     },
     "link-check": {
-      "command": "node -e \"process.exit(process.env.CI ? 0 : 1)\" || linkinator \"**/*.md\" --skip \"CHANGELOG.md|node_modules|test/|confluence.internal.salesforce.com|%s\" --markdown --retry --directory-listing --verbosity error",
+      "command": "node -e \"process.exit(process.env.CI ? 0 : 1)\" || linkinator \"**/*.md\" --skip \"CHANGELOG.md|node_modules|test/|confluence.internal.salesforce.com|my.salesforce.com|%s\" --markdown --retry --directory-listing --verbosity error",
       "files": [
         "./*.md",
         "./!(CHANGELOG).md",

@@ -11,10 +11,10 @@
 // instrumentation.
 // -------------------------------------------------------------------------------
 
-export interface ProcessLike {
+export type ProcessLike = {
   argv: string[];
   env: { [key: string]: string | undefined };
-}
+};
 
 export function preprocessCliFlags(process: ProcessLike): void {
   process.argv.map((arg) => {

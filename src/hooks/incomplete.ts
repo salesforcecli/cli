@@ -27,7 +27,7 @@ function buildChoices(
 async function determineCommand(config: Interfaces.Config, matches: Command.Loadable[]): Promise<string> {
   const [{ setTimeout }, { SfError }, select] = await Promise.all([
     import('node:timers/promises'),
-    import('@salesforce/core'),
+    import('@salesforce/core/sfError'),
     import('@inquirer/select'),
   ]);
 
