@@ -14,7 +14,7 @@ import Debug from 'debug';
 import { default as nodeEnv, Env } from './util/env.js';
 
 const debug = Debug('sf');
-
+import { logger } from './sf-logger.js';
 const envVars = [
   ...new Set([
     ...Object.keys(process.env).filter((e) => e.startsWith('SF_') || e.startsWith('SFDX_')),
@@ -132,6 +132,7 @@ export function create({ version, bin, channel, run, env }: CreateOptions): { ru
         root,
         version,
         channel,
+        logger,
       });
       await config.load();
       configureUpdateSites(config, environment);
