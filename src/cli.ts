@@ -103,7 +103,7 @@ function debugCliInfo(version: string, channel: string, env: Env, config: Interf
 
   debugSection(
     'ENV',
-    [...envVars].map((key): [string, string] => [key, env.getString(key, '<not set>')] as [string, string])
+    [...envVars].map((key): [string, string] => [key, env.getString(key, '<not set>')])
   );
 
   debugSection(

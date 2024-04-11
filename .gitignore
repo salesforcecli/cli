@@ -26,6 +26,10 @@ coverage
 docs
 oclif.manifest.json
 
+
+npm-shrinkwrap.json
+oclif.lock
+
 # -- CLEAN ALL
 *.tsbuildinfo
 .eslintcache
@@ -35,7 +39,7 @@ node_modules
 # --
 # put files here you don't want cleaned with sf-clean
 
-npm-shrinkwrap.json
+
 
 # os specific files
 .DS_Store

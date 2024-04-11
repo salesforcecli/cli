@@ -16,10 +16,12 @@
   "files": [
     "/bin",
     "/dist/**/*.js",
-    "/oclif.manifest.json",
+    "/messages",
     "/npm-shrinkwrap.json",
-    "/scripts/preinstall.js",
+    "/oclif.lock",
+    "/oclif.manifest.json",
     "/scripts/post-install-release-notes.js",
+    "/scripts/preinstall.js",
     "/theme.json"
   ],
   "keywords": [
@@ -149,7 +151,8 @@
     "@oclif/plugin-version": "2.0.16",
     "@oclif/plugin-warn-if-update-available": "3.0.15",
     "@oclif/plugin-which": "3.1.7",
-    "@salesforce/core": "^6.1.4",
+    "@salesforce/core": "^7.2.0",
+    "@salesforce/kit": "^3.1.0",
     "@salesforce/plugin-apex": "3.1.4",
     "@salesforce/plugin-auth": "3.6.0",
     "@salesforce/plugin-data": "3.3.0",
@@ -162,12 +165,12 @@
     "@salesforce/plugin-schema": "3.3.0",
     "@salesforce/plugin-settings": "2.1.2",
     "@salesforce/plugin-sobject": "1.3.0",
-    "@salesforce/plugin-source": "3.2.3",
+    "@salesforce/plugin-source": "3.3.0",
     "@salesforce/plugin-telemetry": "3.2.0",
     "@salesforce/plugin-templates": "56.1.1",
     "@salesforce/plugin-trust": "3.6.1",
     "@salesforce/plugin-user": "3.5.0",
-    "@salesforce/sf-plugins-core": "9.0.0",
+    "@salesforce/sf-plugins-core": "9.0.1",
     "chalk": "^5.3.0",
     "debug": "^4.3.4",
     "strip-ansi": "^7.1.0"
@@ -238,6 +241,7 @@
     "promote-dist-tags": "./scripts/promote-dist-tags",
     "promote:verify": "sf-release cli:versions:inspect --channels stable --locations archive --cli sf",
     "promote:verify-rc": "sf-release cli:versions:inspect --channels stable-rc --locations archive --cli sf",
+    "readme": "oclif readme --no-aliases --repository-prefix '<%- repo %>/blob/<%- version %>/<%- commandPath %>'",
     "test": "wireit",
     "test:deprecation-policy": "sf-release cli:artifacts:compare",
     "test:only": "wireit",
@@ -246,21 +250,20 @@
     "upload:macos": "oclif upload:macos",
     "upload:tarballs": "oclif upload:tarballs --xz",
     "upload:win": "oclif upload:win",
-    "readme": "oclif readme --no-aliases --repository-prefix '<%- repo %>/blob/<%- version %>/<%- commandPath %>'",
     "version": "oclif readme"
   },
   "types": "dist/index.d.ts",
   "devDependencies": {
     "@oclif/plugin-command-snapshot": "^4.0.2",
-    "@salesforce/dev-scripts": "^8.1.0",
-    "@salesforce/plugin-release-management": "^4.7.7",
+    "@salesforce/dev-scripts": "^9.0.0",
+    "@salesforce/plugin-release-management": "^5.1.0",
     "@salesforce/ts-sinon": "^1.4.19",
     "@salesforce/ts-types": "^2.0.9",
     "@types/debug": "^4.1.12",
     "aws-sdk": "^2.1589.0",
     "oclif": "^4.7.5",
-    "ts-node": "^10.9.1",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
   },
   "wireit": {
     "build": {
@@ -335,7 +338,7 @@
       "output": []
     },
     "link-check": {
-      "command": "node -e \"process.exit(process.env.CI ? 0 : 1)\" || linkinator \"**/*.md\" --skip \"CHANGELOG.md|node_modules|test/|confluence.internal.salesforce.com|%s\" --markdown --retry --directory-listing --verbosity error",
+      "command": "node -e \"process.exit(process.env.CI ? 0 : 1)\" || linkinator \"**/*.md\" --skip \"CHANGELOG.md|node_modules|test/|confluence.internal.salesforce.com|my.salesforce.com|%s\" --markdown --retry --directory-listing --verbosity error",
       "files": [
         "./*.md",
         "./!(CHANGELOG).md",
