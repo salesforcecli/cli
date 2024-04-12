@@ -1539,7 +1539,7 @@
     treeverse "^3.0.0"
     walk-up-path "^3.0.1"
 
-"@npmcli/config@^8.0.1", "@npmcli/config@^8.0.2":
+"@npmcli/config@^8.0.2":
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/@npmcli/config/-/config-8.2.0.tgz#18774fc7239cfcc124ca9fdc48b1f65bb7bee191"
   integrity sha512-YoEYZFg0hRSRP/Chmq+J4FvULFvji6SORUYWQc10FiJ+ReAnViXcDCENg6kM6dID04bAoKNUygrby798+gYBbQ==
@@ -2403,10 +2403,10 @@
     csv-parse "^4.16.3"
     csv-stringify "^6.4.6"
 
-"@salesforce/plugin-deploy-retrieve@3.6.1":
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.6.1.tgz#9d470c49e2c52c27477771791e130cac1b450529"
-  integrity sha512-Fp2yTVCNx/QC93Pm4To43eC+2DKdNB5PSgGzhrmeCv7+F4hZR6ks4he277c8geaH1BNKGbMrXxaHeXpggTfo6g==
+"@salesforce/plugin-deploy-retrieve@3.6.2":
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.6.2.tgz#661758d7ec8f2134cbdcc4b68282e173e3491612"
+  integrity sha512-N1avieqQZf33zE8TojlHW2miclkSRKNsq4ouvMQ5/i639P3UtYHoDdtI7iGJG4BBc5Xhx9xiGfkx5gsoFrI8nA==
   dependencies:
     "@oclif/core" "^3.26.2"
     "@salesforce/apex-node" "^5.0.0-beta.0"
@@ -2565,10 +2565,10 @@
     got "^13.0.0"
     proxy-agent "^6.3.1"
 
-"@salesforce/plugin-telemetry@3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.2.0.tgz#c0a8de04b7838994e94dff75572250009d4af075"
-  integrity sha512-N+Rc+LyO3n+4BJ37cgm77DzoszI1Q/l/dQqBM6tNWmovlvxFL5RsUJm7/etEagDuZURBAJrv72jiel4P0XKfow==
+"@salesforce/plugin-telemetry@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.3.0.tgz#29aaa4eba957b475265bbdb8eb73f44d15c1d10f"
+  integrity sha512-bxsPltJCwnKp9TPCd6XnFW2Uslo/mOgiYTYjwPN8mBNLhbubsN8PgJ0kh5qwH9MdPUd09+u8HafP9+T7E7kkDw==
   dependencies:
     "@oclif/core" "^3.26.2"
     "@salesforce/core" "^7.0.1"
@@ -2590,17 +2590,17 @@
     yeoman-environment "^3"
     yeoman-generator "^5"
 
-"@salesforce/plugin-trust@3.6.1", "@salesforce/plugin-trust@^3.6.1":
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-3.6.1.tgz#531df9b552fbf512a544124b135ec410ab682d87"
-  integrity sha512-2ixoEQxWfPrcE3n4/Dhf9kkzq+XtLjVp+F1ADMFqaUsNYH21gIHhbSMoAgDHHhgw/NNtZj9uAR9C/Z6N3UtjGQ==
+"@salesforce/plugin-trust@3.6.3", "@salesforce/plugin-trust@^3.6.1":
+  version "3.6.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-3.6.3.tgz#0ce70163b876b59424e5fd5ba748352cdd85897e"
+  integrity sha512-O/RWxCCjuQOYPCNFsYz/jb5h1spjMWccv4C1jvgvsvphZBalplBnFT0vls4GyMc2BAQKPSI4IlcdMkIZTGxZuw==
   dependencies:
     "@oclif/core" "^3.26.2"
     "@salesforce/core" "^7.0.1"
     "@salesforce/kit" "^3.1.0"
     "@salesforce/sf-plugins-core" "^9.0.0"
     got "^13.0.0"
-    npm "10.2.3"
+    npm "10.5.0"
     npm-run-path "^4.0.1"
     proxy-agent "^6.4.0"
     semver "^7.6.0"
@@ -2773,7 +2773,7 @@
     "@sigstore/protobuf-specs" "^0.2.0"
     tuf-js "^1.1.7"
 
-"@sigstore/tuf@^2.1.0", "@sigstore/tuf@^2.3.1":
+"@sigstore/tuf@^2.3.1":
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/@sigstore/tuf/-/tuf-2.3.2.tgz#e9c5bffc2a5f3434f87195902d7f9cd7f48c70fa"
   integrity sha512-mwbY1VrEGU4CO55t+Kl6I7WZzIl+ysSzEYdA1Nv/FTrl2bkeaPXo5PnWZAVfcY2zSdhOpsUTJW67/M2zHXGn5w==
@@ -4595,11 +4595,6 @@ chownr@^2.0.0:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-2.0.0.tgz#15bfbe53d2eab4cf70f18a8cd68ebe5b3cb1dece"
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
 
-ci-info@^3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-3.9.0.tgz#4279a62028a7b1f262f3473fc9605f5e218c59b4"
-  integrity sha512-NIxF55hv4nSqQswkAeiOi1r83xy8JldOFDTWiug55KBu9Jnblncd2U6ViHmYgHf01TPZS77NJBhBMKdWj9HQMQ==
-
 ci-info@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-4.0.0.tgz#65466f8b280fc019b9f50a5388115d17a63a44f2"
@@ -4611,13 +4606,6 @@ cidr-regex@4.0.3:
   integrity sha512-HOwDIy/rhKeMf6uOzxtv7FAbrz8zPjmVKfSpM+U7/bNBXC5rtOyr758jxcptiSx6ZZn5LOhPJT5WWxPAGDV8dw==
   dependencies:
     ip-regex "^5.0.0"
-
-cidr-regex@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/cidr-regex/-/cidr-regex-3.1.1.tgz#ba1972c57c66f61875f18fd7dd487469770b571d"
-  integrity sha512-RBqYd32aDwbCMFJRL6wHOlDNYJsPNTt8vC82ErHF5vKt8QQzxm1FrkW8s/R5pVrXMf17sba09Uoy91PKiddAsw==
-  dependencies:
-    ip-regex "^4.1.0"
 
 cjs-module-lexer@^1.2.2:
   version "1.2.3"
@@ -7106,11 +7094,6 @@ ip-address@^9.0.5:
     jsbn "1.1.0"
     sprintf-js "^1.1.3"
 
-ip-regex@^4.1.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/ip-regex/-/ip-regex-4.3.0.tgz#687275ab0f57fa76978ff8f4dddc8a23d5990db5"
-  integrity sha512-B9ZWJxHHOHUhUjCPrMpLD4xEq35bUTClHM1S6CBU5ixQnkZmwipwgc96vAd7AAGM9TGHvJR+Uss+/Ak6UphK+Q==
-
 ip-regex@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/ip-regex/-/ip-regex-5.0.0.tgz#cd313b2ae9c80c07bd3851e12bf4fa4dc5480632"
@@ -7176,13 +7159,6 @@ is-callable@^1.1.3, is-callable@^1.1.4, is-callable@^1.2.7:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/is-callable/-/is-callable-1.2.7.tgz#3bc2a85ea742d9e36205dcacdd72ca1fdc51b055"
   integrity sha512-1BC0BVFhS/p0qtw6enp8e+8OD0UrK0oFLztSjNzhcKA3WDuJxxAPXzPuPtKkjEY9UUoEWlX/8fgKeu2S8i9JTA==
-
-is-cidr@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/is-cidr/-/is-cidr-4.0.2.tgz#94c7585e4c6c77ceabf920f8cde51b8c0fda8814"
-  integrity sha512-z4a1ENUajDbEl/Q6/pVBpTR1nBjjEE1X7qb7bmWYanNnPoKAvUCPFKeXV6Fe4mgTkWKBqiHIcwsI3SndiO5FeA==
-  dependencies:
-    cidr-regex "^3.1.1"
 
 is-cidr@^5.0.3:
   version "5.0.3"
@@ -7796,7 +7772,7 @@ libnpmdiff@^6.0.3:
     pacote "^17.0.4"
     tar "^6.2.0"
 
-libnpmexec@^7.0.3, libnpmexec@^7.0.4:
+libnpmexec@^7.0.4:
   version "7.0.8"
   resolved "https://registry.yarnpkg.com/libnpmexec/-/libnpmexec-7.0.8.tgz#2bc6ab0468dde95803745ced1fea48bd43b112fc"
   integrity sha512-xDzWoYpV1Ok0TIdrY4wuWGxriEv/O3/d8QG924yErBE0sMkkzKsin2dAmlEBsSlR7YRilObs8q+5uNtxKNQHAQ==
@@ -7846,7 +7822,7 @@ libnpmpack@^6.0.3:
     npm-package-arg "^11.0.1"
     pacote "^17.0.4"
 
-libnpmpublish@^9.0.1, libnpmpublish@^9.0.2:
+libnpmpublish@^9.0.2:
   version "9.0.4"
   resolved "https://registry.yarnpkg.com/libnpmpublish/-/libnpmpublish-9.0.4.tgz#0222c14578088ca9a758585c36d8133b828c87ad"
   integrity sha512-330o6pVsCCg77jQ/+kidyG/RiohXYQKpqmzOC4BjUDWcimb+mXptRBh1Kvy27/Zb/CStZLVrfgGc6tXf5+PE3Q==
@@ -9106,83 +9082,6 @@ npm-user-validate@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/npm-user-validate/-/npm-user-validate-2.0.0.tgz#7b69bbbff6f7992a1d9a8968d52fd6b6db5431b6"
   integrity sha512-sSWeqAYJ2dUPStJB+AEj0DyLRltr/f6YNcvCA7phkB8/RMLMnVsQ41GMwHo/ERZLYNDsyB2wPm7pZo1mqPOl7Q==
-
-npm@10.2.3:
-  version "10.2.3"
-  resolved "https://registry.yarnpkg.com/npm/-/npm-10.2.3.tgz#f30ed73c400685ab52bf3f21cd3fcab1c5b007ce"
-  integrity sha512-GbUui/rHTl0mW8HhJSn4A0Xg89yCR3I9otgJT1i0z1QBPOVlgbh6rlcUTpHT8Gut9O1SJjWRUU0nEcAymhG2tQ==
-  dependencies:
-    "@isaacs/string-locale-compare" "^1.1.0"
-    "@npmcli/arborist" "^7.2.1"
-    "@npmcli/config" "^8.0.1"
-    "@npmcli/fs" "^3.1.0"
-    "@npmcli/map-workspaces" "^3.0.4"
-    "@npmcli/package-json" "^5.0.0"
-    "@npmcli/promise-spawn" "^7.0.0"
-    "@npmcli/run-script" "^7.0.2"
-    "@sigstore/tuf" "^2.1.0"
-    abbrev "^2.0.0"
-    archy "~1.0.0"
-    cacache "^18.0.0"
-    chalk "^5.3.0"
-    ci-info "^3.9.0"
-    cli-columns "^4.0.0"
-    cli-table3 "^0.6.3"
-    columnify "^1.6.0"
-    fastest-levenshtein "^1.0.16"
-    fs-minipass "^3.0.3"
-    glob "^10.3.10"
-    graceful-fs "^4.2.11"
-    hosted-git-info "^7.0.1"
-    ini "^4.1.1"
-    init-package-json "^6.0.0"
-    is-cidr "^4.0.2"
-    json-parse-even-better-errors "^3.0.0"
-    libnpmaccess "^8.0.1"
-    libnpmdiff "^6.0.3"
-    libnpmexec "^7.0.3"
-    libnpmfund "^5.0.1"
-    libnpmhook "^10.0.0"
-    libnpmorg "^6.0.1"
-    libnpmpack "^6.0.3"
-    libnpmpublish "^9.0.1"
-    libnpmsearch "^7.0.0"
-    libnpmteam "^6.0.0"
-    libnpmversion "^5.0.1"
-    make-fetch-happen "^13.0.0"
-    minimatch "^9.0.3"
-    minipass "^7.0.4"
-    minipass-pipeline "^1.2.4"
-    ms "^2.1.2"
-    node-gyp "^10.0.1"
-    nopt "^7.2.0"
-    normalize-package-data "^6.0.0"
-    npm-audit-report "^5.0.0"
-    npm-install-checks "^6.3.0"
-    npm-package-arg "^11.0.1"
-    npm-pick-manifest "^9.0.0"
-    npm-profile "^9.0.0"
-    npm-registry-fetch "^16.1.0"
-    npm-user-validate "^2.0.0"
-    npmlog "^7.0.1"
-    p-map "^4.0.0"
-    pacote "^17.0.4"
-    parse-conflict-json "^3.0.1"
-    proc-log "^3.0.0"
-    qrcode-terminal "^0.12.0"
-    read "^2.1.0"
-    semver "^7.5.4"
-    spdx-expression-parse "^3.0.1"
-    ssri "^10.0.5"
-    strip-ansi "^6.0.1"
-    supports-color "^9.4.0"
-    tar "^6.2.0"
-    text-table "~0.2.0"
-    tiny-relative-date "^1.3.0"
-    treeverse "^3.0.0"
-    validate-npm-package-name "^5.0.0"
-    which "^4.0.0"
-    write-file-atomic "^5.0.1"
 
 npm@10.5.0:
   version "10.5.0"
