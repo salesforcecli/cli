@@ -1802,10 +1802,10 @@
     node-gyp "^10.0.0"
     which "^4.0.0"
 
-"@oclif/core@3.26.2", "@oclif/core@^3", "@oclif/core@^3.21.0", "@oclif/core@^3.23.0", "@oclif/core@^3.26.0", "@oclif/core@^3.26.2":
-  version "3.26.2"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.26.2.tgz#92a92516e1309e5b1241c1b4932ab1d2546e294a"
-  integrity sha512-Gpn21jKjcOx0TecI1wLJrY/65jtgJx5f1GzTc81oKvEpKes1b3Li2SMZygRaWRpcQ3wjN0d7lTPi8WwLsmTBjA==
+"@oclif/core@3.26.3", "@oclif/core@^3", "@oclif/core@^3.21.0", "@oclif/core@^3.23.0", "@oclif/core@^3.26.0", "@oclif/core@^3.26.2":
+  version "3.26.3"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.26.3.tgz#2416f4f5e3e5b9434999edb2f94983c5ac07e8a2"
+  integrity sha512-e6Vwu+cb2Sn4qFFpmY1fQLRWIY5ugruMuN94xb7+kyUzxrirYjJATPhuCT1G5xj9Dk+hTMH+Sp6XcHcVTS1lHg==
   dependencies:
     "@types/cli-progress" "^3.11.5"
     ansi-escapes "^4.3.2"
@@ -1816,7 +1816,7 @@
     cli-progress "^3.12.0"
     color "^4.2.3"
     debug "^4.3.4"
-    ejs "^3.1.9"
+    ejs "^3.1.10"
     get-package-type "^0.1.0"
     globby "^11.1.0"
     hyperlinker "^1.0.0"
@@ -1893,23 +1893,23 @@
     ts-json-schema-generator "^1.3.0"
     tslib "^2.6.2"
 
-"@oclif/plugin-commands@3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-commands/-/plugin-commands-3.3.0.tgz#c334d27a4ec25707312250a6d3e59521911fde17"
-  integrity sha512-55jNcAI3/mwbSFYxptZmtkoNfInJm8PuKvFVdtiDztbavlih3Mc42S0D3LAHH4Z7jEeHpbaBp29dqD/g5mCyvw==
+"@oclif/plugin-commands@3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-commands/-/plugin-commands-3.3.1.tgz#67bdbc25cd12e253d62f15df84c42c11f4e82fed"
+  integrity sha512-SikJBlXaVsbCX3A8YBdpU70VvU58P75+4vMt0AtJFEPYS1n+5srrLJgTrEFJkCfFvlqj1SNI9yMFr1TG+LKN9w==
   dependencies:
-    "@oclif/core" "^3.26.0"
+    "@oclif/core" "^3.26.2"
     lodash.pickby "^4.6.0"
     lodash.sortby "^4.7.0"
     lodash.template "^4.5.0"
     lodash.uniqby "^4.7.0"
 
-"@oclif/plugin-help@6.0.20", "@oclif/plugin-help@^6.0.18":
-  version "6.0.20"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-6.0.20.tgz#e4a640505508224d7b9c0e61711ae4dad3f4782b"
-  integrity sha512-4UG/5q7O3dhUsC0JMqcUV0NU7jybkXkAXLnsRt+KVzDtZWwNOeBECimIFWOmwna5BaneTn8b0+lqO4JvUgeiqA==
+"@oclif/plugin-help@6.0.21", "@oclif/plugin-help@^6.0.18":
+  version "6.0.21"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-6.0.21.tgz#c48e688bf6df574e74557ebe2f877556f08dc60b"
+  integrity sha512-w860r9d456xhw1GPaos9yQF+BZeFY9UKdrINbL3fZFX5ZHhr/zGT4Fep5wUkHogjjnSB8+ZHi3D6j2jScIizUw==
   dependencies:
-    "@oclif/core" "^3.26.0"
+    "@oclif/core" "^3.26.2"
 
 "@oclif/plugin-not-found@3.1.2", "@oclif/plugin-not-found@^3.0.14":
   version "3.1.2"
@@ -1921,12 +1921,12 @@
     chalk "^5.3.0"
     fast-levenshtein "^3.0.0"
 
-"@oclif/plugin-plugins@5.0.7":
-  version "5.0.7"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-5.0.7.tgz#d8ca2b6fb29261c4a791257122de8b9df8ccab41"
-  integrity sha512-oSvAalXjJCDfGtbuM4Kutv17NUTsNvhNhhgSfG8aN9/SfsGd73JA39tsI2CEjlM7Uc2bD6ncxyUdZ0lTnntkUg==
+"@oclif/plugin-plugins@5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-5.0.8.tgz#46febac7e524034200f25155d9e8df849e8c18c7"
+  integrity sha512-8FRsgv8XG38ICyzpKWp1ZlnEVBm5sF673uQbKrGj5DSboqdwG8OP+9KZdE59GhgLdLQM4jG1VxpxKyOuF0RsDw==
   dependencies:
-    "@oclif/core" "^3.26.0"
+    "@oclif/core" "^3.26.2"
     chalk "^5.3.0"
     debug "^4.3.4"
     npm "10.5.0"
@@ -2565,13 +2565,13 @@
     got "^13.0.0"
     proxy-agent "^6.3.1"
 
-"@salesforce/plugin-telemetry@3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.3.0.tgz#29aaa4eba957b475265bbdb8eb73f44d15c1d10f"
-  integrity sha512-bxsPltJCwnKp9TPCd6XnFW2Uslo/mOgiYTYjwPN8mBNLhbubsN8PgJ0kh5qwH9MdPUd09+u8HafP9+T7E7kkDw==
+"@salesforce/plugin-telemetry@3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.3.1.tgz#11c40f2531f156816647308db7d0ea0e892a8d2f"
+  integrity sha512-cOTn5WBQV0GrIhxcGiRc2po7FUAYdY1FJKXNDT+mNiWBp9YcamtOYcsc27Ieycu5BWvwWE1Dwc3Vz6/XGQthuQ==
   dependencies:
     "@oclif/core" "^3.26.2"
-    "@salesforce/core" "^7.0.1"
+    "@salesforce/core" "^7.2.0"
     "@salesforce/kit" "^3.1.0"
     "@salesforce/sf-plugins-core" "^9.0.0"
     "@salesforce/telemetry" "^6.0.0"
@@ -5491,10 +5491,10 @@ ecdsa-sig-formatter@1.0.11:
   dependencies:
     safe-buffer "^5.0.1"
 
-ejs@^3.1.8, ejs@^3.1.9:
-  version "3.1.9"
-  resolved "https://registry.yarnpkg.com/ejs/-/ejs-3.1.9.tgz#03c9e8777fe12686a9effcef22303ca3d8eeb361"
-  integrity sha512-rC+QVNMJWv+MtPgkt0y+0rVEIdbtxVADApW9JXrUVlzHetgcyczP/E7DJmWJ4fJCZF2cPcBk0laWO9ZHMG3DmQ==
+ejs@^3.1.10, ejs@^3.1.8, ejs@^3.1.9:
+  version "3.1.10"
+  resolved "https://registry.yarnpkg.com/ejs/-/ejs-3.1.10.tgz#69ab8358b14e896f80cc39e62087b88500c3ac3b"
+  integrity sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==
   dependencies:
     jake "^10.8.5"
 
