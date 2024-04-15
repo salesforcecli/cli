@@ -3,6 +3,7 @@
 const { spawn } = await import('node:child_process');
 const { join } = await import('node:path');
 const { fileURLToPath } = await import('node:url');
+const isWindows = process.platform === 'win32';
 
 async function main() {
   if (process.env.SF_HIDE_RELEASE_NOTES === 'true') process.exit(0);
@@ -20,11 +21,10 @@ async function main() {
       resolve();
     };
 
-    const executable = process.platform === 'win32' ? 'run.cmd' : 'run.js';
-    const cmd = spawn(join(fileURLToPath(import.meta.url), '..', '..', 'bin', executable), ['whatsnew', '--hook'], {
-      stdio: ['ignore', 'inherit', 'pipe'],
-      timeout: 10000,
-    });
+    const executable = isWindows ? 'run.cmd' : 'run.js';
+    // Since 20.12.2, it is invalid to call spawn on Windows with a .bat/.cmd file without using shell: true. 
+    const opts = isWindows ? { stdio: ['ignore', 'inherit', 'pipe'], timeout: 10000, shell:true } : { stdio: ['ignore', 'inherit', 'pipe'], timeout: 10000 }
+    const cmd = spawn(join(fileURLToPath(import.meta.url), '..', '..', 'bin', executable), ['whatsnew', '--hook'], opts);
 
     cmd.stderr.on('data', (error) => {
       logAndExit(error);
