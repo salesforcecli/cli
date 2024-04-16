@@ -20,7 +20,6 @@
     "/npm-shrinkwrap.json",
     "/oclif.lock",
     "/oclif.manifest.json",
-    "/scripts/post-install-release-notes.js",
     "/scripts/preinstall.js",
     "/theme.json"
   ],
@@ -227,7 +226,6 @@
     "pack:tarballs:sequential": "oclif pack:tarballs --xz",
     "pack:verify": "sf-release cli:tarballs:verify --cli sf --windows-username-buffer 34",
     "pack:win": "oclif pack:win --defender-exclusion unchecked",
-    "postinstall": "node ./scripts/post-install-release-notes.js",
     "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
     "preinstall": "node ./scripts/preinstall.js",
     "prepack": "sf-prepack",
