@@ -22,9 +22,14 @@ async function main() {
     };
 
     const executable = isWindows ? 'run.cmd' : 'run.js';
-    // Since 20.12.2, it is invalid to call spawn on Windows with a .bat/.cmd file without using shell: true. 
-    const opts = isWindows ? { stdio: ['ignore', 'inherit', 'pipe'], timeout: 10000, shell:true } : { stdio: ['ignore', 'inherit', 'pipe'], timeout: 10000 }
-    const cmd = spawn(join(fileURLToPath(import.meta.url), '..', '..', 'bin', executable), ['whatsnew', '--hook'], opts);
+    // Since 20.12.2, it is invalid to call spawn on Windows with a .bat/.cmd file without using shell: true.
+    // https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V20.md#2024-04-10-version-20122-iron-lts-rafaelgss
+    const opts = { stdio: ['ignore', 'inherit', 'pipe'], timeout: 10000, ...(isWindows ? { shell: true } : {}) };
+    const cmd = spawn(
+      join(fileURLToPath(import.meta.url), '..', '..', 'bin', executable),
+      ['whatsnew', '--hook'],
+      opts
+    );
 
     cmd.stderr.on('data', (error) => {
       logAndExit(error);
