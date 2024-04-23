@@ -4,7 +4,7 @@
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import { EnvVars } from '@salesforce/core/lib/config/envVars.js';
+import { EnvVars } from '@salesforce/core/envVars';
 
 export class Env extends EnvVars {
   public static SF_AUTOUPDATE_DISABLE = 'SF_AUTOUPDATE_DISABLE';

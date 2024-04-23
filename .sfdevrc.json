@@ -1,3 +1,6 @@
 {
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json"
+  },
   "exclude-scripts": ["test", "test:deprecation-policy", "test:command-reference", "test:json-schema"]
 }

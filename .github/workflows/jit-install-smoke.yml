@@ -70,3 +70,5 @@ jobs:
         uses: salesforcecli/github-workflows/.github/actions/retry@main
         with:
           command: yarn sf-release cli:install:jit:test --jit-plugin ${{matrix.jitPlugins}}
+        env:
+          SF_DISABLE_TELEMETRY: true
