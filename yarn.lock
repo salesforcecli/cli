@@ -2373,10 +2373,10 @@
     csv-parse "^4.16.3"
     csv-stringify "^6.4.6"
 
-"@salesforce/plugin-deploy-retrieve@3.6.5":
-  version "3.6.5"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.6.5.tgz#4a6c7878b1ce9104af6dc559d0389cbcc3e053aa"
-  integrity sha512-Ct3mrG7L3WKDxlZ2iB/aOMY5fJ6vFTn8BOwHTCyE1Qm6HVqDYIYD+8KalL4SLPkA1pZpo8di4FqSjkL78mIzhg==
+"@salesforce/plugin-deploy-retrieve@3.6.6":
+  version "3.6.6"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.6.6.tgz#aca61d2225eb1bb7469ddc6b7a7e224794e57bf1"
+  integrity sha512-mer81ZOmSl1GXykIsYt/hesGGougTW/40InkegT8DhNJ0B7nrOkOL84MX8478Dh3tc9Ovv73eFmbnHeOZmnJig==
   dependencies:
     "@oclif/core" "^3.26.2"
     "@salesforce/apex-node" "^5.0.0-beta.0"
@@ -2548,15 +2548,15 @@
     "@salesforce/ts-types" "^2.0.9"
     debug "^4.3.4"
 
-"@salesforce/plugin-templates@56.2.3":
-  version "56.2.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-templates/-/plugin-templates-56.2.3.tgz#d463dcd6479ff3e2d5ead1a42f598decb06d37c3"
-  integrity sha512-F6cyzFI8jkFukhFVKbscNp07HNnEww/PJJu+giwYzvHdH55mdxxAoQrKcrt3vBeP65uQtmsT0CLBIhmn60pyXg==
+"@salesforce/plugin-templates@56.2.4":
+  version "56.2.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-templates/-/plugin-templates-56.2.4.tgz#01074f24d8c87be70c0a1a670122b2b10ea238f8"
+  integrity sha512-AnDHxCnEdnhCL4NPvzEK2eDPsHhoNKyPSGSJGNl3UExP4IZU0XFSbKHEsFLCekxXFwVHi/vv4w7bfam0dKvofg==
   dependencies:
     "@oclif/core" "^3.26.3"
-    "@salesforce/core" "^7.0.1"
+    "@salesforce/core" "^7.3.1"
     "@salesforce/sf-plugins-core" "^9.0.5"
-    "@salesforce/templates" "^61.0.0-beta.0"
+    "@salesforce/templates" "^60.1.2"
     yeoman-environment "^3"
     yeoman-generator "^5"
 
@@ -2655,10 +2655,10 @@
     got "^11"
     proxy-agent "^6.4.0"
 
-"@salesforce/templates@^61.0.0-beta.0":
-  version "61.0.0-beta.0"
-  resolved "https://registry.npmjs.org/@salesforce/templates/-/templates-61.0.0-beta.0.tgz"
-  integrity sha512-cG93GPWUp8wwb0ijdQ1YCrU7xvd11C9iCmT9ttms9MDcWMaQt6uqfqTBfBIjXRWIuk9ZYuagITyGkWigd3Ea1Q==
+"@salesforce/templates@^60.1.2":
+  version "60.1.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-60.1.2.tgz#07b3793dd7a238f2f5e03385e87814271cc6267d"
+  integrity sha512-n5TITtDxwOC2eEpOMdt3u7p554JQkDUOrhzGqlIz2fWGupMbh/hg6qj25V7rS2yKn10aGI8AYKhUDMp1ivuPaQ==
   dependencies:
     "@salesforce/core" "^7.0.0"
     "@salesforce/kit" "^3.0.15"
