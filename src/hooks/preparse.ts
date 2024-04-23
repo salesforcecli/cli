@@ -6,7 +6,7 @@
  */
 import type { Hook } from '@oclif/core';
 
-const hook: Hook<'preparse'> = async function ({ argv, options, context }) {
+const hook: Hook.Preparse = async function ({ argv, options, context }) {
   // Skip this hook if command does not have a --flags-dir flag or if it is not present in argv
   if (!argv.includes('--flags-dir') || !options.flags?.['flags-dir']) return argv;
   const flagsDir = argv[argv.indexOf('--flags-dir') + 1];

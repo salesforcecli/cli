@@ -6,7 +6,7 @@
  */
 import { Hook, ux } from '@oclif/core';
 
-export const hook: Hook<'update'> = async function ({ config }) {
+export const hook: Hook.Update = async function ({ config }) {
   if (process.env.SF_HIDE_RELEASE_NOTES === 'true') return;
 
   try {

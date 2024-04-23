@@ -5,9 +5,10 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 import { Command, CommandHelp, Help, toConfiguredId } from '@oclif/core';
-import stripAnsi from 'strip-ansi';
-import chalk from 'chalk';
+import { Ansis } from 'ansis';
 import { SfCommandHelp } from './sfCommandHelp.js';
+
+const ansis = new Ansis();
 
 export default class SfHelp extends Help {
   protected CommandHelpClass: typeof CommandHelp = SfCommandHelp;
@@ -42,10 +43,10 @@ export default class SfHelp extends Help {
          * - "sf org create scratch|sandbox"
          */
         const regex = new RegExp(`${cmd}([^\\s".]+)?`, 'g');
-        const [match] = stripAnsi(arg.slice()).match(regex) ?? [];
+        const [match] = ansis.strip(arg.slice()).match(regex) ?? [];
 
         if (match) {
-          arg = arg.replace(regex, chalk.dim(match));
+          arg = arg.replace(regex, ansis.dim(match));
         }
       }
 
