@@ -43,10 +43,7 @@
     "topicSeparator": " ",
     "flexibleTaxonomy": true,
     "commands": "./dist/commands",
-    "helpClass": {
-      "target": "./dist/help/sfHelp.js",
-      "identifier": "default"
-    },
+    "helpClass": "./dist/help/sfHelp.js",
     "theme": "theme.json",
     "plugins": [
       "@oclif/plugin-autocomplete",
