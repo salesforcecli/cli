@@ -220,7 +220,7 @@
     "link-check": "wireit",
     "lint": "wireit",
     "oclif-artifacts": "oclif manifest",
-    "pack:deb": "oclif pack:deb",
+    "pack:deb": "oclif pack:deb  --prune-lockfiles",
     "pack:macos": "oclif pack:macos --prune-lockfiles",
     "pack:tarballs": "oclif pack:tarballs --xz --parallel --prune-lockfiles",
     "pack:tarballs:sequential": "oclif pack:tarballs --xz --prune-lockfiles",
