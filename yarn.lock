@@ -1195,7 +1195,7 @@
     "@inquirer/type" "^1.1.6"
     chalk "^4.1.2"
 
-"@inquirer/confirm@^3.1.4", "@inquirer/confirm@^3.1.5":
+"@inquirer/confirm@^3.1.5":
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/@inquirer/confirm/-/confirm-3.1.5.tgz#21856f937bc8292eca4146c052271107f8ac949a"
   integrity sha512-6+dwZrpko5vr5EFEQmUbfBVhtu6IsnB8lQNsLHgO9S9fbfS5J6MuUj+NY0h98pPpYZXEazLR7qzypEDqVzf6aQ==
@@ -5537,7 +5537,7 @@ ecdsa-sig-formatter@1.0.11:
   dependencies:
     safe-buffer "^5.0.1"
 
-ejs@^3.1.10, ejs@^3.1.8, ejs@^3.1.9:
+ejs@^3.1.10, ejs@^3.1.8:
   version "3.1.10"
   resolved "https://registry.npmjs.org/ejs/-/ejs-3.1.10.tgz"
   integrity sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==
@@ -9331,17 +9331,17 @@ obliterator@^2.0.1, obliterator@^2.0.2:
   resolved "https://registry.npmjs.org/obliterator/-/obliterator-2.0.4.tgz"
   integrity sha512-lgHwxlxV1qIg1Eap7LgIeoBWIMFibOjbrYPIPJZcI1mmGAI2m3lNYpK12Y+GBdPQ0U1hRwSord7GIaawz962qQ==
 
-oclif@^4.7.5:
-  version "4.8.5"
-  resolved "https://registry.npmjs.org/oclif/-/oclif-4.8.5.tgz"
-  integrity sha512-7f6gYBAugi/+98lrsjnGtQnrva6JS2fDjyBzUZETi+EQHg/Gq55yvknHkMw4mLO5iA2MIEvClYdgyKR4keAdPA==
+oclif@^4.9.0:
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/oclif/-/oclif-4.9.0.tgz#6519161de69b58559c2483b9ff81dd16ecffdb4e"
+  integrity sha512-35wI+Rqu7iDix6iLToYyqTw7aHDxzUsymt2JZ5HMzrZWlaebDwkYMJTyOT08e9IQY8U8k4+zZPie1hLTxdEOFg==
   dependencies:
     "@aws-sdk/client-cloudfront" "^3.535.0"
     "@aws-sdk/client-s3" "^3.554.0"
-    "@inquirer/confirm" "^3.1.4"
+    "@inquirer/confirm" "^3.1.5"
     "@inquirer/input" "^2.1.1"
     "@inquirer/select" "^2.2.1"
-    "@oclif/core" "^3.26.0"
+    "@oclif/core" "^3.26.4"
     "@oclif/plugin-help" "^6.0.21"
     "@oclif/plugin-not-found" "^3.0.14"
     "@oclif/plugin-warn-if-update-available" "^3.0.14"
@@ -9349,7 +9349,7 @@ oclif@^4.7.5:
     chalk "^4"
     change-case "^4"
     debug "^4.3.3"
-    ejs "^3.1.9"
+    ejs "^3.1.10"
     find-yarn-workspace-root "^2.0.0"
     fs-extra "^8.1"
     github-slugger "^1.5.0"
