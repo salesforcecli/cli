@@ -2428,16 +2428,16 @@
     got "^13.0.0"
     proxy-agent "^6.4.0"
 
-"@salesforce/plugin-org@4.1.3":
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-4.1.3.tgz#bad58e3e4ae6888e44b5e8cc2c49fba503cdf1d7"
-  integrity sha512-hTSFusj+VhNcX/YQdYVkB78X0EuqQG3vn2q7UTY7le2PEBDiCyHEd7qOS4PsatDA2Wxxl7m6USYqf8kg4BlCqw==
+"@salesforce/plugin-org@4.1.4":
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-4.1.4.tgz#6ca3709e91ad1f122ef798db304209fa1d1783ef"
+  integrity sha512-vSN1hsqpXdX42OjvRAdllCVnRCtByeP+9ktzy4WRxduEjlIQujOgXbCPpj2K6MYLu2Rj7Pc5Dx/JC36QqYu6cA==
   dependencies:
     "@oclif/core" "^3.26.4"
     "@salesforce/core" "^7.0.1"
     "@salesforce/kit" "^3.1.1"
     "@salesforce/sf-plugins-core" "^9.0.0"
-    "@salesforce/source-deploy-retrieve" "^11.0.0"
+    "@salesforce/source-deploy-retrieve" "^11.0.2"
     chalk "^5.3.0"
     change-case "^5.4.4"
     is-wsl "^3.1.0"
@@ -2610,13 +2610,13 @@
     "@salesforce/ts-types" "^2.0.9"
     chalk "^5.3.0"
 
-"@salesforce/source-deploy-retrieve@^11.0.0", "@salesforce/source-deploy-retrieve@^11.0.1":
-  version "11.0.1"
-  resolved "https://registry.npmjs.org/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-11.0.1.tgz"
-  integrity sha512-vQ5Fytvsz5L3JXykOIphf11oWBtRGUdpUomSPN2pXep7BG3RYQ/C2AlSXL9dwHqaQmSm2B2KjMp2+y//bpNWcQ==
+"@salesforce/source-deploy-retrieve@^11.0.0", "@salesforce/source-deploy-retrieve@^11.0.1", "@salesforce/source-deploy-retrieve@^11.0.2":
+  version "11.1.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-11.1.2.tgz#f5c70b952eca711b2be0e110b289eb24aaa60b4d"
+  integrity sha512-QhRft7U/XMBDaZTbzacbHH4sapTW/d25V3Hiwua2lg/Ce6hEj/5w6l8LlO5UAyRpRMaMy2LfaTRygu+rT3AS8g==
   dependencies:
-    "@salesforce/core" "^7.2.0"
-    "@salesforce/kit" "^3.1.0"
+    "@salesforce/core" "^7.3.1"
+    "@salesforce/kit" "^3.1.1"
     "@salesforce/ts-types" "^2.0.9"
     fast-levenshtein "^3.0.0"
     fast-xml-parser "^4.3.6"
@@ -2627,7 +2627,6 @@
     mime "2.6.0"
     minimatch "^5.1.6"
     proxy-agent "^6.4.0"
-    ts-retry-promise "^0.7.1"
 
 "@salesforce/source-tracking@^6.0.0", "@salesforce/source-tracking@^6.0.3":
   version "6.0.4"
