@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.40.5 linux-x64 node-v20.12.2
+@salesforce/cli/2.40.6 linux-x64 node-v20.12.2
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -7680,7 +7680,7 @@ EXAMPLES
     $ sf update --available
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.2.8/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.2.9/src/commands/update.ts)_
 
 ## `sf version`
 
