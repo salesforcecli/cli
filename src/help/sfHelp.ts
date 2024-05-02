@@ -4,7 +4,7 @@
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import { Command, CommandHelp, Help, toConfiguredId } from '@oclif/core';
+import { Command, CommandHelp, Help, Interfaces, toConfiguredId } from '@oclif/core';
 import { Ansis } from 'ansis';
 import { SfCommandHelp } from './sfCommandHelp.js';
 
@@ -15,11 +15,42 @@ export default class SfHelp extends Help {
   protected commandHelpClass: SfCommandHelp | undefined;
   private showShortHelp = false;
   private commands: string[] = [];
+  private commandIdRegex: RegExp;
+
+  public constructor(config: Interfaces.Config, opts?: Partial<Interfaces.HelpOptions>) {
+    super(config, opts);
+
+    this.commands = this.config.commandIDs.map((c) => `${this.config.bin} ${toConfiguredId(c, this.config)}`);
+    const regexes: string[] = [];
+    for (const cmd of this.commands) {
+      const subCommands = this.commands.filter((c) => c !== cmd && c.startsWith(cmd)).map((c) => c.replace(cmd, ''));
+      /**
+       * This regex matches any command in the help output.
+       * It will continue to match until the next space, quote, or period.
+       *
+       * Examples that will match (see sf project deploy start as an example):
+       * - sf deploy project start
+       * - "sf deploy project start"
+       * - sf org create scratch|sandbox
+       * - "sf org create scratch|sandbox"
+       *
+       * It will not match any child commands of the current command.
+       * For instance, the examples in `sf org list metadata --help` should match `sf org list metadata` but not `sf org list`.
+       *
+       * Example of constructed regex that won't match child commands:
+       * - /sf org list([^\s".]+)?(?! auth| limits| sobject record-counts| metadata| metadata-types| users)/g
+       * - /sf org list metadata([^\s".]+)?(?!-types)/g
+       */
+      let regexString = `${cmd}([^\\s".]+)?`;
+      if (subCommands.length) regexString += `(?!${subCommands.join('|')})`;
+      regexes.push(regexString);
+    }
+
+    this.commandIdRegex = new RegExp(regexes.join('|'), 'g');
+  }
 
   public async showHelp(argv: string[]): Promise<void> {
     this.showShortHelp = argv.includes('-h');
-    this.commands = this.config.commandIDs.map((c) => `${this.config.bin} ${toConfiguredId(c, this.config)}`);
-
     return super.showHelp(argv);
   }
 
@@ -31,26 +62,13 @@ export default class SfHelp extends Help {
 
   protected log(...args: string[]): void {
     const formatted = args.map((arg) => {
-      for (const cmd of this.commands) {
-        /**
-         * This regex matches any command in the help output.
-         * It will continue to match until the next space, quote, or period.
-         *
-         * Examples that will match:
-         * - sf deploy project start
-         * - "sf deploy project start"
-         * - sf org create scratch|sandbox
-         * - "sf org create scratch|sandbox"
-         */
-        const regex = new RegExp(`${cmd}([^\\s".]+)?`, 'g');
-        const [match] = ansis.strip(arg.slice()).match(regex) ?? [];
-
-        if (match) {
-          arg = arg.replace(regex, ansis.dim(match));
-        }
+      let formattedArg = arg.slice();
+      const matches = ansis.strip(formattedArg).match(this.commandIdRegex) ?? [];
+      for (const match of matches) {
+        formattedArg = formattedArg.replaceAll(match, ansis.dim(match));
       }
 
-      return arg;
+      return formattedArg;
     });
 
     super.log(...formatted);
