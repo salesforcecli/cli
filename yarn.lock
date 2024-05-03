@@ -2379,10 +2379,10 @@
     csv-parse "^4.16.3"
     csv-stringify "^6.4.6"
 
-"@salesforce/plugin-deploy-retrieve@3.6.8":
-  version "3.6.8"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.6.8.tgz#feafc5cfd82084b9db8c7fc1712c35a686e3540e"
-  integrity sha512-JMmN/99AuRXsABMWHwSgg7BbAGeXIPNYs4aDC6u7xe1YEKiKDM2AT+2FlUvI1c8mYRys2SjvwtnwTVrPQLyFWw==
+"@salesforce/plugin-deploy-retrieve@3.6.9":
+  version "3.6.9"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.6.9.tgz#6e21b881d93d2f8a9d801f02340d2fd75eae9927"
+  integrity sha512-8SKcU7enMrDaPf4pwJIpO0jqw7Cb1aHhc324GbgQDY12HXS4tmeud2ntDAS3LWRoXyV78sjGqAoAwizTOisYVg==
   dependencies:
     "@oclif/core" "^3.26.2"
     "@salesforce/apex-node" "^6.0.0"
@@ -2449,10 +2449,10 @@
     is-wsl "^3.1.0"
     open "^10.1.0"
 
-"@salesforce/plugin-packaging@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.4.1.tgz#8fbfd4871d4694d1a059757568ad79251efce32a"
-  integrity sha512-n7jf9HztamwaA/vaMqkMWXxjFqaNAhUwAAFUH63zc6hGs2Y40Cxo0f3Mmi8MTsJoazl9TVyVKKWdFf8/0m7c9g==
+"@salesforce/plugin-packaging@2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.4.2.tgz#17e40bded004e7598e9605e2a560670129127ce2"
+  integrity sha512-1ZsNjNH51VUADoe4zhLdDoc6egMYizBwhFBAyDPPcZSUhCV34Av3cTALcn5fzAMNMVhKp38QWDdU3mdm6Oz/cg==
   dependencies:
     "@oclif/core" "^3.26.2"
     "@salesforce/core" "^7.0.1"
@@ -2566,15 +2566,15 @@
     yeoman-environment "^3"
     yeoman-generator "^5"
 
-"@salesforce/plugin-trust@3.6.7", "@salesforce/plugin-trust@^3.6.3":
-  version "3.6.7"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-3.6.7.tgz#a1c0cc4cd3f34c5a693ebbf33d83b81bd6508454"
-  integrity sha512-CbATdm8cWasAJ8URiQ1MJg8zzsUQ8S+joAe8VT4Ds8R5rfzmyWxcbxEj8hqowbJf6LOIGGLBbSSuyzmg3AVa8A==
+"@salesforce/plugin-trust@3.6.8", "@salesforce/plugin-trust@^3.6.3":
+  version "3.6.8"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-3.6.8.tgz#d0495a9133423ac6b855838fdbb57ce26c8898ee"
+  integrity sha512-j9GjJ1Fk9jSR0IE/V1Btb2sfG+nnYjWaLPGs+Tebn5PKLHDeuSLVGybYW5Ue6mzy1XsFZHswh0uVamhshTWSnQ==
   dependencies:
     "@oclif/core" "^3.26.4"
     "@salesforce/core" "^7.3.0"
     "@salesforce/kit" "^3.1.1"
-    "@salesforce/sf-plugins-core" "^9.0.0"
+    "@salesforce/sf-plugins-core" "^9.0.7"
     got "^13.0.0"
     npm "^10.7.0"
     npm-run-path "^4.0.1"
@@ -2582,10 +2582,10 @@
     semver "^7.6.0"
     shelljs "^0.8.4"
 
-"@salesforce/plugin-user@3.5.4":
-  version "3.5.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-user/-/plugin-user-3.5.4.tgz#4cf7fb24e9f65a748aeea9314da025d43f666849"
-  integrity sha512-oLpnivDq3xoAJ3rpvRi0Xp8p3G8lwIwetWMuuNuZAmSDht5frlis+c8on7OpKmpkda4qP6q/nDRI4wUYRU8nvg==
+"@salesforce/plugin-user@3.5.5":
+  version "3.5.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-user/-/plugin-user-3.5.5.tgz#da870c33e971fb6f8a9a3c7f163e0c52624dee38"
+  integrity sha512-77e2lF9QMXy7lXcqzXak276njue8o+QmbjNUhGwlfWIgoRfkDJyRW84LJ/roouZK5OWArX1mt1f/ZZAvasX3lA==
   dependencies:
     "@oclif/core" "^3.26.2"
     "@salesforce/core" "^7.3.2"
@@ -2603,7 +2603,7 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.7.0.tgz#b7e0af3ee414ae7160bce351c0184d77ccb98fe3"
   integrity sha512-Z0PiCEV55khm0PG+DsnRYCjaDmacNe3HDmsoSm/CSyYvJJm+D5vvkHKN9/PKD/gaRe8XAU836yfamIYFblLINw==
 
-"@salesforce/sf-plugins-core@9.0.7", "@salesforce/sf-plugins-core@^9.0.0", "@salesforce/sf-plugins-core@^9.0.1", "@salesforce/sf-plugins-core@^9.0.4", "@salesforce/sf-plugins-core@^9.0.5":
+"@salesforce/sf-plugins-core@9.0.7", "@salesforce/sf-plugins-core@^9.0.0", "@salesforce/sf-plugins-core@^9.0.1", "@salesforce/sf-plugins-core@^9.0.4", "@salesforce/sf-plugins-core@^9.0.5", "@salesforce/sf-plugins-core@^9.0.7":
   version "9.0.7"
   resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-9.0.7.tgz#77ffc67df994e0cec205827462811f521e3086ba"
   integrity sha512-5F6/ax7welNZrizpl9QSQmGADqlCzFDB8t8I5P/n2LplMb3CwJRrZPcOZxJNnhlfXNlLrYtoShv2C+yrxgqYUA==
