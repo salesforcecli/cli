@@ -2370,10 +2370,10 @@
     csv-parse "^4.16.3"
     csv-stringify "^6.4.6"
 
-"@salesforce/plugin-deploy-retrieve@3.6.12":
-  version "3.6.12"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.6.12.tgz#31827cad7285d67d47f82da54caf2e00bea5bbee"
-  integrity sha512-9Zyz9WYdLbqiuqtet1xtYHQo4f78W2LvF9ZDlblK6vXGxFruv39TIG1gv2hLy4rc6CkquAI7NSFTAJM48DXMOQ==
+"@salesforce/plugin-deploy-retrieve@3.6.13":
+  version "3.6.13"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.6.13.tgz#f149fb3e010186f6b4c1f7376e69ef3e77688e90"
+  integrity sha512-Fv2QagHuemrLxxDsCmhdLtxLrDXWtGSx6Y33FOWm1+37RslAFykxQsJWq/nQWWHEjkEdvZMmE2cm5+6oqUVWVw==
   dependencies:
     "@oclif/core" "^3.26.5"
     "@salesforce/apex-node" "^6.0.0"
@@ -2381,7 +2381,7 @@
     "@salesforce/kit" "^3.1.1"
     "@salesforce/plugin-info" "^3.2.7"
     "@salesforce/sf-plugins-core" "^9.0.7"
-    "@salesforce/source-deploy-retrieve" "^11.4.0"
+    "@salesforce/source-deploy-retrieve" "^11.4.1"
     "@salesforce/source-tracking" "^6.0.4"
     "@salesforce/ts-types" "^2.0.9"
     chalk "^5.3.0"
@@ -2607,12 +2607,12 @@
     "@salesforce/ts-types" "^2.0.9"
     chalk "^5.3.0"
 
-"@salesforce/source-deploy-retrieve@^11.0.1", "@salesforce/source-deploy-retrieve@^11.1.2", "@salesforce/source-deploy-retrieve@^11.3.0", "@salesforce/source-deploy-retrieve@^11.4.0":
-  version "11.4.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-11.4.0.tgz#b174f168d41ec3a15a3454732da09e8d7672a576"
-  integrity sha512-9r6eb2N1i3n1Sr4SWzDje8a8blD3k49kMSRLX1rPTpEtmcvFTs76JlVn1IJeIyK3hXtvNyb6UA/6+EClsr853A==
+"@salesforce/source-deploy-retrieve@^11.0.1", "@salesforce/source-deploy-retrieve@^11.1.2", "@salesforce/source-deploy-retrieve@^11.3.0", "@salesforce/source-deploy-retrieve@^11.4.1":
+  version "11.4.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-11.4.1.tgz#a855c7377a358512026c3ef8f1e66107452671b3"
+  integrity sha512-vhf9YQ4NoQkAfID3WiSyFdMdAr6Ku8Abe0HhwSA0QbkE4r/N+yFZGjseRANPVnmAtAvHroCuP0cx1zGc1HC42Q==
   dependencies:
-    "@salesforce/core" "^7.3.1"
+    "@salesforce/core" "^7.3.5"
     "@salesforce/kit" "^3.1.1"
     "@salesforce/ts-types" "^2.0.9"
     fast-levenshtein "^3.0.0"
