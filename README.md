@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.42.5 linux-x64 node-v20.12.2
+@salesforce/cli/2.42.6 linux-x64 node-v20.12.2
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -4241,7 +4241,7 @@ FLAG DESCRIPTIONS
     subscribers.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package1/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package1/version/create.ts)_
 
 ## `sf package1 version create get`
 
@@ -4274,7 +4274,7 @@ EXAMPLES
     $ sf package1 version create get --request-id 0HD... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package1/version/create/get.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package1/version/create/get.ts)_
 
 ## `sf package1 version display`
 
@@ -4308,7 +4308,7 @@ EXAMPLES
     $ sf package1 version display --package-version-id 04t... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package1/version/display.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package1/version/display.ts)_
 
 ## `sf package1 version list`
 
@@ -4346,7 +4346,7 @@ FLAG DESCRIPTIONS
     If not specified, shows all versions for all packages (managed and unmanaged) in the org.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package1/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package1/version/list.ts)_
 
 ## `sf package create`
 
@@ -4425,7 +4425,7 @@ FLAG DESCRIPTIONS
     Org-Dependent Unlocked Packages" in the Salesforce DX Developer Guide.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/create.ts)_
 
 ## `sf package delete`
 
@@ -4467,7 +4467,7 @@ EXAMPLES
     $ sf package delete --package 0Ho... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/delete.ts)_
 
 ## `sf package install`
 
@@ -4565,7 +4565,7 @@ FLAG DESCRIPTIONS
     specify DeprecateOnly or Delete only for unlocked package upgrades.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/install.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/install.ts)_
 
 ## `sf package install report`
 
@@ -4598,7 +4598,7 @@ EXAMPLES
     $ sf package install report --request-id 0Hf... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/install/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/install/report.ts)_
 
 ## `sf package installed list`
 
@@ -4630,7 +4630,7 @@ EXAMPLES
     $ sf package installed list --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/installed/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/installed/list.ts)_
 
 ## `sf package list`
 
@@ -4668,7 +4668,7 @@ EXAMPLES
     $ sf package list --target-dev-hub devhub@example.com --verbose
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/list.ts)_
 
 ## `sf package uninstall`
 
@@ -4716,7 +4716,7 @@ EXAMPLES
     $ sf package uninstall --package "Undesirable Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/uninstall.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/uninstall.ts)_
 
 ## `sf package uninstall report`
 
@@ -4749,7 +4749,7 @@ EXAMPLES
     $ sf package uninstall report --request-id 06y... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/uninstall/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/uninstall/report.ts)_
 
 ## `sf package update`
 
@@ -4804,7 +4804,7 @@ FLAG DESCRIPTIONS
     associated with your package.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/update.ts)_
 
 ## `sf package version create`
 
@@ -4959,7 +4959,7 @@ FLAG DESCRIPTIONS
     periods of no output from commands.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/create.ts)_
 
 ## `sf package version create list`
 
@@ -5020,7 +5020,7 @@ EXAMPLES
     $ sf package version create list --created-last-days 0 --status Success
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/version/create/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/create/list.ts)_
 
 ## `sf package version create report`
 
@@ -5063,7 +5063,7 @@ EXAMPLES
     $ sf package version create report --package-create-request-id 08c... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/version/create/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/create/report.ts)_
 
 ## `sf package version delete`
 
@@ -5102,7 +5102,7 @@ EXAMPLES
     $ sf package version delete --package 04t... --target-org devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/version/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/delete.ts)_
 
 ## `sf package version displayancestry`
 
@@ -5162,7 +5162,7 @@ FLAG DESCRIPTIONS
     You can use the DOT code output in graph visualization software to create tree visualizations.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/version/displayancestry.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/displayancestry.ts)_
 
 ## `sf package version list`
 
@@ -5231,7 +5231,7 @@ EXAMPLES
     $ sf package version list --packages exp-mgr,exp-mgr-util --released --modified-last-days 0
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/list.ts)_
 
 ## `sf package version promote`
 
@@ -5275,7 +5275,7 @@ EXAMPLES
     $ sf package version promote --package "Awesome Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/version/promote.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/promote.ts)_
 
 ## `sf package version report`
 
@@ -5315,7 +5315,7 @@ EXAMPLES
     $ sf package version report --package "Your Package Alias" --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/version/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/report.ts)_
 
 ## `sf package version update`
 
@@ -5368,7 +5368,7 @@ EXAMPLES
     $ sf package version update --package 04t... --version-description "New Package Version Description"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.3/src/commands/package/version/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/update.ts)_
 
 ## `sf plugins`
 
@@ -7681,7 +7681,7 @@ EXAMPLES
     $ sf update --available
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.2.11/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.2.12/src/commands/update.ts)_
 
 ## `sf version`
 
@@ -7701,7 +7701,7 @@ FLAG DESCRIPTIONS
     Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
 ```
 
-_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.1.1/src/commands/version.ts)_
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.1.2/src/commands/version.ts)_
 
 ## `sf visualforce generate component`
 
