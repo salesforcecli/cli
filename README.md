@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.43.2 linux-x64 node-v20.13.1
+@salesforce/cli/2.43.3 linux-x64 node-v20.13.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -115,10 +115,6 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf org refresh sandbox`](#sf-org-refresh-sandbox)
 - [`sf org resume sandbox`](#sf-org-resume-sandbox)
 - [`sf org resume scratch`](#sf-org-resume-scratch)
-- [`sf package1 version create`](#sf-package1-version-create)
-- [`sf package1 version create get`](#sf-package1-version-create-get)
-- [`sf package1 version display`](#sf-package1-version-display)
-- [`sf package1 version list`](#sf-package1-version-list)
 - [`sf package create`](#sf-package-create)
 - [`sf package delete`](#sf-package-delete)
 - [`sf package install`](#sf-package-install)
@@ -137,6 +133,10 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf package version promote`](#sf-package-version-promote)
 - [`sf package version report`](#sf-package-version-report)
 - [`sf package version update`](#sf-package-version-update)
+- [`sf package1 version create`](#sf-package1-version-create)
+- [`sf package1 version create get`](#sf-package1-version-create-get)
+- [`sf package1 version display`](#sf-package1-version-display)
+- [`sf package1 version list`](#sf-package1-version-list)
 - [`sf plugins`](#sf-plugins)
 - [`sf plugins discover`](#sf-plugins-discover)
 - [`sf plugins:inspect PLUGIN...`](#sf-pluginsinspect-plugin)
@@ -4226,178 +4226,6 @@ FLAG DESCRIPTIONS
 
 _See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.1.10/src/commands/org/resume/scratch.ts)_
 
-## `sf package1 version create`
-
-Create a first-generation package version in the release org.
-
-```
-USAGE
-  $ sf package1 version create -o <value> -i <value> -n <value> [--json] [--flags-dir <value>] [--api-version <value>] [-d
-    <value>] [-v <value>] [-m] [-r <value>] [-p <value>] [-k <value>] [-w <value>]
-
-FLAGS
-  -d, --description=<value>        Package version description.
-  -i, --package-id=<value>         (required) ID of the metadata package (starts with 033) of which you’re creating a
-                                   new version.
-  -k, --installation-key=<value>   Installation key for key-protected package (default: null).
-  -m, --managed-released           Create a managed package version.
-  -n, --name=<value>               (required) Package version name.
-  -o, --target-org=<value>         (required) Username or alias of the target org. Not required if the `target-org`
-                                   configuration variable is already set.
-  -p, --post-install-url=<value>   Post install URL.
-  -r, --release-notes-url=<value>  Release notes URL.
-  -v, --version=<value>            Package version in major.minor format, for example, 3.2.
-  -w, --wait=<value>               Minutes to wait for the package version to be created (default: 2 minutes).
-      --api-version=<value>        Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-DESCRIPTION
-  Create a first-generation package version in the release org.
-
-  The package version is based on the contents of the specified metadata package. Omit --managed-released if you want to
-  create an unmanaged package version.
-
-ALIASES
-  $ sf force package1 version create
-
-EXAMPLES
-  Create a first-generation package version from the package with the specified ID and name the package version
-  "example"; use your default org:
-
-    $ sf package1 version create --package-id 033... --name example
-
-  Same as previous example, but provide a description and wait for 30 minutes for the package version to be created;
-  use the specified org:
-
-    $ sf package1 version create --package-id 033... --name example --description "example description" --wait 30 \
-      --target-org myorg@example.com
-
-FLAG DESCRIPTIONS
-  -m, --managed-released  Create a managed package version.
-
-    To create a beta version, don’t include this parameter.
-
-  -p, --post-install-url=<value>  Post install URL.
-
-    The contents of the post-installation instructions URL are displayed in the UI after installation of the package
-    version.
-
-  -r, --release-notes-url=<value>  Release notes URL.
-
-    This link is displayed in the package installation UI to provide release notes for this package version to
-    subscribers.
-```
-
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package1/version/create.ts)_
-
-## `sf package1 version create get`
-
-Retrieve the status of a package version creation request.
-
-```
-USAGE
-  $ sf package1 version create get -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
-
-FLAGS
-  -i, --request-id=<value>   (required) ID of the PackageUploadRequest (starts with 0HD).
-  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
-                             configuration variable is already set.
-      --api-version=<value>  Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-ALIASES
-  $ sf force package1 version create get
-
-EXAMPLES
-  Get the status of the creation request for the package version with the specified ID in your default org:
-
-    $ sf package1 version create get --request-id 0HD...
-
-  Same as previous example, but use the specified org:
-
-    $ sf package1 version create get --request-id 0HD... --target-org myorg@example.com
-```
-
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package1/version/create/get.ts)_
-
-## `sf package1 version display`
-
-Display details about a first-generation package version.
-
-```
-USAGE
-  $ sf package1 version display -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
-
-FLAGS
-  -i, --package-version-id=<value>  (required) ID (starts with 04t) of the metadata package version whose details you
-                                    want to display.
-  -o, --target-org=<value>          (required) Username or alias of the target org. Not required if the `target-org`
-                                    configuration variable is already set.
-      --api-version=<value>         Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-ALIASES
-  $ sf force package1 version display
-
-EXAMPLES
-  Display details about the first-generation package version with the specified ID in your default org:
-
-    $ sf package1 version display --package-version-id 04t...
-
-  Same as previous example, but use the specified org:
-
-    $ sf package1 version display --package-version-id 04t... --target-org myorg@example.com
-```
-
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package1/version/display.ts)_
-
-## `sf package1 version list`
-
-List package versions for the specified first-generation package or for the org.
-
-```
-USAGE
-  $ sf package1 version list -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-i <value>]
-
-FLAGS
-  -i, --package-id=<value>   Metadata package ID (starts with 033) whose package versions you want to list.
-  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
-                             configuration variable is already set.
-      --api-version=<value>  Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-ALIASES
-  $ sf force package1 version list
-
-EXAMPLES
-  List all first-generation package versions in your default org:
-
-    $ sf package1 version list
-
-  List package versions for the specified first-generation package in the specifief org:
-
-    $ sf package1 version list --package-id 033... --target-org myorg@example.com
-
-FLAG DESCRIPTIONS
-  -i, --package-id=<value>  Metadata package ID (starts with 033) whose package versions you want to list.
-
-    If not specified, shows all versions for all packages (managed and unmanaged) in the org.
-```
-
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package1/version/list.ts)_
-
 ## `sf package create`
 
 Create a package.
@@ -4475,7 +4303,7 @@ FLAG DESCRIPTIONS
     Org-Dependent Unlocked Packages" in the Salesforce DX Developer Guide.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/create.ts)_
 
 ## `sf package delete`
 
@@ -4517,7 +4345,7 @@ EXAMPLES
     $ sf package delete --package 0Ho... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/delete.ts)_
 
 ## `sf package install`
 
@@ -4615,7 +4443,7 @@ FLAG DESCRIPTIONS
     specify DeprecateOnly or Delete only for unlocked package upgrades.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/install.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/install.ts)_
 
 ## `sf package install report`
 
@@ -4648,7 +4476,7 @@ EXAMPLES
     $ sf package install report --request-id 0Hf... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/install/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/install/report.ts)_
 
 ## `sf package installed list`
 
@@ -4680,7 +4508,7 @@ EXAMPLES
     $ sf package installed list --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/installed/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/installed/list.ts)_
 
 ## `sf package list`
 
@@ -4718,7 +4546,7 @@ EXAMPLES
     $ sf package list --target-dev-hub devhub@example.com --verbose
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/list.ts)_
 
 ## `sf package uninstall`
 
@@ -4766,7 +4594,7 @@ EXAMPLES
     $ sf package uninstall --package "Undesirable Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/uninstall.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/uninstall.ts)_
 
 ## `sf package uninstall report`
 
@@ -4799,7 +4627,7 @@ EXAMPLES
     $ sf package uninstall report --request-id 06y... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/uninstall/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/uninstall/report.ts)_
 
 ## `sf package update`
 
@@ -4854,7 +4682,7 @@ FLAG DESCRIPTIONS
     associated with your package.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/update.ts)_
 
 ## `sf package version create`
 
@@ -5009,7 +4837,7 @@ FLAG DESCRIPTIONS
     periods of no output from commands.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/version/create.ts)_
 
 ## `sf package version create list`
 
@@ -5070,7 +4898,7 @@ EXAMPLES
     $ sf package version create list --created-last-days 0 --status Success
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/create/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/version/create/list.ts)_
 
 ## `sf package version create report`
 
@@ -5113,7 +4941,7 @@ EXAMPLES
     $ sf package version create report --package-create-request-id 08c... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/create/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/version/create/report.ts)_
 
 ## `sf package version delete`
 
@@ -5152,7 +4980,7 @@ EXAMPLES
     $ sf package version delete --package 04t... --target-org devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/version/delete.ts)_
 
 ## `sf package version displayancestry`
 
@@ -5212,7 +5040,7 @@ FLAG DESCRIPTIONS
     You can use the DOT code output in graph visualization software to create tree visualizations.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/displayancestry.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/version/displayancestry.ts)_
 
 ## `sf package version list`
 
@@ -5281,7 +5109,7 @@ EXAMPLES
     $ sf package version list --packages exp-mgr,exp-mgr-util --released --modified-last-days 0
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/version/list.ts)_
 
 ## `sf package version promote`
 
@@ -5325,7 +5153,7 @@ EXAMPLES
     $ sf package version promote --package "Awesome Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/promote.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/version/promote.ts)_
 
 ## `sf package version report`
 
@@ -5365,7 +5193,7 @@ EXAMPLES
     $ sf package version report --package "Your Package Alias" --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/version/report.ts)_
 
 ## `sf package version update`
 
@@ -5418,7 +5246,179 @@ EXAMPLES
     $ sf package version update --package 04t... --version-description "New Package Version Description"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.4/src/commands/package/version/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package/version/update.ts)_
+
+## `sf package1 version create`
+
+Create a first-generation package version in the release org.
+
+```
+USAGE
+  $ sf package1 version create -o <value> -i <value> -n <value> [--json] [--flags-dir <value>] [--api-version <value>] [-d
+    <value>] [-v <value>] [-m] [-r <value>] [-p <value>] [-k <value>] [-w <value>]
+
+FLAGS
+  -d, --description=<value>        Package version description.
+  -i, --package-id=<value>         (required) ID of the metadata package (starts with 033) of which you’re creating a
+                                   new version.
+  -k, --installation-key=<value>   Installation key for key-protected package (default: null).
+  -m, --managed-released           Create a managed package version.
+  -n, --name=<value>               (required) Package version name.
+  -o, --target-org=<value>         (required) Username or alias of the target org. Not required if the `target-org`
+                                   configuration variable is already set.
+  -p, --post-install-url=<value>   Post install URL.
+  -r, --release-notes-url=<value>  Release notes URL.
+  -v, --version=<value>            Package version in major.minor format, for example, 3.2.
+  -w, --wait=<value>               Minutes to wait for the package version to be created (default: 2 minutes).
+      --api-version=<value>        Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Create a first-generation package version in the release org.
+
+  The package version is based on the contents of the specified metadata package. Omit --managed-released if you want to
+  create an unmanaged package version.
+
+ALIASES
+  $ sf force package1 version create
+
+EXAMPLES
+  Create a first-generation package version from the package with the specified ID and name the package version
+  "example"; use your default org:
+
+    $ sf package1 version create --package-id 033... --name example
+
+  Same as previous example, but provide a description and wait for 30 minutes for the package version to be created;
+  use the specified org:
+
+    $ sf package1 version create --package-id 033... --name example --description "example description" --wait 30 \
+      --target-org myorg@example.com
+
+FLAG DESCRIPTIONS
+  -m, --managed-released  Create a managed package version.
+
+    To create a beta version, don’t include this parameter.
+
+  -p, --post-install-url=<value>  Post install URL.
+
+    The contents of the post-installation instructions URL are displayed in the UI after installation of the package
+    version.
+
+  -r, --release-notes-url=<value>  Release notes URL.
+
+    This link is displayed in the package installation UI to provide release notes for this package version to
+    subscribers.
+```
+
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package1/version/create.ts)_
+
+## `sf package1 version create get`
+
+Retrieve the status of a package version creation request.
+
+```
+USAGE
+  $ sf package1 version create get -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
+
+FLAGS
+  -i, --request-id=<value>   (required) ID of the PackageUploadRequest (starts with 0HD).
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+ALIASES
+  $ sf force package1 version create get
+
+EXAMPLES
+  Get the status of the creation request for the package version with the specified ID in your default org:
+
+    $ sf package1 version create get --request-id 0HD...
+
+  Same as previous example, but use the specified org:
+
+    $ sf package1 version create get --request-id 0HD... --target-org myorg@example.com
+```
+
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package1/version/create/get.ts)_
+
+## `sf package1 version display`
+
+Display details about a first-generation package version.
+
+```
+USAGE
+  $ sf package1 version display -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
+
+FLAGS
+  -i, --package-version-id=<value>  (required) ID (starts with 04t) of the metadata package version whose details you
+                                    want to display.
+  -o, --target-org=<value>          (required) Username or alias of the target org. Not required if the `target-org`
+                                    configuration variable is already set.
+      --api-version=<value>         Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+ALIASES
+  $ sf force package1 version display
+
+EXAMPLES
+  Display details about the first-generation package version with the specified ID in your default org:
+
+    $ sf package1 version display --package-version-id 04t...
+
+  Same as previous example, but use the specified org:
+
+    $ sf package1 version display --package-version-id 04t... --target-org myorg@example.com
+```
+
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package1/version/display.ts)_
+
+## `sf package1 version list`
+
+List package versions for the specified first-generation package or for the org.
+
+```
+USAGE
+  $ sf package1 version list -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-i <value>]
+
+FLAGS
+  -i, --package-id=<value>   Metadata package ID (starts with 033) whose package versions you want to list.
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+ALIASES
+  $ sf force package1 version list
+
+EXAMPLES
+  List all first-generation package versions in your default org:
+
+    $ sf package1 version list
+
+  List package versions for the specified first-generation package in the specifief org:
+
+    $ sf package1 version list --package-id 033... --target-org myorg@example.com
+
+FLAG DESCRIPTIONS
+  -i, --package-id=<value>  Metadata package ID (starts with 033) whose package versions you want to list.
+
+    If not specified, shows all versions for all packages (managed and unmanaged) in the org.
+```
+
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.4.5/src/commands/package1/version/list.ts)_
 
 ## `sf plugins`
 
@@ -5441,7 +5441,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.21/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.1.2/src/commands/plugins/index.ts)_
 
 ## `sf plugins discover`
 
@@ -5486,7 +5486,7 @@ EXAMPLES
   $ sf plugins inspect @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.21/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.1.2/src/commands/plugins/inspect.ts)_
 
 ## `sf plugins install PLUGIN`
 
@@ -5535,7 +5535,7 @@ EXAMPLES
     $ sf plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.21/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.1.2/src/commands/plugins/install.ts)_
 
 ## `sf plugins link PATH`
 
@@ -5565,7 +5565,7 @@ EXAMPLES
   $ sf plugins link @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.21/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.1.2/src/commands/plugins/link.ts)_
 
 ## `sf plugins reset`
 
@@ -5580,7 +5580,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.21/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.1.2/src/commands/plugins/reset.ts)_
 
 ## `sf plugins trust verify`
 
@@ -5609,7 +5609,7 @@ EXAMPLES
   $ sf plugins trust verify --npm @scope/npmName
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.6.11/src/commands/plugins/trust/verify.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.6.12/src/commands/plugins/trust/verify.ts)_
 
 ## `sf plugins uninstall [PLUGIN]`
 
@@ -5637,7 +5637,7 @@ EXAMPLES
   $ sf plugins uninstall @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.21/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.1.2/src/commands/plugins/uninstall.ts)_
 
 ## `sf plugins update`
 
@@ -5655,7 +5655,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.0.21/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.1.2/src/commands/plugins/update.ts)_
 
 ## `sf project convert mdapi`
 
@@ -5718,7 +5718,7 @@ FLAG DESCRIPTIONS
     If you specify this parameter, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.0/src/commands/project/convert/mdapi.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.2/src/commands/project/convert/mdapi.ts)_
 
 ## `sf project convert source`
 
@@ -5730,7 +5730,7 @@ USAGE
     [-p <value> | -x <value> | -m <value>]
 
 FLAGS
-  -d, --output-dir=<value>     [default: metadataPackage_1715812104774] Output directory to store the Metadata
+  -d, --output-dir=<value>     [default: metadataPackage_1716032858127] Output directory to store the Metadata
                                API–formatted files in.
   -m, --metadata=<value>...    Metadata component names to convert.
   -n, --package-name=<value>   Name of the package to associate with the metadata-formatted files.
@@ -5791,7 +5791,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.0/src/commands/project/convert/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.2/src/commands/project/convert/source.ts)_
 
 ## `sf project delete source`
 
@@ -5931,7 +5931,7 @@ FLAG DESCRIPTIONS
     - Separate the test names with spaces: --tests Test1 Test2 "Test With Space"
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.0/src/commands/project/delete/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.2/src/commands/project/delete/source.ts)_
 
 ## `sf project delete tracking`
 
@@ -5968,7 +5968,7 @@ EXAMPLES
     $ sf project delete tracking --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.0/src/commands/project/delete/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.2/src/commands/project/delete/tracking.ts)_
 
 ## `sf project deploy cancel`
 
@@ -6044,7 +6044,7 @@ FLAG DESCRIPTIONS
     project deploy report".
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.0/src/commands/project/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.2/src/commands/project/deploy/cancel.ts)_
 
 ## `sf project deploy preview`
 
@@ -6130,7 +6130,7 @@ FLAG DESCRIPTIONS
     All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.0/src/commands/project/deploy/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.2/src/commands/project/deploy/preview.ts)_
 
 ## `sf project deploy quick`
 
@@ -6227,7 +6227,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.0/src/commands/project/deploy/quick.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.2/src/commands/project/deploy/quick.ts)_
 
 ## `sf project deploy report`
 
@@ -6323,7 +6323,7 @@ FLAG DESCRIPTIONS
     --coverage-formatters lcov --coverage-formatters clover
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.0/src/commands/project/deploy/report.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.2/src/commands/project/deploy/report.ts)_
 
 ## `sf project deploy resume`
 
@@ -6420,7 +6420,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.0/src/commands/project/deploy/resume.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.2/src/commands/project/deploy/resume.ts)_
 
 ## `sf project deploy start`
 
@@ -6658,7 +6658,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.0/src/commands/project/deploy/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.2/src/commands/project/deploy/start.ts)_
 
 ## `sf project deploy validate`
 
@@ -6850,7 +6850,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.0/src/commands/project/deploy/validate.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.2/src/commands/project/deploy/validate.ts)_
 
 ## `sf project generate`
 
@@ -7032,7 +7032,7 @@ EXAMPLES
     $ sf project generate manifest --from-org test@myorg.com --include-packages unlocked
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.0/src/commands/project/generate/manifest.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.2/src/commands/project/generate/manifest.ts)_
 
 ## `sf project list ignored`
 
@@ -7074,7 +7074,7 @@ EXAMPLES
     $ sf project list ignored --source-dir package.xml
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.0/src/commands/project/list/ignored.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.2/src/commands/project/list/ignored.ts)_
 
 ## `sf project reset tracking`
 
@@ -7123,7 +7123,7 @@ EXAMPLES
     $ sf project reset tracking --revision 30
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.0/src/commands/project/reset/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.2/src/commands/project/reset/tracking.ts)_
 
 ## `sf project retrieve preview`
 
@@ -7180,7 +7180,7 @@ FLAG DESCRIPTIONS
     Overrides your default org.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.0/src/commands/project/retrieve/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.2/src/commands/project/retrieve/preview.ts)_
 
 ## `sf project retrieve start`
 
@@ -7339,7 +7339,7 @@ ENVIRONMENT VARIABLES
   SF_USE_PROGRESS_BAR  Set to false to disable the progress bar when running the metadata deploy command.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.0/src/commands/project/retrieve/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.7.2/src/commands/project/retrieve/start.ts)_
 
 ## `sf schema generate field`
 
