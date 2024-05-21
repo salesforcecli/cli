@@ -1244,7 +1244,7 @@
     strip-ansi "^6.0.1"
     wrap-ansi "^6.2.0"
 
-"@inquirer/core@^8.1.0", "@inquirer/core@^8.2.1":
+"@inquirer/core@^8.2.1":
   version "8.2.1"
   resolved "https://registry.yarnpkg.com/@inquirer/core/-/core-8.2.1.tgz#ee92c2bf25f378819f56290f8ed8bfef8c6cc94d"
   integrity sha512-TIcuQMn2qrtyYe0j136UpHeYpk7AcR/trKeT/7YY0vRgcS9YSfJuQ2+PudPhSofLLsHNnRYAHScQCcVZrJkMqA==
@@ -1268,13 +1268,13 @@
   resolved "https://registry.yarnpkg.com/@inquirer/figures/-/figures-1.0.2.tgz#a6af5e9f9969efb9ed3469130566315c36506b8a"
   integrity sha512-4F1MBwVr3c/m4bAUef6LgkvBfSjzwH+OfldgHqcuacWwSUetFebM2wi58WfG9uk1rR98U6GwLed4asLJbwdV5w==
 
-"@inquirer/input@^2.1.1", "@inquirer/input@^2.1.6":
-  version "2.1.6"
-  resolved "https://registry.yarnpkg.com/@inquirer/input/-/input-2.1.6.tgz#6f0bc5659252015ce75155c92831252c7b90cfe3"
-  integrity sha512-M8bUFOlcn/kQcVYskl4kkB6dYrHtymJJ1S4nSg/khXT3W3l71u2qhSzfo6PdBG3jUe6ILJZ0gUh4Kef2uJ5pxw==
+"@inquirer/input@^2.1.1", "@inquirer/input@^2.1.6", "@inquirer/input@^2.1.8":
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/@inquirer/input/-/input-2.1.8.tgz#442cee18f0fce6ef850627c6653c4c4c6e66c1ec"
+  integrity sha512-W1hsmUArJRGI8kL8+Kl+9wgnm02xPbpKtSIlwoHtRfIn8f/b/9spfNuTWolCVDHh3ZA4LS+Et71d1P6UpdD20A==
   dependencies:
-    "@inquirer/core" "^8.1.0"
-    "@inquirer/type" "^1.3.1"
+    "@inquirer/core" "^8.2.1"
+    "@inquirer/type" "^1.3.2"
 
 "@inquirer/password@^1.1.16":
   version "1.1.16"
@@ -1308,7 +1308,7 @@
     ansi-escapes "^4.3.2"
     chalk "^4.1.2"
 
-"@inquirer/type@^1.1.2", "@inquirer/type@^1.1.6", "@inquirer/type@^1.3.1", "@inquirer/type@^1.3.2":
+"@inquirer/type@^1.1.2", "@inquirer/type@^1.1.6", "@inquirer/type@^1.3.2":
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/@inquirer/type/-/type-1.3.2.tgz#439b0b50c152c89fd369d2a17eff54869b4d79b8"
   integrity sha512-5Frickan9c89QbPkSu6I6y8p+9eR6hZkdPahGmNDsTFX8FHLPAozyzCZMKUeW8FyYwnlCKUjqIEqxY+UctARiw==
@@ -2479,13 +2479,13 @@
     "@salesforce/sf-plugins-core" "^9.0.7"
     fast-levenshtein "^3.0.0"
 
-"@salesforce/plugin-sobject@1.4.4":
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-sobject/-/plugin-sobject-1.4.4.tgz#a5703a94cbac6f3bed27b4619bbf1f5a874bc9c7"
-  integrity sha512-KApejOCyOi9wxVGKLuS9jxCqff6fCA2OhZGcMIQhM4+k8TO+ggcfexi+YtA4VDl5D9CezJIZqHmSWkcy4+MJdQ==
+"@salesforce/plugin-sobject@1.4.5":
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-sobject/-/plugin-sobject-1.4.5.tgz#a39c6eb56a5b45d39f21a323096bd3e000773648"
+  integrity sha512-h7NUuO7c7i/n4VsFSaGNuRXAKJCskNDQOyfZbBerj7lFzkYJdSdniVvJOYf+XX1Zs2rM6gpVejvpbUeRB3CmOg==
   dependencies:
     "@inquirer/confirm" "^3.1.8"
-    "@inquirer/input" "^2.1.6"
+    "@inquirer/input" "^2.1.8"
     "@inquirer/select" "^2.3.2"
     "@oclif/core" "^3.26.5"
     "@salesforce/core" "^7.3.6"
@@ -2574,10 +2574,10 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.9.0.tgz#ba477a112653a20b4edcf989c61c57bdff9aa3ca"
   integrity sha512-LiN37zG5ODT6z70sL1fxF7BQwtCX9JOWofSU8iliSNIM+WDEeinnoFtVqPInRSNt8I0RiJxIKCrqstsmQRBNvA==
 
-"@salesforce/sf-plugins-core@9.0.11", "@salesforce/sf-plugins-core@^9.0.1", "@salesforce/sf-plugins-core@^9.0.10", "@salesforce/sf-plugins-core@^9.0.11", "@salesforce/sf-plugins-core@^9.0.7":
-  version "9.0.11"
-  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-9.0.11.tgz#baf23e595ddcc0e3cb15db3fa3d56b7b1638b4a6"
-  integrity sha512-wGmTTyxPt8o3s7dfyM668FkkUow+YOUm0IDkXi+XjgVOUnn80SW9yPA1OrjA2sV3jeCdKunCgkf9KNP5e1wGgg==
+"@salesforce/sf-plugins-core@9.0.12", "@salesforce/sf-plugins-core@^9.0.1", "@salesforce/sf-plugins-core@^9.0.10", "@salesforce/sf-plugins-core@^9.0.11", "@salesforce/sf-plugins-core@^9.0.7":
+  version "9.0.12"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-9.0.12.tgz#8bcacdb412c3570f66220acd6346636d86f81d62"
+  integrity sha512-KtZErzUdBrDDONpE6ZbW3V5WfBwUwo07Snttnu4IFs82rbsOkyCG/m02b+mbnGBrwWWy7auZW4e2ciRrmbZGDQ==
   dependencies:
     "@inquirer/confirm" "^2.0.17"
     "@inquirer/password" "^1.1.16"
