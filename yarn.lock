@@ -142,7 +142,7 @@
     "@smithy/util-waiter" "^3.0.0"
     tslib "^2.6.2"
 
-"@aws-sdk/client-s3@^3.569.0":
+"@aws-sdk/client-s3@^3.577.0":
   version "3.577.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/client-s3/-/client-s3-3.577.0.tgz#74841adde6fc0c92f005e26f17dda48a4c9014f2"
   integrity sha512-mQYXwn6E4Rwggn6teF6EIWJtK8jsKcxnPj2QVETkSmD8QaFLm4g/DgLPdamDE97UI8k1k0cmWqXcTOLIaZ7wQg==
@@ -1911,7 +1911,7 @@
     "@oclif/core" "^3.26.6"
     ansis "^3.2.0"
 
-"@oclif/plugin-warn-if-update-available@3.0.19", "@oclif/plugin-warn-if-update-available@^3.0.18":
+"@oclif/plugin-warn-if-update-available@3.0.19", "@oclif/plugin-warn-if-update-available@^3.0.19":
   version "3.0.19"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-3.0.19.tgz#1009a1ff0016b64731792d169f2ee78e9770f5b1"
   integrity sha512-CauYLxNuPtK9ig1ZlzFiCqxzGJJd73CKyJDiSzGkg3QRooyZkE9G+l1Lz18fHzj+TEeXUZ74t6RWWPC5p0TL4w==
@@ -9246,20 +9246,20 @@ obliterator@^2.0.1, obliterator@^2.0.2:
   resolved "https://registry.npmjs.org/obliterator/-/obliterator-2.0.4.tgz"
   integrity sha512-lgHwxlxV1qIg1Eap7LgIeoBWIMFibOjbrYPIPJZcI1mmGAI2m3lNYpK12Y+GBdPQ0U1hRwSord7GIaawz962qQ==
 
-oclif@^4.10.11:
-  version "4.10.11"
-  resolved "https://registry.yarnpkg.com/oclif/-/oclif-4.10.11.tgz#15c85f67d4d8c57a496261d1a4fc95596f85d32c"
-  integrity sha512-np+E0OKdBuWPjqQD1cImAbfv1Monrk4KkQIRvH6RPZ7Awasvi8/UvvF6fENITVb+Hw4Rlk7aiSIzlnYqY100eg==
+oclif@^4.10.15:
+  version "4.10.15"
+  resolved "https://registry.yarnpkg.com/oclif/-/oclif-4.10.15.tgz#e17e9a0df6d6ce7e0e7dffd83e042b5bf4379eec"
+  integrity sha512-sZqBP9Ca3mGQ6gsL42mHnHffLA4mXDOVpXMWhqfSV+GRPWVidlv38EIlMwjr3L7YZAVfiRgixPT/B6PDVdKZmA==
   dependencies:
     "@aws-sdk/client-cloudfront" "^3.574.0"
-    "@aws-sdk/client-s3" "^3.569.0"
+    "@aws-sdk/client-s3" "^3.577.0"
     "@inquirer/confirm" "^3.1.6"
     "@inquirer/input" "^2.1.1"
-    "@inquirer/select" "^2.3.2"
+    "@inquirer/select" "^2.3.4"
     "@oclif/core" "^3.26.5"
     "@oclif/plugin-help" "^6.0.21"
     "@oclif/plugin-not-found" "^3.1.9"
-    "@oclif/plugin-warn-if-update-available" "^3.0.18"
+    "@oclif/plugin-warn-if-update-available" "^3.0.19"
     async-retry "^1.3.3"
     chalk "^4"
     change-case "^4"
@@ -9271,7 +9271,7 @@ oclif@^4.10.11:
     got "^13"
     lodash "^4.17.21"
     normalize-package-data "^6"
-    semver "^7.6.0"
+    semver "^7.6.2"
     sort-package-json "^2.10.0"
     tiny-jsonc "^1.0.1"
     validate-npm-package-name "^5.0.0"
