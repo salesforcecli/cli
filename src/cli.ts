@@ -8,7 +8,9 @@
 import { platform, arch, release } from 'node:os';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { execute, Config, Interfaces } from '@oclif/core';
+import { execute } from '@oclif/core/execute';
+import { Config } from '@oclif/core/config';
+import Interfaces from '@oclif/core/interfaces';
 import NodeEnv, { Env } from './util/env.js';
 import { logger } from './logger.js';
 
@@ -106,7 +108,7 @@ export async function run(): Promise<unknown> {
   configureAutoUpdate(NodeEnv);
   const config = await Config.load({
     root: resolve(fileURLToPath(import.meta.url), '..'),
-    logger,
+    // logger,
     enablePerf: true,
   });
   debugCliInfo(NodeEnv, config);

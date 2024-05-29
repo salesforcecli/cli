@@ -5,7 +5,7 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 import { format } from 'node:util';
-import { Interfaces } from '@oclif/core';
+import Interfaces from '@oclif/core/interfaces';
 import { Logger } from '@salesforce/core';
 
 export const customLogger = (namespace: string): Interfaces.Logger => {

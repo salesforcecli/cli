@@ -9,7 +9,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { Config, Flags } from '@oclif/core';
+import { Config } from '@oclif/core/config';
+import Flags from '@oclif/core/flags';
 import { expect } from 'chai';
 import sinon from 'sinon';
 

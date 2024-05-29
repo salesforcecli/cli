@@ -5,7 +5,8 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import { Hook, ux } from '@oclif/core';
+import { type Hook } from '@oclif/core/hooks';
+import ux from '@oclif/core/ux';
 
 // eslint-disable-next-line @typescript-eslint/require-await
 const hook: Hook.Prerun = async function ({ Command, config }) {

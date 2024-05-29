@@ -4,7 +4,11 @@
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import { Command, CommandHelp, Help, Interfaces, toConfiguredId } from '@oclif/core';
+
+import { Command } from '@oclif/core/command';
+import { CommandHelp, Help } from '@oclif/core/help';
+import Interfaces from '@oclif/core/interfaces';
+import { toConfiguredId } from '@oclif/core/util/ids';
 import { Ansis } from 'ansis';
 import { SfCommandHelp } from './sfCommandHelp.js';
 

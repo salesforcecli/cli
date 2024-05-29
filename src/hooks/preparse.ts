@@ -4,7 +4,7 @@
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import type { Hook } from '@oclif/core';
+import type { Hook } from '@oclif/core/hooks';
 
 const hook: Hook.Preparse = async function ({ argv, options, context }) {
   // Skip this hook if command does not have a --flags-dir flag or if it is not present in argv

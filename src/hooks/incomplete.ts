@@ -5,8 +5,12 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import * as os from 'node:os';
-import { Command, Hook, toConfiguredId, toStandardizedId, Interfaces, loadHelpClass } from '@oclif/core';
+import os from 'node:os';
+import { Command } from '@oclif/core/command';
+import { type Hook } from '@oclif/core/hooks';
+import { toConfiguredId, toStandardizedId } from '@oclif/core/util/ids';
+import Interfaces from '@oclif/core/interfaces';
+import { loadHelpClass } from '@oclif/core/help';
 
 function buildChoices(
   matches: Command.Loadable[],
