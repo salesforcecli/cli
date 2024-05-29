@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.41.1",
+  "version": "2.44.7",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run.js",
@@ -10,7 +10,7 @@
   "homepage": "https://github.com/salesforcecli/cli",
   "bugs": "https://github.com/forcedotcom/cli/issues",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.6.0"
   },
   "packageManager": "yarn@1.22.19",
   "files": [
@@ -50,15 +50,15 @@
       "@salesforce/plugin-*"
     ],
     "jitPlugins": {
-      "@salesforce/plugin-custom-metadata": "3.3.4",
-      "@salesforce/plugin-community": "3.2.6",
+      "@salesforce/plugin-custom-metadata": "3.3.10",
+      "@salesforce/plugin-community": "3.2.14",
       "@salesforce/plugin-dev": "2.3.1",
-      "@salesforce/plugin-devops-center": "1.2.9",
-      "@salesforce/plugin-env": "3.0.29",
+      "@salesforce/plugin-devops-center": "1.2.13",
+      "@salesforce/plugin-env": "3.0.30",
       "@salesforce/plugin-functions": "1.23.0",
-      "@salesforce/plugin-signups": "2.2.5",
+      "@salesforce/plugin-signups": "2.3.5",
       "@salesforce/sfdx-plugin-lwc-test": "1.2.0",
-      "@salesforce/sfdx-scanner": "3.24.0"
+      "@salesforce/sfdx-scanner": "3.25.0"
     },
     "devPlugins": [
       "@oclif/plugin-command-snapshot",
@@ -115,37 +115,40 @@
   "dependencies": {
     "@inquirer/select": "^1.3.1",
     "@oclif/core": "4.0.0-beta.13",
-    "@oclif/plugin-autocomplete": "3.0.16",
-    "@oclif/plugin-commands": "3.3.1",
-    "@oclif/plugin-help": "6.0.21",
-    "@oclif/plugin-not-found": "3.1.7",
-    "@oclif/plugin-plugins": "5.0.18",
-    "@oclif/plugin-search": "1.0.23",
-    "@oclif/plugin-update": "4.2.9",
-    "@oclif/plugin-version": "2.0.17",
-    "@oclif/plugin-warn-if-update-available": "3.0.16",
-    "@oclif/plugin-which": "3.1.8",
+    "@oclif/plugin-autocomplete": "3.0.18",
+    "@oclif/plugin-commands": "3.3.4",
+    "@oclif/plugin-help": "6.0.22",
+    "@oclif/plugin-not-found": "3.1.10",
+    "@oclif/plugin-plugins": "5.1.3",
+    "@oclif/plugin-search": "1.0.24",
+    "@oclif/plugin-update": "4.2.14",
+    "@oclif/plugin-version": "2.1.2",
+    "@oclif/plugin-warn-if-update-available": "3.0.19",
+    "@oclif/plugin-which": "3.1.10",
     "@salesforce/core": "^7.2.0",
     "@salesforce/kit": "^3.1.0",
-    "@salesforce/plugin-apex": "3.1.11",
-    "@salesforce/plugin-auth": "3.6.5",
-    "@salesforce/plugin-data": "3.3.2",
-    "@salesforce/plugin-deploy-retrieve": "3.6.9",
-    "@salesforce/plugin-info": "3.2.4",
-    "@salesforce/plugin-limits": "3.3.4",
-    "@salesforce/plugin-marketplace": "1.2.4",
-    "@salesforce/plugin-org": "4.1.5",
-    "@salesforce/plugin-packaging": "2.4.2",
-    "@salesforce/plugin-schema": "3.3.4",
-    "@salesforce/plugin-settings": "2.2.3",
-    "@salesforce/plugin-sobject": "1.3.6",
-    "@salesforce/plugin-source": "3.3.5",
-    "@salesforce/plugin-telemetry": "3.3.4",
-    "@salesforce/plugin-templates": "56.2.4",
-    "@salesforce/plugin-trust": "3.6.8",
-    "@salesforce/plugin-user": "3.5.5",
-    "@salesforce/sf-plugins-core": "9.0.3-beta.1",
-    "ansis": "^3.2.0"
+    "@salesforce/plugin-apex": "3.1.13",
+    "@salesforce/plugin-auth": "3.6.16",
+    "@salesforce/plugin-data": "3.4.3",
+    "@salesforce/plugin-deploy-retrieve": "3.8.0",
+    "@salesforce/plugin-info": "3.3.3",
+    "@salesforce/plugin-limits": "3.3.9",
+    "@salesforce/plugin-marketplace": "1.2.8",
+    "@salesforce/plugin-org": "4.1.14",
+    "@salesforce/plugin-packaging": "2.4.5",
+    "@salesforce/plugin-schema": "3.3.9",
+    "@salesforce/plugin-settings": "2.2.7",
+    "@salesforce/plugin-sobject": "1.4.6",
+    "@salesforce/plugin-source": "3.3.18",
+    "@salesforce/plugin-telemetry": "3.3.11",
+    "@salesforce/plugin-templates": "56.2.9",
+    "@salesforce/plugin-trust": "3.7.3",
+    "@salesforce/plugin-user": "3.5.11",
+    "@salesforce/sf-plugins-core": "9.0.14",
+    "ansis": "^3.2.0",
+    "chalk": "^5.3.0",
+    "debug": "^4.3.4",
+    "strip-ansi": "^7.1.0"
   },
   "pinnedDependencies": [
     "@oclif/core",
@@ -179,7 +182,7 @@
     "@salesforce/plugin-user"
   ],
   "resolutions": {
-    "@salesforce/schemas": "1.7.0"
+    "@salesforce/schemas": "1.9.0"
   },
   "repository": "salesforcecli/cli",
   "scripts": {
@@ -228,8 +231,8 @@
     "@salesforce/ts-sinon": "^1.4.19",
     "@salesforce/ts-types": "^2.0.9",
     "@types/debug": "^4.1.12",
-    "aws-sdk": "^2.1589.0",
-    "oclif": "^4.9.0",
+    "aws-sdk": "^2.1628.0",
+    "oclif": "^4.11.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.3"
   },
