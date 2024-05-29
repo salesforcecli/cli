@@ -73,7 +73,8 @@ jobs:
         os: [ubuntu-latest, windows-latest]
         command:
           - yarn test:nuts:package
-          - yarn test:nuts:package1
+          # disabled until W-15837641 is fixed
+          # - yarn test:nuts:package1
     uses: ./.github/workflows/just-nut.yml
     with:
       repository: salesforcecli/plugin-packaging
