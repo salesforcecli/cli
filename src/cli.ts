@@ -108,7 +108,7 @@ export async function run(): Promise<unknown> {
   configureAutoUpdate(NodeEnv);
   const config = await Config.load({
     root: resolve(fileURLToPath(import.meta.url), '..'),
-    // logger,
+    logger,
     enablePerf: true,
   });
   debugCliInfo(NodeEnv, config);
