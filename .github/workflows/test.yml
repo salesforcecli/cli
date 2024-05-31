@@ -39,5 +39,4 @@ jobs:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
           cache: yarn
       - run: yarn install
-      - run: npm install -g @salesforce/plugin-release-management
       - run: yarn test:deprecation-policy
