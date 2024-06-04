@@ -1485,15 +1485,6 @@
     ansi-escapes "^4.3.2"
     chalk "^4.1.2"
 
-"@inquirer/confirm@^2.0.17":
-  version "2.0.17"
-  resolved "https://registry.yarnpkg.com/@inquirer/confirm/-/confirm-2.0.17.tgz#a45eb1b973c51c993a3c093a0114e960b1cf09a4"
-  integrity sha512-EqzhGryzmGpy2aJf6LxJVhndxYmFs+m8cxXzf8nejb1DE3sabf6mUgBcp4J0jAUEiAcYzqmkqRr7LPFh/WdnXA==
-  dependencies:
-    "@inquirer/core" "^6.0.0"
-    "@inquirer/type" "^1.1.6"
-    chalk "^4.1.2"
-
 "@inquirer/confirm@^3.1.6", "@inquirer/confirm@^3.1.8", "@inquirer/confirm@^3.1.9":
   version "3.1.9"
   resolved "https://registry.yarnpkg.com/@inquirer/confirm/-/confirm-3.1.9.tgz#1bc384bc8267827ec75d0684e189692bb4dda38b"
@@ -1572,16 +1563,6 @@
   dependencies:
     "@inquirer/core" "^8.2.2"
     "@inquirer/type" "^1.3.3"
-
-"@inquirer/password@^1.1.16":
-  version "1.1.16"
-  resolved "https://registry.yarnpkg.com/@inquirer/password/-/password-1.1.16.tgz#37ddebbe37c6e76f8ad27d1f726aacdd7c423558"
-  integrity sha512-aZYZVHLUXZ2gbBot+i+zOJrks1WaiI95lvZCn1sKfcw6MtSSlYC8uDX8sTzQvAsQ8epHoP84UNvAIT0KVGOGqw==
-  dependencies:
-    "@inquirer/core" "^6.0.0"
-    "@inquirer/type" "^1.1.6"
-    ansi-escapes "^4.3.2"
-    chalk "^4.1.2"
 
 "@inquirer/password@^2.1.9":
   version "2.1.9"
@@ -2120,7 +2101,7 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/core@4.0.0":
+"@oclif/core@4.0.0", "@oclif/core@^4":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.0.0.tgz#c47783c9803cb440e3fd325157437400765eae3f"
   integrity sha512-BMWGvJrzn5PnG60gTNFEvaBT0jvGNiJCKN4aJBYP6E7Bq/Y5XPnxPrkj7ZZs/Jsd1oVn6K/JRmF6gWpv72DOew==
@@ -2990,14 +2971,14 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.9.0.tgz#ba477a112653a20b4edcf989c61c57bdff9aa3ca"
   integrity sha512-LiN37zG5ODT6z70sL1fxF7BQwtCX9JOWofSU8iliSNIM+WDEeinnoFtVqPInRSNt8I0RiJxIKCrqstsmQRBNvA==
 
-"@salesforce/sf-plugins-core@9.0.14-beta.1":
-  version "9.0.14-beta.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-9.0.14-beta.1.tgz#7e90130c2109c7eba3966a511354d01c9b6030f9"
-  integrity sha512-7I2i9ScNktK30mv81lIeS7+h90uj4wet/s6bUTgr6yeHQjql0ZP8k7w1LLsQeTnJ2JMO4hF5uY9YDslDuc+7ow==
+"@salesforce/sf-plugins-core@9.1.1-beta.1":
+  version "9.1.1-beta.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-9.1.1-beta.1.tgz#c28e1420b22766e1b7356f4a5b0689e0870cc35c"
+  integrity sha512-F91l86LNVSLQCC1ckYdt40+epluVNqSJNHiLVDSBLXr36xOVgjbKheFyGuywgEF50+Ogk9RBiXjNRaR0833nyA==
   dependencies:
-    "@inquirer/confirm" "^2.0.17"
-    "@inquirer/password" "^1.1.16"
-    "@oclif/core" "^4.0.0-beta.13"
+    "@inquirer/confirm" "^3.1.9"
+    "@inquirer/password" "^2.1.9"
+    "@oclif/core" "^4"
     "@salesforce/core" "^7.3.9"
     "@salesforce/kit" "^3.1.2"
     "@salesforce/ts-types" "^2.0.9"
