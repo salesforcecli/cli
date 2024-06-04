@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.45.5 linux-x64 node-v20.13.1
+@salesforce/cli/2.45.6-qa.0 linux-x64 node-v20.13.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -404,7 +404,7 @@ Generate an Apex trigger.
 USAGE
   $ sf apex generate trigger -n <value> [--json] [--flags-dir <value>] [-t ApexTrigger] [-d <value>] [--api-version
     <value>] [-s <value>] [-e before insert|before update|before delete|after insert|after update|after delete|after
-    undelete]
+    undelete...]
 
 FLAGS
   -d, --output-dir=<value>   [default: .] Directory for saving the created files.
@@ -669,8 +669,8 @@ Invoke Apex tests in an org.
 ```
 USAGE
   $ sf apex run test -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-d <value>] [-l
-    RunLocalTests|RunAllTestsInOrg|RunSpecifiedTests] [-n <value> | -s <value> | -t <value>] [-r human|tap|junit|json]
-    [-w <value>] [-y] [-v -c]
+    RunLocalTests|RunAllTestsInOrg|RunSpecifiedTests] [-n <value>... | -s <value>... | -t <value>...] [-r
+    human|tap|junit|json] [-w <value>] [-y] [-v -c]
 
 FLAGS
   -c, --code-coverage           Retrieve code coverage results.
@@ -761,7 +761,9 @@ FLAG DESCRIPTIONS
     For multiple suites, repeat the flag for each.
     --suite-names Suite1 --suite-names Suite2
 
-  -t, --tests=<value>...  Apex test class names or IDs and, if applicable, test methods to run; default is all tests.
+  -t, --tests=<value>...
+
+    Apex test class names or IDs and, if applicable, test methods to run; default is all tests.
 
     If you specify --tests, you can't specify --class-names or --suite-names
     For multiple tests, repeat the flag for each.
@@ -842,7 +844,7 @@ EXAMPLES
   $ sf autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/3.1.1/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/3.1.2/src/commands/autocomplete/index.ts)_
 
 ## `sf commands`
 
@@ -850,8 +852,8 @@ List all sf commands.
 
 ```
 USAGE
-  $ sf commands [--json] [-c id|plugin|summary|type | --tree] [--deprecated] [-x | ] [--hidden] [--no-truncate
-    | ] [--sort id|plugin|summary|type | ]
+  $ sf commands [--json] [-c id|plugin|summary|type... | --tree] [--deprecated] [-x | ] [--hidden]
+    [--no-truncate | ] [--sort id|plugin|summary|type | ]
 
 FLAGS
   -c, --columns=<option>...  Only show provided columns (comma-separated).
@@ -871,7 +873,7 @@ DESCRIPTION
   List all sf commands.
 ```
 
-_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/4.0.1/src/commands/commands.ts)_
+_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/4.0.2/src/commands/commands.ts)_
 
 ## `sf config get`
 
@@ -1521,7 +1523,8 @@ Import data from one or more JSON files into an org.
 
 ```
 USAGE
-  $ sf data import beta tree -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-f <value>] [-p <value>]
+  $ sf data import beta tree -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-f <value>...] [-p
+  <value>]
 
 FLAGS
   -f, --files=<value>...     Comma-separated and in-order JSON files that contain the records, in sObject tree format,
@@ -1564,7 +1567,7 @@ Import data from one or more JSON files into an org.
 
 ```
 USAGE
-  $ sf data import tree -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-f <value> | -p <value>]
+  $ sf data import tree -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-f <value>... | -p <value>]
 
 FLAGS
   -f, --files=<value>...     Comma-separated and in-order JSON files that contain the records, in sObject tree format,
@@ -2446,7 +2449,8 @@ Assign a permission set to one or more users of a scratch org.
 
 ```
 USAGE
-  $ sf org assign permset -n <value> -o <value> [--json] [--flags-dir <value>] [-b <value>] [--api-version <value>]
+  $ sf org assign permset -n <value>... -o <value> [--json] [--flags-dir <value>] [-b <value>...] [--api-version
+  <value>]
 
 FLAGS
   -b, --on-behalf-of=<value>...  Username or alias to assign the permission set to.
@@ -2490,7 +2494,7 @@ Assign a permission set license to one or more users of a scratch org.
 
 ```
 USAGE
-  $ sf org assign permsetlicense -n <value> -o <value> [--json] [--flags-dir <value>] [-b <value>] [--api-version
+  $ sf org assign permsetlicense -n <value>... -o <value> [--json] [--flags-dir <value>] [-b <value>...] [--api-version
   <value>]
 
 FLAGS
@@ -2536,8 +2540,8 @@ Create a sandbox org.
 
 ```
 USAGE
-  $ sf org create sandbox -o <value> [--json] [--flags-dir <value>] [-f <value>] [-s] [-a <value>] [-w <value> |
-    --async] [-i <value> | ] [-n <value>] [-c <value> | -l Developer|Developer_Pro|Partial|Full] [--no-prompt]
+  $ sf org create sandbox -o <value> [--json] [--flags-dir <value>] [-f <value>] [-s] [-a <value>] [-w <minutes> |
+    --async] [-i <seconds> | ] [-n <value>] [-c <value> | -l Developer|Developer_Pro|Partial|Full] [--no-prompt]
     [--no-track-source]
 
 FLAGS
@@ -2655,7 +2659,7 @@ Create a scratch org.
 USAGE
   $ sf org create scratch -v <value> [--json] [--flags-dir <value>] [-a <value>] [--async] [-d] [-f <value>] [-c] [-e
     developer|enterprise|group|professional|partner-developer|partner-enterprise|partner-group|partner-professional]
-    [-m] [-y <value>] [-w <value>] [--api-version <value>] [-i <value>] [-t] [--username <value>] [--description
+    [-m] [-y <days>] [-w <minutes>] [--api-version <value>] [-i <value>] [-t] [--username <value>] [--description
     <value>] [--name <value>] [--release preview|previous] [--admin-email <value>] [--source-org <value>]
 
 FLAGS
@@ -3170,7 +3174,7 @@ Generate a random password for scratch org users.
 
 ```
 USAGE
-  $ sf org generate password -o <value> [--json] [--flags-dir <value>] [-b <value>] [-l <value>] [-c <value>]
+  $ sf org generate password -o <value> [--json] [--flags-dir <value>] [-b <value>...] [-l <value>] [-c <value>]
     [--api-version <value>]
 
 FLAGS
@@ -3470,7 +3474,7 @@ Display record counts for the specified standard or custom objects.
 
 ```
 USAGE
-  $ sf org list sobject record-counts -o <value> [--json] [--flags-dir <value>] [-s <value>] [--api-version <value>]
+  $ sf org list sobject record-counts -o <value> [--json] [--flags-dir <value>] [-s <value>...] [--api-version <value>]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
@@ -4044,8 +4048,8 @@ Refresh a sandbox org using the sandbox name.
 
 ```
 USAGE
-  $ sf org refresh sandbox -o <value> [--json] [--flags-dir <value>] [--no-auto-activate] [-w <value> | --async] [-i
-    <value> | ] [-n <value>] [-f <value>] [--no-prompt]
+  $ sf org refresh sandbox -o <value> [--json] [--flags-dir <value>] [--no-auto-activate] [-w <minutes> | --async] [-i
+    <seconds> | ] [-n <value>] [-f <value>] [--no-prompt]
 
 FLAGS
   -f, --definition-file=<value>  Path to a sandbox definition file for overriding its configuration when you refresh it.
@@ -4089,7 +4093,9 @@ EXAMPLES
     $ sf org refresh sandbox --definition-file devSbx3-config.json --target-org prodOrg
 
 FLAG DESCRIPTIONS
-  -f, --definition-file=<value>  Path to a sandbox definition file for overriding its configuration when you refresh it.
+  -f, --definition-file=<value>
+
+    Path to a sandbox definition file for overriding its configuration when you refresh it.
 
     The sandbox definition file is a blueprint for the sandbox; use the file to change the sandbox configuration during
     a refresh. If you don't want to change the sandbox configuration when you refresh it, then simply use the --name
@@ -4121,7 +4127,7 @@ Check the status of a sandbox creation, and log in to it if it's ready.
 
 ```
 USAGE
-  $ sf org resume sandbox [--json] [--flags-dir <value>] [-w <value>] [-n <value> | -i <value>] [-l] [-o <value>]
+  $ sf org resume sandbox [--json] [--flags-dir <value>] [-w <minutes>] [-n <value> | -i <value>] [-l] [-o <value>]
 
 FLAGS
   -i, --job-id=<value>      Job ID of the incomplete sandbox creation that you want to check the status of.
@@ -5440,7 +5446,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.2.1/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.2.2/src/commands/plugins/index.ts)_
 
 ## `sf plugins discover`
 
@@ -5485,7 +5491,7 @@ EXAMPLES
   $ sf plugins inspect @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.2.1/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.2.2/src/commands/plugins/inspect.ts)_
 
 ## `sf plugins install PLUGIN`
 
@@ -5534,7 +5540,7 @@ EXAMPLES
     $ sf plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.2.1/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.2.2/src/commands/plugins/install.ts)_
 
 ## `sf plugins link PATH`
 
@@ -5564,7 +5570,7 @@ EXAMPLES
   $ sf plugins link @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.2.1/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.2.2/src/commands/plugins/link.ts)_
 
 ## `sf plugins reset`
 
@@ -5579,7 +5585,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.2.1/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.2.2/src/commands/plugins/reset.ts)_
 
 ## `sf plugins trust verify`
 
@@ -5636,7 +5642,7 @@ EXAMPLES
   $ sf plugins uninstall @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.2.1/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.2.2/src/commands/plugins/uninstall.ts)_
 
 ## `sf plugins update`
 
@@ -5654,7 +5660,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.2.1/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.2.2/src/commands/plugins/update.ts)_
 
 ## `sf project convert mdapi`
 
@@ -5662,8 +5668,8 @@ Convert metadata retrieved via Metadata API into the source format used in Sales
 
 ```
 USAGE
-  $ sf project convert mdapi -r <value> [--json] [--flags-dir <value>] [--api-version <value>] [-d <value>] [-p <value> |
-    -x <value> | -m <value>]
+  $ sf project convert mdapi -r <value> [--json] [--flags-dir <value>] [--api-version <value>] [-d <value>] [-p <value>...
+    | -x <value> | -m <value>...]
 
 FLAGS
   -d, --output-dir=<value>       Directory to store your files in after they’re converted to source format; can be an
@@ -5726,7 +5732,7 @@ Convert source-formatted files into metadata that you can deploy using Metadata 
 ```
 USAGE
   $ sf project convert source [--json] [--flags-dir <value>] [--api-version <value>] [-r <value>] [-d <value>] [-n <value>]
-    [-p <value> | -x <value> | -m <value>]
+    [-p <value>... | -x <value> | -m <value>...]
 
 FLAGS
   -d, --output-dir=<value>     [default: metadataPackage_1717296698220] Output directory to store the Metadata
@@ -5856,8 +5862,8 @@ Delete source from your project and from a non-source-tracked org.
 ```
 USAGE
   $ sf project delete source -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-w <value>] [--tests
-    <value>] [-l NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [-r] [-m <value>] [-p <value>] [-f [-t |
-    -c]] [--verbose]
+    <value>...] [-l NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [-r] [-m <value>...] [-p <value>...] [-f
+    [-t | -c]] [--verbose]
 
 FLAGS
   -c, --check-only             Validate delete command but don't delete anything from the org or the local project.
@@ -6032,7 +6038,7 @@ Cancel a deploy operation.
 
 ```
 USAGE
-  $ sf project deploy cancel [--json] [--flags-dir <value>] [-o <value>] [--async | -w <value>] [-i <value>] [-r]
+  $ sf project deploy cancel [--json] [--flags-dir <value>] [-o <value>] [--async | -w <minutes>] [-i <value>] [-r]
 
 FLAGS
   -i, --job-id=<value>      Job ID of the deploy operation you want to cancel.
@@ -6104,7 +6110,7 @@ Preview a deployment to see what will deploy to the org, the potential conflicts
 
 ```
 USAGE
-  $ sf project deploy preview -o <value> [--json] [--flags-dir <value>] [-c] [-x <value> | -d <value> | -m <value>]
+  $ sf project deploy preview -o <value> [--json] [--flags-dir <value>] [-c] [-x <value> | -d <value>... | -m <value>...]
     [--concise]
 
 FLAGS
@@ -6187,8 +6193,8 @@ Quickly deploy a validated deployment to an org.
 
 ```
 USAGE
-  $ sf project deploy quick [--json] [--flags-dir <value>] [--async | -w <value>] [--concise | --verbose] [-i <value>] [-o
-    <value>] [-r] [-a <value>]
+  $ sf project deploy quick [--json] [--flags-dir <value>] [--async | -w <minutes>] [--concise | --verbose] [-i <value>]
+    [-o <value>] [-r] [-a <value>]
 
 FLAGS
   -a, --api-version=<value>  Target API version for the deploy.
@@ -6281,8 +6287,8 @@ Check or poll for the status of a deploy operation.
 ```
 USAGE
   $ sf project deploy report [--json] [--flags-dir <value>] [-o <value>] [-i <value>] [-r] [--coverage-formatters
-    clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamcity|text|text-summary] [--junit] [--results-dir
-    <value>] [-w <value>]
+    clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamcity|text|text-summary...] [--junit]
+    [--results-dir <value>] [-w <minutes>]
 
 FLAGS
   -i, --job-id=<value>      Job ID of the deploy operation you want to check the status of.
@@ -6372,8 +6378,8 @@ Resume watching a deploy operation and update source tracking when the deploy co
 
 ```
 USAGE
-  $ sf project deploy resume [--json] [--flags-dir <value>] [--concise | --verbose] [-i <value>] [-r] [-w <value>]
-    [--coverage-formatters clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamcity|text|text-summary]
+  $ sf project deploy resume [--json] [--flags-dir <value>] [--concise | --verbose] [-i <value>] [-r] [-w <minutes>]
+    [--coverage-formatters clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamcity|text|text-summary...]
     [--junit] [--results-dir <value>]
 
 FLAGS
@@ -6469,11 +6475,11 @@ Deploy metadata to an org from your local project.
 
 ```
 USAGE
-  $ sf project deploy start -o <value> [--json] [--flags-dir <value>] [-a <value>] [--async | -w <value>] [--concise |
-    --verbose] [--dry-run] [-c] [-r] [-g] [--single-package ] [-t <value>] [-l
-    NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [--purge-on-delete [-x <value> | -d <value> | -m <value>
-    | --metadata-dir <value>]] [--pre-destructive-changes <value> ] [--post-destructive-changes <value> ]
-    [--coverage-formatters clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamcity|text|text-summary]
+  $ sf project deploy start -o <value> [--json] [--flags-dir <value>] [-a <value>] [--async | -w <minutes>] [--concise |
+    --verbose] [--dry-run] [-c] [-r] [-g] [--single-package ] [-t <value>...] [-l
+    NoTestRun|RunSpecifiedTests|RunLocalTests|RunAllTestsInOrg] [--purge-on-delete [-x <value> | -d <value>... | -m
+    <value>... | --metadata-dir <value>]] [--pre-destructive-changes <value> ] [--post-destructive-changes <value> ]
+    [--coverage-formatters clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamcity|text|text-summary...]
     [--junit] [--results-dir <value>]
 
 FLAGS
@@ -6713,10 +6719,11 @@ Validate a metadata deployment without actually executing it.
 ```
 USAGE
   $ sf project deploy validate -o <value> [--json] [--flags-dir <value>] [-a <value>] [--async] [--concise | --verbose] [-m
-    <value>] [-d <value>] [--single-package --metadata-dir <value>] [-t <value>] [-l
-    RunAllTestsInOrg|RunLocalTests|RunSpecifiedTests] [-w <value>] [-g] [--coverage-formatters
-    clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamcity|text|text-summary] [--junit] [--results-dir
-    <value>] [--purge-on-delete -x <value>] [--pre-destructive-changes <value> ] [--post-destructive-changes <value> ]
+    <value>...] [-d <value>...] [--single-package --metadata-dir <value>] [-t <value>...] [-l
+    RunAllTestsInOrg|RunLocalTests|RunSpecifiedTests] [-w <minutes>] [-g] [--coverage-formatters
+    clover|cobertura|html-spa|html|json|json-summary|lcovonly|none|teamcity|text|text-summary...] [--junit]
+    [--results-dir <value>] [--purge-on-delete -x <value>] [--pre-destructive-changes <value> ]
+    [--post-destructive-changes <value> ]
 
 FLAGS
   -a, --api-version=<value>  Target API version for the validation.
@@ -7006,8 +7013,8 @@ Create a project manifest that lists the metadata components you want to deploy 
 
 ```
 USAGE
-  $ sf project generate manifest [--json] [--flags-dir <value>] [--api-version <value>] [-m <value>] [-p <value>] [-n <value> |
-    -t pre|post|destroy|package] [-c managed|unlocked --from-org <value>] [-d <value>]
+  $ sf project generate manifest [--json] [--flags-dir <value>] [--api-version <value>] [-m <value>...] [-p <value>...] [-n
+    <value> | -t pre|post|destroy|package] [-c managed|unlocked... --from-org <value>] [-d <value>]
 
 FLAGS
   -c, --include-packages=<option>...  Package types (managed, unlocked) whose metadata is included in the manifest; by
@@ -7228,8 +7235,9 @@ Retrieve metadata from an org to your local project.
 
 ```
 USAGE
-  $ sf project retrieve start -o <value> [--json] [--flags-dir <value>] [-a <value>] [-c] [-x <value> | -m <value> | -d
-    <value>] [-r <value> | -n <value> | ] [--single-package -t <value>] [-w <value>] [-z ] [--zip-file-name <value> ]
+  $ sf project retrieve start -o <value> [--json] [--flags-dir <value>] [-a <value>] [-c] [-x <value> | -m <value>... | -d
+    <value>...] [-r <value> | -n <value>... | ] [--single-package -t <value>] [-w <value>] [-z ] [--zip-file-name
+    <value> ]
 
 FLAGS
   -a, --api-version=<value>      Target API version for the retrieve.
@@ -7367,7 +7375,9 @@ FLAG DESCRIPTIONS
     If the target directory matches one of the package directories in your sfdx-project.json file, the command fails.
     Running the command multiple times with the same target adds new files and overwrites existing files.
 
-  -w, --wait=<value>  Number of minutes to wait for the command to complete and display results to the terminal window.
+  -w, --wait=<value>
+
+    Number of minutes to wait for the command to complete and display results to the terminal window.
 
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 
@@ -7591,7 +7601,7 @@ DESCRIPTION
   Once you select a command, hit enter and it will show the help for that command.
 ```
 
-_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/1.1.0/src/commands/search.ts)_
+_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/1.1.1/src/commands/search.ts)_
 
 ## `sf sobject describe`
 
@@ -7776,7 +7786,7 @@ EXAMPLES
     $ sf update --available
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.3.2/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.3.3/src/commands/update.ts)_
 
 ## `sf version`
 
@@ -7796,7 +7806,7 @@ FLAG DESCRIPTIONS
     Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
 ```
 
-_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.2.1/src/commands/version.ts)_
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.2.2/src/commands/version.ts)_
 
 ## `sf visualforce generate component`
 
@@ -7936,6 +7946,6 @@ EXAMPLES
     $ sf which "foo bar baz"
 ```
 
-_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.2.0/src/commands/which.ts)_
+_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.2.1/src/commands/which.ts)_
 
 <!-- commandsstop -->
