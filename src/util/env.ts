@@ -45,14 +45,6 @@ export class Env extends EnvVars {
     return this.getBoolean(Env.SF_INSTALLER);
   }
 
-  public getNpmRegistryOverride(): string | undefined {
-    return this.getString(Env.SF_NPM_REGISTRY);
-  }
-
-  public setNpmRegistryOverride(value: string): void {
-    return this.setString(Env.SF_NPM_REGISTRY, value);
-  }
-
   public normalizeAutoupdateDisabled(): void {
     // Ensure that the legacy envar always causes the oclif counterpart to be set
     // see https://github.com/oclif/plugin-update/blob/3946fb296a0a95544ab6364b36a1f7422c8aeddf/src/hooks/init.ts#L22
