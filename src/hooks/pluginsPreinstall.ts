@@ -6,7 +6,6 @@
  */
 
 import { type Hook } from '@oclif/core/hooks';
-import { handle } from '@oclif/core/handle';
 
 const hook: Hook.PluginsPreinstall = async function (options) {
   const verifySignHookResult = await this.config.runHook('plugins:preinstall:verify:signature', options);
@@ -15,6 +14,7 @@ const hook: Hook.PluginsPreinstall = async function (options) {
   );
 
   if (pluginTrustFailure !== undefined) {
+    const { handle } = await import('@oclif/core/handle');
     await handle(pluginTrustFailure.error);
   }
 };

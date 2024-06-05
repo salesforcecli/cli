@@ -6,7 +6,6 @@
  */
 
 import { type Hook } from '@oclif/core/hooks';
-import ux from '@oclif/core/ux';
 
 // eslint-disable-next-line @typescript-eslint/require-await
 const hook: Hook.Prerun = async function ({ Command, config }) {
@@ -22,6 +21,7 @@ const hook: Hook.Prerun = async function ({ Command, config }) {
   if (!specifiedVersion) return;
 
   if (plugin.version !== specifiedVersion) {
+    const { ux } = await import('@oclif/core/ux');
     ux.warn(
       `Plugin ${plugin.name} (${plugin.version}) differs from the version specified by ${config.bin} (${specifiedVersion})`
     );
