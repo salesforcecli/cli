@@ -8,7 +8,7 @@ import { format } from 'node:util';
 import Interfaces from '@oclif/core/interfaces';
 import { Logger } from '@salesforce/core/logger';
 
-export const customLogger = (namespace: string): Interfaces.Logger => {
+const customLogger = (namespace: string): Interfaces.Logger => {
   const sfLogger = new Logger(namespace);
   return {
     child: (ns: string, delimiter?: string) => customLogger(`${namespace}${delimiter ?? ':'}${ns}`),
