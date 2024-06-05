@@ -5,8 +5,11 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import * as os from 'node:os';
-import { Command, Hook, toConfiguredId, toStandardizedId, Interfaces, loadHelpClass } from '@oclif/core';
+import os from 'node:os';
+import { Command } from '@oclif/core/command';
+import { type Hook } from '@oclif/core/hooks';
+import { toConfiguredId, toStandardizedId } from '@oclif/core/util/ids';
+import Interfaces from '@oclif/core/interfaces';
 
 function buildChoices(
   matches: Command.Loadable[],
@@ -51,6 +54,7 @@ const hook: Hook.CommandIncomplete = async function ({ config, matches, argv }) 
   );
 
   if (argv.includes('--help') || argv.includes('-h')) {
+    const { loadHelpClass } = await import('@oclif/core/help');
     const Help = await loadHelpClass(config);
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const help = new Help(config, config.pjson.helpOptions);

@@ -5,7 +5,7 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import { Hook, Errors } from '@oclif/core';
+import { type Hook } from '@oclif/core/hooks';
 
 const hook: Hook.PluginsPreinstall = async function (options) {
   const verifySignHookResult = await this.config.runHook('plugins:preinstall:verify:signature', options);
@@ -14,7 +14,8 @@ const hook: Hook.PluginsPreinstall = async function (options) {
   );
 
   if (pluginTrustFailure !== undefined) {
-    await Errors.handle(pluginTrustFailure.error);
+    const { handle } = await import('@oclif/core/handle');
+    await handle(pluginTrustFailure.error);
   }
 };
 

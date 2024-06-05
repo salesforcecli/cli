@@ -4,18 +4,19 @@
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import { Hook, ux } from '@oclif/core';
+import type { Hook } from '@oclif/core/hooks';
+import ux from '@oclif/core/ux';
 
-export const hook: Hook<'update'> = async function ({ config }) {
+export const hook: Hook.Update = async function ({ config }) {
   if (process.env.SF_HIDE_RELEASE_NOTES === 'true') return;
 
   try {
     return await config.runCommand('whatsnew', ['--hook']);
   } catch (err) {
     const error = err as Error;
-    ux.log('NOTE: This error can be ignored in CI and may be silenced in the future');
-    ux.log('- Set the SF_HIDE_RELEASE_NOTES env var to "true" to skip this script\n');
-    ux.log(error.message);
+    ux.stdout('NOTE: This error can be ignored in CI and may be silenced in the future');
+    ux.stdout('- Set the SF_HIDE_RELEASE_NOTES env var to "true" to skip this script\n');
+    ux.stdout(error.message);
   }
 };
 

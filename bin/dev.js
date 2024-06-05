@@ -1,9 +1,11 @@
 #!/usr/bin/env ts-node
 
 async function main() {
-  const oclif = await import('@oclif/core');
-  oclif.settings.performanceEnabled = true;
-  await oclif.execute({ development: true, dir: import.meta.url });
+  const { settings } = await import('@oclif/core/settings');
+  const { execute } = await import('@oclif/core/execute');
+
+  settings.performanceEnabled = true;
+  await execute({ development: true, dir: import.meta.url });
 }
 
 await main();

@@ -8,12 +8,11 @@
 import { platform, arch, release } from 'node:os';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { Config, Interfaces, run as oclifRun, settings } from '@oclif/core';
-import { set } from '@salesforce/kit';
-import Debug from 'debug';
-import { default as nodeEnv, Env } from './util/env.js';
-
-const debug = Debug('sf');
+import { execute } from '@oclif/core/execute';
+import { Config } from '@oclif/core/config';
+import Interfaces from '@oclif/core/interfaces';
+import NodeEnv, { Env } from './util/env.js';
+import { sfStartupLogger, logger } from './logger.js';
 
 const envVars = [
   ...new Set([
@@ -40,14 +39,6 @@ export const UPDATE_DISABLED_NPM = 'Use "npm update --global @salesforce/cli" to
 export const UPDATE_DISABLED_DEMO =
   'Manual and automatic CLI updates have been disabled in DEMO mode. ' +
   'To check for a new version, unset the environment variable SF_ENV.';
-
-export function configureUpdateSites(config: Interfaces.Config, env = nodeEnv): void {
-  const npmRegistry = env.getNpmRegistryOverride();
-  if (npmRegistry) {
-    // Override config value if set via envar
-    set(config, 'pjson.oclif.warn-if-update-available.registry', npmRegistry);
-  }
-}
 
 export function configureAutoUpdate(envars: Env): void {
   if (envars.isDemoMode()) {
@@ -76,11 +67,12 @@ export function configureAutoUpdate(envars: Env): void {
   }
 }
 
-function debugCliInfo(version: string, channel: string, env: Env, config: Interfaces.Config): void {
+function debugCliInfo(env: Env, config: Interfaces.Config): void {
   function debugSection(section: string, items: Array<[string, string]>): void {
     const pad = 25;
-    debug('%s:', section.padStart(pad));
-    items.forEach(([name, value]) => debug('%s: %s', name.padStart(pad), value));
+    const header = `### ${section} ###`;
+    sfStartupLogger.debug('%s', header.padStart(pad));
+    items.forEach(([name, value]) => sfStartupLogger.debug('%s: %s', name.padStart(pad), value));
   }
 
   debugSection('OS', [
@@ -93,8 +85,8 @@ function debugCliInfo(version: string, channel: string, env: Env, config: Interf
   debugSection('NODE', [['version', process.versions.node]]);
 
   debugSection('CLI', [
-    ['version', version],
-    ['channel', channel],
+    ['version', config.version],
+    ['channel', config.channel],
     ['bin', config.bin],
     ['data', config.dataDir],
     ['cache', config.cacheDir],
@@ -112,33 +104,15 @@ function debugCliInfo(version: string, channel: string, env: Env, config: Interf
   );
 }
 
-type CreateOptions = {
-  version: string;
-  bin: string | undefined;
-  channel: string;
-  run?: typeof oclifRun;
-  env?: typeof nodeEnv;
-};
-
-export function create({ version, bin, channel, run, env }: CreateOptions): { run: () => Promise<unknown> } {
-  settings.performanceEnabled = true;
-  const root = resolve(fileURLToPath(import.meta.url), '..');
-  const args = process.argv.slice(2);
-  const environment = env ?? nodeEnv;
-  return {
-    async run(): Promise<unknown> {
-      const config = new Config({
-        name: bin,
-        root,
-        version,
-        channel,
-      });
-      await config.load();
-      configureUpdateSites(config, environment);
-      configureAutoUpdate(environment);
-      debugCliInfo(version, channel, environment, config);
-      // Example of how run is used in a test https://github.com/salesforcecli/cli/pull/171/files#diff-1deee0a575599b2df117c280da319f7938aaf6fdb0c04bcdbde769dbf464be69R46
-      return run ? run(args, config) : oclifRun(args, config);
-    },
-  };
+export async function run(): Promise<unknown> {
+  configureAutoUpdate(NodeEnv);
+  const config = await Config.load({
+    root: resolve(fileURLToPath(import.meta.url), '..'),
+    logger,
+    enablePerf: true,
+  });
+  debugCliInfo(NodeEnv, config);
+  return execute({
+    loadOptions: config,
+  });
 }
