@@ -5,7 +5,7 @@
 
 // Since the CLI is a single process, we can have a larger amount of max listeners since
 // the process gets shut down. Don't set it to 0 (no limit) since we should still be aware
-// of rouge event listeners
+// of rogue event listeners
 process.setMaxListeners(parseInt(process.env.SF_MAX_EVENT_LISTENERS, 10) || 1000);
 
 // Don't let other plugins override the CLI specified max listener count
