@@ -12,7 +12,7 @@ import { execute } from '@oclif/core/execute';
 import { Config } from '@oclif/core/config';
 import Interfaces from '@oclif/core/interfaces';
 import NodeEnv, { Env } from './util/env.js';
-import { logger } from './logger.js';
+import { sfStartupLogger, logger } from './logger.js';
 
 const envVars = [
   ...new Set([
@@ -71,8 +71,8 @@ function debugCliInfo(env: Env, config: Interfaces.Config): void {
   function debugSection(section: string, items: Array<[string, string]>): void {
     const pad = 25;
     const header = `### ${section} ###`;
-    logger.debug('%s', header.padStart(pad));
-    items.forEach(([name, value]) => logger.debug('%s: %s', name.padStart(pad), value));
+    sfStartupLogger.debug('%s', header.padStart(pad));
+    items.forEach(([name, value]) => sfStartupLogger.debug('%s: %s', name.padStart(pad), value));
   }
 
   debugSection('OS', [

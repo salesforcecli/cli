@@ -21,4 +21,5 @@ const customLogger = (namespace: string): Interfaces.Logger => {
   };
 };
 
-export const logger = customLogger('sf');
+export const logger = customLogger('sf:oclif');
+export const sfStartupLogger = customLogger('sf-startup');
