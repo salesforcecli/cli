@@ -41,20 +41,20 @@ jobs:
           npmPackage: '@salesforce/cli'
 
       - name: Parse latest-rc semver
-        uses: booxmedialtd/ws-action-parse-semver@7784200024d6b3fc01253e617ec0168daf603de3
+        uses: salesforcecli/github-workflows/.github/actions/parse-semver@main
         id: latest-rc-semver-info
         with:
           input_string: ${{ steps.latest-rc-version.outputs.version }}
 
       - name: Look up sf package.json version
-        uses: notiz-dev/github-action-json-property@7a701887f4b568b23eb7b78bb0fc49aaeb1b68d3
+        uses: salesforcecli/github-workflows/.github/actions/get-json-property@main
         id: package-json-version
         with:
           path: 'package.json'
           prop_path: 'version'
 
       - name: Parse package.json semver
-        uses: booxmedialtd/ws-action-parse-semver@7784200024d6b3fc01253e617ec0168daf603de3
+        uses: salesforcecli/github-workflows/.github/actions/parse-semver@main
         id: package-json-semver-info
         with:
           input_string: ${{ steps.package-json-version.outputs.prop }}
