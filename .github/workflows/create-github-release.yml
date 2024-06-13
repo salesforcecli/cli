@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Get release channel from PR title
         id: release-channel
-        uses: actions-ecosystem/action-regex-match@d50fd2e7a37d0e617aea3d7ada663bd56862b9cc
+        uses: kaisugi/action-regex-match@45cc5bacf016a4c0d2c3c9d0f8b7c2f1b79687b8
         with:
           text: ${{ github.event.pull_request.title }}
           # https://regex101.com/r/66VrAs/1
@@ -30,14 +30,14 @@ jobs:
       # Exit the build if no channel is found
       - name: Confirm regex channel match
         if: ${{ !steps.release-channel.outputs.group1 }}
-        uses: actions/github-script@v3
+        uses: actions/github-script@v7
         with:
           script: |
             core.setFailed('Release channel was not found in PR title. Exiting')
 
       - name: Prevent legacy channel
         if: ${{ steps.release-channel.outputs.group1 == 'legacy' }}
-        uses: actions/github-script@v3
+        uses: actions/github-script@v7
         with:
           script: |
             core.setFailed('Do not publish to the "legacy" channel! It is still bundled with "sfdx@v7", which is permanetly archived.')
@@ -56,7 +56,7 @@ jobs:
       # Package.json "alpha" tag must match PR title channel
       - name: Validate prerelease tag
         if: ${{ !contains(fromJSON('["latest", "latest-rc", "nightly"]'), steps.release-channel.outputs.group1) && (!steps.check-prerelease.outputs.tag || steps.check-prerelease.outputs.tag != steps.release-channel.outputs.group1) }}
-        uses: actions/github-script@v3
+        uses: actions/github-script@v7
         with:
           script: |
             core.setFailed('Prerelease requires a dist tag name in your package.json like beta in 1.1.1-beta.0')
@@ -75,13 +75,13 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-      - uses: notiz-dev/github-action-json-property@7a701887f4b568b23eb7b78bb0fc49aaeb1b68d3
+      - uses: salesforcecli/github-workflows/.github/actions/get-json-property@main
         id: packageVersion
         with:
           path: 'package.json'
           prop_path: 'version'
       - name: Create Github Release
-        uses: ncipollo/release-action@6c75be85e571768fa31b40abf38de58ba0397db5
+        uses: ncipollo/release-action@2c591bcc8ecdcd2db72b97d6147f871fcd833ba5
         with:
           name: ${{ steps.packageVersion.outputs.prop }}
           tag: ${{ steps.packageVersion.outputs.prop }}

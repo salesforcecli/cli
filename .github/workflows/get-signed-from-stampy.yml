@@ -65,7 +65,7 @@ jobs:
           node scripts/stampy-signed-delete.js
 
       - name: notify
-        uses: slackapi/slack-github-action@v1.24.0
+        uses: slackapi/slack-github-action@v1.26.0
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.CLI_TEAM_SLACK_WEBHOOK_URL }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
