@@ -46,7 +46,7 @@ export class Env extends EnvVars {
   }
 
   public normalizeAutoupdateDisabled(): void {
-    // Ensure that the legacy envar always causes the oclif counterpart to be set
+    // Ensure that the legacy envvar always causes the oclif counterpart to be set
     // see https://github.com/oclif/plugin-update/blob/3946fb296a0a95544ab6364b36a1f7422c8aeddf/src/hooks/init.ts#L22
     if (this.getBoolean(Env.SF_AUTOUPDATE_DISABLE)) {
       this.setBoolean(Env.SF_DISABLE_AUTOUPDATE, true);
