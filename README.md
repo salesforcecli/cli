@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.47.5 linux-x64 node-v20.14.0
+@salesforce/cli/2.47.6 linux-x64 node-v20.14.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -5475,7 +5475,7 @@ EXAMPLES
   $ sf plugins discover
 ```
 
-_See code: [@salesforce/plugin-marketplace](https://github.com/salesforcecli/plugin-marketplace/blob/1.2.14/src/commands/plugins/discover.ts)_
+_See code: [@salesforce/plugin-marketplace](https://github.com/salesforcecli/plugin-marketplace/blob/1.2.15/src/commands/plugins/discover.ts)_
 
 ## `sf plugins:inspect PLUGIN...`
 
