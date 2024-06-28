@@ -2047,10 +2047,10 @@
     ansi-escapes "^7.0.0"
     inquirer-autocomplete-standalone "^0.8.1"
 
-"@oclif/plugin-update@4.4.3":
-  version "4.4.3"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.4.3.tgz#2e59310f586478f6913e515e6e6206d01b20708b"
-  integrity sha512-hJyAht6Vhxs4tX1T0Kud1OH8/12agrGZtyS/klLv/H0LKA/XlTRomTD8FYyEXGjHlNvraDxgnVWqGtDCul6i1Q==
+"@oclif/plugin-update@4.4.4":
+  version "4.4.4"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.4.4.tgz#b27db97ade3a8b322aca323d29c7ef4c9571ef4d"
+  integrity sha512-Qfj4jkDVcxV3u1XuDKFMkXFKgTNO7tJzHVxGMj8VBA2qVSouRzgQ5itdc459T5tT344ixxKwYxdE4GrFGOoB0A==
   dependencies:
     "@inquirer/select" "^2.3.6"
     "@oclif/core" "^4"
@@ -2373,10 +2373,10 @@
     jszip "^3.10.1"
     object-treeify "^2"
 
-"@salesforce/plugin-apex@3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-apex/-/plugin-apex-3.2.0.tgz#21394f6fd6318898b420475205c9fa28d9da3731"
-  integrity sha512-H/KY/8faIiskb6yGEgMR5zFYRbGJ34zqs890LTMVm+HJgwCmOCM738OXsxOWqYW0MvMj3v6t2v3TaE4jFpv8cQ==
+"@salesforce/plugin-apex@3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-apex/-/plugin-apex-3.2.1.tgz#fb0e4f4668398bd5fd574db84297e68a9ed52184"
+  integrity sha512-lPmc10izyyzaItlXlgCHrI8qk7EthMzvAIFDWhAXlfTDYI1ODsSOoroWv57Dyjl3pXPrnCH39inc3+LtJjCFjg==
   dependencies:
     "@oclif/core" "^4"
     "@salesforce/apex-node" "^6.1.2"
@@ -2431,14 +2431,14 @@
     csv-stringify "^6.5.0"
     form-data "^4.0.0"
 
-"@salesforce/plugin-deploy-retrieve@3.9.9":
-  version "3.9.9"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.9.9.tgz#9f15dbd499ead79847f5851b749ee72d5bee6a56"
-  integrity sha512-orDEUFRDf/fwAA2avW2gMFQIydWI1FlZxm9qVDAUbIQ2Oa8ZsNKOac2SIXjv5ppCxpMqnx972LHESQBRuYSQzg==
+"@salesforce/plugin-deploy-retrieve@3.9.11":
+  version "3.9.11"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.9.11.tgz#fd5b0ab67481e0bede3a7562052b06abbb7cce42"
+  integrity sha512-rFhkGfp8scILfEsAlgkzRAs9QJoJkEv3SdmQ6pB5gzefMwz1IEdKjARLnwUBgj0+W+fQjL/w4q+7mgM+a8X8/g==
   dependencies:
     "@oclif/core" "^4.0.3"
     "@salesforce/apex-node" "^6.2.0"
-    "@salesforce/core" "^8.0.1"
+    "@salesforce/core" "^8.0.3"
     "@salesforce/kit" "^3.1.6"
     "@salesforce/plugin-info" "^3.3.10"
     "@salesforce/sf-plugins-core" "^11.1.1"
