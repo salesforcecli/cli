@@ -2353,18 +2353,18 @@
   dependencies:
     "@salesforce/ts-types" "^2.0.10"
 
-"@salesforce/packaging@^4.0.3":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-4.0.3.tgz#2419a410285bc87a64ff8d4c11c81a498ac8dc16"
-  integrity sha512-rASSaRkEgr7nXJixeeNAATHmTnOv9qPl7Sc0ylzhnjBDvBb6UedxiTxv97zJzINIV+hdyBDXqvwqmedoIXEc6A==
+"@salesforce/packaging@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-4.1.0.tgz#61b625c8c22c007b04e190a06a23eca03e9d34c6"
+  integrity sha512-fLIbpoP885fL1FgkM+5aHxAjXQlIBEBamHGHeqTF/BzXbK7Y2bo/Gqdj2FVIw6KACGnowRK83GJNfD961J0CsQ==
   dependencies:
     "@jsforce/jsforce-node" "^3.2.0"
-    "@salesforce/core" "^8.0.2"
+    "@salesforce/core" "^8.0.3"
     "@salesforce/kit" "^3.1.6"
     "@salesforce/schemas" "^1.9.0"
     "@salesforce/source-deploy-retrieve" "^12.0.1"
-    "@salesforce/ts-types" "^2.0.9"
-    "@salesforce/types" "^1.1.0"
+    "@salesforce/ts-types" "^2.0.10"
+    "@salesforce/types" "^1.2.0"
     fast-xml-parser "^4.4.0"
     globby "^11"
     graphology "^0.25.4"
@@ -2484,10 +2484,10 @@
     got "^13.0.0"
     proxy-agent "^6.4.0"
 
-"@salesforce/plugin-org@4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-4.3.0.tgz#86a1cc5af2f0766868248a1cf0855223679b8837"
-  integrity sha512-wPWq7T9nD0tTTYXgJGefKpAdeVF19Qng7nq1qQ/ytOnlKX5uZ3gVtNclESPuHmc2rdEtiCb5cGt5rTm1yViOXw==
+"@salesforce/plugin-org@4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-4.3.1.tgz#07d9aacc2c3e7c03b396b7a42d05b74edb3bb32b"
+  integrity sha512-Cl+5C65UEFvfQGPryAgm37OzH4R3yLaYvDhYz8WuGfWa6nsPD+kXRPdHp8nmzs+MWWjETG3xdsyPJ2RI2V9++w==
   dependencies:
     "@oclif/core" "^4.0.6"
     "@salesforce/core" "^8.0.3"
@@ -2499,15 +2499,15 @@
     is-wsl "^3.1.0"
     open "^10.1.0"
 
-"@salesforce/plugin-packaging@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.6.1.tgz#c2bca406593af29507c24e39fe0bc7ea021e1c26"
-  integrity sha512-NVfda1ETRNsXv585qG7+elO1jSmwL502nMgSduoBaqkEPKdkm49ggvczEcrWnmS6seHAHacR6YyO65TotZB5tg==
+"@salesforce/plugin-packaging@2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.7.0.tgz#be203b4420b6bb4ea4ef1d9dc832d514f3520156"
+  integrity sha512-s6kDsptCjoeUqGNsej2oVPdzzWnC7rhLtd7zojdTr/kClSTM+QViC7dZG9aVjLy7x3E/hiD9TSd60KrINi7ohQ==
   dependencies:
     "@oclif/core" "^4"
     "@salesforce/core" "^8.0.1"
     "@salesforce/kit" "^3.1.6"
-    "@salesforce/packaging" "^4.0.3"
+    "@salesforce/packaging" "^4.1.0"
     "@salesforce/sf-plugins-core" "^11.1.2"
     chalk "^5.3.0"
 
@@ -2761,10 +2761,10 @@
   resolved "https://registry.yarnpkg.com/@salesforce/ts-types/-/ts-types-2.0.10.tgz#f2107a52b60be6c3fe712f4d40aafad48c6bebe0"
   integrity sha512-ulGQ1oUGXrmSUi6NGbxZZ7ykSDv439x+WYZpkMgFLC8Dx0TxJXfUAJYeZh7eKO5xI/ob3iyvN+RBcBkp4KFN1w==
 
-"@salesforce/types@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/types/-/types-1.1.0.tgz#22d13c84c22c036e20188c54e679e1710d4ae398"
-  integrity sha512-nYxyX9cR9A+ltELXHDJNKTjOgGrLj3URVUpAfpPlmEMjTYXkitz/4bJchIsN2r1Ud2kBcxUYtjvPOvKBnP9eiQ==
+"@salesforce/types@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/types/-/types-1.2.0.tgz#58842732eebc718f10c48232ff39794698824049"
+  integrity sha512-HHey9SlkmElyNWBoo3DRQMDBkj9cAAwUItkGgzgXo4pCt6DdP1tEkB3QPHElE4KAHk8FVxHGoofs53gFZzEVZg==
 
 "@sigstore/bundle@^2.3.0", "@sigstore/bundle@^2.3.1":
   version "2.3.1"
