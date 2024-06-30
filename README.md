@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.49.2 linux-x64 node-v20.15.0
+@salesforce/cli/2.49.3 linux-x64 node-v20.15.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -904,7 +904,7 @@ DESCRIPTION
   List all sf commands.
 ```
 
-_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/4.0.4/src/commands/commands.ts)_
+_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/4.0.5/src/commands/commands.ts)_
 
 ## `sf config get`
 
@@ -3346,7 +3346,7 @@ EXAMPLES
     $ sf org list auth
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.27/src/commands/org/list/auth.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.28/src/commands/org/list/auth.ts)_
 
 ## `sf org list limits`
 
@@ -3646,7 +3646,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.27/src/commands/org/login/access-token.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.28/src/commands/org/login/access-token.ts)_
 
 ## `sf org login device`
 
@@ -3706,7 +3706,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.27/src/commands/org/login/device.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.28/src/commands/org/login/device.ts)_
 
 ## `sf org login jwt`
 
@@ -3797,7 +3797,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.27/src/commands/org/login/jwt.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.28/src/commands/org/login/jwt.ts)_
 
 ## `sf org login sfdx-url`
 
@@ -3862,7 +3862,7 @@ EXAMPLES
   $ echo url | sf org login sfdx-url --sfdx-url-stdin
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.27/src/commands/org/login/sfdx-url.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.28/src/commands/org/login/sfdx-url.ts)_
 
 ## `sf org login web`
 
@@ -3949,7 +3949,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.27/src/commands/org/login/web.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.28/src/commands/org/login/web.ts)_
 
 ## `sf org logout`
 
@@ -4010,7 +4010,7 @@ FLAG DESCRIPTIONS
     All orgs includes Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.27/src/commands/org/logout.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.28/src/commands/org/logout.ts)_
 
 ## `sf org open`
 
@@ -5675,7 +5675,7 @@ EXAMPLES
   $ sf plugins trust verify --npm @scope/npmName
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.7.10/src/commands/plugins/trust/verify.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.7.11/src/commands/plugins/trust/verify.ts)_
 
 ## `sf plugins uninstall [PLUGIN]`
 
