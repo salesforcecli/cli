@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.49.5 linux-x64 node-v20.15.0
+@salesforce/cli/2.49.6 linux-x64 node-v20.15.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -64,10 +64,8 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf data delete bulk`](#sf-data-delete-bulk)
 - [`sf data delete record`](#sf-data-delete-record)
 - [`sf data delete resume`](#sf-data-delete-resume)
-- [`sf data export beta tree`](#sf-data-export-beta-tree)
 - [`sf data export tree`](#sf-data-export-tree)
 - [`sf data get record`](#sf-data-get-record)
-- [`sf data import beta tree`](#sf-data-import-beta-tree)
 - [`sf data import tree`](#sf-data-import-tree)
 - [`sf data query`](#sf-data-query)
 - [`sf data query resume`](#sf-data-query-resume)
@@ -519,7 +517,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.2.2/src/commands/apex/get/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.2.3/src/commands/apex/get/log.ts)_
 
 ## `sf apex get test`
 
@@ -573,7 +571,7 @@ EXAMPLES
       me@myorg'
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.2.2/src/commands/apex/get/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.2.3/src/commands/apex/get/test.ts)_
 
 ## `sf apex list log`
 
@@ -613,7 +611,7 @@ EXAMPLES
     $ sf apex list log --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.2.2/src/commands/apex/list/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.2.3/src/commands/apex/list/log.ts)_
 
 ## `sf apex run`
 
@@ -660,7 +658,7 @@ EXAMPLES
     $ sf apex run
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.2.2/src/commands/apex/run.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.2.3/src/commands/apex/run.ts)_
 
 ## `sf apex run test`
 
@@ -801,7 +799,7 @@ FLAG DESCRIPTIONS
     --tests Test1 --tests Test2
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.2.2/src/commands/apex/run/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.2.3/src/commands/apex/run/test.ts)_
 
 ## `sf apex tail log`
 
@@ -844,7 +842,7 @@ EXAMPLES
     $ sf apex tail log --color --skip-trace-flag
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.2.2/src/commands/apex/tail/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.2.3/src/commands/apex/tail/log.ts)_
 
 ## `sf autocomplete [SHELL]`
 
@@ -1161,7 +1159,7 @@ EXAMPLES
     $ sf data create file --file path/to/astro.png --parent-id a03fakeLoJWPIA3
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/data/create/file.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.3/src/commands/data/create/file.ts)_
 
 ## `sf data create record`
 
@@ -1217,7 +1215,7 @@ EXAMPLES
       TracedEntityId=01p17000000R6bLAAS"
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/data/create/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.3/src/commands/data/create/record.ts)_
 
 ## `sf data delete bulk`
 
@@ -1275,7 +1273,7 @@ FLAG DESCRIPTIONS
     and can be enabled only by a system administrator.
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/data/delete/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.3/src/commands/data/delete/bulk.ts)_
 
 ## `sf data delete record`
 
@@ -1336,7 +1334,7 @@ EXAMPLES
     $ sf data delete record --use-tooling-api --sobject TraceFlag --record-id 7tf8c
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/data/delete/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.3/src/commands/data/delete/record.ts)_
 
 ## `sf data delete resume`
 
@@ -1375,65 +1373,7 @@ EXAMPLES
     $ sf data delete resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/data/delete/resume.ts)_
-
-## `sf data export beta tree`
-
-Export data from an org into one or more JSON files.
-
-```
-USAGE
-  $ sf data export beta tree -o <value> -q <value> [--json] [--flags-dir <value>] [--api-version <value>] [-p] [-x <value>]
-    [-d <value>]
-
-FLAGS
-  -d, --output-dir=<value>   Directory in which to generate the JSON files; default is current directory.
-  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
-                             configuration variable is already set.
-  -p, --plan                 Generate multiple sObject tree files and a plan definition file for aggregated import.
-  -q, --query=<value>        (required) SOQL query, or filepath of a file that contains the query, to retrieve records.
-  -x, --prefix=<value>       Prefix of generated files.
-      --api-version=<value>  Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-DESCRIPTION
-  Export data from an org into one or more JSON files.
-
-  Specify a SOQL query, either directly at the command line or read from a file, to retrieve the data you want to
-  export. The exported data is written to JSON files in sObject tree format, which is a collection of nested,
-  parent-child records with a single root record. Use these JSON files to import data into an org with the "sf data
-  import tree" command.
-
-  If your SOQL query references multiple objects, the command generates a single JSON file by default. You can specify
-  the --plan flag to generate separate JSON files for each object and a plan definition file that aggregates them. You
-  then specify just this plan definition file when you import the data into an org.
-
-  The SOQL query can return a maximum of 2,000 records. For more information, see the REST API Developer Guide.
-  (https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobject_tree.htm).
-
-EXAMPLES
-  Export records retrieved with the specified SOQL query into a single JSON file in the current directory; the command
-  uses your default org:
-
-    $ sf data export beta tree --query "SELECT Id, Name, (SELECT Name, Address__c FROM Properties__r) FROM \
-      Broker__c"
-
-  Export data using a SOQL query in the "query.txt" file and generate JSON files for each object and a plan that
-  aggregates them:
-
-    $ sf data export beta tree --query query.txt --plan
-
-  Prepend "export-demo" before each generated file and generate the files in the "export-out" directory; run the
-  command on the org with alias "my-scratch":
-
-    $ sf data export beta tree --query query.txt --plan --prefix export-demo --output-dir export-out --target-org \
-      my-scratch
-```
-
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/data/export/beta/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.3/src/commands/data/delete/resume.ts)_
 
 ## `sf data export tree`
 
@@ -1474,12 +1414,13 @@ DESCRIPTION
 
 ALIASES
   $ sf force data tree export
+  $ sf data export beta tree
 
 EXAMPLES
   Export records retrieved with the specified SOQL query into a single JSON file in the current directory; the command
   uses your default org:
 
-    $ sf data export tree --query "SELECT Id, Name, (SELECT Name, Address__c FROM Properties__r) FROM Broker__c"
+    $ sf data export tree --query "SELECT Id, Name, (SELECT Name, Address**c FROM Properties**r) FROM Broker\_\_c"
 
   Export data using a SOQL query in the "query.txt" file and generate JSON files for each object and a plan that
   aggregates them:
@@ -1493,7 +1434,7 @@ EXAMPLES
       my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/data/export/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.3/src/commands/data/export/tree.ts)_
 
 ## `sf data get record`
 
@@ -1557,51 +1498,7 @@ EXAMPLES
     $ sf data get record --use-tooling-api --sobject TraceFlag --record-id 7tf8c
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/data/get/record.ts)_
-
-## `sf data import beta tree`
-
-Import data from one or more JSON files into an org.
-
-```
-USAGE
-  $ sf data import beta tree -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-f <value>...] [-p
-  <value>]
-
-FLAGS
-  -f, --files=<value>...     Comma-separated and in-order JSON files that contain the records, in sObject tree format,
-                             that you want to insert.
-  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
-                             configuration variable is already set.
-  -p, --plan=<value>         Plan definition file to insert multiple data files.
-      --api-version=<value>  Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-DESCRIPTION
-  Import data from one or more JSON files into an org.
-
-  The JSON files that contain the data are in sObject tree format, which is a collection of nested, parent-child records
-  with a single root record. Use the "sf data export tree" command to generate these JSON files.
-
-  If you used the --plan flag when exporting the data to generate a plan definition file, use the --plan flag to
-  reference the file when you import. If you're not using a plan, use the --files flag to list the files. If you specify
-  multiple JSON files that depend on each other in a parent-child relationship, be sure you list them in the correct
-  order.
-
-EXAMPLES
-  Import the records contained in two JSON files into the org with alias "my-scratch":
-
-    $ sf data import beta tree --files Contact.json,Account.json --target-org my-scratch
-
-  Import records using a plan definition file into your default org:
-
-    $ sf data import beta tree --plan Account-Contact-plan.json
-```
-
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/data/import/beta/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.3/src/commands/data/get/record.ts)_
 
 ## `sf data import tree`
 
@@ -1609,7 +1506,7 @@ Import data from one or more JSON files into an org.
 
 ```
 USAGE
-  $ sf data import tree -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-f <value>... | -p <value>]
+  $ sf data import tree -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-f <value>...] [-p <value>]
 
 FLAGS
   -f, --files=<value>...     Comma-separated and in-order JSON files that contain the records, in sObject tree format,
@@ -1634,12 +1531,9 @@ DESCRIPTION
   multiple JSON files that depend on each other in a parent-child relationship, be sure you list them in the correct
   order.
 
-  The sObject Tree API supports requests that contain up to 200 records. For more information, see the REST API
-  Developer Guide.
-  (https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobject_tree.htm)
-
 ALIASES
   $ sf force data tree import
+  $ sf data import beta tree
 
 EXAMPLES
   Import the records contained in two JSON files into the org with alias "my-scratch":
@@ -1649,9 +1543,27 @@ EXAMPLES
   Import records using a plan definition file into your default org:
 
     $ sf data import tree --plan Account-Contact-plan.json
+
+FLAG DESCRIPTIONS
+  -p, --plan=<value>  Plan definition file to insert multiple data files.
+
+    Unlike when you use the `--files` flag, the files listed in the plan definition file **can** contain more then 200
+    records. When the CLI executes the import, it automatically batches the records to comply with the 200 record limit
+    set by the API.
+
+    The order in which you list the files in the plan definition file matters. Specifically, records with lookups to
+    records in another file should be listed AFTER that file. For example, let's say you're loading Account and Contact
+    records, and the contacts have references to those accounts. Be sure you list the Accounts file before the Contacts
+    file.
+
+    The plan definition file has the following schema:
+
+    - items(object) - SObject Type: Definition of records to be insert per SObject Type
+    - sobject(string) - Name of SObject: Child file references must have SObject roots of this type
+    - files(array) - Files: An array of files paths to load
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/data/import/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.3/src/commands/data/import/tree.ts)_
 
 ## `sf data query`
 
@@ -1715,7 +1627,7 @@ EXAMPLES
     $ sf data query --query "SELECT Id FROM Contact" --bulk --wait 0
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/data/query.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.3/src/commands/data/query.ts)_
 
 ## `sf data query resume`
 
@@ -1753,7 +1665,7 @@ EXAMPLES
     $ sf data query resume --bulk-query-id 7500x000005BdFzXXX
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/data/query/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.3/src/commands/data/query/resume.ts)_
 
 ## `sf data resume`
 
@@ -1790,7 +1702,7 @@ EXAMPLES
     $ sf data resume --job-id 750xx000000005sAAA --batch-id 751xx000000005nAAA
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/data/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.3/src/commands/data/resume.ts)_
 
 ## `sf data update record`
 
@@ -1852,7 +1764,7 @@ EXAMPLES
       "ExpirationDate=2017-12-01T00:58:04.000+0000"
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/data/update/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.3/src/commands/data/update/record.ts)_
 
 ## `sf data upsert bulk`
 
@@ -1905,7 +1817,7 @@ EXAMPLES
       my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/data/upsert/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.3/src/commands/data/upsert/bulk.ts)_
 
 ## `sf data upsert resume`
 
@@ -1944,7 +1856,7 @@ EXAMPLES
     $ sf data upsert resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/data/upsert/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.3/src/commands/data/upsert/resume.ts)_
 
 ## `sf doctor`
 
@@ -2039,7 +1951,7 @@ EXAMPLES
     $ sf force data bulk delete --sobject MyObject__c --file files/delete.csv --wait 5 --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/force/data/bulk/delete.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.3/src/commands/force/data/bulk/delete.ts)_
 
 ## `sf force data bulk status`
 
@@ -2076,7 +1988,7 @@ EXAMPLES
     $ sf force data bulk status --job-id 750xx000000005sAAA --batch-id 751xx000000005nAAA --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/force/data/bulk/status.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.3/src/commands/force/data/bulk/status.ts)_
 
 ## `sf force data bulk upsert`
 
@@ -2134,7 +2046,7 @@ EXAMPLES
       --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.2/src/commands/force/data/bulk/upsert.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/3.5.3/src/commands/force/data/bulk/upsert.ts)_
 
 ## `sf help [COMMAND]`
 
