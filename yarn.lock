@@ -2249,22 +2249,6 @@
   resolved "https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
 
-"@salesforce/apex-node@^6.0.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/apex-node/-/apex-node-6.2.0.tgz#9a326e3f6ce3c34ec0aa001a924635c4ab7acc64"
-  integrity sha512-8sp5TChnKcXoPSKMieUVXeeuxnNv3bx6QlH7+a8s6ja0UVYfWVPJi1Wc9vL6dZuVM79LeDV96RDKnJ3o6FehXg==
-  dependencies:
-    "@jsforce/jsforce-node" "^3.2.0"
-    "@salesforce/core" "^7.5.0"
-    "@salesforce/kit" "^3.1.6"
-    "@types/istanbul-reports" "^3.0.4"
-    bfj "8.0.0"
-    faye "1.4.0"
-    glob "^10.3.16"
-    istanbul-lib-coverage "^3.2.2"
-    istanbul-lib-report "^3.0.1"
-    istanbul-reports "^3.1.7"
-
 "@salesforce/apex-node@^7.0.2", "@salesforce/apex-node@^7.0.3":
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/@salesforce/apex-node/-/apex-node-7.0.3.tgz#a25cbcd5aa6a3128b0dd0c2606576d5b11786f93"
@@ -2297,34 +2281,10 @@
     strip-ansi "6.0.1"
     ts-retry-promise "^0.8.1"
 
-"@salesforce/core@^7.5.0":
-  version "7.5.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-7.5.0.tgz#cfa57281978c9d5df6f7419e5bc58ea914726cf5"
-  integrity sha512-mPg9Tj2Qqe/TY7q+CRNSeYYTV+dj/LflM7Fu/32EPLCEPGVIiSp/RaTFLTZwDcFX9BVYHOa2h6oliuO2Qnno+A==
-  dependencies:
-    "@jsforce/jsforce-node" "^3.2.0"
-    "@salesforce/kit" "^3.1.6"
-    "@salesforce/schemas" "^1.9.0"
-    "@salesforce/ts-types" "^2.0.10"
-    ajv "^8.15.0"
-    change-case "^4.1.2"
-    fast-levenshtein "^3.0.0"
-    faye "^1.4.0"
-    form-data "^4.0.0"
-    js2xmlparser "^4.0.1"
-    jsonwebtoken "9.0.2"
-    jszip "3.10.1"
-    pino "^9.2.0"
-    pino-abstract-transport "^1.2.0"
-    pino-pretty "^11.2.1"
-    proper-lockfile "^4.1.2"
-    semver "^7.6.2"
-    ts-retry-promise "^0.8.1"
-
-"@salesforce/core@^8.0.1", "@salesforce/core@^8.0.2", "@salesforce/core@^8.0.3", "@salesforce/core@^8.0.5", "@salesforce/core@^8.1.0":
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.1.0.tgz#8ee25acdacf9d70a6249907a2fe3503461f18766"
-  integrity sha512-oItr8cdeMe67glJN3dP1Gh/kasD0DUT6S6RfcLTH32wwuZNQAwMXNgBOCvlskr8nxPZ+YSSw7CVuqYMUmCtUXA==
+"@salesforce/core@^8.0.1", "@salesforce/core@^8.0.2", "@salesforce/core@^8.0.3", "@salesforce/core@^8.0.5", "@salesforce/core@^8.1.0", "@salesforce/core@^8.1.1":
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.1.1.tgz#26db4e6da3573c4bd223eb05cb3da6aad8b2a311"
+  integrity sha512-PQ58kz0oRk/cjGhmiRj8W+x0Eg2mrWagrA4xMKaXjBAgSgU+V39BaO9IC1G2cAMGy53JJRBO5G876ala4gD44w==
   dependencies:
     "@jsforce/jsforce-node" "^3.2.1"
     "@salesforce/kit" "^3.1.6"
@@ -2609,17 +2569,17 @@
     fast-xml-parser "^4.4.0"
     js2xmlparser "^4.0.2"
 
-"@salesforce/plugin-source@3.4.8":
-  version "3.4.8"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-source/-/plugin-source-3.4.8.tgz#e5e2763012ba80dffd8b2f23d778cb9bf13ff17c"
-  integrity sha512-iSnCFUBk5KQ4btKSHazt6ZvGllrnQjDwyMMVoUELRNBchmHFlNrH09GwWre0riYAVmHBe1+BSYB7ajpJCUg8aw==
+"@salesforce/plugin-source@3.5.1":
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-source/-/plugin-source-3.5.1.tgz#0c0ee7793ae658391eb416d32d3b6b4766c10436"
+  integrity sha512-7oTbq9GifEbXCaTW67RJLP+zqJ7WDrL5LR+S9K52fFeCUvkGWUMFs6bmMlFRxoQjLaH7gF4hdBKf6ZWyxpVzTA==
   dependencies:
     "@oclif/core" "^4"
-    "@salesforce/apex-node" "^6.0.0"
-    "@salesforce/core" "^8.0.1"
+    "@salesforce/apex-node" "^7.0.3"
+    "@salesforce/core" "^8.1.1"
     "@salesforce/kit" "^3.1.6"
     "@salesforce/sf-plugins-core" "^11.1.2"
-    "@salesforce/source-deploy-retrieve" "^12.0.1"
+    "@salesforce/source-deploy-retrieve" "^12.1.4"
     "@salesforce/source-tracking" "^7.0.1"
     "@salesforce/ts-types" "^2.0.10"
     chalk "^5.3.0"
@@ -3800,7 +3760,7 @@ ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-ajv@^8.11.0, ajv@^8.15.0, ajv@^8.16.0:
+ajv@^8.11.0, ajv@^8.16.0:
   version "8.16.0"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.16.0.tgz#22e2a92b94f005f7e0f9c9d39652ef0b8f6f0cb4"
   integrity sha512-F0twR8U1ZU67JIEtekUcLkXkoO5mMMmgGD8sK/xUFzJ805jxHQl92hImFAqqXMyMYjSPOyUPAwHYhB72g5sTXw==
@@ -6331,7 +6291,7 @@ glob@8.1.0, glob@^8.0.3:
     minimatch "^5.0.1"
     once "^1.3.0"
 
-glob@^10.2.2, glob@^10.3.10, glob@^10.3.16, glob@^10.4.1:
+glob@^10.2.2, glob@^10.3.10, glob@^10.4.1:
   version "10.4.1"
   resolved "https://registry.yarnpkg.com/glob/-/glob-10.4.1.tgz#0cfb01ab6a6b438177bfe6a58e2576f6efe909c2"
   integrity sha512-2jelhlq3E4ho74ZyVLN03oKdAZVUa6UDZzFLVH1H7dnoax+y9qyaq8zBkfDIggjniU19z0wU18y16jMB2eyVIw==
