@@ -10,6 +10,7 @@ import { CommandHelp, Help } from '@oclif/core/help';
 import Interfaces from '@oclif/core/interfaces';
 import { toConfiguredId } from '@oclif/core/util/ids';
 import { Ansis } from 'ansis';
+import { colorize } from '@oclif/core/ux';
 import { SfCommandHelp } from './sfCommandHelp.js';
 
 const ansis = new Ansis();
@@ -69,7 +70,7 @@ export default class SfHelp extends Help {
       let formattedArg = arg.slice();
       const matches = ansis.strip(formattedArg).match(this.commandIdRegex) ?? [];
       for (const match of matches) {
-        formattedArg = formattedArg.replaceAll(match, ansis.dim(match));
+        formattedArg = formattedArg.replaceAll(match, colorize('dim', match));
       }
 
       return formattedArg;
