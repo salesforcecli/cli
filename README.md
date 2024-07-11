@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.50.6 linux-x64 node-v20.15.0
+@salesforce/cli/2.51.0 linux-x64 node-v20.15.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -790,9 +790,7 @@ FLAG DESCRIPTIONS
     For multiple suites, repeat the flag for each.
     --suite-names Suite1 --suite-names Suite2
 
-  -t, --tests=<value>...
-
-    Apex test class names or IDs and, if applicable, test methods to run; default is all tests.
+  -t, --tests=<value>...  Apex test class names or IDs and, if applicable, test methods to run; default is all tests.
 
     If you specify --tests, you can't specify --class-names or --suite-names
     For multiple tests, repeat the flag for each.
@@ -4047,9 +4045,7 @@ EXAMPLES
     $ sf org refresh sandbox --definition-file devSbx3-config.json --target-org prodOrg
 
 FLAG DESCRIPTIONS
-  -f, --definition-file=<value>
-
-    Path to a sandbox definition file for overriding its configuration when you refresh it.
+  -f, --definition-file=<value>  Path to a sandbox definition file for overriding its configuration when you refresh it.
 
     The sandbox definition file is a blueprint for the sandbox; use the file to change the sandbox configuration during
     a refresh. If you don't want to change the sandbox configuration when you refresh it, then simply use the --name
@@ -7358,9 +7354,7 @@ FLAG DESCRIPTIONS
     If the target directory matches one of the package directories in your sfdx-project.json file, the command fails.
     Running the command multiple times with the same target adds new files and overwrites existing files.
 
-  -w, --wait=<value>
-
-    Number of minutes to wait for the command to complete and display results to the terminal window.
+  -w, --wait=<value>  Number of minutes to wait for the command to complete and display results to the terminal window.
 
     If the command continues to run after the wait period, the CLI returns control of the terminal window to you.
 
