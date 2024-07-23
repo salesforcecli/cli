@@ -1841,10 +1841,10 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/plugin-autocomplete@3.1.8":
-  version "3.1.8"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-3.1.8.tgz#1c862c6b9f79654c6dcfb69462717ccbca81b650"
-  integrity sha512-0vuCjIpHhdxTe34sKqMvFvoTufgiT3UskxAnRJFCPMzQ+muEMWgN5tECgl5ddRvqiP4W5ut6fdPGldP4eSzC2A==
+"@oclif/plugin-autocomplete@3.1.9":
+  version "3.1.9"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-3.1.9.tgz#bcbccfa128ed26fd2d8c43e8933dde6ea830ef07"
+  integrity sha512-eCoKeLLuZB5jVlEotk43PsFVQ1BaIm0ccpXNgF9FS71OCufzuJbqMsC5jfs76XM902lIEljVc+zMXvVVg+4Q8w==
   dependencies:
     "@oclif/core" "^4"
     ansis "^3.3.1"
@@ -1919,10 +1919,10 @@
     ansi-escapes "^7.0.0"
     inquirer-autocomplete-standalone "^0.8.1"
 
-"@oclif/plugin-update@4.4.10":
-  version "4.4.10"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.4.10.tgz#d5d950da88acbfcbd3339026efd8af7261641d11"
-  integrity sha512-U4DEQFqWY+Y+x+/du9ZTmgHnsXK9P7l23eFWR9vXFPFIrxKgQhYWBKGNy74MpKon8LAckOrQl/45fBqfcg3X5w==
+"@oclif/plugin-update@4.4.11":
+  version "4.4.11"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.4.11.tgz#46753042500b7f7ad0bbfb1862130e9c2af23ea3"
+  integrity sha512-GBNxzUXakalWHmv8LEGq6EXCS28ZtkV0TUGxnYWswQpyu34lyMSGb1io9EfwbrpP/BIW4mgI7PdhDGSmsVNdIA==
   dependencies:
     "@inquirer/select" "^2.4.1"
     "@oclif/core" "^4"
@@ -1930,7 +1930,7 @@
     debug "^4.3.5"
     filesize "^6.1.0"
     got "^13"
-    semver "^7.6.0"
+    semver "^7.6.3"
     tar-fs "^2.1.1"
     tty-table "^4.2.3"
 
@@ -1953,13 +1953,13 @@
     http-call "^5.2.2"
     lodash "^4.17.21"
 
-"@oclif/plugin-which@3.2.8":
-  version "3.2.8"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-which/-/plugin-which-3.2.8.tgz#791fd4fee4d4229cae311da46774f0f52d88dd1a"
-  integrity sha512-7QN9B+wTWTItuZvbO1mvZSEDyPROSe9xSA1ujrGr6bokBXnuPcudFRk7OKWPZu5Yajg6ae70nOVHG3VuBT3OHQ==
+"@oclif/plugin-which@3.2.9":
+  version "3.2.9"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-which/-/plugin-which-3.2.9.tgz#35f0d400ee83b50e5ecdb83143745d5c6ad07ddc"
+  integrity sha512-iIfnU6N7GD351TSln/qu8I0CdhGpUCZBwzw8Ul9F9G/wdQhVqh4ogt8BKnmU34j/8WI+qmc6tP64vF0Qdqwe5Q==
   dependencies:
     "@oclif/core" "^4"
-    ansis "^3.2.1"
+    ansis "^3.3.1"
 
 "@octokit/auth-token@^3.0.0":
   version "3.0.4"
@@ -2362,10 +2362,10 @@
     is-wsl "^3.1.0"
     open "^10.1.0"
 
-"@salesforce/plugin-packaging@2.7.2":
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.7.2.tgz#35cb1511cd8ba87b0d943112396f1b1901710abc"
-  integrity sha512-dOBzn47OoVfqCpANBcz3nDp6QWH/ZdZxur3Pq8iaHbi6q0C3NJ80eyzNdsV7VCKwhFy4uwGm6trx0UH3e/YokQ==
+"@salesforce/plugin-packaging@2.7.3":
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.7.3.tgz#22e3dfaea006e6c2734e15f7df170df1d02af328"
+  integrity sha512-eG1YKEk7bl1TvkTcG3yJG+PXAn5pRCnKYc2hcQZP7J9QYj5a/ZPIujFOXtStNEPUtqOy6UfAKif7wBgH1/oMOg==
   dependencies:
     "@oclif/core" "^4"
     "@salesforce/core" "^8.0.1"
@@ -2455,10 +2455,10 @@
     got "^13.0.0"
     proxy-agent "^6.3.1"
 
-"@salesforce/plugin-telemetry@3.6.2":
-  version "3.6.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.6.2.tgz#437a31f426043fa191d098be24cb96d70be84d86"
-  integrity sha512-5VFMAWI3gcUmp+3/drpa4Z3GcPKeQu32hjH+ieEqwC08ARqsGP4Ps8YodZUgl8FuF664YeP7wYsvNEIFM1XVkw==
+"@salesforce/plugin-telemetry@3.6.3":
+  version "3.6.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.6.3.tgz#8d0323b52dd4f3ab88816abcd8d468a3c8dd4ff3"
+  integrity sha512-yBdTi6pw92WGluwy9+g9Lbdw27OTUppmQTVtGHbpjL0hCZ3mXBhQ4cY0hxHiIBRwx+DC/5lpTrHhCh6eecR0Ag==
   dependencies:
     "@oclif/core" "^4.0.11"
     "@salesforce/core" "^8.0.3"
