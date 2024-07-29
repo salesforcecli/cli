@@ -1882,7 +1882,7 @@
   dependencies:
     "@oclif/core" "^4"
 
-"@oclif/plugin-not-found@3.2.14", "@oclif/plugin-not-found@^3.2.3":
+"@oclif/plugin-not-found@3.2.14", "@oclif/plugin-not-found@^3.2.14":
   version "3.2.14"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-3.2.14.tgz#48f59a57fc072937fc2ca90e112e667fb483c3f8"
   integrity sha512-p9QSwr0eCCpUojmpGzP+rG3e9PI1NHxCU+mnluhiHl9r8/+xEi56vP8WF/C43G8XstM/+nxyhKC0r3n2BO6lMQ==
@@ -8493,10 +8493,10 @@ obliterator@^2.0.1, obliterator@^2.0.2:
   resolved "https://registry.npmjs.org/obliterator/-/obliterator-2.0.4.tgz"
   integrity sha512-lgHwxlxV1qIg1Eap7LgIeoBWIMFibOjbrYPIPJZcI1mmGAI2m3lNYpK12Y+GBdPQ0U1hRwSord7GIaawz962qQ==
 
-oclif@^4.14.8:
-  version "4.14.8"
-  resolved "https://registry.yarnpkg.com/oclif/-/oclif-4.14.8.tgz#2ed3bc9e5cd2c75ced65310bda810d6348319a7d"
-  integrity sha512-dJplgtnF2eQ+c06aJHm8xtjKitpvgx5DLf1qU/yrRjREYE+BTcXaOZa7cIskAcFiEz/86I0rBeovEoQTI3G+zA==
+oclif@^4.14.11:
+  version "4.14.11"
+  resolved "https://registry.yarnpkg.com/oclif/-/oclif-4.14.11.tgz#33e351ea864f241885bee9274132f9daab2ddf31"
+  integrity sha512-JXamkm9DoynXo0wEjQs8zc9fW6HUl7GuChRA76oYiChvFwx83sWnmzQTD57JbcDh2Pl7JZ7o1kZwQDUnScPQtw==
   dependencies:
     "@aws-sdk/client-cloudfront" "^3.609.0"
     "@aws-sdk/client-s3" "^3.614.0"
@@ -8505,7 +8505,7 @@ oclif@^4.14.8:
     "@inquirer/select" "^2.3.10"
     "@oclif/core" "^4"
     "@oclif/plugin-help" "^6.2.2"
-    "@oclif/plugin-not-found" "^3.2.3"
+    "@oclif/plugin-not-found" "^3.2.14"
     "@oclif/plugin-warn-if-update-available" "^3.0.19"
     async-retry "^1.3.3"
     chalk "^4"
