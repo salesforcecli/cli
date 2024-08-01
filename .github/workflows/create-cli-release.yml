@@ -59,7 +59,6 @@ jobs:
     uses: salesforcecli/github-workflows/.github/workflows/tarballs.yml@main
     with:
       upload: true
-      cli: sf
       version: ${{ github.event.release.tag_name }}
       channel: ${{ needs.get-channel.outputs.s3-channel }}
       nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
@@ -94,7 +93,6 @@ jobs:
     needs: [get-channel, pack-verify-upload-tarballs]
     uses: salesforcecli/github-workflows/.github/workflows/packUploadMac.yml@main
     with:
-      cli: sf
       version: ${{ github.event.release.tag_name }}
       channel: ${{ needs.get-channel.outputs.s3-channel }}
       nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
@@ -104,7 +102,6 @@ jobs:
     needs: [get-channel, pack-verify-upload-tarballs]
     uses: salesforcecli/github-workflows/.github/workflows/packUploadWindows.yml@main
     with:
-      cli: sf
       version: ${{ github.event.release.tag_name }}
       channel: ${{ needs.get-channel.outputs.s3-channel }}
       nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
@@ -116,8 +113,6 @@ jobs:
     secrets: inherit
     with:
       version: ${{ github.event.release.tag_name }}
-      cli: sf
-      clipkg: '@salesforce/cli'
 
   build-docker-slim:
     needs: [get-channel, pack-verify-upload-tarballs]
