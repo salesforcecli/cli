@@ -38,7 +38,7 @@ jobs:
       - name: Collect Node checksum
         id: node-checksum
         run: |
-          NODE_VERSION="${{ steps.setup-node.outputs.node-version }}"
+          NODE_VERSION="$STEPS_SETUP_NODE_NODE_VERSION"
 
           URL="https://nodejs.org/dist/$NODE_VERSION/SHASUMS256.txt"
           echo "Retrieving SHA data from: $URL"
@@ -47,6 +47,8 @@ jobs:
           echo "Checksum found: $SHA"
 
           echo "sha=$SHA" >> "$GITHUB_OUTPUT"
+        env:
+          STEPS_SETUP_NODE_NODE_VERSION: ${{ steps.setup-node.outputs.node-version }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@ca052bb54ab0790a636c9b5f226502c73d547a25

@@ -36,14 +36,19 @@ jobs:
       - name: Get release channel for s3
         id: s3-release-channel
         run: |
-          CHANNEL=${{ steps.release-channel.outputs.group1 }}
+          CHANNEL="$STEPS_RELEASE_CHANNEL_GROUP1"
           S3_CHANNEL=${CHANNEL/latest/stable}
           echo "s3-channel=$S3_CHANNEL" >> "$GITHUB_OUTPUT"
+        env:
+          STEPS_RELEASE_CHANNEL_GROUP1: ${{ steps.release-channel.outputs.group1 }}
 
       - name: Channel Notice
         run: |
-          echo "::notice title=Channel::Channel found in Github Release: ${{ steps.release-channel.outputs.group1 }}"
-          echo "::notice title=S3 Channel::Channel that will be used in S3: ${{ steps.s3-release-channel.outputs.s3-channel }}"
+          echo "::notice title=Channel::Channel found in Github Release: $STEPS_RELEASE_CHANNEL_GROUP1"
+          echo "::notice title=S3 Channel::Channel that will be used in S3: $STEPS_S3_RELEASE_CHANNEL_S3_CHANNEL"
+        env:
+          STEPS_RELEASE_CHANNEL_GROUP1: ${{ steps.release-channel.outputs.group1 }}
+          STEPS_S3_RELEASE_CHANNEL_S3_CHANNEL: ${{ steps.s3-release-channel.outputs.s3-channel }}
 
   npm-release:
     uses: salesforcecli/github-workflows/.github/workflows/npmPublish.yml@main
@@ -146,9 +151,6 @@ jobs:
     steps:
       - name: Announce patch in Slack
         uses: slackapi/slack-github-action@v1.26.0
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.PLATFORM_CLI_CHANNEL_SLACK_INCOMING_WEBHOOK }}
-          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
         with:
           payload: |
             {
@@ -160,6 +162,9 @@ jobs:
                 }
               }]
             }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.PLATFORM_CLI_CHANNEL_SLACK_INCOMING_WEBHOOK }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
 
   run-just-nuts:
     needs:
