@@ -6,7 +6,21 @@
  */
 import type { Hook } from '@oclif/core/hooks';
 
+const unescapedComma = /(?<!\\),/;
+
 const hook: Hook.Preparse = async function ({ argv, options, context }) {
+  if (unescapedComma.test(argv.join(' '))) {
+    const hasArrayFlag = Object.values(options.flags ?? {}).some(
+      (flagOptions) => flagOptions.type === 'option' && flagOptions.multiple === true && flagOptions.delimiter === ','
+    );
+    if (hasArrayFlag) {
+      const { Lifecycle } = await import('@salesforce/core/lifecycle');
+      await Lifecycle.getInstance().emitWarning(
+        'The input format for array arguments has changed. Use this format: --array-flag value1 --array-flag value2 --array-flag value3'
+      );
+    }
+  }
+
   // Skip this hook if command does not have a --flags-dir flag or if it is not present in argv
   if (!argv.includes('--flags-dir') || !options.flags?.['flags-dir']) return argv;
   const flagsDir = argv[argv.indexOf('--flags-dir') + 1];
