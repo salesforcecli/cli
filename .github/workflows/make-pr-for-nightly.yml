@@ -20,7 +20,6 @@ jobs:
   make-pr-for-nightly:
     env:
       GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
-      SF_HIDE_RELEASE_NOTES: true
     runs-on: 'ubuntu-latest'
     steps:
       - name: Check out repository as our bot user
@@ -60,12 +59,17 @@ jobs:
           input_string: ${{ steps.package-json-version.outputs.prop }}
 
       - name: Log version info
-        run: |
-          echo "INFO | Semver version in 'latest-rc' is ${{ steps.latest-rc-version.outputs.version }}"
-          echo "INFO | Semver minor in 'latest-rc' is ${{ steps.latest-rc-semver-info.outputs.minor }}"
-          echo "INFO | Semver version in 'main' is ${{ steps.package-json-version.outputs.prop  }}"
-          echo "INFO | Semver minor in 'main' is ${{ steps.package-json-semver-info.outputs.minor }}"
         shell: bash
+        run: |
+          echo "[INFO] Semver version in 'latest-rc' is: $STEPS_LATEST_RC_VERSION_VERSION"
+          echo "[INFO] Semver minor in 'latest-rc' is: $STEPS_LATEST_RC_SEMVER_INFO_MINOR"
+          echo "[INFO] Semver version in 'main' is: $STEPS_PACKAGE_JSON_VERSION_PROP"
+          echo "[INFO] Semver minor in 'main' is: $STEPS_PACKAGE_JSON_SEMVER_INFO_MINOR"
+        env:
+          STEPS_LATEST_RC_VERSION_VERSION: ${{ steps.latest-rc-version.outputs.version }}
+          STEPS_LATEST_RC_SEMVER_INFO_MINOR: ${{ steps.latest-rc-semver-info.outputs.minor }}
+          STEPS_PACKAGE_JSON_VERSION_PROP: ${{ steps.package-json-version.outputs.prop }}
+          STEPS_PACKAGE_JSON_SEMVER_INFO_MINOR: ${{ steps.package-json-semver-info.outputs.minor }}
 
       - name: Install @salesforce/plugin-release-management
         run: npm install -g @salesforce/plugin-release-management --omit=dev

@@ -22,7 +22,6 @@ jobs:
       nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
     secrets: inherit
 
-  # DONE
   jit-install-smoke:
     uses: ./.github/workflows/jit-install-smoke.yml
     secrets: inherit
