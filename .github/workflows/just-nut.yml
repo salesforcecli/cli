@@ -101,5 +101,3 @@ jobs:
         with:
           retry_wait_seconds: 1
           command: ${{ inputs.command }}
-          # TODO: any reason we dont retry on errors AND timeouts? (any)
-          retry_on: error
