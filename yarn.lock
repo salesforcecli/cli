@@ -1602,7 +1602,7 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@jsforce/jsforce-node@^3.2.0", "@jsforce/jsforce-node@^3.2.2", "@jsforce/jsforce-node@^3.4.0", "@jsforce/jsforce-node@^3.4.1":
+"@jsforce/jsforce-node@^3.2.2", "@jsforce/jsforce-node@^3.4.0", "@jsforce/jsforce-node@^3.4.1":
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/@jsforce/jsforce-node/-/jsforce-node-3.4.1.tgz#36f5cba775b395eeedba676a78eafe447c3f4b28"
   integrity sha512-PsBKfglH0/8W/Srr4LsxEFsVmjmZjEj/T4XLGpbBoK8yVObwbiMk4VqwA6XwiA6SHqnEqqQbHZxk2rr7dZC+4A==
@@ -2132,10 +2132,10 @@
     strip-ansi "6.0.1"
     ts-retry-promise "^0.8.1"
 
-"@salesforce/core@^8.0.1", "@salesforce/core@^8.0.3", "@salesforce/core@^8.1.0", "@salesforce/core@^8.2.3", "@salesforce/core@^8.2.7", "@salesforce/core@^8.2.8", "@salesforce/core@^8.3.0":
-  version "8.3.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.3.0.tgz#b61fb6c0c0dec5664ce12ba62ebe35136ae33878"
-  integrity sha512-HZchC42oGJ5RQsG9HpAb1bT7ohjB31ATDz46ryMvLngMmrfHnyzv2mlIi6UdYkJ/2meH2BJkibHi8paPrtF+/A==
+"@salesforce/core@^8.1.0", "@salesforce/core@^8.2.3", "@salesforce/core@^8.2.7", "@salesforce/core@^8.2.8", "@salesforce/core@^8.3.0", "@salesforce/core@^8.4.0":
+  version "8.4.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.4.0.tgz#d2ddfe07994c42b1e917e581e9cf47ad27b97a93"
+  integrity sha512-P+n0+Sp+v6voLTShW2E5sdF7gCUxEXJjNcc9Jtto0ZMyQesmQJ6WGpWmAuRoi+BVYc8OPSlEffndaYDAo/u73g==
   dependencies:
     "@jsforce/jsforce-node" "^3.4.0"
     "@salesforce/kit" "^3.1.6"
@@ -2200,19 +2200,19 @@
   dependencies:
     "@salesforce/ts-types" "^2.0.12"
 
-"@salesforce/packaging@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-4.1.0.tgz#61b625c8c22c007b04e190a06a23eca03e9d34c6"
-  integrity sha512-fLIbpoP885fL1FgkM+5aHxAjXQlIBEBamHGHeqTF/BzXbK7Y2bo/Gqdj2FVIw6KACGnowRK83GJNfD961J0CsQ==
+"@salesforce/packaging@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-4.2.0.tgz#6f34a78e95ccc770abd7e305a39c79cf004f10ba"
+  integrity sha512-abDSusI5I25N5HLr5WWpUcAmXU3hzhTk9Ewo8oe7T2WcppxRBHETdEHjgFMGnzQVTvnFWtKHjnl1/oc7LMYObg==
   dependencies:
-    "@jsforce/jsforce-node" "^3.2.0"
-    "@salesforce/core" "^8.0.3"
-    "@salesforce/kit" "^3.1.6"
+    "@jsforce/jsforce-node" "^3.4.1"
+    "@salesforce/core" "^8.4.0"
+    "@salesforce/kit" "^3.2.1"
     "@salesforce/schemas" "^1.9.0"
-    "@salesforce/source-deploy-retrieve" "^12.0.1"
-    "@salesforce/ts-types" "^2.0.10"
+    "@salesforce/source-deploy-retrieve" "^12.4.0"
+    "@salesforce/ts-types" "^2.0.11"
     "@salesforce/types" "^1.2.0"
-    fast-xml-parser "^4.4.0"
+    fast-xml-parser "^4.4.1"
     globby "^11"
     graphology "^0.25.4"
     graphology-traversal "^0.3.1"
@@ -2344,16 +2344,16 @@
     is-wsl "^3.1.0"
     open "^10.1.0"
 
-"@salesforce/plugin-packaging@2.7.4":
-  version "2.7.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.7.4.tgz#4aed06aae93edce3eeaaa5234745d60cf4985398"
-  integrity sha512-OZDNLn7dEmzjg9QodoU3xHklfDSzwZNj0ijrkbxjhuoaMMOArpA3MA4YrqrUnSrafYuWFW5sJkX3E9cj3kE7TQ==
+"@salesforce/plugin-packaging@2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.8.0.tgz#5d70e86bc892c22dfa7d885b361b29d842b9dc76"
+  integrity sha512-GxUi/NAJgPdMONRTJUj3GNXdQRpe/wxNnP6hJWgyK+71DfCX5wUDfLJuKG0EXZiiI+OP61GnX14Y52Ul9klzVQ==
   dependencies:
     "@oclif/core" "^4"
-    "@salesforce/core" "^8.0.1"
+    "@salesforce/core" "^8.4.0"
     "@salesforce/kit" "^3.1.6"
-    "@salesforce/packaging" "^4.1.0"
-    "@salesforce/sf-plugins-core" "^11.1.2"
+    "@salesforce/packaging" "^4.2.0"
+    "@salesforce/sf-plugins-core" "^11.3.2"
     chalk "^5.3.0"
 
 "@salesforce/plugin-release-management@^5.5.13":
@@ -2496,7 +2496,7 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.9.0.tgz#ba477a112653a20b4edcf989c61c57bdff9aa3ca"
   integrity sha512-LiN37zG5ODT6z70sL1fxF7BQwtCX9JOWofSU8iliSNIM+WDEeinnoFtVqPInRSNt8I0RiJxIKCrqstsmQRBNvA==
 
-"@salesforce/sf-plugins-core@11.3.2", "@salesforce/sf-plugins-core@^11.1.1", "@salesforce/sf-plugins-core@^11.1.2", "@salesforce/sf-plugins-core@^11.2.4", "@salesforce/sf-plugins-core@^11.3.0":
+"@salesforce/sf-plugins-core@11.3.2", "@salesforce/sf-plugins-core@^11.1.1", "@salesforce/sf-plugins-core@^11.2.4", "@salesforce/sf-plugins-core@^11.3.0", "@salesforce/sf-plugins-core@^11.3.2":
   version "11.3.2"
   resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-11.3.2.tgz#8a4ffde0bbef88fe4d669844a119e8f436d6b0ab"
   integrity sha512-QyFX/PBzw/hkBUJFl1HH+g7ghRSIwWy9Y0NZgCQgWQQJtV6Sfi4fyeaUafsiOjVnyCqa+r+tWHV/JgRr2yK9NA==
@@ -2514,13 +2514,13 @@
     string-width "^7.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/source-deploy-retrieve@^12.0.1", "@salesforce/source-deploy-retrieve@^12.1.10", "@salesforce/source-deploy-retrieve@^12.1.11", "@salesforce/source-deploy-retrieve@^12.1.12", "@salesforce/source-deploy-retrieve@^12.1.8":
-  version "12.1.12"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.1.12.tgz#1a8b1cc54daa16ecb8c5abbbbb67c3bd367d8a41"
-  integrity sha512-+Kbc62eB4epGBB6rr+EXzrSTmtBOXD1RNc5AIhnhnYSwL+WNIln5GOAmtZWVa/YOihjc1jTQF1/uHG4dKGCG9w==
+"@salesforce/source-deploy-retrieve@^12.1.10", "@salesforce/source-deploy-retrieve@^12.1.11", "@salesforce/source-deploy-retrieve@^12.1.12", "@salesforce/source-deploy-retrieve@^12.1.8", "@salesforce/source-deploy-retrieve@^12.4.0":
+  version "12.4.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.4.0.tgz#7e5a72b1d7b559eaa7f6f333ee212380b6316542"
+  integrity sha512-gvTEjLPbNRt62GEKvejt/f1TtG6Zx8JPd/5BYjnXyEJu8BeOy5kL4zJm9GD3ZiTzBnPGHLzfVL09JjWfNBbo0A==
   dependencies:
-    "@salesforce/core" "^8.2.8"
-    "@salesforce/kit" "^3.1.6"
+    "@salesforce/core" "^8.4.0"
+    "@salesforce/kit" "^3.2.1"
     "@salesforce/ts-types" "^2.0.12"
     fast-levenshtein "^3.0.0"
     fast-xml-parser "^4.4.1"
