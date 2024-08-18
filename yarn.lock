@@ -933,13 +933,6 @@
     "@smithy/types" "^3.3.0"
     tslib "^2.6.2"
 
-"@azure/abort-controller@^1.0.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@azure/abort-controller/-/abort-controller-1.1.0.tgz"
-  integrity sha512-TrRLIoSQVzfAJX9H1JeFjzAoDGcoK1IYX1UImfceTZpsyYfWr09Ss1aHW1y5TrrR3iq6RZLBwJ3E24uwPhwahw==
-  dependencies:
-    tslib "^2.2.0"
-
 "@azure/abort-controller@^2.0.0":
   version "2.1.2"
   resolved "https://registry.npmjs.org/@azure/abort-controller/-/abort-controller-2.1.2.tgz"
@@ -947,30 +940,28 @@
   dependencies:
     tslib "^2.6.2"
 
-"@azure/core-auth@^1.4.0", "@azure/core-auth@^1.5.0":
+"@azure/core-auth@1.7.2", "@azure/core-auth@^1.4.0":
   version "1.7.2"
-  resolved "https://registry.npmjs.org/@azure/core-auth/-/core-auth-1.7.2.tgz"
+  resolved "https://registry.yarnpkg.com/@azure/core-auth/-/core-auth-1.7.2.tgz#558b7cb7dd12b00beec07ae5df5907d74df1ebd9"
   integrity sha512-Igm/S3fDYmnMq1uKS38Ae1/m37B3zigdlZw+kocwEhh5GjyKjPrXKO2J6rzpC1wAxrNil/jX9BJRqBshyjnF3g==
   dependencies:
     "@azure/abort-controller" "^2.0.0"
     "@azure/core-util" "^1.1.0"
     tslib "^2.6.2"
 
-"@azure/core-rest-pipeline@1.10.1":
-  version "1.10.1"
-  resolved "https://registry.npmjs.org/@azure/core-rest-pipeline/-/core-rest-pipeline-1.10.1.tgz"
-  integrity sha512-Kji9k6TOFRDB5ZMTw8qUf2IJ+CeJtsuMdAHox9eqpTf1cefiNMpzrfnF6sINEBZJsaVaWgQ0o48B6kcUH68niA==
+"@azure/core-rest-pipeline@1.16.3":
+  version "1.16.3"
+  resolved "https://registry.yarnpkg.com/@azure/core-rest-pipeline/-/core-rest-pipeline-1.16.3.tgz#bde3bc3ebad7f885ddd9de6af5e5a8fc254b287e"
+  integrity sha512-VxLk4AHLyqcHsfKe4MZ6IQ+D+ShuByy+RfStKfSjxJoL3WBWq17VNmrz8aT8etKzqc2nAeIyLxScjpzsS4fz8w==
   dependencies:
-    "@azure/abort-controller" "^1.0.0"
+    "@azure/abort-controller" "^2.0.0"
     "@azure/core-auth" "^1.4.0"
     "@azure/core-tracing" "^1.0.1"
-    "@azure/core-util" "^1.0.0"
+    "@azure/core-util" "^1.9.0"
     "@azure/logger" "^1.0.0"
-    form-data "^4.0.0"
-    http-proxy-agent "^5.0.0"
-    https-proxy-agent "^5.0.0"
-    tslib "^2.2.0"
-    uuid "^8.3.0"
+    http-proxy-agent "^7.0.0"
+    https-proxy-agent "^7.0.0"
+    tslib "^2.6.2"
 
 "@azure/core-tracing@^1.0.0", "@azure/core-tracing@^1.0.1":
   version "1.1.2"
@@ -979,18 +970,10 @@
   dependencies:
     tslib "^2.6.2"
 
-"@azure/core-util@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/@azure/core-util/-/core-util-1.2.0.tgz"
-  integrity sha512-ffGIw+Qs8bNKNLxz5UPkz4/VBM/EZY07mPve1ZYFqYUdPwFqRj0RPk0U7LZMOfT7GCck9YjuT1Rfp1PApNl1ng==
-  dependencies:
-    "@azure/abort-controller" "^1.0.0"
-    tslib "^2.2.0"
-
-"@azure/core-util@^1.0.0", "@azure/core-util@^1.1.0":
-  version "1.9.0"
-  resolved "https://registry.npmjs.org/@azure/core-util/-/core-util-1.9.0.tgz"
-  integrity sha512-AfalUQ1ZppaKuxPPMsFEUdX6GZPB3d9paR9d/TTL7Ow2De8cJaC7ibi7kWVlFAVPCYo31OcnGymc0R89DX8Oaw==
+"@azure/core-util@^1.1.0", "@azure/core-util@^1.9.0":
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/@azure/core-util/-/core-util-1.9.2.tgz#1dc37dc5b0dae34c578be62cf98905ba7c0cafe7"
+  integrity sha512-l1Qrqhi4x1aekkV+OlcqsJa4AnAkj5p0JV8omgwjaV9OAbP41lvrMvs+CptfetKkeEaGRGSzby7sjPZEX7+kkQ==
   dependencies:
     "@azure/abort-controller" "^2.0.0"
     tslib "^2.6.2"
@@ -2419,17 +2402,17 @@
     fast-xml-parser "^4.4.1"
     js2xmlparser "^4.0.2"
 
-"@salesforce/plugin-source@3.5.12":
-  version "3.5.12"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-source/-/plugin-source-3.5.12.tgz#3f42e81eeaba9b6b5943d12dd2c978bd154d9a8c"
-  integrity sha512-61sy0hT+IkBUun+HBjFh9Wo7vTLCrADrJ/gniv00uhtrrnWaA02umXr9n8mY4eFyozgOevqQ9AROrrio9zlyxg==
+"@salesforce/plugin-source@3.5.14":
+  version "3.5.14"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-source/-/plugin-source-3.5.14.tgz#06699db0ad7339f98dccdab75d026abd26d99eff"
+  integrity sha512-xNTSmZfLd779ljcOVCl2G4ZBJAbgeGd6B0kyCD+IaHq5Ks95AOakhBp5cflKE2rg+Xm9m/fLbUCsKyvrPAAFiw==
   dependencies:
     "@oclif/core" "^4"
     "@salesforce/apex-node" "^8.1.2"
     "@salesforce/core" "^8.2.8"
     "@salesforce/kit" "^3.1.6"
-    "@salesforce/sf-plugins-core" "^11.2.4"
-    "@salesforce/source-deploy-retrieve" "^12.1.10"
+    "@salesforce/sf-plugins-core" "^11.3.2"
+    "@salesforce/source-deploy-retrieve" "^12.4.0"
     "@salesforce/source-tracking" "^7.1.2"
     "@salesforce/ts-types" "^2.0.11"
     chalk "^5.3.0"
@@ -2437,16 +2420,16 @@
     got "^13.0.0"
     proxy-agent "^6.3.1"
 
-"@salesforce/plugin-telemetry@3.6.6":
-  version "3.6.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.6.6.tgz#35d99c1a690ebaa3b705b7248264116473e4089f"
-  integrity sha512-DZZiOPrUJ0ct1ousEsKPWPrR6kRJcq+7HEOKqCQrD4dGHD/tNR1amp+qZ1IJkTohm7zc0CYuZWVfGqZdAEoaXg==
+"@salesforce/plugin-telemetry@3.6.7":
+  version "3.6.7"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.6.7.tgz#da57ed70ab4ffde2397373a1ec1bd6864ef176a3"
+  integrity sha512-Nr1b+ABfc4Mkq0fY7G9pvMNH0q9SWGV4jxL0rhNPufRFdZqZjbgMRS/HMwQ7+2EMThQOF2WhGuHnvk19nsmcFQ==
   dependencies:
     "@oclif/core" "^4.0.16"
     "@salesforce/core" "^8.2.7"
     "@salesforce/kit" "^3.1.6"
     "@salesforce/sf-plugins-core" "^11.2.4"
-    "@salesforce/telemetry" "^6.0.21"
+    "@salesforce/telemetry" "^6.0.23"
     "@salesforce/ts-types" "^2.0.11"
     debug "^4.3.4"
 
@@ -2476,12 +2459,12 @@
     semver "^7.6.3"
     shelljs "^0.8.4"
 
-"@salesforce/plugin-user@3.5.23":
-  version "3.5.23"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-user/-/plugin-user-3.5.23.tgz#d1933199fd89ab71f71eb58f765b015cffb145bd"
-  integrity sha512-7F+uQIp8fRNHle2n78OuPiCDueyn/vCeA7CDdhwgazNndPbL7x/C7kvgE7/q6d4utlYFKCfDxP7Kol2BnJn85w==
+"@salesforce/plugin-user@3.5.24":
+  version "3.5.24"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-user/-/plugin-user-3.5.24.tgz#0927ef7a455ced17b04cd921becff43b98565500"
+  integrity sha512-0Y8evO3r8p03H1ZsTZ9Ickdd0V9KQvU0tifroq3TqjuN38QlUCxAdjIifOzb8Q0zDTCSYA29ag3oMLwAaytakg==
   dependencies:
-    "@salesforce/core" "^8.2.8"
+    "@salesforce/core" "^8.4.0"
     "@salesforce/kit" "^3.2.1"
     "@salesforce/sf-plugins-core" "^11.3.0"
     "@salesforce/ts-types" "^2.0.11"
@@ -2514,7 +2497,7 @@
     string-width "^7.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/source-deploy-retrieve@^12.1.10", "@salesforce/source-deploy-retrieve@^12.1.12", "@salesforce/source-deploy-retrieve@^12.4.0":
+"@salesforce/source-deploy-retrieve@^12.1.12", "@salesforce/source-deploy-retrieve@^12.4.0":
   version "12.4.0"
   resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.4.0.tgz#7e5a72b1d7b559eaa7f6f333ee212380b6316542"
   integrity sha512-gvTEjLPbNRt62GEKvejt/f1TtG6Zx8JPd/5BYjnXyEJu8BeOy5kL4zJm9GD3ZiTzBnPGHLzfVL09JjWfNBbo0A==
@@ -2547,14 +2530,14 @@
     isomorphic-git "^1.27.1"
     ts-retry-promise "^0.8.1"
 
-"@salesforce/telemetry@^6.0.21":
-  version "6.0.23"
-  resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-6.0.23.tgz#c5d813df0fe0f70f5521881d7b895317d1806803"
-  integrity sha512-7nC5EZ2sJqXcjiiMefm8jY6b0bJr/lXMycvUrg7ZA9Ou3Gizad9rddfxSGI22nDxN7reOjsvkaN0+EaS8xf/Bg==
+"@salesforce/telemetry@^6.0.23":
+  version "6.0.25"
+  resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-6.0.25.tgz#76ae7cac9f3086e640fab9039731e13ad8f675d2"
+  integrity sha512-CKX/cqSyZ8zr9htHLTII3n6u0xXi+Bt6cb11Giv9iU17V+JychoX69VcARnuYTFBimka+WiK3nhWrGQW8g+HtA==
   dependencies:
-    "@salesforce/core" "^8.3.0"
+    "@salesforce/core" "^8.4.0"
     "@salesforce/kit" "^3.2.1"
-    applicationinsights "^2.9.5"
+    applicationinsights "^2.9.6"
     got "^11"
     proxy-agent "^6.4.0"
 
@@ -3247,11 +3230,6 @@
   dependencies:
     defer-to-connect "^2.0.1"
 
-"@tootallnate/once@2":
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/@tootallnate/once/-/once-2.0.0.tgz"
-  integrity sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==
-
 "@tootallnate/quickjs-emscripten@^0.23.0":
   version "0.23.0"
   resolved "https://registry.npmjs.org/@tootallnate/quickjs-emscripten/-/quickjs-emscripten-0.23.0.tgz"
@@ -3724,14 +3702,13 @@ append-transform@^2.0.0:
   dependencies:
     default-require-extensions "^3.0.0"
 
-applicationinsights@^2.9.5:
-  version "2.9.5"
-  resolved "https://registry.npmjs.org/applicationinsights/-/applicationinsights-2.9.5.tgz"
-  integrity sha512-APQ8IWyYDHFvKbitFKpsmZXxkzQh0yYTFacQqoVW7HwlPo3eeLprwnq5RFNmmG6iqLmvQ+xRJSDLEQCgqPh+bw==
+applicationinsights@^2.9.6:
+  version "2.9.6"
+  resolved "https://registry.yarnpkg.com/applicationinsights/-/applicationinsights-2.9.6.tgz#67528e667d7953c8dd57b5fb16e0a4714fc07aed"
+  integrity sha512-BLeBYJUZaKmnzqG/6Q/IFSCqpiVECjSTIvwozLex/1ZZpSxOjPiBxGMev+iIBfNZ2pc7vvnV7DuPOtsoG2DJeQ==
   dependencies:
-    "@azure/core-auth" "^1.5.0"
-    "@azure/core-rest-pipeline" "1.10.1"
-    "@azure/core-util" "1.2.0"
+    "@azure/core-auth" "1.7.2"
+    "@azure/core-rest-pipeline" "1.16.3"
     "@azure/opentelemetry-instrumentation-azure-sdk" "^1.0.0-beta.5"
     "@microsoft/applicationinsights-web-snippet" "1.0.1"
     "@opentelemetry/api" "^1.7.0"
@@ -6495,15 +6472,6 @@ http-parser-js@>=0.5.1:
   resolved "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.5.8.tgz"
   integrity sha512-SGeBX54F94Wgu5RH3X5jsDtf4eHyRogWX1XGT3b4HuW3tQPM4AaBzoUji/4AAJNXCEOWZ5O0DgZmJw1947gD5Q==
 
-http-proxy-agent@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.npmjs.org/http-proxy-agent/-/http-proxy-agent-5.0.0.tgz"
-  integrity sha512-n2hY8YdoRE1i7r6M0w9DIw5GgZN0G25P8zLCRQ8rjXtTU3vsNFBI/vWK/UIeE6g5MUUz6avwAPXmL6Fy9D/90w==
-  dependencies:
-    "@tootallnate/once" "2"
-    agent-base "6"
-    debug "4"
-
 http-proxy-agent@^7.0.0, http-proxy-agent@^7.0.1:
   version "7.0.2"
   resolved "https://registry.npmjs.org/http-proxy-agent/-/http-proxy-agent-7.0.2.tgz"
@@ -6536,10 +6504,10 @@ https-proxy-agent@^5.0.0:
     agent-base "6"
     debug "4"
 
-https-proxy-agent@^7.0.1, https-proxy-agent@^7.0.2, https-proxy-agent@^7.0.3:
-  version "7.0.4"
-  resolved "https://registry.npmjs.org/https-proxy-agent/-/https-proxy-agent-7.0.4.tgz"
-  integrity sha512-wlwpilI7YdjSkWaQ/7omYBMTliDcmCN8OLihO6I9B86g06lMyAoqgoDpV0XqoaPOKj+0DIdAvnsWfyAAhmimcg==
+https-proxy-agent@^7.0.0, https-proxy-agent@^7.0.1, https-proxy-agent@^7.0.2, https-proxy-agent@^7.0.3:
+  version "7.0.5"
+  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-7.0.5.tgz#9e8b5013873299e11fab6fd548405da2d6c602b2"
+  integrity sha512-1e4Wqeblerz+tMKPIq2EMGiiWW1dIjZOksyHWSUm1rmuvw/how9hBHZ38lAGj5ID4Ik6EdkOw7NmWPy6LAwalw==
   dependencies:
     agent-base "^7.0.2"
     debug "4"
@@ -10582,7 +10550,7 @@ uuid@8.0.0:
   resolved "https://registry.npmjs.org/uuid/-/uuid-8.0.0.tgz"
   integrity sha512-jOXGuXZAWdsTH7eZLtyXMqUb9EcWMGZNbL9YcGBJl4MH4nrxHmZJhEHvyLFrkxo+28uLb/NYRcStH48fnD0Vzw==
 
-uuid@^8.3.0, uuid@^8.3.2:
+uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
