@@ -2137,6 +2137,19 @@
     "@salesforce/sf-plugins-core" "^11.3.2"
     ansis "^3.3.1"
 
+"@salesforce/plugin-api@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-api/-/plugin-api-1.1.0.tgz#a4c11540b39362653db3d3520a41b51e1a618c7f"
+  integrity sha512-bOh/Q5sUKbPC9KimowZJXZLHXuUfJzjlixAwT5LFY2VlYrEe6wxfSae1M+tke4gRcA6GdT7HQOGo77tLMoLOxQ==
+  dependencies:
+    "@oclif/core" "^4"
+    "@salesforce/core" "^8.4.0"
+    "@salesforce/kit" "^3.2.1"
+    "@salesforce/sf-plugins-core" "^11.3.2"
+    ansis "^3.3.2"
+    got "^13.0.0"
+    proxy-agent "^6.4.0"
+
 "@salesforce/plugin-auth@3.6.48":
   version "3.6.48"
   resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.6.48.tgz#6b20c59721d00a520476f68d18f9202038ab240f"
