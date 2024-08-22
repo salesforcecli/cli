@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.56.6 linux-x64 node-v20.16.0
+@salesforce/cli/2.57.0 linux-x64 node-v20.16.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -2778,7 +2778,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/create/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.1/src/commands/org/create/sandbox.ts)_
 
 ## `sf org create scratch`
 
@@ -2934,7 +2934,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/create/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.1/src/commands/org/create/scratch.ts)_
 
 ## `sf org create user`
 
@@ -3092,7 +3092,7 @@ Delete the sandbox without prompting to confirm:
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/delete/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.1/src/commands/org/delete/sandbox.ts)_
 
 ## `sf org delete scratch`
 
@@ -3138,7 +3138,7 @@ Delete the scratch org without prompting to confirm :
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/delete/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.1/src/commands/org/delete/scratch.ts)_
 
 ## `sf org disable tracking`
 
@@ -3179,7 +3179,7 @@ Disable source tracking for your default org:
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/disable/tracking.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.1/src/commands/org/disable/tracking.ts)_
 
 ## `sf org display`
 
@@ -3226,7 +3226,7 @@ Display information, including the sfdxAuthUrl property, about the org with alia
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/display.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.1/src/commands/org/display.ts)_
 
 ## `sf org display user`
 
@@ -3311,7 +3311,7 @@ Enable source tracking for your default org:
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/enable/tracking.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.1/src/commands/org/enable/tracking.ts)_
 
 ## `sf org generate password`
 
@@ -3421,7 +3421,7 @@ List orgs and remove local org authorization info about non-active scratch orgs:
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/list.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.1/src/commands/org/list.ts)_
 
 ## `sf org list auth`
 
@@ -3566,7 +3566,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/list/metadata.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.1/src/commands/org/list/metadata.ts)_
 
 ## `sf org list metadata-types`
 
@@ -3623,7 +3623,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/list/metadata-types.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.1/src/commands/org/list/metadata-types.ts)_
 
 ## `sf org list sobject record-counts`
 
@@ -4215,7 +4215,7 @@ Open a local Flow in Flow Builder:
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/open.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.1/src/commands/org/open.ts)_
 
 ## `sf org refresh sandbox`
 
@@ -4294,7 +4294,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/refresh/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.1/src/commands/org/refresh/sandbox.ts)_
 
 ## `sf org resume sandbox`
 
@@ -4359,7 +4359,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/resume/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.1/src/commands/org/resume/sandbox.ts)_
 
 ## `sf org resume scratch`
 
@@ -4408,7 +4408,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/resume/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.1/src/commands/org/resume/scratch.ts)_
 
 ## `sf package create`
 
@@ -5995,7 +5995,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.10.1/src/commands/project/convert/mdapi.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/convert/mdapi.ts)_
 
 ## `sf project convert source`
 
@@ -6008,7 +6008,7 @@ $ sf project convert source [--json] [--flags-dir <value>] [--api-version <value
 [-p <value>... | -x <value> | -m <value>...]
 
 FLAGS
--d, --output-dir=<value> [default: metadataPackage_1724184942234] Output directory to store the Metadata
+-d, --output-dir=<value> [default: metadataPackage_1724272022859] Output directory to store the Metadata
 API–formatted files in.
 -m, --metadata=<value>... Metadata component names to convert.
 -n, --package-name=<value> Name of the package to associate with the metadata-formatted files.
@@ -6070,7 +6070,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.10.1/src/commands/project/convert/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/convert/source.ts)_
 
 ## `sf project convert source-behavior`
 
@@ -6129,7 +6129,7 @@ Keep the temporary directory that contains the interim metadata API formatted fi
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.10.1/src/commands/project/convert/source-behavior.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/convert/source-behavior.ts)_
 
 ## `sf project delete source`
 
@@ -6271,7 +6271,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.10.1/src/commands/project/delete/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/delete/source.ts)_
 
 ## `sf project delete tracking`
 
@@ -6310,7 +6310,7 @@ Delete local source tracking for the org with alias "my-scratch":
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.10.1/src/commands/project/delete/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/delete/tracking.ts)_
 
 ## `sf project deploy cancel`
 
@@ -6384,7 +6384,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.10.1/src/commands/project/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/deploy/cancel.ts)_
 
 ## `sf project deploy preview`
 
@@ -6469,7 +6469,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.10.1/src/commands/project/deploy/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/deploy/preview.ts)_
 
 ## `sf project deploy quick`
 
@@ -6564,7 +6564,7 @@ Canceling (69) The deploy is being canceled.
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.10.1/src/commands/project/deploy/quick.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/deploy/quick.ts)_
 
 ## `sf project deploy report`
 
@@ -6658,7 +6658,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.10.1/src/commands/project/deploy/report.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/deploy/report.ts)_
 
 ## `sf project deploy resume`
 
@@ -6757,7 +6757,7 @@ Canceling (69) The deploy is being canceled.
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.10.1/src/commands/project/deploy/resume.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/deploy/resume.ts)_
 
 ## `sf project deploy start`
 
@@ -7012,7 +7012,7 @@ Canceling (69) The deploy is being canceled.
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.10.1/src/commands/project/deploy/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/deploy/start.ts)_
 
 ## `sf project deploy validate`
 
@@ -7204,7 +7204,7 @@ Canceling (69) The deploy is being canceled.
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.10.1/src/commands/project/deploy/validate.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/deploy/validate.ts)_
 
 ## `sf project generate`
 
@@ -7390,7 +7390,7 @@ Create a manifest from the metadata components in the specified org and include 
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.10.1/src/commands/project/generate/manifest.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/generate/manifest.ts)_
 
 ## `sf project list ignored`
 
@@ -7434,7 +7434,7 @@ Check if a particular file is ignored:
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.10.1/src/commands/project/list/ignored.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/list/ignored.ts)_
 
 ## `sf project reset tracking`
 
@@ -7485,7 +7485,7 @@ Reset source tracking to revision number 30 for your default org:
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.10.1/src/commands/project/reset/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/reset/tracking.ts)_
 
 ## `sf project retrieve preview`
 
@@ -7541,7 +7541,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.10.1/src/commands/project/retrieve/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/retrieve/preview.ts)_
 
 ## `sf project retrieve start`
 
@@ -7720,7 +7720,7 @@ SF_USE_PROGRESS_BAR Set to false to disable the progress bar when running the me
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.10.1/src/commands/project/retrieve/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/retrieve/start.ts)_
 
 ## `sf schema generate field`
 
