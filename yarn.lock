@@ -2158,15 +2158,16 @@
     "@salesforce/sf-plugins-core" "^11.3.2"
     ansis "^3.3.1"
 
-"@salesforce/plugin-api@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-api/-/plugin-api-1.1.0.tgz#a4c11540b39362653db3d3520a41b51e1a618c7f"
-  integrity sha512-bOh/Q5sUKbPC9KimowZJXZLHXuUfJzjlixAwT5LFY2VlYrEe6wxfSae1M+tke4gRcA6GdT7HQOGo77tLMoLOxQ==
+"@salesforce/plugin-api@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-api/-/plugin-api-1.2.0.tgz#69b7454e78acaf967dc528c8f7fed3715eb6162c"
+  integrity sha512-xpfSjrTTJ0AzvAZTlEkbVRPgZDWTr6ySyUckqEYDqv9EtfESB0CQdaK9KP6/q0+v5adfnJMADNOEBQk7cogdmQ==
   dependencies:
     "@oclif/core" "^4"
     "@salesforce/core" "^8.4.0"
     "@salesforce/kit" "^3.2.1"
     "@salesforce/sf-plugins-core" "^11.3.2"
+    "@salesforce/ts-types" "^2.0.12"
     ansis "^3.3.2"
     got "^13.0.0"
     proxy-agent "^6.4.0"
@@ -2216,10 +2217,10 @@
     csv-stringify "^6.5.1"
     form-data "^4.0.0"
 
-"@salesforce/plugin-deploy-retrieve@3.11.0":
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.11.0.tgz#5b0893adcc294793a59b9beba1ec036c98f48fb2"
-  integrity sha512-5OPiuT3x7ULTeBOEVdDVG5EjAKWxIQUZkWktCewt9hdGeXatThoJ9f8laeOBvCHynKAghYayJ/36BnJs1K4wVA==
+"@salesforce/plugin-deploy-retrieve@3.11.1":
+  version "3.11.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.11.1.tgz#0491c2330eb5b9fdf8e1aafc78bdee36cae4b15b"
+  integrity sha512-ZzgKukbgU0wGSm6zD2E9IzNtbhDEFoqUwg+Dd2ctFmZM7Yl6MURpUcbdwNjSDdG7ywhXxZX59kctrP3sN9OE1A==
   dependencies:
     "@oclif/core" "^4.0.17"
     "@oclif/multi-stage-output" "^0.3.0"
