@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.57.0 linux-x64 node-v20.16.0
+@salesforce/cli/2.57.1 linux-x64 node-v20.16.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -53,6 +53,7 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf apex run`](#sf-apex-run)
 - [`sf apex run test`](#sf-apex-run-test)
 - [`sf apex tail log`](#sf-apex-tail-log)
+- [`sf api request graphql`](#sf-api-request-graphql)
 - [`sf api request rest ENDPOINT`](#sf-api-request-rest-endpoint)
 - [`sf autocomplete [SHELL]`](#sf-autocomplete-shell)
 - [`sf commands`](#sf-commands)
@@ -846,49 +847,110 @@ EXAMPLES
 
 _See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.4.2/src/commands/apex/tail/log.ts)_
 
-## `sf api request rest ENDPOINT`
+## `sf api request graphql`
 
-Make an authenticated HTTP request to Salesforce REST API and print the response.
+Execute GraphQL statements
 
 ````
 USAGE
-  $ sf api request rest ENDPOINT -o <value> [--flags-dir <value>] [--api-version <value>] [-i | -S Example:
-    report.xlsx] [-X GET|POST|PUT|PATCH|HEAD|DELETE|OPTIONS|TRACE] [-H key:value...] [--body file]
-
-ARGUMENTS
-  ENDPOINT  Salesforce API endpoint
+  $ sf api request graphql -o <value> --body file [--json] [--flags-dir <value>] [--api-version <value>] [-S Example:
+    report.xlsx | -i]
 
 FLAGS
-  -H, --header=key:value...                  HTTP header in "key:value" format.
   -S, --stream-to-file=Example: report.xlsx  Stream responses to a file.
-  -X, --method=<option>                      [default: GET] HTTP method for the request.
-                                             <options: GET|POST|PUT|PATCH|HEAD|DELETE|OPTIONS|TRACE>
   -i, --include                              Include the HTTP response status and headers in the output.
   -o, --target-org=<value>                   (required) Username or alias of the target org. Not required if the
                                              `target-org` configuration variable is already set.
       --api-version=<value>                  Override the api version used for api requests made by this command
-      --body=file                            File to use as the body for the request. Specify "-" to read from standard
-                                             input; specify "" for an empty body.
+      --body=file                            (required) File or content with GraphQL statement. Specify "-" to read from
+                                             standard input.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Execute GraphQL statements
+
+  Run any valid GraphQL statement via the /graphql
+  [API](https://developer.salesforce.com/docs/platform/graphql/guide/graphql-about.html)
 
 EXAMPLES
-  - List information about limits in the org with alias "my-org":
-    sf api request rest 'limits' --target-org my-org
-  - List all endpoints
-    sf api request rest '/'
-  - Get the response in XML format by specifying the "Accept" HTTP header:
-    sf api request rest 'limits' --target-org my-org --header 'Accept: application/xml'
-  - POST to create an Account object
-    sf api request rest 'sobjects/account' --body "{\"Name\" : \"Account from REST API\",\"ShippingCity\" : \"Boise\"}" --method POST
-  - or with a file 'info.json' containing
-  ```json
-  {
-    "Name": "Demo",
-    "ShippingCity": "Boise"
+  - Runs the graphql query directly via the command line
+    sf api request graphql --body "query accounts { uiapi { query { Account { edges { node { Id \n Name { value } } } } } } }"
+  - Runs a mutation to create an Account, with an `example.txt` file, containing
+  ```text
+  mutation AccountExample{
+    uiapi {
+      AccountCreate(input: {
+        Account: {
+          Name: "Trailblazer Express"
+        }
+      }) {
+        Record {
+          Id
+          Name {
+            value
+          }
+        }
+      }
+    }
   }
 ````
+
+$ sf api request graphql --body example.txt
+will create a new account returning specified fields (Id, Name)
+
+```
+
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.2.0/src/commands/api/request/graphql.ts)_
+
+## `sf api request rest ENDPOINT`
+
+Make an authenticated HTTP request to Salesforce REST API and print the response.
+
+```
+
+USAGE
+$ sf api request rest ENDPOINT -o <value> [--flags-dir <value>] [--api-version <value>] [-i | -S Example:
+report.xlsx] [-X GET|POST|PUT|PATCH|HEAD|DELETE|OPTIONS|TRACE] [-H key:value...] [--body file]
+
+ARGUMENTS
+ENDPOINT Salesforce API endpoint
+
+FLAGS
+-H, --header=key:value... HTTP header in "key:value" format.
+-S, --stream-to-file=Example: report.xlsx Stream responses to a file.
+-X, --method=<option> [default: GET] HTTP method for the request.
+<options: GET|POST|PUT|PATCH|HEAD|DELETE|OPTIONS|TRACE>
+-i, --include Include the HTTP response status and headers in the output.
+-o, --target-org=<value> (required) Username or alias of the target org. Not required if the
+`target-org` configuration variable is already set.
+--api-version=<value> Override the api version used for api requests made by this command
+--body=file File to use as the body for the request. Specify "-" to read from standard
+input; specify "" for an empty body.
+
+GLOBAL FLAGS
+--flags-dir=<value> Import flag values from a directory.
+
+EXAMPLES
+
+- List information about limits in the org with alias "my-org":
+  sf api request rest 'limits' --target-org my-org
+- List all endpoints
+  sf api request rest '/'
+- Get the response in XML format by specifying the "Accept" HTTP header:
+  sf api request rest 'limits' --target-org my-org --header 'Accept: application/xml'
+- POST to create an Account object
+  sf api request rest 'sobjects/account' --body "{\"Name\" : \"Account from REST API\",\"ShippingCity\" : \"Boise\"}" --method POST
+- or with a file 'info.json' containing
+
+```json
+{
+  "Name": "Demo",
+  "ShippingCity": "Boise"
+}
+```
 
 $ sf api request rest 'sobjects/account' --body info.json --method POST
 
@@ -897,7 +959,7 @@ $ sf api request rest 'sobjects/account' --body info.json --method POST
 
 ```
 
-_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.1.0/src/commands/api/request/rest.ts)_
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.2.0/src/commands/api/request/rest.ts)_
 
 ## `sf autocomplete [SHELL]`
 
@@ -5995,7 +6057,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/convert/mdapi.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.1/src/commands/project/convert/mdapi.ts)_
 
 ## `sf project convert source`
 
@@ -6008,7 +6070,7 @@ $ sf project convert source [--json] [--flags-dir <value>] [--api-version <value
 [-p <value>... | -x <value> | -m <value>...]
 
 FLAGS
--d, --output-dir=<value> [default: metadataPackage_1724272022859] Output directory to store the Metadata
+-d, --output-dir=<value> [default: metadataPackage_1724350918433] Output directory to store the Metadata
 API–formatted files in.
 -m, --metadata=<value>... Metadata component names to convert.
 -n, --package-name=<value> Name of the package to associate with the metadata-formatted files.
@@ -6070,7 +6132,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/convert/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.1/src/commands/project/convert/source.ts)_
 
 ## `sf project convert source-behavior`
 
@@ -6129,7 +6191,7 @@ Keep the temporary directory that contains the interim metadata API formatted fi
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/convert/source-behavior.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.1/src/commands/project/convert/source-behavior.ts)_
 
 ## `sf project delete source`
 
@@ -6271,7 +6333,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/delete/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.1/src/commands/project/delete/source.ts)_
 
 ## `sf project delete tracking`
 
@@ -6310,7 +6372,7 @@ Delete local source tracking for the org with alias "my-scratch":
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/delete/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.1/src/commands/project/delete/tracking.ts)_
 
 ## `sf project deploy cancel`
 
@@ -6384,7 +6446,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.1/src/commands/project/deploy/cancel.ts)_
 
 ## `sf project deploy preview`
 
@@ -6469,7 +6531,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/deploy/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.1/src/commands/project/deploy/preview.ts)_
 
 ## `sf project deploy quick`
 
@@ -6564,7 +6626,7 @@ Canceling (69) The deploy is being canceled.
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/deploy/quick.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.1/src/commands/project/deploy/quick.ts)_
 
 ## `sf project deploy report`
 
@@ -6658,7 +6720,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/deploy/report.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.1/src/commands/project/deploy/report.ts)_
 
 ## `sf project deploy resume`
 
@@ -6757,7 +6819,7 @@ Canceling (69) The deploy is being canceled.
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/deploy/resume.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.1/src/commands/project/deploy/resume.ts)_
 
 ## `sf project deploy start`
 
@@ -7012,7 +7074,7 @@ Canceling (69) The deploy is being canceled.
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/deploy/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.1/src/commands/project/deploy/start.ts)_
 
 ## `sf project deploy validate`
 
@@ -7204,7 +7266,7 @@ Canceling (69) The deploy is being canceled.
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/deploy/validate.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.1/src/commands/project/deploy/validate.ts)_
 
 ## `sf project generate`
 
@@ -7390,7 +7452,7 @@ Create a manifest from the metadata components in the specified org and include 
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/generate/manifest.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.1/src/commands/project/generate/manifest.ts)_
 
 ## `sf project list ignored`
 
@@ -7434,7 +7496,7 @@ Check if a particular file is ignored:
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/list/ignored.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.1/src/commands/project/list/ignored.ts)_
 
 ## `sf project reset tracking`
 
@@ -7485,7 +7547,7 @@ Reset source tracking to revision number 30 for your default org:
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/reset/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.1/src/commands/project/reset/tracking.ts)_
 
 ## `sf project retrieve preview`
 
@@ -7541,7 +7603,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/retrieve/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.1/src/commands/project/retrieve/preview.ts)_
 
 ## `sf project retrieve start`
 
@@ -7720,7 +7782,7 @@ SF_USE_PROGRESS_BAR Set to false to disable the progress bar when running the me
 
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.0/src/commands/project/retrieve/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.11.1/src/commands/project/retrieve/start.ts)_
 
 ## `sf schema generate field`
 
