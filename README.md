@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.56.6 linux-x64 node-v20.16.0
+@salesforce/cli/2.57.0 linux-x64 node-v20.16.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -2778,7 +2778,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/create/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.4/src/commands/org/create/sandbox.ts)_
 
 ## `sf org create scratch`
 
@@ -2934,7 +2934,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/create/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.4/src/commands/org/create/scratch.ts)_
 
 ## `sf org create user`
 
@@ -3092,7 +3092,7 @@ Delete the sandbox without prompting to confirm:
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/delete/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.4/src/commands/org/delete/sandbox.ts)_
 
 ## `sf org delete scratch`
 
@@ -3138,7 +3138,7 @@ Delete the scratch org without prompting to confirm :
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/delete/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.4/src/commands/org/delete/scratch.ts)_
 
 ## `sf org disable tracking`
 
@@ -3179,7 +3179,7 @@ Disable source tracking for your default org:
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/disable/tracking.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.4/src/commands/org/disable/tracking.ts)_
 
 ## `sf org display`
 
@@ -3226,7 +3226,7 @@ Display information, including the sfdxAuthUrl property, about the org with alia
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/display.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.4/src/commands/org/display.ts)_
 
 ## `sf org display user`
 
@@ -3311,7 +3311,7 @@ Enable source tracking for your default org:
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/enable/tracking.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.4/src/commands/org/enable/tracking.ts)_
 
 ## `sf org generate password`
 
@@ -3421,7 +3421,7 @@ List orgs and remove local org authorization info about non-active scratch orgs:
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/list.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.4/src/commands/org/list.ts)_
 
 ## `sf org list auth`
 
@@ -3566,7 +3566,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/list/metadata.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.4/src/commands/org/list/metadata.ts)_
 
 ## `sf org list metadata-types`
 
@@ -3623,7 +3623,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/list/metadata-types.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.4/src/commands/org/list/metadata-types.ts)_
 
 ## `sf org list sobject record-counts`
 
@@ -4215,7 +4215,7 @@ Open a local Flow in Flow Builder:
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/open.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.4/src/commands/org/open.ts)_
 
 ## `sf org refresh sandbox`
 
@@ -4294,7 +4294,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/refresh/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.4/src/commands/org/refresh/sandbox.ts)_
 
 ## `sf org resume sandbox`
 
@@ -4359,7 +4359,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/resume/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.4/src/commands/org/resume/sandbox.ts)_
 
 ## `sf org resume scratch`
 
@@ -4408,7 +4408,7 @@ FLAG DESCRIPTIONS
 
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.0/src/commands/org/resume/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/4.5.4/src/commands/org/resume/scratch.ts)_
 
 ## `sf package create`
 
