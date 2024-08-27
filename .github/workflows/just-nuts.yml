@@ -24,6 +24,8 @@ jobs:
         os: [ubuntu-latest, windows-latest]
         repository:
           - salesforcecli/plugin-auth
+          - salesforcecli/plugin-apex
+          - salesforcecli/plugin-api
           - salesforcecli/plugin-data
           - salesforcecli/plugin-limits
           - salesforcecli/plugin-org
