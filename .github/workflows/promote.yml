@@ -82,9 +82,11 @@ jobs:
     steps:
       - id: replace-channel
         run: |
-          NEW_CHANNEL=${{ inputs.new-channel }}
+          NEW_CHANNEL="$INPUTS_NEW_CHANNEL"
           S3_NEW_CHANNEL=${NEW_CHANNEL/latest/stable}
           echo "s3-new-channel=$S3_NEW_CHANNEL" >> "$GITHUB_OUTPUT"
+        env:
+          INPUTS_NEW_CHANNEL: ${{ inputs.new-channel }}
 
   # CTC is only needed for promotions to 'latest'
   # Note: "Optional" GHA jobs are tricky to get right. Edit with caution.
@@ -100,10 +102,11 @@ jobs:
         if: inputs.use-ctc
         uses: salesforcecli/github-workflows/.github/actions/ctcOpen@main
         with:
-          SF_CHANGE_CASE_SFDX_AUTH_URL: ${{ secrets.SF_CHANGE_CASE_SFDX_AUTH_URL}}
-          SF_CHANGE_CASE_TEMPLATE_ID: ${{ secrets.SF_CHANGE_CASE_TEMPLATE_ID}}
-          SF_CHANGE_CASE_CONFIGURATION_ITEM: ${{ secrets.SF_CHANGE_CASE_CONFIGURATION_ITEM}}
-          SVC_CLI_BOT_GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN}}
+          SF_CHANGE_CASE_SFDX_AUTH_URL: ${{ secrets.SF_CHANGE_CASE_SFDX_AUTH_URL }}
+          SF_CHANGE_CASE_TEMPLATE_ID: ${{ secrets.SF_CHANGE_CASE_TEMPLATE_ID }}
+          SF_CHANGE_CASE_CONFIGURATION_ITEM: ${{ secrets.SF_CHANGE_CASE_CONFIGURATION_ITEM }}
+          SVC_CLI_BOT_GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
+
       - name: Check open-ctc status
         if: always()
         run: |
@@ -133,14 +136,18 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - run: |
-          docker pull salesforce/cli:${{ needs.get-package-info.outputs.version }}-slim
-          docker tag salesforce/cli:${{ needs.get-package-info.outputs.version }}-slim salesforce/cli:${{ inputs.new-channel }}-slim
-          docker push salesforce/cli:${{ inputs.new-channel }}-slim
+      - name: Promote Docker images
+        run: |
+          docker pull "salesforce/cli:$NEEDS_GET_PACKAGE_INFO_VERSION-slim"
+          docker tag "salesforce/cli:$NEEDS_GET_PACKAGE_INFO_VERSION-slim salesforce/cli:$INPUTS_NEW_CHANNEL-slim"
+          docker push "salesforce/cli:$INPUTS_NEW_CHANNEL-slim"
 
-          docker pull salesforce/cli:${{ needs.get-package-info.outputs.version }}-full
-          docker tag salesforce/cli:${{ needs.get-package-info.outputs.version }}-full salesforce/cli:${{ inputs.new-channel }}-full
-          docker push salesforce/cli:${{ inputs.new-channel }}-full
+          docker pull "salesforce/cli:$NEEDS_GET_PACKAGE_INFO_VERSION-full"
+          docker tag "salesforce/cli:$NEEDS_GET_PACKAGE_INFO_VERSION-full salesforce/cli:$INPUTS_NEW_CHANNEL-full"
+          docker push "salesforce/cli:$INPUTS_NEW_CHANNEL-full"
+        env:
+          NEEDS_GET_PACKAGE_INFO_VERSION: ${{ needs.get-package-info.outputs.version }}
+          INPUTS_NEW_CHANNEL: ${{ inputs.new-channel }}
 
   npm-promote:
     needs: [open-ctc-or-skip, get-package-info]
@@ -153,7 +160,10 @@ jobs:
       # NOTE: If you try to use yarn here, it will use the wrong registry and throw 401s
       - run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-          npm dist-tag add @salesforce/cli@${{ needs.get-package-info.outputs.version }} ${{ inputs.new-channel }}
+          npm dist-tag add "@salesforce/cli@$NEEDS_GET_PACKAGE_INFO_VERSION" "$INPUTS_NEW_CHANNEL"
+        env:
+          NEEDS_GET_PACKAGE_INFO_VERSION: ${{ needs.get-package-info.outputs.version }}
+          INPUTS_NEW_CHANNEL: ${{ inputs.new-channel }}
 
   oclif-promote:
     needs: [open-ctc-or-skip, get-package-info, build-s3-channel]
@@ -161,13 +171,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
           cache: yarn
-      - run: yarn install
-      - run: yarn promote --version ${{ needs.get-package-info.outputs.version }} --sha ${{ needs.get-package-info.outputs.sha }} --channel ${{ needs.build-s3-channel.outputs.s3-new-channel }} --max-age 300 --macos --win --indexes --xz
+
+      - uses: salesforcecli/github-workflows/.github/actions/yarnInstallWithRetries@main
+
+      - name: Promote with oclif
+        run: yarn promote --version "$NEEDS_GET_PACKAGE_INFO_VERSION" \
+          --sha "$NEEDS_GET_PACKAGE_INFO_SHA" \
+          --channel "$NEEDS_BUILD_S3_CHANNEL_S3_NEW_CHANNEL" \
+          --max-age 300 \
+          --macos \
+          --win \
+          --indexes \
+          --xz
         env:
+          NEEDS_GET_PACKAGE_INFO_VERSION: ${{ needs.get-package-info.outputs.version }}
+          NEEDS_GET_PACKAGE_INFO_SHA: ${{ needs.get-package-info.outputs.sha }}
+          NEEDS_BUILD_S3_CHANNEL_S3_NEW_CHANNEL: ${{ needs.build-s3-channel.outputs.s3-new-channel }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           DEBUG: ${{ vars.DEBUG }}
@@ -178,7 +202,7 @@ jobs:
     uses: salesforcecli/github-workflows/.github/workflows/ctcClose.yml@main
     secrets: inherit
     with:
-      changeCaseId: ${{needs.open-ctc-or-skip.outputs.changeCaseId}}
+      changeCaseId: ${{ needs.open-ctc-or-skip.outputs.changeCaseId }}
 
   ctcCloseFail:
     needs: [open-ctc-or-skip, npm-promote, docker-promote, oclif-promote]

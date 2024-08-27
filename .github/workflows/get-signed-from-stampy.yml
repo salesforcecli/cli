@@ -13,11 +13,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: download
-        env:
-          STAMPY_ARN: ${{ secrets.STAMPY_ARN }}
-          AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
-          AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-          AWS_EC2_METADATA_DISABLED: true
         # switch AWS identity to the one that can access stampy
         run: |
           ACCOUNT_ID=$(aws sts get-caller-identity | jq -r '.Account')
@@ -26,13 +21,14 @@ jobs:
           export AWS_SECRET_ACCESS_KEY=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SecretAccessKey')
           export AWS_SESSION_TOKEN=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SessionToken')
           aws s3 cp --recursive ${{ secrets.STAMPY_SIGNED_BUCKET }}/ .
-
-      - name: upload to CLI s3
-        id: upload
         env:
+          STAMPY_ARN: ${{ secrets.STAMPY_ARN }}
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           AWS_EC2_METADATA_DISABLED: true
+
+      - name: upload to CLI s3
+        id: upload
         run: |
           # Run script and redirect stderr to stdout
           OUTPUT=$(node scripts/stampy-signed-upload.js 2>&1)
@@ -47,15 +43,12 @@ jobs:
           # Set multiline string output
           # https://stackoverflow.com/questions/74137120/how-to-fix-or-avoid-error-unable-to-process-file-command-output-successfully#comment131739699_74232400
           echo -e "output<<EOF\n$OUTPUT\nEOF" >> "$GITHUB_OUTPUT"
-
-      - name: clean up stampy in/out buckets
         env:
-          STAMPY_ARN: ${{ secrets.STAMPY_ARN }}
-          STAMPY_UNSIGNED_BUCKET: ${{ secrets.STAMPY_UNSIGNED_BUCKET }}
-          STAMPY_SIGNED_BUCKET: ${{ secrets.STAMPY_SIGNED_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           AWS_EC2_METADATA_DISABLED: true
+
+      - name: clean up stampy in/out buckets
         run: |
           ACCOUNT_ID=$(aws sts get-caller-identity | jq -r '.Account')
           TEMP_ROLE=$(aws sts assume-role --role-arn $STAMPY_ARN --role-session-name artifact-signing)
@@ -63,6 +56,13 @@ jobs:
           export AWS_SECRET_ACCESS_KEY=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SecretAccessKey')
           export AWS_SESSION_TOKEN=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SessionToken')
           node scripts/stampy-signed-delete.js
+        env:
+          STAMPY_ARN: ${{ secrets.STAMPY_ARN }}
+          STAMPY_UNSIGNED_BUCKET: ${{ secrets.STAMPY_UNSIGNED_BUCKET }}
+          STAMPY_SIGNED_BUCKET: ${{ secrets.STAMPY_SIGNED_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+          AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          AWS_EC2_METADATA_DISABLED: true
 
       - name: notify
         uses: slackapi/slack-github-action@v1.26.0

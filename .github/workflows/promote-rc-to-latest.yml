@@ -57,29 +57,36 @@ jobs:
         run: |
           VERSION=$(npm view @salesforce/cli@latest --json | jq -r '.version')
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
       - name: Get docker-full CLI version
         id: docker-full-version
         run: |
           docker pull salesforce/cli:latest-full
           VERSION=$(docker run --rm salesforce/cli:latest-full sf version --json | jq -r '.cliVersion' | cut -d'/' -f 3)
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
       - name: Get docker-slim CLI version
         id: docker-slim-version
         run: |
           docker pull salesforce/cli:latest-slim
           VERSION=$(docker run --rm salesforce/cli:latest-slim sf version --json | jq -r '.cliVersion' | cut -d'/' -f 3)
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
       - name: Compare Docker versions against npm
         run: |
-          echo "NPM latest version is: ${{ steps.latest-version.outputs.version }}"
-          echo "Docker-full version is: ${{ steps.docker-full-version.outputs.version }}"
-          echo "Docker-slim version is: ${{ steps.docker-slim-version.outputs.version }}"
-          if [ "${{ steps.latest-version.outputs.version }}" == "${{ steps.docker-full-version.outputs.version }}" ] && [ "${{ steps.docker-full-version.outputs.version }}" == "${{ steps.docker-slim-version.outputs.version }}" ]; then
+          echo "[INFO] NPM latest version is: $STEPS_LAST_VERSION_VERSION"
+          echo "[INFO] Docker-full version is: $STEPS_DOCKER_FULL_VERSION_VERSION"
+          echo "[INFO] Docker-slim version is: $STEPS_DOCKER_SLIM_VERSION_VERSION"
+          if [ "$STEPS_LAST_VERSION_VERSION" == "$STEPS_DOCKER_FULL_VERSION_VERSION" ] && [ "$STEPS_DOCKER_FULL_VERSION_VERSION" == "$STEPS_DOCKER_SLIM_VERSION_VERSION" ]; then
             echo "Docker versions match npm version. Proceeding..."
           else
             echo "Version mismatch! Exiting..."
             exit 1
           fi
+        env:
+          STEPS_LAST_VERSION_VERSION: ${{ steps.latest-version.outputs.version }}
+          STEPS_DOCKER_FULL_VERSION_VERSION: ${{ steps.docker-full-version.outputs.version }}
+          STEPS_DOCKER_SLIM_VERSION_VERSION: ${{ steps.docker-slim-version.outputs.version }}
 
   announce-promotion-to-slack:
     runs-on: ubuntu-latest

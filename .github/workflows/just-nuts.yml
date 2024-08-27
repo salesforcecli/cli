@@ -36,9 +36,9 @@ jobs:
           - salesforcecli/plugin-user
     uses: ./.github/workflows/just-nut.yml
     with:
-      repository: ${{matrix.repository}}
+      repository: ${{ matrix.repository }}
       channel-or-version: ${{ inputs.channel-or-version }}
-      os: ${{matrix.os}}
+      os: ${{ matrix.os }}
     secrets: inherit
 
   jit:
@@ -62,9 +62,9 @@ jobs:
             repository: salesforcecli/plugin-dev # These are flakey on Windows
     uses: ./.github/workflows/just-nut.yml
     with:
-      repository: ${{matrix.repository}}
+      repository: ${{ matrix.repository }}
       channel-or-version: ${{ inputs.channel-or-version }}
-      os: ${{matrix.os}}
+      os: ${{ matrix.os }}
       jit: true
     secrets: inherit
 
@@ -81,8 +81,8 @@ jobs:
     with:
       repository: salesforcecli/plugin-packaging
       channel-or-version: ${{ inputs.channel-or-version }}
-      os: ${{matrix.os}}
-      command: ${{matrix.command}}
+      os: ${{ matrix.os }}
+      command: ${{ matrix.command }}
     secrets: inherit
 
   source:
@@ -107,8 +107,8 @@ jobs:
     with:
       repository: salesforcecli/plugin-source
       channel-or-version: ${{ inputs.channel-or-version }}
-      os: ${{matrix.os}}
-      command: ${{matrix.command}}
+      os: ${{ matrix.os }}
+      command: ${{ matrix.command }}
     secrets: inherit
 
   deploy-retrieve:
@@ -135,6 +135,6 @@ jobs:
     with:
       repository: salesforcecli/plugin-deploy-retrieve
       channel-or-version: ${{ inputs.channel-or-version }}
-      os: ${{matrix.os}}
-      command: ${{matrix.command}}
+      os: ${{ matrix.os }}
+      command: ${{ matrix.command }}
     secrets: inherit

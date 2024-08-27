@@ -41,7 +41,6 @@ jobs:
   make-pr:
     env:
       GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
-      SF_HIDE_RELEASE_NOTES: true
     runs-on: 'ubuntu-latest'
     steps:
       - uses: actions/checkout@v4
@@ -68,7 +67,7 @@ jobs:
 
       - run: |
           sf-release cli:release:build \
-            --release-channel ${{ inputs.release-channel }} \
+            --release-channel "$INPUTS_RELEASE_CHANNEL" \
             ${{ inputs.pinned-deps && '--pinned-deps' || '--no-pinned-deps' }} \
             ${{ inputs.resolutions && '--resolutions' || '--no-resolutions' }} \
             ${{ inputs.jit && '--jit' || '--no-jit' }} \
@@ -77,3 +76,5 @@ jobs:
             ${{ inputs.patch && '--patch' || '' }} \
             ${{ inputs.only && format('--only {0}', inputs.only) || '' }} \
             ${{ inputs.empty && '--empty' || '' }}
+        env:
+          INPUTS_RELEASE_CHANNEL: ${{ inputs.release-channel }}
