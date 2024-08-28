@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.57.6 linux-x64 node-v20.16.0
+@salesforce/cli/2.57.7 linux-x64 node-v20.16.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -2059,7 +2059,7 @@ EXAMPLES
     $ sf doctor --plugin @salesforce/plugin-source
 ```
 
-_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.4.0/src/commands/doctor.ts)_
+_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.4.2/src/commands/doctor.ts)_
 
 ## `sf force data bulk delete`
 
@@ -2261,7 +2261,7 @@ EXAMPLES
     $ sf info releasenotes display --version latest
 ```
 
-_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.4.0/src/commands/info/releasenotes/display.ts)_
+_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.4.2/src/commands/info/releasenotes/display.ts)_
 
 ## `sf lightning generate app`
 
