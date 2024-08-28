@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.57.5",
+  "version": "2.57.6",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run.js",
@@ -78,13 +78,13 @@
     "jitPlugins": {
       "@salesforce/plugin-custom-metadata": "3.3.27",
       "@salesforce/plugin-community": "3.2.27",
-      "@salesforce/plugin-dev": "2.4.1",
+      "@salesforce/plugin-dev": "2.4.2",
       "@salesforce/plugin-devops-center": "1.2.21",
       "@salesforce/plugin-env": "3.0.33",
       "@salesforce/plugin-functions": "1.23.0",
       "@salesforce/plugin-signups": "2.5.10",
       "@salesforce/sfdx-plugin-lwc-test": "1.2.0",
-      "@salesforce/sfdx-scanner": "4.4.0"
+      "@salesforce/sfdx-scanner": "4.5.0"
     },
     "devPlugins": [
       "@oclif/plugin-command-snapshot",
@@ -154,11 +154,11 @@
     "@salesforce/core": "^8.2.3",
     "@salesforce/kit": "^3.1.6",
     "@salesforce/plugin-apex": "3.4.5",
-    "@salesforce/plugin-api": "1.2.0",
+    "@salesforce/plugin-api": "1.2.1",
     "@salesforce/plugin-auth": "3.6.51",
     "@salesforce/plugin-data": "3.6.3",
-    "@salesforce/plugin-deploy-retrieve": "3.11.5",
-    "@salesforce/plugin-info": "3.3.30",
+    "@salesforce/plugin-deploy-retrieve": "3.12.0",
+    "@salesforce/plugin-info": "3.4.0",
     "@salesforce/plugin-limits": "3.3.27",
     "@salesforce/plugin-marketplace": "1.2.24",
     "@salesforce/plugin-org": "4.5.4",
