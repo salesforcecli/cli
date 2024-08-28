@@ -2137,10 +2137,10 @@
     "@salesforce/sf-plugins-core" "^11.3.4"
     ansis "^3.3.1"
 
-"@salesforce/plugin-api@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-api/-/plugin-api-1.2.0.tgz#69b7454e78acaf967dc528c8f7fed3715eb6162c"
-  integrity sha512-xpfSjrTTJ0AzvAZTlEkbVRPgZDWTr6ySyUckqEYDqv9EtfESB0CQdaK9KP6/q0+v5adfnJMADNOEBQk7cogdmQ==
+"@salesforce/plugin-api@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-api/-/plugin-api-1.2.1.tgz#e0977c02fa3768d8078b0673eaabb58ecfdc906b"
+  integrity sha512-p9AMXmpnZfxqJ3zpwN3TZN1pmum3+Fldj21xpkCX8LQRxPgs4awSZks4H7qUJFwKKj7M5WoAgyXbr6SndnGorA==
   dependencies:
     "@oclif/core" "^4"
     "@salesforce/core" "^8.4.0"
@@ -2196,10 +2196,10 @@
     csv-stringify "^6.5.1"
     form-data "^4.0.0"
 
-"@salesforce/plugin-deploy-retrieve@3.11.5":
-  version "3.11.5"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.11.5.tgz#6d71aef264ab944ddba557eb81f3b863f08b8232"
-  integrity sha512-475HKussaRrj7u8Gtw1nzgOJX9b2EsrC5ItXZmAOxfVHAyUYEN7MfxNRul/oE17hBlsLypd32XhA7QWbUVsGHg==
+"@salesforce/plugin-deploy-retrieve@3.12.0":
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.12.0.tgz#c411d1ae6a5c77f0bd0696609b442bf64bc108da"
+  integrity sha512-8JCHCAcgd5OxMC7ktGnDDWHD6YehTI1V070qMtHcv1B2DU+DnCnEICgolVQ3OeyjsaFDB4eXiDGd+hGTzhZM7w==
   dependencies:
     "@oclif/core" "^4.0.18"
     "@salesforce/apex-node" "^8.1.3"
@@ -2207,15 +2207,15 @@
     "@salesforce/kit" "^3.2.1"
     "@salesforce/plugin-info" "^3.3.28"
     "@salesforce/sf-plugins-core" "^11.3.2"
-    "@salesforce/source-deploy-retrieve" "^12.5.1"
+    "@salesforce/source-deploy-retrieve" "^12.6.0"
     "@salesforce/source-tracking" "^7.1.7"
     "@salesforce/ts-types" "^2.0.12"
     ansis "^3.3.2"
 
-"@salesforce/plugin-info@3.3.30", "@salesforce/plugin-info@^3.3.28", "@salesforce/plugin-info@^3.3.29":
-  version "3.3.30"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-3.3.30.tgz#682751e7d5e648d8535e1a1d22664f491a20e14e"
-  integrity sha512-tIrdGsjxkTG4e4ak0J3dRBfH0RKHBv1s5xRXQ8axGBykFsvN59wLeavPMenOclX3B6jKf3tCJH1wYIMrWIR5aA==
+"@salesforce/plugin-info@3.4.0", "@salesforce/plugin-info@^3.3.28", "@salesforce/plugin-info@^3.3.29":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-3.4.0.tgz#4c1c8f8512fc6dc940bff4e9077c1f9e7789f086"
+  integrity sha512-Kk97+MwCpXr0OIrI4rNBV1mayLDAJVyqZZJaLjMGEjGptk2aPOHCQtaWJcezHA24+t/GgIR/PtC5416GCYAfoA==
   dependencies:
     "@inquirer/input" "^2.2.9"
     "@jsforce/jsforce-node" "^3.2.2"
@@ -2434,10 +2434,10 @@
     string-width "^7.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/source-deploy-retrieve@^12.4.0", "@salesforce/source-deploy-retrieve@^12.5.1":
-  version "12.5.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.5.1.tgz#55e915201b2c9320b9662b2c8500a191c8770ecf"
-  integrity sha512-jakBWFSIb8oZlUAf0QKHXaeFA/KuTQZwaKZVevdwaiuy43lJHzVVrSRfcNv/kjXxmg0oq5TAI8vUo2CC5Hq04A==
+"@salesforce/source-deploy-retrieve@^12.4.0", "@salesforce/source-deploy-retrieve@^12.5.1", "@salesforce/source-deploy-retrieve@^12.6.0":
+  version "12.6.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.6.0.tgz#0d2961fb2befeac0431fe8f6a70f439bc049fcea"
+  integrity sha512-gowMwjG93a8Bd5N05o46Z46TSsHZMeZXV3rQwMP3LXDnIhvSx3vxHJMzk0KKMOatfQFF2t+YI/6MR+47KWSblw==
   dependencies:
     "@salesforce/core" "^8.4.0"
     "@salesforce/kit" "^3.2.1"
@@ -2447,6 +2447,7 @@
     got "^11.8.6"
     graceful-fs "^4.2.11"
     ignore "^5.3.2"
+    isbinaryfile "^5.0.2"
     jszip "^3.10.1"
     mime "2.6.0"
     minimatch "^9.0.5"
@@ -6870,6 +6871,11 @@ isarray@^2.0.5:
   version "2.0.5"
   resolved "https://registry.npmjs.org/isarray/-/isarray-2.0.5.tgz"
   integrity sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==
+
+isbinaryfile@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/isbinaryfile/-/isbinaryfile-5.0.2.tgz#fe6e4dfe2e34e947ffa240c113444876ba393ae0"
+  integrity sha512-GvcjojwonMjWbTkfMpnVHVqXW/wKMYDfEpY94/8zy8HFMOqb/VL6oeONq9v87q4ttVlaTLnGXnJD4B5B1OTGIg==
 
 isexe@^2.0.0:
   version "2.0.0"
