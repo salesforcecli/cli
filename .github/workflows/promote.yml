@@ -139,11 +139,11 @@ jobs:
       - name: Promote Docker images
         run: |
           docker pull "salesforce/cli:$NEEDS_GET_PACKAGE_INFO_VERSION-slim"
-          docker tag "salesforce/cli:$NEEDS_GET_PACKAGE_INFO_VERSION-slim salesforce/cli:$INPUTS_NEW_CHANNEL-slim"
+          docker tag "salesforce/cli:$NEEDS_GET_PACKAGE_INFO_VERSION-slim" "salesforce/cli:$INPUTS_NEW_CHANNEL-slim"
           docker push "salesforce/cli:$INPUTS_NEW_CHANNEL-slim"
 
           docker pull "salesforce/cli:$NEEDS_GET_PACKAGE_INFO_VERSION-full"
-          docker tag "salesforce/cli:$NEEDS_GET_PACKAGE_INFO_VERSION-full salesforce/cli:$INPUTS_NEW_CHANNEL-full"
+          docker tag "salesforce/cli:$NEEDS_GET_PACKAGE_INFO_VERSION-full" "salesforce/cli:$INPUTS_NEW_CHANNEL-full"
           docker push "salesforce/cli:$INPUTS_NEW_CHANNEL-full"
         env:
           NEEDS_GET_PACKAGE_INFO_VERSION: ${{ needs.get-package-info.outputs.version }}
@@ -180,14 +180,7 @@ jobs:
       - uses: salesforcecli/github-workflows/.github/actions/yarnInstallWithRetries@main
 
       - name: Promote with oclif
-        run: yarn promote --version "$NEEDS_GET_PACKAGE_INFO_VERSION" \
-          --sha "$NEEDS_GET_PACKAGE_INFO_SHA" \
-          --channel "$NEEDS_BUILD_S3_CHANNEL_S3_NEW_CHANNEL" \
-          --max-age 300 \
-          --macos \
-          --win \
-          --indexes \
-          --xz
+        run: yarn promote --version "$NEEDS_GET_PACKAGE_INFO_VERSION" --sha "$NEEDS_GET_PACKAGE_INFO_SHA" --channel "$NEEDS_BUILD_S3_CHANNEL_S3_NEW_CHANNEL" --max-age 300 --macos --win --indexes --xz
         env:
           NEEDS_GET_PACKAGE_INFO_VERSION: ${{ needs.get-package-info.outputs.version }}
           NEEDS_GET_PACKAGE_INFO_SHA: ${{ needs.get-package-info.outputs.sha }}
