@@ -13,7 +13,7 @@
 
 # Feedback
 
-To provide feedback, use create a new issue [here](https://github.com/forcedotcom/cli/issues).
+To provide feedbac, use create a new issue [here](https://github.com/forcedotcom/cli/issues).
 
 # Usage
 
