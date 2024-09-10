@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.59.4 linux-x64 node-v20.17.0
+@salesforce/cli/2.59.5 linux-x64 node-v20.17.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -7805,7 +7805,7 @@ EXAMPLES
     $ sf sobject describe --sobject ApexCodeCoverage --use-tooling-api
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.28/src/commands/sobject/describe.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.29/src/commands/sobject/describe.ts)_
 
 ## `sf sobject list`
 
@@ -7844,7 +7844,7 @@ EXAMPLES
     $ sf sobject list --sobject custom --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.28/src/commands/sobject/list.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.29/src/commands/sobject/list.ts)_
 
 ## `sf static-resource generate`
 
