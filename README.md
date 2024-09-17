@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.60.4 linux-x64 node-v20.17.0
+@salesforce/cli/2.60.5 linux-x64 node-v20.17.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -336,7 +336,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.19/src/commands/analytics/generate/template.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.20/src/commands/analytics/generate/template.ts)_
 
 ## `sf apex generate class`
 
@@ -395,7 +395,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.19/src/commands/apex/generate/class.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.20/src/commands/apex/generate/class.ts)_
 
 ## `sf apex generate trigger`
 
@@ -464,7 +464,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.19/src/commands/apex/generate/trigger.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.20/src/commands/apex/generate/trigger.ts)_
 
 ## `sf apex get log`
 
@@ -2316,7 +2316,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.19/src/commands/lightning/generate/app.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.20/src/commands/lightning/generate/app.ts)_
 
 ## `sf lightning generate component`
 
@@ -2385,7 +2385,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.19/src/commands/lightning/generate/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.20/src/commands/lightning/generate/component.ts)_
 
 ## `sf lightning generate event`
 
@@ -2440,7 +2440,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.19/src/commands/lightning/generate/event.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.20/src/commands/lightning/generate/event.ts)_
 
 ## `sf lightning generate interface`
 
@@ -2495,7 +2495,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.19/src/commands/lightning/generate/interface.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.20/src/commands/lightning/generate/interface.ts)_
 
 ## `sf lightning generate test`
 
@@ -2550,7 +2550,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.19/src/commands/lightning/generate/test.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.20/src/commands/lightning/generate/test.ts)_
 
 ## `sf org assign permset`
 
@@ -2595,7 +2595,7 @@ EXAMPLES
     $ sf org assign permset --name DreamHouse --on-behalf-of user1@my.org --on-behalf-of user2 --on-behalf-of user
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.5.30/src/commands/org/assign/permset.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.5.31/src/commands/org/assign/permset.ts)_
 
 ## `sf org assign permsetlicense`
 
@@ -2641,7 +2641,7 @@ EXAMPLES
       user3
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.5.30/src/commands/org/assign/permsetlicense.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.5.31/src/commands/org/assign/permsetlicense.ts)_
 
 ## `sf org create sandbox`
 
@@ -3020,7 +3020,7 @@ FLAG DESCRIPTIONS
     might be different than what you specify in the definition file.
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.5.30/src/commands/org/create/user.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.5.31/src/commands/org/create/user.ts)_
 
 ## `sf org delete sandbox`
 
@@ -3233,7 +3233,7 @@ EXAMPLES
     $ sf org display user --target-org me@my.org --json
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.5.30/src/commands/org/display/user.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.5.31/src/commands/org/display/user.ts)_
 
 ## `sf org enable tracking`
 
@@ -3342,7 +3342,7 @@ EXAMPLES
     $ sf org generate password --on-behalf-of user1@my.org --on-behalf-of user2@my.org --on-behalf-of user3@my.org
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.5.30/src/commands/org/generate/password.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.5.31/src/commands/org/generate/password.ts)_
 
 ## `sf org list`
 
@@ -3659,7 +3659,7 @@ EXAMPLES
     $ sf org list users --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.5.30/src/commands/org/list/users.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.5.31/src/commands/org/list/users.ts)_
 
 ## `sf org login access-token`
 
@@ -7157,7 +7157,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.19/src/commands/project/generate.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.20/src/commands/project/generate.ts)_
 
 ## `sf project generate manifest`
 
@@ -7810,7 +7810,7 @@ EXAMPLES
     $ sf sobject describe --sobject ApexCodeCoverage --use-tooling-api
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.31/src/commands/sobject/describe.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.32/src/commands/sobject/describe.ts)_
 
 ## `sf sobject list`
 
@@ -7849,7 +7849,7 @@ EXAMPLES
     $ sf sobject list --sobject custom --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.31/src/commands/sobject/list.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.32/src/commands/sobject/list.ts)_
 
 ## `sf static-resource generate`
 
@@ -7911,7 +7911,7 @@ FLAG DESCRIPTIONS
     etc.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.19/src/commands/static-resource/generate.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.20/src/commands/static-resource/generate.ts)_
 
 ## `sf update [CHANNEL]`
 
@@ -8024,7 +8024,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.19/src/commands/visualforce/generate/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.20/src/commands/visualforce/generate/component.ts)_
 
 ## `sf visualforce generate page`
 
@@ -8074,7 +8074,7 @@ FLAG DESCRIPTIONS
     The name can be up to 40 characters and must start with a letter.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.19/src/commands/visualforce/generate/page.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.20/src/commands/visualforce/generate/page.ts)_
 
 ## `sf which`
 
