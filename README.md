@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.60.7 linux-x64 node-v20.17.0
+@salesforce/cli/2.60.8 linux-x64 node-v20.17.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -849,7 +849,7 @@ _See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-ape
 
 ## `sf api request graphql`
 
-Execute GraphQL statements
+Execute a GraphQL statement.
 
 ```
 USAGE
@@ -862,48 +862,47 @@ FLAGS
   -o, --target-org=<value>                   (required) Username or alias of the target org. Not required if the
                                              `target-org` configuration variable is already set.
       --api-version=<value>                  Override the api version used for api requests made by this command
-      --body=file                            (required) File or content with GraphQL statement. Specify "-" to read from
-                                             standard input.
+      --body=file                            (required) File or content with the GraphQL statement. Specify "-" to read
+                                             from standard input.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
   --json               Format output as json.
 
 DESCRIPTION
-  Execute GraphQL statements
+  Execute a GraphQL statement.
 
-  Run any valid GraphQL statement via the /graphql
-  [API](https://developer.salesforce.com/docs/platform/graphql/guide/graphql-about.html)
+  Specify the GraphQL statement with the "--body" flag, either directly at the command line or with a file that contains
+  the statement. You can query Salesforce records using a "query" statement or use mutations to modify Salesforce
+  records.
+
+  This command uses the GraphQL API to query or modify Salesforce objects. For details about the API, and examples of
+  queries and mutations, see https://developer.salesforce.com/docs/platform/graphql/guide/graphql-about.html.
 
 EXAMPLES
-  - Runs the graphql query directly via the command line
-    sf api request graphql --body "query accounts { uiapi { query { Account { edges { node { Id \n Name { value } } } } } } }"
-  - Runs a mutation to create an Account, with an `example.txt` file, containing
-    mutation AccountExample{
-      uiapi {
-        AccountCreate(input: {
-          Account: {
-            Name: "Trailblazer Express"
-          }
-        }) {
-          Record {
-            Id
-            Name {
-              value
-            }
-          }
-        }
-      }
-    }
-  $ sf api request graphql --body example.txt
-  will create a new account returning specified fields (Id, Name)
+  Execute a GraphQL query on the Account object by specifying the query directly to the "--body" flag; the command
+  uses your default org:
+
+    $ sf api request graphql --body "query accounts { uiapi { query { Account { edges { node { Id \n Name { value } \
+      } } } } } }"
+
+  Read the GraphQL statement from a file called "example.txt" and execute it on an org with alias "my-org":
+
+    $ sf api request graphql --body example.txt --target-org my-org
+
+  Pipe the GraphQL statement that you want to execute from standard input to the command:
+  $ echo graphql | sf api request graphql --body -
+
+  Write the output of the command to a file called "output.txt" and include the HTTP response status and headers:
+
+    $ sf api request graphql --body example.txt --stream-to-file output.txt --include
 ```
 
-_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.2.1/src/commands/api/request/graphql.ts)_
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.2.2/src/commands/api/request/graphql.ts)_
 
 ## `sf api request rest ENDPOINT`
 
-Make an authenticated HTTP request to Salesforce REST API and print the response.
+Make an authenticated HTTP request using the Salesforce REST API.
 
 ```
 USAGE
@@ -922,32 +921,51 @@ FLAGS
   -o, --target-org=<value>                   (required) Username or alias of the target org. Not required if the
                                              `target-org` configuration variable is already set.
       --api-version=<value>                  Override the api version used for api requests made by this command
-      --body=file                            File to use as the body for the request. Specify "-" to read from standard
-                                             input; specify "" for an empty body.
+      --body=file                            File or content for the body of the HTTP request. Specify "-" to read from
+                                             standard input or "" for an empty body.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
 
+DESCRIPTION
+  Make an authenticated HTTP request using the Salesforce REST API.
+
+  When sending the HTTP request with the "--body" flag, you can specify the request directly at the command line or with
+  a file that contains the request.
+
+  For a full list of supported REST endpoints and resources, see
+  https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_list.htm.
+
 EXAMPLES
-  - List information about limits in the org with alias "my-org":
-    sf api request rest 'limits' --target-org my-org
-  - List all endpoints
-    sf api request rest '/'
-  - Get the response in XML format by specifying the "Accept" HTTP header:
-    sf api request rest 'limits' --target-org my-org --header 'Accept: application/xml'
-  - POST to create an Account object
-    sf api request rest 'sobjects/account' --body "{\"Name\" : \"Account from REST API\",\"ShippingCity\" : \"Boise\"}" --method POST
-  - or with a file 'info.json' containing
-    {
-      "Name": "Demo",
-      "ShippingCity": "Boise"
-    }
-  $ sf api request rest 'sobjects/account' --body info.json --method POST
-  - Update object
-    sf api request rest 'sobjects/account/<Account ID>' --body "{\"BillingCity\": \"San Francisco\"}" --method PATCH
+  List information about limits in the org with alias "my-org":
+
+    $ sf api request rest 'limits' --target-org my-org
+
+  List all endpoints in your default org; write the output to a file called "output.txt" and include the HTTP response
+  status and headers:
+
+    $ sf api request rest '/' --stream-to-file output.txt --include
+
+  Get the response in XML format by specifying the "Accept" HTTP header:
+
+    $ sf api request rest 'limits' --header 'Accept: application/xml'
+
+  Create an account record using the POST method; specify the request details directly in the "--body" flag:
+
+    $ sf api request rest 'sobjects/account' --body "{\"Name\" : \"Account from REST API\",\"ShippingCity\" : \
+      \"Boise\"}" --method POST
+
+  Create an account record using the information in a file called "info.json":
+
+    $ sf api request rest 'sobjects/account' --body info.json --method POST
+
+  Update an account record using the PATCH method:
+
+    $ sf api request rest 'sobjects/account/<Account ID>' --body "{\"BillingCity\": \"San Francisco\"}" --method \
+      PATCH
 ```
 
-_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.2.1/src/commands/api/request/rest.ts)_
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.2.2/src/commands/api/request/rest.ts)_
 
 ## `sf autocomplete [SHELL]`
 
