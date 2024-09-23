@@ -1569,7 +1569,7 @@
     "@inquirer/type" "^1.5.3"
     ansi-escapes "^4.3.2"
 
-"@inquirer/select@^2.3.10", "@inquirer/select@^2.3.5", "@inquirer/select@^2.4.7", "@inquirer/select@^2.5.0":
+"@inquirer/select@^2.3.5", "@inquirer/select@^2.4.7", "@inquirer/select@^2.5.0":
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/@inquirer/select/-/select-2.5.0.tgz#345c6908ecfaeef3d84ddd2f9feb2f487c558efb"
   integrity sha512-YmDobTItPP3WcEI86GvPo+T2sRHkxxOq/kXmsBjHS5BVXUgvgZ5AfJjkvQvZr03T81NnI3KrrRuMzeuYUQRFOA==
@@ -8584,16 +8584,16 @@ obliterator@^2.0.1, obliterator@^2.0.2:
   resolved "https://registry.npmjs.org/obliterator/-/obliterator-2.0.4.tgz"
   integrity sha512-lgHwxlxV1qIg1Eap7LgIeoBWIMFibOjbrYPIPJZcI1mmGAI2m3lNYpK12Y+GBdPQ0U1hRwSord7GIaawz962qQ==
 
-oclif@^4.14.34:
-  version "4.14.34"
-  resolved "https://registry.yarnpkg.com/oclif/-/oclif-4.14.34.tgz#45ddd207ab648a0996ec845e975087ac2fe10479"
-  integrity sha512-NA604h6cPhiDQTLjjwaJ2yGq3gv6OyHIMIdwt9xTiOqMjFOrKXpoqXiwmKN6bGoeWC1SuaSJqlfoXThlAKn+Ag==
+oclif@^4.14.35:
+  version "4.14.35"
+  resolved "https://registry.yarnpkg.com/oclif/-/oclif-4.14.35.tgz#aa714afa5e4b460a5ed65c4ce4cb58df6cca2440"
+  integrity sha512-PWiBL6+fQZNiFPkdrorDINFfpOTdI5Je9UZD/RwaeP2LvQdggqpBUXx5qlrtxPcHZXNuTQrn4pFfIbDIOPCjsg==
   dependencies:
     "@aws-sdk/client-cloudfront" "^3.645.0"
     "@aws-sdk/client-s3" "^3.651.1"
     "@inquirer/confirm" "^3.1.22"
     "@inquirer/input" "^2.2.4"
-    "@inquirer/select" "^2.3.10"
+    "@inquirer/select" "^2.5.0"
     "@oclif/core" "^4"
     "@oclif/plugin-help" "^6.2.10"
     "@oclif/plugin-not-found" "^3.2.21"
