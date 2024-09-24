@@ -1874,10 +1874,10 @@
     proc-log "^4.0.0"
     which "^4.0.0"
 
-"@oclif/core@4.0.22", "@oclif/core@^4", "@oclif/core@^4.0.16", "@oclif/core@^4.0.18", "@oclif/core@^4.0.19", "@oclif/core@^4.0.20", "@oclif/core@^4.0.6":
-  version "4.0.22"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.0.22.tgz#acb233c0c18ff4f365caca15e29e2807a4325709"
-  integrity sha512-aXM2O4g7f+kPNzhhOfqGOVRVYDxTVrH7Y720MuH0Twq5WHMxI4XwntnyBaRscoCPG6FWhItZLtiZxsvaUdupGg==
+"@oclif/core@4.0.23", "@oclif/core@^4", "@oclif/core@^4.0.16", "@oclif/core@^4.0.18", "@oclif/core@^4.0.19", "@oclif/core@^4.0.20", "@oclif/core@^4.0.6":
+  version "4.0.23"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.0.23.tgz#8772cfd57f850e2e17b703166b44da092a7986a0"
+  integrity sha512-wDl/eis7XDIM1pQWUGKLB+EQKJO9UrjaQ5NcwIbz7GW0gWuJfo9QAK75csgNUN/9Pbok9Ryt+sJgogS4RCIp5g==
   dependencies:
     ansi-escapes "^4.3.2"
     ansis "^3.3.2"
@@ -1891,6 +1891,7 @@
     is-wsl "^2.2.0"
     lilconfig "^3.1.2"
     minimatch "^9.0.5"
+    semver "^7.6.3"
     string-width "^4.2.3"
     supports-color "^8"
     widest-line "^3.1.0"
@@ -2325,10 +2326,10 @@
     got "^13.0.0"
     proxy-agent "^6.4.0"
 
-"@salesforce/plugin-auth@3.6.61":
-  version "3.6.61"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.6.61.tgz#88c51f0bccff90a29d593016602ba29526b22a68"
-  integrity sha512-hpHo71iaFlk7SOczBASP5qb38W5e9RgAC6tQ3u+n/qfGsDkqrwq2ugFS3dA7ezaTD5gAU0evgGD+w5KQWdL5yA==
+"@salesforce/plugin-auth@3.6.62":
+  version "3.6.62"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.6.62.tgz#731b77d9fd3f319a7d94dae783778eef46e9d98d"
+  integrity sha512-kGv9DQ3XMTKTOsQkVS888hvtAmHMRgtB388TxuFFyHPi8cqwKvS4J3EpCFZdg/aSgNEnK4ak7ggy7CMRVih7RQ==
   dependencies:
     "@inquirer/checkbox" "^2.5.0"
     "@inquirer/select" "^2.4.7"
@@ -2412,10 +2413,10 @@
     "@salesforce/core" "^8.5.7"
     "@salesforce/sf-plugins-core" "^11.3.10"
 
-"@salesforce/plugin-marketplace@1.2.25":
-  version "1.2.25"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-marketplace/-/plugin-marketplace-1.2.25.tgz#5124507a1d2604a6f24ed446be64e2f91a664516"
-  integrity sha512-gifOzCquk7gaK/fUtPrKf+8YsJcAfEmR2HUg6/BAvgt6jnTP/BkCtzFEAzJRZ02q54DM0A7u+EVBcZW3y/XbnA==
+"@salesforce/plugin-marketplace@1.2.26":
+  version "1.2.26"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-marketplace/-/plugin-marketplace-1.2.26.tgz#c51a9de262be48a6495d2979010d6d417b858975"
+  integrity sha512-BCsRg/7vpUmcQp5Vi4Ey2ru9ubqGJ+s4PyZ7yTE1sM/ix+ExfB0jVpQqER2VoABgyN/+JtC2GaXz/+ujJLmP1Q==
   dependencies:
     "@salesforce/core" "^8.5.2"
     "@salesforce/kit" "^3.2.1"
