@@ -2,6 +2,11 @@ name: promote-rc-to-latest
 
 on:
   workflow_dispatch:
+    inputs:
+      ignore-missing:
+        type: boolean
+        required: false
+        description: Ignore 'oclif promote' errors when a specific target is missing.
   schedule:
     # Wednesdays 1pm central
     - cron: '0 18 * * 3'
@@ -14,6 +19,7 @@ jobs:
       old-channel: latest-rc
       new-channel: latest
       use-ctc: true
+      ignore-missing: ${{ inputs.ignore-missing }}
 
   promote-verify:
     runs-on: ubuntu-latest
