@@ -1874,10 +1874,10 @@
     proc-log "^4.0.0"
     which "^4.0.0"
 
-"@oclif/core@4.0.23", "@oclif/core@^4", "@oclif/core@^4.0.16", "@oclif/core@^4.0.18", "@oclif/core@^4.0.19", "@oclif/core@^4.0.20", "@oclif/core@^4.0.23", "@oclif/core@^4.0.6":
-  version "4.0.23"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.0.23.tgz#8772cfd57f850e2e17b703166b44da092a7986a0"
-  integrity sha512-wDl/eis7XDIM1pQWUGKLB+EQKJO9UrjaQ5NcwIbz7GW0gWuJfo9QAK75csgNUN/9Pbok9Ryt+sJgogS4RCIp5g==
+"@oclif/core@4.0.25", "@oclif/core@^4", "@oclif/core@^4.0.16", "@oclif/core@^4.0.18", "@oclif/core@^4.0.19", "@oclif/core@^4.0.20", "@oclif/core@^4.0.23", "@oclif/core@^4.0.6":
+  version "4.0.25"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.0.25.tgz#d1a77f679be9c90bfe50728433d38961eea69489"
+  integrity sha512-3rX1dA40cZWzH6NKcNJGXrJn30XaxnkFXfapLMX0wwSWvBfXE/zIduHt03kLRxeFuEBUR5FBnU64odDWKhtFKg==
   dependencies:
     ansi-escapes "^4.3.2"
     ansis "^3.3.2"
@@ -2301,10 +2301,10 @@
     jszip "^3.10.1"
     object-treeify "^2"
 
-"@salesforce/plugin-apex@3.4.10":
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-apex/-/plugin-apex-3.4.10.tgz#cfe77edd9800ddc5529647dc780f441d88dd6cd6"
-  integrity sha512-NQd2KjyBIOjcZ3FwCVN9jQsLcDXD1iLNv0d/kkFHQfax+Gh6LNzqVSRKm3bdvOWOA1OMbvCtwAlTr5QYKN9NnQ==
+"@salesforce/plugin-apex@3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-apex/-/plugin-apex-3.5.0.tgz#6fb75286765276eec6b1dc0bb25b60f6f5c772cc"
+  integrity sha512-sz2Rdk9GbrDLQ2RzouoL1BMKzihwIZESIDnnAa+YI81CDgQZEEDhn8cM1oKMa1tsXkkdNMhrxVChb5tCbTTi9Q==
   dependencies:
     "@salesforce/apex-node" "^8.1.9"
     "@salesforce/core" "^8.5.1"
@@ -2371,10 +2371,10 @@
     csv-stringify "^6.5.1"
     form-data "^4.0.0"
 
-"@salesforce/plugin-deploy-retrieve@3.12.14":
-  version "3.12.14"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.12.14.tgz#32e4afe0662e6fdf6e3d5cfe55a5418ee82ce0ce"
-  integrity sha512-w0B3QdfwxbFtyh6C0+K58H+EXisPAggrxv/jaRWG8JdpFOSeHmb3Zuog1PznhUZEsS5rd/KQKyK3Iizy2gkvlw==
+"@salesforce/plugin-deploy-retrieve@3.12.15":
+  version "3.12.15"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.12.15.tgz#728404979567b698a2f40b5dadb6ec6ea721aa49"
+  integrity sha512-OXMxRSLMukLKBTlccTCchB17w2VinmERjhJcjrQpgWkOFpxLCLJqSR+Emy/l2kscz088mH1tUmH1omg8vIlh2g==
   dependencies:
     "@oclif/core" "^4.0.18"
     "@salesforce/apex-node" "^8.1.9"
@@ -2382,7 +2382,7 @@
     "@salesforce/kit" "^3.2.3"
     "@salesforce/plugin-info" "^3.4.9"
     "@salesforce/sf-plugins-core" "^11.3.2"
-    "@salesforce/source-deploy-retrieve" "^12.6.3"
+    "@salesforce/source-deploy-retrieve" "^12.7.3"
     "@salesforce/source-tracking" "^7.1.16"
     "@salesforce/ts-types" "^2.0.12"
     ansis "^3.3.2"
@@ -2609,12 +2609,12 @@
     string-width "^7.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/source-deploy-retrieve@^12.6.0", "@salesforce/source-deploy-retrieve@^12.6.3", "@salesforce/source-deploy-retrieve@^12.7.1":
-  version "12.7.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.7.1.tgz#5e828fb721edac136d0903624d82cb5f9e197f21"
-  integrity sha512-duFgp76CHA8coLEkl9QYmJJmJrHHiU4EtRkBv3hP0H0lTDaMdwCjfxAexGLxT2PCRsE5fbZgwJg+wYFLJHZkIw==
+"@salesforce/source-deploy-retrieve@^12.6.0", "@salesforce/source-deploy-retrieve@^12.7.1", "@salesforce/source-deploy-retrieve@^12.7.3":
+  version "12.7.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.7.3.tgz#03e14fc44be423a52b3df35796bcfa8916494cfe"
+  integrity sha512-hnaU4maxxHYc7B2fBKNevXjBJqTOdOqXIRhIHypeC1OMuUGYT6hchAxRIYGYaG+LEQ8Af4QG7t4zx3nJZuXV2Q==
   dependencies:
-    "@salesforce/core" "^8.5.7"
+    "@salesforce/core" "^8.6.1"
     "@salesforce/kit" "^3.2.2"
     "@salesforce/ts-types" "^2.0.12"
     fast-levenshtein "^3.0.0"
