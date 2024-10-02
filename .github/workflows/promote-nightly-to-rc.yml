@@ -6,12 +6,11 @@ on:
       ignore-missing:
         type: boolean
         required: false
+        default: false
         description: Ignore 'oclif promote' errors when a specific target is missing.
   workflow_run:
     workflows:
       - promote-rc-to-latest
-      # TODO: Is there a way to see if 'ignore-missing' was passed into 'promote-rc-to-latest' and can be passed along here?
-      #       Maybe store state with upload-artifact and download-artifact?
     types:
       - completed
 
