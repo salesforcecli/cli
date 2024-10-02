@@ -6,6 +6,7 @@ on:
       ignore-missing:
         type: boolean
         required: false
+        default: false
         description: Ignore 'oclif promote' errors when a specific target is missing.
   schedule:
     # Wednesdays 1pm central
