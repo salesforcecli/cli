@@ -2,9 +2,16 @@ name: promote-nightly-to-rc
 
 on:
   workflow_dispatch:
+    inputs:
+      ignore-missing:
+        type: boolean
+        required: false
+        description: Ignore 'oclif promote' errors when a specific target is missing.
   workflow_run:
     workflows:
       - promote-rc-to-latest
+      # TODO: Is there a way to see if 'ignore-missing' was passed into 'promote-rc-to-latest' and can be passed along here?
+      #       Maybe store state with upload-artifact and download-artifact?
     types:
       - completed
 
@@ -17,6 +24,7 @@ jobs:
     with:
       old-channel: nightly
       new-channel: latest-rc
+      ignore-missing: ${{ inputs.ignore-missing }}
 
   promote-verify:
     runs-on: ubuntu-latest

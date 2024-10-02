@@ -17,6 +17,10 @@ on:
         type: boolean
         required: false
         description: Open a change case for this promotion. Only needed for promotions to latest.
+      ignore-missing:
+        type: boolean
+        required: false
+        description: Ignore 'oclif promote' errors when a specific target is missing.
   workflow_dispatch:
     inputs:
       version:
@@ -33,6 +37,10 @@ on:
         type: boolean
         required: false
         description: Open a change case for this promotion. Only needed for promotions to latest.
+      ignore-missing:
+        type: boolean
+        required: false
+        description: Ignore 'oclif promote' errors when a specific target is missing.
 
 jobs:
   validate-inputs:
@@ -180,7 +188,7 @@ jobs:
       - uses: salesforcecli/github-workflows/.github/actions/yarnInstallWithRetries@main
 
       - name: Promote with oclif
-        run: yarn promote --version "$NEEDS_GET_PACKAGE_INFO_VERSION" --sha "$NEEDS_GET_PACKAGE_INFO_SHA" --channel "$NEEDS_BUILD_S3_CHANNEL_S3_NEW_CHANNEL" --max-age 300 --macos --win --indexes --xz
+        run: yarn promote --version "$NEEDS_GET_PACKAGE_INFO_VERSION" --sha "$NEEDS_GET_PACKAGE_INFO_SHA" --channel "$NEEDS_BUILD_S3_CHANNEL_S3_NEW_CHANNEL" --max-age 300 --macos --win --indexes --xz ${{ inputs.ignore-missing && '--ignore-missing' || '' }}
         env:
           NEEDS_GET_PACKAGE_INFO_VERSION: ${{ needs.get-package-info.outputs.version }}
           NEEDS_GET_PACKAGE_INFO_SHA: ${{ needs.get-package-info.outputs.sha }}
