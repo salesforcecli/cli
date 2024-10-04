@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.62.0 linux-x64 node-v20.17.0
+@salesforce/cli/2.62.1 linux-x64 node-v20.17.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -54,7 +54,7 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf apex run test`](#sf-apex-run-test)
 - [`sf apex tail log`](#sf-apex-tail-log)
 - [`sf api request graphql`](#sf-api-request-graphql)
-- [`sf api request rest ENDPOINT`](#sf-api-request-rest-endpoint)
+- [`sf api request rest [URL]`](#sf-api-request-rest-url)
 - [`sf autocomplete [SHELL]`](#sf-autocomplete-shell)
 - [`sf commands`](#sf-commands)
 - [`sf config get`](#sf-config-get)
@@ -903,31 +903,33 @@ EXAMPLES
     $ sf api request graphql --body example.txt --stream-to-file output.txt --include
 ```
 
-_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.2.2/src/commands/api/request/graphql.ts)_
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.0/src/commands/api/request/graphql.ts)_
 
-## `sf api request rest ENDPOINT`
+## `sf api request rest [URL]`
 
 Make an authenticated HTTP request using the Salesforce REST API.
 
 ```
 USAGE
-  $ sf api request rest ENDPOINT -o <value> [--flags-dir <value>] [--api-version <value>] [-i | -S Example:
-    report.xlsx] [-X GET|POST|PUT|PATCH|HEAD|DELETE|OPTIONS|TRACE] [-H key:value...] [--body file]
+  $ sf api request rest [URL] -o <value> [--flags-dir <value>] [--api-version <value>] [-i | -S Example: report.xlsx]
+    [-X GET|POST|PUT|PATCH|HEAD|DELETE|OPTIONS|TRACE] [-H key:value...] [-f file] [-b file]
 
 ARGUMENTS
-  ENDPOINT  Salesforce API endpoint
+  URL  Salesforce API endpoint
 
 FLAGS
   -H, --header=key:value...                  HTTP header in "key:value" format.
   -S, --stream-to-file=Example: report.xlsx  Stream responses to a file.
-  -X, --method=<option>                      [default: GET] HTTP method for the request.
+  -X, --method=<option>                      HTTP method for the request.
                                              <options: GET|POST|PUT|PATCH|HEAD|DELETE|OPTIONS|TRACE>
+  -b, --body=file                            File or content for the body of the HTTP request. Specify "-" to read from
+                                             standard input or "" for an empty body.
+  -f, --file=file                            JSON file that contains values for the request header, body, method, and
+                                             URL.
   -i, --include                              Include the HTTP response status and headers in the output.
   -o, --target-org=<value>                   (required) Username or alias of the target org. Not required if the
                                              `target-org` configuration variable is already set.
       --api-version=<value>                  Override the api version used for api requests made by this command
-      --body=file                            File or content for the body of the HTTP request. Specify "-" to read from
-                                             standard input or "" for an empty body.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
@@ -957,7 +959,7 @@ EXAMPLES
 
   Create an account record using the POST method; specify the request details directly in the "--body" flag:
 
-    $ sf api request rest 'sobjects/account' --body "{\"Name\" : \"Account from REST API\",\"ShippingCity\" : \
+    $ sf api request rest sobjects/account --body "{\"Name\" : \"Account from REST API\",\"ShippingCity\" : \
       \"Boise\"}" --method POST
 
   Create an account record using the information in a file called "info.json":
@@ -968,9 +970,49 @@ EXAMPLES
 
     $ sf api request rest 'sobjects/account/<Account ID>' --body "{\"BillingCity\": \"San Francisco\"}" --method \
       PATCH
+
+  Store the values for the request header, body, and so on, in a file, which you then specify with the --file flag;
+  see the description of --file for more information:
+
+    $ sf api request rest --file myFile.json
+
+FLAG DESCRIPTIONS
+  -f, --file=file  JSON file that contains values for the request header, body, method, and URL.
+
+    Use this flag instead of specifying the request details with individual flags, such as --body or --method. This
+    schema defines how to create the JSON file:
+
+    {
+    url: { raw: string } | string;
+    method: 'GET', 'POST', 'PUT', 'PATCH', 'HEAD', 'DELETE', 'OPTIONS', 'TRACE';
+    description?: string;
+    header: string | Array<Record<string, string>>;
+    body: { mode: 'raw' | 'formdata'; raw: string; formdata: FormData };
+    }
+
+    Salesforce CLI defined this schema to be mimic Postman schemas; both share similar properties. The CLI's schema also
+    supports Postman Collections to reuse and share requests. As a result, you can build an API call using Postman,
+    export and save it to a file, and then use the file as a value to this flag. For information about Postman, see
+    https://learning.postman.com/.
+
+    Here's a simple example of a JSON file that contains values for the request URL, method, and body:
+
+    {
+    "url": "sobjects/Account/<Account ID>",
+    "method": "PATCH",
+    "body" : {
+    "mode": "raw",
+    "raw": {
+    "BillingCity": "Boise"
+    }
+    }
+    }
+
+    See more examples in the plugin-api test directory, including JSON files that use "formdata" to define collections:
+    https://github.com/salesforcecli/plugin-api/tree/main/test/test-files/data-project.
 ```
 
-_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.2.2/src/commands/api/request/rest.ts)_
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.0/src/commands/api/request/rest.ts)_
 
 ## `sf autocomplete [SHELL]`
 

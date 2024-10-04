@@ -1874,10 +1874,10 @@
     proc-log "^4.0.0"
     which "^4.0.0"
 
-"@oclif/core@4.0.26", "@oclif/core@^4", "@oclif/core@^4.0.16", "@oclif/core@^4.0.18", "@oclif/core@^4.0.19", "@oclif/core@^4.0.20", "@oclif/core@^4.0.23", "@oclif/core@^4.0.6":
-  version "4.0.26"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.0.26.tgz#3c2414d0dcff26f64a2ec2d3ecec3ce4bd407fbb"
-  integrity sha512-Gtgj7l+XYYk4wqJ7fTd+fsuKusuQESrSbeue+pC1UGJWt9tyrn3TNZu/lGJSSvEQVcxZY+y09hTET+1e1bmULA==
+"@oclif/core@4.0.27", "@oclif/core@^4", "@oclif/core@^4.0.16", "@oclif/core@^4.0.18", "@oclif/core@^4.0.19", "@oclif/core@^4.0.20", "@oclif/core@^4.0.23", "@oclif/core@^4.0.6":
+  version "4.0.27"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.0.27.tgz#686079df278e681e3097cea301d5558fdb490e88"
+  integrity sha512-9j92jHr6k2tjQ6/mIwNi46Gqw+qbPFQ02mxT5T8/nxO2fgsPL3qL0kb9SR1il5AVfqpgLIG3uLUcw87rgaioUg==
   dependencies:
     ansi-escapes "^4.3.2"
     ansis "^3.3.2"
@@ -2312,10 +2312,10 @@
     "@salesforce/sf-plugins-core" "^11.3.7"
     ansis "^3.3.1"
 
-"@salesforce/plugin-api@1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-api/-/plugin-api-1.2.2.tgz#39e1aca1cf8f9e240cfc597b7b8ed5044a192058"
-  integrity sha512-DYcvSvK1J/C0oin9CZltk/UT4d9dOtRBztMxHVUJDR2VC5iJhlx+cjOs76V2/D+7g7Maon0lARYtY0JX+3FZnA==
+"@salesforce/plugin-api@1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-api/-/plugin-api-1.3.0.tgz#491f526afd3f2330eabfe4ea65dfb71de0d5626c"
+  integrity sha512-DtCgRjlTUbxQAuCSo4g4xhbOotQcWY3dCOz3es7ihTtpevGj09vczs5acE7u8If25+XCnIdstOO1IyNoJIAzXg==
   dependencies:
     "@oclif/core" "^4"
     "@salesforce/core" "^8.4.0"
@@ -2323,6 +2323,7 @@
     "@salesforce/sf-plugins-core" "^11.3.2"
     "@salesforce/ts-types" "^2.0.12"
     ansis "^3.3.2"
+    form-data "^4.0.0"
     got "^13.0.0"
     proxy-agent "^6.4.0"
 
