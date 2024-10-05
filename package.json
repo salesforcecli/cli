@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.62.1",
+  "version": "2.62.2",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run.js",
@@ -83,7 +83,7 @@
       "@salesforce/plugin-env": "3.0.33",
       "@salesforce/plugin-functions": "1.23.0",
       "@salesforce/plugin-signups": "2.5.20",
-      "@salesforce/sfdx-plugin-lwc-test": "1.2.0",
+      "@salesforce/sfdx-plugin-lwc-test": "1.2.1",
       "@salesforce/sfdx-scanner": "4.6.0"
     },
     "devPlugins": [
@@ -142,12 +142,12 @@
     "@inquirer/select": "^2.3.5",
     "@oclif/core": "4.0.27",
     "@oclif/plugin-autocomplete": "3.2.5",
-    "@oclif/plugin-commands": "4.0.16",
+    "@oclif/plugin-commands": "4.1.1",
     "@oclif/plugin-help": "6.2.13",
     "@oclif/plugin-not-found": "3.2.22",
-    "@oclif/plugin-plugins": "5.4.10",
+    "@oclif/plugin-plugins": "5.4.12",
     "@oclif/plugin-search": "1.2.10",
-    "@oclif/plugin-update": "4.5.10",
+    "@oclif/plugin-update": "4.6.0",
     "@oclif/plugin-version": "2.2.14",
     "@oclif/plugin-warn-if-update-available": "3.1.18",
     "@oclif/plugin-which": "3.2.15",
