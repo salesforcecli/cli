@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.62.4 linux-x64 node-v20.17.0
+@salesforce/cli/2.62.5 linux-x64 node-v20.17.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -903,7 +903,7 @@ EXAMPLES
     $ sf api request graphql --body example.txt --stream-to-file output.txt --include
 ```
 
-_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.0/src/commands/api/request/graphql.ts)_
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.1/src/commands/api/request/graphql.ts)_
 
 ## `sf api request rest [URL]`
 
@@ -911,8 +911,8 @@ Make an authenticated HTTP request using the Salesforce REST API.
 
 ```
 USAGE
-  $ sf api request rest [URL] -o <value> [--flags-dir <value>] [--api-version <value>] [-i | -S Example: report.xlsx]
-    [-X GET|POST|PUT|PATCH|HEAD|DELETE|OPTIONS|TRACE] [-H key:value...] [-f file] [-b file]
+  $ sf api request rest [URL] -o <value> [--flags-dir <value>] [-i | -S Example: report.xlsx] [-X
+    GET|POST|PUT|PATCH|HEAD|DELETE|OPTIONS|TRACE] [-H key:value...] [-f file | -b file]
 
 ARGUMENTS
   URL  Salesforce API endpoint
@@ -923,13 +923,13 @@ FLAGS
   -X, --method=<option>                      HTTP method for the request.
                                              <options: GET|POST|PUT|PATCH|HEAD|DELETE|OPTIONS|TRACE>
   -b, --body=file                            File or content for the body of the HTTP request. Specify "-" to read from
-                                             standard input or "" for an empty body.
+                                             standard input or "" for an empty body. If passing a file, prefix the
+                                             filename with '@'.
   -f, --file=file                            JSON file that contains values for the request header, body, method, and
                                              URL.
   -i, --include                              Include the HTTP response status and headers in the output.
   -o, --target-org=<value>                   (required) Username or alias of the target org. Not required if the
                                              `target-org` configuration variable is already set.
-      --api-version=<value>                  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
@@ -946,30 +946,30 @@ DESCRIPTION
 EXAMPLES
   List information about limits in the org with alias "my-org":
 
-    $ sf api request rest 'limits' --target-org my-org
+    $ sf api request rest 'services/data/v56.0/limits' --target-org my-org
 
   List all endpoints in your default org; write the output to a file called "output.txt" and include the HTTP response
   status and headers:
 
-    $ sf api request rest '/' --stream-to-file output.txt --include
+    $ sf api request rest '/services/data/v56.0/' --stream-to-file output.txt --include
 
   Get the response in XML format by specifying the "Accept" HTTP header:
 
-    $ sf api request rest 'limits' --header 'Accept: application/xml'
+    $ sf api request rest '/services/data/v56.0/limits' --header 'Accept: application/xml'
 
   Create an account record using the POST method; specify the request details directly in the "--body" flag:
 
-    $ sf api request rest sobjects/account --body "{\"Name\" : \"Account from REST API\",\"ShippingCity\" : \
-      \"Boise\"}" --method POST
+    $ sf api request rest /services/data/v56.0/sobjects/account --body "{\"Name\" : \"Account from REST \
+      API\",\"ShippingCity\" : \"Boise\"}" --method POST
 
-  Create an account record using the information in a file called "info.json":
+  Create an account record using the information in a file called "info.json" (note the @ prefixing the file name):
 
-    $ sf api request rest 'sobjects/account' --body info.json --method POST
+    $ sf api request rest '/services/data/v56.0/sobjects/account' --body @info.json --method POST
 
   Update an account record using the PATCH method:
 
-    $ sf api request rest 'sobjects/account/<Account ID>' --body "{\"BillingCity\": \"San Francisco\"}" --method \
-      PATCH
+    $ sf api request rest '/services/data/v56.0/sobjects/account/<Account ID>' --body "{\"BillingCity\": \"San \
+      Francisco\"}" --method PATCH
 
   Store the values for the request header, body, and so on, in a file, which you then specify with the --file flag;
   see the description of --file for more information:
@@ -1012,7 +1012,7 @@ FLAG DESCRIPTIONS
     https://github.com/salesforcecli/plugin-api/tree/main/test/test-files/data-project.
 ```
 
-_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.0/src/commands/api/request/rest.ts)_
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.1/src/commands/api/request/rest.ts)_
 
 ## `sf autocomplete [SHELL]`
 
