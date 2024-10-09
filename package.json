@@ -138,6 +138,15 @@
       "unexpectedArgs": 2
     }
   },
+  "resolutions": {
+    "@salesforce/schemas": "1.9.0",
+    "whatwg-url": "14.0.0"
+  },
+  "overrides": {
+    "node-fetch": {
+      "whatwg-url": "14.0.0"
+    }
+  },
   "dependencies": {
     "@inquirer/select": "^2.3.5",
     "@oclif/core": "4.0.27",
