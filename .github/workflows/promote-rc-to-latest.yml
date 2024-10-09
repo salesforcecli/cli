@@ -10,7 +10,7 @@ on:
         description: Ignore 'oclif promote' errors when a specific target is missing.
   schedule:
     # Wednesdays 1pm central
-    - cron: '0 20 * * 3'
+    - cron: '0 18 * * 3'
 
 jobs:
   promote:
