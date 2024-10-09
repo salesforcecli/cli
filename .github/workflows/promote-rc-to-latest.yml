@@ -10,7 +10,7 @@ on:
         description: Ignore 'oclif promote' errors when a specific target is missing.
   schedule:
     # Wednesdays 1pm central
-    - cron: '0 18 * * 3'
+    - cron: '0 20 * * 3'
 
 jobs:
   promote:
@@ -20,7 +20,7 @@ jobs:
       old-channel: latest-rc
       new-channel: latest
       use-ctc: true
-      ignore-missing: ${{ inputs.ignore-missing }}
+      ignore-missing: ${{ github.event_name == 'schedule' && 'false' || inputs.ignore-missing }}
 
   promote-verify:
     runs-on: ubuntu-latest
