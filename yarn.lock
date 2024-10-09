@@ -1580,6 +1580,19 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
+"@oclif/multi-stage-output@^0.3.0":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@oclif/multi-stage-output/-/multi-stage-output-0.3.4.tgz#c271b5f1f3327e84f04fd6152b7cd64514020ac0"
+  integrity sha512-0Y0ZQo3LLvkhGu5wv+MuzdZZ470dGixQuFBab7gyB8DbemOPvM1oV+qzVbTJqDWoWitdvhSPlsy6VniuDZdLzQ==
+  dependencies:
+    "@oclif/core" "^4"
+    "@types/react" "^18.3.4"
+    change-case "^5.4.4"
+    cli-spinners "^2"
+    figures "^6.1.0"
+    ink "^5.0.1"
+    react "^18.3.1"
+
 "@oclif/plugin-autocomplete@3.2.5":
   version "3.2.5"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-3.2.5.tgz#d6841685d0b5475e32d06205a148ac8b2c08b288"
@@ -1605,13 +1618,13 @@
     semver "^7.6.0"
     ts-json-schema-generator "^1.5.1"
 
-"@oclif/plugin-commands@4.1.2":
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-commands/-/plugin-commands-4.1.2.tgz#ca5f57847bf15e3de57b74e3bcb254ed80b4d6e6"
-  integrity sha512-PC0aieyqbWTShqr3jkouiGKTO2ReXfGZTEux+Y19cPvbZCBnJ5hld0rGG/wWOusYo/5AumY3Mo5Yx9I2N2Fy8Q==
+"@oclif/plugin-commands@4.1.3":
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-commands/-/plugin-commands-4.1.3.tgz#c06268269796a641a98da55bf82f1e8514d04f60"
+  integrity sha512-wRxYfD+isEtP64RBfhlaUXorM110YgeYEgwMppcSnH0KrvCngxFiKad1HE5MNUratEmDpsDT2UIWh86hOFKkSw==
   dependencies:
     "@oclif/core" "^4"
-    "@oclif/table" "^0.1.16"
+    "@oclif/table" "^0.1.17"
     lodash "^4.17.21"
     object-treeify "^4.0.1"
 
@@ -1658,14 +1671,14 @@
     ansi-escapes "^7.0.0"
     inquirer-autocomplete-standalone "^0.8.1"
 
-"@oclif/plugin-update@4.6.2":
-  version "4.6.2"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.6.2.tgz#f7a63625927194493d304c83c4a700d9f0479f52"
-  integrity sha512-o/xGzTcznhDgiD7uETxo/Gg7lCWjw0Ktu936ItsFJdqwaONP8Cr9nZGg0t0D/lZptBx4xikUStHKYhiD/xsL2w==
+"@oclif/plugin-update@4.6.3":
+  version "4.6.3"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.6.3.tgz#110aefe3217d4aed64bff02686832dfeb660557b"
+  integrity sha512-FYF89ohnH5EWRXnNzRSptw/zVJMYzLnSPfgeNg91VDnulT4Pflr4vLe1GqZiL0sTdF9LdXojGbxvrxUKKVUxgg==
   dependencies:
     "@inquirer/select" "^2.5.0"
     "@oclif/core" "^4"
-    "@oclif/table" "^0.1.15"
+    "@oclif/table" "^0.1.17"
     ansis "^3.3.2"
     debug "^4.3.7"
     filesize "^6.1.0"
@@ -1702,10 +1715,10 @@
     "@oclif/core" "^4"
     ansis "^3.3.1"
 
-"@oclif/table@^0.1.15", "@oclif/table@^0.1.16":
-  version "0.1.16"
-  resolved "https://registry.yarnpkg.com/@oclif/table/-/table-0.1.16.tgz#e12c532278bc4afed8b331e2a83087dea8cf30cd"
-  integrity sha512-X+kJyUs1ViqLHhOUzi6NF1r3PRVMSp4BEAm/nq0E+KaRzQddAK4QVXhpugUkb2H7Ea+nuVTfG05ZZqXpg9uktg==
+"@oclif/table@^0.1.17":
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/@oclif/table/-/table-0.1.17.tgz#8877663f7354ac96a6fc167448934572440c7634"
+  integrity sha512-x7ffsCMeqTM6oECg2cd3MDTGTWx19oOxIMEVOVk0qvsfrQfsecB4m7dQh9W6+VLvGg/bkxJKHB14Ytf8ieiqmw==
   dependencies:
     "@oclif/core" "^4"
     "@types/react" "^18.3.11"
@@ -2054,12 +2067,13 @@
     debug "^4.3.4"
     handlebars "^4.7.8"
 
-"@salesforce/plugin-data@3.6.9":
-  version "3.6.9"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-3.6.9.tgz#72ddb9f83580106d309d8df2ae6429872323489a"
-  integrity sha512-nN5RY0E9M4Z9DVk5QMk7pkHD0gSt0V3k/T2g3xyo3wUSwqBEf/YxB3JN1KYbvTrMwJJz2aAKC6TJRzJYeGvvAA==
+"@salesforce/plugin-data@3.7.0":
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-3.7.0.tgz#1b1d01121a5ba2017ea0e88d7e2de650a4deb11b"
+  integrity sha512-+5j9yb0hNWBfmPrEddkzPW5w0o0piIodRNBarsgAxNNOoAsEwJEcl+Afze/GBvdgRHFSaJzuNQJwD/JkZ7u5rA==
   dependencies:
     "@jsforce/jsforce-node" "^3.5.1"
+    "@oclif/multi-stage-output" "^0.3.0"
     "@salesforce/core" "^8.6.1"
     "@salesforce/kit" "^3.2.2"
     "@salesforce/sf-plugins-core" "^11.3.10"
@@ -2069,6 +2083,7 @@
     csv-parse "^5.5.6"
     csv-stringify "^6.5.1"
     form-data "^4.0.0"
+    terminal-link "^3.0.0"
 
 "@salesforce/plugin-deploy-retrieve@3.12.17":
   version "3.12.17"
@@ -3198,7 +3213,7 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.13.tgz#2af91918ee12d9d32914feb13f5326658461b451"
   integrity sha512-hCZTSvwbzWGvhqxp/RqVqwU999pBf2vp7hzIjiYOsl8wqOmUxkQ6ddw1cV3l8811+kdUFus/q4d1Y3E3SyEifA==
 
-"@types/react@^18.3.11":
+"@types/react@^18.3.11", "@types/react@^18.3.4":
   version "18.3.11"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.3.11.tgz#9d530601ff843ee0d7030d4227ea4360236bd537"
   integrity sha512-r6QZ069rFTjrEYgFdOck1gK7FLVsgJE7tTz0pQBczlBNUhBNk0MQH4UbnFSwjpQLMkLzgqvBBa+qGpLje16eTQ==
@@ -4234,7 +4249,7 @@ cli-progress@^3.12.0:
   dependencies:
     string-width "^4.2.3"
 
-cli-spinners@^2.9.0, cli-spinners@^2.9.2:
+cli-spinners@^2, cli-spinners@^2.9.0, cli-spinners@^2.9.2:
   version "2.9.2"
   resolved "https://registry.npmjs.org/cli-spinners/-/cli-spinners-2.9.2.tgz"
   integrity sha512-ywqV+5MmyL4E7ybXgKys4DugZbX0FC6LnwrhjuykIjnK9k8OQacQ7axGKnjDXWNhns0xot3bZI5h55H8yo9cJg==
@@ -5634,6 +5649,13 @@ figures@^5.0.0:
     escape-string-regexp "^5.0.0"
     is-unicode-supported "^1.2.0"
 
+figures@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/figures/-/figures-6.1.0.tgz#935479f51865fa7479f6fa94fc6fc7ac14e62c4a"
+  integrity sha512-d+l3qxjSesT4V7v2fh+QnmFnUWv9lSpjarhShNTgBOfA0ttejbQUAlHLitbjkoRiDulW0OPoQPYIGhIC8ohejg==
+  dependencies:
+    is-unicode-supported "^2.0.0"
+
 file-entry-cache@^6.0.1:
   version "6.0.1"
   resolved "https://registry.npmjs.org/file-entry-cache/-/file-entry-cache-6.0.1.tgz"
@@ -6813,6 +6835,11 @@ is-unicode-supported@^1.2.0:
   version "1.3.0"
   resolved "https://registry.npmjs.org/is-unicode-supported/-/is-unicode-supported-1.3.0.tgz"
   integrity sha512-43r2mRvz+8JRIKnWJ+3j8JtjRKZ6GmjzfaE/qiBJnikNnYv/6bagRJ1kUhNk8R5EX/GkobD+r+sfxCPJsiKBLQ==
+
+is-unicode-supported@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/is-unicode-supported/-/is-unicode-supported-2.1.0.tgz#09f0ab0de6d3744d48d265ebb98f65d11f2a9b3a"
+  integrity sha512-mE00Gnza5EEB3Ds0HfMyllZzbBrmLOX3vfWoj9A9PEnTfratQ/BcaJOuMhnkhjXvb2+FkY3VuHqtAGpTPmglFQ==
 
 is-weakref@^1.0.2:
   version "1.0.2"
@@ -9920,7 +9947,16 @@ static-eval@2.0.2:
   dependencies:
     escodegen "^1.8.1"
 
-"string-width-cjs@npm:string-width@^4.2.0", string-width@^4.0.0, string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
+"string-width-cjs@npm:string-width@^4.2.0":
+  version "4.2.3"
+  resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz"
+  integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
+  dependencies:
+    emoji-regex "^8.0.0"
+    is-fullwidth-code-point "^3.0.0"
+    strip-ansi "^6.0.1"
+
+string-width@^4.0.0, string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
   version "4.2.3"
   resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -9994,7 +10030,14 @@ stringify-package@^1.0.1:
   resolved "https://registry.npmjs.org/stringify-package/-/stringify-package-1.0.1.tgz"
   integrity sha512-sa4DUQsYciMP1xhKWGuFM04fB0LG/9DlluZoSVywUMRNvzid6XucHK0/90xGxRoHrAaROrcHK1aPKaijCtSrhg==
 
-"strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@6.0.1, strip-ansi@^6, strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+"strip-ansi-cjs@npm:strip-ansi@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz"
+  integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
+  dependencies:
+    ansi-regex "^5.0.1"
+
+strip-ansi@6.0.1, strip-ansi@^6, strip-ansi@^6.0.0, strip-ansi@^6.0.1:
   version "6.0.1"
   resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
@@ -10750,7 +10793,7 @@ workerpool@6.2.1:
   resolved "https://registry.npmjs.org/workerpool/-/workerpool-6.2.1.tgz"
   integrity sha512-ILEIE97kDZvF9Wb9f6h5aXK4swSlKGUcOEGiIYb2OOu/IrDU9iwj0fD//SsA6E5ibwJxpEvhullJY4Sl4GcpAw==
 
-"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0":
   version "7.0.0"
   resolved "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
@@ -10763,6 +10806,15 @@ wrap-ansi@^6.2.0:
   version "6.2.0"
   resolved "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-6.2.0.tgz"
   integrity sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==
+  dependencies:
+    ansi-styles "^4.0.0"
+    string-width "^4.1.0"
+    strip-ansi "^6.0.0"
+
+wrap-ansi@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz"
+  integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
   dependencies:
     ansi-styles "^4.0.0"
     string-width "^4.1.0"
