@@ -1580,18 +1580,18 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/multi-stage-output@^0.3.0":
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/@oclif/multi-stage-output/-/multi-stage-output-0.3.4.tgz#c271b5f1f3327e84f04fd6152b7cd64514020ac0"
-  integrity sha512-0Y0ZQo3LLvkhGu5wv+MuzdZZ470dGixQuFBab7gyB8DbemOPvM1oV+qzVbTJqDWoWitdvhSPlsy6VniuDZdLzQ==
+"@oclif/multi-stage-output@^0.7.5":
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/@oclif/multi-stage-output/-/multi-stage-output-0.7.5.tgz#e4ba79995e261912b52b5a0701ab2f4ccddebba4"
+  integrity sha512-9DSPryrL6Qx7jWz7BGBdSyokmUUbrp8z3kRZpfIbA0vqZ/zqYDdW2tO2hlplb74Sr8FUiiwE0FcvRTYZWEmb9Q==
   dependencies:
     "@oclif/core" "^4"
-    "@types/react" "^18.3.4"
-    change-case "^5.4.4"
+    "@types/react" "^18.3.11"
     cli-spinners "^2"
     figures "^6.1.0"
     ink "^5.0.1"
     react "^18.3.1"
+    wrap-ansi "^9.0.0"
 
 "@oclif/plugin-autocomplete@3.2.5":
   version "3.2.5"
@@ -2067,13 +2067,13 @@
     debug "^4.3.4"
     handlebars "^4.7.8"
 
-"@salesforce/plugin-data@3.7.0":
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-3.7.0.tgz#1b1d01121a5ba2017ea0e88d7e2de650a4deb11b"
-  integrity sha512-+5j9yb0hNWBfmPrEddkzPW5w0o0piIodRNBarsgAxNNOoAsEwJEcl+Afze/GBvdgRHFSaJzuNQJwD/JkZ7u5rA==
+"@salesforce/plugin-data@3.7.1":
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-3.7.1.tgz#884b2fad90573431d7bed7f9b718e2f6934aaa17"
+  integrity sha512-bN/MLhS+kxA6s+xbIKrd314b2BfcMmDMS2M7W5pfOGVOacYEop4lf4Rn6iTv+/kaVQ2I3+mhJKUFxxIPkcAnQg==
   dependencies:
     "@jsforce/jsforce-node" "^3.5.1"
-    "@oclif/multi-stage-output" "^0.3.0"
+    "@oclif/multi-stage-output" "^0.7.5"
     "@salesforce/core" "^8.6.1"
     "@salesforce/kit" "^3.2.2"
     "@salesforce/sf-plugins-core" "^11.3.10"
@@ -3213,7 +3213,7 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.13.tgz#2af91918ee12d9d32914feb13f5326658461b451"
   integrity sha512-hCZTSvwbzWGvhqxp/RqVqwU999pBf2vp7hzIjiYOsl8wqOmUxkQ6ddw1cV3l8811+kdUFus/q4d1Y3E3SyEifA==
 
-"@types/react@^18.3.11", "@types/react@^18.3.4":
+"@types/react@^18.3.11":
   version "18.3.11"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.3.11.tgz#9d530601ff843ee0d7030d4227ea4360236bd537"
   integrity sha512-r6QZ069rFTjrEYgFdOck1gK7FLVsgJE7tTz0pQBczlBNUhBNk0MQH4UbnFSwjpQLMkLzgqvBBa+qGpLje16eTQ==
