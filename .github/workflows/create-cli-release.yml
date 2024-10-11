@@ -91,7 +91,7 @@ jobs:
         with:
           max_attempts: 5
           retry_wait_seconds: 120
-          command: sf-release cli:versions:inspect -c ${{ needs.get-channel.outputs.s3-channel }} -l archive --cli sf
+          command: sf-release cli:versions:inspect -c ${{ needs.get-channel.outputs.s3-channel }} -l archive
           retry_on: error
 
   pack-upload-mac:

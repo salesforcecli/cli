@@ -53,7 +53,7 @@ jobs:
         with:
           max_attempts: 5
           retry_wait_seconds: 120
-          command: sf-release cli:versions:inspect -c stable -l archive --cli sf
+          command: sf-release cli:versions:inspect -c stable -l archive ${{ inputs.ignore-missing && '--ignore-missing' || '' }}
 
   verify-docker-version:
     needs: [promote-verify]

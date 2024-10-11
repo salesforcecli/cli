@@ -23,7 +23,7 @@ jobs:
     with:
       old-channel: nightly
       new-channel: latest-rc
-      ignore-missing: ${{ inputs.ignore-missing }}
+      ignore-missing: ${{ github.event_name == 'workflow_run' && 'false' || inputs.ignore-missing }}
 
   promote-verify:
     runs-on: ubuntu-latest
@@ -55,7 +55,7 @@ jobs:
         with:
           max_attempts: 5
           retry_wait_seconds: 120
-          command: sf-release cli:versions:inspect -c stable-rc -l archive --cli sf
+          command: sf-release cli:versions:inspect -c stable-rc -l archive ${{ inputs.ignore-missing && '--ignore-missing' || '' }}
 
   verify-docker-version:
     needs: [promote-verify]
