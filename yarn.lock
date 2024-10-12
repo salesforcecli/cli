@@ -1556,10 +1556,10 @@
     proc-log "^5.0.0"
     which "^5.0.0"
 
-"@oclif/core@4.0.27", "@oclif/core@^4", "@oclif/core@^4.0.16", "@oclif/core@^4.0.18", "@oclif/core@^4.0.20", "@oclif/core@^4.0.23", "@oclif/core@^4.0.27", "@oclif/core@^4.0.6":
-  version "4.0.27"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.0.27.tgz#686079df278e681e3097cea301d5558fdb490e88"
-  integrity sha512-9j92jHr6k2tjQ6/mIwNi46Gqw+qbPFQ02mxT5T8/nxO2fgsPL3qL0kb9SR1il5AVfqpgLIG3uLUcw87rgaioUg==
+"@oclif/core@4.0.28", "@oclif/core@^4", "@oclif/core@^4.0.16", "@oclif/core@^4.0.18", "@oclif/core@^4.0.20", "@oclif/core@^4.0.23", "@oclif/core@^4.0.27", "@oclif/core@^4.0.28", "@oclif/core@^4.0.6":
+  version "4.0.28"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.0.28.tgz#63b16cc0fa06e02374fad3432a0422a43f118d6d"
+  integrity sha512-lKM1W2glLJmVxZrnb+k3NaudzG9V2yoKJZcW+lmfMf/yPlx6bT/N+DELUsSwdm1VfJAXaQmpLV4+AfEX5qq3mA==
   dependencies:
     ansi-escapes "^4.3.2"
     ansis "^3.3.2"
@@ -1645,12 +1645,12 @@
     ansis "^3.3.1"
     fast-levenshtein "^3.0.0"
 
-"@oclif/plugin-plugins@5.4.14":
-  version "5.4.14"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-5.4.14.tgz#fede43dc1959bf00de8bdd5e4998cb173564d106"
-  integrity sha512-ZoF9Jw4Y4uTFf56tGHGsBzCFhBKKRAuIiGCMoSpy8VEL3cFb5Jv6Xm0rdzv54lkmw1XWBBFM6cqK/hmxM2QEIw==
+"@oclif/plugin-plugins@5.4.15":
+  version "5.4.15"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-5.4.15.tgz#345b8b877c6a10c359ca54fbbe217d31abb612e0"
+  integrity sha512-0cnTFaRWdXkWgKTrwgjoggcq/A3MaIl1GkDs3BFFjesYlFEs5Fb2HcN42rY+2ja4jBkXrjXBkLS+9faAtdCH6A==
   dependencies:
-    "@oclif/core" "^4"
+    "@oclif/core" "^4.0.28"
     ansis "^3.3.2"
     debug "^4.3.7"
     npm "^10.9.0"
