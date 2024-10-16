@@ -1937,10 +1937,10 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/multi-stage-output@^0.7.5":
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/@oclif/multi-stage-output/-/multi-stage-output-0.7.5.tgz#e4ba79995e261912b52b5a0701ab2f4ccddebba4"
-  integrity sha512-9DSPryrL6Qx7jWz7BGBdSyokmUUbrp8z3kRZpfIbA0vqZ/zqYDdW2tO2hlplb74Sr8FUiiwE0FcvRTYZWEmb9Q==
+"@oclif/multi-stage-output@^0.7.5", "@oclif/multi-stage-output@^0.7.7":
+  version "0.7.7"
+  resolved "https://registry.yarnpkg.com/@oclif/multi-stage-output/-/multi-stage-output-0.7.7.tgz#2f7633d6cf2070a10e71adb83f878b937b47a1be"
+  integrity sha512-LTrjzyWfIheoQX0NwMQ7+rb/U75NNiNNmpjvZ42RHDJohDK3w5IWf5bUFCfMsVdEj6VV7fQpvGT2WYryNX+HmA==
   dependencies:
     "@oclif/core" "^4"
     "@types/react" "^18.3.11"
@@ -2442,12 +2442,13 @@
     form-data "^4.0.0"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-deploy-retrieve@3.13.1":
-  version "3.13.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.13.1.tgz#516226a47b80c269ef893a4a8acd2ffeb53b50e8"
-  integrity sha512-Q25pVDoX1teNdbbHVKGsM2J7qLOsNzg7yN4lfSLrukxM2CK6MGeRb8C8EE4nHYHdPgvPa5+CcFLrtg+4Q3U8kQ==
+"@salesforce/plugin-deploy-retrieve@3.14.0":
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.14.0.tgz#aa9206df07023750b2ded76ddcbd8aeeb77617ce"
+  integrity sha512-GfQOwwyQkDHDK2cBjWz6gcgNbV6uYR2aGbc/XqJwZP1viof+5ldfgu/RXs0lIpa33h7NbBRGjk29Ry3eq05Xeg==
   dependencies:
     "@oclif/core" "^4.0.28"
+    "@oclif/multi-stage-output" "^0.7.7"
     "@salesforce/apex-node" "^8.1.9"
     "@salesforce/core" "^8.6.1"
     "@salesforce/kit" "^3.2.3"
@@ -2457,6 +2458,7 @@
     "@salesforce/source-tracking" "^7.1.16"
     "@salesforce/ts-types" "^2.0.12"
     ansis "^3.3.2"
+    terminal-link "^3.0.0"
 
 "@salesforce/plugin-info@3.4.12", "@salesforce/plugin-info@^3.4.9":
   version "3.4.12"
@@ -2495,12 +2497,13 @@
     got "^13.0.0"
     proxy-agent "^6.4.0"
 
-"@salesforce/plugin-org@4.6.2":
-  version "4.6.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-4.6.2.tgz#24c8869469e3e56a509da236d8b26c69bfcfaa90"
-  integrity sha512-SjkBo7aISRwKiSOF5lEkwCeyg+U9bAq1tug70S4Uf4SSJHHHrWS4rKKjy5pbQsVOhpF9JZe1q45LV8hHoMisRA==
+"@salesforce/plugin-org@4.7.0":
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-4.7.0.tgz#f130a72e6531960b7dd392096e4b57389fad1962"
+  integrity sha512-lgqPVj98733dbPttXdCYRUtkX2leOhJXqZtRsj6Y8s8rEGWFGR8Lfx7OJijJBjPKOo3+AW9btBXnIosQTVYWgg==
   dependencies:
     "@oclif/core" "^4.0.28"
+    "@oclif/multi-stage-output" "^0.7.7"
     "@salesforce/core" "^8.6.1"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/sf-plugins-core" "^11.3.12"
@@ -2509,6 +2512,7 @@
     change-case "^5.4.4"
     is-wsl "^3.1.0"
     open "^10.1.0"
+    terminal-link "^3.0.0"
 
 "@salesforce/plugin-packaging@2.8.12":
   version "2.8.12"
