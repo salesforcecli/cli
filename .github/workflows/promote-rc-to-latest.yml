@@ -20,7 +20,7 @@ jobs:
       old-channel: latest-rc
       new-channel: latest
       use-ctc: true
-      ignore-missing: ${{ github.event_name == 'schedule' && 'false' || inputs.ignore-missing }}
+      ignore-missing: ${{ github.event_name == 'workflow_dispatch' && inputs.ignore-missing || false }}
 
   promote-verify:
     runs-on: ubuntu-latest

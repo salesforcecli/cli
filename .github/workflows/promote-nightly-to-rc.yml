@@ -23,7 +23,7 @@ jobs:
     with:
       old-channel: nightly
       new-channel: latest-rc
-      ignore-missing: ${{ github.event_name == 'workflow_run' && 'false' || inputs.ignore-missing }}
+      ignore-missing: ${{ github.event_name == 'workflow_dispatch' && inputs.ignore-missing || false }}
 
   promote-verify:
     runs-on: ubuntu-latest
