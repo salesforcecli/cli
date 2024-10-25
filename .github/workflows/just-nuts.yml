@@ -85,32 +85,6 @@ jobs:
       command: ${{ matrix.command }}
     secrets: inherit
 
-  source:
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-        command:
-          - yarn test:nuts:mdapi
-          - yarn test:nuts:deploy:metadata
-          - yarn test:nuts:deploy:async
-          - yarn test:nuts:deploy:destructive
-          - yarn test:nuts:deploy:manifest
-          - yarn test:nuts:deploy:quick
-          - yarn test:nuts:deploy:rest
-          - yarn test:nuts:deploy:sourcepath
-          - yarn test:nuts:deploy:testlevel
-          - yarn test:nuts:retrieve
-          - yarn test:nuts:specialTypes
-          - yarn test:nuts:tracking
-    uses: ./.github/workflows/just-nut.yml
-    with:
-      repository: salesforcecli/plugin-source
-      channel-or-version: ${{ inputs.channel-or-version }}
-      os: ${{ matrix.os }}
-      command: ${{ matrix.command }}
-    secrets: inherit
-
   deploy-retrieve:
     strategy:
       fail-fast: false
