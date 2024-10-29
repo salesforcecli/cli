@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.65.5 linux-x64 node-v20.18.0
+@salesforce/cli/2.65.6 linux-x64 node-v20.18.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -3724,7 +3724,7 @@ EXAMPLES
     $ sf org list limits --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.3.36/src/commands/org/list/limits.ts)_
+_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.3.37/src/commands/org/list/limits.ts)_
 
 ## `sf org list metadata`
 
@@ -3892,7 +3892,7 @@ EXAMPLES
     $ sf org list sobject record-counts --sobject Account --sobject Lead --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.3.36/src/commands/org/list/sobject/record-counts.ts)_
+_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.3.37/src/commands/org/list/sobject/record-counts.ts)_
 
 ## `sf org list users`
 

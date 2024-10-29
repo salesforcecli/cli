@@ -929,7 +929,7 @@
     "@smithy/types" "^3.5.0"
     tslib "^2.6.2"
 
-"@aws-sdk/types@3.667.0", "@aws-sdk/types@^3.222.0":
+"@aws-sdk/types@3.667.0":
   version "3.667.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/types/-/types-3.667.0.tgz#1b307c5af5a029ea1893f799fcfa122988f9d025"
   integrity sha512-gYq0xCsqFfQaSL/yT1Gl1vIUjtsg7d7RhnUfsXaHt8xTxOKRTdH9GjbesBjXOzgOvB0W0vfssfreSNGFlOOMJg==
@@ -937,7 +937,7 @@
     "@smithy/types" "^3.5.0"
     tslib "^2.6.2"
 
-"@aws-sdk/types@3.679.0":
+"@aws-sdk/types@3.679.0", "@aws-sdk/types@^3.222.0":
   version "3.679.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/types/-/types-3.679.0.tgz#3737bb0f190add9e788b838a24cd5d8106dbed4f"
   integrity sha512-NwVq8YvInxQdJ47+zz4fH3BRRLC6lL+WLkvr242PVBbUOLRyK/lkwHlfiKUoeVIMyK5NF+up6TRg71t/8Bny6Q==
@@ -2055,10 +2055,10 @@
     proc-log "^5.0.0"
     which "^5.0.0"
 
-"@oclif/core@4.0.30", "@oclif/core@^4", "@oclif/core@^4.0.23", "@oclif/core@^4.0.27", "@oclif/core@^4.0.28", "@oclif/core@^4.0.30", "@oclif/core@^4.0.6":
-  version "4.0.30"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.0.30.tgz#65672282756bf19fde3830cab6d8031bf6236064"
-  integrity sha512-Ak3OUdOcoovIRWZOT6oC5JhZgyJD90uWX/7HjSofn+C4LEmHxxfiyu04a73dwnezfzqDu9jEXfd2mQOOC54KZw==
+"@oclif/core@4.0.31", "@oclif/core@^4", "@oclif/core@^4.0.23", "@oclif/core@^4.0.27", "@oclif/core@^4.0.28", "@oclif/core@^4.0.30", "@oclif/core@^4.0.6":
+  version "4.0.31"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.0.31.tgz#3f7ac806f27de6a87a7ee7caab8826687ce50412"
+  integrity sha512-7oyIZv/C1TP+fPc2tSzVPYqG1zU+nel1QvJxjAWyVhud0J8B5SpKZnryedxs3nlSVPJ6K1MT31C9esupCBYgZw==
   dependencies:
     ansi-escapes "^4.3.2"
     ansis "^3.3.2"
@@ -2069,7 +2069,7 @@
     get-package-type "^0.1.0"
     globby "^11.1.0"
     indent-string "^4.0.0"
-    is-wsl "^3"
+    is-wsl "^2.2.0"
     lilconfig "^3.1.2"
     minimatch "^9.0.5"
     semver "^7.6.3"
@@ -2620,13 +2620,13 @@
     proxy-agent "^6.4.0"
     semver "^7.6.3"
 
-"@salesforce/plugin-limits@3.3.36":
-  version "3.3.36"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-limits/-/plugin-limits-3.3.36.tgz#ed5ca80e449777e6177b7f8c349073c1172d7848"
-  integrity sha512-GSBxXkIh+4bbPpZV7hUh03N8x1jWjAqpify+o4w7hbm76x/nqqHMYrA49QkFsRvbW9VGUn5BYrdjV4msRHoiSw==
+"@salesforce/plugin-limits@3.3.37":
+  version "3.3.37"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-limits/-/plugin-limits-3.3.37.tgz#3cb1589dcc65944dfbc1766799f6224984490cc4"
+  integrity sha512-Fmsp1lRsUgV0x3VbnYj8tu+GLZAkJT1a+3IRqAvKTfUf3IimIHRbgeUrndYFJuTkd5v4TreFWoAOnmlFRe2ngQ==
   dependencies:
     "@salesforce/core" "^8.5.7"
-    "@salesforce/sf-plugins-core" "^12.0.4"
+    "@salesforce/sf-plugins-core" "^12.0.9"
 
 "@salesforce/plugin-marketplace@1.3.2":
   version "1.3.2"
@@ -7188,6 +7188,11 @@ is-date-object@^1.0.1:
   dependencies:
     has-tostringtag "^1.0.0"
 
+is-docker@^2.0.0:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/is-docker/-/is-docker-2.2.1.tgz#33eeabe23cfe86f14bde4408a02c0cfb853acdaa"
+  integrity sha512-F+i2BKsFrH66iaUFc0woD8sLy8getkwTwtOBjvs56Cx4CgJDeKQeqfz8wAYiSb8JOprWhHH5p77PbmYCvvUuXQ==
+
 is-docker@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/is-docker/-/is-docker-3.0.0.tgz"
@@ -7378,7 +7383,14 @@ is-windows@^1.0.2:
   resolved "https://registry.npmjs.org/is-windows/-/is-windows-1.0.2.tgz"
   integrity sha512-eXK1UInq2bPmjyX6e3VHIzMLobc4J94i4AWn+Hpq3OU5KkrRC96OAcR3PRJ/pGu6m8TRnBHP9dkXQVsT/COVIA==
 
-is-wsl@^3, is-wsl@^3.1.0:
+is-wsl@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/is-wsl/-/is-wsl-2.2.0.tgz#74a4c76e77ca9fd3f932f290c17ea326cd157271"
+  integrity sha512-fKzAra0rGJUUBwGBgNkHZuToZcn+TtXHpeCgmkMJMMYx1sQDYaCSyjJBSCa2nH1DGm7s3n1oBnohoVTBaN7Lww==
+  dependencies:
+    is-docker "^2.0.0"
+
+is-wsl@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/is-wsl/-/is-wsl-3.1.0.tgz#e1c657e39c10090afcbedec61720f6b924c3cbd2"
   integrity sha512-UcVfVfaK4Sc4m7X3dUSoHoozQGBEFeDC+zVo06t98xe8CzHSZZBekNXH+tu0NalHolcJ/QAGqS46Hef7QXBIMw==
