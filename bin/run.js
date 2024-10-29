@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --no-deprecation
 
 // Pre-process/prune flags before creating or running the actual CLI
 (await import('../dist/flags.js')).preprocessCliFlags(process);
