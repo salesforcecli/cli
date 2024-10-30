@@ -26,7 +26,6 @@ jobs:
           - salesforcecli/plugin-auth
           - salesforcecli/plugin-apex
           - salesforcecli/plugin-api
-          - salesforcecli/plugin-data
           - salesforcecli/plugin-limits
           - salesforcecli/plugin-org
           - salesforcecli/plugin-schema
@@ -108,6 +107,28 @@ jobs:
     uses: ./.github/workflows/just-nut.yml
     with:
       repository: salesforcecli/plugin-deploy-retrieve
+      channel-or-version: ${{ inputs.channel-or-version }}
+      os: ${{ matrix.os }}
+      command: ${{ matrix.command }}
+    secrets: inherit
+  data:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        command:
+          - yarn test:nuts:bulk:import
+          - yarn test:nuts:bulk:export
+          - yarn test:nuts:bulk:update
+          - yarn test:nuts:data:tree
+          - yarn test:nuts:data:query
+          - yarn test:nuts:data:record
+          - yarn test:nuts:data:search
+          - yarn test:nuts:data:create
+          - yarn test:nuts:data:bulk-upsert-delete
+    uses: ./.github/workflows/just-nut.yml
+    with:
+      repository: salesforcecli/plugin-data
       channel-or-version: ${{ inputs.channel-or-version }}
       os: ${{ matrix.os }}
       command: ${{ matrix.command }}
