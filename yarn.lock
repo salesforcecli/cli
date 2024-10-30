@@ -2079,10 +2079,10 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/multi-stage-output@^0.7.5", "@oclif/multi-stage-output@^0.7.7", "@oclif/multi-stage-output@^0.7.8":
-  version "0.7.10"
-  resolved "https://registry.yarnpkg.com/@oclif/multi-stage-output/-/multi-stage-output-0.7.10.tgz#e58afb2b3d2ed475ebd3d3740692139f71827aa8"
-  integrity sha512-zC4psH1hhIp3v7VJ7YFqfXJ2WB9s3Yn5VCoATy6BfS9JjhtHYByafphZ0e58Zr3q/oIqSrorMVWK3XtTx5pgXQ==
+"@oclif/multi-stage-output@^0.7.11", "@oclif/multi-stage-output@^0.7.5", "@oclif/multi-stage-output@^0.7.8":
+  version "0.7.11"
+  resolved "https://registry.yarnpkg.com/@oclif/multi-stage-output/-/multi-stage-output-0.7.11.tgz#98a16b9324e7a67e70dbc0eec146d12572c1d4e8"
+  integrity sha512-2ykTQb7ot+1+nM0GFbUE2lgfkr0a9IfxY+YHbpP2lDbTUIdoM7fVPrgbAiGdcP2qsxm3F94POKvGtc2XW4WJRg==
   dependencies:
     "@oclif/core" "^4"
     "@types/react" "^18.3.12"
@@ -2600,13 +2600,13 @@
     form-data "^4.0.0"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-deploy-retrieve@3.15.3":
-  version "3.15.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.15.3.tgz#8d9149c80bca1d344df21f46491dcf5dcdb07030"
-  integrity sha512-LvV2I/GxuYSHBmh0TgubKhrvsQFg8FyuZKnMprbvtJsaoueCbYBHLXdq+AYnVDF0dYqVYpInSY2twovZjfT1Pg==
+"@salesforce/plugin-deploy-retrieve@3.15.4":
+  version "3.15.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.15.4.tgz#1d1b7cc3d1f774fe3bcd071e313c759bd0f7979e"
+  integrity sha512-k5eZo5OZzsih/HyQWlZRsJdoGFNnf0OYg3F1IngDrpan6PNoT09IsJANpCdlai9xlclICBS7Hg1fUaDVU3AQ1g==
   dependencies:
     "@oclif/core" "^4.0.28"
-    "@oclif/multi-stage-output" "^0.7.7"
+    "@oclif/multi-stage-output" "^0.7.11"
     "@salesforce/apex-node" "^8.1.9"
     "@salesforce/core" "^8.6.1"
     "@salesforce/kit" "^3.2.3"
