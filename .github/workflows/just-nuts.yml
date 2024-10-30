@@ -111,6 +111,7 @@ jobs:
       os: ${{ matrix.os }}
       command: ${{ matrix.command }}
     secrets: inherit
+  
   data:
     strategy:
       fail-fast: false
