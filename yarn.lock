@@ -2220,10 +2220,10 @@
     form-data "^4.0.0"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-deploy-retrieve@3.15.7":
-  version "3.15.7"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.15.7.tgz#e9b20f6d611f6400c6b0422bc2ef81e97723ac81"
-  integrity sha512-tqbO4/1qdiCG1Uu2DP5DHs9O3Y+l5lecio6/hX+kueI9SIcOaxK1mIXiG15bqx4N3Vr0V/p+cjztGIV8OHczmQ==
+"@salesforce/plugin-deploy-retrieve@3.15.8":
+  version "3.15.8"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.15.8.tgz#4ed7ac72d65cf8d0cd5d3cdc433e0cf3ea8dff4c"
+  integrity sha512-x0Re+Od+d1TeNsYSA/dcYvgOOr3VqdVcu3WWpw45fqGRjjdX80rk4pf0bR1DUjVqd0FDnTJoNZ8wwVYfnSYlCw==
   dependencies:
     "@oclif/core" "^4.0.28"
     "@oclif/multi-stage-output" "^0.7.11"
@@ -2232,7 +2232,7 @@
     "@salesforce/kit" "^3.2.3"
     "@salesforce/plugin-info" "^3.4.13"
     "@salesforce/sf-plugins-core" "^12.0.11"
-    "@salesforce/source-deploy-retrieve" "^12.8.1"
+    "@salesforce/source-deploy-retrieve" "^12.10.1"
     "@salesforce/source-tracking" "^7.1.17"
     "@salesforce/ts-types" "^2.0.12"
     ansis "^3.3.2"
@@ -2460,10 +2460,10 @@
     string-width "^7.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/source-deploy-retrieve@^12.10.0", "@salesforce/source-deploy-retrieve@^12.7.4", "@salesforce/source-deploy-retrieve@^12.8.0", "@salesforce/source-deploy-retrieve@^12.8.1":
-  version "12.10.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.10.0.tgz#406b596bf73b3c4aa733ef2302b88c3b4f7367b2"
-  integrity sha512-06/yhu2HcaFnAV5Wyrt/flDBvGGVWgl2G/XZxTguLjwD35jc3fRLv2qk121eq+FLdKpeLo/WXjicA7UX/dXkeQ==
+"@salesforce/source-deploy-retrieve@^12.10.0", "@salesforce/source-deploy-retrieve@^12.10.1", "@salesforce/source-deploy-retrieve@^12.7.4", "@salesforce/source-deploy-retrieve@^12.8.0":
+  version "12.10.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.10.1.tgz#bf20f2e92935ddc886b980c1b0d57e84ebe0f3ba"
+  integrity sha512-X4iwRnC9rkbZnK6brbY3lydgbJK44x4e7Bl4EEPNi6SOPdzkKBqTh7TiR7I2ftY0iiBrH0zWHrWMiNeCtQMWbA==
   dependencies:
     "@salesforce/core" "^8.6.2"
     "@salesforce/kit" "^3.2.2"
