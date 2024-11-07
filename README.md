@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.66.7 linux-x64 node-v22.10.0
+@salesforce/cli/2.67.0 linux-x64 node-v22.10.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -6271,7 +6271,7 @@ DESCRIPTION
 
   To convert multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with
   multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax
-  applies to --manifest and --source-dir.
+  applies to --source-dir.
 
 ALIASES
   $ sf force mdapi convert
@@ -6297,10 +6297,10 @@ FLAG DESCRIPTIONS
 
   -x, --manifest=<value>  File path to manifest (package.xml) of metadata types to convert.
 
-    If you specify this parameter, don’t specify --metadata or --source-dir.
+    If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.8/src/commands/project/convert/mdapi.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.9/src/commands/project/convert/mdapi.ts)_
 
 ## `sf project convert source`
 
@@ -6338,7 +6338,7 @@ DESCRIPTION
 
   To convert multiple components, either set multiple --metadata <name> flags or a single --metadata flag with multiple
   names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax applies to
-  --manifest and --source-dir.
+  --source-dir.
 
 ALIASES
   $ sf force source convert
@@ -6360,11 +6360,11 @@ FLAG DESCRIPTIONS
     The supplied paths can be to a single file (in which case the operation is applied to only one file) or to a folder
     (in which case the operation is applied to all metadata types in the directory and its sub-directories).
 
-    If you specify this parameter, don’t specify --manifest or --metadata.
+    If you specify this flag, don’t specify --manifest or --metadata.
 
   -x, --manifest=<value>  Path to the manifest (package.xml) file that specifies the metadata types to convert.
 
-    If you specify this parameter, don’t specify --metadata or --source-dir.
+    If you specify this flag, don’t specify --metadata or --source-dir.
 
   --api-version=<value>
 
@@ -6373,7 +6373,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.8/src/commands/project/convert/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.9/src/commands/project/convert/source.ts)_
 
 ## `sf project convert source-behavior`
 
@@ -6431,7 +6431,7 @@ EXAMPLES
     $ sf project convert source-behavior --behavior decomposePermissionSetBeta --dry-run --preserve-temp-dir
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.8/src/commands/project/convert/source-behavior.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.9/src/commands/project/convert/source-behavior.ts)_
 
 ## `sf project delete source`
 
@@ -6475,7 +6475,7 @@ DESCRIPTION
 
   To delete multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with
   multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax
-  applies to --manifest and --source-dir.
+  applies to --source-dir.
 
 ALIASES
   $ sf force source delete
@@ -6508,9 +6508,9 @@ FLAG DESCRIPTIONS
     Validates the deleted metadata and runs all Apex tests, but prevents the deletion from being saved to the org.
 
     If you change a field type from Master-Detail to Lookup or vice versa, that change isn’t supported when using the
-    --check-only parameter to test a deletion (validation). This kind of change isn’t supported for test deletions to
-    avoid the risk of data loss or corruption. If a change that isn’t supported for test deletions is included in a
-    deletion package, the test deletion fails and issues an error.
+    --check-only flag to test a deletion (validation). This kind of change isn’t supported for test deletions to avoid
+    the risk of data loss or corruption. If a change that isn’t supported for test deletions is included in a deletion
+    package, the test deletion fails and issues an error.
 
     If your deletion package changes a field type from Master-Detail to Lookup or vice versa, you can still validate the
     changes prior to deploying to Production by performing a full deletion to another test Sandbox. A full deletion
@@ -6549,14 +6549,14 @@ FLAG DESCRIPTIONS
 
   -m, --metadata=<value>...  Metadata components to delete.
 
-    If you specify this parameter, don’t specify --source-dir.
+    If you specify this flag, don’t specify --source-dir.
 
   -p, --source-dir=<value>...  Source file paths to delete.
 
     The supplied paths can be a single file (in which case the operation is applied to only one file) or a folder (in
     which case the operation is applied to all metadata types in the directory and its sub-directories).
 
-    If you specify this parameter, don’t specify --metadata.
+    If you specify this flag, don’t specify --metadata.
 
   -w, --wait=<value>  Number of minutes to wait for the command to finish.
 
@@ -6571,7 +6571,7 @@ FLAG DESCRIPTIONS
     - Separate the test names with spaces: --tests Test1 Test2 "Test With Space"
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.8/src/commands/project/delete/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.9/src/commands/project/delete/source.ts)_
 
 ## `sf project delete tracking`
 
@@ -6608,7 +6608,7 @@ EXAMPLES
     $ sf project delete tracking --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.8/src/commands/project/delete/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.9/src/commands/project/delete/tracking.ts)_
 
 ## `sf project deploy cancel`
 
@@ -6680,7 +6680,7 @@ FLAG DESCRIPTIONS
     project deploy report".
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.8/src/commands/project/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.9/src/commands/project/deploy/cancel.ts)_
 
 ## `sf project deploy preview`
 
@@ -6721,7 +6721,7 @@ DESCRIPTION
 
   To preview the deployment of multiple metadata components, either set multiple --metadata <name> flags or a single
   --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double
-  quotes. The same syntax applies to --manifest and --source-dir.
+  quotes. The same syntax applies to --source-dir.
 
 ALIASES
   $ sf deploy metadata preview
@@ -6763,7 +6763,7 @@ FLAG DESCRIPTIONS
     All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.8/src/commands/project/deploy/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.9/src/commands/project/deploy/preview.ts)_
 
 ## `sf project deploy quick`
 
@@ -6856,7 +6856,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.8/src/commands/project/deploy/quick.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.9/src/commands/project/deploy/quick.ts)_
 
 ## `sf project deploy report`
 
@@ -6948,7 +6948,7 @@ FLAG DESCRIPTIONS
     --coverage-formatters lcov --coverage-formatters clover
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.8/src/commands/project/deploy/report.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.9/src/commands/project/deploy/report.ts)_
 
 ## `sf project deploy resume`
 
@@ -7045,7 +7045,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.8/src/commands/project/deploy/resume.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.9/src/commands/project/deploy/resume.ts)_
 
 ## `sf project deploy start`
 
@@ -7122,7 +7122,7 @@ DESCRIPTION
 
   To deploy multiple metadata components, either set multiple --metadata <name> flags or a single --metadata flag with
   multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax
-  applies to --manifest and --source-dir.
+  applies to --source-dir.
 
 ALIASES
   $ sf deploy metadata
@@ -7298,7 +7298,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.8/src/commands/project/deploy/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.9/src/commands/project/deploy/start.ts)_
 
 ## `sf project deploy validate`
 
@@ -7372,7 +7372,7 @@ DESCRIPTION
 
   To validate the deployment of multiple metadata components, either set multiple --metadata <name> flags or a single
   --metadata flag with multiple names separated by spaces. Enclose names that contain spaces in one set of double
-  quotes. The same syntax applies to --manifest and --source-dir.
+  quotes. The same syntax applies to --source-dir.
 
   Note: Don't use this command on sandboxes; the command is intended to be used on production orgs. By default,
   sandboxes don't run tests during a deploy. If you want to validate a deployment with tests on a sandbox, use "sf
@@ -7488,7 +7488,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.8/src/commands/project/deploy/validate.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.9/src/commands/project/deploy/validate.ts)_
 
 ## `sf project generate`
 
@@ -7627,10 +7627,10 @@ DESCRIPTION
   Create a project manifest that lists the metadata components you want to deploy or retrieve.
 
   Create a manifest from a list of metadata components (--metadata) or from one or more local directories that contain
-  source files (--source-dir). You can specify either of these parameters, not both.
+  source files (--source-dir). You can specify either of these flags, not both.
 
   Use --type to specify the type of manifest you want to create. The resulting manifest files have specific names, such
-  as the standard package.xml or destructiveChanges.xml to delete metadata. Valid values for this parameter, and their
+  as the standard package.xml or destructiveChanges.xml to delete metadata. Valid values for this flag, and their
   respective file names, are:
 
   * package : package.xml (default)
@@ -7670,7 +7670,7 @@ EXAMPLES
     $ sf project generate manifest --from-org test@myorg.com --include-packages unlocked
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.8/src/commands/project/generate/manifest.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.9/src/commands/project/generate/manifest.ts)_
 
 ## `sf project list ignored`
 
@@ -7712,7 +7712,7 @@ EXAMPLES
     $ sf project list ignored --source-dir package.xml
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.8/src/commands/project/list/ignored.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.9/src/commands/project/list/ignored.ts)_
 
 ## `sf project reset tracking`
 
@@ -7742,8 +7742,8 @@ DESCRIPTION
   files and those in the org. When you next run 'project deploy preview', Salesforce CLI returns no results, even though
   conflicts might actually exist. Salesforce CLI then resumes tracking new source changes as usual.
 
-  Use the --revision parameter to reset source tracking to a specific revision number of an org source member. To get
-  the revision number, query the SourceMember Tooling API object with the 'data soql' command. For example:
+  Use the --revision flag to reset source tracking to a specific revision number of an org source member. To get the
+  revision number, query the SourceMember Tooling API object with the 'data soql' command. For example:
 
   sf data query --query "SELECT MemberName, MemberType, RevisionCounter FROM SourceMember" --use-tooling-api
   --target-org my-scratch
@@ -7761,7 +7761,7 @@ EXAMPLES
     $ sf project reset tracking --revision 30
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.8/src/commands/project/reset/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.9/src/commands/project/reset/tracking.ts)_
 
 ## `sf project retrieve preview`
 
@@ -7815,7 +7815,7 @@ FLAG DESCRIPTIONS
     production orgs.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.8/src/commands/project/retrieve/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.9/src/commands/project/retrieve/preview.ts)_
 
 ## `sf project retrieve start`
 
@@ -7868,7 +7868,7 @@ DESCRIPTION
 
   To retrieve multiple metadata components, either use multiple --metadata <name> flags or use a single --metadata flag
   with multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same
-  syntax applies to --manifest and --source-dir.
+  syntax applies to --source-dir.
 
 ALIASES
   $ sf retrieve metadata
@@ -7981,7 +7981,7 @@ FLAG DESCRIPTIONS
 
   -x, --manifest=<value>  File path for the manifest (package.xml) that specifies the components to retrieve.
 
-    If you specify this parameter, don’t specify --metadata or --source-dir.
+    If you specify this flag, don’t specify --metadata or --source-dir.
 
 CONFIGURATION VARIABLES
   target-org       Username or alias of the org that all commands run against by default. (sf only)
@@ -7992,7 +7992,7 @@ ENVIRONMENT VARIABLES
   SF_USE_PROGRESS_BAR  Set to false to disable the progress bar when running the metadata deploy command.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.8/src/commands/project/retrieve/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.15.9/src/commands/project/retrieve/start.ts)_
 
 ## `sf schema generate field`
 
