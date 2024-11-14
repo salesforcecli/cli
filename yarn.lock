@@ -614,20 +614,12 @@
     "@smithy/types" "^3.6.0"
     tslib "^2.6.2"
 
-"@aws-sdk/types@3.686.0":
+"@aws-sdk/types@3.686.0", "@aws-sdk/types@^3.222.0":
   version "3.686.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/types/-/types-3.686.0.tgz#01aa5307c727de9e69969c538f99ae8b53f1074f"
   integrity sha512-xFnrb3wxOoJcW2Xrh63ZgFo5buIu9DF7bOHnwoUxHdNpUXicUh0AHw85TjXxyxIAd0d1psY/DU7QHoNI3OswgQ==
   dependencies:
     "@smithy/types" "^3.6.0"
-    tslib "^2.6.2"
-
-"@aws-sdk/types@^3.222.0":
-  version "3.679.0"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/types/-/types-3.679.0.tgz#3737bb0f190add9e788b838a24cd5d8106dbed4f"
-  integrity sha512-NwVq8YvInxQdJ47+zz4fH3BRRLC6lL+WLkvr242PVBbUOLRyK/lkwHlfiKUoeVIMyK5NF+up6TRg71t/8Bny6Q==
-  dependencies:
-    "@smithy/types" "^3.5.0"
     tslib "^2.6.2"
 
 "@aws-sdk/util-arn-parser@3.679.0":
@@ -1701,10 +1693,10 @@
     proc-log "^5.0.0"
     which "^5.0.0"
 
-"@oclif/core@4.0.31", "@oclif/core@^4", "@oclif/core@^4.0.23", "@oclif/core@^4.0.27", "@oclif/core@^4.0.28", "@oclif/core@^4.0.30", "@oclif/core@^4.0.31", "@oclif/core@^4.0.6":
-  version "4.0.31"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.0.31.tgz#3f7ac806f27de6a87a7ee7caab8826687ce50412"
-  integrity sha512-7oyIZv/C1TP+fPc2tSzVPYqG1zU+nel1QvJxjAWyVhud0J8B5SpKZnryedxs3nlSVPJ6K1MT31C9esupCBYgZw==
+"@oclif/core@4.0.32", "@oclif/core@^4", "@oclif/core@^4.0.23", "@oclif/core@^4.0.27", "@oclif/core@^4.0.28", "@oclif/core@^4.0.30", "@oclif/core@^4.0.31", "@oclif/core@^4.0.6":
+  version "4.0.32"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.0.32.tgz#0e8078c53b079549d685798893b9f9534ca69bf6"
+  integrity sha512-O3jfIAhqaJxXI2dzF81PLTMhKpFFA0Nyz8kfBnc9WYDJnvdmXK0fVAOSpwpi2mHTow/9FXxY6Kww8+Kbe7/sag==
   dependencies:
     ansi-escapes "^4.3.2"
     ansis "^3.3.2"
@@ -2157,10 +2149,10 @@
     jszip "^3.10.1"
     object-treeify "^2"
 
-"@salesforce/plugin-apex@3.6.1":
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-apex/-/plugin-apex-3.6.1.tgz#fc8d67483b677af28402043dcc65470699539d15"
-  integrity sha512-FU9LVnAFjLZKg+1ukJQasyFAgFvzZlFXWd66/5yAwa+pcrILhOZ2hfHhOiaq9zfpzZqrHSbKr9Z6L2jKQS4SQQ==
+"@salesforce/plugin-apex@3.6.2":
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-apex/-/plugin-apex-3.6.2.tgz#ab6032e5f83264eb9f7eadb01528d663f97f3b90"
+  integrity sha512-OfLdtVHIC3LRlSKHEV2LiamuzXY+rnfhFWNzNGudAgU1sOqVJujbhpqjCdDetQy5+XfQo812XvEgKrix/g+ttg==
   dependencies:
     "@salesforce/apex-node" "^8.1.17"
     "@salesforce/core" "^8.6.4"
@@ -2285,17 +2277,18 @@
     got "^13.0.0"
     proxy-agent "^6.4.0"
 
-"@salesforce/plugin-org@5.1.4":
-  version "5.1.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-5.1.4.tgz#35f53cc54bf535f51eb5e2497217f254c0c4e55e"
-  integrity sha512-hlG+RM2xcD7xH5V1T4menTc3rvC2s65aKBaY1PxE5szduAYgFhd4V/kkpuRznhha4TYijz4+ERR/VRAFWFLRQw==
+"@salesforce/plugin-org@5.1.5":
+  version "5.1.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-5.1.5.tgz#cef5f5cf7e47fdbf8a3bb40bfc6e49248b277073"
+  integrity sha512-w1nUKIq5aEo03mumN+k0BDbhutMsehSt1QgKwKu7QLoUWRi5HxpnXE91/RLhr3raytEOBSVs+KQ8f9QEGWeHzg==
   dependencies:
     "@oclif/core" "^4.0.30"
     "@oclif/multi-stage-output" "^0.7.8"
     "@salesforce/core" "^8.6.4"
     "@salesforce/kit" "^3.2.3"
-    "@salesforce/sf-plugins-core" "^12.0.11"
-    "@salesforce/source-deploy-retrieve" "^12.10.1"
+    "@salesforce/sf-plugins-core" "^12.0.9"
+    "@salesforce/source-deploy-retrieve" "^12.8.1"
+    "@salesforce/ts-types" "^2.0.12"
     ansis "^3.2.0"
     change-case "^5.4.4"
     is-wsl "^3.1.0"
@@ -2436,7 +2429,7 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.9.0.tgz#ba477a112653a20b4edcf989c61c57bdff9aa3ca"
   integrity sha512-LiN37zG5ODT6z70sL1fxF7BQwtCX9JOWofSU8iliSNIM+WDEeinnoFtVqPInRSNt8I0RiJxIKCrqstsmQRBNvA==
 
-"@salesforce/sf-plugins-core@12.0.11", "@salesforce/sf-plugins-core@^12", "@salesforce/sf-plugins-core@^12.0.10", "@salesforce/sf-plugins-core@^12.0.11":
+"@salesforce/sf-plugins-core@12.0.11", "@salesforce/sf-plugins-core@^12", "@salesforce/sf-plugins-core@^12.0.10", "@salesforce/sf-plugins-core@^12.0.11", "@salesforce/sf-plugins-core@^12.0.9":
   version "12.0.11"
   resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-12.0.11.tgz#5837bc385cb8f057c4bc86b71ead71464ba5063b"
   integrity sha512-DYb54IeszQxcyl0N3e5qxSx3Vc571f36alZNE54qPqBTi9RAGEHQN4XR03dKLic0aNS/j4Z09RGH6YoH2zSL6A==
@@ -2470,7 +2463,7 @@
     string-width "^7.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/source-deploy-retrieve@^12.10.1", "@salesforce/source-deploy-retrieve@^12.7.4", "@salesforce/source-deploy-retrieve@^12.8.0":
+"@salesforce/source-deploy-retrieve@^12.10.1", "@salesforce/source-deploy-retrieve@^12.7.4", "@salesforce/source-deploy-retrieve@^12.8.0", "@salesforce/source-deploy-retrieve@^12.8.1":
   version "12.10.1"
   resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.10.1.tgz#bf20f2e92935ddc886b980c1b0d57e84ebe0f3ba"
   integrity sha512-X4iwRnC9rkbZnK6brbY3lydgbJK44x4e7Bl4EEPNi6SOPdzkKBqTh7TiR7I2ftY0iiBrH0zWHrWMiNeCtQMWbA==
@@ -2737,18 +2730,7 @@
     "@smithy/util-utf8" "^3.0.0"
     tslib "^2.6.2"
 
-"@smithy/credential-provider-imds@^3.2.4":
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/@smithy/credential-provider-imds/-/credential-provider-imds-3.2.4.tgz#e1a2bfc8a0066f673756ad8735247cf284b9735c"
-  integrity sha512-S9bb0EIokfYEuar4kEbLta+ivlKCWOCFsLZuilkNy9i0uEUEHSi47IFLPaxqqCl+0ftKmcOTHayY5nQhAuq7+w==
-  dependencies:
-    "@smithy/node-config-provider" "^3.1.8"
-    "@smithy/property-provider" "^3.1.7"
-    "@smithy/types" "^3.5.0"
-    "@smithy/url-parser" "^3.0.7"
-    tslib "^2.6.2"
-
-"@smithy/credential-provider-imds@^3.2.5":
+"@smithy/credential-provider-imds@^3.2.4", "@smithy/credential-provider-imds@^3.2.5":
   version "3.2.5"
   resolved "https://registry.yarnpkg.com/@smithy/credential-provider-imds/-/credential-provider-imds-3.2.5.tgz#dbfd849a4a7ebd68519cd9fc35f78d091e126d0a"
   integrity sha512-4FTQGAsuwqTzVMmiRVTn0RR9GrbRfkP0wfu/tXWVHd2LgNpTY0uglQpIScXK4NaEyXbB3JmZt8gfVqO50lP8wg==
@@ -2929,16 +2911,6 @@
     "@smithy/types" "^3.6.0"
     tslib "^2.6.2"
 
-"@smithy/node-config-provider@^3.1.8":
-  version "3.1.8"
-  resolved "https://registry.yarnpkg.com/@smithy/node-config-provider/-/node-config-provider-3.1.8.tgz#2c1092040b4062eae0f7c9e121cc00ac6a77efee"
-  integrity sha512-E0rU0DglpeJn5ge64mk8wTGEXcQwmpUTY5Zr7IzTpDLmHKiIamINERNZYrPQjg58Ck236sEKSwRSHA4CwshU6Q==
-  dependencies:
-    "@smithy/property-provider" "^3.1.7"
-    "@smithy/shared-ini-file-loader" "^3.1.8"
-    "@smithy/types" "^3.5.0"
-    tslib "^2.6.2"
-
 "@smithy/node-config-provider@^3.1.9":
   version "3.1.9"
   resolved "https://registry.yarnpkg.com/@smithy/node-config-provider/-/node-config-provider-3.1.9.tgz#d27ba8e4753f1941c24ed0af824dbc6c492f510a"
@@ -2960,15 +2932,7 @@
     "@smithy/types" "^3.6.0"
     tslib "^2.6.2"
 
-"@smithy/property-provider@^3.1.7":
-  version "3.1.7"
-  resolved "https://registry.yarnpkg.com/@smithy/property-provider/-/property-provider-3.1.7.tgz#8a304a4b9110a067a93c784e4c11e175f82da379"
-  integrity sha512-QfzLi1GPMisY7bAM5hOUqBdGYnY5S2JAlr201pghksrQv139f8iiiMalXtjczIP5f6owxFn3MINLNUNvUkgtPw==
-  dependencies:
-    "@smithy/types" "^3.5.0"
-    tslib "^2.6.2"
-
-"@smithy/property-provider@^3.1.8":
+"@smithy/property-provider@^3.1.7", "@smithy/property-provider@^3.1.8":
   version "3.1.8"
   resolved "https://registry.yarnpkg.com/@smithy/property-provider/-/property-provider-3.1.8.tgz#b1c5a3949effbb9772785ad7ddc5b4b235b10fbe"
   integrity sha512-ukNUyo6rHmusG64lmkjFeXemwYuKge1BJ8CtpVKmrxQxc6rhUX0vebcptFA9MmrGsnLhwnnqeH83VTU9hwOpjA==
@@ -2976,15 +2940,7 @@
     "@smithy/types" "^3.6.0"
     tslib "^2.6.2"
 
-"@smithy/protocol-http@^4.1.4":
-  version "4.1.4"
-  resolved "https://registry.yarnpkg.com/@smithy/protocol-http/-/protocol-http-4.1.4.tgz#6940d652b1825bda2422163ec9baab552669a338"
-  integrity sha512-MlWK8eqj0JlpZBnWmjQLqmFp71Ug00P+m72/1xQB3YByXD4zZ+y9N4hYrR0EDmrUCZIkyATWHOXFgtavwGDTzQ==
-  dependencies:
-    "@smithy/types" "^3.5.0"
-    tslib "^2.6.2"
-
-"@smithy/protocol-http@^4.1.5":
+"@smithy/protocol-http@^4.1.4", "@smithy/protocol-http@^4.1.5":
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/@smithy/protocol-http/-/protocol-http-4.1.5.tgz#a1f397440f299b6a5abeed6866957fecb1bf5013"
   integrity sha512-hsjtwpIemmCkm3ZV5fd/T0bPIugW1gJXwZ/hpuVubt2hEUApIoUTrf6qIdh9MAWlw0vjMrA1ztJLAwtNaZogvg==
@@ -2999,14 +2955,6 @@
   dependencies:
     "@smithy/types" "^3.6.0"
     "@smithy/util-uri-escape" "^3.0.0"
-    tslib "^2.6.2"
-
-"@smithy/querystring-parser@^3.0.7":
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/@smithy/querystring-parser/-/querystring-parser-3.0.7.tgz#936206d1e6da9d862384dae730b4bad042d6a948"
-  integrity sha512-Fouw4KJVWqqUVIu1gZW8BH2HakwLz6dvdrAhXeXfeymOBrZw+hcqaWs+cS1AZPVp4nlbeIujYrKA921ZW2WMPA==
-  dependencies:
-    "@smithy/types" "^3.5.0"
     tslib "^2.6.2"
 
 "@smithy/querystring-parser@^3.0.8":
@@ -3024,15 +2972,7 @@
   dependencies:
     "@smithy/types" "^3.6.0"
 
-"@smithy/shared-ini-file-loader@^3.1.8":
-  version "3.1.8"
-  resolved "https://registry.yarnpkg.com/@smithy/shared-ini-file-loader/-/shared-ini-file-loader-3.1.8.tgz#7a0bf5f20cfe8e0c4a36d8dcab8194d0d2ee958e"
-  integrity sha512-0NHdQiSkeGl0ICQKcJQ2lCOKH23Nb0EaAa7RDRId6ZqwXkw4LJyIyZ0t3iusD4bnKYDPLGy2/5e2rfUhrt0Acw==
-  dependencies:
-    "@smithy/types" "^3.5.0"
-    tslib "^2.6.2"
-
-"@smithy/shared-ini-file-loader@^3.1.9":
+"@smithy/shared-ini-file-loader@^3.1.8", "@smithy/shared-ini-file-loader@^3.1.9":
   version "3.1.9"
   resolved "https://registry.yarnpkg.com/@smithy/shared-ini-file-loader/-/shared-ini-file-loader-3.1.9.tgz#1b77852b5bb176445e1d80333fa3f739313a4928"
   integrity sha512-/+OsJRNtoRbtsX0UpSgWVxFZLsJHo/4sTr+kBg/J78sr7iC+tHeOvOJrS5hCpVQ6sWBbhWLp1UNiuMyZhE6pmA==
@@ -3067,27 +3007,11 @@
     "@smithy/util-stream" "^3.2.1"
     tslib "^2.6.2"
 
-"@smithy/types@^3.5.0":
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/@smithy/types/-/types-3.5.0.tgz#9589e154c50d9c5d00feb7d818112ef8fc285d6e"
-  integrity sha512-QN0twHNfe8mNJdH9unwsCK13GURU7oEAZqkBI+rsvpv1jrmserO+WnLE7jidR9W/1dxwZ0u/CB01mV2Gms/K2Q==
-  dependencies:
-    tslib "^2.6.2"
-
-"@smithy/types@^3.6.0":
+"@smithy/types@^3.5.0", "@smithy/types@^3.6.0":
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/@smithy/types/-/types-3.6.0.tgz#03a52bfd62ee4b7b2a1842c8ae3ada7a0a5ff3a4"
   integrity sha512-8VXK/KzOHefoC65yRgCn5vG1cysPJjHnOVt9d0ybFQSmJgQj152vMn4EkYhGuaOmnnZvCPav/KnYyE6/KsNZ2w==
   dependencies:
-    tslib "^2.6.2"
-
-"@smithy/url-parser@^3.0.7":
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/@smithy/url-parser/-/url-parser-3.0.7.tgz#9d7d7e4e38514bf75ade6e8a30d2300f3db17d1b"
-  integrity sha512-70UbSSR8J97c1rHZOWhl+VKiZDqHWxs/iW8ZHrHp5fCCPLSBE7GcUlUvKSle3Ca+J9LLbYCj/A79BxztBvAfpA==
-  dependencies:
-    "@smithy/querystring-parser" "^3.0.7"
-    "@smithy/types" "^3.5.0"
     tslib "^2.6.2"
 
 "@smithy/url-parser@^3.0.8":
@@ -3185,15 +3109,7 @@
   dependencies:
     tslib "^2.6.2"
 
-"@smithy/util-middleware@^3.0.7":
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/@smithy/util-middleware/-/util-middleware-3.0.7.tgz#770d09749b6d170a1641384a2e961487447446fa"
-  integrity sha512-OVA6fv/3o7TMJTpTgOi1H5OTwnuUa8hzRzhSFDtZyNxi6OZ70L/FHattSmhE212I7b6WSOJAAmbYnvcjTHOJCA==
-  dependencies:
-    "@smithy/types" "^3.5.0"
-    tslib "^2.6.2"
-
-"@smithy/util-middleware@^3.0.8":
+"@smithy/util-middleware@^3.0.7", "@smithy/util-middleware@^3.0.8":
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/@smithy/util-middleware/-/util-middleware-3.0.8.tgz#372bc7a2845408ad69da039d277fc23c2734d0c6"
   integrity sha512-p7iYAPaQjoeM+AKABpYWeDdtwQNxasr4aXQEA/OmbOaug9V0odRVDy3Wx4ci8soljE/JXQo+abV0qZpW8NX0yA==
