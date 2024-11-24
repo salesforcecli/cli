@@ -2393,13 +2393,13 @@
     "@pnpm/network.ca-file" "^1.0.1"
     config-chain "^1.1.11"
 
-"@salesforce/apex-node@^8.1.17", "@salesforce/apex-node@^8.1.9":
-  version "8.1.17"
-  resolved "https://registry.yarnpkg.com/@salesforce/apex-node/-/apex-node-8.1.17.tgz#d66e71cd9a1b8a22e9da8d012f79146e36862ddf"
-  integrity sha512-HtPVFrTG5XTtAt46k1yMkcsJLXuFrAex5Iz2nH1s0DLjXbNMahdxbvY139P3WXUeLlWRpeDlbjqYKyUXQiNE9w==
+"@salesforce/apex-node@^8.1.17", "@salesforce/apex-node@^8.1.18":
+  version "8.1.18"
+  resolved "https://registry.yarnpkg.com/@salesforce/apex-node/-/apex-node-8.1.18.tgz#1ee0c95092e76c255092f3a9a7618948f7e0d57a"
+  integrity sha512-sFBT1ZbFDSq8jLO67vKixpIFAueFdLGvhk9acTUszLI2q7UmzrH/q5qNZMhkTvofUqDmFtG479xCd5tJNPh3sA==
   dependencies:
     "@jsforce/jsforce-node" "^3.6.2"
-    "@salesforce/core" "^8.6.4"
+    "@salesforce/core" "^8.8.0"
     "@salesforce/kit" "^3.2.3"
     "@types/istanbul-reports" "^3.0.4"
     bfj "8.0.0"
@@ -2586,17 +2586,17 @@
     form-data "^4.0.0"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-deploy-retrieve@3.15.13":
-  version "3.15.13"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.15.13.tgz#e1902f36e4c98205e3c14651dd1d1a608cc8f691"
-  integrity sha512-Lt19+4ZBfnt2LFSVxRN7dkSnQIVxto/iIXCYj/6mBb5oCN6F/o4XfJzENagAhxqDJyOq6C4bj84tpaEQGYMBIQ==
+"@salesforce/plugin-deploy-retrieve@3.15.15":
+  version "3.15.15"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.15.15.tgz#9362c7617394ea412c74b9592482f80c663028a2"
+  integrity sha512-gM0QZh+/JpQIXn9Iz1EiYBf74Wd1ml3+VmVbFFvMlu1Z8AXCVvyGQ61w+yWuEl3U4uitOjaiP4IbolkSwYIqBg==
   dependencies:
     "@oclif/core" "^4.0.28"
     "@oclif/multi-stage-output" "^0.7.12"
-    "@salesforce/apex-node" "^8.1.9"
+    "@salesforce/apex-node" "^8.1.18"
     "@salesforce/core" "^8.6.4"
     "@salesforce/kit" "^3.2.3"
-    "@salesforce/plugin-info" "^3.4.18"
+    "@salesforce/plugin-info" "^3.4.21"
     "@salesforce/sf-plugins-core" "^12.0.11"
     "@salesforce/source-deploy-retrieve" "^12.10.1"
     "@salesforce/source-tracking" "^7.1.17"
@@ -2604,7 +2604,7 @@
     ansis "^3.3.2"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-info@3.4.21", "@salesforce/plugin-info@^3.4.18":
+"@salesforce/plugin-info@3.4.21", "@salesforce/plugin-info@^3.4.18", "@salesforce/plugin-info@^3.4.21":
   version "3.4.21"
   resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-3.4.21.tgz#b2d743216723e76020ef24b0d2e441cf4d98e61e"
   integrity sha512-fH7Mj/K+syDbywqy4OAmYLo9G6850o2ESP0ufhRFlid1PlV6KqXq9XyUA3PGj/0KBkcfMxgUuz000vAsUIjdMQ==
@@ -2734,16 +2734,16 @@
     fast-xml-parser "^4.5.0"
     js2xmlparser "^4.0.2"
 
-"@salesforce/plugin-telemetry@3.6.23":
-  version "3.6.23"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.6.23.tgz#6206c47a1b0a7f50c501977af6c1bc681568452d"
-  integrity sha512-yaSpE9Fs45UVNHUMw1MeZPJ9TryXKGNttob/BBEYJQGpuGzOz9XDpGqihAurZt7VkzTRGdph0qtWBj1rkipqaQ==
+"@salesforce/plugin-telemetry@3.6.25":
+  version "3.6.25"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.6.25.tgz#450af6447a3862984d3d3f916a05b4a445b6f3f8"
+  integrity sha512-ieLcoQM87GZIsQoyTTF50+akUyVAQjU3WmZS6reHdooptESVPv7SFm/mEyTBdTk+gyh8ZREjp8ihy1TfSKb5YQ==
   dependencies:
     "@oclif/core" "^4.0.32"
     "@salesforce/core" "^8.8.0"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/sf-plugins-core" "^12"
-    "@salesforce/telemetry" "^6.0.34"
+    "@salesforce/telemetry" "^6.0.38"
     "@salesforce/ts-types" "^2.0.11"
     debug "^4.3.7"
 
@@ -2861,12 +2861,12 @@
     isomorphic-git "^1.27.1"
     ts-retry-promise "^0.8.1"
 
-"@salesforce/telemetry@^6.0.34":
-  version "6.0.34"
-  resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-6.0.34.tgz#bd79b48685daa312d4c78b45acbc06971fa49dc7"
-  integrity sha512-YB8dmmUtiC297PxWX+bAANtTo569Xr3C7mj2YnRyevRZzb1tF5Oqjztz3saneWCQXr66vzqmXb7AJWRdxW4R7A==
+"@salesforce/telemetry@^6.0.38":
+  version "6.0.38"
+  resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-6.0.38.tgz#c33f909c66cba0209f66e548661aec60865caea2"
+  integrity sha512-CypenGpBjoewc6TmXJg886EfD/Fya0PsfacT9pFcs+wmE4eyFnBH/e1SIfZs3tBh5zHNTBJI0UnvIRzgssm2jQ==
   dependencies:
-    "@salesforce/core" "^8.6.2"
+    "@salesforce/core" "^8.8.0"
     "@salesforce/kit" "^3.2.3"
     applicationinsights "^2.9.6"
     got "^11"
