@@ -2081,10 +2081,10 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/multi-stage-output@^0.7.12", "@oclif/multi-stage-output@^0.7.14":
-  version "0.7.14"
-  resolved "https://registry.yarnpkg.com/@oclif/multi-stage-output/-/multi-stage-output-0.7.14.tgz#fbcf202fb09b3fe25b1048166c25301293dcf029"
-  integrity sha512-IjckiN0WRLi0cLjRTXiAHEBFgMsWRdA7yBKL2ejjKOq3EeFa+mwoO/WJA351YryVkWXwxwg28NH6VSsp9zDLMg==
+"@oclif/multi-stage-output@^0.7.12", "@oclif/multi-stage-output@^0.7.14", "@oclif/multi-stage-output@^0.7.15":
+  version "0.7.15"
+  resolved "https://registry.yarnpkg.com/@oclif/multi-stage-output/-/multi-stage-output-0.7.15.tgz#fe568e4db01d8d406bb735a120f1a6b4bb31213e"
+  integrity sha512-6qDhWbbUbdSFTEtwzWvVcEKvWY5E+ioECqS0UPOmwt2Nx1TdW1HZkHAmJ6P+4FheJhAJseFaD/hV6gdaYVwsaA==
   dependencies:
     "@oclif/core" "^4"
     "@types/react" "^18.3.12"
@@ -2568,13 +2568,13 @@
     debug "^4.3.4"
     handlebars "^4.7.8"
 
-"@salesforce/plugin-data@3.12.0":
-  version "3.12.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-3.12.0.tgz#2b84cc401cfcab5878d9d52a2312e89c788cb7ee"
-  integrity sha512-l32sgTmmda5Aksas48Xa6jcDvL9iuCcM/CEEaFl15tT4vBiEd1g1lUHTUQSvcHCW40+NwRGZoxL1x/FxPSfzAA==
+"@salesforce/plugin-data@3.12.1":
+  version "3.12.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-3.12.1.tgz#d74f72105ca5069dd7f86c860718e635fe8b3139"
+  integrity sha512-D/FUl4utkwt6Nhsnp7Y5ASlJNs+BexXLMXt+X9Wi5biX7RwJbHeWBqonsNLifar0j1JcfO21B4GkjowTZxNk2w==
   dependencies:
     "@jsforce/jsforce-node" "^3.6.3"
-    "@oclif/multi-stage-output" "^0.7.12"
+    "@oclif/multi-stage-output" "^0.7.15"
     "@salesforce/core" "^8.6.1"
     "@salesforce/kit" "^3.2.2"
     "@salesforce/sf-plugins-core" "^12.0.13"
