@@ -1850,6 +1850,22 @@
     node-fetch "^2.6.1"
     xml2js "^0.6.2"
 
+"@jsforce/jsforce-node@^3.6.3":
+  version "3.6.3"
+  resolved "https://registry.yarnpkg.com/@jsforce/jsforce-node/-/jsforce-node-3.6.3.tgz#a5c984b6deffac01ddabc3f4b48374408c5cd194"
+  integrity sha512-sNUeBzfUv57uH0AiYuAOO8yjBP7lNY33mWybrjvBud8gMFVWozY6UAWU1DUk/dpqZ0+FK3iqB++nOQRczj1nSg==
+  dependencies:
+    "@sindresorhus/is" "^4"
+    base64url "^3.0.1"
+    csv-parse "^5.5.2"
+    csv-stringify "^6.4.4"
+    faye "^1.4.0"
+    form-data "^4.0.0"
+    https-proxy-agent "^5.0.0"
+    multistream "^3.1.0"
+    node-fetch "^2.6.1"
+    xml2js "^0.6.2"
+
 "@microsoft/applicationinsights-web-snippet@1.0.1":
   version "1.0.1"
   resolved "https://registry.npmjs.org/@microsoft/applicationinsights-web-snippet/-/applicationinsights-web-snippet-1.0.1.tgz"
@@ -2643,6 +2659,24 @@
   dependencies:
     "@inquirer/input" "^2.3.0"
     "@jsforce/jsforce-node" "^3.6.2"
+    "@oclif/core" "^4"
+    "@salesforce/core" "^8.8.0"
+    "@salesforce/kit" "^3.2.3"
+    "@salesforce/sf-plugins-core" "^12"
+    got "^13.0.0"
+    marked "^4.3.0"
+    marked-terminal "^4.2.0"
+    open "^10.1.0"
+    proxy-agent "^6.4.0"
+    semver "^7.6.3"
+
+"@salesforce/plugin-info@^3.4.18":
+  version "3.4.25"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-3.4.25.tgz#6c823d7435a23964a8963655c5c70a9822d0fa08"
+  integrity sha512-E8sU/Ta5Vq9uqRPmM04Cjj836VW9sq82c6RIfghnXhsWIwLlfddW9kNwWU2FDbGkQSfig9OTIREShK3VbaK2kg==
+  dependencies:
+    "@inquirer/input" "^2.3.0"
+    "@jsforce/jsforce-node" "^3.6.3"
     "@oclif/core" "^4"
     "@salesforce/core" "^8.8.0"
     "@salesforce/kit" "^3.2.3"
