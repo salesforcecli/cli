@@ -1826,7 +1826,7 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@jsforce/jsforce-node@^3.5.1", "@jsforce/jsforce-node@^3.6.1", "@jsforce/jsforce-node@^3.6.2", "@jsforce/jsforce-node@^3.6.3":
+"@jsforce/jsforce-node@^3.5.1", "@jsforce/jsforce-node@^3.6.1", "@jsforce/jsforce-node@^3.6.3":
   version "3.6.3"
   resolved "https://registry.yarnpkg.com/@jsforce/jsforce-node/-/jsforce-node-3.6.3.tgz#a5c984b6deffac01ddabc3f4b48374408c5cd194"
   integrity sha512-sNUeBzfUv57uH0AiYuAOO8yjBP7lNY33mWybrjvBud8gMFVWozY6UAWU1DUk/dpqZ0+FK3iqB++nOQRczj1nSg==
@@ -2393,12 +2393,12 @@
     "@pnpm/network.ca-file" "^1.0.1"
     config-chain "^1.1.11"
 
-"@salesforce/apex-node@^8.1.18":
-  version "8.1.18"
-  resolved "https://registry.yarnpkg.com/@salesforce/apex-node/-/apex-node-8.1.18.tgz#1ee0c95092e76c255092f3a9a7618948f7e0d57a"
-  integrity sha512-sFBT1ZbFDSq8jLO67vKixpIFAueFdLGvhk9acTUszLI2q7UmzrH/q5qNZMhkTvofUqDmFtG479xCd5tJNPh3sA==
+"@salesforce/apex-node@^8.1.18", "@salesforce/apex-node@^8.1.19":
+  version "8.1.19"
+  resolved "https://registry.yarnpkg.com/@salesforce/apex-node/-/apex-node-8.1.19.tgz#1de67d0e66f2a6d568621eb9b40f4f9ef656cf2e"
+  integrity sha512-zW+C7/NIoNAxLw/CH0pKIu/qD7W0kaxHxFirxmiaXNZ2EoIAG1jPpRTCvDPODs+yeoxd5ls+j4EeJrEbuc2ceQ==
   dependencies:
-    "@jsforce/jsforce-node" "^3.6.2"
+    "@jsforce/jsforce-node" "^3.6.3"
     "@salesforce/core" "^8.8.0"
     "@salesforce/kit" "^3.2.3"
     "@types/istanbul-reports" "^3.0.4"
@@ -2513,12 +2513,12 @@
     jszip "^3.10.1"
     object-treeify "^2"
 
-"@salesforce/plugin-apex@3.6.6":
-  version "3.6.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-apex/-/plugin-apex-3.6.6.tgz#a330d618bdb51a44a733010ee3f25abc271a27d5"
-  integrity sha512-K4vF8yeWyEQxt+hrUmFOIsCu3w1hzjr8ZDJoJQdKj9EaR+C33VVOQpTw4yGE7i3lT4RWfA88tnGqbFD02PmW/w==
+"@salesforce/plugin-apex@3.6.7":
+  version "3.6.7"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-apex/-/plugin-apex-3.6.7.tgz#a39f28eafa837db7953a57e1e5f1fe2c31472732"
+  integrity sha512-kTFkbmsrtXhNtWaWIhezU7Y2qO4jMiYaWZtIwlHFjv69mVXQsPDVoiDv7JQXgwn6w59+sH1sVPBBx4kL/XCtPg==
   dependencies:
-    "@salesforce/apex-node" "^8.1.18"
+    "@salesforce/apex-node" "^8.1.19"
     "@salesforce/core" "^8.6.4"
     "@salesforce/kit" "^3.2.2"
     "@salesforce/sf-plugins-core" "^12"
