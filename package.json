@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.70.6",
+  "version": "2.70.7",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run.js",
@@ -97,6 +97,11 @@
       "preparse": "/dist/hooks/preparse"
     },
     "update": {
+      "node": {
+        "options": [
+          "--no-deprecation"
+        ]
+      },
       "s3": {
         "bucket": "dfc-data-production",
         "indexVersionLimit": 140,
