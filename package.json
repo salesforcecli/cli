@@ -97,6 +97,11 @@
       "preparse": "/dist/hooks/preparse"
     },
     "update": {
+      "node": {
+        "options": [
+          "--no-deprecation"
+        ]
+      },
       "s3": {
         "bucket": "dfc-data-production",
         "indexVersionLimit": 140,
