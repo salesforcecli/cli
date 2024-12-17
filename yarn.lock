@@ -614,20 +614,12 @@
     "@smithy/types" "^3.7.2"
     tslib "^2.6.2"
 
-"@aws-sdk/types@3.709.0":
+"@aws-sdk/types@3.709.0", "@aws-sdk/types@^3.222.0":
   version "3.709.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/types/-/types-3.709.0.tgz#f8d7ab07e253d3ed0e3b360e09fc67c7430a73b9"
   integrity sha512-ArtLTMxgjf13Kfu3gWH3Ez9Q5TkDdcRZUofpKH3pMGB/C6KAbeSCtIIDKfoRTUABzyGlPyCrZdnFjKyH+ypIpg==
   dependencies:
     "@smithy/types" "^3.7.2"
-    tslib "^2.6.2"
-
-"@aws-sdk/types@^3.222.0":
-  version "3.696.0"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/types/-/types-3.696.0.tgz#559c3df74dc389b6f40ba6ec6daffeab155330cd"
-  integrity sha512-9rTvUJIAj5d3//U5FDPWGJ1nFJLuWb30vugGOrWk7aNZ6y9tuA3PI7Cc9dP8WEXKVyK1vuuk8rSFP2iqXnlgrw==
-  dependencies:
-    "@smithy/types" "^3.7.1"
     tslib "^2.6.2"
 
 "@aws-sdk/util-arn-parser@3.693.0":
@@ -1738,6 +1730,19 @@
     react "^18.3.1"
     wrap-ansi "^9.0.0"
 
+"@oclif/multi-stage-output@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@oclif/multi-stage-output/-/multi-stage-output-0.8.0.tgz#868fcce009981afbb614b71246b80cd02c483782"
+  integrity sha512-B858dgCQPZWHRnzcU42t/cHq3u858UWMQk635qjn/lNlUpFDZKpoVgjVqLlGkQ9iEnqpwTXtyOXSYrLnPjVUeg==
+  dependencies:
+    "@oclif/core" "^4"
+    "@types/react" "^18.3.12"
+    cli-spinners "^2"
+    figures "^6.1.0"
+    ink "^5.1.0"
+    react "^18.3.1"
+    wrap-ansi "^9.0.0"
+
 "@oclif/plugin-autocomplete@3.2.14":
   version "3.2.14"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-autocomplete/-/plugin-autocomplete-3.2.14.tgz#10a380982ce4a9ec020f04a82b8bc9e93b4ebab6"
@@ -2212,10 +2217,10 @@
     debug "^4.3.7"
     handlebars "^4.7.8"
 
-"@salesforce/plugin-data@3.13.4":
-  version "3.13.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-3.13.4.tgz#47b1b983c544b5f0dcecc4b584b012d92fbf3c75"
-  integrity sha512-zXkFdVpbkIkjIANwTUHQ3Pm2p5SVke4QxxUpVD3nmGTWHufcAacSONyWaeSFtKId5BylqKJAoQLWjifH2UpRMg==
+"@salesforce/plugin-data@3.13.5":
+  version "3.13.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-3.13.5.tgz#856bcc92d2eb8986ebbc5c9dafa74a32a98fcc28"
+  integrity sha512-FlwD2H9qB2Y7kdztBYQ5AV7f+SvvbW9mg6YPkTgv9ukXa5+yKFNLSWiQ+IWR9XVnvUhHPPU15+WY5leYWi9Zlw==
   dependencies:
     "@jsforce/jsforce-node" "^3.6.3"
     "@oclif/multi-stage-output" "^0.7.15"
@@ -2230,13 +2235,13 @@
     form-data "^4.0.0"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-deploy-retrieve@3.15.22":
-  version "3.15.22"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.15.22.tgz#46335a6e4fe283668808358338a0c2fd02aa9c7c"
-  integrity sha512-O9G8PkNM/lxhB1rjaikoC1P8C8LWRnjHQCx2SzM0XFGMir/HnzKHVaMvVQTfl5HBovr1UUO7i2u+feqbcpv1FQ==
+"@salesforce/plugin-deploy-retrieve@3.16.0":
+  version "3.16.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.16.0.tgz#2c6b51d29f53d8ce9a2f968201b4cc4a29fd6ca3"
+  integrity sha512-YIw/jb+nJBWysc1A7fsCxiNeZS9gU3+q+/Hsf+/R6Hg2RwhqnXfpRTP0qk4GErWYxfqtJ8tdSYk7DKclWYjbPw==
   dependencies:
     "@oclif/core" "^4.0.37"
-    "@oclif/multi-stage-output" "^0.7.15"
+    "@oclif/multi-stage-output" "^0.8.0"
     "@salesforce/apex-node" "^8.1.18"
     "@salesforce/core" "^8.6.4"
     "@salesforce/kit" "^3.2.3"
@@ -3015,13 +3020,6 @@
     "@smithy/protocol-http" "^4.1.8"
     "@smithy/types" "^3.7.2"
     "@smithy/util-stream" "^3.3.2"
-    tslib "^2.6.2"
-
-"@smithy/types@^3.7.1":
-  version "3.7.1"
-  resolved "https://registry.yarnpkg.com/@smithy/types/-/types-3.7.1.tgz#4af54c4e28351e9101996785a33f2fdbf93debe7"
-  integrity sha512-XKLcLXZY7sUQgvvWyeaL/qwNPp6V3dWcUjqrQKjSb+tzYiCy340R/c64LV5j+Tnb2GhmunEX0eou+L+m2hJNYA==
-  dependencies:
     tslib "^2.6.2"
 
 "@smithy/types@^3.7.2":
