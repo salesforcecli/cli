@@ -1693,7 +1693,7 @@
     proc-log "^5.0.0"
     which "^5.0.0"
 
-"@oclif/core@4.2.0", "@oclif/core@^4", "@oclif/core@^4.0.27", "@oclif/core@^4.0.31", "@oclif/core@^4.0.34", "@oclif/core@^4.0.37", "@oclif/core@^4.2.0":
+"@oclif/core@4.2.0", "@oclif/core@^4", "@oclif/core@^4.0.27", "@oclif/core@^4.0.31", "@oclif/core@^4.0.34", "@oclif/core@^4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.2.0.tgz#ab78b247dfd66322d9c9376ebaf3764e3c82fefe"
   integrity sha512-ETM2N/GL7W37Kv1Afv1j1Gh77CynS2ubEPP+p+MnjUXEjghNe7+bKAWhPkHnBuFAVFAqdv0qMpUAjxKLbsmbJw==
@@ -1778,14 +1778,14 @@
     lodash "^4.17.21"
     object-treeify "^4.0.1"
 
-"@oclif/plugin-help@6.2.20", "@oclif/plugin-help@^6.2.17":
+"@oclif/plugin-help@6.2.20", "@oclif/plugin-help@^6.2.20":
   version "6.2.20"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-6.2.20.tgz#05de43a710f038419d3ded11a59e8481408a9e9e"
   integrity sha512-2l4A/erCAdBWmJwb1LJ7TvSMbBUQbGhIzkdHZb5DMgFJC+Nwfeol5YojqRMeciyGkoqmWPBGENwr0LJgZp2skw==
   dependencies:
     "@oclif/core" "^4"
 
-"@oclif/plugin-not-found@3.2.31", "@oclif/plugin-not-found@^3.2.30":
+"@oclif/plugin-not-found@3.2.31", "@oclif/plugin-not-found@^3.2.31":
   version "3.2.31"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-3.2.31.tgz#a8147ff0138523ab7e86eb098006a6831d6093f1"
   integrity sha512-EF3GmrenxqPLVCU75xLWbwohH1ot/yg+31vyPa4qJAkFspnmQ/Jv28afyk6q4ePcTA5lRC9PYqla5QsALngt3A==
@@ -1845,7 +1845,7 @@
     "@oclif/core" "^4"
     ansis "^3.3.1"
 
-"@oclif/plugin-warn-if-update-available@3.1.28", "@oclif/plugin-warn-if-update-available@^3.1.21":
+"@oclif/plugin-warn-if-update-available@3.1.28", "@oclif/plugin-warn-if-update-available@^3.1.28":
   version "3.1.28"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-3.1.28.tgz#61fc80da9ea819606711962d74686978f7c6039b"
   integrity sha512-15UI0yrzsodQLltntbUOmR7Nyd1tmUWzbcnR7QJvWMgEMuImNjqNdSaeXUFc3UBtaK266YatJYJWL5SCb/MTWw==
@@ -8678,20 +8678,20 @@ obliterator@^2.0.1, obliterator@^2.0.2:
   resolved "https://registry.npmjs.org/obliterator/-/obliterator-2.0.4.tgz"
   integrity sha512-lgHwxlxV1qIg1Eap7LgIeoBWIMFibOjbrYPIPJZcI1mmGAI2m3lNYpK12Y+GBdPQ0U1hRwSord7GIaawz962qQ==
 
-oclif@^4.16.5:
-  version "4.16.5"
-  resolved "https://registry.yarnpkg.com/oclif/-/oclif-4.16.5.tgz#4def1040fd0a8c940dc991f1a8ec3272656adb40"
-  integrity sha512-v89+wCfAO46tim33iJMzkXQprAArpnh5ZrAEAIZERrrlWFN1aU3zdosqbGGkUMe3TSxZT5CnTuFM7NN9ZhWeAw==
+oclif@^4.17.4:
+  version "4.17.4"
+  resolved "https://registry.yarnpkg.com/oclif/-/oclif-4.17.4.tgz#d435f6c95f6b6b19fb5cb0f35544f8b4f0e6a458"
+  integrity sha512-CELZOdxSfpM2Kl3dGP0N4fL4+RReGP18vo6oNklWoSP4ka+pJTBzO3W0o15KHAyrzpes5cui+xur3UPZIGr0LQ==
   dependencies:
     "@aws-sdk/client-cloudfront" "^3.699.0"
     "@aws-sdk/client-s3" "^3.712.0"
     "@inquirer/confirm" "^3.1.22"
     "@inquirer/input" "^2.2.4"
     "@inquirer/select" "^2.5.0"
-    "@oclif/core" "^4.0.37"
-    "@oclif/plugin-help" "^6.2.17"
-    "@oclif/plugin-not-found" "^3.2.30"
-    "@oclif/plugin-warn-if-update-available" "^3.1.21"
+    "@oclif/core" "^4.2.0"
+    "@oclif/plugin-help" "^6.2.20"
+    "@oclif/plugin-not-found" "^3.2.31"
+    "@oclif/plugin-warn-if-update-available" "^3.1.28"
     async-retry "^1.3.3"
     chalk "^4"
     change-case "^4"
