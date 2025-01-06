@@ -2204,18 +2204,18 @@
     debug "^4.3.7"
     handlebars "^4.7.8"
 
-"@salesforce/plugin-data@3.13.7":
-  version "3.13.7"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-3.13.7.tgz#300164a2dc2fa2d659243f3ca8ab1c0633bbbd00"
-  integrity sha512-gTc015vX6QadJLyOp4YxvuO3UH3z+qMpiStBTAMxnL6EIS2B/R6ws6YMP2K/Vi61kAg5h1mq5sCDK1NSZwHBtg==
+"@salesforce/plugin-data@3.13.9":
+  version "3.13.9"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-3.13.9.tgz#64d6a1d5fcbd4f8adc4b00b2ca03c4b2553f57f2"
+  integrity sha512-FckSvIB+NrMtcpHeN7XvRAPF8EnGtOGq/1Si66Mawql3XdFeUIc4pTPtqBbrjWixUIys50bwuDq/n4T9cvJuew==
   dependencies:
     "@jsforce/jsforce-node" "^3.6.3"
-    "@oclif/multi-stage-output" "^0.8.0"
+    "@oclif/multi-stage-output" "^0.8.1"
     "@salesforce/core" "^8.6.1"
     "@salesforce/kit" "^3.2.2"
     "@salesforce/sf-plugins-core" "^12.1.1"
     "@salesforce/ts-types" "^2.0.11"
-    ansis "^3.4.0"
+    ansis "^3.6.0"
     change-case "^5.4.4"
     csv-parse "^5.6.0"
     csv-stringify "^6.5.2"
@@ -2277,19 +2277,19 @@
     got "^13.0.0"
     proxy-agent "^6.4.0"
 
-"@salesforce/plugin-org@5.2.14":
-  version "5.2.14"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-5.2.14.tgz#de1b1bf219b5e1baa8ceaa2923d21fc4dc263ca4"
-  integrity sha512-9azNcUWpZdIqEF0beDPoRKmH1spx8MT5WLH6mHJgU5wbKQ+Y3bMZcE5cJoaMRuijjWM4iK8XV/UIB44tsclczA==
+"@salesforce/plugin-org@5.2.16":
+  version "5.2.16"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-5.2.16.tgz#687c56ed44f19bd890b97f1bc6622a4bc9d7cbd1"
+  integrity sha512-Cp5RR6sji8afGp+F7EDIToLK3nX/3NBKDdQivr2QLn97mLqrAuEaDvn9FdxGWxUFMHE3tI4+cDqcuRUEbOhqSA==
   dependencies:
-    "@oclif/core" "^4.0.34"
+    "@oclif/core" "^4.2.0"
     "@oclif/multi-stage-output" "^0.8.1"
     "@salesforce/core" "^8.6.4"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/sf-plugins-core" "^12.1.1"
     "@salesforce/source-deploy-retrieve" "^12.10.3"
     "@salesforce/ts-types" "^2.0.12"
-    ansis "^3.4.0"
+    ansis "^3.5.2"
     change-case "^5.4.4"
     is-wsl "^3.1.0"
     open "^10.1.0"
@@ -3656,10 +3656,10 @@ ansicolors@~0.3.2:
   resolved "https://registry.npmjs.org/ansicolors/-/ansicolors-0.3.2.tgz"
   integrity sha512-QXu7BPrP29VllRxH8GwB7x5iX5qWKAAMLqKQGWTeLWVlNHNOpVMJ91dsxQAIWXpjuW5wqvxu3Jd/nRjrJ+0pqg==
 
-ansis@^3.2.0, ansis@^3.3.0, ansis@^3.3.1, ansis@^3.3.2, ansis@^3.4.0, ansis@^3.5.2:
-  version "3.5.2"
-  resolved "https://registry.yarnpkg.com/ansis/-/ansis-3.5.2.tgz#d7a1f95a23f6becc5ee16fab85cda41c898fad96"
-  integrity sha512-5uGcUZRbORJeEppVdWfZOSybTMz+Ou+84HepgK081Yk5+pPMMzWf/XGxiAT6bfBqCghRB4MwBtYn0CHqINRVag==
+ansis@^3.2.0, ansis@^3.3.0, ansis@^3.3.1, ansis@^3.3.2, ansis@^3.4.0, ansis@^3.5.2, ansis@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/ansis/-/ansis-3.6.0.tgz#f4d8437fb27659bf5a6adca90135801919dee764"
+  integrity sha512-8KluYVZM+vx19f5rInhdEBdIAjvBp7ASzyF/DoStcDpMJ3JOM55ybvUcs9nMRVP8XN2K3ABBdO7zCXezvrT0pg==
 
 anymatch@~3.1.2:
   version "3.1.3"
