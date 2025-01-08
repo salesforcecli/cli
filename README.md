@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.72.20 linux-x64 node-v22.12.0
+@salesforce/cli/2.72.21 linux-x64 node-v22.12.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -6363,7 +6363,7 @@ FLAG DESCRIPTIONS
     If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.16.6/src/commands/project/convert/mdapi.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.17.0/src/commands/project/convert/mdapi.ts)_
 
 ## `sf project convert source`
 
@@ -6436,7 +6436,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.16.6/src/commands/project/convert/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.17.0/src/commands/project/convert/source.ts)_
 
 ## `sf project convert source-behavior`
 
@@ -6494,7 +6494,7 @@ EXAMPLES
     $ sf project convert source-behavior --behavior decomposePermissionSetBeta --dry-run --preserve-temp-dir
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.16.6/src/commands/project/convert/source-behavior.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.17.0/src/commands/project/convert/source-behavior.ts)_
 
 ## `sf project delete source`
 
@@ -6634,7 +6634,7 @@ FLAG DESCRIPTIONS
     - Separate the test names with spaces: --tests Test1 Test2 "Test With Space"
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.16.6/src/commands/project/delete/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.17.0/src/commands/project/delete/source.ts)_
 
 ## `sf project delete tracking`
 
@@ -6671,7 +6671,7 @@ EXAMPLES
     $ sf project delete tracking --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.16.6/src/commands/project/delete/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.17.0/src/commands/project/delete/tracking.ts)_
 
 ## `sf project deploy cancel`
 
@@ -6743,7 +6743,7 @@ FLAG DESCRIPTIONS
     project deploy report".
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.16.6/src/commands/project/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.17.0/src/commands/project/deploy/cancel.ts)_
 
 ## `sf project deploy preview`
 
@@ -6826,7 +6826,7 @@ FLAG DESCRIPTIONS
     All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.16.6/src/commands/project/deploy/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.17.0/src/commands/project/deploy/preview.ts)_
 
 ## `sf project deploy quick`
 
@@ -6919,7 +6919,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.16.6/src/commands/project/deploy/quick.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.17.0/src/commands/project/deploy/quick.ts)_
 
 ## `sf project deploy report`
 
@@ -7011,7 +7011,7 @@ FLAG DESCRIPTIONS
     --coverage-formatters lcov --coverage-formatters clover
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.16.6/src/commands/project/deploy/report.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.17.0/src/commands/project/deploy/report.ts)_
 
 ## `sf project deploy resume`
 
@@ -7108,7 +7108,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.16.6/src/commands/project/deploy/resume.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.17.0/src/commands/project/deploy/resume.ts)_
 
 ## `sf project deploy start`
 
@@ -7361,7 +7361,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.16.6/src/commands/project/deploy/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.17.0/src/commands/project/deploy/start.ts)_
 
 ## `sf project deploy validate`
 
@@ -7551,7 +7551,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.16.6/src/commands/project/deploy/validate.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.17.0/src/commands/project/deploy/validate.ts)_
 
 ## `sf project generate`
 
@@ -7664,8 +7664,9 @@ Create a project manifest that lists the metadata components you want to deploy 
 
 ```
 USAGE
-  $ sf project generate manifest [--json] [--flags-dir <value>] [--api-version <value>] [-m <value>...] [-p <value>...] [-n
-    <value> | -t pre|post|destroy|package] [-c managed|unlocked... --from-org <value>] [-d <value>]
+  $ sf project generate manifest [--json] [--flags-dir <value>] [--api-version <value>] [-m <value>... | -p <value>...] [-n
+    <value> | -t pre|post|destroy|package] [-c managed|unlocked... --from-org <value>] [--excluded-metadata <value>... ]
+    [-d <value>]
 
 FLAGS
   -c, --include-packages=<option>...  Package types (managed, unlocked) whose metadata is included in the manifest; by
@@ -7679,6 +7680,8 @@ FLAGS
   -t, --type=<option>                 Type of manifest to create; the type determines the name of the created file.
                                       <options: pre|post|destroy|package>
       --api-version=<value>           Override the api version used for api requests made by this command
+      --excluded-metadata=<value>...  Metadata types to exclude when building a manifest from an org. Specify the name
+                                      of the type, not the name of a specific component.
       --from-org=<value>              Username or alias of the org that contains the metadata components from which to
                                       build a manifest.
 
@@ -7711,6 +7714,14 @@ DESCRIPTION
   multiple names separated by spaces. Enclose names that contain spaces in one set of double quotes. The same syntax
   applies to --include-packages and --source-dir.
 
+  To build a manifest from the metadata in an org, use the --from-org flag. You can combine --from-org with the
+  --metadata flag to include only certain metadata types, or with the --excluded-metadata flag to exclude certain
+  metadata types. When building a manifest from an org, the command makes many concurrent API calls to discover the
+  metadata that exists in the org. To limit the number of concurrent requests, use the SF_LIST_METADATA_BATCH_SIZE
+  environment variable and set it to a size that works best for your org and environment. If you experience timeouts or
+  inconsistent manifest contents, then setting this environment variable can improve accuracy. However, the command
+  takes longer to run because it sends fewer requests at a time.
+
 ALIASES
   $ sf force source manifest create
 
@@ -7731,9 +7742,17 @@ EXAMPLES
   Create a manifest from the metadata components in the specified org and include metadata in any unlocked packages:
 
     $ sf project generate manifest --from-org test@myorg.com --include-packages unlocked
+
+  Create a manifest from specific metadata types in an org:
+
+    $ sf project generate manifest --from-org test@myorg.com --metadata ApexClass,CustomObject,CustomLabels
+
+  Create a manifest from all metadata components in an org excluding specific metadata types:
+
+    $ sf project generate manifest --from-org test@myorg.com --excluded-metadata StandardValueSet
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.16.6/src/commands/project/generate/manifest.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.17.0/src/commands/project/generate/manifest.ts)_
 
 ## `sf project list ignored`
 
@@ -7775,7 +7794,7 @@ EXAMPLES
     $ sf project list ignored --source-dir package.xml
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.16.6/src/commands/project/list/ignored.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.17.0/src/commands/project/list/ignored.ts)_
 
 ## `sf project reset tracking`
 
@@ -7824,7 +7843,7 @@ EXAMPLES
     $ sf project reset tracking --revision 30
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.16.6/src/commands/project/reset/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.17.0/src/commands/project/reset/tracking.ts)_
 
 ## `sf project retrieve preview`
 
@@ -7878,7 +7897,7 @@ FLAG DESCRIPTIONS
     production orgs.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.16.6/src/commands/project/retrieve/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.17.0/src/commands/project/retrieve/preview.ts)_
 
 ## `sf project retrieve start`
 
@@ -8055,7 +8074,7 @@ ENVIRONMENT VARIABLES
   SF_USE_PROGRESS_BAR  Set to false to disable the progress bar when running the metadata deploy command.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.16.6/src/commands/project/retrieve/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.17.0/src/commands/project/retrieve/start.ts)_
 
 ## `sf schema generate field`
 
