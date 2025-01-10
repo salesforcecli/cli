@@ -30,12 +30,15 @@ jobs:
       - name: upload to CLI s3
         id: upload
         run: |
+          # Temp disable exit on error
+          set +e
           # Run script and redirect stderr to stdout
           OUTPUT=$(node scripts/stampy-signed-upload.js 2>&1)
+          set -e
 
-          # Check for non-zero exit code and stop the workflow if an error occured
+          # Check for non-zero exit code and stop the workflow if an error occurred
           if [ $? -ne 0 ]; then
-            echo "An error occured:"
+            echo "An error occurred:"
             echo $OUTPUT
             exit 1
           fi
