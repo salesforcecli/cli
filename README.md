@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.73.4 linux-x64 node-v22.12.0
+@salesforce/cli/2.73.5 linux-x64 node-v22.12.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -8627,7 +8627,7 @@ EXAMPLES
     $ sf which "foo bar baz"
 ```
 
-_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.2.24/src/commands/which.ts)_
+_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.2.25/src/commands/which.ts)_
 
 <!-- commandsstop -->
 
