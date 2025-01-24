@@ -19,7 +19,7 @@ RUN mkdir /usr/local/lib/nodejs \
 ENV PATH=/usr/local/lib/nodejs/bin:$PATH
 RUN npm install --global @salesforce/cli@${SF_CLI_VERSION}
 
-RUN apt-get update && apt-get install --assume-yes openjdk-11-jdk-headless jq
+RUN apt-get update && apt-get install --assume-yes openjdk-11-jdk-headless python3.10 jq
 RUN apt-get autoremove --assume-yes \
   && apt-get clean --assume-yes \
   && rm -rf /var/lib/apt/lists/*
