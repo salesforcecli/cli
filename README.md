@@ -24,7 +24,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.77.2 linux-x64 node-v22.13.1
+@salesforce/cli/2.77.3 linux-x64 node-v22.13.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -213,7 +213,7 @@ EXAMPLES
     $ sf alias list
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.14/src/commands/alias/list.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.16/src/commands/alias/list.ts)_
 
 ## `sf alias set`
 
@@ -262,7 +262,7 @@ EXAMPLES
     $ sf alias set my-scratch-org test-ss0xut7txzxf@example.com
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.14/src/commands/alias/set.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.16/src/commands/alias/set.ts)_
 
 ## `sf alias unset`
 
@@ -302,7 +302,7 @@ EXAMPLES
     $ sf alias unset --all [--no-prompt]
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.14/src/commands/alias/unset.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.16/src/commands/alias/unset.ts)_
 
 ## `sf analytics generate template`
 
@@ -1083,7 +1083,7 @@ DESCRIPTION
   List all sf commands.
 ```
 
-_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/4.1.19/src/commands/commands.ts)_
+_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/4.1.20/src/commands/commands.ts)_
 
 ## `sf config get`
 
@@ -1132,7 +1132,7 @@ CONFIGURATION VARIABLES
   org-capitalize-record-types    Whether record types are capitalized on scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.14/src/commands/config/get.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.16/src/commands/config/get.ts)_
 
 ## `sf config list`
 
@@ -1172,7 +1172,7 @@ EXAMPLES
     $ sf config list
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.14/src/commands/config/list.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.16/src/commands/config/list.ts)_
 
 ## `sf config set`
 
@@ -1241,7 +1241,7 @@ CONFIGURATION VARIABLES
   org-capitalize-record-types    Whether record types are capitalized on scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.14/src/commands/config/set.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.16/src/commands/config/set.ts)_
 
 ## `sf config unset`
 
@@ -1291,7 +1291,7 @@ CONFIGURATION VARIABLES
   org-capitalize-record-types    Whether record types are capitalized on scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.14/src/commands/config/unset.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.16/src/commands/config/unset.ts)_
 
 ## `sf data bulk results`
 
@@ -3855,7 +3855,7 @@ EXAMPLES
     $ sf org list auth
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.92/src/commands/org/list/auth.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.93/src/commands/org/list/auth.ts)_
 
 ## `sf org list limits`
 
@@ -4155,7 +4155,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.92/src/commands/org/login/access-token.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.93/src/commands/org/login/access-token.ts)_
 
 ## `sf org login device`
 
@@ -4215,7 +4215,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.92/src/commands/org/login/device.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.93/src/commands/org/login/device.ts)_
 
 ## `sf org login jwt`
 
@@ -4306,7 +4306,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.92/src/commands/org/login/jwt.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.93/src/commands/org/login/jwt.ts)_
 
 ## `sf org login sfdx-url`
 
@@ -4376,7 +4376,7 @@ EXAMPLES
   $ echo url | sf org login sfdx-url --sfdx-url-stdin
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.92/src/commands/org/login/sfdx-url.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.93/src/commands/org/login/sfdx-url.ts)_
 
 ## `sf org login web`
 
@@ -4463,7 +4463,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.92/src/commands/org/login/web.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.93/src/commands/org/login/web.ts)_
 
 ## `sf org logout`
 
@@ -4524,7 +4524,7 @@ FLAG DESCRIPTIONS
     All orgs includes Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.92/src/commands/org/logout.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.93/src/commands/org/logout.ts)_
 
 ## `sf org open`
 
@@ -6085,7 +6085,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.30/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.31/src/commands/plugins/index.ts)_
 
 ## `sf plugins discover`
 
@@ -6130,7 +6130,7 @@ EXAMPLES
   $ sf plugins inspect @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.30/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.31/src/commands/plugins/inspect.ts)_
 
 ## `sf plugins install PLUGIN`
 
@@ -6179,7 +6179,7 @@ EXAMPLES
     $ sf plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.30/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.31/src/commands/plugins/install.ts)_
 
 ## `sf plugins link PATH`
 
@@ -6210,7 +6210,7 @@ EXAMPLES
   $ sf plugins link @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.30/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.31/src/commands/plugins/link.ts)_
 
 ## `sf plugins reset`
 
@@ -6225,7 +6225,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.30/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.31/src/commands/plugins/reset.ts)_
 
 ## `sf plugins trust verify`
 
@@ -6282,7 +6282,7 @@ EXAMPLES
   $ sf plugins uninstall @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.30/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.31/src/commands/plugins/uninstall.ts)_
 
 ## `sf plugins update`
 
@@ -6300,7 +6300,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.30/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.31/src/commands/plugins/update.ts)_
 
 ## `sf project convert mdapi`
 
