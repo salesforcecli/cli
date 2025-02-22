@@ -2011,7 +2011,7 @@
     strip-ansi "6.0.1"
     ts-retry-promise "^0.8.1"
 
-"@salesforce/core@^8.2.3", "@salesforce/core@^8.5.1", "@salesforce/core@^8.6.2", "@salesforce/core@^8.6.4", "@salesforce/core@^8.8.0", "@salesforce/core@^8.8.1", "@salesforce/core@^8.8.2":
+"@salesforce/core@^8.2.3", "@salesforce/core@^8.5.1", "@salesforce/core@^8.6.4", "@salesforce/core@^8.8.0", "@salesforce/core@^8.8.1", "@salesforce/core@^8.8.2":
   version "8.8.2"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.8.2.tgz#0fc1632cc183b8c62e333f1f884bf3ee0f4aee6e"
   integrity sha512-EOH75R2Nr2tg7b3gbyzRNwZPfZ/dZOpmMKmFHKL9oCtUI59+N4IkVljg6dpKYypVKuJJTzjI7T2ibnA8/cluZg==
@@ -2079,13 +2079,13 @@
   dependencies:
     "@salesforce/ts-types" "^2.0.12"
 
-"@salesforce/packaging@^4.2.15":
-  version "4.2.15"
-  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-4.2.15.tgz#f45767565d9b8bba956317dab48458cd5c301043"
-  integrity sha512-Ci7c0FakuniYlbTmztgtRNQJPbvfSa89JGDtozsAvpz7pOYbR+EWPZQ7Owc/eqlvnjPIXoW5mjiRvo/A3pqX+Q==
+"@salesforce/packaging@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-4.3.0.tgz#ac1fe07621726542c517160a8453e7ac8c6da312"
+  integrity sha512-THeBJAdCeEpRfLhBHWK53uySWHlsYmf+VRsOKR7/KHHn9nk/NrLxK8woJGX1IA/ZQssaBgqu/bjPDz0KHlxC0w==
   dependencies:
     "@jsforce/jsforce-node" "^3.5.1"
-    "@salesforce/core" "^8.6.2"
+    "@salesforce/core" "^8.8.2"
     "@salesforce/kit" "^3.2.2"
     "@salesforce/schemas" "^1.9.0"
     "@salesforce/source-deploy-retrieve" "^12.8.0"
@@ -2172,17 +2172,17 @@
     form-data "^4.0.0"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-deploy-retrieve@3.20.1":
-  version "3.20.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.20.1.tgz#d3290a492d2a0d4aefdd84c75f6a507e22164b30"
-  integrity sha512-N5DN3o8e8E2VRrHgAuQtraY8KyUUWLKvppRxoCAsqw10SOW0X0mQldWcgW0fyXWo7LFRItcjdl9AxR2+7CeRJQ==
+"@salesforce/plugin-deploy-retrieve@3.20.2":
+  version "3.20.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.20.2.tgz#495745fe522c8ad707a2c868e9f83299b4e7641f"
+  integrity sha512-W9vWpbC0QZtXgHkmwfJhT6qrQPAj1jI7KavuKvGKifschCJxvx/Wu2ul3zsblx76SeVaRhHHI/f1slmgyfCrww==
   dependencies:
     "@oclif/core" "^4.2.6"
     "@oclif/multi-stage-output" "^0.8.7"
     "@salesforce/apex-node" "^8.1.19"
     "@salesforce/core" "^8.8.2"
     "@salesforce/kit" "^3.2.3"
-    "@salesforce/plugin-info" "^3.4.37"
+    "@salesforce/plugin-info" "^3.4.40"
     "@salesforce/sf-plugins-core" "^12.1.4"
     "@salesforce/source-deploy-retrieve" "^12.15.0"
     "@salesforce/source-tracking" "^7.3.15"
@@ -2190,7 +2190,7 @@
     ansis "^3.4.0"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-info@3.4.40", "@salesforce/plugin-info@^3.4.37", "@salesforce/plugin-info@^3.4.39":
+"@salesforce/plugin-info@3.4.40", "@salesforce/plugin-info@^3.4.39", "@salesforce/plugin-info@^3.4.40":
   version "3.4.40"
   resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-3.4.40.tgz#be1b6a94c901b6dbd7cf47e3561210c46578d901"
   integrity sha512-hZ9nNVgAeo68rh8mOSiQyww9hziGrQCbXKkD4t4bTDOpy2FAQ29ZrJLh5JwxiovY73js4bNWpuiVXR5KG7LNvw==
@@ -2245,15 +2245,15 @@
     open "^10.1.0"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-packaging@2.9.18":
-  version "2.9.18"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.9.18.tgz#2ca1359014e819c097647da76386bd2debd7064f"
-  integrity sha512-qGISUAfjnWH5ysPyEXOnHehsHk0wfGLxSaVzvGCdULJ9MNLbpPqWIKjBGiXOwc4xr4YB82DFN8N6JX71yn85gQ==
+"@salesforce/plugin-packaging@2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.10.0.tgz#aa2f7b884f83fa9fcbbf91b16a2c6bdd19fc8217"
+  integrity sha512-0QbaEun8jzvpe0Jvnln3z6YhZRvUMN4J7gB4O4UiwA1muXRYI2YtZ1V9KBdCu3iTiLLG7ovHSP2qsh7L8ePVAg==
   dependencies:
     "@oclif/core" "^4"
     "@salesforce/core" "^8.8.2"
     "@salesforce/kit" "^3.2.3"
-    "@salesforce/packaging" "^4.2.15"
+    "@salesforce/packaging" "^4.3.0"
     "@salesforce/sf-plugins-core" "^12.1.4"
     chalk "^5.4.1"
 
