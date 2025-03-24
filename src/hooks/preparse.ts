@@ -96,13 +96,8 @@ const hook: Hook.Preparse = async function ({ argv, options, context }) {
         }
         const crlf = contents.search('\r\n') !== -1;
 
-        let values;
-
-        if (crlf) {
-          values = ext === '.json' ? [JSON.stringify(JSON.parse(contents))] : contents?.trim().split('\r\n');
-        } else {
-          values = ext === '.json' ? [JSON.stringify(JSON.parse(contents))] : contents?.trim().split('\n');
-        }
+        const values =
+          ext === '.json' ? [JSON.stringify(JSON.parse(contents))] : contents?.trim().split(crlf ? '\r\n' : '\n');
 
         return [name, values] satisfies [string, string[]];
       })
