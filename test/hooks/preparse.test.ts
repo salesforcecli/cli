@@ -293,5 +293,37 @@ describe('preparse hook test', () => {
         'thing3',
       ]);
     });
+
+    it('should handle single value with carriage return and new line', async () => {
+      const argv = [...baseArgs];
+      const flags = {
+        ...baseFlags,
+        str: Flags.string(),
+      };
+      makeStubs([{ name: 'str', content: 'value\r\n' }]);
+      const results = await config.runHook('preparse', { argv, options: { flags } });
+      expect(results.successes[0]).to.be.ok;
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '--str', 'value']);
+    });
+
+    it('should add values split by carriage return and new line', async () => {
+      const argv = [...baseArgs, '--multiple', 'thing1'];
+      const flags = {
+        ...baseFlags,
+        multiple: Flags.string({ multiple: true }),
+      };
+      makeStubs([{ name: 'multiple', content: 'thing2\r\nthing3' }]);
+      const results = await config.runHook('preparse', { argv, options: { flags } });
+      expect(results.successes[0]).to.be.ok;
+      expect(results.successes[0].result).to.deep.equal([
+        ...baseArgs,
+        '--multiple',
+        'thing1',
+        '--multiple',
+        'thing2',
+        '--multiple',
+        'thing3',
+      ]);
+    });
   });
 });

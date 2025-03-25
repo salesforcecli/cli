@@ -94,7 +94,11 @@ const hook: Hook.Preparse = async function ({ argv, options, context }) {
         if (contents === undefined) {
           return [name, undefined] satisfies [string, undefined];
         }
-        const values = ext === '.json' ? [JSON.stringify(JSON.parse(contents))] : contents?.trim().split('\n');
+        const crlf = contents.search('\r\n') !== -1;
+
+        const values =
+          ext === '.json' ? [JSON.stringify(JSON.parse(contents))] : contents?.trim().split(crlf ? '\r\n' : '\n');
+
         return [name, values] satisfies [string, string[]];
       })
   );
