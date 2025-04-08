@@ -99,5 +99,5 @@ jobs:
       - name: Run NUT (with retries)
         uses: salesforcecli/github-workflows/.github/actions/retry@main
         with:
-          retry_wait_seconds: 1
+          retry_wait_seconds: 1800
           command: ${{ inputs.command }}
