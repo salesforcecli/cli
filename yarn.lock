@@ -2162,10 +2162,10 @@
     form-data "^4.0.2"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-deploy-retrieve@3.21.3":
-  version "3.21.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.21.3.tgz#8c3e2356c2fe17e070241147f44035d85ddafe1e"
-  integrity sha512-cYkvkkA07KJSUojQnLJjK9Fl2gLhCS7Spmfe7ZCy0jqj/JUj9FNYZuQ7FDNkRVE7dsdcRORgcGiKxbJyxhvS1A==
+"@salesforce/plugin-deploy-retrieve@3.22.0":
+  version "3.22.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.22.0.tgz#510ebb6e33a5c4f8c3ecb02dddad7d3868e140e8"
+  integrity sha512-9mywc3MR6ui61KOZmFP3lht2sU+oUv/zu3cR0wQBBPSzjwgxjAEgQTjDMVY1oaaZM30g1SL9OHgEXIvIwvoXCQ==
   dependencies:
     "@inquirer/prompts" "^7.3.3"
     "@oclif/core" "^4.2.10"
@@ -2175,7 +2175,7 @@
     "@salesforce/kit" "^3.2.3"
     "@salesforce/plugin-info" "^3.4.47"
     "@salesforce/sf-plugins-core" "^12.2.1"
-    "@salesforce/source-deploy-retrieve" "^12.18.2"
+    "@salesforce/source-deploy-retrieve" "^12.19.0"
     "@salesforce/source-tracking" "^7.3.19"
     "@salesforce/ts-types" "^2.0.12"
     ansis "^3.17.0"
@@ -2404,10 +2404,10 @@
     string-width "^7.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/source-deploy-retrieve@^12.16.9", "@salesforce/source-deploy-retrieve@^12.18.2":
-  version "12.18.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.18.3.tgz#b03d6341b5945bafd00a4d88aecaa561f7d19b01"
-  integrity sha512-a+AmOs+FX5nnv0XW9Pgfxfruw9Aemq3PQIBfeyhKIplPvIkQXpJaX0MDUFWWjuqUox6jC3mGm2bcPBtkos/7ow==
+"@salesforce/source-deploy-retrieve@^12.16.9", "@salesforce/source-deploy-retrieve@^12.18.2", "@salesforce/source-deploy-retrieve@^12.19.0":
+  version "12.19.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.19.0.tgz#bd7edd9d8ad7e1784f8e6685ebc939603e6fe8a1"
+  integrity sha512-gaLC+0J7Lr52jBN5ZiGwoVTDqh0xCwfnYo1l9E6uTeFmgc0wRu2vL9XBvO5cJGjWLu/OKCSyJHyv5zi+NjmfyA==
   dependencies:
     "@salesforce/core" "^8.8.7"
     "@salesforce/kit" "^3.2.3"
