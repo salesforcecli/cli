@@ -101,7 +101,7 @@ jobs:
   # Working example: https://github.com/iowillhoit/gha-sandbox/blob/main/.github/workflows/needing-an-optional-job-alternate.yml
   open-ctc-or-skip:
     needs: [build-s3-channel]
-    runs-on: static-ip-ubuntu-runners
+    runs-on: static-ip-ubuntu-24-runners
     outputs:
       changeCaseId: ${{ steps.open-ctc.outputs.changeCaseId }}
     steps:
