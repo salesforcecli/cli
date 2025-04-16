@@ -2162,10 +2162,10 @@
     form-data "^4.0.2"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-deploy-retrieve@3.22.3":
-  version "3.22.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.22.3.tgz#c66c8b937dd376c31a7066adc0a9a962458b0d16"
-  integrity sha512-1iS1GKUcNh/Aogi987Nxh5Ob/0A0ozaBAU4yBbNCvIy64Sh1dmh0gDtw5/PqHz6EnbOBBW2L2mGCCvKKXPUh5A==
+"@salesforce/plugin-deploy-retrieve@3.22.4":
+  version "3.22.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.22.4.tgz#98d010d7177d3cfec2949e9db7db87fcaa2eec34"
+  integrity sha512-gpbJfIAUQTfFL6rtxQuREaz/CrrqrIzR7oNhzMeOZFN6Dky03LnKuQDMTFCEGzTJpiSStJ7RGb36I0rtTv7WZA==
   dependencies:
     "@inquirer/prompts" "^7.4.1"
     "@oclif/core" "^4.2.10"
@@ -2175,7 +2175,7 @@
     "@salesforce/kit" "^3.2.3"
     "@salesforce/plugin-info" "^3.4.51"
     "@salesforce/sf-plugins-core" "^12.2.1"
-    "@salesforce/source-deploy-retrieve" "^12.19.0"
+    "@salesforce/source-deploy-retrieve" "^12.19.2"
     "@salesforce/source-tracking" "^7.3.20"
     "@salesforce/ts-types" "^2.0.12"
     ansis "^3.17.0"
@@ -2404,10 +2404,10 @@
     string-width "^7.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/source-deploy-retrieve@^12.16.9", "@salesforce/source-deploy-retrieve@^12.19.0":
-  version "12.19.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.19.0.tgz#bd7edd9d8ad7e1784f8e6685ebc939603e6fe8a1"
-  integrity sha512-gaLC+0J7Lr52jBN5ZiGwoVTDqh0xCwfnYo1l9E6uTeFmgc0wRu2vL9XBvO5cJGjWLu/OKCSyJHyv5zi+NjmfyA==
+"@salesforce/source-deploy-retrieve@^12.16.9", "@salesforce/source-deploy-retrieve@^12.19.0", "@salesforce/source-deploy-retrieve@^12.19.2":
+  version "12.19.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.19.2.tgz#0a58e5825491fddf2b23619ef7bc6fd6ea42d035"
+  integrity sha512-pnWFhQrPPbv+gsTm0u3hst0vzttQL6Tm+ogGKUbtM+yrLNurSfvlRyNoJowu4tHAyWL1aSpBKxPa7DwB/vy0RQ==
   dependencies:
     "@salesforce/core" "^8.8.7"
     "@salesforce/kit" "^3.2.3"
