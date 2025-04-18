@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.85.6 linux-x64 node-v22.14.0
+@salesforce/cli/2.85.7 linux-x64 node-v22.14.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -1084,7 +1084,7 @@ DESCRIPTION
   List all sf commands.
 ```
 
-_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/4.1.23/src/commands/commands.ts)_
+_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/4.1.24/src/commands/commands.ts)_
 
 ## `sf config get`
 
