@@ -1955,10 +1955,10 @@
     strip-ansi "6.0.1"
     ts-retry-promise "^0.8.1"
 
-"@salesforce/core@^8.5.1", "@salesforce/core@^8.8.0", "@salesforce/core@^8.8.1", "@salesforce/core@^8.8.5", "@salesforce/core@^8.8.6", "@salesforce/core@^8.8.7", "@salesforce/core@^8.9.0", "@salesforce/core@^8.9.1":
-  version "8.9.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.9.1.tgz#e31d307d495cc0b916c0b9312fba751714034e0a"
-  integrity sha512-Q1evH4WD7IYWgbcIYCUDi3FTEMgy1KLVg4Xa4GacKLNcOBfom5s6whNsz3gUFESqjndGDwV5Pbgpi0ImC17PfQ==
+"@salesforce/core@^8.10.0", "@salesforce/core@^8.5.1", "@salesforce/core@^8.8.0", "@salesforce/core@^8.8.1", "@salesforce/core@^8.8.5", "@salesforce/core@^8.8.6", "@salesforce/core@^8.8.7", "@salesforce/core@^8.9.0", "@salesforce/core@^8.9.1":
+  version "8.10.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.10.0.tgz#017fe618b1dd086298d1133a6ed0f509d56ea495"
+  integrity sha512-gStIzB8wPjjwyKZCK8eSfwkLiv9h9qzP64b51U5THBskEjm6Sw6ZyWqZmCzA85FEZ/IM/n1nh4e3R9JoG6Z6mA==
   dependencies:
     "@jsforce/jsforce-node" "^3.7.0"
     "@salesforce/kit" "^3.2.2"
@@ -2190,13 +2190,13 @@
     open "^10.1.1"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-packaging@2.13.1":
-  version "2.13.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.13.1.tgz#2bd9b062b3b6f2d972a8e4a89b8dd5194afd5c2b"
-  integrity sha512-DN3fetWD0D98khzrAFQiz6flLhr9BhEFjPFMyP3+oEWMYYRD5Ij2Bvz5UYvMCJYKrl7KjjWYpiGSh9F69qxjJA==
+"@salesforce/plugin-packaging@2.13.2":
+  version "2.13.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.13.2.tgz#ab16003acccb465e66176c8dc236bfd7b7a664d7"
+  integrity sha512-gx8s0fsv4GBhC+bIRdUX+86iYFd148R/VwznRwTgAjsyabTla1Da69cUKYKo/SEtrqLaIn0x/hheyiPf6Ysqbw==
   dependencies:
     "@oclif/core" "^4"
-    "@salesforce/core" "^8.9.1"
+    "@salesforce/core" "^8.10.0"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/packaging" "^4.5.0"
     "@salesforce/sf-plugins-core" "^12.2.1"
@@ -2239,13 +2239,13 @@
     "@salesforce/core" "^8.9.0"
     "@salesforce/sf-plugins-core" "^11.3.12"
 
-"@salesforce/plugin-settings@2.4.24":
-  version "2.4.24"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-settings/-/plugin-settings-2.4.24.tgz#d5bc3696c14340c5cc08b437df1e9c72c637fa2c"
-  integrity sha512-GqiJdiSVUtL8/5Oig+/3TyPl1EgbivTvJIGt1kASNRQZjrr6V571v96NexO0fRu2gDrThUSvR0CpQhSnfjropA==
+"@salesforce/plugin-settings@2.4.25":
+  version "2.4.25"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-settings/-/plugin-settings-2.4.25.tgz#b8d33ca0828ae68ee2423f8dd8288e7047fa5bcb"
+  integrity sha512-oJlySkH5zku2zf/z8jugEYX4aVTZgFrosChMIHmuU6s90bXD4byrslp1lTrGguVFXpmy9iKmKcv+ci0x3V1/9Q==
   dependencies:
     "@oclif/core" "^4"
-    "@salesforce/core" "^8.9.1"
+    "@salesforce/core" "^8.10.0"
     "@salesforce/sf-plugins-core" "^12.2.1"
     fast-levenshtein "^3.0.0"
 
@@ -2265,13 +2265,13 @@
     fast-xml-parser "^4.5.3"
     js2xmlparser "^4.0.2"
 
-"@salesforce/plugin-telemetry@3.6.38":
-  version "3.6.38"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.6.38.tgz#51d29ec8a218e271daaeb09ea3c6de097005d6c6"
-  integrity sha512-iiMKqc+h5B4lz8HynHZyOmKhyi7WhUKj89r8waRIHW068FJGhDKNWHxMWQqfe1re9rrBbA2wVFm4uRkTf+rANA==
+"@salesforce/plugin-telemetry@3.6.39":
+  version "3.6.39"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.6.39.tgz#8f3060ba4056208164abf3751c179acdd83a2a88"
+  integrity sha512-XwIBrZeCVGQ+VoSHqEXDjcYEEMmJYC7I6rPP0fWYIBMOGBWrOXClAIWOdA8naw5B6X3iAJMiNervADzHzt0ivw==
   dependencies:
     "@oclif/core" "^4.2.7"
-    "@salesforce/core" "^8.8.7"
+    "@salesforce/core" "^8.10.0"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/sf-plugins-core" "^12"
     "@salesforce/telemetry" "^6.0.39"
@@ -2287,13 +2287,13 @@
     "@salesforce/sf-plugins-core" "^12"
     "@salesforce/templates" "^62.0.5"
 
-"@salesforce/plugin-trust@3.7.83", "@salesforce/plugin-trust@^3.7.69":
-  version "3.7.83"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-3.7.83.tgz#ce3dd1acfa6bdbafaec540081ac2c7e3fd6bb458"
-  integrity sha512-WalTJOQBpoKJbY2yVeesFZmwr3CrFi8MnRjjqlIu4ySk0zK2NYAip2WD2kCWdUTR0egrvjnt8dyfCh/ws8gy6A==
+"@salesforce/plugin-trust@3.7.84", "@salesforce/plugin-trust@^3.7.69":
+  version "3.7.84"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-3.7.84.tgz#1095853bff5307a05d3a149306b92b2e8441e649"
+  integrity sha512-CxNpi4kSLN18QzHGWMxvD8SbLG1qIBmBNq5k0Udu4Ajya0edjJU9D/+UVA2czE5wryc/Mc1kbjX7K8YUz3WulA==
   dependencies:
     "@oclif/core" "^4"
-    "@salesforce/core" "^8.9.1"
+    "@salesforce/core" "^8.10.0"
     "@salesforce/kit" "^3.2.0"
     "@salesforce/plugin-info" "^3.4.53"
     "@salesforce/sf-plugins-core" "^12"
