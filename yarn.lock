@@ -2116,13 +2116,13 @@
     form-data "^4.0.2"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-deploy-retrieve@3.22.10":
-  version "3.22.10"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.22.10.tgz#240d6d5d9549278e508b96580a02a7d6d290952e"
-  integrity sha512-QE4qRJ9+kv4VxCDho35fUXf4mwdlmqKw9QgQTphmVahAcotyf3Jlep0LFsCn8u//IE/ZlW0vH9eBHAzfnIqXnw==
+"@salesforce/plugin-deploy-retrieve@3.22.11":
+  version "3.22.11"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.22.11.tgz#f5f2a33b3023b742c6357fe2a8f9a280d0a933b8"
+  integrity sha512-8YjIeSypGewT4/KHoKqIKiqAOKIj6jB5dyVhogOVBoGd3qP50rIQBgUYngcC9DSlZ6LyAUeEU8auqDmFVEPfmQ==
   dependencies:
     "@inquirer/prompts" "^7.4.1"
-    "@oclif/core" "^4.2.10"
+    "@oclif/core" "^4.3.0"
     "@oclif/multi-stage-output" "^0.8.12"
     "@salesforce/apex-node" "^8.1.24"
     "@salesforce/core" "^8.8.7"
@@ -2324,16 +2324,16 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.9.0.tgz#ba477a112653a20b4edcf989c61c57bdff9aa3ca"
   integrity sha512-LiN37zG5ODT6z70sL1fxF7BQwtCX9JOWofSU8iliSNIM+WDEeinnoFtVqPInRSNt8I0RiJxIKCrqstsmQRBNvA==
 
-"@salesforce/sf-plugins-core@12.2.1", "@salesforce/sf-plugins-core@^12", "@salesforce/sf-plugins-core@^12.0.13", "@salesforce/sf-plugins-core@^12.2.0", "@salesforce/sf-plugins-core@^12.2.1":
-  version "12.2.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-12.2.1.tgz#1048a5d1245f07f0e864f0f76e8818fd21a84fe6"
-  integrity sha512-b3eRSzGO0weBLL1clHaJNgNP1aKkD1Qy2DQEc0ieteEm+fh1FfPA0QpJ9rh/hdmkJRip2x2R2zz9tflJ0wflbg==
+"@salesforce/sf-plugins-core@12.2.2", "@salesforce/sf-plugins-core@^12", "@salesforce/sf-plugins-core@^12.0.13", "@salesforce/sf-plugins-core@^12.2.0", "@salesforce/sf-plugins-core@^12.2.1":
+  version "12.2.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-12.2.2.tgz#41e704e47ba997dcb6922ab9563aa19407079c85"
+  integrity sha512-LuNT1kzi0N185xhCBCOU9P650CwoehiICB2lCP1RsO98NqfHTRpD6Rq1TDQtLTudOh3pDUFZTgo8kt4qwz20yw==
   dependencies:
     "@inquirer/confirm" "^3.1.22"
     "@inquirer/password" "^2.2.0"
-    "@oclif/core" "^4.2.10"
+    "@oclif/core" "^4.3.0"
     "@oclif/table" "^0.4.6"
-    "@salesforce/core" "^8.8.5"
+    "@salesforce/core" "^8.10.0"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/ts-types" "^2.0.12"
     ansis "^3.3.2"
