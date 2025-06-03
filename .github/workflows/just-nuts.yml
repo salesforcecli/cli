@@ -23,6 +23,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         repository:
+          # - salesforcecli/plugin-agent
           - salesforcecli/plugin-auth
           - salesforcecli/plugin-apex
           - salesforcecli/plugin-api
@@ -51,7 +52,6 @@ jobs:
           - salesforcecli/plugin-community
           - salesforcecli/plugin-dev
           - salesforcecli/plugin-signups
-          # - salesforcecli/plugin-agent
           # - salesforce/plugin-devops-center
           # - salesforce/sfdx-plugin-lwc-test
           # - salesforce/sfdx-scanner
