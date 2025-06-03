@@ -12,7 +12,8 @@ import { Config } from '@oclif/core/config';
 
 function sanitize(stderr: string): string {
   return stderr
-    .replaceAll(' ›   ', ' ')
+    .replaceAll('›   ', ' ')
+    .replaceAll('»   ', ' ')
     .split('\n')
     .map((s) => s.trim())
     .join(' ');
