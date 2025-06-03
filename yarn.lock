@@ -1101,7 +1101,7 @@
     "@inquirer/core" "^10.1.13"
     "@inquirer/type" "^3.0.7"
 
-"@inquirer/core@^10.1.13":
+"@inquirer/core@^10.1.13", "@inquirer/core@^10.1.6":
   version "10.1.13"
   resolved "https://registry.yarnpkg.com/@inquirer/core/-/core-10.1.13.tgz#8f1ecfaba288fd2d705c7ac0690371464cf687b0"
   integrity sha512-1viSxebkYN2nJULlzCxES6G9/stgHSepZ9LqqfdIGPHj5OHhiBUXVS0a6R0bEC2A+VL4D9w6QB66ebCr6HGllA==
@@ -1218,7 +1218,7 @@
     "@inquirer/type" "^3.0.7"
     ansi-escapes "^4.3.2"
 
-"@inquirer/prompts@^7.5.3":
+"@inquirer/prompts@^7.2.0", "@inquirer/prompts@^7.5.3":
   version "7.5.3"
   resolved "https://registry.yarnpkg.com/@inquirer/prompts/-/prompts-7.5.3.tgz#2b4c705a79658cf534fc5a5dba780a153f3cd83d"
   integrity sha512-8YL0WiV7J86hVAxrh3fE5mDCzcTDe1670unmJRz6ArDgN+DBK1a0+rbnNWp4DUB5rPMwqD5ZP6YHl9KK1mbZRg==
@@ -1622,6 +1622,19 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
+"@oclif/multi-stage-output@^0.7.12":
+  version "0.7.18"
+  resolved "https://registry.yarnpkg.com/@oclif/multi-stage-output/-/multi-stage-output-0.7.18.tgz#20010d85e52a01c559b651cb1f6f151c702dbcd2"
+  integrity sha512-lWFih9hXnDIdSYnB0sJTea9WK7SAmSljUh5YZcK7fKdwtPwM0sfW+Vtl+mDU83pXdd9SrXPnKzC3F7N+CdM9Rg==
+  dependencies:
+    "@oclif/core" "^4"
+    "@types/react" "^18.3.12"
+    cli-spinners "^2"
+    figures "^6.1.0"
+    ink "^5.1.0"
+    react "^18.3.1"
+    wrap-ansi "^9.0.0"
+
 "@oclif/multi-stage-output@^0.8.13":
   version "0.8.13"
   resolved "https://registry.yarnpkg.com/@oclif/multi-stage-output/-/multi-stage-output-0.8.13.tgz#66b69d97f85c182ca402726fad998449dc356d47"
@@ -1923,6 +1936,19 @@
     "@pnpm/network.ca-file" "^1.0.1"
     config-chain "^1.1.11"
 
+"@salesforce/agents@0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/agents/-/agents-0.15.0.tgz#0cec640cef0f02714bfa8cf842239c9d00e6ca15"
+  integrity sha512-chshRBql+Yxm68vl2vI3BlmJdIBvyxVcj9WqlXQ51XwtzIsC64JSXZ1maybf05tdLQQiq+y8Z+b9/Vn6bfzvyw==
+  dependencies:
+    "@salesforce/core" "^8.10.3"
+    "@salesforce/kit" "^3.2.3"
+    "@salesforce/source-deploy-retrieve" "^12.19.5"
+    "@salesforce/types" "^1.3.0"
+    fast-xml-parser "^4.5.3"
+    nock "^13.5.6"
+    yaml "^2.7.1"
+
 "@salesforce/apex-node@^8.1.27", "@salesforce/apex-node@^8.1.29":
   version "8.1.29"
   resolved "https://registry.yarnpkg.com/@salesforce/apex-node/-/apex-node-8.1.29.tgz#0dfe704584df7c36fac194f78e9f2ac3a5a2744c"
@@ -1959,6 +1985,30 @@
   version "8.11.4"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.11.4.tgz#e4f049351540a46e12bb5c1b6574232fd4d1288b"
   integrity sha512-6jrACrCmpic7mrnp4XQ6tiyx5FvHs101dQ2v+m8+aHF97036bul+GeeYuSjVp3ASh0sjR5CotYf7R65chd4H+A==
+  dependencies:
+    "@jsforce/jsforce-node" "^3.8.2"
+    "@salesforce/kit" "^3.2.2"
+    "@salesforce/schemas" "^1.9.0"
+    "@salesforce/ts-types" "^2.0.10"
+    ajv "^8.17.1"
+    change-case "^4.1.2"
+    fast-levenshtein "^3.0.0"
+    faye "^1.4.0"
+    form-data "^4.0.0"
+    js2xmlparser "^4.0.1"
+    jsonwebtoken "9.0.2"
+    jszip "3.10.1"
+    pino "^9.7.0"
+    pino-abstract-transport "^1.2.0"
+    pino-pretty "^11.3.0"
+    proper-lockfile "^4.1.2"
+    semver "^7.6.3"
+    ts-retry-promise "^0.8.1"
+
+"@salesforce/core@^8.10.2":
+  version "8.12.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.12.0.tgz#a458cc3e39f4e7df57d94f0deaaa0fd0660b18c9"
+  integrity sha512-LJIjoQ3UQJ1r/xxdQcaG5bU8MfxeO/LJhrfK/7LZeHVtp1iOIgedbwPuVNzTzYciDWh8elborarrPM4uWjtu5g==
   dependencies:
     "@jsforce/jsforce-node" "^3.8.2"
     "@salesforce/kit" "^3.2.2"
@@ -2042,6 +2092,29 @@
     graphology-types "^0.24.7"
     jszip "^3.10.1"
     object-treeify "^2"
+
+"@salesforce/plugin-agent@^1.22.6":
+  version "1.22.6"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-agent/-/plugin-agent-1.22.6.tgz#3276ef5b62ea2b8f90d98da9980ef38d9567aab9"
+  integrity sha512-6UVUUqONdNjOkZFXFRU4pq4CCG/B+R420ABGZTxs4XtmXEceHc3DzZzlEI41KwE2tjJxjf4hiGpz9nUrW8I+uw==
+  dependencies:
+    "@inquirer/core" "^10.1.6"
+    "@inquirer/prompts" "^7.2.0"
+    "@oclif/core" "^4"
+    "@oclif/multi-stage-output" "^0.7.12"
+    "@salesforce/agents" "0.15.0"
+    "@salesforce/core" "^8.10.2"
+    "@salesforce/kit" "^3.2.3"
+    "@salesforce/sf-plugins-core" "^12.2.0"
+    "@salesforce/source-deploy-retrieve" "^12.19.3"
+    "@salesforce/types" "^1.3.0"
+    ansis "^3.3.2"
+    fast-xml-parser "^4.5.1"
+    ink "5.0.1"
+    ink-text-input "^6.0.0"
+    inquirer-autocomplete-standalone "^0.8.1"
+    react "^18.3.1"
+    yaml "^2.7.0"
 
 "@salesforce/plugin-apex@3.6.19":
   version "3.6.19"
@@ -2364,6 +2437,27 @@
   integrity sha512-VlAHMEOkZsMD6WxUhtOt+dDD6uEiJ5V07+JM9S0qvlAzu4FdlOn4mLCi/z9jYjMSY9O+3Iz5W9dPo99i3LKOaw==
   dependencies:
     "@salesforce/core" "^8.11.0"
+    "@salesforce/kit" "^3.2.3"
+    "@salesforce/ts-types" "^2.0.12"
+    "@salesforce/types" "^1.3.0"
+    fast-levenshtein "^3.0.0"
+    fast-xml-parser "^4.5.3"
+    got "^11.8.6"
+    graceful-fs "^4.2.11"
+    ignore "^5.3.2"
+    isbinaryfile "^5.0.2"
+    jszip "^3.10.1"
+    mime "2.6.0"
+    minimatch "^9.0.5"
+    proxy-agent "^6.4.0"
+    yaml "^2.7.1"
+
+"@salesforce/source-deploy-retrieve@^12.19.3", "@salesforce/source-deploy-retrieve@^12.19.5":
+  version "12.19.8"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.19.8.tgz#68432867e35beb97a1572713ecbdd5e4a93bd4ce"
+  integrity sha512-CcjBReC3riYFYWXUaUn0Y0iis8PwEDl1dJclBv7kpTzMmxh7AP4PL0PFpL2lfD9ASdV21KhCriQo0/xO1ZhznA==
+  dependencies:
+    "@salesforce/core" "^8.11.4"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/ts-types" "^2.0.12"
     "@salesforce/types" "^1.3.0"
@@ -5351,6 +5445,11 @@ es-to-primitive@^1.2.1:
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
 
+es-toolkit@^1.22.0:
+  version "1.38.0"
+  resolved "https://registry.yarnpkg.com/es-toolkit/-/es-toolkit-1.38.0.tgz#f2c7351fec545dde5545500f1c64c805b7f5e7ff"
+  integrity sha512-OT3AxczYYd3W50bCj4V0hKoOAfqIy9tof0leNQYekEDxVKir3RTVTJOLij7VAe6fsCNsGhC0JqIkURpMXTCSEA==
+
 es6-error@^4.0.1:
   version "4.1.1"
   resolved "https://registry.npmjs.org/es6-error/-/es6-error-4.1.1.tgz"
@@ -5755,7 +5854,7 @@ fast-xml-parser@4.4.1:
   dependencies:
     strnum "^1.0.5"
 
-fast-xml-parser@^4.5.0, fast-xml-parser@^4.5.3:
+fast-xml-parser@^4.5.0, fast-xml-parser@^4.5.1, fast-xml-parser@^4.5.3:
   version "4.5.3"
   resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-4.5.3.tgz#c54d6b35aa0f23dc1ea60b6c884340c006dc6efb"
   integrity sha512-RKihhV+SHsIUGXObeVy9AXiBbFwkVk7Syp8XgwN5U3JV416+Gwp/GO9i0JYKmikykgz/UHRrrV4ROuZEo/T0ig==
@@ -6714,6 +6813,14 @@ init-package-json@^7.0.2:
     validate-npm-package-license "^3.0.4"
     validate-npm-package-name "^6.0.0"
 
+ink-text-input@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/ink-text-input/-/ink-text-input-6.0.0.tgz#71bdfacbfd161fbaff88bb8ca6b3a55dbc3d36e0"
+  integrity sha512-Fw64n7Yha5deb1rHY137zHTAbSTNelUKuB5Kkk2HACXEtwIHBCf9OH2tP/LQ9fRYTl1F0dZgbW0zPnZk6FA9Lw==
+  dependencies:
+    chalk "^5.3.0"
+    type-fest "^4.18.2"
+
 ink@5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/ink/-/ink-5.0.1.tgz#f2ef9796a3911830c3995dedd227ec84ae27de4b"
@@ -6743,6 +6850,36 @@ ink@5.0.1:
     wrap-ansi "^9.0.0"
     ws "^8.15.0"
     yoga-wasm-web "~0.3.3"
+
+ink@^5.1.0:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/ink/-/ink-5.2.1.tgz#b9ea59f0d1eab2b4566903b35b54fd34323d1694"
+  integrity sha512-BqcUyWrG9zq5HIwW6JcfFHsIYebJkWWb4fczNah1goUO0vv5vneIlfwuS85twyJ5hYR/y18FlAYUxrO9ChIWVg==
+  dependencies:
+    "@alcalzone/ansi-tokenize" "^0.1.3"
+    ansi-escapes "^7.0.0"
+    ansi-styles "^6.2.1"
+    auto-bind "^5.0.1"
+    chalk "^5.3.0"
+    cli-boxes "^3.0.0"
+    cli-cursor "^4.0.0"
+    cli-truncate "^4.0.0"
+    code-excerpt "^4.0.0"
+    es-toolkit "^1.22.0"
+    indent-string "^5.0.0"
+    is-in-ci "^1.0.0"
+    patch-console "^2.0.0"
+    react-reconciler "^0.29.0"
+    scheduler "^0.23.0"
+    signal-exit "^3.0.7"
+    slice-ansi "^7.1.0"
+    stack-utils "^2.0.6"
+    string-width "^7.2.0"
+    type-fest "^4.27.0"
+    widest-line "^5.0.0"
+    wrap-ansi "^9.0.0"
+    ws "^8.18.0"
+    yoga-layout "~3.2.1"
 
 inquirer-autocomplete-standalone@^0.8.1:
   version "0.8.1"
@@ -6914,6 +7051,11 @@ is-in-ci@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/is-in-ci/-/is-in-ci-0.1.0.tgz#5e07d6a02ec3a8292d3f590973357efa3fceb0d3"
   integrity sha512-d9PXLEY0v1iJ64xLiQMJ51J128EYHAaOR4yZqQi8aHGfw6KgifM3/Viw1oZZ1GCVmb3gBuyhLyHj0HgR2DhSXQ==
+
+is-in-ci@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/is-in-ci/-/is-in-ci-1.0.0.tgz#9a86bbda7e42c6129902e0574c54b018fbb6ab88"
+  integrity sha512-eUuAjybVTHMYWm/U+vBO1sY/JOCgoPCXRxzdju0K+K0BiGW0SChEL1MLC0PoCIR1OlPo5YAp8HuQoUlsWEICwg==
 
 is-inside-container@^1.0.0:
   version "1.0.0"
@@ -8353,6 +8495,15 @@ no-case@^3.0.4:
     lower-case "^2.0.2"
     tslib "^2.0.3"
 
+nock@^13.5.6:
+  version "13.5.6"
+  resolved "https://registry.yarnpkg.com/nock/-/nock-13.5.6.tgz#5e693ec2300bbf603b61dae6df0225673e6c4997"
+  integrity sha512-o2zOYiCpzRqSzPj0Zt/dQ/DqZeYoaQ7TUonc/xUPjCGl9WeHpNbxgVvOquXYAaJzI0M9BXV3HTzG0p8IUAbBTQ==
+  dependencies:
+    debug "^4.1.0"
+    json-stringify-safe "^5.0.1"
+    propagate "^2.0.0"
+
 node-emoji@^1.10.0:
   version "1.11.0"
   resolved "https://registry.npmjs.org/node-emoji/-/node-emoji-1.11.0.tgz"
@@ -9357,6 +9508,11 @@ promzard@^2.0.0:
   dependencies:
     read "^4.0.0"
 
+propagate@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/propagate/-/propagate-2.0.1.tgz#40cdedab18085c792334e64f0ac17256d38f9a45"
+  integrity sha512-vGrhOavPSTz4QVNuBNdcNXePNdNMaO1xj9yBeH1ScQPjk/rhg9sSlCXPhMkFuaNNW/syTvYqsnbIJxMBfRbbag==
+
 proper-lockfile@^4.1.2:
   version "4.1.2"
   resolved "https://registry.npmjs.org/proper-lockfile/-/proper-lockfile-4.1.2.tgz"
@@ -10310,16 +10466,7 @@ static-eval@2.0.2:
   dependencies:
     escodegen "^1.8.1"
 
-"string-width-cjs@npm:string-width@^4.2.0":
-  version "4.2.3"
-  resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz"
-  integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
-  dependencies:
-    emoji-regex "^8.0.0"
-    is-fullwidth-code-point "^3.0.0"
-    strip-ansi "^6.0.1"
-
-string-width@^4.0.0, string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
+"string-width-cjs@npm:string-width@^4.2.0", string-width@^4.0.0, string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
   version "4.2.3"
   resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -10401,14 +10548,7 @@ stringify-package@^1.0.1:
   resolved "https://registry.npmjs.org/stringify-package/-/stringify-package-1.0.1.tgz"
   integrity sha512-sa4DUQsYciMP1xhKWGuFM04fB0LG/9DlluZoSVywUMRNvzid6XucHK0/90xGxRoHrAaROrcHK1aPKaijCtSrhg==
 
-"strip-ansi-cjs@npm:strip-ansi@^6.0.1":
-  version "6.0.1"
-  resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz"
-  integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
-  dependencies:
-    ansi-regex "^5.0.1"
-
-strip-ansi@6.0.1, strip-ansi@^6, strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+"strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@6.0.1, strip-ansi@^6, strip-ansi@^6.0.0, strip-ansi@^6.0.1:
   version "6.0.1"
   resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
@@ -10780,6 +10920,11 @@ type-fest@^1.0.2:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-1.4.0.tgz#e9fb813fe3bf1744ec359d55d1affefa76f14be1"
   integrity sha512-yGSza74xk0UG8k+pLh5oeoYirvIiWo5t0/o3zHHAO2tRDiZcxWP7fywNlXhqb6/r6sWvwi+RsyQMWhVLe4BVuA==
+
+type-fest@^4.18.2, type-fest@^4.27.0:
+  version "4.41.0"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-4.41.0.tgz#6ae1c8e5731273c2bf1f58ad39cbae2c91a46c58"
+  integrity sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==
 
 type-fest@^4.8.3:
   version "4.32.0"
@@ -11229,7 +11374,7 @@ workerpool@^6.5.1:
   resolved "https://registry.yarnpkg.com/workerpool/-/workerpool-6.5.1.tgz#060f73b39d0caf97c6db64da004cd01b4c099544"
   integrity sha512-Fs4dNYcsdpYSAfVxhnl1L5zTksjvOJxtC5hzMNl+1t9B8hTJTdKDyZ5ju7ztgPy+ft9tBFXoOlDNiOT9WUXZlA==
 
-"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0":
+"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
   version "7.0.0"
   resolved "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
@@ -11242,15 +11387,6 @@ wrap-ansi@^6.2.0:
   version "6.2.0"
   resolved "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-6.2.0.tgz"
   integrity sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==
-  dependencies:
-    ansi-styles "^4.0.0"
-    string-width "^4.1.0"
-    strip-ansi "^6.0.0"
-
-wrap-ansi@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz"
-  integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
   dependencies:
     ansi-styles "^4.0.0"
     string-width "^4.1.0"
@@ -11301,6 +11437,11 @@ ws@^8.15.0:
   version "8.18.0"
   resolved "https://registry.yarnpkg.com/ws/-/ws-8.18.0.tgz#0d7505a6eafe2b0e712d232b42279f53bc289bbc"
   integrity sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==
+
+ws@^8.18.0:
+  version "8.18.2"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.18.2.tgz#42738b2be57ced85f46154320aabb51ab003705a"
+  integrity sha512-DMricUmwGZUVr++AEAe2uiVM7UoO9MAVZMDu05UQOaUII0lp+zOzLLU4Xqh/JvTqklB1T4uELaaPBKyjE1r4fQ==
 
 xml2js@0.6.2, xml2js@^0.6.2:
   version "0.6.2"
@@ -11354,6 +11495,11 @@ yaml@^2.5.1, yaml@^2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.7.1.tgz#44a247d1b88523855679ac7fa7cda6ed7e135cf6"
   integrity sha512-10ULxpnOCQXxJvBgxsn9ptjq6uviG/htZKk9veJGhlqn3w/DxQ631zFF+nlQXLwmImeS5amR2dl2U8sg6U9jsQ==
+
+yaml@^2.7.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.8.0.tgz#15f8c9866211bdc2d3781a0890e44d4fa1a5fff6"
+  integrity sha512-4lLa/EcQCB0cJkyts+FpIRx5G/llPxfP6VQU5KByHEhLxY3IJCH0f0Hy1MHI8sClTvsIb8qwRJ6R/ZdlDJ/leQ==
 
 yargs-parser@^18.1.2:
   version "18.1.3"
@@ -11455,6 +11601,11 @@ yoctocolors-cjs@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/yoctocolors-cjs/-/yoctocolors-cjs-2.1.2.tgz#f4b905a840a37506813a7acaa28febe97767a242"
   integrity sha512-cYVsTjKl8b+FrnidjibDWskAv7UKOfcwaVZdp/it9n1s9fU3IkgDbhdIRKCW4JDsAlECJY0ytoVPT3sK6kideA==
+
+yoga-layout@~3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/yoga-layout/-/yoga-layout-3.2.1.tgz#d2d1ba06f0e81c2eb650c3e5ad8b0b4adde1e843"
+  integrity sha512-0LPOt3AxKqMdFBZA3HBAt/t/8vIKq7VaQYbuA8WxCgung+p9TVyKRYdpvCb80HcdTN2NkbIKbhNwKUfm3tQywQ==
 
 yoga-wasm-web@~0.3.3:
   version "0.3.3"
