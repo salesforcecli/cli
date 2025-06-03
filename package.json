@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.92.4",
+  "version": "2.92.5",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run.js",
@@ -84,7 +84,7 @@
       "@salesforce/plugin-signups": "2.6.28",
       "@salesforce/sfdx-plugin-lwc-test": "1.2.1",
       "@salesforce/sfdx-scanner": "4.12.0",
-      "@salesforce/plugin-agent": "1.22.4"
+      "@salesforce/plugin-agent": "1.22.5"
     },
     "devPlugins": [
       "@oclif/plugin-command-snapshot",
@@ -145,7 +145,7 @@
   },
   "dependencies": {
     "@inquirer/select": "^2.3.5",
-    "@oclif/core": "4.3.0",
+    "@oclif/core": "4.3.1",
     "@oclif/plugin-autocomplete": "3.2.29",
     "@oclif/plugin-commands": "4.1.25",
     "@oclif/plugin-help": "6.2.28",
