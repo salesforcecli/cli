@@ -7,9 +7,8 @@
 
 import { type Hook } from '@oclif/core/hooks';
 
-// eslint-disable-next-line @typescript-eslint/require-await
-const hook: Hook.Prerun = async function ({ Command, config }) {
-  if (process.argv.includes('--json')) return;
+const hook: Hook.Prerun = async function ({ Command, config, argv }) {
+  if (argv.includes('--json') || process.argv.includes('--json')) return;
   const { plugin } = Command;
   if (!plugin) return;
   if (plugin.type === 'link') return;
@@ -20,10 +19,31 @@ const hook: Hook.Prerun = async function ({ Command, config }) {
   const specifiedVersion = jitPlugins[plugin.name] ?? deps[plugin.name];
   if (!specifiedVersion) return;
 
-  if (plugin.version !== specifiedVersion) {
+  // Simple semver comparison without external library
+  const parseVersion = (version: string): number[] =>
+    version
+      .replace(/^[^\d]*/, '')
+      .split('.')
+      .map((n) => parseInt(n, 10) || 0);
+
+  const isLessThan = (version1: string, version2: string): boolean => {
+    const v1 = parseVersion(version1);
+    const v2 = parseVersion(version2);
+
+    for (let i = 0; i < Math.max(v1.length, v2.length); i++) {
+      const num1 = v1[i] || 0;
+      const num2 = v2[i] || 0;
+
+      if (num1 < num2) return true;
+      if (num1 > num2) return false;
+    }
+    return false;
+  };
+
+  if (isLessThan(plugin.version, specifiedVersion)) {
     const { ux } = await import('@oclif/core/ux');
     ux.warn(
-      `Plugin ${plugin.name} (${plugin.version}) differs from the version specified by ${config.bin} (${specifiedVersion})`
+      `Plugin ${plugin.name} (${plugin.version}) is older than the version specified by ${config.bin} (${specifiedVersion})`
     );
   }
 };
