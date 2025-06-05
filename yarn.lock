@@ -2057,13 +2057,13 @@
   dependencies:
     "@salesforce/ts-types" "^2.0.12"
 
-"@salesforce/packaging@^4.5.0":
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-4.5.0.tgz#05b9bb10c2f4aef4db272d5f98be2d11bfaeef54"
-  integrity sha512-gIwDkkX+XNR5gAqP/sfbF6lmZuC75dndTd4GjYhqlkvcWMCNIJyB8hTj72KlHz3dK8cGoicOeZWuqxX+ZRpGqA==
+"@salesforce/packaging@^4.6.0":
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-4.6.0.tgz#ae30f6593da66d32b451c879d1eec23dcf664161"
+  integrity sha512-DAt37E6C0KeVbkIZEiplN6vmqQ5NB58TSYAk6LjX6+ZbvSV4lnBc4mSCDcErmqCn5mWW3fdPvxL8FlyYhmpL4g==
   dependencies:
     "@jsforce/jsforce-node" "^3.6.5"
-    "@salesforce/core" "^8.8.5"
+    "@salesforce/core" "^8.11.1"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/schemas" "^1.9.0"
     "@salesforce/source-deploy-retrieve" "^12.16.9"
@@ -2247,15 +2247,15 @@
     open "^10.1.2"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-packaging@2.14.0":
-  version "2.14.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.14.0.tgz#b90c79d4972254ab301f04b09f07904c0ea87655"
-  integrity sha512-a0AzxLYPeJ80FjblZOLMRvyHQ1HMbkJEx2B6jjZN5bG1LN8BwkkdaaSiqT53PtftMTJhgtrOmlZ8Zs5zfvLO9g==
+"@salesforce/plugin-packaging@2.15.0":
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.15.0.tgz#f9226dce49bd345e2c9ee8e39c724f980e08bf2b"
+  integrity sha512-2ZHgwznsLpojoS8hiByZGqoM4MiVc6wqZD4rUTF8UkiQuaHTp7r+hDx7MXsLuBPXKACPzI4szgoxsor8YKV1dA==
   dependencies:
     "@oclif/core" "^4"
     "@salesforce/core" "^8.11.1"
     "@salesforce/kit" "^3.2.3"
-    "@salesforce/packaging" "^4.5.0"
+    "@salesforce/packaging" "^4.6.0"
     "@salesforce/sf-plugins-core" "^12.2.2"
     chalk "^5.4.1"
 
