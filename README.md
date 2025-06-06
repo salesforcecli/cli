@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.93.0 linux-x64 node-v22.16.0
+@salesforce/cli/2.93.1 linux-x64 node-v22.16.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -141,6 +141,10 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf package install report`](#sf-package-install-report)
 - [`sf package installed list`](#sf-package-installed-list)
 - [`sf package list`](#sf-package-list)
+- [`sf package push-upgrade abort`](#sf-package-push-upgrade-abort)
+- [`sf package push-upgrade list`](#sf-package-push-upgrade-list)
+- [`sf package push-upgrade report`](#sf-package-push-upgrade-report)
+- [`sf package push-upgrade schedule`](#sf-package-push-upgrade-schedule)
 - [`sf package uninstall`](#sf-package-uninstall)
 - [`sf package uninstall report`](#sf-package-uninstall-report)
 - [`sf package update`](#sf-package-update)
@@ -5585,7 +5589,7 @@ FLAG DESCRIPTIONS
     --installation-key-bypass flag is required.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/convert.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/convert.ts)_
 
 ## `sf package create`
 
@@ -5664,7 +5668,7 @@ FLAG DESCRIPTIONS
     Org-Dependent Unlocked Packages" in the Salesforce DX Developer Guide.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/create.ts)_
 
 ## `sf package delete`
 
@@ -5706,7 +5710,7 @@ EXAMPLES
     $ sf package delete --package 0Ho... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/delete.ts)_
 
 ## `sf package install`
 
@@ -5805,7 +5809,7 @@ FLAG DESCRIPTIONS
     - Delete: Delete all removed components that can be safely deleted, and deprecate the other components.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/install.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/install.ts)_
 
 ## `sf package install report`
 
@@ -5838,7 +5842,7 @@ EXAMPLES
     $ sf package install report --request-id 0Hf... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/install/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/install/report.ts)_
 
 ## `sf package installed list`
 
@@ -5870,7 +5874,7 @@ EXAMPLES
     $ sf package installed list --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/installed/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/installed/list.ts)_
 
 ## `sf package list`
 
@@ -5908,7 +5912,230 @@ EXAMPLES
     $ sf package list --target-dev-hub devhub@example.com --verbose
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/list.ts)_
+
+## `sf package push-upgrade abort`
+
+Abort a package push upgrade that has been scheduled. Only push upgrade requests with a status of Created or Pending can be aborted.
+
+```
+USAGE
+  $ sf package push-upgrade abort -v <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
+
+FLAGS
+  -i, --push-request-id=<value>  (required) ID of the package push request (starts with 0DV). This ID is returned after
+                                 the package push-upgrade schedule command completes successfully.
+  -v, --target-dev-hub=<value>   (required) Username or alias of the Dev Hub org. Not required if the `target-dev-hub`
+                                 configuration variable is already set.
+      --api-version=<value>      Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Abort a package push upgrade that has been scheduled. Only push upgrade requests with a status of Created or Pending
+  can be aborted.
+
+  Specify the request ID for which you want abort the request. If applicable, the command displays errors related to the
+  request.
+
+  To show all requests in the org, run "sf package pushupgrade list --package 033...".
+
+EXAMPLES
+  Cancel the specified package push upgrade request with the specified ID; uses your default Dev Hub org:
+
+    $ sf package push-upgrade abort --push-request-id 0DV...
+
+  Cancel the specified package push upgrade request in the Dev Hub org with username devhub@example.com:
+
+    $ sf package push-upgrade abort --push-request-id 0DV... --target-dev-hub devhub@example.com
+```
+
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/push-upgrade/abort.ts)_
+
+## `sf package push-upgrade list`
+
+Lists the status of push upgrade requests for a given package.
+
+```
+USAGE
+  $ sf package push-upgrade list -v <value> -p <value> [--json] [--flags-dir <value>] [--api-version <value>] [-l <value>] [-s
+    Created|Cancelled|Pending|In Progress|Failed|Succeeded] [--show-push-migrations-only]
+
+FLAGS
+  -l, --scheduled-last-days=<value>  Number of days in the past for which to display the list of push upgrade requests
+                                     that were scheduled. Used to filter the list output to only recently scheduled push
+                                     upgrades.
+  -p, --package=<value>              (required) Package ID (starts with 033) of the package that you want push upgrade
+                                     information for.
+  -s, --status=<option>              Status used to filter the list output Valid values are: Created, Canceled, Pending,
+                                     In Progress, Failed, or Succeeded
+                                     <options: Created|Cancelled|Pending|In Progress|Failed|Succeeded>
+  -v, --target-dev-hub=<value>       (required) Username or alias of the Dev Hub org. Not required if the
+                                     `target-dev-hub` configuration variable is already set.
+      --api-version=<value>          Override the api version used for api requests made by this command
+      --show-push-migrations-only    Display only push upgrade requests for package migrations.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Lists the status of push upgrade requests for a given package.
+
+  Shows the details of each request to create a push upgrade in the Dev Hub org.
+
+  All filter parameters are applied using the AND logical operator (not OR).
+
+  To get information about a specific request, run "sf package pushupgrade report" and supply the request ID.
+
+ALIASES
+  $ sf force package push-upgrade list
+
+EXAMPLES
+  List all package push upgrade requests in the specified Dev Hub org:
+
+    $ sf package push-upgrade list --package 033xyz --target-dev-hub myHub
+
+  List all package push upgrade requests in the specified Dev Hub org scheduled in the last 30 days:
+
+    $ sf package push-upgrade list --package 033xyz --scheduled-last-days 30 --target-dev-hub myHub
+
+  List all package push upgrade with a status Succeeded:
+
+    $ sf package push-upgrade list --package 033xyz –-status Succeeded
+
+  List all package push upgrade with a status Failed:
+
+    $ sf package push-upgrade list --package 033xyz –-status Failed
+```
+
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/push-upgrade/list.ts)_
+
+## `sf package push-upgrade report`
+
+Retrieve the status of a package push upgrade.
+
+```
+USAGE
+  $ sf package push-upgrade report -v <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
+
+FLAGS
+  -i, --push-request-id=<value>  (required) ID of the package push request (starts with 0DV). This ID is returned after
+                                 the package push-upgrade schedule command completes successfully.
+  -v, --target-dev-hub=<value>   (required) Username or alias of the Dev Hub org. Not required if the `target-dev-hub`
+                                 configuration variable is already set.
+      --api-version=<value>      Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Retrieve the status of a package push upgrade.
+
+  Specify the request ID for which you want to view details. If applicable, the command displays errors related to the
+  request.
+
+  To show all requests in the org, run "sf package pushupgrade list".
+
+ALIASES
+  $ sf force package push-upgrade report
+
+EXAMPLES
+  Retrieve details about the package push upgrade with the specified ID; uses your default Dev Hub org:
+
+    $ sf package push-upgrade report --push-request-id 0DV...
+
+  Retrieve details about the specified package push request in the Dev Hub org with username devhub@example.com:
+
+    $ sf package push-upgrade report --push-request-id 0DV... --target-dev-hub devhub@example.com
+```
+
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/push-upgrade/report.ts)_
+
+## `sf package push-upgrade schedule`
+
+Schedule a package push upgrade.
+
+```
+USAGE
+  $ sf package push-upgrade schedule -v <value> -p <value> [--json] [--flags-dir <value>] [--api-version <value>] [-t <value>] [-l
+    <value> | -f <value>] [--migrate-to-2gp]
+
+FLAGS
+  -f, --org-file=<value>        Filename of the CSV file that contains the list of orgs that need the package upgrade.
+  -l, --org-list=<value>        Comma-separated list of subscriber org IDs that need the package upgrade.
+  -p, --package=<value>         (required) ID (starts with 04t) of the package version that the package is being
+                                upgraded to. The package version must be an active, non-beta package version.
+  -t, --start-time=<value>      Date and time (UTC) when the push upgrade is processed. Set to the earliest time that
+                                you want Salesforce to attempt to start the upgrade.
+  -v, --target-dev-hub=<value>  (required) Username or alias of the Dev Hub org.
+      --api-version=<value>     Override the api version used for api requests made by this command
+      --migrate-to-2gp          Upgrade from a first-generation managed package (1GP) to a second-generation managed
+                                package (2GP). Required when you’re pushing a 2GP package to orgs with the 1GP version
+                                installed.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Schedule a package push upgrade.
+
+  Represents a push upgrade request for upgrading a package in one or many orgs from one version to another version.
+  To initiate a push upgrade for an unlocked or second-generation managed package, the Create and Update
+  Second-Generation Packages user permission is required.
+  For second-generation managed packages, the push upgrade feature is available only for packages that have passed
+  AppExchange security review. To enable push upgrades for your managed package, log a support case in the Salesforce
+  Partner Community.
+  For unlocked packages, push upgrades are enabled by default.
+
+  Use the -–migrate-to-2GP flag to indicate you’re installing a converted second-generation managed package into an org
+  that has the first-generation managed package version of that package installed.
+
+EXAMPLES
+  Schedule a push upgrade that initiates at a specified time:
+
+    $ sf package push-upgrade schedule --package 04txyz --start-time "2024-12-06T21:00:00" --org-file \
+      upgrade-orgs.csv
+
+  Schedule a push upgrade that initiates as soon as possible:
+
+    $ sf package push-upgrade schedule --package 04txyz --org-file upgrade-orgs.csv
+
+  Schedule a push migration from a 1GP package to a 2GP package:
+
+    $ sf package push-upgrade schedule --migrate-to-2gp --package 04txyz --start-time "2024-12-06T21:00:00" \
+      --org-file upgrade-orgs.csv --target-dev-hub myHub
+
+FLAG DESCRIPTIONS
+  -f, --org-file=<value>  Filename of the CSV file that contains the list of orgs that need the package upgrade.
+
+    The file must contain one org per line. The org ID must be the only value in each row.
+    All listed orgs must have a package version installed in their org that is lower than the package version you
+    specified for the --package-version flag.
+
+  -t, --start-time=<value>
+
+    Date and time (UTC) when the push upgrade is processed. Set to the earliest time that you want Salesforce to attempt
+    to start the upgrade.
+
+    Scheduled push upgrades begin as soon as resources are available on the Salesforce instance, which is either at or
+    after the start time you specify. In certain scenarios, the push upgrade starts a few hours after the scheduled
+    start time.
+
+    As a best practice, schedule push upgrades at off-peak hours like 1:00 AM Saturday.
+    If you don't specify this flag, the push upgrade is scheduled to run as soon as resources are available on the
+    Salesforce instance.
+
+  -v, --target-dev-hub=<value>  Username or alias of the Dev Hub org.
+
+    Overrides the value of the target-dev-hub configuration variable, if set.
+```
+
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/push-upgrade/schedule.ts)_
 
 ## `sf package uninstall`
 
@@ -5956,7 +6183,7 @@ EXAMPLES
     $ sf package uninstall --package "Undesirable Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/uninstall.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/uninstall.ts)_
 
 ## `sf package uninstall report`
 
@@ -5989,7 +6216,7 @@ EXAMPLES
     $ sf package uninstall report --request-id 06y... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/uninstall/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/uninstall/report.ts)_
 
 ## `sf package update`
 
@@ -6044,7 +6271,7 @@ FLAG DESCRIPTIONS
     associated with your package.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/update.ts)_
 
 ## `sf package version create`
 
@@ -6219,7 +6446,7 @@ FLAG DESCRIPTIONS
     periods of no output from commands.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/version/create.ts)_
 
 ## `sf package version create list`
 
@@ -6280,7 +6507,7 @@ EXAMPLES
     $ sf package version create list --created-last-days 0 --status Success
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/version/create/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/version/create/list.ts)_
 
 ## `sf package version create report`
 
@@ -6323,7 +6550,7 @@ EXAMPLES
     $ sf package version create report --package-create-request-id 08c... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/version/create/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/version/create/report.ts)_
 
 ## `sf package version delete`
 
@@ -6364,7 +6591,7 @@ EXAMPLES
     $ sf package version delete --package 04t... --target-org devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/version/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/version/delete.ts)_
 
 ## `sf package version displayancestry`
 
@@ -6424,7 +6651,7 @@ FLAG DESCRIPTIONS
     You can use the DOT code output in graph visualization software to create tree visualizations.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/version/displayancestry.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/version/displayancestry.ts)_
 
 ## `sf package version list`
 
@@ -6500,7 +6727,7 @@ EXAMPLES
     $ sf package version list --packages exp-mgr,exp-mgr-util --released --modified-last-days 0
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/version/list.ts)_
 
 ## `sf package version promote`
 
@@ -6544,7 +6771,7 @@ EXAMPLES
     $ sf package version promote --package "Awesome Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/version/promote.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/version/promote.ts)_
 
 ## `sf package version report`
 
@@ -6584,7 +6811,7 @@ EXAMPLES
     $ sf package version report --package "Your Package Alias" --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/version/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/version/report.ts)_
 
 ## `sf package version update`
 
@@ -6637,7 +6864,7 @@ EXAMPLES
     $ sf package version update --package 04t... --version-description "New Package Version Description"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package/version/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package/version/update.ts)_
 
 ## `sf package1 version create`
 
@@ -6704,7 +6931,7 @@ FLAG DESCRIPTIONS
     subscribers.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package1/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package1/version/create.ts)_
 
 ## `sf package1 version create get`
 
@@ -6737,7 +6964,7 @@ EXAMPLES
     $ sf package1 version create get --request-id 0HD... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package1/version/create/get.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package1/version/create/get.ts)_
 
 ## `sf package1 version display`
 
@@ -6771,7 +6998,7 @@ EXAMPLES
     $ sf package1 version display --package-version-id 04t... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package1/version/display.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package1/version/display.ts)_
 
 ## `sf package1 version list`
 
@@ -6809,7 +7036,7 @@ FLAG DESCRIPTIONS
     If not specified, shows all versions for all packages (managed and unmanaged) in the org.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.14.0/src/commands/package1/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.15.0/src/commands/package1/version/list.ts)_
 
 ## `sf plugins`
 
