@@ -1598,10 +1598,10 @@
     proc-log "^5.0.0"
     which "^5.0.0"
 
-"@oclif/core@4.3.1", "@oclif/core@^4", "@oclif/core@^4.0.27", "@oclif/core@^4.2.10", "@oclif/core@^4.2.3", "@oclif/core@^4.2.8", "@oclif/core@^4.3.0":
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.3.1.tgz#906c18336d5eff81faae7de3bc218bcba470db91"
-  integrity sha512-+QpJSficjZWu65YSRJIwe50xh0C7WVD6BkQyk0HmGIlx2/rvex8LDwbZHCQcvuJDOCVQeX/INh8IImuKn4d1UA==
+"@oclif/core@4.3.2", "@oclif/core@^4", "@oclif/core@^4.0.27", "@oclif/core@^4.2.10", "@oclif/core@^4.2.3", "@oclif/core@^4.2.8", "@oclif/core@^4.3.0":
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.3.2.tgz#522d5f94044ebde5f4041b0bad4f1abfe7a73f61"
+  integrity sha512-3OVGENifC2NzYn/t31fYOrZOGJ5WpUfRktz8v/W4QbP4Su3S/BcBuVuIde65B1mHrnAE/62yOFA/kLx4w1Vf8g==
   dependencies:
     ansi-escapes "^4.3.2"
     ansis "^3.17.0"
@@ -1989,7 +1989,7 @@
     strip-ansi "6.0.1"
     ts-retry-promise "^0.8.1"
 
-"@salesforce/core@^8.10.0", "@salesforce/core@^8.10.1", "@salesforce/core@^8.10.2", "@salesforce/core@^8.10.3", "@salesforce/core@^8.11.0", "@salesforce/core@^8.11.1", "@salesforce/core@^8.11.2", "@salesforce/core@^8.11.4", "@salesforce/core@^8.5.1", "@salesforce/core@^8.8.0", "@salesforce/core@^8.8.1", "@salesforce/core@^8.8.5", "@salesforce/core@^8.9.1":
+"@salesforce/core@^8.10.0", "@salesforce/core@^8.10.1", "@salesforce/core@^8.10.2", "@salesforce/core@^8.10.3", "@salesforce/core@^8.11.0", "@salesforce/core@^8.11.1", "@salesforce/core@^8.11.2", "@salesforce/core@^8.11.4", "@salesforce/core@^8.12.0", "@salesforce/core@^8.5.1", "@salesforce/core@^8.8.0", "@salesforce/core@^8.8.1", "@salesforce/core@^8.8.5", "@salesforce/core@^8.9.1":
   version "8.12.0"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.12.0.tgz#a458cc3e39f4e7df57d94f0deaaa0fd0660b18c9"
   integrity sha512-LJIjoQ3UQJ1r/xxdQcaG5bU8MfxeO/LJhrfK/7LZeHVtp1iOIgedbwPuVNzTzYciDWh8elborarrPM4uWjtu5g==
@@ -2126,10 +2126,10 @@
     got "^13.0.0"
     proxy-agent "^6.4.0"
 
-"@salesforce/plugin-auth@3.6.126":
-  version "3.6.126"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.6.126.tgz#918cee0fd09b5502db926de2c36e36823989ada7"
-  integrity sha512-KhqsyiwZxkh3567vpVb/vdXEYJtV+Z+veiieVKL+hRc+juzVvaVWSymmOXQLGkn54CCBCmRexMWHUZuLYOTz1A==
+"@salesforce/plugin-auth@3.6.127":
+  version "3.6.127"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.6.127.tgz#015a89387323e9b6157022836531361b1065f570"
+  integrity sha512-RPUATzwvDJpdOCyNZ72A64dg1BoAOSJAJH6DtcwrdiNSuyxr9TEix0e/p+uELVibJg1oX37kyiwF55v0bB1Mig==
   dependencies:
     "@inquirer/checkbox" "^2.5.0"
     "@inquirer/select" "^2.5.0"
@@ -2247,13 +2247,13 @@
     open "^10.1.2"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-packaging@2.15.0":
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.15.0.tgz#f9226dce49bd345e2c9ee8e39c724f980e08bf2b"
-  integrity sha512-2ZHgwznsLpojoS8hiByZGqoM4MiVc6wqZD4rUTF8UkiQuaHTp7r+hDx7MXsLuBPXKACPzI4szgoxsor8YKV1dA==
+"@salesforce/plugin-packaging@2.15.1":
+  version "2.15.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.15.1.tgz#292cd00b2b8f23e2d84c555758e8f404180e7dbf"
+  integrity sha512-N4J7j3chXMrPNN3Hia3C0BITeXQU0s8msWUOT4YhyZINj7IjIBEFtEH63HCP8oZVjYkkNx1pwPPc1I0FN+2B3w==
   dependencies:
     "@oclif/core" "^4"
-    "@salesforce/core" "^8.11.1"
+    "@salesforce/core" "^8.12.0"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/packaging" "^4.6.0"
     "@salesforce/sf-plugins-core" "^12.2.2"
