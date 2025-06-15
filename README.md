@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.94.2 linux-x64 node-v22.16.0
+@salesforce/cli/2.94.3 linux-x64 node-v22.16.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -3256,7 +3256,7 @@ DESCRIPTION
   Display help for sf.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/6.2.28/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/6.2.29/src/commands/help.ts)_
 
 ## `sf info releasenotes display`
 
@@ -4490,7 +4490,7 @@ EXAMPLES
     $ sf org list auth
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.0/src/commands/org/list/auth.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.2/src/commands/org/list/auth.ts)_
 
 ## `sf org list limits`
 
@@ -4790,7 +4790,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.0/src/commands/org/login/access-token.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.2/src/commands/org/login/access-token.ts)_
 
 ## `sf org login device`
 
@@ -4850,7 +4850,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.0/src/commands/org/login/device.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.2/src/commands/org/login/device.ts)_
 
 ## `sf org login jwt`
 
@@ -4941,7 +4941,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.0/src/commands/org/login/jwt.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.2/src/commands/org/login/jwt.ts)_
 
 ## `sf org login sfdx-url`
 
@@ -5011,7 +5011,7 @@ EXAMPLES
   $ echo url | sf org login sfdx-url --sfdx-url-stdin
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.0/src/commands/org/login/sfdx-url.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.2/src/commands/org/login/sfdx-url.ts)_
 
 ## `sf org login web`
 
@@ -5026,13 +5026,18 @@ FLAGS
   -a, --alias=<value>         Alias for the org.
   -b, --browser=<option>      Browser in which to open the org.
                               <options: chrome|edge|firefox>
-  -c, --client-app=<value>    Name of the connected app or external client app to link to the user.
+  -c, --client-app=<value>    Name to give to the link between the connected app or external client and the
+                              already-authenticated user. You can specify any string you want. Must be used with
+                              --username.
   -d, --set-default-dev-hub   Set the authenticated org as the default Dev Hub.
   -i, --client-id=<value>     OAuth client ID (also called consumer key) of your custom connected app.
   -r, --instance-url=<value>  URL of the instance that the org lives on.
   -s, --set-default           Set the authenticated org as the default that all org-related commands run against.
-      --scopes=<value>        Authentication scopes to request.
-      --username=<value>      Username to link client app to.
+      --scopes=<value>        Authentication (OAuth) scopes to request. Use the scope's short name; specify multiple
+                              scopes using just one flag instance and separated by spaces: --scopes "sfap_api
+                              chatbot_api".
+      --username=<value>      Username of the already-authenticated user to link to the connected app or external client
+                              app. Must be used with --client-app.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
@@ -5058,6 +5063,15 @@ DESCRIPTION
   digital certificate. Make note of the consumer key (also called cliend id) that’s generated for you. Then specify the
   consumer key with the --client-id flag.
 
+  You can also use this command to link one or more connected or external client apps in an org to an
+  already-authenticated user. Then Salesforce CLI commands that have API-specific requirements, such as new OAuth scopes
+  or JWT-based access tokens, can use these custom client apps rather than the default one. To create the link, you use
+  the --client-app flag to give the link a name and the --username flag to specify the already-authenticated user. Use
+  the --scopes flag to add OAuth scopes if required. After you create the link, you then use the --client-app value in
+  the other command that has the API-specific requirements. An example of a command that uses this feature is "agent
+  preview"; see the "Preview an Agent" section in the "Agentforce Developer Guide" for details and examples.
+  (https://developer.salesforce.com/docs/einstein/genai/guide/agent-dx-preview.html)
+
 ALIASES
   $ sf force auth web login
   $ sf auth web login
@@ -5081,10 +5095,11 @@ EXAMPLES
     $ sf org login web --instance-url https://MyDomainName--SandboxName.sandbox.my.salesforce.com --set-default \
       --browser chrome
 
-  Use your own connected app by specifying its consumer key (also called client ID):
+  Use your own connected app by specifying its consumer key (also called client ID) and specify additional OAuth
+  scopes:
 
     $ sf org login web --instance-url https://MyDomainName--SandboxName.sandbox.my.salesforce.com --set-default \
-      --browser chrome --client-id 04580y4051234051
+      --browser chrome --client-id 04580y4051234051 --scopes "sfap_api chatbot_api"
 
 FLAG DESCRIPTIONS
   -b, --browser=chrome|edge|firefox  Browser in which to open the org.
@@ -5101,7 +5116,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.0/src/commands/org/login/web.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.2/src/commands/org/login/web.ts)_
 
 ## `sf org logout`
 
@@ -5167,7 +5182,7 @@ FLAG DESCRIPTIONS
     All orgs includes Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.0/src/commands/org/logout.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.2/src/commands/org/logout.ts)_
 
 ## `sf org open`
 
@@ -7358,7 +7373,7 @@ FLAG DESCRIPTIONS
     If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.23/src/commands/project/convert/mdapi.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.25/src/commands/project/convert/mdapi.ts)_
 
 ## `sf project convert source`
 
@@ -7431,7 +7446,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.23/src/commands/project/convert/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.25/src/commands/project/convert/source.ts)_
 
 ## `sf project convert source-behavior`
 
@@ -7490,7 +7505,7 @@ EXAMPLES
     $ sf project convert source-behavior --behavior decomposePermissionSetBeta --dry-run --preserve-temp-dir
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.23/src/commands/project/convert/source-behavior.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.25/src/commands/project/convert/source-behavior.ts)_
 
 ## `sf project delete source`
 
@@ -7630,7 +7645,7 @@ FLAG DESCRIPTIONS
     - Separate the test names with spaces: --tests Test1 Test2 "Test With Space"
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.23/src/commands/project/delete/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.25/src/commands/project/delete/source.ts)_
 
 ## `sf project delete tracking`
 
@@ -7667,7 +7682,7 @@ EXAMPLES
     $ sf project delete tracking --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.23/src/commands/project/delete/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.25/src/commands/project/delete/tracking.ts)_
 
 ## `sf project deploy cancel`
 
@@ -7739,7 +7754,7 @@ FLAG DESCRIPTIONS
     project deploy report".
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.23/src/commands/project/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.25/src/commands/project/deploy/cancel.ts)_
 
 ## `sf project deploy preview`
 
@@ -7822,7 +7837,7 @@ FLAG DESCRIPTIONS
     All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.23/src/commands/project/deploy/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.25/src/commands/project/deploy/preview.ts)_
 
 ## `sf project deploy quick`
 
@@ -7915,7 +7930,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.23/src/commands/project/deploy/quick.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.25/src/commands/project/deploy/quick.ts)_
 
 ## `sf project deploy report`
 
@@ -8007,7 +8022,7 @@ FLAG DESCRIPTIONS
     --coverage-formatters lcov --coverage-formatters clover
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.23/src/commands/project/deploy/report.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.25/src/commands/project/deploy/report.ts)_
 
 ## `sf project deploy resume`
 
@@ -8104,7 +8119,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.23/src/commands/project/deploy/resume.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.25/src/commands/project/deploy/resume.ts)_
 
 ## `sf project deploy start`
 
@@ -8357,7 +8372,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.23/src/commands/project/deploy/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.25/src/commands/project/deploy/start.ts)_
 
 ## `sf project deploy validate`
 
@@ -8547,7 +8562,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.23/src/commands/project/deploy/validate.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.25/src/commands/project/deploy/validate.ts)_
 
 ## `sf project generate`
 
@@ -8748,7 +8763,7 @@ EXAMPLES
     $ sf project generate manifest --from-org test@myorg.com --excluded-metadata StandardValueSet
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.23/src/commands/project/generate/manifest.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.25/src/commands/project/generate/manifest.ts)_
 
 ## `sf project list ignored`
 
@@ -8790,7 +8805,7 @@ EXAMPLES
     $ sf project list ignored --source-dir package.xml
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.23/src/commands/project/list/ignored.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.25/src/commands/project/list/ignored.ts)_
 
 ## `sf project reset tracking`
 
@@ -8839,7 +8854,7 @@ EXAMPLES
     $ sf project reset tracking --revision 30
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.23/src/commands/project/reset/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.25/src/commands/project/reset/tracking.ts)_
 
 ## `sf project retrieve preview`
 
@@ -8893,7 +8908,7 @@ FLAG DESCRIPTIONS
     production orgs.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.23/src/commands/project/retrieve/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.25/src/commands/project/retrieve/preview.ts)_
 
 ## `sf project retrieve start`
 
@@ -9074,7 +9089,7 @@ ENVIRONMENT VARIABLES
   SF_USE_PROGRESS_BAR  Set to false to disable the progress bar when running the metadata deploy command.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.23/src/commands/project/retrieve/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.25/src/commands/project/retrieve/start.ts)_
 
 ## `sf schema generate field`
 
@@ -9487,7 +9502,7 @@ FLAG DESCRIPTIONS
     Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
 ```
 
-_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.2.29/src/commands/version.ts)_
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.2.30/src/commands/version.ts)_
 
 ## `sf visualforce generate component`
 
