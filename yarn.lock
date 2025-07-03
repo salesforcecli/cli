@@ -2038,15 +2038,15 @@
   dependencies:
     "@salesforce/ts-types" "^2.0.12"
 
-"@salesforce/packaging@^4.7.0":
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-4.7.0.tgz#550d450486cf28edd7f5c7c76e6bce6e4d76d4e0"
-  integrity sha512-fYwE0oChQ7MBqeAbi2vq3NZBe2qw0nsXbXdNwgl2ybREDE2RLqWRIB75OGxEa9ARQNrdWOVE7sR81cGLyCIupg==
+"@salesforce/packaging@^4.9.0":
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-4.10.0.tgz#d1a16a41339556d5e4d38e6b6642516469a14fc3"
+  integrity sha512-CQRDUXmYNg1ZGs/sXiPFa41NlmIxCyLQTMN1XHV+GPF6dEWVPMZH5DebCAagsOgvQQGYqtPuWz4YHACqlpYtpQ==
   dependencies:
     "@jsforce/jsforce-node" "^3.6.5"
-    "@salesforce/core" "^8.11.1"
+    "@salesforce/core" "^8.15.0"
     "@salesforce/kit" "^3.2.3"
-    "@salesforce/schemas" "^1.9.0"
+    "@salesforce/schemas" "^1.9.1"
     "@salesforce/source-deploy-retrieve" "^12.16.9"
     "@salesforce/ts-types" "^2.0.11"
     "@salesforce/types" "^1.2.0"
@@ -2058,10 +2058,10 @@
     jszip "^3.10.1"
     object-treeify "^2"
 
-"@salesforce/plugin-agent@1.23.1":
-  version "1.23.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-agent/-/plugin-agent-1.23.1.tgz#2e24e60898b5237873c682e7731cd4d5c6c309c0"
-  integrity sha512-uVwntvy5VC6vKUV8S1OD5WCHHWPR1w/i5/3/2A4yiQM4EntGravrurjzqmSYaGOQSNwqJ8G0PDHVqHc1dX43Mg==
+"@salesforce/plugin-agent@1.23.2":
+  version "1.23.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-agent/-/plugin-agent-1.23.2.tgz#c969dfbeab8f233f0a750d409958589b06cb1609"
+  integrity sha512-HTP4CI/XvF0Xo+cjncvXInqG6M6vpm2mB4Gc2qXpNSYgbMLBkydFLoOL2+mGeNF51BHjwqT2QxrYwycDJeIlrA==
   dependencies:
     "@inquirer/core" "^10.1.6"
     "@inquirer/prompts" "^7.2.0"
@@ -2173,7 +2173,7 @@
     ansis "^3.17.0"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-info@3.4.72", "@salesforce/plugin-info@^3.4.67", "@salesforce/plugin-info@^3.4.69":
+"@salesforce/plugin-info@3.4.72", "@salesforce/plugin-info@^3.4.67", "@salesforce/plugin-info@^3.4.69", "@salesforce/plugin-info@^3.4.72":
   version "3.4.72"
   resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-3.4.72.tgz#49a7fc5824ac299f075dc056c5e7e40428db691a"
   integrity sha512-cg0UlJpArywslqriFuIhcghiFdpWtHld65pYQzrFXDFqrLeiS+CYDeOdjcFtp+F6nKElmm07q7LxKYDeO2CzLQ==
@@ -2228,15 +2228,15 @@
     open "^10.1.2"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-packaging@2.16.0":
-  version "2.16.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.16.0.tgz#c9aa5e42df7cf81fe67f0ff1177ed768ecec38ff"
-  integrity sha512-vA6UgyzH21g482n89RA8WeNTy/KTAqtLMJ2nseyrT3AQ/xf+8yB2Bnzq7gGzCSJO05WvHmAAorr4rQoFILQO4Q==
+"@salesforce/plugin-packaging@2.18.0":
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.18.0.tgz#14331b8bd19c874dba23f723579bd600ccb2c4a3"
+  integrity sha512-dJL23oHTKm/pRjkk5S8Mv8I4NsV0adVHgmHred+1jD8HlxuN+ETNNVTuic/GhB68D9mzimFj8l+wnLfGVEgpgA==
   dependencies:
     "@oclif/core" "^4"
-    "@salesforce/core" "^8.12.0"
+    "@salesforce/core" "^8.15.0"
     "@salesforce/kit" "^3.2.3"
-    "@salesforce/packaging" "^4.7.0"
+    "@salesforce/packaging" "^4.9.0"
     "@salesforce/sf-plugins-core" "^12.2.2"
     chalk "^5.4.1"
 
@@ -2325,22 +2325,22 @@
     "@salesforce/sf-plugins-core" "^12"
     "@salesforce/templates" "^64.2.0"
 
-"@salesforce/plugin-trust@3.7.104", "@salesforce/plugin-trust@^3.7.69":
-  version "3.7.104"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-3.7.104.tgz#4c4c9f7ab2270b24fb1f6ffb460d574dd82d4bc0"
-  integrity sha512-98DNQiNU2iZ7RjBsYfr0UjixU96KmJaKe0wN76W0CBZtF3MGFiMCxCashwxzTgTJG7R7WZ30BZbNmx8OLoXZjQ==
+"@salesforce/plugin-trust@3.7.107", "@salesforce/plugin-trust@^3.7.69":
+  version "3.7.107"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-3.7.107.tgz#c495e0b0017b4be86db62b49a37bef39283e1a80"
+  integrity sha512-xlalqYlHGCYG/J/KtJWK1Q746mWuzqet2zmF74QMg1eTtVlXEMwSykV/INchs2grdgENc1iKq7KE6WkI3fMJfA==
   dependencies:
     "@oclif/core" "^4"
     "@salesforce/core" "^8.15.0"
     "@salesforce/kit" "^3.2.0"
-    "@salesforce/plugin-info" "^3.4.69"
+    "@salesforce/plugin-info" "^3.4.72"
     "@salesforce/sf-plugins-core" "^12"
     got "^13.0.0"
     npm "^10.9.3"
     npm-run-path "^4.0.1"
     proxy-agent "^6.5.0"
     semver "^7.7.2"
-    shelljs "^0.10.0"
+    shelljs "0.8.5"
 
 "@salesforce/plugin-user@3.6.27":
   version "3.6.27"
@@ -2357,7 +2357,7 @@
   resolved "https://registry.npmjs.org/@salesforce/prettier-config/-/prettier-config-0.0.3.tgz"
   integrity sha512-hYOhoPTCSYMDYn+U1rlEk16PoBeAJPkrdg4/UtAzupM1mRRJOwEPMG1d7U8DxJFKuXW3DMEYWr2MwAIBDaHmFg==
 
-"@salesforce/schemas@1.9.1", "@salesforce/schemas@^1.9.0":
+"@salesforce/schemas@1.9.1", "@salesforce/schemas@^1.9.0", "@salesforce/schemas@^1.9.1":
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.9.1.tgz#ea843c732068c4ac2dadbe1d22b44e714cfe661d"
   integrity sha512-9I8kZBYT7HFXsbz2ukkSyZDRPjSsfRyx3pKGCsjWe2av8wuNm6tYUnmuXzMH5JoVSu3MvtOeIlwp5fFURdsNjg==
@@ -5681,7 +5681,7 @@ execa@^4.1.0:
     signal-exit "^3.0.2"
     strip-final-newline "^2.0.0"
 
-execa@^5.0.0, execa@^5.1.1:
+execa@^5.0.0:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/execa/-/execa-5.1.1.tgz#f80ad9cbf4298f7bd1d4c9555c21e93741c411dd"
   integrity sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==
@@ -9972,17 +9972,9 @@ shebang-regex@^3.0.0:
   resolved "https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
-shelljs@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.10.0.tgz#e3bbae99b0f3f0cc5dce05b46a346fae2090e883"
-  integrity sha512-Jex+xw5Mg2qMZL3qnzXIfaxEtBaC4n7xifqaqtrZDdlheR70OGkydrPJWT0V1cA1k3nanC86x9FwAmQl6w3Klw==
-  dependencies:
-    execa "^5.1.1"
-    fast-glob "^3.3.2"
-
-shelljs@^0.8.4, shelljs@^0.8.5:
+shelljs@0.8.5, shelljs@^0.8.4, shelljs@^0.8.5:
   version "0.8.5"
-  resolved "https://registry.npmjs.org/shelljs/-/shelljs-0.8.5.tgz"
+  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.5.tgz#de055408d8361bed66c669d2f000538ced8ee20c"
   integrity sha512-TiwcRcrkhHvbrZbnRcFYMLl30Dfov3HKqzp5tO5b4pt6G/SezKcYhmDg15zXVBswHmctSAQKznqNW2LO5tTDow==
   dependencies:
     glob "^7.0.0"
