@@ -2197,17 +2197,17 @@
     got "^13.0.0"
     proxy-agent "^6.4.0"
 
-"@salesforce/plugin-org@5.9.11":
-  version "5.9.11"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-5.9.11.tgz#e06bbd4c5fcc236c46738a58aac9f5ef3cb33cc8"
-  integrity sha512-x4u/n2VCcqQ3ncnMq69owjVsb3MBZ0/hPcnY9t1L5dsBYhhGEuIzCwso+MhZ74XhCJrG9PLdQ7H5bgYV8plNig==
+"@salesforce/plugin-org@5.9.12":
+  version "5.9.12"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-5.9.12.tgz#70ef4aeab6e2c0d75560cba6135600da8bd9eb1d"
+  integrity sha512-dC8GJTqwSg+5YVJLZ8MTs16BcNs2eOxg6S1BrF1vXO9lJe8Qec3RIV819xZVi/8fD/Wv5AAIY6xMkfhZTfwtfg==
   dependencies:
     "@oclif/core" "^4.5.1"
     "@oclif/multi-stage-output" "^0.8.18"
     "@salesforce/core" "^8.18.1"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/sf-plugins-core" "^12.2.3"
-    "@salesforce/source-deploy-retrieve" "^12.21.1"
+    "@salesforce/source-deploy-retrieve" "^12.21.5"
     "@salesforce/ts-types" "^2.0.12"
     ansis "^3.16.0"
     change-case "^5.4.4"
@@ -2383,12 +2383,12 @@
     string-width "^7.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/source-deploy-retrieve@^12.16.9", "@salesforce/source-deploy-retrieve@^12.19.3", "@salesforce/source-deploy-retrieve@^12.19.5", "@salesforce/source-deploy-retrieve@^12.19.9", "@salesforce/source-deploy-retrieve@^12.21.1":
-  version "12.21.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.21.1.tgz#081ea10b86b1af3c222d9dea3ac3774bdb477954"
-  integrity sha512-VC6sAaLH04z1znJh7f8ftlUTDEzzUFzpaau8kIVjZW7Iq4xSnRORmxlh941C2KSTPRR454ZbnxuWC5czcn5Bcg==
+"@salesforce/source-deploy-retrieve@^12.16.9", "@salesforce/source-deploy-retrieve@^12.19.3", "@salesforce/source-deploy-retrieve@^12.19.5", "@salesforce/source-deploy-retrieve@^12.19.9", "@salesforce/source-deploy-retrieve@^12.21.1", "@salesforce/source-deploy-retrieve@^12.21.5":
+  version "12.21.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.21.5.tgz#12620daa3c56a1320124eb72a0155a986ae12bdf"
+  integrity sha512-IdBNI2vDcCb6fhLib3b7eJEfu9DI/B2cVtkJ+z4aBVPAd/AjwCQWAuYDAgOoG17JOhBEZaI9bRxuKQLhpFTQHQ==
   dependencies:
-    "@salesforce/core" "^8.12.0"
+    "@salesforce/core" "^8.18.1"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/ts-types" "^2.0.12"
     "@salesforce/types" "^1.3.0"
