@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.99.6 linux-x64 node-v22.17.1
+@salesforce/cli/2.100.0 linux-x64 node-v22.17.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -262,7 +262,7 @@ EXAMPLES
     $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.3/src/commands/agent/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.5/src/commands/agent/create.ts)_
 
 ## `sf agent generate agent-spec`
 
@@ -367,7 +367,7 @@ EXAMPLES
     $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.3/src/commands/agent/generate/agent-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.5/src/commands/agent/generate/agent-spec.ts)_
 
 ## `sf agent generate template`
 
@@ -415,7 +415,7 @@ EXAMPLES
       force-app/main/default/bots/My_Awesome_Agent/My_Awesome_Agent.bot-meta.xml --agent-version 1
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.3/src/commands/agent/generate/template.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.5/src/commands/agent/generate/template.ts)_
 
 ## `sf agent generate test-spec`
 
@@ -473,7 +473,7 @@ EXAMPLES
       force-app//main/default/aiEvaluationDefinitions/Resort_Manager_Tests.aiEvaluationDefinition-meta.xml
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.3/src/commands/agent/generate/test-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.5/src/commands/agent/generate/test-spec.ts)_
 
 ## `sf agent preview`
 
@@ -518,59 +518,25 @@ DESCRIPTION
 
   Find the agent's API name in its main details page in your org's Agent page in Setup.
 
-  Before you use this command, you must complete these steps:
-
-  1. Using your org's Setup UI, create a connected app in your org as described in the "Create a Connected App" section
-  here: https://developer.salesforce.com/docs/einstein/genai/guide/agent-api-get-started.html#create-a-connected-app. Do
-  these additional steps:
-
-  a. When specifying the connected app's Callback URL, add this second callback URL on a new line:
-  "http://localhost:1717/OauthRedirect".
-
-  b. When adding the scopes to the connected app, add "Manage user data via Web browsers (web)".
-
-  2. Add the connected app to your agent as described in the "Add Connected App to Agent" section here:
-  https://developer.salesforce.com/docs/einstein/genai/guide/agent-api-get-started.html#add-connected-app-to-agent.
-
-  3. Copy the consumer key from your connected app as described in the "Obtain Credentials" section here:
-  https://developer.salesforce.com/docs/einstein/genai/guide/agent-api-get-started.html#obtain-credentials.
-
-  4. If you haven't already, run the "org login web" CLI command as usual to authorize the development org that contains
-  the agent you want to preview.
-
-  5. Re-run the "org web login" command to link the new connected app to your already-authenticated user. Use the
-  --client-app flag to give the link a name; you can specify any string, but make a note of it because you'll need it
-  later. Use --username to specify the username that you used to log into the org in the previous step. Use --client-id
-  to specify the consumer key you previously copied. Finally, use --scopes as indicated to specify the required API
-  scopes. Here's an example:
-
-  sf org login web --client-app agent-app --username <username> --client-id <consumer-key> --scopes "sfap_api
-  chatbot_api refresh_token api web"
-
-  IMPORTANT: You must use the "--client-id <CONNECTED-APP-CONSUMER-KEY>" flag of "org login web", where
-  CONNECTED-APP-CONSUMER-KEY is the consumer key you previously copied. This step ensures that the "org login web"
-  command uses your custom connected app, and not the default CLI connected app.
-
-  6. Press Enter to skip sharing the client secret, then log in with your org username as usual and click Accept.
-
-  7. Run this command ("agent preview") to interact with an agent by using the --target-org flag to specify the org
-  username or alias as usual and --client-app to specify the linked connected app ("agent-app" in the previous example).
-  Use the "org display" command to get the list of client apps associated with an org.
+  IMPORTANT: Before you use this command, you must complete a number of configuration steps in your org and your DX
+  project. The examples in this help assume you've completed the steps. See "Preview an Agent" in the "Agentforce
+  Developer Guide" for complete documentation:
+  https://developer.salesforce.com/docs/einstein/genai/guide/agent-dx-preview.html.
 
 EXAMPLES
   Interact with an agent with API name "Resort_Manager" in the org with alias "my-org" and the linked "agent-app"
   connected app:
 
-    $ sf agent preview --api-name "Resort_Manager" --target-org my-org --client-app agent-app
+    $ sf agent preview --api-name Resort_Manager --target-org my-org --client-app agent-app
 
   Same as the preceding example, but this time save the conversation transcripts to the "./transcripts/my-preview"
   directory rather than the default "./temp/agent-preview":
 
-    $ sf agent preview --api-name "Resort_Manager" --target-org my-org --client-app agent-app --output-dir \
-      "transcripts/my-preview"
+    $ sf agent preview --api-name Resort_Manager --target-org my-org --client-app agent-app --output-dir \
+      transcripts/my-preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.3/src/commands/agent/preview.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.5/src/commands/agent/preview.ts)_
 
 ## `sf agent test create`
 
@@ -625,7 +591,7 @@ EXAMPLES
     $ sf agent test create --spec specs/Resort_Manager-testSpec.yaml --api-name Resort_Manager_Test --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.3/src/commands/agent/test/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.5/src/commands/agent/test/create.ts)_
 
 ## `sf agent test list`
 
@@ -660,7 +626,7 @@ EXAMPLES
     $ sf agent test list --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.3/src/commands/agent/test/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.5/src/commands/agent/test/list.ts)_
 
 ## `sf agent test results`
 
@@ -716,7 +682,7 @@ FLAG DESCRIPTIONS
     test results aren't written.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.3/src/commands/agent/test/results.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.5/src/commands/agent/test/results.ts)_
 
 ## `sf agent test resume`
 
@@ -779,7 +745,7 @@ FLAG DESCRIPTIONS
     test results aren't written.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.3/src/commands/agent/test/resume.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.5/src/commands/agent/test/resume.ts)_
 
 ## `sf agent test run`
 
@@ -843,7 +809,7 @@ FLAG DESCRIPTIONS
     test results aren't written.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.3/src/commands/agent/test/run.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.5/src/commands/agent/test/run.ts)_
 
 ## `sf alias list`
 
@@ -7388,7 +7354,7 @@ FLAG DESCRIPTIONS
     If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.33/src/commands/project/convert/mdapi.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.34/src/commands/project/convert/mdapi.ts)_
 
 ## `sf project convert source`
 
@@ -7461,7 +7427,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.33/src/commands/project/convert/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.34/src/commands/project/convert/source.ts)_
 
 ## `sf project convert source-behavior`
 
@@ -7520,7 +7486,7 @@ EXAMPLES
     $ sf project convert source-behavior --behavior decomposePermissionSetBeta --dry-run --preserve-temp-dir
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.33/src/commands/project/convert/source-behavior.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.34/src/commands/project/convert/source-behavior.ts)_
 
 ## `sf project delete source`
 
@@ -7660,7 +7626,7 @@ FLAG DESCRIPTIONS
     - Separate the test names with spaces: --tests Test1 Test2 "Test With Space"
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.33/src/commands/project/delete/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.34/src/commands/project/delete/source.ts)_
 
 ## `sf project delete tracking`
 
@@ -7697,7 +7663,7 @@ EXAMPLES
     $ sf project delete tracking --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.33/src/commands/project/delete/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.34/src/commands/project/delete/tracking.ts)_
 
 ## `sf project deploy cancel`
 
@@ -7769,7 +7735,7 @@ FLAG DESCRIPTIONS
     project deploy report".
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.33/src/commands/project/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.34/src/commands/project/deploy/cancel.ts)_
 
 ## `sf project deploy preview`
 
@@ -7852,7 +7818,7 @@ FLAG DESCRIPTIONS
     All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.33/src/commands/project/deploy/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.34/src/commands/project/deploy/preview.ts)_
 
 ## `sf project deploy quick`
 
@@ -7945,7 +7911,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.33/src/commands/project/deploy/quick.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.34/src/commands/project/deploy/quick.ts)_
 
 ## `sf project deploy report`
 
@@ -8037,7 +8003,7 @@ FLAG DESCRIPTIONS
     --coverage-formatters lcov --coverage-formatters clover
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.33/src/commands/project/deploy/report.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.34/src/commands/project/deploy/report.ts)_
 
 ## `sf project deploy resume`
 
@@ -8134,7 +8100,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.33/src/commands/project/deploy/resume.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.34/src/commands/project/deploy/resume.ts)_
 
 ## `sf project deploy start`
 
@@ -8387,7 +8353,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.33/src/commands/project/deploy/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.34/src/commands/project/deploy/start.ts)_
 
 ## `sf project deploy validate`
 
@@ -8577,7 +8543,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.33/src/commands/project/deploy/validate.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.34/src/commands/project/deploy/validate.ts)_
 
 ## `sf project generate`
 
@@ -8778,7 +8744,7 @@ EXAMPLES
     $ sf project generate manifest --from-org test@myorg.com --excluded-metadata StandardValueSet
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.33/src/commands/project/generate/manifest.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.34/src/commands/project/generate/manifest.ts)_
 
 ## `sf project list ignored`
 
@@ -8820,7 +8786,7 @@ EXAMPLES
     $ sf project list ignored --source-dir package.xml
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.33/src/commands/project/list/ignored.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.34/src/commands/project/list/ignored.ts)_
 
 ## `sf project reset tracking`
 
@@ -8869,7 +8835,7 @@ EXAMPLES
     $ sf project reset tracking --revision 30
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.33/src/commands/project/reset/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.34/src/commands/project/reset/tracking.ts)_
 
 ## `sf project retrieve preview`
 
@@ -8923,7 +8889,7 @@ FLAG DESCRIPTIONS
     production orgs.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.33/src/commands/project/retrieve/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.34/src/commands/project/retrieve/preview.ts)_
 
 ## `sf project retrieve start`
 
@@ -9104,7 +9070,7 @@ ENVIRONMENT VARIABLES
   SF_USE_PROGRESS_BAR  Set to false to disable the progress bar when running the metadata deploy command.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.33/src/commands/project/retrieve/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.34/src/commands/project/retrieve/start.ts)_
 
 ## `sf schema generate field`
 
