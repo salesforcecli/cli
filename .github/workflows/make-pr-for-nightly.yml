@@ -95,9 +95,9 @@ jobs:
       - name: Build nightly PR (minor)
         run: sf-release cli:release:build --start-from-github-ref main ${{ inputs.only && format('--only {0}', inputs.only) || '' }} --label nightly-automerge --release-channel nightly
         # If the package.json 'minor' IS EQUAL TO the latest-rc 'minor', we want to bump 'minor'
-        if: ${{ steps.package-json-semver-info.outputs.minor == steps.latest-rc-semver-info.outputs.minor }}
+        if: ${{ fromJSON(steps.package-json-semver-info.outputs.minor) == fromJSON(steps.latest-rc-semver-info.outputs.minor) }}
 
       - name: Build nightly PR (patch)
         run: sf-release cli:release:build --start-from-github-ref main --patch ${{ inputs.only && format('--only {0}', inputs.only) || '' }} --label nightly-automerge --release-channel nightly
         # If the package.json 'minor' IS GREATER THAN the latest-rc 'minor', we want to bump 'patch'
-        if: ${{ steps.package-json-semver-info.outputs.minor > steps.latest-rc-semver-info.outputs.minor }}
+        if: ${{ fromJSON(steps.package-json-semver-info.outputs.minor) > fromJSON(steps.latest-rc-semver-info.outputs.minor) }}
