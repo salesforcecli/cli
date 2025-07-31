@@ -107,10 +107,8 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf org assign permset`](#sf-org-assign-permset)
 - [`sf org assign permsetlicense`](#sf-org-assign-permsetlicense)
 - [`sf org create sandbox`](#sf-org-create-sandbox)
-- [`sf org create scratch`](#sf-org-create-scratch)
 - [`sf org create user`](#sf-org-create-user)
 - [`sf org delete sandbox`](#sf-org-delete-sandbox)
-- [`sf org delete scratch`](#sf-org-delete-scratch)
 - [`sf org disable tracking`](#sf-org-disable-tracking)
 - [`sf org display`](#sf-org-display)
 - [`sf org display user`](#sf-org-display-user)
@@ -133,7 +131,9 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf org open agent`](#sf-org-open-agent)
 - [`sf org refresh sandbox`](#sf-org-refresh-sandbox)
 - [`sf org resume sandbox`](#sf-org-resume-sandbox)
-- [`sf org resume scratch`](#sf-org-resume-scratch)
+- [`sf org scratch create`](#sf-org-scratch-create)
+- [`sf org scratch delete`](#sf-org-scratch-delete)
+- [`sf org scratch resume`](#sf-org-scratch-resume)
 - [`sf package convert`](#sf-package-convert)
 - [`sf package create`](#sf-package-create)
 - [`sf package delete`](#sf-package-delete)
@@ -3787,13 +3787,13 @@ FLAG DESCRIPTIONS
 
 _See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.16/src/commands/org/create/sandbox.ts)_
 
-## `sf org create scratch`
+## `sf org scratch create`
 
 Create a scratch org.
 
 ```
 USAGE
-  $ sf org create scratch -v <value> [--json] [--flags-dir <value>] [-a <value>] [--async] [-d] [-f <value>] [-c] [-e
+  $ sf org scratch create -v <value> [--json] [--flags-dir <value>] [-a <value>] [--async] [-d] [-f <value>] [-c] [-e
     developer|enterprise|group|professional|partner-developer|partner-enterprise|partner-group|partner-professional | -s
     <value> | --source-org <value>] [-m] [-y <days>] [-w <minutes>] [--api-version <value>] [-i <value>] [-t]
     [--username <value>] [--description <value>] [--name <value>] [--release preview|previous] [--admin-email <value>]
@@ -4123,13 +4123,13 @@ EXAMPLES
 
 _See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.16/src/commands/org/delete/sandbox.ts)_
 
-## `sf org delete scratch`
+## `sf org scratch delete`
 
 Delete a scratch org.
 
 ```
 USAGE
-  $ sf org delete scratch -o <value> [--json] [--flags-dir <value>] [-p]
+  $ sf org scratch delete -o <value> [--json] [--flags-dir <value>] [-p]
 
 FLAGS
   -o, --target-org=<value>  (required) Username or alias of the target org. Not required if the `target-org`
@@ -5455,13 +5455,13 @@ FLAG DESCRIPTIONS
 
 _See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.16/src/commands/org/resume/sandbox.ts)_
 
-## `sf org resume scratch`
+## `sf org scratch resume`
 
 Resume the creation of an incomplete scratch org.
 
 ```
 USAGE
-  $ sf org resume scratch [--json] [--flags-dir <value>] [-i <value>] [-r] [-w <minutes>]
+  $ sf org scratch resume [--json] [--flags-dir <value>] [-i <value>] [-r] [-w <minutes>]
 
 FLAGS
   -i, --job-id=<value>   Job ID of the incomplete scratch org create that you want to resume.
