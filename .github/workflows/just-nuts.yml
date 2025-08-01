@@ -54,7 +54,6 @@ jobs:
           - salesforcecli/plugin-signups
           # - salesforce/plugin-devops-center
           # - salesforce/sfdx-plugin-lwc-test
-          # - salesforce/sfdx-scanner
         exclude:
           - os: windows-latest
             repository: salesforcecli/plugin-dev # These are flakey on Windows
