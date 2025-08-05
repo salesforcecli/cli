@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.101.2 linux-x64 node-v22.17.1
+@salesforce/cli/2.101.3 linux-x64 node-v22.17.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -42,7 +42,9 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 
 <!-- commands -->
 
+- [`sf agent activate`](#sf-agent-activate)
 - [`sf agent create`](#sf-agent-create)
+- [`sf agent deactivate`](#sf-agent-deactivate)
 - [`sf agent generate agent-spec`](#sf-agent-generate-agent-spec)
 - [`sf agent generate template`](#sf-agent-generate-template)
 - [`sf agent generate test-spec`](#sf-agent-generate-test-spec)
@@ -203,6 +205,45 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf visualforce generate page`](#sf-visualforce-generate-page)
 - [`sf which`](#sf-which)
 
+## `sf agent activate`
+
+Activate an agent in an org.
+
+```
+USAGE
+  $ sf agent activate -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-n <value>]
+
+FLAGS
+  -n, --api-name=<value>     API name of the agent to activate.
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Activate an agent in an org.
+
+  Activating an agent makes it immediately available to your users. An agent must be active before you can preview it
+  with the "agent preview" CLI command or VS Code.
+
+  You must know the agent's API name to activate it; you can either be prompted for it or you can specify it with the
+  --api-name flag. Find the agent's API name in its Agent Details page of your org's Agentforce Studio UI in Setup.
+
+EXAMPLES
+  Activate an agent in your default target org by being prompted:
+
+    $ sf agent activate
+
+  Activate an agent with API name Resort_Manager in the org with alias "my-org":
+
+    $ sf agent activate --api-name Resort_Manager --target-org my-org
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.0/src/commands/agent/activate.ts)_
+
 ## `sf agent create`
 
 Create an agent in your org using a local agent spec file.
@@ -263,7 +304,47 @@ EXAMPLES
     $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.8/src/commands/agent/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.0/src/commands/agent/create.ts)_
+
+## `sf agent deactivate`
+
+Deactivate an agent in an org.
+
+```
+USAGE
+  $ sf agent deactivate -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-n <value>]
+
+FLAGS
+  -n, --api-name=<value>     API name of the agent to deactivate.
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Deactivate an agent in an org.
+
+  Deactivating an agent makes it unavailable to your users. To make changes to an agent, such as adding or removing
+  topics or actions, you must deactivate it. You can't preview an agent with the "agent preview" CLI command or VS Code
+  if it's deactivated.
+
+  You must know the agent's API name to deactivate it; you can either be prompted for it or you can specify it with the
+  --api-name flag. Find the agent's API name in its Agent Details page of your org's Agentforce Studio UI in Setup.
+
+EXAMPLES
+  Deactivate an agent in your default target org by being prompted:
+
+    $ sf agent deactivate
+
+  Deactivate the agent Resort_Manager in the org with alias "my_org":
+
+    $ sf agent deactivate --api-name Resort_Manager --target-org my-org
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.0/src/commands/agent/deactivate.ts)_
 
 ## `sf agent generate agent-spec`
 
@@ -368,7 +449,7 @@ EXAMPLES
     $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.8/src/commands/agent/generate/agent-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.0/src/commands/agent/generate/agent-spec.ts)_
 
 ## `sf agent generate template`
 
@@ -416,7 +497,7 @@ EXAMPLES
       force-app/main/default/bots/My_Awesome_Agent/My_Awesome_Agent.bot-meta.xml --agent-version 1
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.8/src/commands/agent/generate/template.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.0/src/commands/agent/generate/template.ts)_
 
 ## `sf agent generate test-spec`
 
@@ -474,7 +555,7 @@ EXAMPLES
       force-app//main/default/aiEvaluationDefinitions/Resort_Manager_Tests.aiEvaluationDefinition-meta.xml
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.8/src/commands/agent/generate/test-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.0/src/commands/agent/generate/test-spec.ts)_
 
 ## `sf agent preview`
 
@@ -517,7 +598,8 @@ DESCRIPTION
   environment variable "SF_AGENT_PREVIEW_OUTPUT_DIR" to the directory. Or you can pass the directory to the --output-dir
   flag.
 
-  Find the agent's API name in its main details page in your org's Agent page in Setup.
+  Find the agent's API name in its Agent Details page of your org's Agentforce Studio UI in Setup. If your agent is
+  currently deactivated, use the "agent activate" CLI command to activate it.
 
   IMPORTANT: Before you use this command, you must complete a number of configuration steps in your org and your DX
   project. The examples in this help assume you've completed the steps. See "Preview an Agent" in the "Agentforce
@@ -525,7 +607,7 @@ DESCRIPTION
   https://developer.salesforce.com/docs/einstein/genai/guide/agent-dx-preview.html.
 
 EXAMPLES
-  Interact with an agent with API name "Resort_Manager" in the org with alias "my-org" and the linked "agent-app"
+  Interact with an agent with API name Resort_Manager in the org with alias "my-org" and the linked "agent-app"
   connected app:
 
     $ sf agent preview --api-name Resort_Manager --target-org my-org --client-app agent-app
@@ -537,7 +619,7 @@ EXAMPLES
       transcripts/my-preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.8/src/commands/agent/preview.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.0/src/commands/agent/preview.ts)_
 
 ## `sf agent test create`
 
@@ -592,7 +674,7 @@ EXAMPLES
     $ sf agent test create --spec specs/Resort_Manager-testSpec.yaml --api-name Resort_Manager_Test --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.8/src/commands/agent/test/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.0/src/commands/agent/test/create.ts)_
 
 ## `sf agent test list`
 
@@ -627,7 +709,7 @@ EXAMPLES
     $ sf agent test list --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.8/src/commands/agent/test/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.0/src/commands/agent/test/list.ts)_
 
 ## `sf agent test results`
 
@@ -683,7 +765,7 @@ FLAG DESCRIPTIONS
     test results aren't written.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.8/src/commands/agent/test/results.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.0/src/commands/agent/test/results.ts)_
 
 ## `sf agent test resume`
 
@@ -746,7 +828,7 @@ FLAG DESCRIPTIONS
     test results aren't written.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.8/src/commands/agent/test/resume.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.0/src/commands/agent/test/resume.ts)_
 
 ## `sf agent test run`
 
@@ -810,7 +892,7 @@ FLAG DESCRIPTIONS
     test results aren't written.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.23.8/src/commands/agent/test/run.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.0/src/commands/agent/test/run.ts)_
 
 ## `sf alias list`
 
@@ -969,7 +1051,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.56/src/commands/analytics/generate/template.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.57/src/commands/analytics/generate/template.ts)_
 
 ## `sf apex generate class`
 
@@ -1028,7 +1110,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.56/src/commands/apex/generate/class.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.57/src/commands/apex/generate/class.ts)_
 
 ## `sf apex generate trigger`
 
@@ -1097,7 +1179,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.56/src/commands/apex/generate/trigger.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.57/src/commands/apex/generate/trigger.ts)_
 
 ## `sf apex get log`
 
@@ -3324,7 +3406,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.56/src/commands/lightning/generate/app.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.57/src/commands/lightning/generate/app.ts)_
 
 ## `sf lightning generate component`
 
@@ -3393,7 +3475,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.56/src/commands/lightning/generate/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.57/src/commands/lightning/generate/component.ts)_
 
 ## `sf lightning generate event`
 
@@ -3448,7 +3530,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.56/src/commands/lightning/generate/event.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.57/src/commands/lightning/generate/event.ts)_
 
 ## `sf lightning generate interface`
 
@@ -3503,7 +3585,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.56/src/commands/lightning/generate/interface.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.57/src/commands/lightning/generate/interface.ts)_
 
 ## `sf lightning generate test`
 
@@ -3558,7 +3640,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.56/src/commands/lightning/generate/test.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.57/src/commands/lightning/generate/test.ts)_
 
 ## `sf org assign permset`
 
@@ -3604,7 +3686,7 @@ EXAMPLES
     $ sf org assign permset --name DreamHouse --on-behalf-of user1@my.org --on-behalf-of user2 --on-behalf-of user
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.31/src/commands/org/assign/permset.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.32/src/commands/org/assign/permset.ts)_
 
 ## `sf org assign permsetlicense`
 
@@ -3651,7 +3733,7 @@ EXAMPLES
       user3
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.31/src/commands/org/assign/permsetlicense.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.32/src/commands/org/assign/permsetlicense.ts)_
 
 ## `sf org create sandbox`
 
@@ -4075,7 +4157,7 @@ FLAG DESCRIPTIONS
     might be different than what you specify in the definition file.
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.31/src/commands/org/create/user.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.32/src/commands/org/create/user.ts)_
 
 ## `sf org delete sandbox`
 
@@ -4288,7 +4370,7 @@ EXAMPLES
     $ sf org display user --target-org me@my.org --json
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.31/src/commands/org/display/user.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.32/src/commands/org/display/user.ts)_
 
 ## `sf org enable tracking`
 
@@ -4397,7 +4479,7 @@ EXAMPLES
     $ sf org generate password --on-behalf-of user1@my.org --on-behalf-of user2@my.org --on-behalf-of user3@my.org
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.31/src/commands/org/generate/password.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.32/src/commands/org/generate/password.ts)_
 
 ## `sf org list`
 
@@ -4714,7 +4796,7 @@ EXAMPLES
     $ sf org list users --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.31/src/commands/org/list/users.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.32/src/commands/org/list/users.ts)_
 
 ## `sf org login access-token`
 
@@ -8711,7 +8793,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.56/src/commands/project/generate.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.57/src/commands/project/generate.ts)_
 
 ## `sf project generate manifest`
 
@@ -9488,7 +9570,7 @@ FLAG DESCRIPTIONS
     etc.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.56/src/commands/static-resource/generate.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.57/src/commands/static-resource/generate.ts)_
 
 ## `sf update [CHANNEL]`
 
@@ -9602,7 +9684,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.56/src/commands/visualforce/generate/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.57/src/commands/visualforce/generate/component.ts)_
 
 ## `sf visualforce generate page`
 
@@ -9652,7 +9734,7 @@ FLAG DESCRIPTIONS
     The name can be up to 40 characters and must start with a letter.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.56/src/commands/visualforce/generate/page.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.57/src/commands/visualforce/generate/page.ts)_
 
 ## `sf which`
 
