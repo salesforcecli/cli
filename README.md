@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.103.4 linux-x64 node-v22.18.0
+@salesforce/cli/2.103.5 linux-x64 node-v22.18.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -126,7 +126,6 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf org list sobject record-counts`](#sf-org-list-sobject-record-counts)
 - [`sf org list users`](#sf-org-list-users)
 - [`sf org login access-token`](#sf-org-login-access-token)
-- [`sf org login device`](#sf-org-login-device)
 - [`sf org login jwt`](#sf-org-login-jwt)
 - [`sf org login sfdx-url`](#sf-org-login-sfdx-url)
 - [`sf org login web`](#sf-org-login-web)
@@ -2046,7 +2045,7 @@ EXAMPLES
     $ sf data bulk results --job-id 7507i000fake341G --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/bulk/results.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/bulk/results.ts)_
 
 ## `sf data create file`
 
@@ -2095,7 +2094,7 @@ EXAMPLES
     $ sf data create file --file path/to/astro.png --parent-id a03fakeLoJWPIA3
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/create/file.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/create/file.ts)_
 
 ## `sf data create record`
 
@@ -2151,7 +2150,7 @@ EXAMPLES
       TracedEntityId=01p17000000R6bLAAS"
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/create/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/create/record.ts)_
 
 ## `sf data delete bulk`
 
@@ -2159,11 +2158,10 @@ Bulk delete records from an org using a CSV file. Uses Bulk API 2.0.
 
 ```
 USAGE
-  $ sf data delete bulk -o <value> -s <value> [--json] [--flags-dir <value>] [--api-version <value>] [-w <value> | -a]
+  $ sf data delete bulk -o <value> -s <value> [--json] [--flags-dir <value>] [--api-version <value>] [-w <value>]
     (--line-ending CRLF|LF -f <value>) [--hard-delete]
 
 FLAGS
-  -a, --async                 Run the command asynchronously.
   -f, --file=<value>          (required) CSV file that contains the IDs of the records to update or delete.
   -o, --target-org=<value>    (required) Username or alias of the target org. Not required if the `target-org`
                               configuration variable is already set.
@@ -2211,7 +2209,7 @@ FLAG DESCRIPTIONS
     and can be enabled only by a system administrator.
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/delete/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/delete/bulk.ts)_
 
 ## `sf data delete record`
 
@@ -2272,7 +2270,7 @@ EXAMPLES
     $ sf data delete record --use-tooling-api --sobject TraceFlag --record-id 7tf8c
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/delete/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/delete/record.ts)_
 
 ## `sf data delete resume`
 
@@ -2311,7 +2309,7 @@ EXAMPLES
     $ sf data delete resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/delete/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/delete/resume.ts)_
 
 ## `sf data export bulk`
 
@@ -2320,7 +2318,7 @@ Bulk export records from an org into a file using a SOQL query. Uses Bulk API 2.
 ```
 USAGE
   $ sf data export bulk -o <value> --output-file <value> -r csv|json [--json] [--flags-dir <value>] [--api-version
-    <value>] [-w <minutes> | --async] [-q <value> | --query-file <value>] [--all-rows] [--column-delimiter
+    <value>] [-w <minutes>] [-q <value> | --query-file <value>] [--all-rows] [--column-delimiter
     BACKQUOTE|CARET|COMMA|PIPE|SEMICOLON|TAB] [--line-ending LF|CRLF]
 
 FLAGS
@@ -2333,7 +2331,6 @@ FLAGS
       --all-rows                   Include records that have been soft-deleted due to a merge or delete. By default,
                                    deleted records are not returned.
       --api-version=<value>        Override the api version used for api requests made by this command
-      --async                      Don't wait for the job to complete.
       --column-delimiter=<option>  Column delimiter to be used when writing CSV output. Default is COMMA.
                                    <options: BACKQUOTE|CARET|COMMA|PIPE|SEMICOLON|TAB>
       --line-ending=<option>       Line ending to be used when writing CSV output. Default value on Windows is is
@@ -2357,8 +2354,8 @@ DESCRIPTION
   JSON format.
 
   Bulk exports can take a while, depending on how many records are returned by the SOQL query. If the command times out,
-  or you specified the --async flag, the command displays the job ID. To see the status and get the results of the job,
-  run "sf data export resume" and pass the job ID to the --job-id flag.
+  the command displays the job ID. To see the status and get the results of the job, run "sf data export resume" and
+  pass the job ID to the --job-id flag.
 
   IMPORTANT: This command uses Bulk API 2.0, which limits the type of SOQL queries you can run. For example, you can't
   use aggregate functions such as count(). For the complete list of limitations, see the "SOQL Considerations" section
@@ -2377,15 +2374,9 @@ EXAMPLES
 
     $ sf data export bulk --query "SELECT Id, Name, Account.Name FROM Contact" --output-file export-accounts.json \
       --result-format json --wait 10 --all-rows
-
-  Export asynchronously; the command immediately returns a job ID that you then pass to the "sf data export resume"
-  command:
-
-    $ sf data export bulk --query "SELECT Id, Name, Account.Name FROM Contact" --output-file export-accounts.json \
-      --result-format json --async
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/export/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/export/bulk.ts)_
 
 ## `sf data export resume`
 
@@ -2407,9 +2398,9 @@ GLOBAL FLAGS
 DESCRIPTION
   Resume a bulk export job that you previously started. Uses Bulk API 2.0.
 
-  When the original "data export bulk" command either times out or is run with the --async flag, it displays a job ID.
-  To see the status and get the results of the bulk export, run this command by either passing it the job ID or using
-  the --use-most-recent flag to specify the most recent bulk export job.
+  When the original "data export bulk" command times out, it displays a job ID. To see the status and get the results of
+  the bulk export, run this command by either passing it the job ID or using the --use-most-recent flag to specify the
+  most recent bulk export job.
 
   Using either `--job-id` or `--use-most-recent` will properly resolve to the correct org where the bulk job was started
   based on the cached data by "data export bulk".
@@ -2424,7 +2415,7 @@ EXAMPLES
     $ sf data export resume --use-most-recent
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/export/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/export/resume.ts)_
 
 ## `sf data export tree`
 
@@ -2484,7 +2475,7 @@ EXAMPLES
       my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/export/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/export/tree.ts)_
 
 ## `sf data get record`
 
@@ -2548,7 +2539,7 @@ EXAMPLES
     $ sf data get record --use-tooling-api --sobject TraceFlag --record-id 7tf8c
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/get/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/get/record.ts)_
 
 ## `sf data import bulk`
 
@@ -2556,11 +2547,10 @@ Bulk import records into a Salesforce object from a CSV file. Uses Bulk API 2.0.
 
 ```
 USAGE
-  $ sf data import bulk -s <value> -o <value> [--json] [--flags-dir <value>] [-a | -w <value>] [--api-version <value>]
+  $ sf data import bulk -s <value> -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-w <value>]
     (--line-ending CRLF|LF -f <value>) [--column-delimiter BACKQUOTE|CARET|COMMA|PIPE|SEMICOLON|TAB]
 
 FLAGS
-  -a, --async                      Don't wait for the command to complete.
   -f, --file=<value>               (required) CSV file that contains the Salesforce object records you want to import.
   -o, --target-org=<value>         (required) Username or alias of the target org. Not required if the `target-org`
                                    configuration variable is already set.
@@ -2586,9 +2576,9 @@ DESCRIPTION
 
   All the records in the CSV file must be for the same Salesforce object. Specify the object with the `--sobject` flag.
 
-  Bulk imports can take a while, depending on how many records are in the CSV file. If the command times out, or you
-  specified the --async flag, the command displays the job ID. To see the status and get the results of the job, run "sf
-  data import resume" and pass the job ID to the --job-id flag.
+  Bulk imports can take a while, depending on how many records are in the CSV file. If the command times out, the
+  command displays the job ID. To see the status and get the results of the job, run "sf data import resume" and pass
+  the job ID to the --job-id flag.
 
   For information and examples about how to prepare your CSV files, see "Prepare Data to Ingest" in the "Bulk API 2.0
   and Bulk API Developer Guide"
@@ -2599,14 +2589,9 @@ EXAMPLES
   in 10 minutes, the command ends and displays a job ID:
 
     $ sf data import bulk --file accounts.csv --sobject Account --wait 10 --target-org my-scratch
-
-  Import asynchronously and use the default org; the command immediately returns a job ID that you then pass to the
-  "sf data import resume" command:
-
-    $ sf data import bulk --file accounts.csv --sobject Account --async
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/import/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/import/bulk.ts)_
 
 ## `sf data import resume`
 
@@ -2628,9 +2613,9 @@ GLOBAL FLAGS
 DESCRIPTION
   Resume a bulk import job that you previously started. Uses Bulk API 2.0.
 
-  When the original "sf data import bulk" command either times out or is run with the --async flag, it displays a job
-  ID. To see the status and get the results of the bulk import, run this command by either passing it the job ID or
-  using the --use-most-recent flag to specify the most recent bulk import job.
+  When the original "sf data import bulk" command times out, it displays a job ID. To see the status and get the results
+  of the bulk import, run this command by either passing it the job ID or using the --use-most-recent flag to specify
+  the most recent bulk import job.
 
 EXAMPLES
   Resume a bulk import job to your default org using an ID:
@@ -2642,7 +2627,7 @@ EXAMPLES
     $ sf data import resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/import/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/import/resume.ts)_
 
 ## `sf data import tree`
 
@@ -2706,7 +2691,7 @@ FLAG DESCRIPTIONS
     - files(array) - Files: An array of files paths to load
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/import/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/import/tree.ts)_
 
 ## `sf data query`
 
@@ -2759,7 +2744,7 @@ EXAMPLES
     $ sf data query --query "SELECT Name FROM ApexTrigger" --use-tooling-api
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/query.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/query.ts)_
 
 ## `sf data resume`
 
@@ -2796,7 +2781,7 @@ EXAMPLES
     $ sf data resume --job-id 750xx000000005sAAA --batch-id 751xx000000005nAAA
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/resume.ts)_
 
 ## `sf data search`
 
@@ -2846,7 +2831,7 @@ EXAMPLES
     $ sf data search --file query.txt --target-org my-scratch --result-format csv
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/search.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/search.ts)_
 
 ## `sf data update bulk`
 
@@ -2854,11 +2839,10 @@ Bulk update records to an org from a CSV file. Uses Bulk API 2.0.
 
 ```
 USAGE
-  $ sf data update bulk -s <value> -o <value> [--json] [--flags-dir <value>] [-a] [-w <value>] [--api-version <value>]
+  $ sf data update bulk -s <value> -o <value> [--json] [--flags-dir <value>] [-w <value>] [--api-version <value>]
     (--line-ending CRLF|LF -f <value>) [--column-delimiter BACKQUOTE|CARET|COMMA|PIPE|SEMICOLON|TAB]
 
 FLAGS
-  -a, --async                      Don't wait for the command to complete.
   -f, --file=<value>               (required) CSV file that contains the Salesforce object records you want to update.
   -o, --target-org=<value>         (required) Username or alias of the target org. Not required if the `target-org`
                                    configuration variable is already set.
@@ -2887,9 +2871,9 @@ DESCRIPTION
   contain only existing records; if a record in the file doesn't currently exist in the Salesforce object, the command
   fails. Consider using "sf data upsert bulk" if you also want to insert new records.
 
-  Bulk updates can take a while, depending on how many records are in the CSV file. If the command times out, or you
-  specified the --async flag, the command displays the job ID. To see the status and get the results of the job, run "sf
-  data update resume" and pass the job ID to the --job-id flag.
+  Bulk updates can take a while, depending on how many records are in the CSV file. If the command times out, the
+  command displays the job ID. To see the status and get the results of the job, run "sf data update resume" and pass
+  the job ID to the --job-id flag.
 
   For information and examples about how to prepare your CSV files, see "Prepare Data to Ingest" in the "Bulk API 2.0
   and Bulk API Developer Guide"
@@ -2900,14 +2884,9 @@ EXAMPLES
   in 10 minutes, the command ends and displays a job ID:
 
     $ sf data update bulk --file accounts.csv --sobject Account --wait 10 --target-org my-scratch
-
-  Update asynchronously and use the default org; the command immediately returns a job ID that you then pass to the
-  "sf data update resume" command:
-
-    $ sf data update bulk --file accounts.csv --sobject Account --async
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/update/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/update/bulk.ts)_
 
 ## `sf data update record`
 
@@ -2969,7 +2948,7 @@ EXAMPLES
       "ExpirationDate=2017-12-01T00:58:04.000+0000"
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/update/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/update/record.ts)_
 
 ## `sf data update resume`
 
@@ -2991,9 +2970,9 @@ GLOBAL FLAGS
 DESCRIPTION
   Resume a bulk update job that you previously started. Uses Bulk API 2.0.
 
-  When the original "sf data update bulk" command either times out or is run with the --async flag, it displays a job
-  ID. To see the status and get the results of the bulk update, run this command by either passing it the job ID or
-  using the --use-most-recent flag to specify the most recent bulk update job.
+  When the original "sf data update bulk" command times out, it displays a job ID. To see the status and get the results
+  of the bulk update, run this command by either passing it the job ID or using the --use-most-recent flag to specify
+  the most recent bulk update job.
 
   Using either `--job-id` or `--use-most-recent` will properly resolve to the correct org where the bulk job was started
   based on the cached data by "data update bulk".
@@ -3008,7 +2987,7 @@ EXAMPLES
     $ sf data update resume --use-most-recent
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/update/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/update/resume.ts)_
 
 ## `sf data upsert bulk`
 
@@ -3017,10 +2996,9 @@ Bulk upsert records to an org from a CSV file. Uses Bulk API 2.0.
 ```
 USAGE
   $ sf data upsert bulk -o <value> -s <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>] [-w
-    <value> | -a] (--line-ending CRLF|LF -f <value>) [--column-delimiter BACKQUOTE|CARET|COMMA|PIPE|SEMICOLON|TAB]
+    <value>] (--line-ending CRLF|LF -f <value>) [--column-delimiter BACKQUOTE|CARET|COMMA|PIPE|SEMICOLON|TAB]
 
 FLAGS
-  -a, --async                      Run the command asynchronously.
   -f, --file=<value>               (required) CSV file that contains the IDs of the records to update or delete.
   -i, --external-id=<value>        (required) Name of the external ID field, or the Id field.
   -o, --target-org=<value>         (required) Username or alias of the target org. Not required if the `target-org`
@@ -3065,7 +3043,7 @@ EXAMPLES
       my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/upsert/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/upsert/bulk.ts)_
 
 ## `sf data upsert resume`
 
@@ -3104,7 +3082,7 @@ EXAMPLES
     $ sf data upsert resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/data/upsert/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/data/upsert/resume.ts)_
 
 ## `sf doctor`
 
@@ -3199,7 +3177,7 @@ EXAMPLES
     $ sf force data bulk delete --sobject MyObject__c --file files/delete.csv --wait 5 --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/force/data/bulk/delete.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/force/data/bulk/delete.ts)_
 
 ## `sf force data bulk status`
 
@@ -3236,7 +3214,7 @@ EXAMPLES
     $ sf force data bulk status --job-id 750xx000000005sAAA --batch-id 751xx000000005nAAA --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/force/data/bulk/status.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/force/data/bulk/status.ts)_
 
 ## `sf force data bulk upsert`
 
@@ -3294,7 +3272,7 @@ EXAMPLES
       --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.52/src/commands/force/data/bulk/upsert.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.53/src/commands/force/data/bulk/upsert.ts)_
 
 ## `sf help [COMMAND]`
 
@@ -4553,7 +4531,7 @@ EXAMPLES
     $ sf org list auth
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.19/src/commands/org/list/auth.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.8.1/src/commands/org/list/auth.ts)_
 
 ## `sf org list limits`
 
@@ -4853,67 +4831,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.19/src/commands/org/login/access-token.ts)_
-
-## `sf org login device`
-
-Authorize an org using a device code.
-
-```
-USAGE
-  $ sf org login device [--json] [--flags-dir <value>] [-i <value>] [-r <value>] [-d] [-s] [-a <value>]
-
-FLAGS
-  -a, --alias=<value>         Alias for the org.
-  -d, --set-default-dev-hub   Set the authenticated org as the default Dev Hub.
-  -i, --client-id=<value>     OAuth client ID (also called consumer key) of your custom connected app.
-  -r, --instance-url=<value>  URL of the instance that the org lives on.
-  -s, --set-default           Set the authenticated org as the default that all org-related commands run against.
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-DESCRIPTION
-  Authorize an org using a device code.
-
-  Use this command to allow a device to connect to an org.
-
-  When you run this command, it first displays an 8-digit device code and the URL for verifying the code on your org.
-  The default instance URL is https://login.salesforce.com, so if the org you're authorizing is on a different instance,
-  use the --instance-url. The command waits while you complete the verification. Open a browser and navigate to the
-  displayed verification URL, enter the code, then click Connect. If you aren't already logged into your org, log in,
-  and then you're prompted to allow the device to connect to the org. After you successfully authorize the org, you can
-  close the browser window.
-
-ALIASES
-  $ sf force auth device login
-  $ sf auth device login
-
-EXAMPLES
-  Authorize an org using a device code, give the org the alias TestOrg1, and set it as your default Dev Hub org:
-
-    $ sf org login device --set-default-dev-hub --alias TestOrg1
-
-  Authorize an org in which you've created a custom connected app with the specified client ID (consumer key):
-
-    $ sf org login device --client-id <OAuth client id>
-
-  Authorize a sandbox org with the specified instance URL:
-
-    $ sf org login device --instance-url https://MyDomainName--SandboxName.sandbox.my.salesforce.com
-
-FLAG DESCRIPTIONS
-  -r, --instance-url=<value>  URL of the instance that the org lives on.
-
-    If you specify an --instance-url value, this value overrides the sfdcLoginUrl value in your sfdx-project.json file.
-
-    To specify a My Domain URL, use the format "https://<MyDomainName>.my.salesforce.com".
-
-    To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
-```
-
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.19/src/commands/org/login/device.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.8.1/src/commands/org/login/access-token.ts)_
 
 ## `sf org login jwt`
 
@@ -5004,7 +4922,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.19/src/commands/org/login/jwt.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.8.1/src/commands/org/login/jwt.ts)_
 
 ## `sf org login sfdx-url`
 
@@ -5074,7 +4992,7 @@ EXAMPLES
   $ echo url | sf org login sfdx-url --sfdx-url-stdin
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.19/src/commands/org/login/sfdx-url.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.8.1/src/commands/org/login/sfdx-url.ts)_
 
 ## `sf org login web`
 
@@ -5179,7 +5097,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.19/src/commands/org/login/web.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.8.1/src/commands/org/login/web.ts)_
 
 ## `sf org logout`
 
@@ -5245,7 +5163,7 @@ FLAG DESCRIPTIONS
     All orgs includes Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.7.19/src/commands/org/logout.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.8.1/src/commands/org/logout.ts)_
 
 ## `sf org open`
 

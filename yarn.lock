@@ -2061,10 +2061,10 @@
     strip-ansi "6.0.1"
     ts-retry-promise "^0.8.1"
 
-"@salesforce/core@^8.10.1", "@salesforce/core@^8.12.0", "@salesforce/core@^8.15.0", "@salesforce/core@^8.18.1", "@salesforce/core@^8.18.5", "@salesforce/core@^8.18.7", "@salesforce/core@^8.19.1", "@salesforce/core@^8.5.1", "@salesforce/core@^8.8.0", "@salesforce/core@^8.8.1", "@salesforce/core@^8.8.5", "@salesforce/core@^8.9.1":
-  version "8.19.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.19.1.tgz#300b37db32e29a7b1055091cc13d04a6ccc4d8c1"
-  integrity sha512-HPJxus0W4S1aoT4Qn6mG2s9Ik/mZ59rXNUFc2c+BgEAs28khbZOLR2uiZYexNpXIIZnCrSbb+v1t8IW/idIyCA==
+"@salesforce/core@^8.10.1", "@salesforce/core@^8.12.0", "@salesforce/core@^8.15.0", "@salesforce/core@^8.18.1", "@salesforce/core@^8.18.5", "@salesforce/core@^8.18.7", "@salesforce/core@^8.19.1", "@salesforce/core@^8.20.0", "@salesforce/core@^8.5.1", "@salesforce/core@^8.8.0", "@salesforce/core@^8.8.1", "@salesforce/core@^8.8.5", "@salesforce/core@^8.9.1":
+  version "8.20.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.20.0.tgz#3a63ae04a9fd70ac10123013d3cbf7488a798033"
+  integrity sha512-WZoab9aHDbYXUh4nO+91PNLHpiPfK408qjn3l6Sbgck2d0bzYkW5wOmuv5D5yWrEybs9kGosrW/e9liKPGmgng==
   dependencies:
     "@jsforce/jsforce-node" "^3.10.1"
     "@salesforce/kit" "^3.2.2"
@@ -2207,15 +2207,15 @@
     got "^13.0.0"
     proxy-agent "^6.4.0"
 
-"@salesforce/plugin-auth@3.7.19":
-  version "3.7.19"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.7.19.tgz#a01f8ce8674a6c98a9e491ffbf6cbb159aff1630"
-  integrity sha512-dqXyi8SyygnAHGaHtucx8D0rNlC3IMMtLai98qh6E0XQFPCvZEiYjpYAQlO206CvVgjQ6HGtymWsT4a52eoyVA==
+"@salesforce/plugin-auth@3.8.1":
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.8.1.tgz#c94572b9c5f73268f31d633cf0fc02d342491e10"
+  integrity sha512-ltovvzozwA8cw3f+2HgahZTRyy1K++ijfv1ekiKugkaRvwFvcUtbhDhtKmeew0m74npUKcahoRsafPNeNu81XQ==
   dependencies:
     "@inquirer/checkbox" "^2.5.0"
     "@inquirer/select" "^2.5.0"
     "@oclif/core" "^4"
-    "@salesforce/core" "^8.18.7"
+    "@salesforce/core" "^8.20.0"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/plugin-info" "^3.4.80"
     "@salesforce/sf-plugins-core" "^12.2.4"
@@ -2236,10 +2236,10 @@
     debug "^4.4.0"
     handlebars "^4.7.8"
 
-"@salesforce/plugin-data@4.0.52":
-  version "4.0.52"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-4.0.52.tgz#420bbffe815ddb3916c95cbccd59dd6f9941f8bf"
-  integrity sha512-ClcTYXITqksDhqHXuLrNa4uAPM5tV9KF2MDHyNaRvz9VaxFk+JZnUXhfsb1D2akzRMgWaKEv4rCSqNMKQOmT+Q==
+"@salesforce/plugin-data@4.0.53":
+  version "4.0.53"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-4.0.53.tgz#016e9bff8474640452b9705aaa02f71a16b06388"
+  integrity sha512-fIOazIGnz5eh7kR/641ilPn/IFWGp6FyuQMq+p2CsTlU1OR2E+eXG23L53R/SOrdJvNvYKq0wr85hXivBpLhzg==
   dependencies:
     "@jsforce/jsforce-node" "^3.9.4"
     "@oclif/multi-stage-output" "^0.8.20"
