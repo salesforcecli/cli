@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.103.5 linux-x64 node-v22.18.0
+@salesforce/cli/2.103.6 linux-x64 node-v22.18.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -241,7 +241,7 @@ EXAMPLES
     $ sf agent activate --api-name Resort_Manager --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.3/src/commands/agent/activate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.4/src/commands/agent/activate.ts)_
 
 ## `sf agent create`
 
@@ -303,7 +303,7 @@ EXAMPLES
     $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.3/src/commands/agent/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.4/src/commands/agent/create.ts)_
 
 ## `sf agent deactivate`
 
@@ -343,7 +343,7 @@ EXAMPLES
     $ sf agent deactivate --api-name Resort_Manager --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.3/src/commands/agent/deactivate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.4/src/commands/agent/deactivate.ts)_
 
 ## `sf agent generate agent-spec`
 
@@ -448,7 +448,7 @@ EXAMPLES
     $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.3/src/commands/agent/generate/agent-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.4/src/commands/agent/generate/agent-spec.ts)_
 
 ## `sf agent generate template`
 
@@ -496,7 +496,7 @@ EXAMPLES
       force-app/main/default/bots/My_Awesome_Agent/My_Awesome_Agent.bot-meta.xml --agent-version 1
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.3/src/commands/agent/generate/template.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.4/src/commands/agent/generate/template.ts)_
 
 ## `sf agent generate test-spec`
 
@@ -557,7 +557,7 @@ EXAMPLES
       force-app//main/default/aiEvaluationDefinitions/Resort_Manager_Tests.aiEvaluationDefinition-meta.xml
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.3/src/commands/agent/generate/test-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.4/src/commands/agent/generate/test-spec.ts)_
 
 ## `sf agent preview`
 
@@ -621,7 +621,7 @@ EXAMPLES
       transcripts/my-preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.3/src/commands/agent/preview.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.4/src/commands/agent/preview.ts)_
 
 ## `sf agent test create`
 
@@ -676,7 +676,7 @@ EXAMPLES
     $ sf agent test create --spec specs/Resort_Manager-testSpec.yaml --api-name Resort_Manager_Test --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.3/src/commands/agent/test/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.4/src/commands/agent/test/create.ts)_
 
 ## `sf agent test list`
 
@@ -711,7 +711,7 @@ EXAMPLES
     $ sf agent test list --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.3/src/commands/agent/test/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.4/src/commands/agent/test/list.ts)_
 
 ## `sf agent test results`
 
@@ -720,7 +720,7 @@ Get the results of a completed agent test run.
 ```
 USAGE
   $ sf agent test results -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>] [--result-format
-    json|human|junit|tap] [-d <value>]
+    json|human|junit|tap] [-d <value>] [--verbose]
 
 FLAGS
   -d, --output-dir=<value>      Directory to write the agent test results into.
@@ -730,6 +730,7 @@ FLAGS
       --api-version=<value>     Override the api version used for api requests made by this command
       --result-format=<option>  [default: human] Format of the agent test run results.
                                 <options: json|human|junit|tap>
+      --verbose                 Show generated data in the test results output.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
@@ -765,9 +766,18 @@ FLAG DESCRIPTIONS
 
     If the agent test run completes, write the results to the specified directory. If the test is still running, the
     test results aren't written.
+
+  --verbose  Show generated data in the test results output.
+
+    When enabled, includes detailed generated data (such as invoked actions) in the human-readable test results output.
+    This is useful for debugging test failures and understanding what actions were actually invoked during the test run.
+
+    The generated data is in JSON format and includes the Apex classes or Flows that were invoked, the Salesforce
+    objects that were touched, and so on. Use the JSON structure of this information to build the test case JSONPath
+    expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.3/src/commands/agent/test/results.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.4/src/commands/agent/test/results.ts)_
 
 ## `sf agent test resume`
 
@@ -776,7 +786,7 @@ Resume an agent test that you previously started in your org so you can view the
 ```
 USAGE
   $ sf agent test resume -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-i <value>] [-r] [-w
-    <value>] [--result-format json|human|junit|tap] [-d <value>]
+    <value>] [--result-format json|human|junit|tap] [-d <value>] [--verbose]
 
 FLAGS
   -d, --output-dir=<value>      Directory to write the agent test results into.
@@ -789,6 +799,7 @@ FLAGS
       --api-version=<value>     Override the api version used for api requests made by this command
       --result-format=<option>  [default: human] Format of the agent test run results.
                                 <options: json|human|junit|tap>
+      --verbose                 Show generated data in the test results output.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
@@ -828,9 +839,18 @@ FLAG DESCRIPTIONS
 
     If the agent test run completes, write the results to the specified directory. If the test is still running, the
     test results aren't written.
+
+  --verbose  Show generated data in the test results output.
+
+    When enabled, includes detailed generated data (such as invoked actions) in the human-readable test results output.
+    This is useful for debugging test failures and understanding what actions were actually invoked during the test run.
+
+    The generated data is in JSON format and includes the Apex classes or Flows that were invoked, the Salesforce
+    objects that were touched, and so on. Use the JSON structure of this information to build the test case JSONPath
+    expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.3/src/commands/agent/test/resume.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.4/src/commands/agent/test/resume.ts)_
 
 ## `sf agent test run`
 
@@ -839,7 +859,7 @@ Start an agent test in your org.
 ```
 USAGE
   $ sf agent test run -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-n <value>] [-w <value>]
-    [--result-format json|human|junit|tap] [-d <value>]
+    [--result-format json|human|junit|tap] [-d <value>] [--verbose]
 
 FLAGS
   -d, --output-dir=<value>      Directory to write the agent test results into.
@@ -852,6 +872,7 @@ FLAGS
       --api-version=<value>     Override the api version used for api requests made by this command
       --result-format=<option>  [default: human] Format of the agent test run results.
                                 <options: json|human|junit|tap>
+      --verbose                 Show generated data in the test results output.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
@@ -892,9 +913,18 @@ FLAG DESCRIPTIONS
 
     If the agent test run completes, write the results to the specified directory. If the test is still running, the
     test results aren't written.
+
+  --verbose  Show generated data in the test results output.
+
+    When enabled, includes detailed generated data (such as invoked actions) in the human-readable test results output.
+    This is useful for debugging test failures and understanding what actions were actually invoked during the test run.
+
+    The generated data is in JSON format and includes the Apex classes or Flows that were invoked, the Salesforce
+    objects that were touched, and so on. Use the JSON structure of this information to build the test case JSONPath
+    expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.3/src/commands/agent/test/run.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.4/src/commands/agent/test/run.ts)_
 
 ## `sf alias list`
 
