@@ -160,7 +160,7 @@
     "@salesforce/plugin-agent": "1.24.4",
     "@salesforce/plugin-apex": "3.6.19",
     "@salesforce/plugin-api": "1.3.3",
-    "@salesforce/plugin-auth": "3.8.1",
+    "@salesforce/plugin-auth": "3.8.2-cb.0",
     "@salesforce/plugin-data": "4.0.53",
     "@salesforce/plugin-deploy-retrieve": "3.22.41",
     "@salesforce/plugin-info": "3.4.81",
@@ -211,7 +211,8 @@
     "@salesforce/plugin-user"
   ],
   "resolutions": {
-    "@salesforce/schemas": "1.9.1"
+    "@salesforce/schemas": "1.9.1",
+    "@salesforce/core": "8.20.1-cb.0"
   },
   "repository": "salesforcecli/cli",
   "scripts": {
