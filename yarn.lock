@@ -2061,7 +2061,32 @@
     strip-ansi "6.0.1"
     ts-retry-promise "^0.8.1"
 
-"@salesforce/core@^8.10.1", "@salesforce/core@^8.12.0", "@salesforce/core@^8.15.0", "@salesforce/core@^8.18.1", "@salesforce/core@^8.18.5", "@salesforce/core@^8.18.7", "@salesforce/core@^8.19.1", "@salesforce/core@^8.20.0", "@salesforce/core@^8.5.1", "@salesforce/core@^8.8.0", "@salesforce/core@^8.8.1", "@salesforce/core@^8.8.5", "@salesforce/core@^8.9.1":
+"@salesforce/core@8.20.1-cb.1", "@salesforce/core@^8.10.1", "@salesforce/core@^8.12.0", "@salesforce/core@^8.15.0", "@salesforce/core@^8.18.1", "@salesforce/core@^8.18.5", "@salesforce/core@^8.18.7", "@salesforce/core@^8.19.1", "@salesforce/core@^8.5.1", "@salesforce/core@^8.8.0", "@salesforce/core@^8.8.1", "@salesforce/core@^8.8.5":
+  version "8.20.1-cb.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.20.1-cb.1.tgz#1733e5ab78629eeb1969662a05b14d2ee710c6ac"
+  integrity sha512-XrW3b5g9q4lKlrrjRXVMjsENboEZUMK4AWUVM0E3M0NJOUNNISJgkSCoCYcU6CgcsJOABkPiCCdrzIy6pDmsUw==
+  dependencies:
+    "@jsforce/jsforce-node" "^3.10.1"
+    "@salesforce/kit" "^3.2.2"
+    "@salesforce/schemas" "^1.9.1"
+    "@salesforce/ts-types" "^2.0.11"
+    ajv "^8.17.1"
+    change-case "^4.1.2"
+    fast-levenshtein "^3.0.0"
+    faye "^1.4.0"
+    form-data "^4.0.4"
+    js2xmlparser "^4.0.1"
+    jsonwebtoken "9.0.2"
+    jszip "3.10.1"
+    memfs "^4.30.1"
+    pino "^9.7.0"
+    pino-abstract-transport "^1.2.0"
+    pino-pretty "^11.3.0"
+    proper-lockfile "^4.1.2"
+    semver "^7.6.3"
+    ts-retry-promise "^0.8.1"
+
+"@salesforce/core@^8.9.1":
   version "8.20.0"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.20.0.tgz#3a63ae04a9fd70ac10123013d3cbf7488a798033"
   integrity sha512-WZoab9aHDbYXUh4nO+91PNLHpiPfK408qjn3l6Sbgck2d0bzYkW5wOmuv5D5yWrEybs9kGosrW/e9liKPGmgng==
@@ -2207,15 +2232,15 @@
     got "^13.0.0"
     proxy-agent "^6.4.0"
 
-"@salesforce/plugin-auth@3.8.1":
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.8.1.tgz#c94572b9c5f73268f31d633cf0fc02d342491e10"
-  integrity sha512-ltovvzozwA8cw3f+2HgahZTRyy1K++ijfv1ekiKugkaRvwFvcUtbhDhtKmeew0m74npUKcahoRsafPNeNu81XQ==
+"@salesforce/plugin-auth@3.8.2-cb.1":
+  version "3.8.2-cb.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.8.2-cb.1.tgz#9d459c84900f4075bb9f8f5ffc07fff3e81d01d9"
+  integrity sha512-n+PUpXfBIOhp4Ng8/oLeqDYlGIVmnDBsUzfOAn5moSOGUl0XgQelksn5hjgdmQEFIbJX9op8+UtKUkY1IfrqvA==
   dependencies:
     "@inquirer/checkbox" "^2.5.0"
     "@inquirer/select" "^2.5.0"
     "@oclif/core" "^4"
-    "@salesforce/core" "^8.20.0"
+    "@salesforce/core" "8.20.1-cb.1"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/plugin-info" "^3.4.80"
     "@salesforce/sf-plugins-core" "^12.2.4"
