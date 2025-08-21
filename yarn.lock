@@ -2061,10 +2061,10 @@
     strip-ansi "6.0.1"
     ts-retry-promise "^0.8.1"
 
-"@salesforce/core@8.20.1-cb.1", "@salesforce/core@^8.10.1", "@salesforce/core@^8.12.0", "@salesforce/core@^8.15.0", "@salesforce/core@^8.18.1", "@salesforce/core@^8.18.5", "@salesforce/core@^8.18.7", "@salesforce/core@^8.19.1", "@salesforce/core@^8.5.1", "@salesforce/core@^8.8.0", "@salesforce/core@^8.8.1", "@salesforce/core@^8.8.5":
-  version "8.20.1-cb.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.20.1-cb.1.tgz#1733e5ab78629eeb1969662a05b14d2ee710c6ac"
-  integrity sha512-XrW3b5g9q4lKlrrjRXVMjsENboEZUMK4AWUVM0E3M0NJOUNNISJgkSCoCYcU6CgcsJOABkPiCCdrzIy6pDmsUw==
+"@salesforce/core@8.21.1-cb.0", "@salesforce/core@^8.10.1", "@salesforce/core@^8.12.0", "@salesforce/core@^8.15.0", "@salesforce/core@^8.18.1", "@salesforce/core@^8.18.5", "@salesforce/core@^8.18.7", "@salesforce/core@^8.19.1", "@salesforce/core@^8.5.1", "@salesforce/core@^8.8.0", "@salesforce/core@^8.8.1", "@salesforce/core@^8.8.5":
+  version "8.21.1-cb.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.21.1-cb.0.tgz#34615debcc1087650c036c1583b8eaf48f1d2cfd"
+  integrity sha512-cfrJw9zR0LV4/ANIIogj2MFinFzmORd/PPdbZITrx8Csv5ldgi4La1/uTc/FYenz0vQxM3zaRVqgMIiITXisXQ==
   dependencies:
     "@jsforce/jsforce-node" "^3.10.1"
     "@salesforce/kit" "^3.2.2"
@@ -2232,15 +2232,15 @@
     got "^13.0.0"
     proxy-agent "^6.4.0"
 
-"@salesforce/plugin-auth@3.8.2-cb.1":
-  version "3.8.2-cb.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.8.2-cb.1.tgz#9d459c84900f4075bb9f8f5ffc07fff3e81d01d9"
-  integrity sha512-n+PUpXfBIOhp4Ng8/oLeqDYlGIVmnDBsUzfOAn5moSOGUl0XgQelksn5hjgdmQEFIbJX9op8+UtKUkY1IfrqvA==
+"@salesforce/plugin-auth@3.8.2-cb.3":
+  version "3.8.2-cb.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.8.2-cb.3.tgz#5fc3a58c97374137506f12d1259136fa9f55ed35"
+  integrity sha512-BOxDPd0GxogdtoY3kdPUiv6wKZRdMEdvB3zgY1C9w+0oIsfsvLqt84oQuKV6m0yGyz/lT26cP0KaYjyZKRfNpQ==
   dependencies:
     "@inquirer/checkbox" "^2.5.0"
     "@inquirer/select" "^2.5.0"
     "@oclif/core" "^4"
-    "@salesforce/core" "8.20.1-cb.1"
+    "@salesforce/core" "8.21.1-cb.0"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/plugin-info" "^3.4.80"
     "@salesforce/sf-plugins-core" "^12.2.4"
