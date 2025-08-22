@@ -2061,10 +2061,10 @@
     strip-ansi "6.0.1"
     ts-retry-promise "^0.8.1"
 
-"@salesforce/core@8.21.1-cb.0", "@salesforce/core@^8.10.1", "@salesforce/core@^8.12.0", "@salesforce/core@^8.15.0", "@salesforce/core@^8.18.1", "@salesforce/core@^8.18.5", "@salesforce/core@^8.18.7", "@salesforce/core@^8.19.1", "@salesforce/core@^8.5.1", "@salesforce/core@^8.8.0", "@salesforce/core@^8.8.1", "@salesforce/core@^8.8.5":
-  version "8.21.1-cb.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.21.1-cb.0.tgz#34615debcc1087650c036c1583b8eaf48f1d2cfd"
-  integrity sha512-cfrJw9zR0LV4/ANIIogj2MFinFzmORd/PPdbZITrx8Csv5ldgi4La1/uTc/FYenz0vQxM3zaRVqgMIiITXisXQ==
+"@salesforce/core@8.21.2-cb.0", "@salesforce/core@^8.10.1", "@salesforce/core@^8.12.0", "@salesforce/core@^8.15.0", "@salesforce/core@^8.18.1", "@salesforce/core@^8.18.5", "@salesforce/core@^8.18.7", "@salesforce/core@^8.19.1", "@salesforce/core@^8.5.1", "@salesforce/core@^8.8.0", "@salesforce/core@^8.8.1", "@salesforce/core@^8.8.5":
+  version "8.21.2-cb.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.21.2-cb.0.tgz#d475c81b5c29ee5861c8b12a8515398e629e9f29"
+  integrity sha512-kNp9BVNEar2sAdtCZFEGyqpmGQSoWBTaQDRcq5BfyXWvk73062nqIuNp70+MuksWaLLFLJ1jQPhH4nnLVX1RKw==
   dependencies:
     "@jsforce/jsforce-node" "^3.10.1"
     "@salesforce/kit" "^3.2.2"
@@ -2073,7 +2073,7 @@
     ajv "^8.17.1"
     change-case "^4.1.2"
     fast-levenshtein "^3.0.0"
-    faye "^1.4.0"
+    faye "^1.4.1"
     form-data "^4.0.4"
     js2xmlparser "^4.0.1"
     jsonwebtoken "9.0.2"
@@ -2232,15 +2232,15 @@
     got "^13.0.0"
     proxy-agent "^6.4.0"
 
-"@salesforce/plugin-auth@3.8.2-cb.3":
-  version "3.8.2-cb.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.8.2-cb.3.tgz#5fc3a58c97374137506f12d1259136fa9f55ed35"
-  integrity sha512-BOxDPd0GxogdtoY3kdPUiv6wKZRdMEdvB3zgY1C9w+0oIsfsvLqt84oQuKV6m0yGyz/lT26cP0KaYjyZKRfNpQ==
+"@salesforce/plugin-auth@3.8.2-cb.4":
+  version "3.8.2-cb.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.8.2-cb.4.tgz#6db4a98cf9991b362235fa28c12fef926022bac9"
+  integrity sha512-rr61nRQAH4aYTWQgUBRntjPXmo7zPdNpeFJiZsuYC9mMg6pXKwUKB+QhYPwHnVPR6OwKWFAXJjIsJq36yood+Q==
   dependencies:
     "@inquirer/checkbox" "^2.5.0"
     "@inquirer/select" "^2.5.0"
     "@oclif/core" "^4"
-    "@salesforce/core" "8.21.1-cb.0"
+    "@salesforce/core" "8.21.2-cb.0"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/plugin-info" "^3.4.80"
     "@salesforce/sf-plugins-core" "^12.2.4"
@@ -5924,7 +5924,7 @@ faye-websocket@>=0.9.1:
   dependencies:
     websocket-driver ">=0.5.1"
 
-faye@1.4.1, faye@^1.4.0:
+faye@1.4.1, faye@^1.4.0, faye@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/faye/-/faye-1.4.1.tgz#fd2f84e21d62b1cced1bd34968925b466d44a381"
   integrity sha512-Cg/khikhqlvumHO3efwx2tps2ZgQRjUMrO24G0quz7MMzRYYaEjU224YFXOeuPIvanRegIchVxj6pmHK1W0ikA==
