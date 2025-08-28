@@ -48,17 +48,30 @@ FunctionEnd
 
 Function .onInit
 
-nsExec::ExecToStack /TIMEOUT=2000 'cmd /c "sfdx --version"'
-; exit code is stored on $0 first, then stdout
-Pop $0
-Pop $0
-; $0 now contains stdout
-
-;$1 is the result of the comparison
-${StrContains} $1 "sfdx-cli/7." $0
-StrCmp $1 "" notFound1
-  MessageBox MB_OK 'Error: sfdx cli installed, please uninstall - https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_uninstall.htm'
+  ; Securely locate global cmd.exe (System32 or Sysnative)
+  StrCpy $R9 "$WINDIR\System32\cmd.exe"
+  IfFileExists "$R9" 0 check_sysnative
+    Goto cmd_found
+  check_sysnative:
+  StrCpy $R9 "$WINDIR\Sysnative\cmd.exe"
+  IfFileExists "$R9" 0 cmd_not_found
+    Goto cmd_found
+  cmd_not_found:
+  MessageBox MB_OK|MB_ICONSTOP "Error: Could not find global cmd.exe. Installation cannot continue."
   Quit
-notFound1:
+  cmd_found:
+
+  nsExec::ExecToStack /TIMEOUT=2000 '"$R9" /c "sfdx --version"'
+  ; exit code is stored on $0 first, then stdout
+  Pop $0
+  Pop $0
+  ; $0 now contains stdout
+
+  ;$1 is the result of the comparison
+  ${StrContains} $1 "sfdx-cli/7." $0
+  StrCmp $1 "" notFound1
+    MessageBox MB_OK 'Error: sfdx cli installed, please uninstall - https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_uninstall.htm'
+    Quit
+  notFound1:
 
 FunctionEnd
