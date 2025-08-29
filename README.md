@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.91.5 linux-x64 node-v22.15.0
+@salesforce/cli/2.105.0 linux-x64 node-v22.18.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -42,6 +42,18 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 
 <!-- commands -->
 
+- [`sf agent activate`](#sf-agent-activate)
+- [`sf agent create`](#sf-agent-create)
+- [`sf agent deactivate`](#sf-agent-deactivate)
+- [`sf agent generate agent-spec`](#sf-agent-generate-agent-spec)
+- [`sf agent generate template`](#sf-agent-generate-template)
+- [`sf agent generate test-spec`](#sf-agent-generate-test-spec)
+- [`sf agent preview`](#sf-agent-preview)
+- [`sf agent test create`](#sf-agent-test-create)
+- [`sf agent test list`](#sf-agent-test-list)
+- [`sf agent test results`](#sf-agent-test-results)
+- [`sf agent test resume`](#sf-agent-test-resume)
+- [`sf agent test run`](#sf-agent-test-run)
 - [`sf alias list`](#sf-alias-list)
 - [`sf alias set`](#sf-alias-set)
 - [`sf alias unset`](#sf-alias-unset)
@@ -114,7 +126,6 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf org list sobject record-counts`](#sf-org-list-sobject-record-counts)
 - [`sf org list users`](#sf-org-list-users)
 - [`sf org login access-token`](#sf-org-login-access-token)
-- [`sf org login device`](#sf-org-login-device)
 - [`sf org login jwt`](#sf-org-login-jwt)
 - [`sf org login sfdx-url`](#sf-org-login-sfdx-url)
 - [`sf org login web`](#sf-org-login-web)
@@ -124,12 +135,17 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf org refresh sandbox`](#sf-org-refresh-sandbox)
 - [`sf org resume sandbox`](#sf-org-resume-sandbox)
 - [`sf org resume scratch`](#sf-org-resume-scratch)
+- [`sf package convert`](#sf-package-convert)
 - [`sf package create`](#sf-package-create)
 - [`sf package delete`](#sf-package-delete)
 - [`sf package install`](#sf-package-install)
 - [`sf package install report`](#sf-package-install-report)
 - [`sf package installed list`](#sf-package-installed-list)
 - [`sf package list`](#sf-package-list)
+- [`sf package push-upgrade abort`](#sf-package-push-upgrade-abort)
+- [`sf package push-upgrade list`](#sf-package-push-upgrade-list)
+- [`sf package push-upgrade report`](#sf-package-push-upgrade-report)
+- [`sf package push-upgrade schedule`](#sf-package-push-upgrade-schedule)
 - [`sf package uninstall`](#sf-package-uninstall)
 - [`sf package uninstall report`](#sf-package-uninstall-report)
 - [`sf package update`](#sf-package-update)
@@ -138,6 +154,7 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf package version create report`](#sf-package-version-create-report)
 - [`sf package version delete`](#sf-package-version-delete)
 - [`sf package version displayancestry`](#sf-package-version-displayancestry)
+- [`sf package version displaydependencies`](#sf-package-version-displaydependencies)
 - [`sf package version list`](#sf-package-version-list)
 - [`sf package version promote`](#sf-package-version-promote)
 - [`sf package version report`](#sf-package-version-report)
@@ -187,6 +204,728 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf visualforce generate page`](#sf-visualforce-generate-page)
 - [`sf which`](#sf-which)
 
+## `sf agent activate`
+
+Activate an agent in an org.
+
+```
+USAGE
+  $ sf agent activate -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-n <value>]
+
+FLAGS
+  -n, --api-name=<value>     API name of the agent to activate.
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Activate an agent in an org.
+
+  Activating an agent makes it immediately available to your users. An agent must be active before you can preview it
+  with the "agent preview" CLI command or VS Code.
+
+  You must know the agent's API name to activate it; you can either be prompted for it or you can specify it with the
+  --api-name flag. Find the agent's API name in its Agent Details page of your org's Agentforce Studio UI in Setup.
+
+EXAMPLES
+  Activate an agent in your default target org by being prompted:
+
+    $ sf agent activate
+
+  Activate an agent with API name Resort_Manager in the org with alias "my-org":
+
+    $ sf agent activate --api-name Resort_Manager --target-org my-org
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/activate.ts)_
+
+## `sf agent create`
+
+Create an agent in your org using a local agent spec file.
+
+```
+USAGE
+  $ sf agent create -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [--name <value>] [--api-name
+    <value>] [--spec <value>] [--preview]
+
+FLAGS
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-name=<value>     API name of the new agent; if not specified, the API name is derived from the agent name
+                             (label); the API name must not exist in the org.
+      --api-version=<value>  Override the api version used for api requests made by this command
+      --name=<value>         Name (label) of the new agent.
+      --preview              Preview the agent without saving it in your org.
+      --spec=<value>         Path to an agent spec file.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Create an agent in your org using a local agent spec file.
+
+  To run this command, you must have an agent spec file, which is a YAML file that define the agent properties and
+  contains a list of AI-generated topics. Topics define the range of jobs the agent can handle. Use the "agent generate
+  agent-spec" CLI command to generate an agent spec file. Then specify the file to this command using the --spec flag,
+  along with the name (label) of the new agent with the --name flag. If you don't specify any of the required flags, the
+  command prompts you.
+
+  When this command completes, your org contains the new agent, which you can then edit and customize in the Agent
+  Builder UI. The new agent's topics are the same as the ones listed in the agent spec file. The agent might also have
+  some AI-generated actions, or you can add them. This command also retrieves all the metadata files associated with the
+  new agent to your local Salesforce DX project.
+
+  Use the --preview flag to review what the agent looks like without actually saving it in your org. When previewing,
+  the command creates a JSON file in the current directory with all the agent details. The name of the JSON file is the
+  agent's API name and a timestamp.
+
+  To open the new agent in your org's Agent Builder UI, run this command: "sf org open agent --api-name <api-name>".
+
+EXAMPLES
+  Create an agent by being prompted for the required information, such as the agent spec file and agent name, and then
+  create it in your default org:
+
+    $ sf agent create
+
+  Create an agent by specifying the agent name, API name, and spec file with flags; use the org with alias "my-org";
+  the command fails if the API name is already being used in your org:
+
+    $ sf agent create --name "Resort Manager" --api-name Resort_Manager --spec specs/resortManagerAgent.yaml \
+      --target-org my-org
+
+  Preview the creation of an agent named "Resort Manager" and use your default org:
+
+    $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/create.ts)_
+
+## `sf agent deactivate`
+
+Deactivate an agent in an org.
+
+```
+USAGE
+  $ sf agent deactivate -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-n <value>]
+
+FLAGS
+  -n, --api-name=<value>     API name of the agent to deactivate.
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Deactivate an agent in an org.
+
+  Deactivating an agent makes it unavailable to your users. To make changes to an agent, such as adding or removing
+  topics or actions, you must deactivate it. You can't preview an agent with the "agent preview" CLI command or VS Code
+  if it's deactivated.
+
+  You must know the agent's API name to deactivate it; you can either be prompted for it or you can specify it with the
+  --api-name flag. Find the agent's API name in its Agent Details page of your org's Agentforce Studio UI in Setup.
+
+EXAMPLES
+  Deactivate an agent in your default target org by being prompted:
+
+    $ sf agent deactivate
+
+  Deactivate the agent Resort_Manager in the org with alias "my_org":
+
+    $ sf agent deactivate --api-name Resort_Manager --target-org my-org
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/deactivate.ts)_
+
+## `sf agent generate agent-spec`
+
+Generate an agent spec, which is a YAML file that captures what an agent can do.
+
+```
+USAGE
+  $ sf agent generate agent-spec -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [--type customer|internal]
+    [--role <value>] [--company-name <value>] [--company-description <value>] [--company-website <value>] [--max-topics
+    <value>] [--agent-user <value>] [--enrich-logs true|false] [--tone formal|casual|neutral] [--spec <value>]
+    [--output-file <value>] [--full-interview] [--grounding-context <value> --prompt-template <value>]
+    [--force-overwrite]
+
+FLAGS
+  -o, --target-org=<value>           (required) Username or alias of the target org. Not required if the `target-org`
+                                     configuration variable is already set.
+      --agent-user=<value>           Username of a user in your org to assign to your agent; determines what your agent
+                                     can access and do.
+      --api-version=<value>          Override the api version used for api requests made by this command
+      --company-description=<value>  Description of your company.
+      --company-name=<value>         Name of your company.
+      --company-website=<value>      Website URL of your company.
+      --enrich-logs=<option>         Adds agent conversation data to event logs so you can view all agent session
+                                     activity in one place.
+                                     <options: true|false>
+      --force-overwrite              Don't prompt the user to confirm that an existing spec file will be overwritten.
+      --full-interview               Prompt for both required and optional flags.
+      --grounding-context=<value>    Context information and personalization that's added to your prompts when using a
+                                     custom prompt template.
+      --max-topics=<value>           Maximum number of topics to generate in the agent spec; default is 5.
+      --output-file=<value>          [default: specs/agentSpec.yaml] Path for the generated YAML agent spec file; can be
+                                     an absolute or relative path.
+      --prompt-template=<value>      API name of a customized prompt template to use instead of the default prompt
+                                     template.
+      --role=<value>                 Role of the agent.
+      --spec=<value>                 Agent spec file, in YAML format, to use as input to the command.
+      --tone=<option>                Conversational style of the agent, such as how it expresses your brand personality
+                                     in its messages through word choice, punctuation, and sentence structure.
+                                     <options: formal|casual|neutral>
+      --type=<option>                Type of agent to create. Internal types are copilots used internally by your
+                                     company and customer types are the agents you create for your customers.
+                                     <options: customer|internal>
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Generate an agent spec, which is a YAML file that captures what an agent can do.
+
+  The first step in creating an agent in your org with Salesforce CLI is to generate an agent spec using this command.
+  An agent spec is a YAML-formatted file that contains information about the agent, such as its role and company
+  description, and then an AI-generated list of topics based on this information. Topics define the range of jobs your
+  agent can handle.
+
+  Use flags, such as --role and --company-description, to provide details about your company and the role that the agent
+  plays in your company. If you prefer, you can also be prompted for the basic information; use --full-interview to be
+  prompted for all required and optional properties. Upon command execution, the large language model (LLM) associated
+  with your org uses the provided information to generate a list of topics for the agent. Because the LLM uses the
+  company and role information to generate the topics, we recommend that you provide accurate, complete, and specific
+  details so the LLM generates the best and most relevant topics. Once generated, you can edit the spec file; for
+  example, you can remove topics that don't apply or change a topic's description.
+
+  You can also iterate the spec generation process by using the --spec flag to pass an existing agent spec file to this
+  command, and then using the --role, --company-description, etc, flags to refine your agent properties. Iteratively
+  improving the description of your agent allows the LLM to generate progressively better topics.
+
+  You can also specify other agent properties, such as a custom prompt template, how to ground the prompt template to
+  add context to the agent's prompts, the tone of the prompts, and the username of a user in the org to assign to the
+  agent.
+
+  When your agent spec is ready, you then create the agent in your org by running the "agent create" CLI command and
+  specifying the spec with the --spec flag.
+
+EXAMPLES
+  Generate an agent spec in the default location and use flags to specify the agent properties, such as its role and
+  your company details; use your default org:
+
+    $ sf agent generate agent-spec --type customer --role "Field customer complaints and manage employee schedules." \
+      --company-name "Coral Cloud Resorts" --company-description "Provide customers with exceptional destination \
+      activities, unforgettable experiences, and reservation services."
+
+  Generate an agent spec by being prompted for the required agent properties and generate a maxiumum of 5 topics;
+  write the generated file to the "specs/resortManagerSpec.yaml" file and use the org with alias "my-org":
+
+    $ sf agent generate agent-spec --max-topics 5 --output-file specs/resortManagerAgent.yaml --target-org my-org
+
+  Be prompted for all required and optional agent properties; use your default org:
+
+    $ sf agent generate agent-spec --full-interview
+
+  Specify an existing agent spec file called "specs/resortManagerAgent.yaml", and then overwrite it with a new version
+  that contains newly AI-generated topics based on the updated role information passed in with the --role flag:
+
+    $ sf agent generate agent-spec --spec specs/resortManagerAgent.yaml --output-file specs/resortManagerAgent.yaml \
+      --role "Field customer complaints, manage employee schedules, and ensure all resort operations are running \
+      smoothly"
+
+  Specify that the conversational tone of the agent is formal and to attach the "resortmanager@myorg.com" username to
+  it; be prompted for the required properties and use your default org:
+
+    $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/generate/agent-spec.ts)_
+
+## `sf agent generate template`
+
+Generate an agent template from an existing agent in your DX project so you can then package the template in a managed package.
+
+```
+USAGE
+  $ sf agent generate template --agent-version <value> -f <value> [--json] [--flags-dir <value>] [--api-version <value>]
+
+FLAGS
+  -f, --agent-file=<value>     (required) Path to an agent (Bot) metadata file.
+      --agent-version=<value>  (required) Version of the agent (BotVersion).
+      --api-version=<value>    Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Generate an agent template from an existing agent in your DX project so you can then package the template in a managed
+  package.
+
+  At a high-level, agents are defined by the Bot, BotVersion, and GenAiPlannerBundle metadata types. The
+  GenAiPlannerBundle type in turn defines the agent's topics and actions. This command uses the metadata files for these
+  three types, located in your local DX project, to generate a BotTemplate file for a specific agent (Bot). You then use
+  the BotTemplate file, along with the GenAiPlannerBundle file that references the BotTemplate, to package the template
+  in a managed package that you can share between orgs or on AppExchange.
+
+  Use the --agent-file flag to specify the relative or full pathname of the Bot metadata file, such as
+  force-app/main/default/bots/My_Awesome_Agent/My_Awesome_Agent.bot-meta.xml. A single Bot can have multiple
+  BotVersions, so use the --agent-version flag to specify the version. The corresponding BotVersion file must exist
+  locally. For example, if you specify "--agent-version 4", then the file
+  force-app/main/default/bots/My_Awesome_Agent/v4.botVersion-meta.xml must exist.
+
+  The new BotTemplate file is generated in the "botTemplates" directory in your local package directory, and has the
+  name <Agent_API_name>_v<Version>_Template.botTemplate-meta.xml, such as
+  force-app/main/default/botTemplates/My_Awesome_Agent_v4_Template.botTemplate-meta.xml. The command displays the full
+  pathname of the generated files when it completes.
+
+EXAMPLES
+  Generate an agent template from a Bot metadata file in your DX project that corresponds to the My_Awesome_Agent
+  agent; use version 1 of the agent.
+
+    $ sf agent generate template --agent-file \
+      force-app/main/default/bots/My_Awesome_Agent/My_Awesome_Agent.bot-meta.xml --agent-version 1
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/generate/template.ts)_
+
+## `sf agent generate test-spec`
+
+Generate an agent test spec, which is a YAML file that lists the test cases for testing a specific agent.
+
+```
+USAGE
+  $ sf agent generate test-spec [--flags-dir <value>] [-d <value>] [--force-overwrite] [-f <value>]
+
+FLAGS
+  -d, --from-definition=<value>  Filepath to the AIEvaluationDefinition metadata XML file in your DX project that you
+                                 want to convert to a test spec YAML file.
+  -f, --output-file=<value>      Name of the generated test spec YAML file. Default value is
+                                 "specs/<AGENT_API_NAME>-testSpec.yaml".
+      --force-overwrite          Don't prompt for confirmation when overwriting an existing test spec YAML file.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+
+DESCRIPTION
+  Generate an agent test spec, which is a YAML file that lists the test cases for testing a specific agent.
+
+  The first step when using Salesforce CLI to create an agent test in your org is to use this interactive command to
+  generate a local YAML-formatted test spec file. The test spec YAML file contains information about the agent being
+  tested, such as its API name, and then one or more test cases. This command uses the metadata components in your DX
+  project when prompting for information, such as the agent API name; it doesn't look in your org.
+
+  To generate a specific agent test case, this command prompts you for this information; when possible, the command
+  provides a list of options for you to choose from:
+
+  - Utterance: Natural language statement, question, or command used to test the agent.
+  - Expected topic: API name of the topic you expect the agent to use when responding to the utterance.
+  - Expected actions: One or more API names of the expection actions the agent takes.
+  - Expected outcome: Natural language description of the outcome you expect.
+  - (Optional) Custom evaluation: Test an agent's response for specific strings or numbers.
+  - (Optional) Conversation history: Boilerplate for additional context you can add to the test in the form of a
+  conversation history.
+
+  When your test spec is ready, you then run the "agent test create" command to actually create the test in your org and
+  synchronize the metadata with your DX project. The metadata type for an agent test is AiEvaluationDefinition.
+
+  If you have an existing AiEvaluationDefinition metadata XML file in your DX project, you can generate its equivalent
+  YAML test spec file with the --from-definition flag.
+
+EXAMPLES
+  Generate an agent test spec YAML file interactively:
+
+    $ sf agent generate test-spec
+
+  Generate an agent test spec YAML file and specify a name for the new file; if the file exists, overwrite it without
+  confirmation:
+
+    $ sf agent generate test-spec --output-file specs/Resort_Manager-new-version-testSpec.yaml --force-overwrite
+
+  Generate an agent test spec YAML file from an existing AiEvaluationDefinition metadata XML file in your DX project:
+
+    $ sf agent generate test-spec --from-definition \
+      force-app//main/default/aiEvaluationDefinitions/Resort_Manager_Tests.aiEvaluationDefinition-meta.xml
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/generate/test-spec.ts)_
+
+## `sf agent preview`
+
+Interact with an active agent to preview how the agent responds to your statements, questions, and commands (utterances).
+
+```
+USAGE
+  $ sf agent preview (-c <value> -o <value>) [--flags-dir <value>] [--api-version <value>] [-n <value>] [-d
+    <value>] [-x]
+
+FLAGS
+  -c, --client-app=<value>   (required) Name of the linked client app to use for the agent connection. You must have
+                             previously created this link with "org login web --client-app". Run "org display" to see
+                             the available linked client apps.
+  -d, --output-dir=<value>   Directory where conversation transcripts are saved.
+  -n, --api-name=<value>     API name of the agent you want to interact with.
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+  -x, --apex-debug           Enable Apex debug logging during the agent preview conversation.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+
+DESCRIPTION
+  Interact with an active agent to preview how the agent responds to your statements, questions, and commands
+  (utterances).
+
+  Use this command to have a natural language conversation with an active agent in your org, as if you were an actual
+  user. The interface is simple: in the "Start typing..." prompt, enter a statement, question, or command; when you're
+  done, enter Return. Your utterance is posted on the right along with a timestamp. The agent then responds on the left.
+  To exit the conversation, hit ESC or Control+C.
+
+  This command is useful to test if the agent responds to your utterances as you expect. For example, you can test that
+  the agent uses a particular topic when asked a question, and then whether it invokes the correct action associated
+  with that topic. This command is the CLI-equivalent of the Conversation Preview panel in your org's Agent Builder UI.
+
+  When the session concludes, the command asks if you want to save the API responses and chat transcripts. By default,
+  the files are saved to the "./temp/agent-preview" directory. Specify a new default directory by setting the
+  environment variable "SF_AGENT_PREVIEW_OUTPUT_DIR" to the directory. Or you can pass the directory to the --output-dir
+  flag.
+
+  Find the agent's API name in its Agent Details page of your org's Agentforce Studio UI in Setup. If your agent is
+  currently deactivated, use the "agent activate" CLI command to activate it.
+
+  IMPORTANT: Before you use this command, you must complete a number of configuration steps in your org and your DX
+  project. The examples in this help assume you've completed the steps. See "Preview an Agent" in the "Agentforce
+  Developer Guide" for complete documentation:
+  https://developer.salesforce.com/docs/einstein/genai/guide/agent-dx-preview.html.
+
+EXAMPLES
+  Interact with an agent with API name Resort_Manager in the org with alias "my-org" and the linked "agent-app"
+  connected app:
+
+    $ sf agent preview --api-name Resort_Manager --target-org my-org --client-app agent-app
+
+  Same as the preceding example, but this time save the conversation transcripts to the "./transcripts/my-preview"
+  directory rather than the default "./temp/agent-preview":
+
+    $ sf agent preview --api-name Resort_Manager --target-org my-org --client-app agent-app --output-dir \
+      transcripts/my-preview
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/preview.ts)_
+
+## `sf agent test create`
+
+Create an agent test in your org using a local test spec YAML file.
+
+```
+USAGE
+  $ sf agent test create -o <value> [--json] [--flags-dir <value>] [--api-name <value>] [--spec <value>] [--api-version
+    <value>] [--preview] [--force-overwrite]
+
+FLAGS
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-name=<value>     API name of the new test; the API name must not exist in the org.
+      --api-version=<value>  Override the api version used for api requests made by this command
+      --force-overwrite      Don't prompt for confirmation when overwriting an existing test (based on API name) in your
+                             org.
+      --preview              Preview the test metadata file (AiEvaluationDefinition) without deploying to your org.
+      --spec=<value>         Path to the test spec YAML file.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Create an agent test in your org using a local test spec YAML file.
+
+  To run this command, you must have an agent test spec file, which is a YAML file that lists the test cases for testing
+  a specific agent. Use the "agent generate test-spec" CLI command to generate a test spec file. Then specify the file
+  to this command with the --spec flag, or run this command with no flags to be prompted.
+
+  When this command completes, your org contains the new agent test, which you can view and edit using the Testing
+  Center UI. This command also retrieves the metadata component (AiEvaluationDefinition) associated with the new test to
+  your local Salesforce DX project and displays its filename.
+
+  After you've created the test in the org, use the "agent test run" command to run it.
+
+EXAMPLES
+  Create an agent test interactively and be prompted for the test spec and API name of the test in the org; use the
+  default org:
+
+    $ sf agent test create
+
+  Create an agent test and use flags to specify all required information; if a test with same API name already exists
+  in the org, overwrite it without confirmation. Use the org with alias "my-org":
+
+    $ sf agent test create --spec specs/Resort_Manager-testSpec.yaml --api-name Resort_Manager_Test \
+      --force-overwrite --target-org my-org
+
+  Preview what the agent test metadata (AiEvaluationDefinition) looks like without deploying it to your default org:
+
+    $ sf agent test create --spec specs/Resort_Manager-testSpec.yaml --api-name Resort_Manager_Test --preview
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/test/create.ts)_
+
+## `sf agent test list`
+
+List the available agent tests in your org.
+
+```
+USAGE
+  $ sf agent test list -o <value> [--json] [--flags-dir <value>] [--api-version <value>]
+
+FLAGS
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  List the available agent tests in your org.
+
+  The command outputs a table with the name (API name) of each test along with its unique ID and the date it was created
+  in the org.
+
+EXAMPLES
+  List the agent tests in your default org:
+
+    $ sf agent test list
+
+  List the agent tests in an org with alias "my-org""
+
+    $ sf agent test list --target-org my-org
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/test/list.ts)_
+
+## `sf agent test results`
+
+Get the results of a completed agent test run.
+
+```
+USAGE
+  $ sf agent test results -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>] [--result-format
+    json|human|junit|tap] [-d <value>] [--verbose]
+
+FLAGS
+  -d, --output-dir=<value>      Directory to write the agent test results into.
+  -i, --job-id=<value>          (required) Job ID of the completed agent test run.
+  -o, --target-org=<value>      (required) Username or alias of the target org. Not required if the `target-org`
+                                configuration variable is already set.
+      --api-version=<value>     Override the api version used for api requests made by this command
+      --result-format=<option>  [default: human] Format of the agent test run results.
+                                <options: json|human|junit|tap>
+      --verbose                 Show generated data in the test results output.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Get the results of a completed agent test run.
+
+  This command requires a job ID, which the original "agent test run" command displays when it completes. You can also
+  use the --use-most-recent flag to see results for the most recently run agent test.
+
+  By default, this command outputs test results in human-readable tables for each test case. The tables show whether the
+  test case passed, the expected and actual values, the test score, how long the test took, and more. Use the
+  --result-format to display the test results in JSON or Junit format. Use the --output-dir flag to write the results to
+  a file rather than to the terminal.
+
+EXAMPLES
+  Get the results of an agent test run in your default org using its job ID:
+
+    $ sf agent test results --job-id 4KBfake0000003F4AQ
+
+  Get the results of the most recently run agent test in an org with alias "my-org":
+
+    $ sf agent test results --use-most-recent --target-org my-org
+
+  Get the results of the most recently run agent test in your default org, and write the JSON-formatted results into a
+  directory called "test-results":
+
+    $ sf agent test results --use-most-recent --output-dir ./test-results --result-format json
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory to write the agent test results into.
+
+    If the agent test run completes, write the results to the specified directory. If the test is still running, the
+    test results aren't written.
+
+  --verbose  Show generated data in the test results output.
+
+    When enabled, includes detailed generated data (such as invoked actions) in the human-readable test results output.
+    This is useful for debugging test failures and understanding what actions were actually invoked during the test run.
+
+    The generated data is in JSON format and includes the Apex classes or Flows that were invoked, the Salesforce
+    objects that were touched, and so on. Use the JSON structure of this information to build the test case JSONPath
+    expression when using custom evaluations.
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/test/results.ts)_
+
+## `sf agent test resume`
+
+Resume an agent test that you previously started in your org so you can view the test results.
+
+```
+USAGE
+  $ sf agent test resume -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-i <value>] [-r] [-w
+    <value>] [--result-format json|human|junit|tap] [-d <value>] [--verbose]
+
+FLAGS
+  -d, --output-dir=<value>      Directory to write the agent test results into.
+  -i, --job-id=<value>          Job ID of the original agent test run.
+  -o, --target-org=<value>      (required) Username or alias of the target org. Not required if the `target-org`
+                                configuration variable is already set.
+  -r, --use-most-recent         Use the job ID of the most recent agent test run.
+  -w, --wait=<value>            [default: 5 minutes] Number of minutes to wait for the command to complete and display
+                                results to the terminal window.
+      --api-version=<value>     Override the api version used for api requests made by this command
+      --result-format=<option>  [default: human] Format of the agent test run results.
+                                <options: json|human|junit|tap>
+      --verbose                 Show generated data in the test results output.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Resume an agent test that you previously started in your org so you can view the test results.
+
+  This command requires a job ID, which the original "agent test run" command displays when it completes. You can also
+  use the --use-most-recent flag to see results for the most recently run agent test.
+
+  Use the --wait flag to specify the number of minutes for this command to wait for the agent test to complete; if the
+  test completes by the end of the wait time, the command displays the test results. If not, the CLI returns control of
+  the terminal to you, and you must run "agent test resume" again.
+
+  By default, this command outputs test results in human-readable tables for each test case. The tables show whether the
+  test case passed, the expected and actual values, the test score, how long the test took, and more. Use the
+  --result-format to display the test results in JSON or Junit format. Use the --output-dir flag to write the results to
+  a file rather than to the terminal.
+
+EXAMPLES
+  Resume an agent test in your default org using a job ID:
+
+    $ sf agent test resume --job-id 4KBfake0000003F4AQ
+
+  Resume the most recently-run agent test in an org with alias "my-org" org; wait 10 minutes for the tests to finish:
+
+    $ sf agent test resume --use-most-recent --wait 10 --target-org my-org
+
+  Resume the most recent agent test in your default org, and write the JSON-formatted results into a directory called
+  "test-results":
+
+    $ sf agent test resume --use-most-recent --output-dir ./test-results --result-format json
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory to write the agent test results into.
+
+    If the agent test run completes, write the results to the specified directory. If the test is still running, the
+    test results aren't written.
+
+  --verbose  Show generated data in the test results output.
+
+    When enabled, includes detailed generated data (such as invoked actions) in the human-readable test results output.
+    This is useful for debugging test failures and understanding what actions were actually invoked during the test run.
+
+    The generated data is in JSON format and includes the Apex classes or Flows that were invoked, the Salesforce
+    objects that were touched, and so on. Use the JSON structure of this information to build the test case JSONPath
+    expression when using custom evaluations.
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/test/resume.ts)_
+
+## `sf agent test run`
+
+Start an agent test in your org.
+
+```
+USAGE
+  $ sf agent test run -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-n <value>] [-w <value>]
+    [--result-format json|human|junit|tap] [-d <value>] [--verbose]
+
+FLAGS
+  -d, --output-dir=<value>      Directory to write the agent test results into.
+  -n, --api-name=<value>        API name of the agent test to run; corresponds to the name of the AiEvaluationDefinition
+                                metadata component that implements the agent test.
+  -o, --target-org=<value>      (required) Username or alias of the target org. Not required if the `target-org`
+                                configuration variable is already set.
+  -w, --wait=<value>            Number of minutes to wait for the command to complete and display results to the
+                                terminal window.
+      --api-version=<value>     Override the api version used for api requests made by this command
+      --result-format=<option>  [default: human] Format of the agent test run results.
+                                <options: json|human|junit|tap>
+      --verbose                 Show generated data in the test results output.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Start an agent test in your org.
+
+  Use the --api-name flag to specify the name of the agent test you want to run. Use the output of the "agent test list"
+  command to get the names of all the available agent tests in your org.
+
+  By default, this command starts the agent test in your org, but it doesn't wait for the test to finish. Instead, it
+  displays the "agent test resume" command, with a job ID, that you execute to see the results of the test run, and then
+  returns control of the terminal window to you. Use the --wait flag to specify the number of minutes for the command to
+  wait for the agent test to complete; if the test completes by the end of the wait time, the command displays the test
+  results. If not, run "agent test resume".
+
+  By default, this command outputs test results in human-readable tables for each test case, if the test completes in
+  time. The tables show whether the test case passed, the expected and actual values, the test score, how long the test
+  took, and more. Use the --result-format to display the test results in JSON or Junit format. Use the --output-dir flag
+  to write the results to a file rather than to the terminal.
+
+EXAMPLES
+  Start an agent test called Resort_Manager_Test for an agent in your default org, don't wait for the test to finish:
+
+    $ sf agent test run --api-name Resort_Manager_Test
+
+  Start an agent test for an agent in an org with alias "my-org" and wait for 10 minutes for the test to finish:
+
+    $ sf agent test run --api-name Resort_Manager_Test --wait 10 --target-org my-org
+
+  Start an agent test and write the JSON-formatted results into a directory called "test-results":
+
+    $ sf agent test run --api-name Resort_Manager_Test --wait 10 --output-dir ./test-results --result-format json
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory to write the agent test results into.
+
+    If the agent test run completes, write the results to the specified directory. If the test is still running, the
+    test results aren't written.
+
+  --verbose  Show generated data in the test results output.
+
+    When enabled, includes detailed generated data (such as invoked actions) in the human-readable test results output.
+    This is useful for debugging test failures and understanding what actions were actually invoked during the test run.
+
+    The generated data is in JSON format and includes the Apex classes or Flows that were invoked, the Salesforce
+    objects that were touched, and so on. Use the JSON structure of this information to build the test case JSONPath
+    expression when using custom evaluations.
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/test/run.ts)_
+
 ## `sf alias list`
 
 List all aliases currently set on your local computer.
@@ -213,7 +952,7 @@ EXAMPLES
     $ sf alias list
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.29/src/commands/alias/list.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.44/src/commands/alias/list.ts)_
 
 ## `sf alias set`
 
@@ -262,7 +1001,7 @@ EXAMPLES
     $ sf alias set my-scratch-org test-ss0xut7txzxf@example.com
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.29/src/commands/alias/set.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.44/src/commands/alias/set.ts)_
 
 ## `sf alias unset`
 
@@ -302,7 +1041,7 @@ EXAMPLES
     $ sf alias unset --all [--no-prompt]
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.29/src/commands/alias/unset.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.44/src/commands/alias/unset.ts)_
 
 ## `sf analytics generate template`
 
@@ -344,7 +1083,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.48/src/commands/analytics/generate/template.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.61/src/commands/analytics/generate/template.ts)_
 
 ## `sf apex generate class`
 
@@ -403,7 +1142,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.48/src/commands/apex/generate/class.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.61/src/commands/apex/generate/class.ts)_
 
 ## `sf apex generate trigger`
 
@@ -472,7 +1211,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.48/src/commands/apex/generate/trigger.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.61/src/commands/apex/generate/trigger.ts)_
 
 ## `sf apex get log`
 
@@ -1054,7 +1793,7 @@ EXAMPLES
   $ sf autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/3.2.29/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/3.2.34/src/commands/autocomplete/index.ts)_
 
 ## `sf commands`
 
@@ -1083,7 +1822,7 @@ DESCRIPTION
   List all sf commands.
 ```
 
-_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/4.1.25/src/commands/commands.ts)_
+_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/4.1.32/src/commands/commands.ts)_
 
 ## `sf config get`
 
@@ -1132,7 +1871,7 @@ CONFIGURATION VARIABLES
   org-capitalize-record-types    Whether record types are capitalized on scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.29/src/commands/config/get.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.44/src/commands/config/get.ts)_
 
 ## `sf config list`
 
@@ -1172,7 +1911,7 @@ EXAMPLES
     $ sf config list
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.29/src/commands/config/list.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.44/src/commands/config/list.ts)_
 
 ## `sf config set`
 
@@ -1241,7 +1980,7 @@ CONFIGURATION VARIABLES
   org-capitalize-record-types    Whether record types are capitalized on scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.29/src/commands/config/set.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.44/src/commands/config/set.ts)_
 
 ## `sf config unset`
 
@@ -1291,7 +2030,7 @@ CONFIGURATION VARIABLES
   org-capitalize-record-types    Whether record types are capitalized on scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.29/src/commands/config/unset.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.44/src/commands/config/unset.ts)_
 
 ## `sf data bulk results`
 
@@ -1336,7 +2075,7 @@ EXAMPLES
     $ sf data bulk results --job-id 7507i000fake341G --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/bulk/results.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/bulk/results.ts)_
 
 ## `sf data create file`
 
@@ -1385,7 +2124,7 @@ EXAMPLES
     $ sf data create file --file path/to/astro.png --parent-id a03fakeLoJWPIA3
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/create/file.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/create/file.ts)_
 
 ## `sf data create record`
 
@@ -1441,7 +2180,7 @@ EXAMPLES
       TracedEntityId=01p17000000R6bLAAS"
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/create/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/create/record.ts)_
 
 ## `sf data delete bulk`
 
@@ -1449,11 +2188,10 @@ Bulk delete records from an org using a CSV file. Uses Bulk API 2.0.
 
 ```
 USAGE
-  $ sf data delete bulk -o <value> -s <value> [--json] [--flags-dir <value>] [--api-version <value>] [-w <value> | -a]
+  $ sf data delete bulk -o <value> -s <value> [--json] [--flags-dir <value>] [--api-version <value>] [-w <value>]
     (--line-ending CRLF|LF -f <value>) [--hard-delete]
 
 FLAGS
-  -a, --async                 Run the command asynchronously.
   -f, --file=<value>          (required) CSV file that contains the IDs of the records to update or delete.
   -o, --target-org=<value>    (required) Username or alias of the target org. Not required if the `target-org`
                               configuration variable is already set.
@@ -1501,7 +2239,7 @@ FLAG DESCRIPTIONS
     and can be enabled only by a system administrator.
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/delete/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/delete/bulk.ts)_
 
 ## `sf data delete record`
 
@@ -1562,7 +2300,7 @@ EXAMPLES
     $ sf data delete record --use-tooling-api --sobject TraceFlag --record-id 7tf8c
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/delete/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/delete/record.ts)_
 
 ## `sf data delete resume`
 
@@ -1601,7 +2339,7 @@ EXAMPLES
     $ sf data delete resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/delete/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/delete/resume.ts)_
 
 ## `sf data export bulk`
 
@@ -1610,7 +2348,7 @@ Bulk export records from an org into a file using a SOQL query. Uses Bulk API 2.
 ```
 USAGE
   $ sf data export bulk -o <value> --output-file <value> -r csv|json [--json] [--flags-dir <value>] [--api-version
-    <value>] [-w <minutes> | --async] [-q <value> | --query-file <value>] [--all-rows] [--column-delimiter
+    <value>] [-w <minutes>] [-q <value> | --query-file <value>] [--all-rows] [--column-delimiter
     BACKQUOTE|CARET|COMMA|PIPE|SEMICOLON|TAB] [--line-ending LF|CRLF]
 
 FLAGS
@@ -1623,7 +2361,6 @@ FLAGS
       --all-rows                   Include records that have been soft-deleted due to a merge or delete. By default,
                                    deleted records are not returned.
       --api-version=<value>        Override the api version used for api requests made by this command
-      --async                      Don't wait for the job to complete.
       --column-delimiter=<option>  Column delimiter to be used when writing CSV output. Default is COMMA.
                                    <options: BACKQUOTE|CARET|COMMA|PIPE|SEMICOLON|TAB>
       --line-ending=<option>       Line ending to be used when writing CSV output. Default value on Windows is is
@@ -1647,8 +2384,8 @@ DESCRIPTION
   JSON format.
 
   Bulk exports can take a while, depending on how many records are returned by the SOQL query. If the command times out,
-  or you specified the --async flag, the command displays the job ID. To see the status and get the results of the job,
-  run "sf data export resume" and pass the job ID to the --job-id flag.
+  the command displays the job ID. To see the status and get the results of the job, run "sf data export resume" and
+  pass the job ID to the --job-id flag.
 
   IMPORTANT: This command uses Bulk API 2.0, which limits the type of SOQL queries you can run. For example, you can't
   use aggregate functions such as count(). For the complete list of limitations, see the "SOQL Considerations" section
@@ -1667,15 +2404,9 @@ EXAMPLES
 
     $ sf data export bulk --query "SELECT Id, Name, Account.Name FROM Contact" --output-file export-accounts.json \
       --result-format json --wait 10 --all-rows
-
-  Export asynchronously; the command immediately returns a job ID that you then pass to the "sf data export resume"
-  command:
-
-    $ sf data export bulk --query "SELECT Id, Name, Account.Name FROM Contact" --output-file export-accounts.json \
-      --result-format json --async
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/export/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/export/bulk.ts)_
 
 ## `sf data export resume`
 
@@ -1697,21 +2428,24 @@ GLOBAL FLAGS
 DESCRIPTION
   Resume a bulk export job that you previously started. Uses Bulk API 2.0.
 
-  When the original "data export bulk" command either times out or is run with the --async flag, it displays a job ID.
-  To see the status and get the results of the bulk export, run this command by either passing it the job ID or using
-  the --use-most-recent flag to specify the most recent bulk export job.
+  When the original "data export bulk" command times out, it displays a job ID. To see the status and get the results of
+  the bulk export, run this command by either passing it the job ID or using the --use-most-recent flag to specify the
+  most recent bulk export job.
+
+  Using either `--job-id` or `--use-most-recent` will properly resolve to the correct org where the bulk job was started
+  based on the cached data by "data export bulk".
 
 EXAMPLES
-  Resume a bulk export job run on your default org by specifying a job ID:
+  Resume a bulk export job run by specifying a job ID:
 
     $ sf data export resume --job-id 750xx000000005sAAA
 
-  Resume the most recently-run bulk export job for an org with alias my-scratch:
+  Resume the most recently-run bulk export job:
 
-    $ sf data export resume --use-most-recent --target-org my-scratch
+    $ sf data export resume --use-most-recent
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/export/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/export/resume.ts)_
 
 ## `sf data export tree`
 
@@ -1771,7 +2505,7 @@ EXAMPLES
       my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/export/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/export/tree.ts)_
 
 ## `sf data get record`
 
@@ -1835,7 +2569,7 @@ EXAMPLES
     $ sf data get record --use-tooling-api --sobject TraceFlag --record-id 7tf8c
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/get/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/get/record.ts)_
 
 ## `sf data import bulk`
 
@@ -1843,11 +2577,10 @@ Bulk import records into a Salesforce object from a CSV file. Uses Bulk API 2.0.
 
 ```
 USAGE
-  $ sf data import bulk -s <value> -o <value> [--json] [--flags-dir <value>] [-a | -w <value>] [--api-version <value>]
+  $ sf data import bulk -s <value> -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-w <value>]
     (--line-ending CRLF|LF -f <value>) [--column-delimiter BACKQUOTE|CARET|COMMA|PIPE|SEMICOLON|TAB]
 
 FLAGS
-  -a, --async                      Don't wait for the command to complete.
   -f, --file=<value>               (required) CSV file that contains the Salesforce object records you want to import.
   -o, --target-org=<value>         (required) Username or alias of the target org. Not required if the `target-org`
                                    configuration variable is already set.
@@ -1873,9 +2606,9 @@ DESCRIPTION
 
   All the records in the CSV file must be for the same Salesforce object. Specify the object with the `--sobject` flag.
 
-  Bulk imports can take a while, depending on how many records are in the CSV file. If the command times out, or you
-  specified the --async flag, the command displays the job ID. To see the status and get the results of the job, run "sf
-  data import resume" and pass the job ID to the --job-id flag.
+  Bulk imports can take a while, depending on how many records are in the CSV file. If the command times out, the
+  command displays the job ID. To see the status and get the results of the job, run "sf data import resume" and pass
+  the job ID to the --job-id flag.
 
   For information and examples about how to prepare your CSV files, see "Prepare Data to Ingest" in the "Bulk API 2.0
   and Bulk API Developer Guide"
@@ -1886,14 +2619,9 @@ EXAMPLES
   in 10 minutes, the command ends and displays a job ID:
 
     $ sf data import bulk --file accounts.csv --sobject Account --wait 10 --target-org my-scratch
-
-  Import asynchronously and use the default org; the command immediately returns a job ID that you then pass to the
-  "sf data import resume" command:
-
-    $ sf data import bulk --file accounts.csv --sobject Account --async
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/import/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/import/bulk.ts)_
 
 ## `sf data import resume`
 
@@ -1915,9 +2643,9 @@ GLOBAL FLAGS
 DESCRIPTION
   Resume a bulk import job that you previously started. Uses Bulk API 2.0.
 
-  When the original "sf data import bulk" command either times out or is run with the --async flag, it displays a job
-  ID. To see the status and get the results of the bulk import, run this command by either passing it the job ID or
-  using the --use-most-recent flag to specify the most recent bulk import job.
+  When the original "sf data import bulk" command times out, it displays a job ID. To see the status and get the results
+  of the bulk import, run this command by either passing it the job ID or using the --use-most-recent flag to specify
+  the most recent bulk import job.
 
 EXAMPLES
   Resume a bulk import job to your default org using an ID:
@@ -1929,7 +2657,7 @@ EXAMPLES
     $ sf data import resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/import/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/import/resume.ts)_
 
 ## `sf data import tree`
 
@@ -1993,7 +2721,7 @@ FLAG DESCRIPTIONS
     - files(array) - Files: An array of files paths to load
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/import/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/import/tree.ts)_
 
 ## `sf data query`
 
@@ -2046,7 +2774,7 @@ EXAMPLES
     $ sf data query --query "SELECT Name FROM ApexTrigger" --use-tooling-api
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/query.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/query.ts)_
 
 ## `sf data resume`
 
@@ -2083,7 +2811,7 @@ EXAMPLES
     $ sf data resume --job-id 750xx000000005sAAA --batch-id 751xx000000005nAAA
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/resume.ts)_
 
 ## `sf data search`
 
@@ -2133,7 +2861,7 @@ EXAMPLES
     $ sf data search --file query.txt --target-org my-scratch --result-format csv
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/search.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/search.ts)_
 
 ## `sf data update bulk`
 
@@ -2141,11 +2869,10 @@ Bulk update records to an org from a CSV file. Uses Bulk API 2.0.
 
 ```
 USAGE
-  $ sf data update bulk -s <value> -o <value> [--json] [--flags-dir <value>] [-a] [-w <value>] [--api-version <value>]
+  $ sf data update bulk -s <value> -o <value> [--json] [--flags-dir <value>] [-w <value>] [--api-version <value>]
     (--line-ending CRLF|LF -f <value>) [--column-delimiter BACKQUOTE|CARET|COMMA|PIPE|SEMICOLON|TAB]
 
 FLAGS
-  -a, --async                      Don't wait for the command to complete.
   -f, --file=<value>               (required) CSV file that contains the Salesforce object records you want to update.
   -o, --target-org=<value>         (required) Username or alias of the target org. Not required if the `target-org`
                                    configuration variable is already set.
@@ -2174,9 +2901,9 @@ DESCRIPTION
   contain only existing records; if a record in the file doesn't currently exist in the Salesforce object, the command
   fails. Consider using "sf data upsert bulk" if you also want to insert new records.
 
-  Bulk updates can take a while, depending on how many records are in the CSV file. If the command times out, or you
-  specified the --async flag, the command displays the job ID. To see the status and get the results of the job, run "sf
-  data update resume" and pass the job ID to the --job-id flag.
+  Bulk updates can take a while, depending on how many records are in the CSV file. If the command times out, the
+  command displays the job ID. To see the status and get the results of the job, run "sf data update resume" and pass
+  the job ID to the --job-id flag.
 
   For information and examples about how to prepare your CSV files, see "Prepare Data to Ingest" in the "Bulk API 2.0
   and Bulk API Developer Guide"
@@ -2187,14 +2914,9 @@ EXAMPLES
   in 10 minutes, the command ends and displays a job ID:
 
     $ sf data update bulk --file accounts.csv --sobject Account --wait 10 --target-org my-scratch
-
-  Update asynchronously and use the default org; the command immediately returns a job ID that you then pass to the
-  "sf data update resume" command:
-
-    $ sf data update bulk --file accounts.csv --sobject Account --async
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/update/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/update/bulk.ts)_
 
 ## `sf data update record`
 
@@ -2256,7 +2978,7 @@ EXAMPLES
       "ExpirationDate=2017-12-01T00:58:04.000+0000"
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/update/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/update/record.ts)_
 
 ## `sf data update resume`
 
@@ -2278,21 +3000,24 @@ GLOBAL FLAGS
 DESCRIPTION
   Resume a bulk update job that you previously started. Uses Bulk API 2.0.
 
-  When the original "sf data update bulk" command either times out or is run with the --async flag, it displays a job
-  ID. To see the status and get the results of the bulk update, run this command by either passing it the job ID or
-  using the --use-most-recent flag to specify the most recent bulk update job.
+  When the original "sf data update bulk" command times out, it displays a job ID. To see the status and get the results
+  of the bulk update, run this command by either passing it the job ID or using the --use-most-recent flag to specify
+  the most recent bulk update job.
+
+  Using either `--job-id` or `--use-most-recent` will properly resolve to the correct org where the bulk job was started
+  based on the cached data by "data update bulk".
 
 EXAMPLES
-  Resume a bulk update job of your default org using a job ID:
+  Resume a bulk update job using a job ID:
 
     $ sf data update resume --job-id 750xx000000005sAAA
 
-  Resume the most recently run bulk update job for an org with alias "my-scratch":
+  Resume the most recently run bulk update job:
 
-    $ sf data update resume --use-most-recent --target-org my-scratch
+    $ sf data update resume --use-most-recent
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/update/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/update/resume.ts)_
 
 ## `sf data upsert bulk`
 
@@ -2301,10 +3026,9 @@ Bulk upsert records to an org from a CSV file. Uses Bulk API 2.0.
 ```
 USAGE
   $ sf data upsert bulk -o <value> -s <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>] [-w
-    <value> | -a] (--line-ending CRLF|LF -f <value>) [--column-delimiter BACKQUOTE|CARET|COMMA|PIPE|SEMICOLON|TAB]
+    <value>] (--line-ending CRLF|LF -f <value>) [--column-delimiter BACKQUOTE|CARET|COMMA|PIPE|SEMICOLON|TAB]
 
 FLAGS
-  -a, --async                      Run the command asynchronously.
   -f, --file=<value>               (required) CSV file that contains the IDs of the records to update or delete.
   -i, --external-id=<value>        (required) Name of the external ID field, or the Id field.
   -o, --target-org=<value>         (required) Username or alias of the target org. Not required if the `target-org`
@@ -2349,7 +3073,7 @@ EXAMPLES
       my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/upsert/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/upsert/bulk.ts)_
 
 ## `sf data upsert resume`
 
@@ -2388,7 +3112,7 @@ EXAMPLES
     $ sf data upsert resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/data/upsert/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/data/upsert/resume.ts)_
 
 ## `sf doctor`
 
@@ -2436,7 +3160,7 @@ EXAMPLES
     $ sf doctor --plugin @salesforce/plugin-source
 ```
 
-_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.4.65/src/commands/doctor.ts)_
+_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.4.83/src/commands/doctor.ts)_
 
 ## `sf force data bulk delete`
 
@@ -2483,7 +3207,7 @@ EXAMPLES
     $ sf force data bulk delete --sobject MyObject__c --file files/delete.csv --wait 5 --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/force/data/bulk/delete.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/force/data/bulk/delete.ts)_
 
 ## `sf force data bulk status`
 
@@ -2520,7 +3244,7 @@ EXAMPLES
     $ sf force data bulk status --job-id 750xx000000005sAAA --batch-id 751xx000000005nAAA --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/force/data/bulk/status.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/force/data/bulk/status.ts)_
 
 ## `sf force data bulk upsert`
 
@@ -2578,7 +3302,7 @@ EXAMPLES
       --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.36/src/commands/force/data/bulk/upsert.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.55/src/commands/force/data/bulk/upsert.ts)_
 
 ## `sf help [COMMAND]`
 
@@ -2598,7 +3322,7 @@ DESCRIPTION
   Display help for sf.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/6.2.28/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/6.2.32/src/commands/help.ts)_
 
 ## `sf info releasenotes display`
 
@@ -2638,7 +3362,7 @@ EXAMPLES
     $ sf info releasenotes display --version latest
 ```
 
-_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.4.65/src/commands/info/releasenotes/display.ts)_
+_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.4.83/src/commands/info/releasenotes/display.ts)_
 
 ## `sf lightning generate app`
 
@@ -2693,7 +3417,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.48/src/commands/lightning/generate/app.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.61/src/commands/lightning/generate/app.ts)_
 
 ## `sf lightning generate component`
 
@@ -2762,7 +3486,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.48/src/commands/lightning/generate/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.61/src/commands/lightning/generate/component.ts)_
 
 ## `sf lightning generate event`
 
@@ -2817,7 +3541,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.48/src/commands/lightning/generate/event.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.61/src/commands/lightning/generate/event.ts)_
 
 ## `sf lightning generate interface`
 
@@ -2872,7 +3596,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.48/src/commands/lightning/generate/interface.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.61/src/commands/lightning/generate/interface.ts)_
 
 ## `sf lightning generate test`
 
@@ -2927,7 +3651,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.48/src/commands/lightning/generate/test.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.61/src/commands/lightning/generate/test.ts)_
 
 ## `sf org assign permset`
 
@@ -2973,7 +3697,7 @@ EXAMPLES
     $ sf org assign permset --name DreamHouse --on-behalf-of user1@my.org --on-behalf-of user2 --on-behalf-of user
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.24/src/commands/org/assign/permset.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.35/src/commands/org/assign/permset.ts)_
 
 ## `sf org assign permsetlicense`
 
@@ -3020,7 +3744,7 @@ EXAMPLES
       user3
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.24/src/commands/org/assign/permsetlicense.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.35/src/commands/org/assign/permsetlicense.ts)_
 
 ## `sf org create sandbox`
 
@@ -3084,6 +3808,10 @@ EXAMPLES
     $ sf org create sandbox --source-sandbox-name ExistingSandbox --name NewClonedSandbox --target-org prodOrg \
       --alias MyDevSandbox --set-default --wait 30
 
+  Clone the existing sandbox with ID "0GQB0000000TVobOAG" and do not wait.
+
+    $ sf org create sandbox --source-id 0GQB0000000TVobOAG --name SbxClone --target-org prodOrg --async
+
 FLAG DESCRIPTIONS
   -a, --alias=<value>  Alias for the sandbox org.
 
@@ -3135,8 +3863,9 @@ FLAG DESCRIPTIONS
 
   --source-id=<value>  ID of the sandbox org to clone.
 
-    The value of --source-id must be an existing sandbox. The existing sandbox, and the new sandbox specified with the
-    --name flag, must both be associated with the production org (--target-org) that contains the sandbox licenses.
+    The value of --source-id must be an existing sandbox (SandboxInfo.Id). The existing sandbox, and the new sandbox
+    specified with the --name flag, must both be associated with the production org (--target-org) that contains the
+    sandbox licenses.
 
     You can specify either --source-sandbox-name or --source-id when cloning an existing sandbox, but not both.
 
@@ -3149,7 +3878,7 @@ FLAG DESCRIPTIONS
     You can specify either --source-sandbox-name or --source-id when cloning an existing sandbox, but not both.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.7.12/src/commands/org/create/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.25/src/commands/org/create/sandbox.ts)_
 
 ## `sf org create scratch`
 
@@ -3331,7 +4060,7 @@ FLAG DESCRIPTIONS
     Omit this flag to have Salesforce generate a unique username for your org.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.7.12/src/commands/org/create/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.25/src/commands/org/create/scratch.ts)_
 
 ## `sf org create user`
 
@@ -3439,7 +4168,7 @@ FLAG DESCRIPTIONS
     might be different than what you specify in the definition file.
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.24/src/commands/org/create/user.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.35/src/commands/org/create/user.ts)_
 
 ## `sf org delete sandbox`
 
@@ -3485,7 +4214,7 @@ EXAMPLES
     $ sf org delete sandbox --target-org my-sandbox --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.7.12/src/commands/org/delete/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.25/src/commands/org/delete/sandbox.ts)_
 
 ## `sf org delete scratch`
 
@@ -3529,7 +4258,7 @@ EXAMPLES
     $ sf org delete scratch --target-org my-scratch-org --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.7.12/src/commands/org/delete/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.25/src/commands/org/delete/scratch.ts)_
 
 ## `sf org disable tracking`
 
@@ -3568,7 +4297,7 @@ EXAMPLES
     $ sf org disable tracking
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.7.12/src/commands/org/disable/tracking.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.25/src/commands/org/disable/tracking.ts)_
 
 ## `sf org display`
 
@@ -3613,7 +4342,7 @@ EXAMPLES
     $ sf org display --target-org TestOrg1 --verbose
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.7.12/src/commands/org/display.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.25/src/commands/org/display.ts)_
 
 ## `sf org display user`
 
@@ -3652,7 +4381,7 @@ EXAMPLES
     $ sf org display user --target-org me@my.org --json
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.24/src/commands/org/display/user.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.35/src/commands/org/display/user.ts)_
 
 ## `sf org enable tracking`
 
@@ -3694,7 +4423,7 @@ EXAMPLES
     $ sf org enable tracking
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.7.12/src/commands/org/enable/tracking.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.25/src/commands/org/enable/tracking.ts)_
 
 ## `sf org generate password`
 
@@ -3761,7 +4490,7 @@ EXAMPLES
     $ sf org generate password --on-behalf-of user1@my.org --on-behalf-of user2@my.org --on-behalf-of user3@my.org
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.24/src/commands/org/generate/password.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.35/src/commands/org/generate/password.ts)_
 
 ## `sf org list`
 
@@ -3800,7 +4529,7 @@ EXAMPLES
     $ sf org list --clean
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.7.12/src/commands/org/list.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.25/src/commands/org/list.ts)_
 
 ## `sf org list auth`
 
@@ -3832,7 +4561,7 @@ EXAMPLES
     $ sf org list auth
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.124/src/commands/org/list/auth.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.0/src/commands/org/list/auth.ts)_
 
 ## `sf org list limits`
 
@@ -3872,7 +4601,7 @@ EXAMPLES
     $ sf org list limits --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.3.55/src/commands/org/list/limits.ts)_
+_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.3.65/src/commands/org/list/limits.ts)_
 
 ## `sf org list metadata`
 
@@ -3939,7 +4668,7 @@ FLAG DESCRIPTIONS
     Examples of metadata types that use folders are Dashboard, Document, EmailTemplate, and Report.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.7.12/src/commands/org/list/metadata.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.25/src/commands/org/list/metadata.ts)_
 
 ## `sf org list metadata-types`
 
@@ -3994,7 +4723,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.7.12/src/commands/org/list/metadata-types.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.25/src/commands/org/list/metadata-types.ts)_
 
 ## `sf org list sobject record-counts`
 
@@ -4040,7 +4769,7 @@ EXAMPLES
     $ sf org list sobject record-counts --sobject Account --sobject Lead --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.3.55/src/commands/org/list/sobject/record-counts.ts)_
+_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.3.65/src/commands/org/list/sobject/record-counts.ts)_
 
 ## `sf org list users`
 
@@ -4078,7 +4807,7 @@ EXAMPLES
     $ sf org list users --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.24/src/commands/org/list/users.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.35/src/commands/org/list/users.ts)_
 
 ## `sf org login access-token`
 
@@ -4132,67 +4861,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.124/src/commands/org/login/access-token.ts)_
-
-## `sf org login device`
-
-Authorize an org using a device code.
-
-```
-USAGE
-  $ sf org login device [--json] [--flags-dir <value>] [-i <value>] [-r <value>] [-d] [-s] [-a <value>]
-
-FLAGS
-  -a, --alias=<value>         Alias for the org.
-  -d, --set-default-dev-hub   Set the authenticated org as the default Dev Hub.
-  -i, --client-id=<value>     OAuth client ID (also called consumer key) of your custom connected app.
-  -r, --instance-url=<value>  URL of the instance that the org lives on.
-  -s, --set-default           Set the authenticated org as the default that all org-related commands run against.
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-DESCRIPTION
-  Authorize an org using a device code.
-
-  Use this command to allow a device to connect to an org.
-
-  When you run this command, it first displays an 8-digit device code and the URL for verifying the code on your org.
-  The default instance URL is https://login.salesforce.com, so if the org you're authorizing is on a different instance,
-  use the --instance-url. The command waits while you complete the verification. Open a browser and navigate to the
-  displayed verification URL, enter the code, then click Connect. If you aren't already logged into your org, log in,
-  and then you're prompted to allow the device to connect to the org. After you successfully authorize the org, you can
-  close the browser window.
-
-ALIASES
-  $ sf force auth device login
-  $ sf auth device login
-
-EXAMPLES
-  Authorize an org using a device code, give the org the alias TestOrg1, and set it as your default Dev Hub org:
-
-    $ sf org login device --set-default-dev-hub --alias TestOrg1
-
-  Authorize an org in which you've created a custom connected app with the specified client ID (consumer key):
-
-    $ sf org login device --client-id <OAuth client id>
-
-  Authorize a sandbox org with the specified instance URL:
-
-    $ sf org login device --instance-url https://MyDomainName--SandboxName.sandbox.my.salesforce.com
-
-FLAG DESCRIPTIONS
-  -r, --instance-url=<value>  URL of the instance that the org lives on.
-
-    If you specify an --instance-url value, this value overrides the sfdcLoginUrl value in your sfdx-project.json file.
-
-    To specify a My Domain URL, use the format "https://<MyDomainName>.my.salesforce.com".
-
-    To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
-```
-
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.124/src/commands/org/login/device.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.0/src/commands/org/login/access-token.ts)_
 
 ## `sf org login jwt`
 
@@ -4283,7 +4952,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.124/src/commands/org/login/jwt.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.0/src/commands/org/login/jwt.ts)_
 
 ## `sf org login sfdx-url`
 
@@ -4353,7 +5022,7 @@ EXAMPLES
   $ echo url | sf org login sfdx-url --sfdx-url-stdin
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.124/src/commands/org/login/sfdx-url.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.0/src/commands/org/login/sfdx-url.ts)_
 
 ## `sf org login web`
 
@@ -4362,16 +5031,24 @@ Log in to a Salesforce org using the web server flow.
 ```
 USAGE
   $ sf org login web [--json] [--flags-dir <value>] [-b chrome|edge|firefox] [-i <value>] [-r <value>] [-d] [-s]
-    [-a <value>]
+    [-a <value>] [-c <value> --username <value>] [--scopes <value>]
 
 FLAGS
   -a, --alias=<value>         Alias for the org.
   -b, --browser=<option>      Browser in which to open the org.
                               <options: chrome|edge|firefox>
+  -c, --client-app=<value>    Name to give to the link between the connected app or external client and the
+                              already-authenticated user. You can specify any string you want. Must be used with
+                              --username.
   -d, --set-default-dev-hub   Set the authenticated org as the default Dev Hub.
   -i, --client-id=<value>     OAuth client ID (also called consumer key) of your custom connected app.
   -r, --instance-url=<value>  URL of the instance that the org lives on.
   -s, --set-default           Set the authenticated org as the default that all org-related commands run against.
+      --scopes=<value>        Authentication (OAuth) scopes to request. Use the scope's short name; specify multiple
+                              scopes using just one flag instance and separated by spaces: --scopes "sfap_api
+                              chatbot_api".
+      --username=<value>      Username of the already-authenticated user to link to the connected app or external client
+                              app. Must be used with --client-app.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
@@ -4397,6 +5074,15 @@ DESCRIPTION
   digital certificate. Make note of the consumer key (also called cliend id) that’s generated for you. Then specify the
   consumer key with the --client-id flag.
 
+  You can also use this command to link one or more connected or external client apps in an org to an
+  already-authenticated user. Then Salesforce CLI commands that have API-specific requirements, such as new OAuth scopes
+  or JWT-based access tokens, can use these custom client apps rather than the default one. To create the link, you use
+  the --client-app flag to give the link a name and the --username flag to specify the already-authenticated user. Use
+  the --scopes flag to add OAuth scopes if required. After you create the link, you then use the --client-app value in
+  the other command that has the API-specific requirements. An example of a command that uses this feature is "agent
+  preview"; see the "Preview an Agent" section in the "Agentforce Developer Guide" for details and examples.
+  (https://developer.salesforce.com/docs/einstein/genai/guide/agent-dx-preview.html)
+
 ALIASES
   $ sf force auth web login
   $ sf auth web login
@@ -4420,10 +5106,11 @@ EXAMPLES
     $ sf org login web --instance-url https://MyDomainName--SandboxName.sandbox.my.salesforce.com --set-default \
       --browser chrome
 
-  Use your own connected app by specifying its consumer key (also called client ID):
+  Use your own connected app by specifying its consumer key (also called client ID) and specify additional OAuth
+  scopes:
 
     $ sf org login web --instance-url https://MyDomainName--SandboxName.sandbox.my.salesforce.com --set-default \
-      --browser chrome --client-id 04580y4051234051
+      --browser chrome --client-id 04580y4051234051 --scopes "sfap_api chatbot_api"
 
 FLAG DESCRIPTIONS
   -b, --browser=chrome|edge|firefox  Browser in which to open the org.
@@ -4440,7 +5127,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.124/src/commands/org/login/web.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.0/src/commands/org/login/web.ts)_
 
 ## `sf org logout`
 
@@ -4448,10 +5135,11 @@ Log out of a Salesforce org.
 
 ```
 USAGE
-  $ sf org logout [--json] [--flags-dir <value>] [-a | -o <value>] [-p]
+  $ sf org logout [--json] [--flags-dir <value>] [-c <value> -o <value>] [-a | ] [-p]
 
 FLAGS
   -a, --all                 Include all authenticated orgs.
+  -c, --client-app=<value>  Client app to log out of.
   -o, --target-org=<value>  Username or alias of the target org.
   -p, --no-prompt           Don't prompt for confirmation.
 
@@ -4473,6 +5161,10 @@ DESCRIPTION
 
   Be careful! If you log out of a scratch org without having access to its password, you can't access the scratch org
   again, either through the CLI or the Salesforce UI.
+
+  Use the --client-app flag to log out of the link you previously created between an authenticated user and a connected
+  app or external client app; you create these links with "org login web --client-app". Run "org display" to get the
+  list of client app names.
 
 ALIASES
   $ sf force auth logout
@@ -4501,7 +5193,7 @@ FLAG DESCRIPTIONS
     All orgs includes Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.6.124/src/commands/org/logout.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.0/src/commands/org/logout.ts)_
 
 ## `sf org open`
 
@@ -4577,7 +5269,7 @@ EXAMPLES
     $ sf org open --source-file force-app/main/default/bots/Coral_Cloud_Agent/Coral_Cloud_Agent.bot-meta.xml
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.7.12/src/commands/org/open.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.25/src/commands/org/open.ts)_
 
 ## `sf org open agent`
 
@@ -4628,7 +5320,7 @@ EXAMPLES
     $ sf org open agent --target-org MyTestOrg1 --browser firefox --api-name Coral_Cloud_Agent
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.7.12/src/commands/org/open/agent.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.25/src/commands/org/open/agent.ts)_
 
 ## `sf org refresh sandbox`
 
@@ -4731,7 +5423,7 @@ FLAG DESCRIPTIONS
     You can specify either --source-sandbox-name or --source-id when refreshing an existing sandbox, but not both.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.7.12/src/commands/org/refresh/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.25/src/commands/org/refresh/sandbox.ts)_
 
 ## `sf org resume sandbox`
 
@@ -4794,7 +5486,7 @@ FLAG DESCRIPTIONS
     returns the job ID. To resume checking the sandbox creation, rerun this command.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.7.12/src/commands/org/resume/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.25/src/commands/org/resume/sandbox.ts)_
 
 ## `sf org resume scratch`
 
@@ -4847,7 +5539,104 @@ FLAG DESCRIPTIONS
     returns the job ID. To resume checking the scratch creation, rerun this command.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.7.12/src/commands/org/resume/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.25/src/commands/org/resume/scratch.ts)_
+
+## `sf package convert`
+
+Convert a managed-released first-generation managed package into a second-generation managed package.
+
+```
+USAGE
+  $ sf package convert -v <value> -p <value> [--json] [--flags-dir <value>] [--api-version <value>] [-k <value>] [-f
+    <value>] [-x] [-w <value>] [-m <value>] [--verbose] [-a <value>] [-c]
+
+FLAGS
+  -a, --patch-version=<value>     Specific released patch version to be converted.
+  -c, --code-coverage             Calculate and store the code coverage percentage by running the packaged Apex tests
+                                  included in this package version.
+  -f, --definition-file=<value>   Path to a definition file that contains features and org preferences that the metadata
+                                  of the package version depends on.
+  -k, --installation-key=<value>  Installation key for key-protected package.
+  -m, --seed-metadata=<value>     Directory containing metadata to be deployed prior to conversion.
+  -p, --package=<value>           (required) ID (starts with 033) of the first-generation managed package to convert.
+  -v, --target-dev-hub=<value>    (required) Username or alias of the Dev Hub org. Not required if the `target-dev-hub`
+                                  configuration variable is already set.
+  -w, --wait=<value>              Minutes to wait for the package version to be created.
+  -x, --installation-key-bypass   Bypass the installation key requirement.
+      --api-version=<value>       Override the api version used for api requests made by this command
+      --verbose                   Display verbose command output.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Convert a managed-released first-generation managed package into a second-generation managed package.
+
+  The package conversion command automatically selects the latest released major.minor first-generation managed package
+  version, and converts it into a second-generation managed package version.
+
+  Use --patch-version to specify a released patch version.
+
+  To retrieve details about a package version create request, including status and package version ID (04t), run "sf
+  package version create report -i 08c...".
+
+  To protect the contents of your package and to prevent unauthorized installation of your package, specify the
+  --installation-key flag.
+
+  To promote a package version to released, you must use the --code-coverage parameter. The package must also meet the
+  code coverage requirements.
+
+  To list package version creation requests in the org, run "sf package version create list".
+
+ALIASES
+  $ sf force package convert
+
+EXAMPLES
+  Create a second-generation managed package version from the first-generation managed package with the specified ID
+  and give it the installation key "password123"; uses your default Dev Hub org:
+
+    $ sf package convert --package 033... --installation-key password123
+
+  Similar to previous example, but uses the specified Dev Hub org:
+
+    $ sf package convert --package 033... --installation-key password123 --target-dev-hub devhuborg@example.com
+
+FLAG DESCRIPTIONS
+  -a, --patch-version=<value>  Specific released patch version to be converted.
+
+    Specify a released patch version as major.minor.patch to convert to a second-generation managed package version.
+
+  -c, --code-coverage
+
+    Calculate and store the code coverage percentage by running the packaged Apex tests included in this package
+    version.
+
+    Before you can promote and release a managed package version, the Apex code must meet a minimum 75% code coverage
+    requirement.
+
+  -f, --definition-file=<value>
+
+    Path to a definition file that contains features and org preferences that the metadata of the package version
+    depends on.
+
+    This definition file is similar to the scratch org definition file.
+
+  -k, --installation-key=<value>  Installation key for key-protected package.
+
+    Either an --installation-key value or the --installation-key-bypass flag is required.
+
+  -m, --seed-metadata=<value>  Directory containing metadata to be deployed prior to conversion.
+
+    The directory containing metadata that will be deployed on the build org prior to attempting package conversion.
+
+  -x, --installation-key-bypass  Bypass the installation key requirement.
+
+    If you bypass this requirement, anyone can install your package. Either an --installation-key value or the
+    --installation-key-bypass flag is required.
+```
+
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/convert.ts)_
 
 ## `sf package create`
 
@@ -4926,7 +5715,7 @@ FLAG DESCRIPTIONS
     Org-Dependent Unlocked Packages" in the Salesforce DX Developer Guide.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/create.ts)_
 
 ## `sf package delete`
 
@@ -4968,7 +5757,7 @@ EXAMPLES
     $ sf package delete --package 0Ho... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/delete.ts)_
 
 ## `sf package install`
 
@@ -5063,11 +5852,11 @@ FLAG DESCRIPTIONS
     For unlocked package upgrades, set this flag to one of these values:
 
     - DeprecateOnly: Mark all removed components as deprecated.
-    - Mixed: Delete removed components, except for custom objects and custom fields, that don't have dependencies.
-    - Delete: Delete all removed components that can be safely deleted, and deprecate the other components.
+    - Mixed: Delete all removed components that can be safely deleted and deprecate the other components.
+    - Delete: Delete removed components, except for custom objects and custom fields, that don't have dependencies.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/install.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/install.ts)_
 
 ## `sf package install report`
 
@@ -5100,7 +5889,7 @@ EXAMPLES
     $ sf package install report --request-id 0Hf... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/install/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/install/report.ts)_
 
 ## `sf package installed list`
 
@@ -5132,7 +5921,7 @@ EXAMPLES
     $ sf package installed list --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/installed/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/installed/list.ts)_
 
 ## `sf package list`
 
@@ -5170,7 +5959,234 @@ EXAMPLES
     $ sf package list --target-dev-hub devhub@example.com --verbose
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/list.ts)_
+
+## `sf package push-upgrade abort`
+
+Abort a package push upgrade that has been scheduled. Only push upgrade requests with a status of Created or Pending can be aborted.
+
+```
+USAGE
+  $ sf package push-upgrade abort -v <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
+
+FLAGS
+  -i, --push-request-id=<value>  (required) ID of the package push request (starts with 0DV). This ID is returned after
+                                 the package push-upgrade schedule command completes successfully.
+  -v, --target-dev-hub=<value>   (required) Username or alias of the Dev Hub org. Not required if the `target-dev-hub`
+                                 configuration variable is already set.
+      --api-version=<value>      Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Abort a package push upgrade that has been scheduled. Only push upgrade requests with a status of Created or Pending
+  can be aborted.
+
+  Specify the request ID that you want to abort. If applicable, the command displays errors related to the request.
+
+  To show all requests in the org, run "sf package pushupgrade list --package 033...".
+
+EXAMPLES
+  Cancel the specified package push upgrade request with the specified ID; uses your default Dev Hub org:
+
+    $ sf package push-upgrade abort --push-request-id 0DV...
+
+  Cancel the specified package push upgrade request in the Dev Hub org with username devhub@example.com:
+
+    $ sf package push-upgrade abort --push-request-id 0DV... --target-dev-hub devhub@example.com
+```
+
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/push-upgrade/abort.ts)_
+
+## `sf package push-upgrade list`
+
+Lists the status of push upgrade requests for a given package.
+
+```
+USAGE
+  $ sf package push-upgrade list -v <value> -p <value> [--json] [--flags-dir <value>] [--api-version <value>] [-l <value>] [-s
+    Created|Cancelled|Pending|In Progress|Failed|Succeeded] [--show-push-migrations-only]
+
+FLAGS
+  -l, --scheduled-last-days=<value>  Number of days in the past for which to display the list of push upgrade requests
+                                     that were scheduled. Used to filter the list output to only recently scheduled push
+                                     upgrades.
+  -p, --package=<value>              (required) Package ID (starts with 033) of the package that you want push upgrade
+                                     information for.
+  -s, --status=<option>              Status used to filter the list output Valid values are: Created, Canceled, Pending,
+                                     In Progress, Failed, or Succeeded
+                                     <options: Created|Cancelled|Pending|In Progress|Failed|Succeeded>
+  -v, --target-dev-hub=<value>       (required) Username or alias of the Dev Hub org. Not required if the
+                                     `target-dev-hub` configuration variable is already set.
+      --api-version=<value>          Override the api version used for api requests made by this command
+      --show-push-migrations-only    Display only push upgrade requests for package migrations.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Lists the status of push upgrade requests for a given package.
+
+  Shows the details of each request to create a push upgrade in the Dev Hub org.
+
+  All filter parameters are applied using the AND logical operator (not OR).
+
+  To get information about a specific request, run "sf package pushupgrade report" and supply the request ID.
+
+ALIASES
+  $ sf force package push-upgrade list
+
+EXAMPLES
+  List all package push upgrade requests in the specified Dev Hub org:
+
+    $ sf package push-upgrade list --package 033xyz --target-dev-hub myHub
+
+  List all package push upgrade requests in the specified Dev Hub org scheduled in the last 30 days:
+
+    $ sf package push-upgrade list --package 033xyz --scheduled-last-days 30 --target-dev-hub myHub
+
+  List all package push upgrade with a status Succeeded:
+
+    $ sf package push-upgrade list --package 033xyz –-status Succeeded
+
+  List all package push upgrade with a status Failed:
+
+    $ sf package push-upgrade list --package 033xyz –-status Failed
+```
+
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/push-upgrade/list.ts)_
+
+## `sf package push-upgrade report`
+
+Retrieve the status of a package push upgrade.
+
+```
+USAGE
+  $ sf package push-upgrade report -v <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
+
+FLAGS
+  -i, --push-request-id=<value>  (required) ID of the package push request (starts with 0DV). This ID is returned after
+                                 the package push-upgrade schedule command completes successfully.
+  -v, --target-dev-hub=<value>   (required) Username or alias of the Dev Hub org. Not required if the `target-dev-hub`
+                                 configuration variable is already set.
+      --api-version=<value>      Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Retrieve the status of a package push upgrade.
+
+  Specify the request ID for which you want to view details. If applicable, the command displays errors related to the
+  request.
+
+  To show all requests in the org, run "sf package pushupgrade list".
+
+ALIASES
+  $ sf force package push-upgrade report
+
+EXAMPLES
+  Retrieve details about the package push upgrade with the specified ID; uses your default Dev Hub org:
+
+    $ sf package push-upgrade report --push-request-id 0DV...
+
+  Retrieve details about the specified package push request in the Dev Hub org with username devhub@example.com:
+
+    $ sf package push-upgrade report --push-request-id 0DV... --target-dev-hub devhub@example.com
+```
+
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/push-upgrade/report.ts)_
+
+## `sf package push-upgrade schedule`
+
+Schedule a package push upgrade.
+
+```
+USAGE
+  $ sf package push-upgrade schedule -v <value> -p <value> [--json] [--flags-dir <value>] [--api-version <value>] [-t <value>] [-l
+    <value> | -f <value>] [--migrate-to-2gp]
+
+FLAGS
+  -f, --org-file=<value>        Filename of the CSV file that contains the list of subscriber org IDs that need the
+                                package upgrade. Either --org-list or --org-file must be specified.
+  -l, --org-list=<value>        Comma-separated list of subscriber org IDs that need the package upgrade. Either
+                                --org-list or --org-file must be specified.
+  -p, --package=<value>         (required) ID (starts with 04t) of the package version that the package is being
+                                upgraded to. The package version must be an active, non-beta package version.
+  -t, --start-time=<value>      Date and time (UTC) when the push upgrade is processed. Set to the earliest time that
+                                you want Salesforce to attempt to start the upgrade.
+  -v, --target-dev-hub=<value>  (required) Username or alias of the Dev Hub org that owns the package.
+      --api-version=<value>     Override the api version used for api requests made by this command
+      --migrate-to-2gp          Upgrade from a first-generation managed package (1GP) to a second-generation managed
+                                package (2GP). Required when you’re pushing a 2GP package to orgs with the 1GP version
+                                installed.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Schedule a package push upgrade.
+
+  Represents a push upgrade request for upgrading a package in one or many orgs from one version to another version.
+  To initiate a push upgrade for an unlocked or second-generation managed package, the Create and Update
+  Second-Generation Packages user permission is required.
+  For second-generation managed packages, the push upgrade feature is available only for packages that have passed
+  AppExchange security review. To enable push upgrades for your managed package, log a support case in the Salesforce
+  Partner Community.
+  For unlocked packages, push upgrades are enabled by default.
+
+  Use the -–migrate-to-2GP flag to indicate you’re installing a converted second-generation managed package into an org
+  that has the first-generation managed package version of that package installed.
+
+EXAMPLES
+  Schedule a push upgrade that initiates at a specified time:
+
+    $ sf package push-upgrade schedule --package 04txyz --start-time "2024-12-06T21:00:00" --org-file \
+      upgrade-orgs.csv --target-dev-hub myHub
+
+  Schedule a push upgrade that initiates as soon as possible:
+
+    $ sf package push-upgrade schedule --package 04txyz --org-file upgrade-orgs.csv --target-dev-hub myHub
+
+  Schedule a push migration from a 1GP package to a 2GP package:
+
+    $ sf package push-upgrade schedule --migrate-to-2gp --package 04txyz --start-time "2024-12-06T21:00:00" \
+      --org-file upgrade-orgs.csv --target-dev-hub myHub
+
+FLAG DESCRIPTIONS
+  -f, --org-file=<value>
+
+    Filename of the CSV file that contains the list of subscriber org IDs that need the package upgrade. Either
+    --org-list or --org-file must be specified.
+
+    The file must contain one org per line. The org ID must be the only value in each row.
+    All listed orgs must have a package version installed in their org that is lower than the package version you
+    specified for the --package flag.
+
+  -t, --start-time=<value>
+
+    Date and time (UTC) when the push upgrade is processed. Set to the earliest time that you want Salesforce to attempt
+    to start the upgrade.
+
+    Scheduled push upgrades begin as soon as resources are available on the Salesforce instance, which is either at or
+    after the start time you specify. In certain scenarios, the push upgrade starts a few hours after the scheduled
+    start time.
+
+    As a best practice, schedule push upgrades at off-peak hours like 1:00 AM Saturday.
+    If you don't specify this flag, the push upgrade is scheduled to run as soon as resources are available on the
+    Salesforce instance.
+
+  -v, --target-dev-hub=<value>  Username or alias of the Dev Hub org that owns the package.
+
+    Overrides the value of the target-dev-hub configuration variable, if set.
+```
+
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/push-upgrade/schedule.ts)_
 
 ## `sf package uninstall`
 
@@ -5218,7 +6234,7 @@ EXAMPLES
     $ sf package uninstall --package "Undesirable Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/uninstall.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/uninstall.ts)_
 
 ## `sf package uninstall report`
 
@@ -5251,7 +6267,7 @@ EXAMPLES
     $ sf package uninstall report --request-id 06y... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/uninstall/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/uninstall/report.ts)_
 
 ## `sf package update`
 
@@ -5306,7 +6322,7 @@ FLAG DESCRIPTIONS
     associated with your package.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/update.ts)_
 
 ## `sf package version create`
 
@@ -5481,7 +6497,7 @@ FLAG DESCRIPTIONS
     periods of no output from commands.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/version/create.ts)_
 
 ## `sf package version create list`
 
@@ -5542,7 +6558,7 @@ EXAMPLES
     $ sf package version create list --created-last-days 0 --status Success
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/version/create/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/version/create/list.ts)_
 
 ## `sf package version create report`
 
@@ -5585,7 +6601,7 @@ EXAMPLES
     $ sf package version create report --package-create-request-id 08c... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/version/create/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/version/create/report.ts)_
 
 ## `sf package version delete`
 
@@ -5626,7 +6642,7 @@ EXAMPLES
     $ sf package version delete --package 04t... --target-org devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/version/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/version/delete.ts)_
 
 ## `sf package version displayancestry`
 
@@ -5686,7 +6702,69 @@ FLAG DESCRIPTIONS
     You can use the DOT code output in graph visualization software to create tree visualizations.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/version/displayancestry.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/version/displayancestry.ts)_
+
+## `sf package version displaydependencies`
+
+Display the dependency graph for an unlocked or 2GP managed package version.
+
+```
+USAGE
+  $ sf package version displaydependencies -v <value> -p <value> [--json] [--flags-dir <value>] [--api-version <value>] [--edge-direction
+    root-first|root-last] [--verbose]
+
+FLAGS
+  -p, --package=<value>          (required) ID or alias of the package version (starts with 04t) or the package version
+                                 create request (starts with 08c) to display the dependency graph for.
+  -v, --target-dev-hub=<value>   (required) Username or alias of the Dev Hub org. Not required if the `target-dev-hub`
+                                 configuration variable is already set.
+      --api-version=<value>      Override the api version used for api requests made by this command
+      --edge-direction=<option>  [default: root-first] Order (root-first or root-last) in which the dependencies are
+                                 displayed.
+                                 <options: root-first|root-last>
+      --verbose                  Display both the package version ID (starts with 04t) and the version number
+                                 (major.minor.patch.build) in each node.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+EXAMPLES
+  Display the dependency graph for a package version with the specified alias, using your default Dev Hub org and the
+  default edge-direction:
+
+    $ sf package version displaydependencies --package package_version_alias
+
+  Display the dependency graph for a package version with the specified ID and display the graph using a root-last
+  edge direction. Use the Dev Hub org with username devhub@example.com:
+
+    $ sf package version displaydependencies --package 04t... --edge-direction root-last --target-dev-hub \
+      devhub@example.com
+
+  Display the dependency graph of a version create request with the specified ID, using your default Dev Hub org and
+  the default edge-direction:
+
+    $ sf package version displaydependencies --package 08c...
+
+FLAG DESCRIPTIONS
+  -p, --package=<value>
+
+    ID or alias of the package version (starts with 04t) or the package version create request (starts with 08c) to
+    display the dependency graph for.
+
+    Before running this command, update your sfdx-project.json file to specify the calculateTransitiveDependencies
+    attribute, and set the value to true. This command returns GraphViz code, which can be compiled to a graph using DOT
+    code or another graph visualization software.
+
+  --edge-direction=root-first|root-last  Order (root-first or root-last) in which the dependencies are displayed.
+
+    A root-first graph declares the root as the package that must be installed last. A root-last graph is the reverse
+    order of root-first. If you specify "--edge-direction root-last", the graph displays the packages in the order they
+    must be installed. The root starts with the farthest leaf of the package dependencies and ends with the base
+    package, which must be installed last.
+```
+
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/version/displaydependencies.ts)_
 
 ## `sf package version list`
 
@@ -5762,7 +6840,7 @@ EXAMPLES
     $ sf package version list --packages exp-mgr,exp-mgr-util --released --modified-last-days 0
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/version/list.ts)_
 
 ## `sf package version promote`
 
@@ -5806,7 +6884,7 @@ EXAMPLES
     $ sf package version promote --package "Awesome Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/version/promote.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/version/promote.ts)_
 
 ## `sf package version report`
 
@@ -5846,7 +6924,7 @@ EXAMPLES
     $ sf package version report --package "Your Package Alias" --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/version/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/version/report.ts)_
 
 ## `sf package version update`
 
@@ -5899,7 +6977,7 @@ EXAMPLES
     $ sf package version update --package 04t... --version-description "New Package Version Description"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package/version/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package/version/update.ts)_
 
 ## `sf package1 version create`
 
@@ -5966,7 +7044,7 @@ FLAG DESCRIPTIONS
     subscribers.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package1/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package1/version/create.ts)_
 
 ## `sf package1 version create get`
 
@@ -5999,7 +7077,7 @@ EXAMPLES
     $ sf package1 version create get --request-id 0HD... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package1/version/create/get.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package1/version/create/get.ts)_
 
 ## `sf package1 version display`
 
@@ -6033,7 +7111,7 @@ EXAMPLES
     $ sf package1 version display --package-version-id 04t... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package1/version/display.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package1/version/display.ts)_
 
 ## `sf package1 version list`
 
@@ -6071,7 +7149,7 @@ FLAG DESCRIPTIONS
     If not specified, shows all versions for all packages (managed and unmanaged) in the org.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.13.6/src/commands/package1/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.19.7/src/commands/package1/version/list.ts)_
 
 ## `sf plugins`
 
@@ -6094,7 +7172,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.38/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.46/src/commands/plugins/index.ts)_
 
 ## `sf plugins discover`
 
@@ -6139,7 +7217,7 @@ EXAMPLES
   $ sf plugins inspect @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.38/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.46/src/commands/plugins/inspect.ts)_
 
 ## `sf plugins install PLUGIN`
 
@@ -6188,7 +7266,7 @@ EXAMPLES
     $ sf plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.38/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.46/src/commands/plugins/install.ts)_
 
 ## `sf plugins link PATH`
 
@@ -6219,7 +7297,7 @@ EXAMPLES
   $ sf plugins link @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.38/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.46/src/commands/plugins/link.ts)_
 
 ## `sf plugins reset`
 
@@ -6234,7 +7312,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.38/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.46/src/commands/plugins/reset.ts)_
 
 ## `sf plugins trust verify`
 
@@ -6263,7 +7341,7 @@ EXAMPLES
   $ sf plugins trust verify --npm @scope/npmName
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.7.96/src/commands/plugins/trust/verify.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.7.113/src/commands/plugins/trust/verify.ts)_
 
 ## `sf plugins uninstall [PLUGIN]`
 
@@ -6291,7 +7369,7 @@ EXAMPLES
   $ sf plugins uninstall @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.38/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.46/src/commands/plugins/uninstall.ts)_
 
 ## `sf plugins update`
 
@@ -6309,7 +7387,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.38/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.46/src/commands/plugins/update.ts)_
 
 ## `sf project convert mdapi`
 
@@ -6372,7 +7450,7 @@ FLAG DESCRIPTIONS
     If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.17/src/commands/project/convert/mdapi.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.23.0/src/commands/project/convert/mdapi.ts)_
 
 ## `sf project convert source`
 
@@ -6445,7 +7523,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.17/src/commands/project/convert/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.23.0/src/commands/project/convert/source.ts)_
 
 ## `sf project convert source-behavior`
 
@@ -6504,7 +7582,7 @@ EXAMPLES
     $ sf project convert source-behavior --behavior decomposePermissionSetBeta --dry-run --preserve-temp-dir
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.17/src/commands/project/convert/source-behavior.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.23.0/src/commands/project/convert/source-behavior.ts)_
 
 ## `sf project delete source`
 
@@ -6644,7 +7722,7 @@ FLAG DESCRIPTIONS
     - Separate the test names with spaces: --tests Test1 Test2 "Test With Space"
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.17/src/commands/project/delete/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.23.0/src/commands/project/delete/source.ts)_
 
 ## `sf project delete tracking`
 
@@ -6681,7 +7759,7 @@ EXAMPLES
     $ sf project delete tracking --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.17/src/commands/project/delete/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.23.0/src/commands/project/delete/tracking.ts)_
 
 ## `sf project deploy cancel`
 
@@ -6753,7 +7831,7 @@ FLAG DESCRIPTIONS
     project deploy report".
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.17/src/commands/project/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.23.0/src/commands/project/deploy/cancel.ts)_
 
 ## `sf project deploy preview`
 
@@ -6836,7 +7914,7 @@ FLAG DESCRIPTIONS
     All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.17/src/commands/project/deploy/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.23.0/src/commands/project/deploy/preview.ts)_
 
 ## `sf project deploy quick`
 
@@ -6929,7 +8007,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.17/src/commands/project/deploy/quick.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.23.0/src/commands/project/deploy/quick.ts)_
 
 ## `sf project deploy report`
 
@@ -7021,7 +8099,7 @@ FLAG DESCRIPTIONS
     --coverage-formatters lcov --coverage-formatters clover
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.17/src/commands/project/deploy/report.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.23.0/src/commands/project/deploy/report.ts)_
 
 ## `sf project deploy resume`
 
@@ -7118,7 +8196,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.17/src/commands/project/deploy/resume.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.23.0/src/commands/project/deploy/resume.ts)_
 
 ## `sf project deploy start`
 
@@ -7371,7 +8449,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.17/src/commands/project/deploy/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.23.0/src/commands/project/deploy/start.ts)_
 
 ## `sf project deploy validate`
 
@@ -7561,7 +8639,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.17/src/commands/project/deploy/validate.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.23.0/src/commands/project/deploy/validate.ts)_
 
 ## `sf project generate`
 
@@ -7666,7 +8744,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.48/src/commands/project/generate.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.61/src/commands/project/generate.ts)_
 
 ## `sf project generate manifest`
 
@@ -7762,7 +8840,7 @@ EXAMPLES
     $ sf project generate manifest --from-org test@myorg.com --excluded-metadata StandardValueSet
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.17/src/commands/project/generate/manifest.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.23.0/src/commands/project/generate/manifest.ts)_
 
 ## `sf project list ignored`
 
@@ -7804,7 +8882,7 @@ EXAMPLES
     $ sf project list ignored --source-dir package.xml
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.17/src/commands/project/list/ignored.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.23.0/src/commands/project/list/ignored.ts)_
 
 ## `sf project reset tracking`
 
@@ -7853,7 +8931,7 @@ EXAMPLES
     $ sf project reset tracking --revision 30
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.17/src/commands/project/reset/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.23.0/src/commands/project/reset/tracking.ts)_
 
 ## `sf project retrieve preview`
 
@@ -7907,7 +8985,7 @@ FLAG DESCRIPTIONS
     production orgs.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.17/src/commands/project/retrieve/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.23.0/src/commands/project/retrieve/preview.ts)_
 
 ## `sf project retrieve start`
 
@@ -8088,7 +9166,7 @@ ENVIRONMENT VARIABLES
   SF_USE_PROGRESS_BAR  Set to false to disable the progress bar when running the metadata deploy command.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.22.17/src/commands/project/retrieve/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.23.0/src/commands/project/retrieve/start.ts)_
 
 ## `sf schema generate field`
 
@@ -8142,7 +9220,7 @@ FLAG DESCRIPTIONS
     If you don't specify this flag, the command prompts you to choose from your local objects.
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.58/src/commands/schema/generate/field.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.69/src/commands/schema/generate/field.ts)_
 
 ## `sf schema generate platformevent`
 
@@ -8174,7 +9252,7 @@ EXAMPLES
     $ sf schema generate platformevent --label "My Platform Event"
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.58/src/commands/schema/generate/platformevent.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.69/src/commands/schema/generate/platformevent.ts)_
 
 ## `sf schema generate sobject`
 
@@ -8231,7 +9309,7 @@ FLAG DESCRIPTIONS
     - Streaming API: With Bulk API and Sharing, classifies the custom object as an Enterprise Application object.
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.58/src/commands/schema/generate/sobject.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.69/src/commands/schema/generate/sobject.ts)_
 
 ## `sf schema generate tab`
 
@@ -8279,7 +9357,7 @@ FLAG DESCRIPTIONS
     The API name for a custom object always ends in `__c`, such as `MyObject__c`.
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.58/src/commands/schema/generate/tab.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.69/src/commands/schema/generate/tab.ts)_
 
 ## `sf search`
 
@@ -8295,7 +9373,7 @@ DESCRIPTION
   Once you select a command, hit enter and it will show the help for that command.
 ```
 
-_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/1.2.24/src/commands/search.ts)_
+_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/1.2.28/src/commands/search.ts)_
 
 ## `sf sobject describe`
 
@@ -8342,7 +9420,7 @@ EXAMPLES
     $ sf sobject describe --sobject ApexCodeCoverage --use-tooling-api
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.64/src/commands/sobject/describe.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.79/src/commands/sobject/describe.ts)_
 
 ## `sf sobject list`
 
@@ -8381,7 +9459,7 @@ EXAMPLES
     $ sf sobject list --sobject custom --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.64/src/commands/sobject/list.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.79/src/commands/sobject/list.ts)_
 
 ## `sf static-resource generate`
 
@@ -8443,7 +9521,7 @@ FLAG DESCRIPTIONS
     etc.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.48/src/commands/static-resource/generate.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.61/src/commands/static-resource/generate.ts)_
 
 ## `sf update [CHANNEL]`
 
@@ -8481,7 +9559,7 @@ EXAMPLES
     $ sf update --available
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.6.41/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.7.4/src/commands/update.ts)_
 
 ## `sf version`
 
@@ -8501,7 +9579,7 @@ FLAG DESCRIPTIONS
     Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
 ```
 
-_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.2.28/src/commands/version.ts)_
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.2.32/src/commands/version.ts)_
 
 ## `sf visualforce generate component`
 
@@ -8557,7 +9635,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.48/src/commands/visualforce/generate/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.61/src/commands/visualforce/generate/component.ts)_
 
 ## `sf visualforce generate page`
 
@@ -8607,7 +9685,7 @@ FLAG DESCRIPTIONS
     The name can be up to 40 characters and must start with a letter.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.48/src/commands/visualforce/generate/page.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.61/src/commands/visualforce/generate/page.ts)_
 
 ## `sf which`
 
@@ -8641,7 +9719,7 @@ EXAMPLES
     $ sf which "foo bar baz"
 ```
 
-_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.2.35/src/commands/which.ts)_
+_See code: [@oclif/plugin-which](https://github.com/oclif/plugin-which/blob/3.2.39/src/commands/which.ts)_
 
 <!-- commandsstop -->
 
