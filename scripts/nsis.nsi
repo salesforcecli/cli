@@ -48,18 +48,16 @@ FunctionEnd
 
 Function .onInit
 
-  ; Securely locate global cmd.exe (System32 or Sysnative)
-  StrCpy $R9 "$WINDIR\System32\cmd.exe"
-  IfFileExists "$R9" 0 check_sysnative
-    Goto cmd_found
-  check_sysnative:
-  StrCpy $R9 "$WINDIR\Sysnative\cmd.exe"
-  IfFileExists "$R9" 0 cmd_not_found
-    Goto cmd_found
-  cmd_not_found:
-  MessageBox MB_OK|MB_ICONSTOP "Error: Could not find global cmd.exe. Installation cannot continue."
-  Quit
-  cmd_found:
+  ; Use explicit System32/Sysnative path to cmd.exe for security
+  ; $R9 becomes the path to the global cmd.exe
+  StrCpy $R9 "$WINDIR\\System32\\cmd.exe"  ; Try System32 first
+  IfFileExists "$R9" path_is_safe
+    StrCpy $R9 "$WINDIR\\Sysnative\\cmd.exe"  ; Try Sysnative for WOW64
+    IfFileExists "$R9" path_is_safe
+      MessageBox MB_OK|MB_ICONSTOP "Error: Could not find system cmd.exe. Installation cannot continue."
+      Abort
+      
+  path_is_safe:
 
   nsExec::ExecToStack /TIMEOUT=2000 '"$R9" /c "sfdx --version"'
   ; exit code is stored on $0 first, then stdout
