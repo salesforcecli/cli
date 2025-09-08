@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.106.3 linux-x64 node-v22.19.0
+@salesforce/cli/2.106.4 linux-x64 node-v22.19.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -241,7 +241,7 @@ EXAMPLES
     $ sf agent activate --api-name Resort_Manager --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/activate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.8/src/commands/agent/activate.ts)_
 
 ## `sf agent create`
 
@@ -303,7 +303,7 @@ EXAMPLES
     $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.8/src/commands/agent/create.ts)_
 
 ## `sf agent deactivate`
 
@@ -343,7 +343,7 @@ EXAMPLES
     $ sf agent deactivate --api-name Resort_Manager --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/deactivate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.8/src/commands/agent/deactivate.ts)_
 
 ## `sf agent generate agent-spec`
 
@@ -448,7 +448,7 @@ EXAMPLES
     $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/generate/agent-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.8/src/commands/agent/generate/agent-spec.ts)_
 
 ## `sf agent generate template`
 
@@ -496,7 +496,7 @@ EXAMPLES
       force-app/main/default/bots/My_Awesome_Agent/My_Awesome_Agent.bot-meta.xml --agent-version 1
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/generate/template.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.8/src/commands/agent/generate/template.ts)_
 
 ## `sf agent generate test-spec`
 
@@ -557,7 +557,7 @@ EXAMPLES
       force-app//main/default/aiEvaluationDefinitions/Resort_Manager_Tests.aiEvaluationDefinition-meta.xml
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/generate/test-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.8/src/commands/agent/generate/test-spec.ts)_
 
 ## `sf agent preview`
 
@@ -621,7 +621,7 @@ EXAMPLES
       transcripts/my-preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/preview.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.8/src/commands/agent/preview.ts)_
 
 ## `sf agent test create`
 
@@ -676,7 +676,7 @@ EXAMPLES
     $ sf agent test create --spec specs/Resort_Manager-testSpec.yaml --api-name Resort_Manager_Test --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/test/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.8/src/commands/agent/test/create.ts)_
 
 ## `sf agent test list`
 
@@ -711,7 +711,7 @@ EXAMPLES
     $ sf agent test list --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/test/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.8/src/commands/agent/test/list.ts)_
 
 ## `sf agent test results`
 
@@ -777,7 +777,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/test/results.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.8/src/commands/agent/test/results.ts)_
 
 ## `sf agent test resume`
 
@@ -850,7 +850,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/test/resume.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.8/src/commands/agent/test/resume.ts)_
 
 ## `sf agent test run`
 
@@ -924,7 +924,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.7/src/commands/agent/test/run.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.8/src/commands/agent/test/run.ts)_
 
 ## `sf alias list`
 
@@ -3160,7 +3160,7 @@ EXAMPLES
     $ sf doctor --plugin @salesforce/plugin-source
 ```
 
-_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.4.84/src/commands/doctor.ts)_
+_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.4.85/src/commands/doctor.ts)_
 
 ## `sf force data bulk delete`
 
@@ -3362,7 +3362,7 @@ EXAMPLES
     $ sf info releasenotes display --version latest
 ```
 
-_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.4.84/src/commands/info/releasenotes/display.ts)_
+_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.4.85/src/commands/info/releasenotes/display.ts)_
 
 ## `sf lightning generate app`
 
@@ -3697,7 +3697,7 @@ EXAMPLES
     $ sf org assign permset --name DreamHouse --on-behalf-of user1@my.org --on-behalf-of user2 --on-behalf-of user
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.36/src/commands/org/assign/permset.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.38/src/commands/org/assign/permset.ts)_
 
 ## `sf org assign permsetlicense`
 
@@ -3744,7 +3744,7 @@ EXAMPLES
       user3
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.36/src/commands/org/assign/permsetlicense.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.38/src/commands/org/assign/permsetlicense.ts)_
 
 ## `sf org create sandbox`
 
@@ -4168,7 +4168,7 @@ FLAG DESCRIPTIONS
     might be different than what you specify in the definition file.
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.36/src/commands/org/create/user.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.38/src/commands/org/create/user.ts)_
 
 ## `sf org delete sandbox`
 
@@ -4381,7 +4381,7 @@ EXAMPLES
     $ sf org display user --target-org me@my.org --json
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.36/src/commands/org/display/user.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.38/src/commands/org/display/user.ts)_
 
 ## `sf org enable tracking`
 
@@ -4490,7 +4490,7 @@ EXAMPLES
     $ sf org generate password --on-behalf-of user1@my.org --on-behalf-of user2@my.org --on-behalf-of user3@my.org
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.36/src/commands/org/generate/password.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.38/src/commands/org/generate/password.ts)_
 
 ## `sf org list`
 
@@ -4561,7 +4561,7 @@ EXAMPLES
     $ sf org list auth
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.2/src/commands/org/list/auth.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.4/src/commands/org/list/auth.ts)_
 
 ## `sf org list limits`
 
@@ -4807,7 +4807,7 @@ EXAMPLES
     $ sf org list users --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.36/src/commands/org/list/users.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.38/src/commands/org/list/users.ts)_
 
 ## `sf org login access-token`
 
@@ -4861,7 +4861,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.2/src/commands/org/login/access-token.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.4/src/commands/org/login/access-token.ts)_
 
 ## `sf org login jwt`
 
@@ -4952,7 +4952,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.2/src/commands/org/login/jwt.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.4/src/commands/org/login/jwt.ts)_
 
 ## `sf org login sfdx-url`
 
@@ -5022,7 +5022,7 @@ EXAMPLES
   $ echo url | sf org login sfdx-url --sfdx-url-stdin
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.2/src/commands/org/login/sfdx-url.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.4/src/commands/org/login/sfdx-url.ts)_
 
 ## `sf org login web`
 
@@ -5127,7 +5127,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.2/src/commands/org/login/web.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.4/src/commands/org/login/web.ts)_
 
 ## `sf org logout`
 
@@ -5193,7 +5193,7 @@ FLAG DESCRIPTIONS
     All orgs includes Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.2/src/commands/org/logout.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.4/src/commands/org/logout.ts)_
 
 ## `sf org open`
 
@@ -9220,7 +9220,7 @@ FLAG DESCRIPTIONS
     If you don't specify this flag, the command prompts you to choose from your local objects.
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.70/src/commands/schema/generate/field.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.72/src/commands/schema/generate/field.ts)_
 
 ## `sf schema generate platformevent`
 
@@ -9252,7 +9252,7 @@ EXAMPLES
     $ sf schema generate platformevent --label "My Platform Event"
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.70/src/commands/schema/generate/platformevent.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.72/src/commands/schema/generate/platformevent.ts)_
 
 ## `sf schema generate sobject`
 
@@ -9309,7 +9309,7 @@ FLAG DESCRIPTIONS
     - Streaming API: With Bulk API and Sharing, classifies the custom object as an Enterprise Application object.
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.70/src/commands/schema/generate/sobject.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.72/src/commands/schema/generate/sobject.ts)_
 
 ## `sf schema generate tab`
 
@@ -9357,7 +9357,7 @@ FLAG DESCRIPTIONS
     The API name for a custom object always ends in `__c`, such as `MyObject__c`.
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.70/src/commands/schema/generate/tab.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.72/src/commands/schema/generate/tab.ts)_
 
 ## `sf search`
 
@@ -9420,7 +9420,7 @@ EXAMPLES
     $ sf sobject describe --sobject ApexCodeCoverage --use-tooling-api
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.80/src/commands/sobject/describe.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.81/src/commands/sobject/describe.ts)_
 
 ## `sf sobject list`
 
@@ -9459,7 +9459,7 @@ EXAMPLES
     $ sf sobject list --sobject custom --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.80/src/commands/sobject/list.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.81/src/commands/sobject/list.ts)_
 
 ## `sf static-resource generate`
 
