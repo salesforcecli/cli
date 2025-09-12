@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.107.0 linux-x64 node-v22.19.0
+@salesforce/cli/2.107.1 linux-x64 node-v22.19.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -106,6 +106,7 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf lightning generate event`](#sf-lightning-generate-event)
 - [`sf lightning generate interface`](#sf-lightning-generate-interface)
 - [`sf lightning generate test`](#sf-lightning-generate-test)
+- [`sf logic get test`](#sf-logic-get-test)
 - [`sf org assign permset`](#sf-org-assign-permset)
 - [`sf org assign permsetlicense`](#sf-org-assign-permsetlicense)
 - [`sf org create sandbox`](#sf-org-create-sandbox)
@@ -1267,7 +1268,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.6.19/src/commands/apex/get/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.7.0/src/commands/apex/get/log.ts)_
 
 ## `sf apex get test`
 
@@ -1327,7 +1328,7 @@ EXAMPLES
       me@myorg'
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.6.19/src/commands/apex/get/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.7.0/src/commands/apex/get/test.ts)_
 
 ## `sf apex list log`
 
@@ -1367,7 +1368,7 @@ EXAMPLES
     $ sf apex list log --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.6.19/src/commands/apex/list/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.7.0/src/commands/apex/list/log.ts)_
 
 ## `sf apex run`
 
@@ -1414,7 +1415,7 @@ EXAMPLES
     $ sf apex run
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.6.19/src/commands/apex/run.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.7.0/src/commands/apex/run.ts)_
 
 ## `sf apex run test`
 
@@ -1557,7 +1558,7 @@ FLAG DESCRIPTIONS
     --tests Test1 --tests Test2
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.6.19/src/commands/apex/run/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.7.0/src/commands/apex/run/test.ts)_
 
 ## `sf apex tail log`
 
@@ -1600,7 +1601,7 @@ EXAMPLES
     $ sf apex tail log --color --skip-trace-flag
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.6.19/src/commands/apex/tail/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.7.0/src/commands/apex/tail/log.ts)_
 
 ## `sf api request graphql`
 
@@ -3652,6 +3653,54 @@ FLAG DESCRIPTIONS
 ```
 
 _See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.3.63/src/commands/lightning/generate/test.ts)_
+
+## `sf logic get test`
+
+Get the results of a test run.
+
+```
+USAGE
+  $ sf logic get test -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
+    [--detailed-coverage -c] [-d <value>] [-r human|tap|junit|json] [--concise]
+
+FLAGS
+  -c, --code-coverage           Retrieve code coverage results.
+  -d, --output-dir=<value>      Directory in which to store test result files.
+  -i, --test-run-id=<value>     (required) ID of the test run.
+  -o, --target-org=<value>      (required) Username or alias of the target org. Not required if the `target-org`
+                                configuration variable is already set.
+  -r, --result-format=<option>  [default: human] Format of the test results.
+                                <options: human|tap|junit|json>
+      --api-version=<value>     Override the api version used for api requests made by this command
+      --concise                 Display only failed test results; works with human-readable output only.
+      --detailed-coverage       Display detailed code coverage per test.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Get the results of a test run.
+
+  When you run 'sf logic run test' to test Apex classes and Flows asynchronously, it returns a test run ID. Use that ID
+  with this command to see the results.
+
+  To see code coverage results, use the --code-coverage flag with --result-format. The output displays a high-level
+  summary of the test run and the code coverage values for classes in your org. If you specify human-readable result
+  format, use the --detailed-coverage flag to see detailed coverage results for each test method run.
+
+EXAMPLES
+  Get the results for a specific test run ID in the default human-readable format; uses your default org:
+
+    $ sf logic get test --test-run-id <test run id>
+
+  Get the results for a specific test run ID, format them as JUnit, and save them to the "test-results/junit"
+  directory; uses the org with alias "my-scratch":
+
+    $ sf logic get test --test-run-id <test run id> --result-format junit --target-org my-scratch
+```
+
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.7.0/src/commands/logic/get/test.ts)_
 
 ## `sf org assign permset`
 
