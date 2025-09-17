@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.107.5 linux-x64 node-v22.19.0
+@salesforce/cli/2.107.6 linux-x64 node-v22.19.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -107,6 +107,7 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf lightning generate interface`](#sf-lightning-generate-interface)
 - [`sf lightning generate test`](#sf-lightning-generate-test)
 - [`sf logic get test`](#sf-logic-get-test)
+- [`sf logic run test`](#sf-logic-run-test)
 - [`sf org assign permset`](#sf-org-assign-permset)
 - [`sf org assign permsetlicense`](#sf-org-assign-permsetlicense)
 - [`sf org create sandbox`](#sf-org-create-sandbox)
@@ -1268,7 +1269,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.7.1/src/commands/apex/get/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.8.0/src/commands/apex/get/log.ts)_
 
 ## `sf apex get test`
 
@@ -1328,7 +1329,7 @@ EXAMPLES
       me@myorg'
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.7.1/src/commands/apex/get/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.8.0/src/commands/apex/get/test.ts)_
 
 ## `sf apex list log`
 
@@ -1368,7 +1369,7 @@ EXAMPLES
     $ sf apex list log --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.7.1/src/commands/apex/list/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.8.0/src/commands/apex/list/log.ts)_
 
 ## `sf apex run`
 
@@ -1415,7 +1416,7 @@ EXAMPLES
     $ sf apex run
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.7.1/src/commands/apex/run.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.8.0/src/commands/apex/run.ts)_
 
 ## `sf apex run test`
 
@@ -1466,6 +1467,9 @@ DESCRIPTION
   the number of minutes to wait; if the tests finish in that timeframe, the command displays the results. If the tests
   haven't finished by the end of the wait time, the command displays a test run ID. Use the "sf apex get test
   --test-run-id" command to get the results.
+
+  To run both Apex and Flow tests together, run the "sf logic run test" CLI command, which has similar flags as this
+  command, but expands the --tests flag to also include Flow tests.
 
   You must have the "View All Data" system permission to use this command. The permission is disabled by default and can
   be enabled only by a system administrator.
@@ -1558,7 +1562,7 @@ FLAG DESCRIPTIONS
     --tests Test1 --tests Test2
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.7.1/src/commands/apex/run/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.8.0/src/commands/apex/run/test.ts)_
 
 ## `sf apex tail log`
 
@@ -1601,7 +1605,7 @@ EXAMPLES
     $ sf apex tail log --color --skip-trace-flag
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.7.1/src/commands/apex/tail/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.8.0/src/commands/apex/tail/log.ts)_
 
 ## `sf api request graphql`
 
@@ -3700,7 +3704,123 @@ EXAMPLES
     $ sf logic get test --test-run-id <test run id> --result-format junit --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.7.1/src/commands/logic/get/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.8.0/src/commands/logic/get/test.ts)_
+
+## `sf logic run test`
+
+Invoke tests for Apex and Flows in an org.
+
+```
+USAGE
+  $ sf logic run test -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-d <value>] [-l
+    RunLocalTests|RunAllTestsInOrg|RunSpecifiedTests] [-n <value>... | -s <value>... | -t <value>... | --test-category
+    Apex|Flow...] [-r human|tap|junit|json] [-w <value>] [-y] [-v -c] [--concise]
+
+FLAGS
+  -c, --code-coverage              Retrieve code coverage results.
+  -d, --output-dir=<value>         Directory in which to store test run files.
+  -l, --test-level=<option>        Level of tests to run; default is RunLocalTests.
+                                   <options: RunLocalTests|RunAllTestsInOrg|RunSpecifiedTests>
+  -n, --class-names=<value>...     Apex test class names to run; default is all classes.
+  -o, --target-org=<value>         (required) Username or alias of the target org. Not required if the `target-org`
+                                   configuration variable is already set.
+  -r, --result-format=<option>     [default: human] Format of the test results.
+                                   <options: human|tap|junit|json>
+  -s, --suite-names=<value>...     Apex test suite names to run.
+  -t, --tests=<value>...           Comma-separated list of test names to run. Can include Apex test classes and Flow
+                                   tests.
+  -v, --detailed-coverage          Display detailed code coverage per test.
+  -w, --wait=<value>               Sets the streaming client socket timeout in minutes; specify a longer wait time if
+                                   timeouts occur frequently.
+  -y, --synchronous                Runs test methods from a single Apex class synchronously; if not specified, tests are
+                                   run asynchronously.
+      --api-version=<value>        Override the api version used for api requests made by this command
+      --concise                    Display only failed test results; works with human-readable output only.
+      --test-category=<option>...  Category of tests to run, such as Apex or Flow.
+                                   <options: Apex|Flow>
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Invoke tests for Apex and Flows in an org.
+
+  This command provides a single and unified way to run tests for multiple Salesforce features, such as Apex classes and
+  Flows. Running the tests together with a single command ensures seamless interoperability between the features.
+
+  By default, the command executes asynchronously and returns a test run ID. Then use the "sf logic get test" command to
+  retrieve the results. If you want to wait for the test run to complete and see the results in the command output, use
+  the --synchronous flag.
+
+  To run specific tests, use the --tests flag, passing it the Apex test class names or the Flow tests in the form
+  Flowtest.<name>. You can also run specific test methods, although if you run the tests synchronously, the methods must
+  belong to a single Apex class or Flow test. To run all tests of a certain category, use --test-level with
+  --test-category. If neither flag is specified, all local tests for all categories are run by default. You can also use
+  the --class-names and --suite-names flags to run Apex test classes or suites.
+
+  To see code coverage results, use the --code-coverage flag with --result-format. The output displays a high-level
+  summary of the test run and the code coverage values for the tested classes or flows. If you specify human-readable
+  result format, use the --detailed-coverage flag to see detailed coverage results for each test method run.
+
+  You must have the "View All Data" org system permission to use this command. The permission is disabled by default and
+  can be enabled only by a system administrator.
+
+EXAMPLES
+  Run a mix of specific Apex and Flow tests asynchronously in your default org:
+
+    $ sf logic run test --tests MyApexClassTest,FlowTest.ProcessOrder
+
+  Run all local Apex and Flow tests and wait for the results to complete; run the tests in the org with alias
+  "my-scratch":
+
+    $ sf logic run test --test-level RunLocalTests --test-category Apex --test-category Flow --synchronous \
+      --target-org my-scratch
+
+  Run two methods in an Apex test class and an Apex test suite:
+
+    $ sf logic run test --class-names MyApexClassTest.methodA --class-names MyApexClassTest.methodB --suite-names \
+      MySuite
+
+  Run all local tests for all categories (the default behavior), save the JUnit results to the "test-results"
+  directory, and include code coverage results:
+
+    $ sf logic run test --result-format junit --output-dir test-results --synchronous --code-coverage
+
+FLAG DESCRIPTIONS
+  -l, --test-level=RunLocalTests|RunAllTestsInOrg|RunSpecifiedTests  Level of tests to run; default is RunLocalTests.
+
+    Here's what the levels mean:
+
+    - RunSpecifiedTests — Only the tests that you specify in the runTests option are run. Code coverage requirements
+    differ from the default coverage requirements when using this test level. The executed tests must cover each class
+    and trigger in the deployment package for a minimum of 75% code coverage. This coverage is computed for each class
+    and triggers individually, and is different than the overall coverage percentage.
+    - RunLocalTests — All local tests in your org, including tests that originate from no-namespaced unlocked packages,
+    are run. The tests that originate from installed managed packages and namespaced unlocked packages aren't run. This
+    test level is the default for production deployments that include Apex classes or triggers.
+    - RunAllTestsInOrg — All tests are run. The tests include all tests in your org.
+
+  -n, --class-names=<value>...  Apex test class names to run; default is all classes.
+
+    If you select --class-names, you can't specify --suite-names or --tests.
+    For multiple classes, repeat the flag for each.
+    --class-names Class1 --class-names Class2
+
+  -s, --suite-names=<value>...  Apex test suite names to run.
+
+    If you select --suite-names, you can't specify --class-names or --tests.
+    For multiple suites, repeat the flag for each.
+    --suite-names Suite1 --suite-names Suite2
+
+  -t, --tests=<value>...  Comma-separated list of test names to run. Can include Apex test classes and Flow tests.
+
+    If you specify --tests, you can't specify --class-names or --suite-names
+    For multiple tests, repeat the flag for each.
+    --tests Test1 --tests Test2
+```
+
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.8.0/src/commands/logic/run/test.ts)_
 
 ## `sf org assign permset`
 
