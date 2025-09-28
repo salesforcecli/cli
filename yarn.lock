@@ -2067,12 +2067,12 @@
     ansis "^3.17.0"
     fast-levenshtein "^3.0.0"
 
-"@oclif/plugin-plugins@5.4.47":
-  version "5.4.47"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-5.4.47.tgz#4a07f0df8bb0ca01fb757e86efc2c1b6c94c042d"
-  integrity sha512-eUWNbyYwKPbH+Ca98eI2OBZ6IioWM1aJ6SGp9TrVGRu2qNeDtG/qnqemv3v5qcHzPK211CPSvHJBFYef3J9rBg==
+"@oclif/plugin-plugins@5.4.48":
+  version "5.4.48"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-5.4.48.tgz#09397afa7fed0e0927dec12b401c0e73e96362a4"
+  integrity sha512-He579UlYewPKiqPq4ufq+AhO8NLXChyN7+mQtEs2ExwigIJuKeAEBTNukTwI1B4c5ctMj3a7cAoiY3tUgZTSHg==
   dependencies:
-    "@oclif/core" "^4.5.3"
+    "@oclif/core" "^4.5.4"
     ansis "^3.17.0"
     debug "^4.4.0"
     npm "^10.9.3"
@@ -2093,10 +2093,10 @@
     ansi-escapes "^7.1.0"
     inquirer-autocomplete-standalone "^0.8.1"
 
-"@oclif/plugin-update@4.7.7":
-  version "4.7.7"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.7.7.tgz#b85672a712809149e4b3e9211f070530d93d79fa"
-  integrity sha512-RoJAGFRHOf2GBHCT0o/3Vb6OTqaK3+lbI/ifuOH9z4XZl7nj65SOYQzZc4cNJEAFGn00iReBEwR0+wZ1N1uqLg==
+"@oclif/plugin-update@4.7.8":
+  version "4.7.8"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.7.8.tgz#ddac8ae2e8fc48e16e665b18b52162b784622bb1"
+  integrity sha512-BXsulWTr3gKWEXGr7WlQPSpOgOKcApFqQx7dLoJogmD0eqeTlhtf994CMsLuxMmIobcGa0+lSMJczj9+Fj+aRg==
   dependencies:
     "@inquirer/select" "^2.5.0"
     "@oclif/core" "^4"
@@ -2107,7 +2107,7 @@
     got "^13"
     proxy-agent "^6.5.0"
     semver "^7.7.2"
-    tar-fs "^2.1.3"
+    tar-fs "^2.1.4"
 
 "@oclif/plugin-version@2.2.33":
   version "2.2.33"
@@ -2750,12 +2750,12 @@
     fast-xml-parser "^4.5.3"
     js2xmlparser "^4.0.2"
 
-"@salesforce/plugin-telemetry@3.6.57":
-  version "3.6.57"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.6.57.tgz#88f2ee665f931df63e6fbf51b1cf2ae6663f4f80"
-  integrity sha512-RZElV96x+sJMDdyteT3T5djY93pn5jKoPesJ/hHLhFg+yiKfeaaU8pexknhrKMM5cQ5Oo6FEKnRBF9P4EkRQXA==
+"@salesforce/plugin-telemetry@3.6.58":
+  version "3.6.58"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.6.58.tgz#65b46860ffa419815a92a38703494f73f738ec28"
+  integrity sha512-WLBxy+2187K6OVu5KjgIpEV7t9go9aADI23u6dGyJ4pmjTikWFi98ezmCV6/sa1i/gL4KLHYl0bbGxXrotvVCg==
   dependencies:
-    "@oclif/core" "^4.5.2"
+    "@oclif/core" "^4.5.4"
     "@salesforce/core" "^8.15.0"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/sf-plugins-core" "^12"
@@ -10888,7 +10888,7 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-tar-fs@^2.1.3:
+tar-fs@^2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/tar-fs/-/tar-fs-2.1.4.tgz#800824dbf4ef06ded9afea4acafe71c67c76b930"
   integrity sha512-mDAjwmZdh7LTT6pNleZ05Yt65HC3E+NiQzl672vQG38jIrehtJk/J3mNwIg+vShQPcLF/LV7CMnDW6vjj6sfYQ==
