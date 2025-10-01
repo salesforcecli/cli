@@ -96,8 +96,24 @@ const hook: Hook.Preparse = async function ({ argv, options, context }) {
         }
         const crlf = contents.search('\r\n') !== -1;
 
-        const values =
-          ext === '.json' ? [JSON.stringify(JSON.parse(contents))] : contents?.trim().split(crlf ? '\r\n' : '\n');
+        let values: string[];
+
+        if (ext === '.json') {
+          // JSON files: parse and re-stringify (existing behavior)
+          values = [JSON.stringify(JSON.parse(contents))];
+        } else {
+          // Non-JSON files: split by lines and filter full-line comments
+          const lines = contents?.trim().split(crlf ? '\r\n' : '\n') || [];
+          values = lines.filter((line) => {
+            const trimmed = line.trim();
+            // Filter out lines that are only whitespace + comment (full-line comments)
+            if (trimmed.startsWith('#') || trimmed.startsWith('//')) {
+              return false;
+            }
+            // Keep all other lines unchanged, including empty lines
+            return true;
+          });
+        }
 
         return [name, values] satisfies [string, string[]];
       })
