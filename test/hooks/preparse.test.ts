@@ -326,4 +326,88 @@ describe('preparse hook test', () => {
       ]);
     });
   });
+
+  describe('comment filtering', () => {
+    it('should filter full-line comments starting with #', async () => {
+      const argv = [...baseArgs];
+      const flags = {
+        ...baseFlags,
+        str: Flags.string(),
+      };
+      makeStubs([{ name: 'str', content: '# This is a comment\nactual-value\n# Another comment' }]);
+      const results = await config.runHook('preparse', { argv, options: { flags } });
+      expect(results.successes[0]).to.be.ok;
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '--str', 'actual-value']);
+    });
+
+    it('should filter full-line comments starting with //', async () => {
+      const argv = [...baseArgs];
+      const flags = {
+        ...baseFlags,
+        str: Flags.string(),
+      };
+      makeStubs([{ name: 'str', content: '// This is a comment\nactual-value\n// Another comment' }]);
+      const results = await config.runHook('preparse', { argv, options: { flags } });
+      expect(results.successes[0]).to.be.ok;
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '--str', 'actual-value']);
+    });
+
+    it('should filter comments with leading whitespace', async () => {
+      const argv = [...baseArgs];
+      const flags = {
+        ...baseFlags,
+        str: Flags.string(),
+      };
+      makeStubs([{ name: 'str', content: '  # Indented hash comment\nactual-value\n\t// Tab-indented slash comment' }]);
+      const results = await config.runHook('preparse', { argv, options: { flags } });
+      expect(results.successes[0]).to.be.ok;
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '--str', 'actual-value']);
+    });
+
+    it('should preserve lines that contain comments but are not full-line comments', async () => {
+      const argv = [...baseArgs];
+      const flags = {
+        ...baseFlags,
+        str: Flags.string(),
+      };
+      makeStubs([{ name: 'str', content: 'value-with#hash\nvalue-with//slashes' }]);
+      const results = await config.runHook('preparse', { argv, options: { flags } });
+      expect(results.successes[0]).to.be.ok;
+      expect(results.successes[0].result).to.deep.equal([
+        ...baseArgs,
+        '--str',
+        'value-with#hash',
+        '--str',
+        'value-with//slashes',
+      ]);
+    });
+
+    it('should not filter comments in .json files', async () => {
+      const argv = [...baseArgs];
+      const flags = {
+        ...baseFlags,
+        str: Flags.string(),
+      };
+      const jsonContent = {
+        comment: '# This should not be filtered',
+        slashes: '// This should not be filtered either',
+      };
+      makeStubs([{ name: 'str.json', content: JSON.stringify(jsonContent, null, 2) }]);
+      const results = await config.runHook('preparse', { argv, options: { flags } });
+      expect(results.successes[0]).to.be.ok;
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '--str', JSON.stringify(jsonContent)]);
+    });
+
+    it('should preserve whitespace in non-comment lines', async () => {
+      const argv = [...baseArgs];
+      const flags = {
+        ...baseFlags,
+        str: Flags.string(),
+      };
+      makeStubs([{ name: 'str', content: '# Comment\n  value with spaces  \n// Another comment' }]);
+      const results = await config.runHook('preparse', { argv, options: { flags } });
+      expect(results.successes[0]).to.be.ok;
+      expect(results.successes[0].result).to.deep.equal([...baseArgs, '--str', '  value with spaces  ']);
+    });
+  });
 });
