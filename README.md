@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.110.13 linux-x64 node-v22.20.0
+@salesforce/cli/2.110.14 linux-x64 node-v22.20.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -1670,7 +1670,7 @@ USAGE
     GET|POST|PUT|PATCH|HEAD|DELETE|OPTIONS|TRACE] [-H key:value...] [-f file | -b file]
 
 ARGUMENTS
-  URL  Salesforce API endpoint
+  [URL]  Salesforce API endpoint
 
 FLAGS
   -H, --header=key:value...                  HTTP header in "key:value" format.
@@ -1778,7 +1778,7 @@ USAGE
   $ sf autocomplete [SHELL] [-r]
 
 ARGUMENTS
-  SHELL  (zsh|bash|powershell) Shell type
+  [SHELL]  (zsh|bash|powershell) Shell type
 
 FLAGS
   -r, --refresh-cache  Refresh cache (ignores displaying instructions)
@@ -3318,7 +3318,7 @@ USAGE
   $ sf help [COMMAND...] [-n]
 
 ARGUMENTS
-  COMMAND...  Command to show help for.
+  [COMMAND...]  Command to show help for.
 
 FLAGS
   -n, --nested-commands  Include all nested commands in the output.
@@ -7527,7 +7527,7 @@ USAGE
   $ sf plugins uninstall [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
-  PLUGIN...  plugin to uninstall
+  [PLUGIN...]  plugin to uninstall
 
 FLAGS
   -h, --help     Show CLI help.
