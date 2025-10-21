@@ -1,0 +1,2338 @@
+[
+  {
+    "alias": [],
+    "command": "agent:activate",
+    "flagAliases": [],
+    "flagChars": ["n", "o"],
+    "flags": ["api-name", "api-version", "flags-dir", "json", "target-org"],
+    "plugin": "@salesforce/plugin-agent"
+  },
+  {
+    "alias": [],
+    "command": "agent:create",
+    "flagAliases": [],
+    "flagChars": ["o"],
+    "flags": ["api-name", "api-version", "flags-dir", "json", "name", "planner-id", "preview", "spec", "target-org"],
+    "plugin": "@salesforce/plugin-agent"
+  },
+  {
+    "alias": [],
+    "command": "agent:deactivate",
+    "flagAliases": [],
+    "flagChars": ["n", "o"],
+    "flags": ["api-name", "api-version", "flags-dir", "json", "target-org"],
+    "plugin": "@salesforce/plugin-agent"
+  },
+  {
+    "alias": [],
+    "command": "agent:generate:agent-spec",
+    "flagAliases": [],
+    "flagChars": ["o"],
+    "flags": [
+      "agent-user",
+      "api-version",
+      "company-description",
+      "company-name",
+      "company-website",
+      "enrich-logs",
+      "flags-dir",
+      "force-overwrite",
+      "full-interview",
+      "grounding-context",
+      "json",
+      "max-topics",
+      "output-file",
+      "prompt-template",
+      "role",
+      "spec",
+      "target-org",
+      "tone",
+      "type"
+    ],
+    "plugin": "@salesforce/plugin-agent"
+  },
+  {
+    "alias": [],
+    "command": "agent:generate:template",
+    "flagAliases": [],
+    "flagChars": ["f"],
+    "flags": ["agent-file", "agent-version", "api-version", "flags-dir", "json"],
+    "plugin": "@salesforce/plugin-agent"
+  },
+  {
+    "alias": [],
+    "command": "agent:generate:test-spec",
+    "flagAliases": [],
+    "flagChars": ["d", "f"],
+    "flags": ["flags-dir", "force-overwrite", "from-definition", "output-file"],
+    "plugin": "@salesforce/plugin-agent"
+  },
+  {
+    "alias": [],
+    "command": "agent:preview",
+    "flagAliases": [],
+    "flagChars": ["c", "d", "n", "o", "x"],
+    "flags": ["apex-debug", "api-name", "api-version", "client-app", "flags-dir", "output-dir", "target-org"],
+    "plugin": "@salesforce/plugin-agent"
+  },
+  {
+    "alias": [],
+    "command": "agent:test:create",
+    "flagAliases": [],
+    "flagChars": ["o"],
+    "flags": ["api-name", "api-version", "flags-dir", "force-overwrite", "json", "preview", "spec", "target-org"],
+    "plugin": "@salesforce/plugin-agent"
+  },
+  {
+    "alias": [],
+    "command": "agent:test:list",
+    "flagAliases": [],
+    "flagChars": ["o"],
+    "flags": ["api-version", "flags-dir", "json", "target-org"],
+    "plugin": "@salesforce/plugin-agent"
+  },
+  {
+    "alias": [],
+    "command": "agent:test:results",
+    "flagAliases": [],
+    "flagChars": ["d", "i", "o"],
+    "flags": ["api-version", "flags-dir", "job-id", "json", "output-dir", "result-format", "target-org", "verbose"],
+    "plugin": "@salesforce/plugin-agent"
+  },
+  {
+    "alias": [],
+    "command": "agent:test:resume",
+    "flagAliases": [],
+    "flagChars": ["d", "i", "o", "r", "w"],
+    "flags": [
+      "api-version",
+      "flags-dir",
+      "job-id",
+      "json",
+      "output-dir",
+      "result-format",
+      "target-org",
+      "use-most-recent",
+      "verbose",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-agent"
+  },
+  {
+    "alias": [],
+    "command": "agent:test:run",
+    "flagAliases": [],
+    "flagChars": ["d", "n", "o", "w"],
+    "flags": [
+      "api-name",
+      "api-version",
+      "flags-dir",
+      "json",
+      "output-dir",
+      "result-format",
+      "target-org",
+      "verbose",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-agent"
+  },
+  {
+    "alias": ["force:alias:list"],
+    "command": "alias:list",
+    "flagAliases": [],
+    "flagChars": [],
+    "flags": ["flags-dir", "json", "loglevel"],
+    "plugin": "@salesforce/plugin-settings"
+  },
+  {
+    "alias": ["force:alias:set"],
+    "command": "alias:set",
+    "flagAliases": [],
+    "flagChars": [],
+    "flags": ["flags-dir", "json", "loglevel"],
+    "plugin": "@salesforce/plugin-settings"
+  },
+  {
+    "alias": ["force:alias:unset"],
+    "command": "alias:unset",
+    "flagAliases": [],
+    "flagChars": ["a", "p"],
+    "flags": ["all", "flags-dir", "json", "loglevel", "no-prompt"],
+    "plugin": "@salesforce/plugin-settings"
+  },
+  {
+    "alias": ["force:analytics:template:create"],
+    "command": "analytics:generate:template",
+    "flagAliases": ["apiversion", "outputdir", "templatename"],
+    "flagChars": ["d", "n"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "name", "output-dir"],
+    "plugin": "@salesforce/plugin-templates"
+  },
+  {
+    "alias": ["force:apex:class:create"],
+    "command": "apex:generate:class",
+    "flagAliases": ["apiversion", "classname", "outputdir"],
+    "flagChars": ["d", "n", "t"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "name", "output-dir", "template"],
+    "plugin": "@salesforce/plugin-templates"
+  },
+  {
+    "alias": ["force:apex:trigger:create"],
+    "command": "apex:generate:trigger",
+    "flagAliases": ["apiversion", "outputdir", "triggerevents", "triggername"],
+    "flagChars": ["d", "e", "n", "s", "t"],
+    "flags": ["api-version", "event", "flags-dir", "json", "loglevel", "name", "output-dir", "sobject", "template"],
+    "plugin": "@salesforce/plugin-templates"
+  },
+  {
+    "alias": ["force:apex:log:get"],
+    "command": "apex:get:log",
+    "flagAliases": ["apiversion", "logid", "output-directory", "outputdir", "targetusername", "u"],
+    "flagChars": ["d", "i", "n", "o"],
+    "flags": ["api-version", "flags-dir", "json", "log-id", "loglevel", "number", "output-dir", "target-org"],
+    "plugin": "@salesforce/plugin-apex"
+  },
+  {
+    "alias": ["force:apex:test:report"],
+    "command": "apex:get:test",
+    "flagAliases": [
+      "apiversion",
+      "codecoverage",
+      "output-directory",
+      "outputdir",
+      "resultformat",
+      "targetusername",
+      "testrunid",
+      "u"
+    ],
+    "flagChars": ["c", "d", "i", "o", "r"],
+    "flags": [
+      "api-version",
+      "code-coverage",
+      "concise",
+      "detailed-coverage",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "output-dir",
+      "result-format",
+      "target-org",
+      "test-run-id"
+    ],
+    "plugin": "@salesforce/plugin-apex"
+  },
+  {
+    "alias": ["force:apex:log:list"],
+    "command": "apex:list:log",
+    "flagAliases": ["apiversion", "targetusername", "u"],
+    "flagChars": ["o"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "target-org"],
+    "plugin": "@salesforce/plugin-apex"
+  },
+  {
+    "alias": ["force:apex:execute"],
+    "command": "apex:run",
+    "flagAliases": ["apexcodefile", "apiversion", "targetusername", "u"],
+    "flagChars": ["f", "o"],
+    "flags": ["api-version", "file", "flags-dir", "json", "loglevel", "target-org"],
+    "plugin": "@salesforce/plugin-apex"
+  },
+  {
+    "alias": ["force:apex:test:run"],
+    "command": "apex:run:test",
+    "flagAliases": [
+      "apiversion",
+      "classnames",
+      "codecoverage",
+      "detailedcoverage",
+      "output-directory",
+      "outputdir",
+      "resultformat",
+      "suitenames",
+      "targetusername",
+      "testlevel",
+      "u"
+    ],
+    "flagChars": ["c", "d", "l", "n", "o", "r", "s", "t", "v", "w", "y"],
+    "flags": [
+      "api-version",
+      "class-names",
+      "code-coverage",
+      "concise",
+      "detailed-coverage",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "output-dir",
+      "result-format",
+      "suite-names",
+      "synchronous",
+      "target-org",
+      "test-level",
+      "tests",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-apex"
+  },
+  {
+    "alias": ["force:apex:log:tail"],
+    "command": "apex:tail:log",
+    "flagAliases": ["apiversion", "debuglevel", "skiptraceflag", "targetusername", "u"],
+    "flagChars": ["c", "d", "o", "s"],
+    "flags": ["api-version", "color", "debug-level", "flags-dir", "loglevel", "skip-trace-flag", "target-org"],
+    "plugin": "@salesforce/plugin-apex"
+  },
+  {
+    "alias": [],
+    "command": "api:request:graphql",
+    "flagAliases": [],
+    "flagChars": ["S", "i", "o"],
+    "flags": ["api-version", "body", "flags-dir", "include", "json", "stream-to-file", "target-org"],
+    "plugin": "@salesforce/plugin-api"
+  },
+  {
+    "alias": [],
+    "command": "api:request:rest",
+    "flagAliases": [],
+    "flagChars": ["H", "S", "X", "b", "f", "i", "o"],
+    "flags": ["body", "file", "flags-dir", "header", "include", "method", "stream-to-file", "target-org"],
+    "plugin": "@salesforce/plugin-api"
+  },
+  {
+    "alias": [],
+    "command": "autocomplete",
+    "flagAliases": [],
+    "flagChars": ["r"],
+    "flags": ["refresh-cache"],
+    "plugin": "@oclif/plugin-autocomplete"
+  },
+  {
+    "alias": [],
+    "command": "autocomplete:create",
+    "flagAliases": [],
+    "flagChars": [],
+    "flags": [],
+    "plugin": "@oclif/plugin-autocomplete"
+  },
+  {
+    "alias": [],
+    "command": "autocomplete:script",
+    "flagAliases": [],
+    "flagChars": [],
+    "flags": [],
+    "plugin": "@oclif/plugin-autocomplete"
+  },
+  {
+    "alias": [],
+    "command": "commands",
+    "flagAliases": [],
+    "flagChars": ["c", "x"],
+    "flags": ["columns", "deprecated", "extended", "hidden", "json", "no-truncate", "sort", "tree"],
+    "plugin": "@oclif/plugin-commands"
+  },
+  {
+    "alias": ["force:config:get"],
+    "command": "config:get",
+    "flagAliases": [],
+    "flagChars": [],
+    "flags": ["flags-dir", "json", "loglevel", "verbose"],
+    "plugin": "@salesforce/plugin-settings"
+  },
+  {
+    "alias": ["force:config:list"],
+    "command": "config:list",
+    "flagAliases": [],
+    "flagChars": [],
+    "flags": ["flags-dir", "json", "loglevel"],
+    "plugin": "@salesforce/plugin-settings"
+  },
+  {
+    "alias": ["force:config:set"],
+    "command": "config:set",
+    "flagAliases": [],
+    "flagChars": ["g"],
+    "flags": ["flags-dir", "global", "json", "loglevel"],
+    "plugin": "@salesforce/plugin-settings"
+  },
+  {
+    "alias": ["force:config:unset"],
+    "command": "config:unset",
+    "flagAliases": [],
+    "flagChars": ["g"],
+    "flags": ["flags-dir", "global", "json", "loglevel"],
+    "plugin": "@salesforce/plugin-settings"
+  },
+  {
+    "alias": [],
+    "command": "data:bulk:results",
+    "flagAliases": [],
+    "flagChars": ["i", "o"],
+    "flags": ["api-version", "flags-dir", "job-id", "json", "target-org"],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": [],
+    "command": "data:create:file",
+    "flagAliases": [],
+    "flagChars": ["f", "i", "o", "t"],
+    "flags": ["api-version", "file", "flags-dir", "json", "parent-id", "target-org", "title"],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": ["force:data:record:create"],
+    "command": "data:create:record",
+    "flagAliases": ["apiversion", "sobjecttype", "targetusername", "u", "usetoolingapi"],
+    "flagChars": ["o", "s", "t", "v"],
+    "flags": [
+      "api-version",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "perflog",
+      "sobject",
+      "target-org",
+      "use-tooling-api",
+      "values"
+    ],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": [],
+    "command": "data:delete:bulk",
+    "flagAliases": ["apiversion", "csvfile", "sobjecttype", "targetusername", "u"],
+    "flagChars": ["f", "o", "s", "w"],
+    "flags": [
+      "api-version",
+      "file",
+      "flags-dir",
+      "hard-delete",
+      "json",
+      "line-ending",
+      "loglevel",
+      "sobject",
+      "target-org",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": ["force:data:record:delete"],
+    "command": "data:delete:record",
+    "flagAliases": ["apiversion", "sobjectid", "sobjecttype", "targetusername", "u", "usetoolingapi"],
+    "flagChars": ["i", "o", "s", "t", "w"],
+    "flags": [
+      "api-version",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "perflog",
+      "record-id",
+      "sobject",
+      "target-org",
+      "use-tooling-api",
+      "where"
+    ],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": [],
+    "command": "data:delete:resume",
+    "flagAliases": ["jobid", "targetusername", "u"],
+    "flagChars": ["i", "o"],
+    "flags": ["api-version", "flags-dir", "job-id", "json", "loglevel", "target-org", "use-most-recent", "wait"],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": [],
+    "command": "data:export:bulk",
+    "flagAliases": [],
+    "flagChars": ["o", "q", "r", "w"],
+    "flags": [
+      "all-rows",
+      "api-version",
+      "column-delimiter",
+      "flags-dir",
+      "json",
+      "line-ending",
+      "output-file",
+      "query",
+      "query-file",
+      "result-format",
+      "target-org",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": [],
+    "command": "data:export:resume",
+    "flagAliases": [],
+    "flagChars": ["i"],
+    "flags": ["api-version", "flags-dir", "job-id", "json", "use-most-recent"],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": ["force:data:tree:export"],
+    "command": "data:export:tree",
+    "flagAliases": ["apiversion", "outputdir", "targetusername", "u"],
+    "flagChars": ["d", "o", "p", "q", "x"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "output-dir", "plan", "prefix", "query", "target-org"],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": ["force:data:record:get"],
+    "command": "data:get:record",
+    "flagAliases": ["apiversion", "sobjectid", "sobjecttype", "targetusername", "u", "usetoolingapi"],
+    "flagChars": ["i", "o", "s", "t", "w"],
+    "flags": [
+      "api-version",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "perflog",
+      "record-id",
+      "sobject",
+      "target-org",
+      "use-tooling-api",
+      "where"
+    ],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": [],
+    "command": "data:import:bulk",
+    "flagAliases": [],
+    "flagChars": ["f", "o", "s", "w"],
+    "flags": [
+      "api-version",
+      "column-delimiter",
+      "file",
+      "flags-dir",
+      "json",
+      "line-ending",
+      "sobject",
+      "target-org",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": [],
+    "command": "data:import:resume",
+    "flagAliases": [],
+    "flagChars": ["i", "w"],
+    "flags": ["flags-dir", "job-id", "json", "use-most-recent", "wait"],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": ["force:data:tree:import"],
+    "command": "data:import:tree",
+    "flagAliases": ["apiversion", "sobjecttreefiles", "targetusername", "u"],
+    "flagChars": ["f", "o", "p"],
+    "flags": ["api-version", "files", "flags-dir", "json", "loglevel", "plan", "target-org"],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": ["force:data:soql:query"],
+    "command": "data:query",
+    "flagAliases": ["apiversion", "resultformat", "soqlqueryfile", "targetusername", "u", "usetoolingapi"],
+    "flagChars": ["f", "o", "q", "r", "t"],
+    "flags": [
+      "all-rows",
+      "api-version",
+      "file",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "output-file",
+      "perflog",
+      "query",
+      "result-format",
+      "target-org",
+      "use-tooling-api"
+    ],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": [],
+    "command": "data:resume",
+    "flagAliases": ["apiversion", "batchid", "jobid", "targetusername", "u"],
+    "flagChars": ["b", "i", "o"],
+    "flags": ["api-version", "batch-id", "flags-dir", "job-id", "json", "loglevel", "target-org"],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": [],
+    "command": "data:search",
+    "flagAliases": [],
+    "flagChars": ["f", "o", "q", "r"],
+    "flags": ["api-version", "file", "flags-dir", "json", "query", "result-format", "target-org"],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": [],
+    "command": "data:update:bulk",
+    "flagAliases": [],
+    "flagChars": ["f", "o", "s", "w"],
+    "flags": [
+      "api-version",
+      "column-delimiter",
+      "file",
+      "flags-dir",
+      "json",
+      "line-ending",
+      "sobject",
+      "target-org",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": ["force:data:record:update"],
+    "command": "data:update:record",
+    "flagAliases": ["apiversion", "sobjectid", "sobjecttype", "targetusername", "u", "usetoolingapi"],
+    "flagChars": ["i", "o", "s", "t", "v", "w"],
+    "flags": [
+      "api-version",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "perflog",
+      "record-id",
+      "sobject",
+      "target-org",
+      "use-tooling-api",
+      "values",
+      "where"
+    ],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": [],
+    "command": "data:update:resume",
+    "flagAliases": [],
+    "flagChars": ["i", "w"],
+    "flags": ["flags-dir", "job-id", "json", "use-most-recent", "wait"],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": [],
+    "command": "data:upsert:bulk",
+    "flagAliases": ["apiversion", "csvfile", "externalid", "sobjecttype", "targetusername", "u"],
+    "flagChars": ["f", "i", "o", "s", "w"],
+    "flags": [
+      "api-version",
+      "column-delimiter",
+      "external-id",
+      "file",
+      "flags-dir",
+      "json",
+      "line-ending",
+      "loglevel",
+      "sobject",
+      "target-org",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": [],
+    "command": "data:upsert:resume",
+    "flagAliases": ["jobid", "targetusername", "u"],
+    "flagChars": ["i", "o"],
+    "flags": ["api-version", "flags-dir", "job-id", "json", "loglevel", "target-org", "use-most-recent", "wait"],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": [],
+    "command": "doctor",
+    "flagAliases": ["createissue", "o", "outputdir"],
+    "flagChars": ["c", "d", "i", "p"],
+    "flags": ["command", "create-issue", "flags-dir", "json", "loglevel", "output-dir", "plugin"],
+    "plugin": "@salesforce/plugin-info"
+  },
+  {
+    "alias": [],
+    "command": "force:data:bulk:delete",
+    "flagAliases": ["apiversion", "csvfile", "sobjecttype", "targetusername", "u"],
+    "flagChars": ["f", "o", "s", "w"],
+    "flags": ["api-version", "file", "flags-dir", "json", "loglevel", "sobject", "target-org", "wait"],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": [],
+    "command": "force:data:bulk:status",
+    "flagAliases": ["apiversion", "batchid", "jobid", "targetusername", "u"],
+    "flagChars": ["b", "i", "o"],
+    "flags": ["api-version", "batch-id", "flags-dir", "job-id", "json", "loglevel", "target-org"],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": [],
+    "command": "force:data:bulk:upsert",
+    "flagAliases": ["apiversion", "csvfile", "externalid", "sobjecttype", "targetusername", "u"],
+    "flagChars": ["f", "i", "o", "r", "s", "w"],
+    "flags": [
+      "api-version",
+      "external-id",
+      "file",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "serial",
+      "sobject",
+      "target-org",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-data"
+  },
+  {
+    "alias": [],
+    "command": "force:user:password:generate",
+    "flagAliases": ["apiversion", "onbehalfof", "targetusername"],
+    "flagChars": ["c", "l", "o", "u"],
+    "flags": ["api-version", "complexity", "flags-dir", "json", "length", "loglevel", "on-behalf-of", "target-org"],
+    "plugin": "@salesforce/plugin-user"
+  },
+  {
+    "alias": [],
+    "command": "force:user:permset:assign",
+    "flagAliases": ["apiversion", "onbehalfof", "permsetname", "targetusername"],
+    "flagChars": ["n", "o", "u"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "on-behalf-of", "perm-set-name", "target-org"],
+    "plugin": "@salesforce/plugin-user"
+  },
+  {
+    "alias": [],
+    "command": "force:user:permsetlicense:assign",
+    "flagAliases": ["apiversion", "onbehalfof", "perm-set-license", "psl", "targetusername"],
+    "flagChars": ["b", "n", "u"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "name", "on-behalf-of", "target-org"],
+    "plugin": "@salesforce/plugin-user"
+  },
+  {
+    "alias": [],
+    "command": "help",
+    "flagAliases": [],
+    "flagChars": ["n"],
+    "flags": ["nested-commands"],
+    "plugin": "@oclif/plugin-help"
+  },
+  {
+    "alias": ["whatsnew"],
+    "command": "info:releasenotes:display",
+    "flagAliases": [],
+    "flagChars": ["v"],
+    "flags": ["flags-dir", "hook", "json", "loglevel", "version"],
+    "plugin": "@salesforce/plugin-info"
+  },
+  {
+    "alias": ["force:lightning:app:create"],
+    "command": "lightning:generate:app",
+    "flagAliases": ["apiversion", "appname", "outputdir"],
+    "flagChars": ["d", "i", "n", "t"],
+    "flags": ["api-version", "flags-dir", "internal", "json", "loglevel", "name", "output-dir", "template"],
+    "plugin": "@salesforce/plugin-templates"
+  },
+  {
+    "alias": ["force:lightning:component:create"],
+    "command": "lightning:generate:component",
+    "flagAliases": ["apiversion", "componentname", "outputdir"],
+    "flagChars": ["d", "i", "n", "t"],
+    "flags": ["api-version", "flags-dir", "internal", "json", "loglevel", "name", "output-dir", "template", "type"],
+    "plugin": "@salesforce/plugin-templates"
+  },
+  {
+    "alias": ["force:lightning:event:create"],
+    "command": "lightning:generate:event",
+    "flagAliases": ["apiversion", "eventname", "outputdir"],
+    "flagChars": ["d", "i", "n", "t"],
+    "flags": ["api-version", "flags-dir", "internal", "json", "loglevel", "name", "output-dir", "template"],
+    "plugin": "@salesforce/plugin-templates"
+  },
+  {
+    "alias": ["force:lightning:interface:create"],
+    "command": "lightning:generate:interface",
+    "flagAliases": ["apiversion", "interfacename", "outputdir"],
+    "flagChars": ["d", "i", "n", "t"],
+    "flags": ["api-version", "flags-dir", "internal", "json", "loglevel", "name", "output-dir", "template"],
+    "plugin": "@salesforce/plugin-templates"
+  },
+  {
+    "alias": ["force:lightning:test:create"],
+    "command": "lightning:generate:test",
+    "flagAliases": ["apiversion", "outputdir", "testname"],
+    "flagChars": ["d", "i", "n", "t"],
+    "flags": ["api-version", "flags-dir", "internal", "json", "loglevel", "name", "output-dir", "template"],
+    "plugin": "@salesforce/plugin-templates"
+  },
+  {
+    "alias": [],
+    "command": "logic:get:test",
+    "flagAliases": [
+      "apiversion",
+      "codecoverage",
+      "output-directory",
+      "outputdir",
+      "resultformat",
+      "targetusername",
+      "testrunid",
+      "u"
+    ],
+    "flagChars": ["c", "d", "i", "o", "r"],
+    "flags": [
+      "api-version",
+      "code-coverage",
+      "concise",
+      "detailed-coverage",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "output-dir",
+      "result-format",
+      "target-org",
+      "test-run-id"
+    ],
+    "plugin": "@salesforce/plugin-apex"
+  },
+  {
+    "alias": [],
+    "command": "logic:run:test",
+    "flagAliases": [
+      "apiversion",
+      "classnames",
+      "codecoverage",
+      "detailedcoverage",
+      "output-directory",
+      "outputdir",
+      "resultformat",
+      "suitenames",
+      "targetusername",
+      "testlevel",
+      "u"
+    ],
+    "flagChars": ["c", "d", "l", "n", "o", "r", "s", "t", "v", "w", "y"],
+    "flags": [
+      "api-version",
+      "class-names",
+      "code-coverage",
+      "concise",
+      "detailed-coverage",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "output-dir",
+      "result-format",
+      "suite-names",
+      "synchronous",
+      "target-org",
+      "test-category",
+      "test-level",
+      "tests",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-apex"
+  },
+  {
+    "alias": [],
+    "command": "node:info",
+    "flagAliases": [],
+    "flagChars": [],
+    "flags": ["flags-dir", "json"],
+    "plugin": "@salesforce/plugin-trust"
+  },
+  {
+    "alias": [],
+    "command": "org:assign:permset",
+    "flagAliases": ["onbehalfof", "permsetname"],
+    "flagChars": ["b", "n", "o"],
+    "flags": ["api-version", "flags-dir", "json", "name", "on-behalf-of", "target-org"],
+    "plugin": "@salesforce/plugin-user"
+  },
+  {
+    "alias": [],
+    "command": "org:assign:permsetlicense",
+    "flagAliases": ["onbehalfof", "perm-set-license", "psl"],
+    "flagChars": ["b", "n", "o"],
+    "flags": ["api-version", "flags-dir", "json", "name", "on-behalf-of", "target-org"],
+    "plugin": "@salesforce/plugin-user"
+  },
+  {
+    "alias": ["env:create:sandbox"],
+    "command": "org:create:sandbox",
+    "flagAliases": ["c", "clone"],
+    "flagChars": ["a", "f", "i", "l", "n", "o", "s", "w"],
+    "flags": [
+      "alias",
+      "async",
+      "definition-file",
+      "flags-dir",
+      "json",
+      "license-type",
+      "name",
+      "no-prompt",
+      "no-track-source",
+      "poll-interval",
+      "set-default",
+      "source-id",
+      "source-sandbox-name",
+      "target-org",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-org"
+  },
+  {
+    "alias": ["env:create:scratch"],
+    "command": "org:create:scratch",
+    "flagAliases": [],
+    "flagChars": ["a", "c", "d", "e", "f", "i", "m", "s", "t", "v", "w", "y"],
+    "flags": [
+      "admin-email",
+      "alias",
+      "api-version",
+      "async",
+      "client-id",
+      "definition-file",
+      "description",
+      "duration-days",
+      "edition",
+      "flags-dir",
+      "json",
+      "name",
+      "no-ancestors",
+      "no-namespace",
+      "release",
+      "set-default",
+      "snapshot",
+      "source-org",
+      "target-dev-hub",
+      "track-source",
+      "username",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-org"
+  },
+  {
+    "alias": ["force:user:create"],
+    "command": "org:create:user",
+    "flagAliases": ["apiversion", "definitionfile", "setalias", "setuniqueusername", "targetusername", "u"],
+    "flagChars": ["a", "f", "o", "s"],
+    "flags": [
+      "api-version",
+      "definition-file",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "set-alias",
+      "set-unique-username",
+      "target-org"
+    ],
+    "plugin": "@salesforce/plugin-user"
+  },
+  {
+    "alias": ["env:delete:sandbox"],
+    "command": "org:delete:sandbox",
+    "flagAliases": ["targetusername", "u"],
+    "flagChars": ["o", "p"],
+    "flags": ["flags-dir", "json", "no-prompt", "target-org"],
+    "plugin": "@salesforce/plugin-org"
+  },
+  {
+    "alias": ["env:delete:scratch"],
+    "command": "org:delete:scratch",
+    "flagAliases": ["targetusername", "u"],
+    "flagChars": ["o", "p"],
+    "flags": ["flags-dir", "json", "no-prompt", "target-org"],
+    "plugin": "@salesforce/plugin-org"
+  },
+  {
+    "alias": [],
+    "command": "org:disable:tracking",
+    "flagAliases": [],
+    "flagChars": ["o"],
+    "flags": ["flags-dir", "json", "target-org"],
+    "plugin": "@salesforce/plugin-org"
+  },
+  {
+    "alias": ["force:org:display"],
+    "command": "org:display",
+    "flagAliases": ["apiversion", "targetusername", "u"],
+    "flagChars": ["o"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "target-org", "verbose"],
+    "plugin": "@salesforce/plugin-org"
+  },
+  {
+    "alias": ["force:user:display"],
+    "command": "org:display:user",
+    "flagAliases": ["apiversion", "targetusername", "u"],
+    "flagChars": ["o"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "target-org"],
+    "plugin": "@salesforce/plugin-user"
+  },
+  {
+    "alias": [],
+    "command": "org:enable:tracking",
+    "flagAliases": [],
+    "flagChars": ["o"],
+    "flags": ["flags-dir", "json", "target-org"],
+    "plugin": "@salesforce/plugin-org"
+  },
+  {
+    "alias": [],
+    "command": "org:generate:password",
+    "flagAliases": ["onbehalfof"],
+    "flagChars": ["b", "c", "l", "o"],
+    "flags": ["api-version", "complexity", "flags-dir", "json", "length", "on-behalf-of", "target-org"],
+    "plugin": "@salesforce/plugin-user"
+  },
+  {
+    "alias": ["force:org:list"],
+    "command": "org:list",
+    "flagAliases": ["noprompt", "skipconnectionstatus"],
+    "flagChars": ["p"],
+    "flags": ["all", "clean", "flags-dir", "json", "loglevel", "no-prompt", "skip-connection-status", "verbose"],
+    "plugin": "@salesforce/plugin-org"
+  },
+  {
+    "alias": ["force:auth:list", "auth:list"],
+    "command": "org:list:auth",
+    "flagAliases": [],
+    "flagChars": [],
+    "flags": ["flags-dir", "json", "loglevel"],
+    "plugin": "@salesforce/plugin-auth"
+  },
+  {
+    "alias": ["force:limits:api:display", "limits:api:display"],
+    "command": "org:list:limits",
+    "flagAliases": ["apiversion", "targetusername", "u"],
+    "flagChars": ["o"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "target-org"],
+    "plugin": "@salesforce/plugin-limits"
+  },
+  {
+    "alias": ["force:mdapi:listmetadata"],
+    "command": "org:list:metadata",
+    "flagAliases": ["a", "apiversion", "metadatatype", "resultfile", "targetusername", "u"],
+    "flagChars": ["f", "m", "o"],
+    "flags": ["api-version", "flags-dir", "folder", "json", "loglevel", "metadata-type", "output-file", "target-org"],
+    "plugin": "@salesforce/plugin-org"
+  },
+  {
+    "alias": ["force:mdapi:describemetadata"],
+    "command": "org:list:metadata-types",
+    "flagAliases": ["a", "apiversion", "filterknown", "resultfile", "targetusername", "u"],
+    "flagChars": ["f", "k", "o"],
+    "flags": ["api-version", "filter-known", "flags-dir", "json", "loglevel", "output-file", "target-org"],
+    "plugin": "@salesforce/plugin-org"
+  },
+  {
+    "alias": ["force:limits:recordcounts:display", "limits:recordcounts:display"],
+    "command": "org:list:sobject:record-counts",
+    "flagAliases": ["apiversion", "sobjecttype", "targetusername", "u"],
+    "flagChars": ["o", "s"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "sobject", "target-org"],
+    "plugin": "@salesforce/plugin-limits"
+  },
+  {
+    "alias": ["force:user:list"],
+    "command": "org:list:users",
+    "flagAliases": ["apiversion", "targetusername", "u"],
+    "flagChars": ["o"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "target-org"],
+    "plugin": "@salesforce/plugin-user"
+  },
+  {
+    "alias": ["force:auth:accesstoken:store", "auth:accesstoken:store"],
+    "command": "org:login:access-token",
+    "flagAliases": [
+      "instanceurl",
+      "noprompt",
+      "setalias",
+      "setdefaultdevhub",
+      "setdefaultdevhubusername",
+      "setdefaultusername"
+    ],
+    "flagChars": ["a", "d", "p", "r", "s"],
+    "flags": [
+      "alias",
+      "flags-dir",
+      "instance-url",
+      "json",
+      "loglevel",
+      "no-prompt",
+      "set-default",
+      "set-default-dev-hub"
+    ],
+    "plugin": "@salesforce/plugin-auth"
+  },
+  {
+    "alias": ["force:auth:device:login", "auth:device:login"],
+    "command": "org:login:device",
+    "flagAliases": [
+      "clientid",
+      "instanceurl",
+      "setalias",
+      "setdefaultdevhub",
+      "setdefaultdevhubusername",
+      "setdefaultusername"
+    ],
+    "flagChars": ["a", "d", "i", "r", "s"],
+    "flags": [
+      "alias",
+      "client-id",
+      "flags-dir",
+      "instance-url",
+      "json",
+      "loglevel",
+      "set-default",
+      "set-default-dev-hub"
+    ],
+    "plugin": "@salesforce/plugin-auth"
+  },
+  {
+    "alias": ["force:auth:jwt:grant", "auth:jwt:grant"],
+    "command": "org:login:jwt",
+    "flagAliases": [
+      "clientid",
+      "instanceurl",
+      "jwtkeyfile",
+      "keyfile",
+      "l",
+      "noprompt",
+      "setalias",
+      "setdefaultdevhub",
+      "setdefaultdevhubusername",
+      "setdefaultusername",
+      "u",
+      "v"
+    ],
+    "flagChars": ["a", "d", "f", "i", "o", "p", "r", "s"],
+    "flags": [
+      "alias",
+      "client-id",
+      "flags-dir",
+      "instance-url",
+      "json",
+      "jwt-key-file",
+      "loglevel",
+      "no-prompt",
+      "set-default",
+      "set-default-dev-hub",
+      "username"
+    ],
+    "plugin": "@salesforce/plugin-auth"
+  },
+  {
+    "alias": ["force:auth:sfdxurl:store", "auth:sfdxurl:store"],
+    "command": "org:login:sfdx-url",
+    "flagAliases": [
+      "noprompt",
+      "setalias",
+      "setdefaultdevhub",
+      "setdefaultdevhubusername",
+      "setdefaultusername",
+      "sfdxurlfile",
+      "sfdxurlstdin"
+    ],
+    "flagChars": ["a", "d", "f", "p", "s", "u"],
+    "flags": [
+      "alias",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "no-prompt",
+      "set-default",
+      "set-default-dev-hub",
+      "sfdx-url-file",
+      "sfdx-url-stdin"
+    ],
+    "plugin": "@salesforce/plugin-auth"
+  },
+  {
+    "alias": ["force:auth:web:login", "auth:web:login"],
+    "command": "org:login:web",
+    "flagAliases": [
+      "clientid",
+      "instanceurl",
+      "l",
+      "noprompt",
+      "setalias",
+      "setdefaultdevhub",
+      "setdefaultdevhubusername",
+      "setdefaultusername",
+      "v"
+    ],
+    "flagChars": ["a", "b", "c", "d", "i", "p", "r", "s"],
+    "flags": [
+      "alias",
+      "browser",
+      "client-app",
+      "client-id",
+      "flags-dir",
+      "instance-url",
+      "json",
+      "loglevel",
+      "no-prompt",
+      "scopes",
+      "set-default",
+      "set-default-dev-hub",
+      "username"
+    ],
+    "plugin": "@salesforce/plugin-auth"
+  },
+  {
+    "alias": ["force:auth:logout", "auth:logout"],
+    "command": "org:logout",
+    "flagAliases": ["noprompt", "targetusername", "u"],
+    "flagChars": ["a", "c", "o", "p"],
+    "flags": ["all", "client-app", "flags-dir", "json", "loglevel", "no-prompt", "target-org"],
+    "plugin": "@salesforce/plugin-auth"
+  },
+  {
+    "alias": ["force:org:open", "force:source:open"],
+    "command": "org:open",
+    "flagAliases": ["apiversion", "sourcefile", "targetusername", "u", "urlonly"],
+    "flagChars": ["b", "f", "o", "p", "r"],
+    "flags": [
+      "api-version",
+      "browser",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "path",
+      "private",
+      "source-file",
+      "target-org",
+      "url-only"
+    ],
+    "plugin": "@salesforce/plugin-org"
+  },
+  {
+    "alias": [],
+    "command": "org:open:agent",
+    "flagAliases": ["urlonly"],
+    "flagChars": ["b", "n", "o", "r"],
+    "flags": ["api-name", "api-version", "browser", "flags-dir", "json", "private", "target-org", "url-only"],
+    "plugin": "@salesforce/plugin-org"
+  },
+  {
+    "alias": [],
+    "command": "org:refresh:sandbox",
+    "flagAliases": [],
+    "flagChars": ["f", "i", "n", "o", "w"],
+    "flags": [
+      "async",
+      "definition-file",
+      "flags-dir",
+      "json",
+      "name",
+      "no-auto-activate",
+      "no-prompt",
+      "poll-interval",
+      "source-id",
+      "source-sandbox-name",
+      "target-org",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-org"
+  },
+  {
+    "alias": ["env:resume:sandbox"],
+    "command": "org:resume:sandbox",
+    "flagAliases": [],
+    "flagChars": ["i", "l", "n", "o", "w"],
+    "flags": ["flags-dir", "job-id", "json", "name", "target-org", "use-most-recent", "wait"],
+    "plugin": "@salesforce/plugin-org"
+  },
+  {
+    "alias": ["env:resume:scratch"],
+    "command": "org:resume:scratch",
+    "flagAliases": [],
+    "flagChars": ["i", "r", "w"],
+    "flags": ["flags-dir", "job-id", "json", "use-most-recent", "wait"],
+    "plugin": "@salesforce/plugin-org"
+  },
+  {
+    "alias": ["force:package1:version:create"],
+    "command": "package1:version:create",
+    "flagAliases": [
+      "apiversion",
+      "installationkey",
+      "managedrelease",
+      "packageid",
+      "postinstallurl",
+      "releasenotesurl",
+      "targetusername",
+      "u"
+    ],
+    "flagChars": ["d", "i", "k", "m", "n", "o", "p", "r", "v", "w"],
+    "flags": [
+      "api-version",
+      "description",
+      "flags-dir",
+      "installation-key",
+      "json",
+      "loglevel",
+      "managed-released",
+      "name",
+      "package-id",
+      "post-install-url",
+      "release-notes-url",
+      "target-org",
+      "version",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package1:version:create:get"],
+    "command": "package1:version:create:get",
+    "flagAliases": ["apiversion", "requestid", "targetusername", "u"],
+    "flagChars": ["i", "o"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "request-id", "target-org"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package1:version:display"],
+    "command": "package1:version:display",
+    "flagAliases": ["apiversion", "packageversionid", "targetusername", "u"],
+    "flagChars": ["i", "o"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "package-version-id", "target-org"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package1:version:list"],
+    "command": "package1:version:list",
+    "flagAliases": ["apiversion", "packageid", "targetusername", "u"],
+    "flagChars": ["i", "o"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "package-id", "target-org"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": [],
+    "command": "package:bundle:create",
+    "flagAliases": ["apiversion", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["d", "n", "v"],
+    "flags": ["api-version", "description", "flags-dir", "json", "loglevel", "name", "target-dev-hub"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": [],
+    "command": "package:bundle:delete",
+    "flagAliases": ["apiversion", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["b", "n", "v"],
+    "flags": ["api-version", "bundle", "flags-dir", "json", "loglevel", "no-prompt", "target-dev-hub"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": [],
+    "command": "package:bundle:install",
+    "flagAliases": ["apiversion", "targetdevhubusername", "targetusername", "u"],
+    "flagChars": ["b", "o", "v", "w"],
+    "flags": [
+      "api-version",
+      "bundle",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "target-dev-hub",
+      "target-org",
+      "verbose",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": [],
+    "command": "package:bundle:install:list",
+    "flagAliases": ["apiversion", "targetusername", "u"],
+    "flagChars": ["c", "o", "s"],
+    "flags": ["api-version", "created-last-days", "flags-dir", "json", "loglevel", "status", "target-org", "verbose"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": [],
+    "command": "package:bundle:install:report",
+    "flagAliases": ["apiversion", "targetusername", "u"],
+    "flagChars": ["i", "o"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "package-install-request-id", "target-org", "verbose"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": [],
+    "command": "package:bundle:list",
+    "flagAliases": ["apiversion", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["v"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "target-dev-hub", "verbose"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": [],
+    "command": "package:bundle:version:create",
+    "flagAliases": ["apiversion", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["b", "d", "n", "p", "v", "w"],
+    "flags": [
+      "api-version",
+      "bundle",
+      "definition-file",
+      "description",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "target-dev-hub",
+      "verbose",
+      "version-number",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": [],
+    "command": "package:bundle:version:create:list",
+    "flagAliases": ["apiversion", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["c", "s", "v"],
+    "flags": [
+      "api-version",
+      "created-last-days",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "show-conversions-only",
+      "status",
+      "target-dev-hub",
+      "verbose"
+    ],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": [],
+    "command": "package:bundle:version:create:report",
+    "flagAliases": ["apiversion", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["i", "v"],
+    "flags": ["api-version", "bundle-version-create-request-id", "flags-dir", "json", "loglevel", "target-dev-hub"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": [],
+    "command": "package:bundle:version:list",
+    "flagAliases": ["apiversion", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["v"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "target-dev-hub", "verbose"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": [],
+    "command": "package:bundle:version:report",
+    "flagAliases": ["apiversion", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["b", "v"],
+    "flags": ["api-version", "bundle-version", "flags-dir", "json", "loglevel", "target-dev-hub", "verbose"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:convert"],
+    "command": "package:convert",
+    "flagAliases": [
+      "apiversion",
+      "buildinstance",
+      "definitionfile",
+      "installationkey",
+      "installationkeybypass",
+      "patchversion",
+      "target-hub-org",
+      "targetdevhubusername"
+    ],
+    "flagChars": ["a", "c", "f", "k", "m", "p", "s", "v", "w", "x"],
+    "flags": [
+      "api-version",
+      "build-instance",
+      "code-coverage",
+      "definition-file",
+      "flags-dir",
+      "installation-key",
+      "installation-key-bypass",
+      "json",
+      "loglevel",
+      "package",
+      "patch-version",
+      "seed-metadata",
+      "target-dev-hub",
+      "verbose",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:create"],
+    "command": "package:create",
+    "flagAliases": [
+      "apiversion",
+      "errornotificationusername",
+      "nonamespace",
+      "orgdependent",
+      "packagetype",
+      "target-hub-org",
+      "targetdevhubusername"
+    ],
+    "flagChars": ["d", "e", "n", "o", "r", "t", "v"],
+    "flags": [
+      "api-version",
+      "description",
+      "error-notification-username",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "name",
+      "no-namespace",
+      "org-dependent",
+      "package-type",
+      "path",
+      "target-dev-hub"
+    ],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:delete"],
+    "command": "package:delete",
+    "flagAliases": ["apiversion", "noprompt", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["n", "p", "v"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "no-prompt", "package", "target-dev-hub", "undelete"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:install"],
+    "command": "package:install",
+    "flagAliases": [
+      "apexcompile",
+      "apiversion",
+      "installationkey",
+      "noprompt",
+      "publishwait",
+      "securitytype",
+      "targetusername",
+      "u",
+      "upgradetype"
+    ],
+    "flagChars": ["a", "b", "k", "l", "o", "p", "r", "s", "t", "w"],
+    "flags": [
+      "apex-compile",
+      "api-version",
+      "flags-dir",
+      "installation-key",
+      "json",
+      "loglevel",
+      "no-prompt",
+      "package",
+      "publish-wait",
+      "security-type",
+      "skip-handlers",
+      "target-org",
+      "upgrade-type",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:install:report"],
+    "command": "package:install:report",
+    "flagAliases": ["apiversion", "requestid", "targetusername", "u"],
+    "flagChars": ["i", "o"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "request-id", "target-org"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:installed:list"],
+    "command": "package:installed:list",
+    "flagAliases": ["apiversion", "targetusername", "u"],
+    "flagChars": ["o"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "target-org"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:list"],
+    "command": "package:list",
+    "flagAliases": ["apiversion", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["v"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "target-dev-hub", "verbose"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": [],
+    "command": "package:push-upgrade:abort",
+    "flagAliases": [],
+    "flagChars": ["i", "v"],
+    "flags": ["api-version", "flags-dir", "json", "push-request-id", "target-dev-hub"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:push-upgrade:list"],
+    "command": "package:push-upgrade:list",
+    "flagAliases": ["apiversion", "scheduledlastdays", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["l", "p", "s", "v"],
+    "flags": [
+      "api-version",
+      "flags-dir",
+      "json",
+      "package",
+      "scheduled-last-days",
+      "show-push-migrations-only",
+      "status",
+      "target-dev-hub"
+    ],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:push-upgrade:report"],
+    "command": "package:push-upgrade:report",
+    "flagAliases": ["apiversion", "pushrequestid", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["i", "v"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "push-request-id", "target-dev-hub"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": [],
+    "command": "package:push-upgrade:schedule",
+    "flagAliases": ["apiversion"],
+    "flagChars": ["f", "l", "p", "t", "v"],
+    "flags": [
+      "api-version",
+      "flags-dir",
+      "json",
+      "migrate-to-2gp",
+      "org-file",
+      "org-list",
+      "package",
+      "start-time",
+      "target-dev-hub"
+    ],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:uninstall"],
+    "command": "package:uninstall",
+    "flagAliases": ["apiversion", "targetusername", "u"],
+    "flagChars": ["o", "p", "w"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "package", "target-org", "wait"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:uninstall:report"],
+    "command": "package:uninstall:report",
+    "flagAliases": ["apiversion", "requestid", "targetusername", "u"],
+    "flagChars": ["i", "o"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "request-id", "target-org"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:update"],
+    "command": "package:update",
+    "flagAliases": ["apiversion", "errornotificationusername", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["d", "n", "o", "p", "v"],
+    "flags": [
+      "api-version",
+      "description",
+      "enable-app-analytics",
+      "error-notification-username",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "name",
+      "package",
+      "target-dev-hub"
+    ],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:version:create"],
+    "command": "package:version:create",
+    "flagAliases": [
+      "apiversion",
+      "buildinstance",
+      "codecoverage",
+      "definitionfile",
+      "installationkey",
+      "installationkeybypass",
+      "postinstallscript",
+      "postinstallurl",
+      "releasenotesurl",
+      "skipancestorcheck",
+      "skipvalidation",
+      "target-hub-org",
+      "targetdevhubusername",
+      "uninstallscript",
+      "validateschema",
+      "versiondescription",
+      "versionname",
+      "versionnumber"
+    ],
+    "flagChars": ["a", "b", "c", "d", "e", "f", "j", "k", "n", "p", "r", "s", "t", "v", "w", "x"],
+    "flags": [
+      "api-version",
+      "async-validation",
+      "branch",
+      "build-instance",
+      "code-coverage",
+      "definition-file",
+      "flags-dir",
+      "installation-key",
+      "installation-key-bypass",
+      "json",
+      "language",
+      "loglevel",
+      "package",
+      "path",
+      "post-install-script",
+      "post-install-url",
+      "preserve",
+      "releasenotes-url",
+      "skip-ancestor-check",
+      "skip-validation",
+      "tag",
+      "target-dev-hub",
+      "uninstall-script",
+      "validate-schema",
+      "verbose",
+      "version-description",
+      "version-name",
+      "version-number",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:version:create:list"],
+    "command": "package:version:create:list",
+    "flagAliases": ["apiversion", "createdlastdays", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["c", "s", "v"],
+    "flags": [
+      "api-version",
+      "created-last-days",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "show-conversions-only",
+      "status",
+      "target-dev-hub",
+      "verbose"
+    ],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:version:create:report"],
+    "command": "package:version:create:report",
+    "flagAliases": ["apiversion", "packagecreaterequestid", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["i", "v"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "package-create-request-id", "target-dev-hub"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:version:delete"],
+    "command": "package:version:delete",
+    "flagAliases": ["apiversion", "noprompt", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["n", "p", "v"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "no-prompt", "package", "target-dev-hub", "undelete"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:version:displayancestry"],
+    "command": "package:version:displayancestry",
+    "flagAliases": ["apiversion", "dotcode", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["p", "v"],
+    "flags": ["api-version", "dot-code", "flags-dir", "json", "loglevel", "package", "target-dev-hub", "verbose"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": [],
+    "command": "package:version:displaydependencies",
+    "flagAliases": ["apiversion", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["p", "v"],
+    "flags": ["api-version", "edge-direction", "flags-dir", "json", "loglevel", "package", "target-dev-hub", "verbose"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:version:list"],
+    "command": "package:version:list",
+    "flagAliases": [
+      "apiversion",
+      "createdlastdays",
+      "modifiedlastdays",
+      "orderby",
+      "target-hub-org",
+      "targetdevhubusername"
+    ],
+    "flagChars": ["b", "c", "m", "o", "p", "r", "v"],
+    "flags": [
+      "api-version",
+      "branch",
+      "concise",
+      "created-last-days",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "modified-last-days",
+      "order-by",
+      "packages",
+      "released",
+      "show-conversions-only",
+      "target-dev-hub",
+      "verbose"
+    ],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:version:promote"],
+    "command": "package:version:promote",
+    "flagAliases": ["apiversion", "noprompt", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["n", "p", "v"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "no-prompt", "package", "target-dev-hub"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:version:report"],
+    "command": "package:version:report",
+    "flagAliases": ["apiversion", "target-hub-org", "targetdevhubusername"],
+    "flagChars": ["p", "v"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "package", "target-dev-hub", "verbose"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": [],
+    "command": "package:version:retrieve",
+    "flagAliases": ["apiversion", "targetdevhubusername"],
+    "flagChars": ["d", "p", "v"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "output-dir", "package", "target-dev-hub"],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": ["force:package:version:update"],
+    "command": "package:version:update",
+    "flagAliases": [
+      "apiversion",
+      "installationkey",
+      "target-hub-org",
+      "targetdevhubusername",
+      "versiondescription",
+      "versionname"
+    ],
+    "flagChars": ["a", "b", "e", "k", "p", "t", "v"],
+    "flags": [
+      "api-version",
+      "branch",
+      "flags-dir",
+      "installation-key",
+      "json",
+      "loglevel",
+      "package",
+      "tag",
+      "target-dev-hub",
+      "version-description",
+      "version-name"
+    ],
+    "plugin": "@salesforce/plugin-packaging"
+  },
+  {
+    "alias": [],
+    "command": "plugins",
+    "flagAliases": [],
+    "flagChars": [],
+    "flags": ["core", "json"],
+    "plugin": "@oclif/plugin-plugins"
+  },
+  {
+    "alias": [],
+    "command": "plugins:discover",
+    "flagAliases": [],
+    "flagChars": [],
+    "flags": ["flags-dir", "json"],
+    "plugin": "@salesforce/plugin-marketplace"
+  },
+  {
+    "alias": [],
+    "command": "plugins:inspect",
+    "flagAliases": [],
+    "flagChars": ["h", "v"],
+    "flags": ["help", "json", "verbose"],
+    "plugin": "@oclif/plugin-plugins"
+  },
+  {
+    "alias": ["plugins:add"],
+    "command": "plugins:install",
+    "flagAliases": [],
+    "flagChars": ["f", "h", "s", "v"],
+    "flags": ["force", "help", "jit", "json", "silent", "verbose"],
+    "plugin": "@oclif/plugin-plugins"
+  },
+  {
+    "alias": [],
+    "command": "plugins:link",
+    "flagAliases": [],
+    "flagChars": ["h", "v"],
+    "flags": ["help", "install", "verbose"],
+    "plugin": "@oclif/plugin-plugins"
+  },
+  {
+    "alias": [],
+    "command": "plugins:reset",
+    "flagAliases": [],
+    "flagChars": [],
+    "flags": ["hard", "reinstall"],
+    "plugin": "@oclif/plugin-plugins"
+  },
+  {
+    "alias": [],
+    "command": "plugins:trust:verify",
+    "flagAliases": [],
+    "flagChars": ["n", "r"],
+    "flags": ["flags-dir", "json", "loglevel", "npm", "registry"],
+    "plugin": "@salesforce/plugin-trust"
+  },
+  {
+    "alias": ["plugins:unlink", "plugins:remove"],
+    "command": "plugins:uninstall",
+    "flagAliases": [],
+    "flagChars": ["h", "v"],
+    "flags": ["help", "verbose"],
+    "plugin": "@oclif/plugin-plugins"
+  },
+  {
+    "alias": [],
+    "command": "plugins:update",
+    "flagAliases": [],
+    "flagChars": ["h", "v"],
+    "flags": ["help", "verbose"],
+    "plugin": "@oclif/plugin-plugins"
+  },
+  {
+    "alias": ["force:mdapi:convert"],
+    "command": "project:convert:mdapi",
+    "flagAliases": ["apiversion", "metadatapath", "outputdir", "rootdir"],
+    "flagChars": ["d", "m", "p", "r", "x"],
+    "flags": [
+      "api-version",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "manifest",
+      "metadata",
+      "metadata-dir",
+      "output-dir",
+      "root-dir"
+    ],
+    "plugin": "@salesforce/plugin-deploy-retrieve"
+  },
+  {
+    "alias": ["force:source:convert"],
+    "command": "project:convert:source",
+    "flagAliases": ["apiversion", "outputdir", "packagename", "rootdir", "sourcepath"],
+    "flagChars": ["d", "m", "n", "p", "r", "x"],
+    "flags": [
+      "api-version",
+      "flags-dir",
+      "json",
+      "loglevel",
+      "manifest",
+      "metadata",
+      "output-dir",
+      "package-name",
+      "root-dir",
+      "source-dir"
+    ],
+    "plugin": "@salesforce/plugin-deploy-retrieve"
+  },
+  {
+    "alias": [],
+    "command": "project:convert:source-behavior",
+    "flagAliases": [],
+    "flagChars": ["b", "o"],
+    "flags": ["behavior", "dry-run", "flags-dir", "json", "preserve-temp-dir", "target-org"],
+    "plugin": "@salesforce/plugin-deploy-retrieve"
+  },
+  {
+    "alias": ["force:source:delete"],
+    "command": "project:delete:source",
+    "flagAliases": [
+      "apiversion",
+      "checkonly",
+      "forceoverwrite",
+      "noprompt",
+      "sourcepath",
+      "targetusername",
+      "testlevel",
+      "tracksource",
+      "u"
+    ],
+    "flagChars": ["c", "f", "l", "m", "o", "p", "r", "t", "w"],
+    "flags": [
+      "api-version",
+      "check-only",
+      "flags-dir",
+      "force-overwrite",
+      "json",
+      "loglevel",
+      "metadata",
+      "no-prompt",
+      "source-dir",
+      "target-org",
+      "test-level",
+      "tests",
+      "track-source",
+      "verbose",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-deploy-retrieve"
+  },
+  {
+    "alias": ["force:source:tracking:clear"],
+    "command": "project:delete:tracking",
+    "flagAliases": ["apiversion", "noprompt", "targetusername", "u"],
+    "flagChars": ["o", "p"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "no-prompt", "target-org"],
+    "plugin": "@salesforce/plugin-deploy-retrieve"
+  },
+  {
+    "alias": ["deploy:metadata:cancel"],
+    "command": "project:deploy:cancel",
+    "flagAliases": [],
+    "flagChars": ["i", "o", "r", "w"],
+    "flags": ["async", "flags-dir", "job-id", "json", "target-org", "use-most-recent", "wait"],
+    "plugin": "@salesforce/plugin-deploy-retrieve"
+  },
+  {
+    "alias": ["deploy:metadata:preview"],
+    "command": "project:deploy:preview",
+    "flagAliases": [],
+    "flagChars": ["c", "d", "m", "o", "x"],
+    "flags": ["concise", "flags-dir", "ignore-conflicts", "json", "manifest", "metadata", "source-dir", "target-org"],
+    "plugin": "@salesforce/plugin-deploy-retrieve"
+  },
+  {
+    "alias": ["deploy:metadata:quick"],
+    "command": "project:deploy:quick",
+    "flagAliases": [],
+    "flagChars": ["a", "i", "o", "r", "w"],
+    "flags": [
+      "api-version",
+      "async",
+      "concise",
+      "flags-dir",
+      "job-id",
+      "json",
+      "target-org",
+      "use-most-recent",
+      "verbose",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-deploy-retrieve"
+  },
+  {
+    "alias": ["deploy:metadata:report"],
+    "command": "project:deploy:report",
+    "flagAliases": [],
+    "flagChars": ["i", "o", "r", "w"],
+    "flags": [
+      "coverage-formatters",
+      "flags-dir",
+      "job-id",
+      "json",
+      "junit",
+      "results-dir",
+      "target-org",
+      "use-most-recent",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-deploy-retrieve"
+  },
+  {
+    "alias": ["deploy:metadata:resume"],
+    "command": "project:deploy:resume",
+    "flagAliases": [],
+    "flagChars": ["i", "r", "w"],
+    "flags": [
+      "concise",
+      "coverage-formatters",
+      "flags-dir",
+      "job-id",
+      "json",
+      "junit",
+      "results-dir",
+      "use-most-recent",
+      "verbose",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-deploy-retrieve"
+  },
+  {
+    "alias": ["deploy:metadata"],
+    "command": "project:deploy:start",
+    "flagAliases": [],
+    "flagChars": ["a", "c", "d", "g", "l", "m", "o", "r", "t", "w", "x"],
+    "flags": [
+      "api-version",
+      "async",
+      "concise",
+      "coverage-formatters",
+      "dry-run",
+      "flags-dir",
+      "ignore-conflicts",
+      "ignore-errors",
+      "ignore-warnings",
+      "json",
+      "junit",
+      "manifest",
+      "metadata",
+      "metadata-dir",
+      "post-destructive-changes",
+      "pre-destructive-changes",
+      "purge-on-delete",
+      "results-dir",
+      "single-package",
+      "source-dir",
+      "target-org",
+      "test-level",
+      "tests",
+      "verbose",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-deploy-retrieve"
+  },
+  {
+    "alias": ["deploy:metadata:validate"],
+    "command": "project:deploy:validate",
+    "flagAliases": [],
+    "flagChars": ["a", "d", "g", "l", "m", "o", "t", "w", "x"],
+    "flags": [
+      "api-version",
+      "async",
+      "concise",
+      "coverage-formatters",
+      "flags-dir",
+      "ignore-warnings",
+      "json",
+      "junit",
+      "manifest",
+      "metadata",
+      "metadata-dir",
+      "post-destructive-changes",
+      "pre-destructive-changes",
+      "purge-on-delete",
+      "results-dir",
+      "single-package",
+      "source-dir",
+      "target-org",
+      "test-level",
+      "tests",
+      "verbose",
+      "wait"
+    ],
+    "plugin": "@salesforce/plugin-deploy-retrieve"
+  },
+  {
+    "alias": ["force:project:create"],
+    "command": "project:generate",
+    "flagAliases": ["defaultpackagedir", "loginurl", "outputdir", "projectname"],
+    "flagChars": ["d", "l", "n", "p", "s", "t", "x"],
+    "flags": [
+      "api-version",
+      "default-package-dir",
+      "flags-dir",
+      "json",
+      "login-url",
+      "loglevel",
+      "manifest",
+      "name",
+      "namespace",
+      "output-dir",
+      "template"
+    ],
+    "plugin": "@salesforce/plugin-templates"
+  },
+  {
+    "alias": ["force:source:manifest:create"],
+    "command": "project:generate:manifest",
+    "flagAliases": [
+      "apiversion",
+      "fromorg",
+      "includepackages",
+      "manifestname",
+      "manifesttype",
+      "o",
+      "outputdir",
+      "sourcepath"
+    ],
+    "flagChars": ["c", "d", "m", "n", "p", "t"],
+    "flags": [
+      "api-version",
+      "excluded-metadata",
+      "flags-dir",
+      "from-org",
+      "include-packages",
+      "json",
+      "loglevel",
+      "metadata",
+      "name",
+      "output-dir",
+      "source-dir",
+      "type"
+    ],
+    "plugin": "@salesforce/plugin-deploy-retrieve"
+  },
+  {
+    "alias": ["force:source:ignored:list"],
+    "command": "project:list:ignored",
+    "flagAliases": ["sourcepath"],
+    "flagChars": ["p"],
+    "flags": ["flags-dir", "json", "source-dir"],
+    "plugin": "@salesforce/plugin-deploy-retrieve"
+  },
+  {
+    "alias": ["force:source:tracking:reset"],
+    "command": "project:reset:tracking",
+    "flagAliases": ["apiversion", "noprompt", "targetusername", "u"],
+    "flagChars": ["o", "p", "r"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "no-prompt", "revision", "target-org"],
+    "plugin": "@salesforce/plugin-deploy-retrieve"
+  },
+  {
+    "alias": ["retrieve:metadata:preview"],
+    "command": "project:retrieve:preview",
+    "flagAliases": [],
+    "flagChars": ["c", "o"],
+    "flags": ["concise", "flags-dir", "ignore-conflicts", "json", "target-org"],
+    "plugin": "@salesforce/plugin-deploy-retrieve"
+  },
+  {
+    "alias": ["retrieve:metadata"],
+    "command": "project:retrieve:start",
+    "flagAliases": [],
+    "flagChars": ["a", "c", "d", "m", "n", "o", "r", "t", "w", "x", "z"],
+    "flags": [
+      "api-version",
+      "flags-dir",
+      "ignore-conflicts",
+      "json",
+      "manifest",
+      "metadata",
+      "output-dir",
+      "package-name",
+      "single-package",
+      "source-dir",
+      "target-metadata-dir",
+      "target-org",
+      "unzip",
+      "wait",
+      "zip-file-name"
+    ],
+    "plugin": "@salesforce/plugin-deploy-retrieve"
+  },
+  {
+    "alias": ["generate:metadata:field"],
+    "command": "schema:generate:field",
+    "flagAliases": [],
+    "flagChars": ["l", "o"],
+    "flags": ["flags-dir", "label", "object"],
+    "plugin": "@salesforce/plugin-sobject"
+  },
+  {
+    "alias": ["generate:metadata:platformevent"],
+    "command": "schema:generate:platformevent",
+    "flagAliases": [],
+    "flagChars": ["l"],
+    "flags": ["flags-dir", "label"],
+    "plugin": "@salesforce/plugin-sobject"
+  },
+  {
+    "alias": ["generate:metadata:sobject"],
+    "command": "schema:generate:sobject",
+    "flagAliases": [],
+    "flagChars": ["f", "l"],
+    "flags": ["flags-dir", "label", "use-default-features"],
+    "plugin": "@salesforce/plugin-sobject"
+  },
+  {
+    "alias": ["generate:metadata:tab"],
+    "command": "schema:generate:tab",
+    "flagAliases": [],
+    "flagChars": ["d", "i", "o"],
+    "flags": ["directory", "flags-dir", "icon", "json", "object"],
+    "plugin": "@salesforce/plugin-sobject"
+  },
+  {
+    "alias": [],
+    "command": "search",
+    "flagAliases": [],
+    "flagChars": [],
+    "flags": [],
+    "plugin": "@oclif/plugin-search"
+  },
+  {
+    "alias": ["force:schema:sobject:describe"],
+    "command": "sobject:describe",
+    "flagAliases": ["apiversion", "sobjecttype", "targetusername", "u", "usetoolingapi"],
+    "flagChars": ["o", "s", "t"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "sobject", "target-org", "use-tooling-api"],
+    "plugin": "@salesforce/plugin-schema"
+  },
+  {
+    "alias": ["force:schema:sobject:list"],
+    "command": "sobject:list",
+    "flagAliases": ["apiversion", "c", "sobjecttypecategory", "targetusername", "u"],
+    "flagChars": ["o", "s"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "sobject", "target-org"],
+    "plugin": "@salesforce/plugin-schema"
+  },
+  {
+    "alias": ["force:staticresource:create"],
+    "command": "static-resource:generate",
+    "flagAliases": ["apiversion", "contenttype", "outputdir", "resourcename"],
+    "flagChars": ["d", "n"],
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "name", "output-dir", "type"],
+    "plugin": "@salesforce/plugin-templates"
+  },
+  {
+    "alias": [],
+    "command": "telemetry",
+    "flagAliases": [],
+    "flagChars": [],
+    "flags": ["flags-dir", "json"],
+    "plugin": "@salesforce/plugin-telemetry"
+  },
+  {
+    "alias": [],
+    "command": "update",
+    "flagAliases": [],
+    "flagChars": ["a", "b", "i", "v"],
+    "flags": ["autoupdate", "available", "force", "interactive", "verbose", "version"],
+    "plugin": "@oclif/plugin-update"
+  },
+  {
+    "alias": [],
+    "command": "version",
+    "flagAliases": [],
+    "flagChars": [],
+    "flags": ["json", "verbose"],
+    "plugin": "@oclif/plugin-version"
+  },
+  {
+    "alias": ["force:visualforce:component:create"],
+    "command": "visualforce:generate:component",
+    "flagAliases": ["apiversion", "componentname", "outputdir"],
+    "flagChars": ["d", "l", "n", "t"],
+    "flags": ["api-version", "flags-dir", "json", "label", "loglevel", "name", "output-dir", "template"],
+    "plugin": "@salesforce/plugin-templates"
+  },
+  {
+    "alias": ["force:visualforce:page:create"],
+    "command": "visualforce:generate:page",
+    "flagAliases": ["apiversion", "outputdir", "pagename"],
+    "flagChars": ["d", "l", "n", "t"],
+    "flags": ["api-version", "flags-dir", "json", "label", "loglevel", "name", "output-dir", "template"],
+    "plugin": "@salesforce/plugin-templates"
+  },
+  {
+    "alias": [],
+    "command": "which",
+    "flagAliases": [],
+    "flagChars": [],
+    "flags": ["json"],
+    "plugin": "@oclif/plugin-which"
+  }
+]
