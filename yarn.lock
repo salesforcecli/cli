@@ -1906,10 +1906,10 @@
     proc-log "^5.0.0"
     which "^5.0.0"
 
-"@oclif/core@4.7.0", "@oclif/core@^4", "@oclif/core@^4.0.27", "@oclif/core@^4.2.8", "@oclif/core@^4.4.0", "@oclif/core@^4.5.2", "@oclif/core@^4.5.4", "@oclif/core@^4.5.5", "@oclif/core@^4.5.6":
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.7.0.tgz#646c45cbf87bc2be4f8542e1a8b2f999d89435b5"
-  integrity sha512-PTdByCzWpZlSzSCYnk9vcuKQXDBkjZf1CHHxHSMX3f+Y0DythTPxB8b3B8eQABiTLG3q57cTsZPviiVgWCfi0A==
+"@oclif/core@4.7.2", "@oclif/core@^4", "@oclif/core@^4.0.27", "@oclif/core@^4.2.8", "@oclif/core@^4.4.0", "@oclif/core@^4.5.2", "@oclif/core@^4.5.4", "@oclif/core@^4.5.5", "@oclif/core@^4.5.6":
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.7.2.tgz#9ebf36b4693500685956f3405c55526d191aa5ef"
+  integrity sha512-AmZnhEnyD7bFxmzEKRaOEr0kzonmwIip72eWZPWB5+7D9ayHa/QFX08zhaQT9eOo0//ed64v5p5QZIbYCbQaJQ==
   dependencies:
     ansi-escapes "^4.3.2"
     ansis "^3.17.0"
@@ -2065,10 +2065,25 @@
     "@oclif/core" "^4"
     ansis "^3.17.0"
 
-"@oclif/table@^0.4.12", "@oclif/table@^0.4.14":
+"@oclif/table@^0.4.14":
   version "0.4.14"
   resolved "https://registry.yarnpkg.com/@oclif/table/-/table-0.4.14.tgz#9206243895ca22a1621e2fdaa3742b58a5940bfc"
   integrity sha512-qj7cl/duiIOgGK5b31W+Y2JE1POeDd4+q/0Qly63RQVBCwOxCdrCm7Nq1j0jXiYY9boUA7rJPT6KAyWOSFdQxA==
+  dependencies:
+    "@types/react" "^18.3.12"
+    change-case "^5.4.4"
+    cli-truncate "^4.0.0"
+    ink "5.0.1"
+    natural-orderby "^3.0.2"
+    object-hash "^3.0.0"
+    react "^18.3.1"
+    strip-ansi "^7.1.2"
+    wrap-ansi "^9.0.2"
+
+"@oclif/table@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@oclif/table/-/table-0.5.0.tgz#d84f6ba1ab38092cebf7c4712671ab0348ea74ee"
+  integrity sha512-qXVucBYc/81SNZRDpKgZLr3WNX6qPUN9Ukqr5wWPMmUSzzOnusln3KuTzzWoB1IIafmqrq27QCozkLyvY7ymmw==
   dependencies:
     "@types/react" "^18.3.12"
     change-case "^5.4.4"
@@ -2737,15 +2752,15 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.10.3.tgz#52c867fdd60679cf216110aa49542b7ad391f5d1"
   integrity sha512-FKfvtrYTcvTXE9advzS25/DEY9yJhEyLvStm++eQFtnAaX1pe4G3oGHgiQ0q55BM5+0AlCh0+0CVtQv1t4oJRA==
 
-"@salesforce/sf-plugins-core@12.2.4", "@salesforce/sf-plugins-core@^12", "@salesforce/sf-plugins-core@^12.0.13", "@salesforce/sf-plugins-core@^12.2.0", "@salesforce/sf-plugins-core@^12.2.1", "@salesforce/sf-plugins-core@^12.2.4":
-  version "12.2.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-12.2.4.tgz#a89ddcbac6520870eb2e0aad2a2e78738441cedf"
-  integrity sha512-AwfhPxIJfzQUSZH8kiQOjRPOsfhO3CL+PKq0lfX+chdqwLOnXWviYCA1Z815MGG0ot/XMlsyj7CS+JxQ19Tn4A==
+"@salesforce/sf-plugins-core@12.2.5", "@salesforce/sf-plugins-core@^12", "@salesforce/sf-plugins-core@^12.0.13", "@salesforce/sf-plugins-core@^12.2.0", "@salesforce/sf-plugins-core@^12.2.1", "@salesforce/sf-plugins-core@^12.2.4":
+  version "12.2.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-12.2.5.tgz#c5fdd15e3ca90fc91faf485b3907892f3dc6c4ae"
+  integrity sha512-TJoZwPm0b5t2HzWZOqgWVjWQ+2bnw+Xxz7Icu7RtiD/9Fjp1X/eyr3LHMEd1SE79QLBjb3YKjZSskWDGv+rzlw==
   dependencies:
     "@inquirer/confirm" "^3.1.22"
     "@inquirer/password" "^2.2.0"
     "@oclif/core" "^4.5.2"
-    "@oclif/table" "^0.4.12"
+    "@oclif/table" "^0.5.0"
     "@salesforce/core" "^8.18.7"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/ts-types" "^2.0.12"
