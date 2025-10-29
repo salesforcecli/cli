@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.111.4 linux-x64 node-v22.20.0
+@salesforce/cli/2.111.5 linux-x64 node-v22.20.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -4736,7 +4736,7 @@ EXAMPLES
     $ sf org list auth
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.16/src/commands/org/list/auth.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.17/src/commands/org/list/auth.ts)_
 
 ## `sf org list limits`
 
@@ -5036,7 +5036,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.16/src/commands/org/login/access-token.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.17/src/commands/org/login/access-token.ts)_
 
 ## `sf org login jwt`
 
@@ -5127,7 +5127,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.16/src/commands/org/login/jwt.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.17/src/commands/org/login/jwt.ts)_
 
 ## `sf org login sfdx-url`
 
@@ -5197,7 +5197,7 @@ EXAMPLES
   $ echo url | sf org login sfdx-url --sfdx-url-stdin
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.16/src/commands/org/login/sfdx-url.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.17/src/commands/org/login/sfdx-url.ts)_
 
 ## `sf org login web`
 
@@ -5302,7 +5302,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.16/src/commands/org/login/web.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.17/src/commands/org/login/web.ts)_
 
 ## `sf org logout`
 
@@ -5368,7 +5368,7 @@ FLAG DESCRIPTIONS
     All orgs includes Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.16/src/commands/org/logout.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/3.9.17/src/commands/org/logout.ts)_
 
 ## `sf org open`
 
@@ -5385,7 +5385,7 @@ FLAGS
   -f, --source-file=<value>  Path to ApexPage, FlexiPage, Flow, or Agent metadata to open in the associated Builder.
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
                              configuration variable is already set.
-  -p, --path=<value>         Navigation URL path to open a specific page.
+  -p, --path=<value>         [env: FORCE_OPEN_URL] Navigation URL path to open a specific page.
   -r, --url-only             Display navigation URL, but don’t launch browser.
       --api-version=<value>  Override the api version used for api requests made by this command
       --private              Open the org in the default browser using private (incognito) mode.
