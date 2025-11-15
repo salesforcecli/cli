@@ -2271,10 +2271,10 @@
     form-data "^4.0.4"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-deploy-retrieve@3.24.1":
-  version "3.24.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.24.1.tgz#c385e92061977ba61a1e1a26981374282f9d9139"
-  integrity sha512-SLcNpzn5yVy3WWpYUj+sUk9HFKog14Sb8iHwz2Xgk57s7a47r5jpPyrFtohyfaAeDDwgQ3CZSXSByRYGhsHo7A==
+"@salesforce/plugin-deploy-retrieve@3.24.2":
+  version "3.24.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.24.2.tgz#0ea79df03efc2017957fbf447ffd3603615773cf"
+  integrity sha512-EBCyCM4gngV8xmPGyLeffWE418HPh5xQ0NFOPMQDgAt8YBI30SqExMO0chheP6ZDMUJ2JOj/HM5fxi3ECLUMwQ==
   dependencies:
     "@inquirer/prompts" "^7.8.3"
     "@oclif/core" "^4.8.0"
@@ -2284,7 +2284,7 @@
     "@salesforce/kit" "^3.2.4"
     "@salesforce/plugin-info" "^3.4.93"
     "@salesforce/sf-plugins-core" "^12.2.5"
-    "@salesforce/source-deploy-retrieve" "^12.27.0"
+    "@salesforce/source-deploy-retrieve" "^12.28.0"
     "@salesforce/source-tracking" "^7.6.0"
     "@salesforce/ts-types" "^2.0.12"
     ansis "^3.17.0"
@@ -2513,10 +2513,10 @@
     string-width "^7.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/source-deploy-retrieve@^12.22.2", "@salesforce/source-deploy-retrieve@^12.24.0", "@salesforce/source-deploy-retrieve@^12.26.0", "@salesforce/source-deploy-retrieve@^12.26.1", "@salesforce/source-deploy-retrieve@^12.27.0":
-  version "12.27.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.27.2.tgz#40b58e3bb098137d1d076f747a76a62b829415e4"
-  integrity sha512-Glefx0l4t5rOTLuSMq1gsCpZQi4uatv57/yFphPEMs99rFf4Fde+Me+nHNrzcOJgxuA5GW0rJBKwVfdPp7v8WQ==
+"@salesforce/source-deploy-retrieve@^12.22.2", "@salesforce/source-deploy-retrieve@^12.24.0", "@salesforce/source-deploy-retrieve@^12.26.0", "@salesforce/source-deploy-retrieve@^12.26.1", "@salesforce/source-deploy-retrieve@^12.28.0":
+  version "12.28.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.28.0.tgz#8d16bef3f25b7aae7eeb42d2eb490e91615c6d6a"
+  integrity sha512-JhMS0NBo1aHvsDTA+XJPdDTQy7r2xqLb1+43s6a/VPlrLOrqnTHIOdEqCMPye/srcz6gCShMhwe2hFL8ZFq+IQ==
   dependencies:
     "@salesforce/core" "^8.23.4"
     "@salesforce/kit" "^3.2.4"
