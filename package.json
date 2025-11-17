@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.114.4",
+  "version": "2.114.5-dev.0",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run.js",
@@ -155,7 +155,7 @@
     "@oclif/plugin-version": "2.2.36",
     "@oclif/plugin-warn-if-update-available": "3.1.53",
     "@oclif/plugin-which": "3.2.42",
-    "@salesforce/core": "^8.9.1",
+    "@salesforce/core": "8.23.5-dev.0",
     "@salesforce/kit": "^3.1.6",
     "@salesforce/plugin-agent": "1.24.29",
     "@salesforce/plugin-apex": "3.8.8",
@@ -211,7 +211,8 @@
     "@salesforce/plugin-user"
   ],
   "resolutions": {
-    "@salesforce/schemas": "1.10.3"
+    "@salesforce/schemas": "1.10.3",
+    "@salesforce/core": "8.23.5-dev.0"
   },
   "repository": "salesforcecli/cli",
   "scripts": {
