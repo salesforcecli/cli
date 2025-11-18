@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.114.5-dev.0",
+  "version": "2.114.5-dev.1",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run.js",
@@ -212,7 +212,7 @@
   ],
   "resolutions": {
     "@salesforce/schemas": "1.10.3",
-    "@salesforce/core": "8.23.5-dev.0"
+    "jwa": "1.4.2"
   },
   "repository": "salesforcecli/cli",
   "scripts": {
