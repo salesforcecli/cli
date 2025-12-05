@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.116.0 linux-x64 node-v22.21.1
+@salesforce/cli/2.116.1 linux-x64 node-v22.21.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -46,14 +46,17 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf agent create`](#sf-agent-create)
 - [`sf agent deactivate`](#sf-agent-deactivate)
 - [`sf agent generate agent-spec`](#sf-agent-generate-agent-spec)
+- [`sf agent generate authoring-bundle`](#sf-agent-generate-authoring-bundle)
 - [`sf agent generate template`](#sf-agent-generate-template)
 - [`sf agent generate test-spec`](#sf-agent-generate-test-spec)
 - [`sf agent preview`](#sf-agent-preview)
+- [`sf agent publish authoring-bundle`](#sf-agent-publish-authoring-bundle)
 - [`sf agent test create`](#sf-agent-test-create)
 - [`sf agent test list`](#sf-agent-test-list)
 - [`sf agent test results`](#sf-agent-test-results)
 - [`sf agent test resume`](#sf-agent-test-resume)
 - [`sf agent test run`](#sf-agent-test-run)
+- [`sf agent validate authoring-bundle`](#sf-agent-validate-authoring-bundle)
 - [`sf alias list`](#sf-alias-list)
 - [`sf alias set`](#sf-alias-set)
 - [`sf alias unset`](#sf-alias-unset)
@@ -244,7 +247,7 @@ EXAMPLES
     $ sf agent activate --api-name Resort_Manager --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.35/src/commands/agent/activate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.25.0/src/commands/agent/activate.ts)_
 
 ## `sf agent create`
 
@@ -271,6 +274,11 @@ GLOBAL FLAGS
 
 DESCRIPTION
   Create an agent in your org using a local agent spec file.
+
+  NOTE: This command creates an agent that doesn't use Agent Script as its blueprint. We generally don't recommend you
+  use this workflow to create an agent. Rather, use the "agent generate|validate|publish authoring-bundle" commands to
+  author agents that use the Agent Script language. See "Author an Agent"
+  (https://developer.salesforce.com/docs/einstein/genai/guide/agent-dx-nga-author-agent.html) for details.
 
   To run this command, you must have an agent spec file, which is a YAML file that define the agent properties and
   contains a list of AI-generated topics. Topics define the range of jobs the agent can handle. Use the "agent generate
@@ -306,7 +314,7 @@ EXAMPLES
     $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.35/src/commands/agent/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.25.0/src/commands/agent/create.ts)_
 
 ## `sf agent deactivate`
 
@@ -346,7 +354,7 @@ EXAMPLES
     $ sf agent deactivate --api-name Resort_Manager --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.35/src/commands/agent/deactivate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.25.0/src/commands/agent/deactivate.ts)_
 
 ## `sf agent generate agent-spec`
 
@@ -397,10 +405,9 @@ GLOBAL FLAGS
 DESCRIPTION
   Generate an agent spec, which is a YAML file that captures what an agent can do.
 
-  The first step in creating an agent in your org with Salesforce CLI is to generate an agent spec using this command.
-  An agent spec is a YAML-formatted file that contains information about the agent, such as its role and company
-  description, and then an AI-generated list of topics based on this information. Topics define the range of jobs your
-  agent can handle.
+  An agent spec is a YAML-formatted file that contains basic information about the agent, such as its role, company
+  description, and an AI-generated list of topics based on this information. Topics define the range of jobs your agent
+  can handle.
 
   Use flags, such as --role and --company-description, to provide details about your company and the role that the agent
   plays in your company. If you prefer, you can also be prompted for the basic information; use --full-interview to be
@@ -418,8 +425,11 @@ DESCRIPTION
   add context to the agent's prompts, the tone of the prompts, and the username of a user in the org to assign to the
   agent.
 
-  When your agent spec is ready, you then create the agent in your org by running the "agent create" CLI command and
-  specifying the spec with the --spec flag.
+  When your agent spec is ready, generate an authoring bundle from it by passing the spec file to the --spec flag of the
+  "agent generate authoring-bundle" CLI command. An authoring bundle is a metadata type that contains an Agent Script
+  file, which is the blueprint for an agent. (While not recommended, you can also use the agent spec file to immediately
+  create an agent with the "agent create" command. We don't recommend this workflow because these types of agents don't
+  use Agent Script, and are thus less flexible and more difficult to maintain.)
 
 EXAMPLES
   Generate an agent spec in the default location and use flags to specify the agent properties, such as its role and
@@ -451,7 +461,73 @@ EXAMPLES
     $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.35/src/commands/agent/generate/agent-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.25.0/src/commands/agent/generate/agent-spec.ts)_
+
+## `sf agent generate authoring-bundle`
+
+Generate an authoring bundle from an existing agent spec YAML file.
+
+```
+USAGE
+  $ sf agent generate authoring-bundle -o <value> [--json] [--flags-dir <value>] [--api-name <value>] [--api-version <value>] [-f
+    <value>] [-d <value>] [-n <value>]
+
+FLAGS
+  -d, --output-dir=<value>   Directory where the authoring bundle files are generated.
+  -f, --spec=<value>         Path to the agent spec YAML file; if not specified, the command provides a list that you
+                             can choose from.
+  -n, --name=<value>         Name (label) of the authoring bundle; if not specified, you're prompted for the name.
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-name=<value>     API name of the new authoring bundle; if not specified, the API name is derived from the
+                             authoring bundle name (label); the API name can't exist in the org.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Generate an authoring bundle from an existing agent spec YAML file.
+
+  Authoring bundles are metadata components that contain an agent's Agent Script file. The Agent Script file is the
+  agent's blueprint; it fully describes what the agent can do using the Agent Script language.
+
+  Use this command to generate a new authoring bundle based on an agent spec YAML file, which you create with the "agent
+  generate agent-spec" command. The agent spec YAML file is a high-level description of the agent; it describes its
+  essence rather than exactly what it can do.
+
+  The metadata type for authoring bundles is aiAuthoringBundle, which consist of a standard
+  "<bundle-api-name>.bundle-meta.xml" metadata file and the Agent Script file (with extension ".agent"). When you run
+  this command, the new authoring bundle is generated in the force-app/main/default/aiAuthoringBundles/<bundle-api-name>
+  directory. Use the --output-dir flag to generate them elsewhere.
+
+  After you generate the initial authoring bundle, code the Agent Script file so your agent behaves exactly as you want.
+  The Agent Script file generated by this command is just a first draft of your agent! Interactively test the agent by
+  conversing with it using the "agent preview" command. Then publish the agent to your org with the "agent publish
+  authoring-bundle" command.
+
+  This command requires an org because it uses it to access an LLM for generating the Agent Script file.
+
+EXAMPLES
+  Generate an authoring bundle by being prompted for all required values, such as the agent spec YAML file, the bundle
+  name, and the API name; use your default org:
+
+    $ sf agent generate authoring-bundle
+
+  Generate an authoring bundle from the "specs/agentSpec.yaml" agent spec YAML file and give it the label "My
+  Authoring Bundle"; use your default org:
+
+    $ sf agent generate authoring-bundle --spec specs/agentSpec.yaml --name "My Authoring Bundle"
+
+  Similar to previous example, but generate the authoring bundle files in the "other-package-dir/main/default" package
+  directory; use the org with alias "my-dev-org":
+
+    $ sf agent generate authoring-bundle --spec specs/agentSpec.yaml --name "My Authoring Bundle" --output-dir \
+      other-package-dir/main/default --target-org my-dev-org
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.25.0/src/commands/agent/generate/authoring-bundle.ts)_
 
 ## `sf agent generate template`
 
@@ -499,7 +575,7 @@ EXAMPLES
       force-app/main/default/bots/My_Awesome_Agent/My_Awesome_Agent.bot-meta.xml --agent-version 1
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.35/src/commands/agent/generate/template.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.25.0/src/commands/agent/generate/template.ts)_
 
 ## `sf agent generate test-spec`
 
@@ -560,71 +636,133 @@ EXAMPLES
       force-app//main/default/aiEvaluationDefinitions/Resort_Manager_Tests.aiEvaluationDefinition-meta.xml
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.35/src/commands/agent/generate/test-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.25.0/src/commands/agent/generate/test-spec.ts)_
 
 ## `sf agent preview`
 
-Interact with an active agent to preview how the agent responds to your statements, questions, and commands (utterances).
+Interact with an agent to preview how it responds to your statements, questions, and commands (utterances).
 
 ```
 USAGE
-  $ sf agent preview (-c <value> -o <value>) [--flags-dir <value>] [--api-version <value>] [-n <value>] [-d
-    <value>] [-x]
+  $ sf agent preview [--flags-dir <value>] [--api-version <value>] (-c <value> -o <value>) [-n <value>]
+    [--authoring-bundle <value>] [-d <value>] [-x] [--use-live-actions]
 
 FLAGS
-  -c, --client-app=<value>   (required) Name of the linked client app to use for the agent connection. You must have
-                             previously created this link with "org login web --client-app". Run "org display" to see
-                             the available linked client apps.
-  -d, --output-dir=<value>   Directory where conversation transcripts are saved.
-  -n, --api-name=<value>     API name of the agent you want to interact with.
-  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
-                             configuration variable is already set.
-  -x, --apex-debug           Enable Apex debug logging during the agent preview conversation.
-      --api-version=<value>  Override the api version used for api requests made by this command
+  -c, --client-app=<value>        Name of the linked client app to use for the connection to the published and active
+                                  agent.
+  -d, --output-dir=<value>        Directory where conversation transcripts are saved.
+  -n, --api-name=<value>          API name of the published and active agent you want to interact with.
+  -o, --target-org=<value>        (required) Username or alias of the target org. Not required if the `target-org`
+                                  configuration variable is already set.
+  -x, --apex-debug                Enable Apex debug logging during the agent preview conversation.
+      --api-version=<value>       Override the api version used for api requests made by this command
+      --authoring-bundle=<value>  API name of the authoring bundle metadata component that contains the agent's Agent
+                                  Script file.
+      --use-live-actions          Use real actions in the org; if not specified, preview uses AI to simulate (mock)
+                                  actions.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
 
 DESCRIPTION
-  Interact with an active agent to preview how the agent responds to your statements, questions, and commands
-  (utterances).
+  Interact with an agent to preview how it responds to your statements, questions, and commands (utterances).
 
-  Use this command to have a natural language conversation with an active agent in your org, as if you were an actual
-  user. The interface is simple: in the "Start typing..." prompt, enter a statement, question, or command; when you're
-  done, enter Return. Your utterance is posted on the right along with a timestamp. The agent then responds on the left.
-  To exit the conversation, hit ESC or Control+C.
+  Use this command to have a natural language conversation with an agent while you code its Agent Script file.
+  Previewing an agent works like an initial test to make sure it responds to your utterances as you expect. For example,
+  you can test that the agent uses a particular topic when asked a question, and then whether it invokes the correct
+  action associated with that topic. This command is the CLI-equivalent of the Preview panel in your org's Agentforce
+  Builder UI.
 
-  This command is useful to test if the agent responds to your utterances as you expect. For example, you can test that
-  the agent uses a particular topic when asked a question, and then whether it invokes the correct action associated
-  with that topic. This command is the CLI-equivalent of the Conversation Preview panel in your org's Agent Builder UI.
+  This command uses the agent's local authoring bundle, which contains its Agent Script file. You can let the command
+  provide a list of authoring bundles (labeled "(Agent Script)") to choose from or use the --authoring-bundle flag to
+  specify a bundle's API name.
+
+  You can use these two modes when previewing an agent from its Agent Script file:
+
+  - Simulated mode (Default): Uses only the Agent Script file to converse, and it simulates (mocks) all the actions. Use
+  this mode if none of the Apex classes, flows, and prompt templates that implement your actions are available yet. The
+  LLM uses the information about topics in the Agent Script file to simulate what the action does or how it responds.
+  - Live mode: Uses the actual Apex classes, flows, and prompt templates in your development org in the agent preview.
+  If you've changed the Apex classe, flows, or prompt templates in your local DX project, then you must deploy them to
+  your development org if you want to use them in your live preview. You can use the Apex Replay Debugger to debug your
+  Apex classes when using live mode.
+
+  The interface is simple: in the "Start typing..." prompt, enter a statement, question, or command; when you're done,
+  enter Return. Your utterance is posted on the right along with a timestamp. The agent then responds on the left. To
+  exit the conversation, hit ESC or Control+C.
 
   When the session concludes, the command asks if you want to save the API responses and chat transcripts. By default,
-  the files are saved to the "./temp/agent-preview" directory. Specify a new default directory by setting the
-  environment variable "SF_AGENT_PREVIEW_OUTPUT_DIR" to the directory. Or you can pass the directory to the --output-dir
+  the files are saved to the "./temp/agent-preview" directory. Specify a new default directory with the --output-dir
   flag.
 
-  Find the agent's API name in its Agent Details page of your org's Agentforce Studio UI in Setup. If your agent is
-  currently deactivated, use the "agent activate" CLI command to activate it.
-
-  IMPORTANT: Before you use this command, you must complete a number of configuration steps in your org and your DX
-  project. The examples in this help assume you've completed the steps. See "Preview an Agent" in the "Agentforce
-  Developer Guide" for complete documentation:
-  https://developer.salesforce.com/docs/einstein/genai/guide/agent-dx-preview.html.
+  NOTE: You can also use this command to connect to a published and active agent, which are labeled "(Published)" if you
+  let this command provide the list of agents to preview. That use case, however, requires additional security and
+  configuration in both your org and your DX project. The examples in this help are for previewing an agent from its
+  Agent Script file in your DX project and require only simple authorization of your org, such as with the "org login
+  web" command. The --client-app and --api-name flags are used only for previewing published and active agents, they
+  don't apply to Agent Script agents. See "Connect to a Published Agent" in the "Agentforce Developer Guide" for
+  complete documentation: https://developer.salesforce.com/docs/einstein/genai/guide/agent-dx-preview.html.
 
 EXAMPLES
-  Interact with an agent with API name Resort_Manager in the org with alias "my-org" and the linked "agent-app"
-  connected app:
+  Preview an agent in simulated mode by choosing from a list of authoring bundles provided by the command; use the org
+  with alias "my-dev-org":
 
-    $ sf agent preview --api-name Resort_Manager --target-org my-org --client-app agent-app
+    $ sf agent preview --target-org my-dev-org
 
-  Same as the preceding example, but this time save the conversation transcripts to the "./transcripts/my-preview"
-  directory rather than the default "./temp/agent-preview":
+  Preview an agent in live mode by choosing from a list of authoring bundles. Save the conversation transcripts to the
+  "./transcripts/my-preview" directory, enable the Apex debug logs, and use your default org:
 
-    $ sf agent preview --api-name Resort_Manager --target-org my-org --client-app agent-app --output-dir \
-      transcripts/my-preview
+    $ sf agent preview --use-live-actions --apex-debug --output-dir transcripts/my-preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.35/src/commands/agent/preview.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.25.0/src/commands/agent/preview.ts)_
+
+## `sf agent publish authoring-bundle`
+
+Publish an authoring bundle to your org, which results in a new agent or a new version of an existing agent.
+
+```
+USAGE
+  $ sf agent publish authoring-bundle -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-n <value>]
+
+FLAGS
+  -n, --api-name=<value>     API name of the authoring bundle you want to publish; if not specified, the command
+                             provides a list that you can choose from.
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Publish an authoring bundle to your org, which results in a new agent or a new version of an existing agent.
+
+  An authoring bundle is a metadata type (named aiAuthoringBundle) that provides the blueprint for an agent. The
+  metadata type contains two files: the standard metatada XML file and an Agent Script file (extension ".agent") that
+  fully describes the agent using the Agent Script language.
+
+  When you publish an authoring bundle to your org, a number of things happen. First, this command validates that the
+  Agent Script file successfully compiles. If there are compilation errors, the command exits and you must fix the Agent
+  Script file to continue. Once the Agent Script file compiles, then it's published to the org, which in turn creates
+  new associated metadata (Bot, BotVersion, GenAiX), or new versions of the metadata if the agent already exists. The
+  new or updated metadata is retrieved back to your DX project, and then the authoring bundle metadata
+  (AiAuthoringBundle) is deployed to your org.
+
+  This command uses the API name of the authoring bundle.
+
+EXAMPLES
+  Publish an authoring bundle by being prompted for its API name; use your default org:
+
+    $ sf agent publish authoring-bundle
+
+  Publish an authoring bundle with API name MyAuthoringBundle to the org with alias "my-dev-org":
+
+    $ sf agent publish authoring-bundle --api-name MyAuthoringbundle --target-org my-dev-org
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.25.0/src/commands/agent/publish/authoring-bundle.ts)_
 
 ## `sf agent test create`
 
@@ -679,7 +817,7 @@ EXAMPLES
     $ sf agent test create --spec specs/Resort_Manager-testSpec.yaml --api-name Resort_Manager_Test --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.35/src/commands/agent/test/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.25.0/src/commands/agent/test/create.ts)_
 
 ## `sf agent test list`
 
@@ -714,7 +852,7 @@ EXAMPLES
     $ sf agent test list --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.35/src/commands/agent/test/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.25.0/src/commands/agent/test/list.ts)_
 
 ## `sf agent test results`
 
@@ -780,7 +918,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.35/src/commands/agent/test/results.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.25.0/src/commands/agent/test/results.ts)_
 
 ## `sf agent test resume`
 
@@ -853,7 +991,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.35/src/commands/agent/test/resume.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.25.0/src/commands/agent/test/resume.ts)_
 
 ## `sf agent test run`
 
@@ -927,7 +1065,54 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.24.35/src/commands/agent/test/run.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.25.0/src/commands/agent/test/run.ts)_
+
+## `sf agent validate authoring-bundle`
+
+Validate an authoring bundle to ensure its Agent Script file compiles successfully and can be used to publish an agent.
+
+```
+USAGE
+  $ sf agent validate authoring-bundle -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-n <value>]
+
+FLAGS
+  -n, --api-name=<value>     API name of the authoring bundle you want to validate; if not specified, the command
+                             provides a list that you can choose from.
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Validate an authoring bundle to ensure its Agent Script file compiles successfully and can be used to publish an
+  agent.
+
+  An authoring bundle is a metadata type (named aiAuthoringBundle) that provides the blueprint for an agent. The
+  metadata type contains two files: the standard metatada XML file and an Agent Script file (extension ".agent") that
+  fully describes the agent using the Agent Script language.
+
+  This command validates that the Agent Script file in the authoring bundle compiles without errors so that you can
+  later publish the bundle to your org. Use this command while you code the Agent Script file to ensure that it's valid.
+  If the validation fails, the command outputs the list of syntax errors, a brief description of the error, and the
+  location in the Agent Script file where the error occurred.
+
+  This command uses the API name of the authoring bundle. If you don't provide an API name with the --api-name flag, the
+  command searches the current DX project and outputs a list of authoring bundles that it found for you to choose from.
+
+EXAMPLES
+  Validate an authoring bundle by being prompted for its API name; use your default org:
+
+    $ sf agent validate authoring-bundle
+
+  Validate an authoring bundle with API name MyAuthoringBundle; use the org with alias "my-dev-org":
+
+    $ sf agent validate authoring-bundle --api-name MyAuthoringBundle --target-org my-dev-org
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.25.0/src/commands/agent/validate/authoring-bundle.ts)_
 
 ## `sf alias list`
 
@@ -1270,7 +1455,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.8.10/src/commands/apex/get/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.0/src/commands/apex/get/log.ts)_
 
 ## `sf apex get test`
 
@@ -1330,7 +1515,7 @@ EXAMPLES
       me@myorg'
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.8.10/src/commands/apex/get/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.0/src/commands/apex/get/test.ts)_
 
 ## `sf apex list log`
 
@@ -1370,7 +1555,7 @@ EXAMPLES
     $ sf apex list log --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.8.10/src/commands/apex/list/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.0/src/commands/apex/list/log.ts)_
 
 ## `sf apex run`
 
@@ -1417,7 +1602,7 @@ EXAMPLES
     $ sf apex run
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.8.10/src/commands/apex/run.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.0/src/commands/apex/run.ts)_
 
 ## `sf apex run test`
 
@@ -1427,11 +1612,12 @@ Invoke Apex tests in an org.
 USAGE
   $ sf apex run test -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-d <value>] [-l
     RunLocalTests|RunAllTestsInOrg|RunSpecifiedTests] [-n <value>... | -s <value>... | -t <value>...] [-r
-    human|tap|junit|json] [-w <value>] [-y] [-v -c] [--concise]
+    human|tap|junit|json] [-i <value>] [-w <value>] [-y] [-v -c] [--concise]
 
 FLAGS
   -c, --code-coverage           Retrieve code coverage results.
   -d, --output-dir=<value>      Directory in which to store test run files.
+  -i, --poll-interval=<value>   Number of seconds to wait between retries.
   -l, --test-level=<option>     Level of tests to run; default is RunLocalTests.
                                 <options: RunLocalTests|RunAllTestsInOrg|RunSpecifiedTests>
   -n, --class-names=<value>...  Apex test class names to run; default is all classes.
@@ -1563,7 +1749,7 @@ FLAG DESCRIPTIONS
     --tests Test1 --tests Test2
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.8.10/src/commands/apex/run/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.0/src/commands/apex/run/test.ts)_
 
 ## `sf apex tail log`
 
@@ -1606,7 +1792,7 @@ EXAMPLES
     $ sf apex tail log --color --skip-trace-flag
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.8.10/src/commands/apex/tail/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.0/src/commands/apex/tail/log.ts)_
 
 ## `sf api request graphql`
 
@@ -3705,7 +3891,7 @@ EXAMPLES
     $ sf logic get test --test-run-id <test run id> --result-format junit --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.8.10/src/commands/logic/get/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.0/src/commands/logic/get/test.ts)_
 
 ## `sf logic run test`
 
@@ -3827,7 +4013,7 @@ FLAG DESCRIPTIONS
     --tests Test1 --tests Test2
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.8.10/src/commands/logic/run/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.0/src/commands/logic/run/test.ts)_
 
 ## `sf org assign permset`
 
