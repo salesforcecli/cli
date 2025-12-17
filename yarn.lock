@@ -2458,14 +2458,14 @@
     "@salesforce/ts-types" "^2.0.11"
     debug "^4.4.3"
 
-"@salesforce/plugin-templates@56.3.74":
-  version "56.3.74"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-templates/-/plugin-templates-56.3.74.tgz#0404f3b5fd4d938e795852be0d219e5c77665b6c"
-  integrity sha512-8WJGMufvyejAU1LFuxn44QaBCqvyZT+4FYNIVP6IepExwpzSt8kVNMoDj15CQwEmzyY9KRGVM+v7tGDKcsw5dw==
+"@salesforce/plugin-templates@56.4.0":
+  version "56.4.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-templates/-/plugin-templates-56.4.0.tgz#f10201c6e3db3ee2c256a9afcf66d216bb55d2d0"
+  integrity sha512-cJP7YoP1DkvovsTuJRZCpzYVNYWHMy2rTXJmzFaZIeDH40bofO/Qur8NDGIN2UxZyvC4eR6lC7lfxH3oZNmvkA==
   dependencies:
     "@salesforce/core" "^8.24.0"
     "@salesforce/sf-plugins-core" "^12"
-    "@salesforce/templates" "^64.3.2"
+    "@salesforce/templates" "^65.4.1"
 
 "@salesforce/plugin-trust@3.7.113", "@salesforce/plugin-trust@^3.7.69":
   version "3.7.113"
@@ -2584,18 +2584,18 @@
     got "^11"
     proxy-agent "^6.5.0"
 
-"@salesforce/templates@^64.3.2":
-  version "64.3.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-64.3.2.tgz#bf7461438255470ba262a5be49912e2cab5f3779"
-  integrity sha512-j6T07E3w/7Dz4jG1wwuw//WKUomFYOvMOEQrXobkNO7H25dMnnfcfbnUd9KPt9G4b04C+GU1FKv3nEOt8umKww==
+"@salesforce/templates@^65.4.1":
+  version "65.4.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-65.4.1.tgz#9f50d02a2fa59802a8b2657f69a26b72cd24c2c6"
+  integrity sha512-tFIsTMzG3PpnZxNozSAWBGLemdXfEhZEvqo3ClY9JcCTe5iCLCj7bRkAmyvxCozy+3p+FVc89G9gBKV6Xxes/w==
   dependencies:
     "@salesforce/kit" "^3.2.4"
     ejs "^3.1.10"
     got "^11.8.6"
     hpagent "^1.2.0"
-    mime-types "^3.0.1"
+    mime-types "^3.0.2"
     proxy-from-env "^1.1.0"
-    tar "^7.5.1"
+    tar "^7.5.2"
     tslib "^2.8.1"
 
 "@salesforce/ts-sinon@^1.4.31":
@@ -8187,10 +8187,10 @@ mime-types@^2.1.12:
   dependencies:
     mime-db "1.52.0"
 
-mime-types@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-3.0.1.tgz#b1d94d6997a9b32fd69ebaed0db73de8acb519ce"
-  integrity sha512-xRc4oEhT6eaBpU1XF7AjpOFD+xQmXNB5OVKwp4tqCuBpHLS/ZbBDrc07mYTDqVMg6PfxUjjNp85O6Cd2Z/5HWA==
+mime-types@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-3.0.2.tgz#39002d4182575d5af036ffa118100f2524b2e2ab"
+  integrity sha512-Lbgzdk0h4juoQ9fCKXW4by0UJqj+nOOrI9MJ1sSj4nI8aI2eo1qmvQEie4VD1glsS250n15LsWsYtCugiStS5A==
   dependencies:
     mime-db "^1.54.0"
 
@@ -10660,10 +10660,10 @@ tar@^6.1.11, tar@^6.2.1:
     mkdirp "^1.0.3"
     yallist "^4.0.0"
 
-tar@^7.4.3, tar@^7.5.1:
-  version "7.5.1"
-  resolved "https://registry.yarnpkg.com/tar/-/tar-7.5.1.tgz#750a8bd63b7c44c1848e7bf982260a083cf747c9"
-  integrity sha512-nlGpxf+hv0v7GkWBK2V9spgactGOp0qvfWRxUMjqHyzrt3SgwE48DIv/FhqPHJYLHpgW1opq3nERbz5Anq7n1g==
+tar@^7.4.3, tar@^7.5.2:
+  version "7.5.2"
+  resolved "https://registry.yarnpkg.com/tar/-/tar-7.5.2.tgz#115c061495ec51ff3c6745ff8f6d0871c5b1dedc"
+  integrity sha512-7NyxrTE4Anh8km8iEy7o0QYPs+0JKBTj5ZaqHg6B39erLg0qYXN3BijtShwbsNSvQ+LN75+KV+C4QR/f6Gwnpg==
   dependencies:
     "@isaacs/fs-minipass" "^4.0.0"
     chownr "^3.0.0"
