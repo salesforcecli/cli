@@ -2179,10 +2179,10 @@
     o11y "^258.7.0"
     o11y_schema "256.154.0"
 
-"@salesforce/packaging@^4.18.3":
-  version "4.18.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-4.18.6.tgz#cb3ad225ea38cff5156db42659a00d86086f255e"
-  integrity sha512-AW3aO/p2xQSFkJuYgSWSSSZrl0LVD2Yr/L2FvwLUXuMkdERQk9K+eoXgT71Le/dUPEuxf030kP2hgmXa9GF4Qw==
+"@salesforce/packaging@^4.18.7":
+  version "4.18.7"
+  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-4.18.7.tgz#38b184e941c1983f4165cf4cbb6904a76e0e2c14"
+  integrity sha512-zUvE6L3wnJwoP3WKyALNjVlr5vinPvHSxmou3p1MiqhVn6p6J07qxOyV53jcNZzaY+zKKDTT6gGFEbzVVuAk+A==
   dependencies:
     "@jsforce/jsforce-node" "^3.10.10"
     "@salesforce/core" "^8.24.0"
@@ -2371,15 +2371,15 @@
     open "^10.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-packaging@2.24.4":
-  version "2.24.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.24.4.tgz#498dcb4de81d87f56e63951179456ac6d61761ed"
-  integrity sha512-Ke+0graqopIEcJRT46K3RdtDet11QZaHb+rzERC0OAVnQvhk8oSZKs5jdnhGgA+gxg5B4EIIvNQ/+tSQYJ6hug==
+"@salesforce/plugin-packaging@2.24.5":
+  version "2.24.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.24.5.tgz#eb1016cf11efa0e3cf416f559d51e171c609e65b"
+  integrity sha512-iKYb5E7dzh4XuFXgBvra/WS3jFbakEMbKG9cqm8D64WCjzLx6gazHC+dV/SjdpmTkZM9gjoBvw1f1EbgAQbXnQ==
   dependencies:
     "@oclif/core" "^4"
     "@salesforce/core" "^8.24.0"
     "@salesforce/kit" "^3.2.4"
-    "@salesforce/packaging" "^4.18.3"
+    "@salesforce/packaging" "^4.18.7"
     "@salesforce/sf-plugins-core" "^12.2.6"
     chalk "^5.6.2"
 
