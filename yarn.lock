@@ -1441,22 +1441,6 @@
     node-fetch "^2.6.1"
     xml2js "^0.6.2"
 
-"@jsforce/jsforce-node@^3.10.12-dev.0":
-  version "3.10.12-dev.0"
-  resolved "https://registry.yarnpkg.com/@jsforce/jsforce-node/-/jsforce-node-3.10.12-dev.0.tgz#d18bf057623a37d0f1f64a6490e522c14f4abdba"
-  integrity sha512-dndEyA/YvWi9lwHRfuOgpv0O4Yw1TSM4BP2SfTlOxHDJWykQKVdMZ43VWOJZKhpFeqSQgT44nNUKHssVA083Kg==
-  dependencies:
-    "@sindresorhus/is" "^4"
-    base64url "^3.0.1"
-    csv-parse "^5.5.2"
-    csv-stringify "^6.6.0"
-    faye "^1.4.0"
-    form-data "^4.0.4"
-    https-proxy-agent "^5.0.0"
-    multistream "^3.1.0"
-    node-fetch "^2.6.1"
-    xml2js "^0.6.2"
-
 "@jsonjoy.com/base64@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@jsonjoy.com/base64/-/base64-1.1.2.tgz#cf8ea9dcb849b81c95f14fc0aaa151c6b54d2578"
@@ -2133,31 +2117,6 @@
   integrity sha512-8Ra5RT95bRkmHmaaFgABwkXbnHNSNS7l9gbJzJgO6VQpaEeytGPPyymnAE7TcTM2xp/QwlXn+PgX4biX7Lb7JA==
   dependencies:
     "@jsforce/jsforce-node" "^3.10.10"
-    "@salesforce/kit" "^3.2.4"
-    "@salesforce/ts-types" "^2.0.12"
-    ajv "^8.17.1"
-    change-case "^4.1.2"
-    fast-levenshtein "^3.0.0"
-    faye "^1.4.1"
-    form-data "^4.0.4"
-    js2xmlparser "^4.0.1"
-    jsonwebtoken "9.0.3"
-    jszip "3.10.1"
-    memfs "^4.30.1"
-    pino "^9.7.0"
-    pino-abstract-transport "^1.2.0"
-    pino-pretty "^11.3.0"
-    proper-lockfile "^4.1.2"
-    semver "^7.7.3"
-    ts-retry-promise "^0.8.1"
-    zod "^4.1.12"
-
-"@salesforce/core@^8.24.1-dev.0":
-  version "8.24.1-dev.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.24.1-dev.0.tgz#3ee89ed23bf4ccd00019cd6b236c801c2ec1e094"
-  integrity sha512-l4x8zLbSivb4aRNotYAyPfGRv3BsEqmzuh55+Kk677gt7dgY40iyfiaMpGtF73apw3euVL/GsVgJVDxRc4yKWw==
-  dependencies:
-    "@jsforce/jsforce-node" "^3.10.12-dev.0"
     "@salesforce/kit" "^3.2.4"
     "@salesforce/ts-types" "^2.0.12"
     ajv "^8.17.1"
