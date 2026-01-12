@@ -1441,22 +1441,6 @@
     node-fetch "^2.6.1"
     xml2js "^0.6.2"
 
-"@jsforce/jsforce-node@^3.10.12-dev.0":
-  version "3.10.12-dev.0"
-  resolved "https://registry.yarnpkg.com/@jsforce/jsforce-node/-/jsforce-node-3.10.12-dev.0.tgz#d18bf057623a37d0f1f64a6490e522c14f4abdba"
-  integrity sha512-dndEyA/YvWi9lwHRfuOgpv0O4Yw1TSM4BP2SfTlOxHDJWykQKVdMZ43VWOJZKhpFeqSQgT44nNUKHssVA083Kg==
-  dependencies:
-    "@sindresorhus/is" "^4"
-    base64url "^3.0.1"
-    csv-parse "^5.5.2"
-    csv-stringify "^6.6.0"
-    faye "^1.4.0"
-    form-data "^4.0.4"
-    https-proxy-agent "^5.0.0"
-    multistream "^3.1.0"
-    node-fetch "^2.6.1"
-    xml2js "^0.6.2"
-
 "@jsonjoy.com/base64@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@jsonjoy.com/base64/-/base64-1.1.2.tgz#cf8ea9dcb849b81c95f14fc0aaa151c6b54d2578"
@@ -2152,31 +2136,6 @@
     ts-retry-promise "^0.8.1"
     zod "^4.1.12"
 
-"@salesforce/core@^8.24.1-dev.0":
-  version "8.24.1-dev.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.24.1-dev.0.tgz#3ee89ed23bf4ccd00019cd6b236c801c2ec1e094"
-  integrity sha512-l4x8zLbSivb4aRNotYAyPfGRv3BsEqmzuh55+Kk677gt7dgY40iyfiaMpGtF73apw3euVL/GsVgJVDxRc4yKWw==
-  dependencies:
-    "@jsforce/jsforce-node" "^3.10.12-dev.0"
-    "@salesforce/kit" "^3.2.4"
-    "@salesforce/ts-types" "^2.0.12"
-    ajv "^8.17.1"
-    change-case "^4.1.2"
-    fast-levenshtein "^3.0.0"
-    faye "^1.4.1"
-    form-data "^4.0.4"
-    js2xmlparser "^4.0.1"
-    jsonwebtoken "9.0.3"
-    jszip "3.10.1"
-    memfs "^4.30.1"
-    pino "^9.7.0"
-    pino-abstract-transport "^1.2.0"
-    pino-pretty "^11.3.0"
-    proper-lockfile "^4.1.2"
-    semver "^7.7.3"
-    ts-retry-promise "^0.8.1"
-    zod "^4.1.12"
-
 "@salesforce/dev-config@^4.3.1":
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/@salesforce/dev-config/-/dev-config-4.3.1.tgz#4dac8245df79d675258b50e1d24e8c636eaa5e10"
@@ -2347,20 +2306,20 @@
     terminal-link "^3.0.0"
     zod "^4.2.1"
 
-"@salesforce/plugin-deploy-retrieve@3.24.6-dev.0":
-  version "3.24.6-dev.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.24.6-dev.0.tgz#fea1817c3880e9c25f14c6f8f0e83dcbf734d23a"
-  integrity sha512-pB4n3hN8UcfCNpm8ou4DxJyVEcP50FvzelCVagDPTY9PsSBbZF/Ez/KOFhCf08k4hA81STf08V6HbjnSpjUplA==
+"@salesforce/plugin-deploy-retrieve@3.24.6":
+  version "3.24.6"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.24.6.tgz#379af21a41ae22dd9bc4eae26e20409d873cb859"
+  integrity sha512-Zxb63YUTxyFyNdHvnjITtwSzEJqnUcOngMT75/H4QXEoJt6rQQw1lApVcI3AZxPFXLam2w0mqgWrDXsE3MN9qQ==
   dependencies:
     "@inquirer/prompts" "^7.8.3"
     "@oclif/core" "^4.8.0"
     "@oclif/multi-stage-output" "^0.8.28"
     "@salesforce/apex-node" "^8.3.5"
-    "@salesforce/core" "^8.24.1-dev.0"
+    "@salesforce/core" "^8.24.0"
     "@salesforce/kit" "^3.2.4"
     "@salesforce/plugin-info" "^3.4.93"
     "@salesforce/sf-plugins-core" "^12.2.5"
-    "@salesforce/source-deploy-retrieve" "^12.31.3-dev.0"
+    "@salesforce/source-deploy-retrieve" "^12.31.3"
     "@salesforce/source-tracking" "^7.8.0"
     "@salesforce/ts-types" "^2.0.12"
     ansis "^3.17.0"
@@ -2589,7 +2548,7 @@
     string-width "^7.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/source-deploy-retrieve@^12.30.0", "@salesforce/source-deploy-retrieve@^12.31.0", "@salesforce/source-deploy-retrieve@^12.31.3-dev.0", "@salesforce/source-deploy-retrieve@^12.31.4":
+"@salesforce/source-deploy-retrieve@^12.30.0", "@salesforce/source-deploy-retrieve@^12.31.0", "@salesforce/source-deploy-retrieve@^12.31.3", "@salesforce/source-deploy-retrieve@^12.31.4":
   version "12.31.4"
   resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.31.4.tgz#ee8a110216306f19c1759f9b8a88e5acc444a6c7"
   integrity sha512-6E/kFEBsuw0JJPOjWEdmTXOaOuwp1LeHIEdjl9TJWom8+uOwD0dPAd08pMT0nmmDqpcuOIYsERM7OmLEuAemyg==
