@@ -592,18 +592,10 @@
     "@smithy/types" "^4.11.0"
     tslib "^2.6.2"
 
-"@aws-sdk/types@3.965.0":
+"@aws-sdk/types@3.965.0", "@aws-sdk/types@^3.222.0":
   version "3.965.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/types/-/types-3.965.0.tgz#629f4d729cfc9c60047da912d450aa0b76e3afb9"
   integrity sha512-jvodoJdMavvg8faN7co58vVJRO5MVep4JFPRzUNCzpJ98BDqWDk/ad045aMJcmxkLzYLS2UAnUmqjJ/tUPNlzQ==
-  dependencies:
-    "@smithy/types" "^4.11.0"
-    tslib "^2.6.2"
-
-"@aws-sdk/types@^3.222.0":
-  version "3.957.0"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/types/-/types-3.957.0.tgz#06e899503028bdb8c655aa11a9a01f562882f361"
-  integrity sha512-wzWC2Nrt859ABk6UCAVY/WYEbAd7FjkdrQL6m24+tfmWYDNRByTJ9uOgU/kw9zqLCAwb//CPvrJdhqjTznWXAg==
   dependencies:
     "@smithy/types" "^4.11.0"
     tslib "^2.6.2"
@@ -2266,10 +2258,10 @@
     got "^13.0.0"
     proxy-agent "^6.4.0"
 
-"@salesforce/plugin-auth@3.9.26":
-  version "3.9.26"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-3.9.26.tgz#a39e5848c3fe78ffa4916cc8b00519511d4dd0dd"
-  integrity sha512-RqVI3fMMsWyXCZxsJ1X8919/ZxiLhPccKD0LZQOQpJSbtEAlP4M45vVeBxYtm26wtlwSd7Wo5yShw4MFJIHHSA==
+"@salesforce/plugin-auth@4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-4.1.0.tgz#c2a115dd3e2f6ef7b738842e473e7460de64bd94"
+  integrity sha512-v410+JRl/c6R3BElxm7CqqmpXmIL2HMcuosPkfvU4P9tcwEjSPSAp9QVMqF9vILd/Dy2ZoD1Lu0fBYnXFBEeqg==
   dependencies:
     "@inquirer/checkbox" "^2.5.0"
     "@inquirer/select" "^2.5.0"
