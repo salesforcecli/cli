@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.120.3 linux-x64 node-v22.21.1
+@salesforce/cli/2.121.0 linux-x64 node-v22.21.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -137,6 +137,7 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf org logout`](#sf-org-logout)
 - [`sf org open`](#sf-org-open)
 - [`sf org open agent`](#sf-org-open-agent)
+- [`sf org open authoring-bundle`](#sf-org-open-authoring-bundle)
 - [`sf org refresh sandbox`](#sf-org-refresh-sandbox)
 - [`sf org resume sandbox`](#sf-org-resume-sandbox)
 - [`sf org resume scratch`](#sf-org-resume-scratch)
@@ -247,7 +248,7 @@ EXAMPLES
     $ sf agent activate --api-name Resort_Manager --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.5/src/commands/agent/activate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/activate.ts)_
 
 ## `sf agent create`
 
@@ -314,7 +315,7 @@ EXAMPLES
     $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.5/src/commands/agent/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/create.ts)_
 
 ## `sf agent deactivate`
 
@@ -354,7 +355,7 @@ EXAMPLES
     $ sf agent deactivate --api-name Resort_Manager --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.5/src/commands/agent/deactivate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/deactivate.ts)_
 
 ## `sf agent generate agent-spec`
 
@@ -461,7 +462,7 @@ EXAMPLES
     $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.5/src/commands/agent/generate/agent-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/generate/agent-spec.ts)_
 
 ## `sf agent generate authoring-bundle`
 
@@ -527,7 +528,7 @@ EXAMPLES
       other-package-dir/main/default --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.5/src/commands/agent/generate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/generate/authoring-bundle.ts)_
 
 ## `sf agent generate template`
 
@@ -575,7 +576,7 @@ EXAMPLES
       force-app/main/default/bots/My_Awesome_Agent/My_Awesome_Agent.bot-meta.xml --agent-version 1
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.5/src/commands/agent/generate/template.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/generate/template.ts)_
 
 ## `sf agent generate test-spec`
 
@@ -636,7 +637,7 @@ EXAMPLES
       force-app//main/default/aiEvaluationDefinitions/Resort_Manager_Tests.aiEvaluationDefinition-meta.xml
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.5/src/commands/agent/generate/test-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/generate/test-spec.ts)_
 
 ## `sf agent preview`
 
@@ -644,12 +645,10 @@ Interact with an agent to preview how it responds to your statements, questions,
 
 ```
 USAGE
-  $ sf agent preview [--flags-dir <value>] [--api-version <value>] (-c <value> -o <value>) [-n <value>]
-    [--authoring-bundle <value>] [-d <value>] [-x] [--use-live-actions]
+  $ sf agent preview -o <value> [--flags-dir <value>] [--api-version <value>] [-n <value>] [--authoring-bundle
+    <value>] [-d <value>] [-x] [--use-live-actions]
 
 FLAGS
-  -c, --client-app=<value>        Name of the linked client app to use for the connection to the published and active
-                                  agent.
   -d, --output-dir=<value>        Directory where conversation transcripts are saved.
   -n, --api-name=<value>          API name of the published and active agent you want to interact with.
   -o, --target-org=<value>        (required) Username or alias of the target org. Not required if the `target-org`
@@ -695,14 +694,6 @@ DESCRIPTION
   the files are saved to the "./temp/agent-preview" directory. Specify a new default directory with the --output-dir
   flag.
 
-  NOTE: You can also use this command to connect to a published and active agent, which are labeled "(Published)" if you
-  let this command provide the list of agents to preview. That use case, however, requires additional security and
-  configuration in both your org and your DX project. The examples in this help are for previewing an agent from its
-  Agent Script file in your DX project and require only simple authorization of your org, such as with the "org login
-  web" command. The --client-app and --api-name flags are used only for previewing published and active agents, they
-  don't apply to Agent Script agents. See "Connect to a Published Agent" in the "Agentforce Developer Guide" for
-  complete documentation: https://developer.salesforce.com/docs/einstein/genai/guide/agent-dx-preview.html.
-
 EXAMPLES
   Preview an agent in simulated mode by choosing from a list of authoring bundles provided by the command; use the org
   with alias "my-dev-org":
@@ -715,7 +706,7 @@ EXAMPLES
     $ sf agent preview --use-live-actions --apex-debug --output-dir transcripts/my-preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.5/src/commands/agent/preview.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/preview.ts)_
 
 ## `sf agent publish authoring-bundle`
 
@@ -762,7 +753,7 @@ EXAMPLES
     $ sf agent publish authoring-bundle --api-name MyAuthoringbundle --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.5/src/commands/agent/publish/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/publish/authoring-bundle.ts)_
 
 ## `sf agent test create`
 
@@ -817,7 +808,7 @@ EXAMPLES
     $ sf agent test create --spec specs/Resort_Manager-testSpec.yaml --api-name Resort_Manager_Test --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.5/src/commands/agent/test/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/test/create.ts)_
 
 ## `sf agent test list`
 
@@ -852,7 +843,7 @@ EXAMPLES
     $ sf agent test list --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.5/src/commands/agent/test/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/test/list.ts)_
 
 ## `sf agent test results`
 
@@ -918,7 +909,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.5/src/commands/agent/test/results.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/test/results.ts)_
 
 ## `sf agent test resume`
 
@@ -991,7 +982,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.5/src/commands/agent/test/resume.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/test/resume.ts)_
 
 ## `sf agent test run`
 
@@ -1065,7 +1056,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.5/src/commands/agent/test/run.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/test/run.ts)_
 
 ## `sf agent validate authoring-bundle`
 
@@ -1112,7 +1103,7 @@ EXAMPLES
     $ sf agent validate authoring-bundle --api-name MyAuthoringBundle --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.5/src/commands/agent/validate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/validate/authoring-bundle.ts)_
 
 ## `sf alias list`
 
@@ -4240,7 +4231,7 @@ FLAG DESCRIPTIONS
     You can specify either --source-sandbox-name or --source-id when cloning an existing sandbox, but not both.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.59/src/commands/org/create/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.60/src/commands/org/create/sandbox.ts)_
 
 ## `sf org create scratch`
 
@@ -4422,7 +4413,7 @@ FLAG DESCRIPTIONS
     Omit this flag to have Salesforce generate a unique username for your org.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.59/src/commands/org/create/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.60/src/commands/org/create/scratch.ts)_
 
 ## `sf org create user`
 
@@ -4576,7 +4567,7 @@ EXAMPLES
     $ sf org delete sandbox --target-org my-sandbox --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.59/src/commands/org/delete/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.60/src/commands/org/delete/sandbox.ts)_
 
 ## `sf org delete scratch`
 
@@ -4620,7 +4611,7 @@ EXAMPLES
     $ sf org delete scratch --target-org my-scratch-org --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.59/src/commands/org/delete/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.60/src/commands/org/delete/scratch.ts)_
 
 ## `sf org disable tracking`
 
@@ -4659,7 +4650,7 @@ EXAMPLES
     $ sf org disable tracking
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.59/src/commands/org/disable/tracking.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.60/src/commands/org/disable/tracking.ts)_
 
 ## `sf org display`
 
@@ -4704,7 +4695,7 @@ EXAMPLES
     $ sf org display --target-org TestOrg1 --verbose
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.59/src/commands/org/display.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.60/src/commands/org/display.ts)_
 
 ## `sf org display user`
 
@@ -4785,7 +4776,7 @@ EXAMPLES
     $ sf org enable tracking
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.59/src/commands/org/enable/tracking.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.60/src/commands/org/enable/tracking.ts)_
 
 ## `sf org generate password`
 
@@ -4891,7 +4882,7 @@ EXAMPLES
     $ sf org list --clean
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.59/src/commands/org/list.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.60/src/commands/org/list.ts)_
 
 ## `sf org list auth`
 
@@ -5030,7 +5021,7 @@ FLAG DESCRIPTIONS
     Examples of metadata types that use folders are Dashboard, Document, EmailTemplate, and Report.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.59/src/commands/org/list/metadata.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.60/src/commands/org/list/metadata.ts)_
 
 ## `sf org list metadata-types`
 
@@ -5085,7 +5076,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.59/src/commands/org/list/metadata-types.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.60/src/commands/org/list/metadata-types.ts)_
 
 ## `sf org list sobject record-counts`
 
@@ -5631,7 +5622,7 @@ EXAMPLES
     $ sf org open --source-file force-app/main/default/bots/Coral_Cloud_Agent/Coral_Cloud_Agent.bot-meta.xml
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.59/src/commands/org/open.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.60/src/commands/org/open.ts)_
 
 ## `sf org open agent`
 
@@ -5682,7 +5673,53 @@ EXAMPLES
     $ sf org open agent --target-org MyTestOrg1 --browser firefox --api-name Coral_Cloud_Agent
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.59/src/commands/org/open/agent.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.60/src/commands/org/open/agent.ts)_
+
+## `sf org open authoring-bundle`
+
+Open your org in Agentforce Studio, specically in the list view showing the list of agents.
+
+```
+USAGE
+  $ sf org open authoring-bundle -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [--private | -r | -b
+    chrome|edge|firefox]
+
+FLAGS
+  -b, --browser=<option>     Browser where the org opens.
+                             <options: chrome|edge|firefox>
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+  -r, --url-only             Display navigation URL, but don't launch browser.
+      --api-version=<value>  Override the api version used for api requests made by this command
+      --private              Open the org in the default browser using private (incognito) mode.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Open your org in Agentforce Studio, specically in the list view showing the list of agents.
+
+  The list view shows the agents in your org that are implemented with Agent Script and an authoring bundle. Click on an
+  agent name to open it in Agentforce Builder in a new browser window.
+
+  To generate the URL but not launch it in your browser, specify --url-only.
+
+EXAMPLES
+  Open the agents list view in your default org using your default browser:
+
+    $ sf org open authoring-bundle
+
+  Open the agents list view in an incognito window of your default browser:
+
+    $ sf org open authoring-bundle --private
+
+  Open the agents list view in an org with alias MyTestOrg1 using the Firefox browser:
+
+    $ sf org open authoring-bundle --target-org MyTestOrg1 --browser firefox
+```
+
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.60/src/commands/org/open/authoring-bundle.ts)_
 
 ## `sf org refresh sandbox`
 
@@ -5785,7 +5822,7 @@ FLAG DESCRIPTIONS
     You can specify either --source-sandbox-name or --source-id when refreshing an existing sandbox, but not both.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.59/src/commands/org/refresh/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.60/src/commands/org/refresh/sandbox.ts)_
 
 ## `sf org resume sandbox`
 
@@ -5848,7 +5885,7 @@ FLAG DESCRIPTIONS
     returns the job ID. To resume checking the sandbox creation, rerun this command.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.59/src/commands/org/resume/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.60/src/commands/org/resume/sandbox.ts)_
 
 ## `sf org resume scratch`
 
@@ -5901,7 +5938,7 @@ FLAG DESCRIPTIONS
     returns the job ID. To resume checking the scratch creation, rerun this command.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.59/src/commands/org/resume/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.60/src/commands/org/resume/scratch.ts)_
 
 ## `sf package convert`
 
