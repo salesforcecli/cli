@@ -46,10 +46,12 @@ const hook: Hook.Preparse = async function ({ argv, options, context }) {
       )
       .filter(
         ([flagName, flagOptions]) =>
-          // ignore if short char flag is present
-          (flagOptions.char && argv.includes(`-${flagOptions.char}`)) ??
+          // Using || instead of ?? is intentional here: argv.includes() returns false (not null/undefined)
+          // when the flag isn't found, and we need false to trigger evaluation of subsequent conditions.
+          // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+          (flagOptions.char && argv.includes(`-${flagOptions.char}`)) ||
           // ignore if long flag is present
-          argv.includes(`--${flagName}`) ??
+          argv.includes(`--${flagName}`) ||
           // ignore if --no- flag is present
           (flagOptions.type === 'boolean' && flagOptions.allowNo && argv.includes(`--no-${flagName}`))
       )
