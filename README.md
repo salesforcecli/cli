@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.121.0 linux-x64 node-v22.22.0
+@salesforce/cli/2.121.1 linux-x64 node-v22.22.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -248,7 +248,7 @@ EXAMPLES
     $ sf agent activate --api-name Resort_Manager --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/activate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.7/src/commands/agent/activate.ts)_
 
 ## `sf agent create`
 
@@ -315,7 +315,7 @@ EXAMPLES
     $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.7/src/commands/agent/create.ts)_
 
 ## `sf agent deactivate`
 
@@ -355,7 +355,7 @@ EXAMPLES
     $ sf agent deactivate --api-name Resort_Manager --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/deactivate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.7/src/commands/agent/deactivate.ts)_
 
 ## `sf agent generate agent-spec`
 
@@ -462,7 +462,7 @@ EXAMPLES
     $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/generate/agent-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.7/src/commands/agent/generate/agent-spec.ts)_
 
 ## `sf agent generate authoring-bundle`
 
@@ -528,7 +528,7 @@ EXAMPLES
       other-package-dir/main/default --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/generate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.7/src/commands/agent/generate/authoring-bundle.ts)_
 
 ## `sf agent generate template`
 
@@ -576,7 +576,7 @@ EXAMPLES
       force-app/main/default/bots/My_Awesome_Agent/My_Awesome_Agent.bot-meta.xml --agent-version 1
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/generate/template.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.7/src/commands/agent/generate/template.ts)_
 
 ## `sf agent generate test-spec`
 
@@ -637,7 +637,7 @@ EXAMPLES
       force-app//main/default/aiEvaluationDefinitions/Resort_Manager_Tests.aiEvaluationDefinition-meta.xml
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/generate/test-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.7/src/commands/agent/generate/test-spec.ts)_
 
 ## `sf agent preview`
 
@@ -666,37 +666,41 @@ GLOBAL FLAGS
 DESCRIPTION
   Interact with an agent to preview how it responds to your statements, questions, and commands (utterances).
 
-  Use this command to have a natural language conversation with an agent while you code its Agent Script file.
-  Previewing an agent works like an initial test to make sure it responds to your utterances as you expect. For example,
-  you can test that the agent uses a particular topic when asked a question, and then whether it invokes the correct
-  action associated with that topic. This command is the CLI-equivalent of the Preview panel in your org's Agentforce
-  Builder UI.
+  Use this command to have a natural language conversation with an agent, either while you code its local Agent Script
+  file or when it's published to an org. Previewing an agent acts like an initial test to make sure it responds to your
+  utterances as you expect. For example, you can test that the agent uses a particular topic when asked a question, and
+  then whether it invokes the correct action associated with that topic. This command is the CLI-equivalent of the
+  Preview panel in your org's Agentforce Builder UI.
 
-  This command uses the agent's local authoring bundle, which contains its Agent Script file. You can let the command
-  provide a list of authoring bundles (labeled "(Agent Script)") to choose from or use the --authoring-bundle flag to
-  specify a bundle's API name.
+  Run without flags, this command provides a list of agents to preview, divided into two categories: "Agent Script",
+  which are agents that have a local authoring bundle in your DX project, or "Published", which are agents that are
+  published and activated in your org. Authoring bundles contain an agent's Agent Script file. You then choose the agent
+  you want to preview from the list. Or you can use the --authoring-bundle flag to specify a local authoring bundle's
+  API name or --api-name to specify an activated published agent.
 
-  You can use these two modes when previewing an agent from its Agent Script file:
+  When previewing an agent from its Agent Script file, you can use these two modes:
 
   - Simulated mode (Default): Uses only the Agent Script file to converse, and it simulates (mocks) all the actions. Use
-  this mode if none of the Apex classes, flows, and prompt templates that implement your actions are available yet. The
+  this mode if none of the Apex classes, flows, or prompt templates that implement your actions are available yet. The
   LLM uses the information about topics in the Agent Script file to simulate what the action does or how it responds.
   - Live mode: Uses the actual Apex classes, flows, and prompt templates in your development org in the agent preview.
   If you've changed the Apex classe, flows, or prompt templates in your local DX project, then you must deploy them to
-  your development org if you want to use them in your live preview. You can use the Apex Replay Debugger to debug your
-  Apex classes when using live mode.
+  your development org if you want to use them in your live preview.
 
-  The interface is simple: in the "Start typing..." prompt, enter a statement, question, or command; when you're done,
-  enter Return. Your utterance is posted on the right along with a timestamp. The agent then responds on the left. To
-  exit the conversation, hit ESC or Control+C.
+  You can use the Apex Replay Debugger to debug your Apex classes when using live mode for Agent Script files and for
+  activated published agents; specify the --apex-debug flag.
+
+  Once connected to your agent, the preview interface is simple: in the "Start typing..." prompt, enter a statement,
+  question, or command; when you're done, enter Return. Your utterance is posted on the right along with a timestamp.
+  The agent then responds on the left. To exit the conversation, hit ESC or Control+C.
 
   When the session concludes, the command asks if you want to save the API responses and chat transcripts. By default,
   the files are saved to the "./temp/agent-preview" directory. Specify a new default directory with the --output-dir
   flag.
 
 EXAMPLES
-  Preview an agent in simulated mode by choosing from a list of authoring bundles provided by the command; use the org
-  with alias "my-dev-org":
+  Preview an agent by choosing from the list of available local Agent Script or published agents. If previewing a
+  local Agent Script agent, use simulated mode. Use the org with alias "my-dev-org".
 
     $ sf agent preview --target-org my-dev-org
 
@@ -706,7 +710,7 @@ EXAMPLES
     $ sf agent preview --use-live-actions --apex-debug --output-dir transcripts/my-preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/preview.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.7/src/commands/agent/preview.ts)_
 
 ## `sf agent publish authoring-bundle`
 
@@ -753,7 +757,7 @@ EXAMPLES
     $ sf agent publish authoring-bundle --api-name MyAuthoringbundle --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/publish/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.7/src/commands/agent/publish/authoring-bundle.ts)_
 
 ## `sf agent test create`
 
@@ -808,7 +812,7 @@ EXAMPLES
     $ sf agent test create --spec specs/Resort_Manager-testSpec.yaml --api-name Resort_Manager_Test --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/test/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.7/src/commands/agent/test/create.ts)_
 
 ## `sf agent test list`
 
@@ -843,7 +847,7 @@ EXAMPLES
     $ sf agent test list --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/test/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.7/src/commands/agent/test/list.ts)_
 
 ## `sf agent test results`
 
@@ -909,7 +913,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/test/results.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.7/src/commands/agent/test/results.ts)_
 
 ## `sf agent test resume`
 
@@ -982,7 +986,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/test/resume.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.7/src/commands/agent/test/resume.ts)_
 
 ## `sf agent test run`
 
@@ -1056,7 +1060,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/test/run.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.7/src/commands/agent/test/run.ts)_
 
 ## `sf agent validate authoring-bundle`
 
@@ -1103,7 +1107,7 @@ EXAMPLES
     $ sf agent validate authoring-bundle --api-name MyAuthoringBundle --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.6/src/commands/agent/validate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.26.7/src/commands/agent/validate/authoring-bundle.ts)_
 
 ## `sf alias list`
 
@@ -1836,7 +1840,7 @@ EXAMPLES
     $ sf api request graphql --body example.txt --stream-to-file output.txt --include
 ```
 
-_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.7/src/commands/api/request/graphql.ts)_
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.8/src/commands/api/request/graphql.ts)_
 
 ## `sf api request rest [URL]`
 
@@ -1945,7 +1949,7 @@ FLAG DESCRIPTIONS
     https://github.com/salesforcecli/plugin-api/tree/main/test/test-files/data-project.
 ```
 
-_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.7/src/commands/api/request/rest.ts)_
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.8/src/commands/api/request/rest.ts)_
 
 ## `sf autocomplete [SHELL]`
 
