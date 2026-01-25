@@ -2111,10 +2111,35 @@
     strip-ansi "6.0.1"
     ts-retry-promise "^0.8.1"
 
-"@salesforce/core@8.24.3", "@salesforce/core@^8.18.1", "@salesforce/core@^8.18.7", "@salesforce/core@^8.23.5", "@salesforce/core@^8.24.0", "@salesforce/core@^8.24.3", "@salesforce/core@^8.5.1", "@salesforce/core@^8.8.0", "@salesforce/core@^8.8.1", "@salesforce/core@^8.8.5":
+"@salesforce/core@8.24.3":
   version "8.24.3"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.24.3.tgz#c18fb2481ab212c460fd351520712a4fa8b4329f"
   integrity sha512-E9k4G3S8svS6QtsPVhUvxr0VHWyzg7KxH8sYM0o5pk7QEUXZCKQEQE5VjQOa+Gl3jRyX6zv/8Cp4UpQ2ZszOVg==
+  dependencies:
+    "@jsforce/jsforce-node" "^3.10.13"
+    "@salesforce/kit" "^3.2.4"
+    "@salesforce/ts-types" "^2.0.12"
+    ajv "^8.17.1"
+    change-case "^4.1.2"
+    fast-levenshtein "^3.0.0"
+    faye "^1.4.1"
+    form-data "^4.0.4"
+    js2xmlparser "^4.0.1"
+    jsonwebtoken "9.0.3"
+    jszip "3.10.1"
+    memfs "^4.30.1"
+    pino "^9.7.0"
+    pino-abstract-transport "^1.2.0"
+    pino-pretty "^11.3.0"
+    proper-lockfile "^4.1.2"
+    semver "^7.7.3"
+    ts-retry-promise "^0.8.1"
+    zod "^4.1.12"
+
+"@salesforce/core@^8.18.1", "@salesforce/core@^8.18.7", "@salesforce/core@^8.23.5", "@salesforce/core@^8.24.0", "@salesforce/core@^8.24.3", "@salesforce/core@^8.25.0", "@salesforce/core@^8.5.1", "@salesforce/core@^8.8.0", "@salesforce/core@^8.8.1", "@salesforce/core@^8.8.5":
+  version "8.25.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.25.0.tgz#2cf53f38aee8fb6ea1b0e6b6e301b66bc0d81d1c"
+  integrity sha512-LdUDEK8mmiWpnKn6wtaSDcvZc2Svrg/xldint1OGyVhCGZUAQLjCWRKkBT5DdIVV3g9QrDNhLboi904jcwDe1g==
   dependencies:
     "@jsforce/jsforce-node" "^3.10.13"
     "@salesforce/kit" "^3.2.4"
@@ -2188,16 +2213,16 @@
     o11y "^258.7.0"
     o11y_schema "256.154.0"
 
-"@salesforce/packaging@^4.18.8":
-  version "4.18.10"
-  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-4.18.10.tgz#f96c4a3324a29e303ed0d1e69a20f42c9c7c42a0"
-  integrity sha512-+TqPOcD7dyGKumh8fwtKTC+93KIc9wTOEhujjuMBNixV7PMzywSO8KlFg3hTREZl3VdDMRjDNi5xsYC5rgOQBw==
+"@salesforce/packaging@^4.18.12":
+  version "4.18.12"
+  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-4.18.12.tgz#b10aa54c58e507d4c17fe5b4534385faeb141472"
+  integrity sha512-pn8B0KJZbW/M9OHCI/g8Llip356TiKLJVVVmi5mpa2FMYpYsyGh96WqASfcpf+f6CrwYkxhAxR8SjwcenvIkiA==
   dependencies:
     "@jsforce/jsforce-node" "^3.10.10"
-    "@salesforce/core" "^8.24.3"
+    "@salesforce/core" "^8.25.0"
     "@salesforce/kit" "^3.2.4"
     "@salesforce/schemas" "^1.10.3"
-    "@salesforce/source-deploy-retrieve" "^12.31.7"
+    "@salesforce/source-deploy-retrieve" "^12.31.8"
     "@salesforce/ts-types" "^2.0.12"
     "@salesforce/types" "^1.6.0"
     fast-xml-parser "^4.5.0"
@@ -2208,10 +2233,10 @@
     jszip "^3.10.1"
     object-treeify "^2"
 
-"@salesforce/plugin-agent@1.26.7":
-  version "1.26.7"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-agent/-/plugin-agent-1.26.7.tgz#7b0444220f98bd729106d42170da11b363ee3965"
-  integrity sha512-AHvCYuJxdX2RrPW8MQk20BY/ZdFtRpTeAx8GLL9RhgSjy8kxnTNg9jbZlvZ3iW+DtoB8oepYsmas/7bLg6TfgQ==
+"@salesforce/plugin-agent@1.26.8":
+  version "1.26.8"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-agent/-/plugin-agent-1.26.8.tgz#1dc47e7cb959539f5e46f9a39f2070bdc4d11bae"
+  integrity sha512-5pKVIQRadLmgD8l84DA+3nDdsiuQ9I6dSomrf7+FStdev1xPWLbwFwS9Dt+oPvlslwuT0V3Xlk78mPqXlKa06A==
   dependencies:
     "@inquirer/core" "^10.3.2"
     "@inquirer/prompts" "^7.10.1"
@@ -2258,15 +2283,15 @@
     got "^13.0.0"
     proxy-agent "^6.4.0"
 
-"@salesforce/plugin-auth@4.1.3":
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-4.1.3.tgz#9e913a689069cecdd84dbb1d8b40c6f2c7646303"
-  integrity sha512-qfGS8WHsmNrvBXl9UkMk6IQmsbRrRrkY5YYJ4NcspKfqn0fsVOvJvBwpvw8uyT0vbQkHQSNjxErNTrDIJ3fyfw==
+"@salesforce/plugin-auth@4.1.4":
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-4.1.4.tgz#e1b649d0439b41bc56c5497b79516a9da3708e8c"
+  integrity sha512-Ili0F+oKIpxmxBq1fG+A7Fh/DUs2ES4wVyrwna7Kw5Virm6CqE1qq0kAqrmtqITmEpLS1LWhPT+mZ2n8Krxj0w==
   dependencies:
     "@inquirer/checkbox" "^2.5.0"
     "@inquirer/select" "^2.5.0"
     "@oclif/core" "^4"
-    "@salesforce/core" "^8.24.3"
+    "@salesforce/core" "^8.25.0"
     "@salesforce/kit" "^3.2.4"
     "@salesforce/plugin-info" "^3.4.100"
     "@salesforce/sf-plugins-core" "^12.2.6"
@@ -2380,15 +2405,15 @@
     open "^10.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-packaging@2.24.8":
-  version "2.24.8"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.24.8.tgz#3475a8ba0bc0ca699b7226b06be629bda9f8adfe"
-  integrity sha512-G7QffdX0TjECD8xhCm0UVvGVEdHj/GtjuZVpJP99v9yrIDkiF06zR3YBiVxFiijhhPvHQl+1tkvRW6X0uuwNNQ==
+"@salesforce/plugin-packaging@2.24.10":
+  version "2.24.10"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.24.10.tgz#eb17ae74f7a1030bf272287ff0aa49a5e153952e"
+  integrity sha512-WyQSJEa35w34XkF/Q/AroGWJEBsHNKkVaqRwDogMz5Hj/7ichdAbFdTA7pYaSdcgVT5wiEgjpTJoS0CZgJiXrA==
   dependencies:
     "@oclif/core" "^4"
-    "@salesforce/core" "^8.24.3"
+    "@salesforce/core" "^8.25.0"
     "@salesforce/kit" "^3.2.4"
-    "@salesforce/packaging" "^4.18.8"
+    "@salesforce/packaging" "^4.18.12"
     "@salesforce/sf-plugins-core" "^12.2.6"
     chalk "^5.6.2"
 
@@ -2548,7 +2573,7 @@
     string-width "^7.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/source-deploy-retrieve@^12.30.0", "@salesforce/source-deploy-retrieve@^12.31.3", "@salesforce/source-deploy-retrieve@^12.31.6", "@salesforce/source-deploy-retrieve@^12.31.7":
+"@salesforce/source-deploy-retrieve@^12.30.0", "@salesforce/source-deploy-retrieve@^12.31.3", "@salesforce/source-deploy-retrieve@^12.31.6", "@salesforce/source-deploy-retrieve@^12.31.7", "@salesforce/source-deploy-retrieve@^12.31.8":
   version "12.31.8"
   resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.31.8.tgz#0eade61d5f117722fed81a4f2c04eb7a7d5f4703"
   integrity sha512-gp2yJUuAsR86v8QkGY50Sxyiup4H0QNyT7bC3rowxUnR/mw1q3gkXSDnhHOWt5toWsZr78oL1ztGQxG89l89XQ==
