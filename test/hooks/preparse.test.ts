@@ -184,18 +184,6 @@ describe('preparse hook test', () => {
       expect(results.successes[0].result).to.deep.equal([...baseArgs, '--str', 'value']);
     });
 
-    it('should add string from directory and allow short char flag overrides', async () => {
-      const argv = [...baseArgs, '-s', 'value'];
-      const flags = {
-        ...baseFlags,
-        str: Flags.string({ char: 's' }),
-      };
-      makeStubs([{ name: 'str', content: 'value' }]);
-      const results = await config.runHook('preparse', { argv, options: { flags } });
-      expect(results.successes[0]).to.be.ok;
-      expect(results.successes[0].result).to.deep.equal([...baseArgs, '-s', 'value']);
-    });
-
     it('should handle single line json string', async () => {
       const argv = [...baseArgs];
       const flags = {
@@ -408,6 +396,291 @@ describe('preparse hook test', () => {
       const results = await config.runHook('preparse', { argv, options: { flags } });
       expect(results.successes[0]).to.be.ok;
       expect(results.successes[0].result).to.deep.equal([...baseArgs, '--str', '  value with spaces  ']);
+    });
+  });
+
+  // ============================================================================
+  // CLI OVERRIDE PRECEDENCE TESTS
+  // ============================================================================
+  //
+  // WHAT WE'RE TESTING:
+  // When a user specifies a flag on the CLI AND the same flag exists as a file
+  // in --flags-dir, what happens?
+  // Per PR #1536 (https://github.com/salesforcecli/cli/pull/1536):
+  //    "Flags/values provided by the user will override any flag/values found by
+  //     --flags-dir -- unless the flag supports `multiple`, in which case they will
+  //     all be combined."
+  //
+  // HOW FLAGS-DIR WORKS:
+  // - Files in flags-dir may be named with the LONG flag name (e.g., "test-level")
+  // - File contents become the flag value
+  // - The hook inserts these as argv entries AFTER the user's CLI args
+  //
+  // THE OVERRIDE CHECK:
+  // Before inserting a flags-dir value, the hook checks if that flag was already
+  // provided on CLI. The check must detect BOTH CLI forms:
+  //   - Short/char form:  -l RunLocalTests
+  //   - Long form:        --test-level RunLocalTests
+  // If either form is found on CLI, the flags-dir file is skipped (for single-
+  // value flags). For multiple-value flags, both CLI and flags-dir are combined.
+  //
+  // WHY ONLY LONG-FORM FILENAMES IN FLAGS-DIR:
+  // The override check uses long flag names (e.g., "test-level") to match files.
+  // A file named "l" would NOT be recognized as the same flag, so it would always
+  // be inserted regardless of what's provided on the CLI. These tests use
+  // long-named files only.
+  //
+  // FLAG TYPES:
+  //
+  //   Type              | Description          | Real example             | Test flag
+  //   ------------------|----------------------|--------------------------|-------------------------
+  //   String (single)   | Takes one value      | --test-level RunLocal    | --myflag my-cli-val
+  //   String (multiple) | Takes multiple vals  | --source-dir src force   | --myflag my-cli-val
+  //   Boolean           | Present or absent    | --dry-run                | --myflag
+  //   Boolean (allowNo) | Can be negated       | --wait or --no-wait      | --myflag or --no-myflag
+  //
+  //   A flag with a "short/char" form has a short, single character version, (e.g. 'm').
+  //   Real example: -l is the short/char for --test-level. Our tests use -m for --myflag.
+  //
+  // TEST MATRIX:
+  //
+  //   #  | Flag Type         | short/char version?  | flags-dir file (contents)    | CLI argument         | Result
+  //   ---|-------------------|----------------------|------------------------------|----------------------|---------------
+  //   1  | String (single)   | no                   | myflag    (my-flags-dir-val) | --myflag my-cli-val  | CLI overrides
+  //   2  | String (single)   | yes (and uses it)    | myflag    (my-flags-dir-val) | -m my-cli-val        | CLI overrides
+  //   3  | String (single)   | yes (doesn't use it) | myflag    (my-flags-dir-val) | --myflag my-cli-val  | CLI overrides *
+  //   4  | String (multiple) | no                   | myflag    (my-flags-dir-val) | --myflag my-cli-val  | Combined
+  //   5  | String (multiple) | yes (and uses it)    | myflag    (my-flags-dir-val) | -m my-cli-val        | Combined
+  //   6  | String (multiple) | yes (doesn't use it) | myflag    (my-flags-dir-val) | --myflag my-cli-val  | Combined
+  //   7  | Boolean           | no                   | myflag    (empty)            | --myflag             | CLI overrides
+  //   8  | Boolean           | yes (and uses it)    | myflag    (empty)            | -m                   | CLI overrides
+  //   9  | Boolean           | yes (doesn't use it) | myflag    (empty)            | --myflag             | CLI overrides *
+  //   10 | Boolean (allowNo) | no                   | no-myflag (empty)            | --myflag             | CLI overrides
+  //   11 | Boolean (allowNo) | no                   | myflag    (empty)            | --no-myflag          | CLI overrides *
+  //   12 | Boolean (allowNo) | yes (and uses it)    | no-myflag (empty)            | -m                   | CLI overrides
+  //   13 | Boolean (allowNo) | yes (doesn't use it) | no-myflag (empty)            | --myflag             | CLI overrides *
+  //   14 | Boolean (allowNo) | yes (doesn't use it) | myflag    (empty)            | --no-myflag          | CLI overrides *
+  //
+  //   * = Would have failed with bug from commit c83f81a (used ?? instead of ||)
+  //       The bug affected cases where a flag HAS a char defined, but the user
+  //       typed the long form on CLI (e.g., --myflag instead of -m).
+  //
+  // ============================================================================
+
+  describe('CLI override precedence tests', () => {
+    describe('String flags (single value) - CLI should override flags-dir', () => {
+      it('should override flags-dir value with CLI value (#1:  Flag is for String (single), no short/char version)', async () => {
+        const argv = [...baseArgs, '--myflag', 'my-cli-val'];
+        const flags = {
+          ...baseFlags,
+          myflag: Flags.string(), // No char defined
+        };
+        makeStubs([{ name: 'myflag', content: 'my-flags-dir-val' }]);
+        const results = await config.runHook('preparse', { argv, options: { flags } });
+        expect(results.successes[0]).to.be.ok;
+        expect(results.successes[0].result).to.deep.equal([...baseArgs, '--myflag', 'my-cli-val']);
+      });
+
+      it('should override flags-dir value with CLI value (#2:  Flag is for String (single), has short/char version (and uses it))', async () => {
+        const argv = [...baseArgs, '-m', 'my-cli-val'];
+        const flags = {
+          ...baseFlags,
+          myflag: Flags.string({ char: 'm' }),
+        };
+        makeStubs([{ name: 'myflag', content: 'my-flags-dir-val' }]);
+        const results = await config.runHook('preparse', { argv, options: { flags } });
+        expect(results.successes[0]).to.be.ok;
+        // CLI value should win - flags-dir value should NOT be added
+        expect(results.successes[0].result).to.deep.equal([...baseArgs, '-m', 'my-cli-val']);
+      });
+
+      it("should override flags-dir value with CLI value (#3:  Flag is for String (single), has short/char version (doesn't use it))", async () => {
+        // (commit c83f81a's bug causes this test to fail)
+        const argv = [...baseArgs, '--myflag', 'my-cli-val'];
+        const flags = {
+          ...baseFlags,
+          myflag: Flags.string({ char: 'm' }), // Has char, but CLI uses --myflag not -m
+        };
+        makeStubs([{ name: 'myflag', content: 'my-flags-dir-val' }]);
+        const results = await config.runHook('preparse', { argv, options: { flags } });
+        expect(results.successes[0]).to.be.ok;
+        // CLI value should win - flags-dir value should NOT be added
+        // With bug: would be [...baseArgs, '--myflag', 'my-cli-val', '--myflag', 'my-flags-dir-val']
+        expect(results.successes[0].result).to.deep.equal([...baseArgs, '--myflag', 'my-cli-val']);
+      });
+    });
+
+    describe('String flags (multiple: true) - CLI and flags-dir should combine', () => {
+      it('should combine flags-dir with CLI value (#4:  Flag is for String (multiple), no short/char version)', async () => {
+        const argv = [...baseArgs, '--myflag', 'my-cli-val'];
+        const flags = {
+          ...baseFlags,
+          myflag: Flags.string({ multiple: true }), // No char defined
+        };
+        makeStubs([{ name: 'myflag', content: 'my-flags-dir-val' }]);
+        const results = await config.runHook('preparse', { argv, options: { flags } });
+        expect(results.successes[0]).to.be.ok;
+        // Both values should be present (combined)
+        expect(results.successes[0].result).to.deep.equal([
+          ...baseArgs,
+          '--myflag',
+          'my-cli-val',
+          '--myflag',
+          'my-flags-dir-val',
+        ]);
+      });
+
+      it('should combine flags-dir with CLI value (#5:  Flag is for String (multiple), has short/char version (and uses it))', async () => {
+        const argv = [...baseArgs, '-m', 'my-cli-val'];
+        const flags = {
+          ...baseFlags,
+          myflag: Flags.string({ multiple: true, char: 'm' }),
+        };
+        makeStubs([{ name: 'myflag', content: 'my-flags-dir-val' }]);
+        const results = await config.runHook('preparse', { argv, options: { flags } });
+        expect(results.successes[0]).to.be.ok;
+        // Both values should be present (combined)
+        expect(results.successes[0].result).to.deep.equal([
+          ...baseArgs,
+          '-m',
+          'my-cli-val',
+          '--myflag',
+          'my-flags-dir-val',
+        ]);
+      });
+
+      it("should combine flags-dir with CLI value (#6:  Flag is for String (multiple), has short/char version (doesn't use it))", async () => {
+        const argv = [...baseArgs, '--myflag', 'my-cli-val'];
+        const flags = {
+          ...baseFlags,
+          myflag: Flags.string({ multiple: true, char: 'm' }),
+        };
+        makeStubs([{ name: 'myflag', content: 'my-flags-dir-val' }]);
+        const results = await config.runHook('preparse', { argv, options: { flags } });
+        expect(results.successes[0]).to.be.ok;
+        // Both values should be present (combined)
+        expect(results.successes[0].result).to.deep.equal([
+          ...baseArgs,
+          '--myflag',
+          'my-cli-val',
+          '--myflag',
+          'my-flags-dir-val',
+        ]);
+      });
+    });
+
+    describe('Boolean flags - CLI should override flags-dir', () => {
+      it('should override flags-dir value with CLI value (#7:  Flag is for Boolean, no short/char version)', async () => {
+        const argv = [...baseArgs, '--myflag'];
+        const flags = {
+          ...baseFlags,
+          myflag: Flags.boolean(), // No char defined
+        };
+        makeStubs([{ name: 'myflag', content: '' }]); // Empty file for boolean
+        const results = await config.runHook('preparse', { argv, options: { flags } });
+        expect(results.successes[0]).to.be.ok;
+        // CLI should win - flags-dir should NOT add duplicate
+        expect(results.successes[0].result).to.deep.equal([...baseArgs, '--myflag']);
+      });
+
+      it('should override flags-dir value with CLI value (#8:  Flag is for Boolean, has short/char version (and uses it))', async () => {
+        const argv = [...baseArgs, '-m'];
+        const flags = {
+          ...baseFlags,
+          myflag: Flags.boolean({ char: 'm' }),
+        };
+        makeStubs([{ name: 'myflag', content: '' }]);
+        const results = await config.runHook('preparse', { argv, options: { flags } });
+        expect(results.successes[0]).to.be.ok;
+        // CLI should win - flags-dir should NOT add duplicate
+        expect(results.successes[0].result).to.deep.equal([...baseArgs, '-m']);
+      });
+
+      it("should override flags-dir value with CLI value (#9:  Flag is for Boolean, has short/char version (doesn't use it))", async () => {
+        // (commit c83f81a's bug causes this test to fail)
+        const argv = [...baseArgs, '--myflag'];
+        const flags = {
+          ...baseFlags,
+          myflag: Flags.boolean({ char: 'm' }), // Has char, but CLI uses --myflag not -m
+        };
+        makeStubs([{ name: 'myflag', content: '' }]);
+        const results = await config.runHook('preparse', { argv, options: { flags } });
+        expect(results.successes[0]).to.be.ok;
+        // CLI should win - flags-dir should NOT add duplicate
+        // With bug: would be [...baseArgs, '--myflag', '--myflag']
+        expect(results.successes[0].result).to.deep.equal([...baseArgs, '--myflag']);
+      });
+    });
+
+    describe('Boolean flags (allowNo: true) - CLI should override flags-dir', () => {
+      it('should override flags-dir value with CLI value (#10:  Flag is for Boolean (allowNo), no short/char version)', async () => {
+        const argv = [...baseArgs, '--myflag'];
+        const flags = {
+          ...baseFlags,
+          myflag: Flags.boolean({ allowNo: true }), // No char
+        };
+        makeStubs([{ name: 'no-myflag', content: '' }]); // Negated file
+        const results = await config.runHook('preparse', { argv, options: { flags } });
+        expect(results.successes[0]).to.be.ok;
+        // CLI --myflag should win, flags-dir no-myflag should NOT be added
+        expect(results.successes[0].result).to.deep.equal([...baseArgs, '--myflag']);
+      });
+
+      it('should override flags-dir value with CLI value (#11:  Flag is for Boolean (allowNo), no short/char version, --no-myflag)', async () => {
+        // (commit c83f81a's bug causes this test to fail)
+        const argv = [...baseArgs, '--no-myflag'];
+        const flags = {
+          ...baseFlags,
+          myflag: Flags.boolean({ allowNo: true }), // No char
+        };
+        makeStubs([{ name: 'myflag', content: '' }]); // Positive file
+        const results = await config.runHook('preparse', { argv, options: { flags } });
+        expect(results.successes[0]).to.be.ok;
+        // CLI --no-myflag should win, flags-dir myflag should NOT be added
+        expect(results.successes[0].result).to.deep.equal([...baseArgs, '--no-myflag']);
+      });
+
+      it('should override flags-dir value with CLI value (#12:  Flag is for Boolean (allowNo), has short/char version (and uses it))', async () => {
+        const argv = [...baseArgs, '-m'];
+        const flags = {
+          ...baseFlags,
+          myflag: Flags.boolean({ allowNo: true, char: 'm' }),
+        };
+        makeStubs([{ name: 'no-myflag', content: '' }]);
+        const results = await config.runHook('preparse', { argv, options: { flags } });
+        expect(results.successes[0]).to.be.ok;
+        // CLI -m should win, flags-dir no-myflag should NOT be added
+        expect(results.successes[0].result).to.deep.equal([...baseArgs, '-m']);
+      });
+
+      it("should override flags-dir value with CLI value (#13:  Flag is for Boolean (allowNo), has short/char version (doesn't use it), --myflag)", async () => {
+        // (commit c83f81a's bug causes this test to fail)
+        const argv = [...baseArgs, '--myflag'];
+        const flags = {
+          ...baseFlags,
+          myflag: Flags.boolean({ allowNo: true, char: 'm' }), // Has char, CLI uses --myflag
+        };
+        makeStubs([{ name: 'no-myflag', content: '' }]);
+        const results = await config.runHook('preparse', { argv, options: { flags } });
+        expect(results.successes[0]).to.be.ok;
+        // CLI --myflag should win, flags-dir no-myflag should NOT be added
+        // With bug: would be [...baseArgs, '--myflag', '--no-myflag']
+        expect(results.successes[0].result).to.deep.equal([...baseArgs, '--myflag']);
+      });
+
+      it("should override flags-dir value with CLI value (#14:  Flag is for Boolean (allowNo), has short/char version (doesn't use it), --no-myflag)", async () => {
+        const argv = [...baseArgs, '--no-myflag'];
+        const flags = {
+          ...baseFlags,
+          myflag: Flags.boolean({ allowNo: true, char: 'm' }), // Has char, CLI uses --no-myflag
+        };
+        makeStubs([{ name: 'myflag', content: '' }]);
+        const results = await config.runHook('preparse', { argv, options: { flags } });
+        expect(results.successes[0]).to.be.ok;
+        // CLI --no-myflag should win, flags-dir myflag should NOT be added
+        // With bug: would be [...baseArgs, '--no-myflag', '--myflag']
+        expect(results.successes[0].result).to.deep.equal([...baseArgs, '--no-myflag']);
+      });
     });
   });
 });
