@@ -2067,16 +2067,16 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==
 
-"@salesforce/agents@^0.22.0":
-  version "0.22.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/agents/-/agents-0.22.0.tgz#de812b29d8cd3d2c260a0550d744f980c7dbec6a"
-  integrity sha512-Od2c6Iu+32Fv06YB8qS1Q/ajW4npzUZ5r9/giOVJDJPvNLTm7gcYKZ3rjc/WD3sP9y8KFvxJZPtsJoZoWvALAg==
+"@salesforce/agents@^0.22.1":
+  version "0.22.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/agents/-/agents-0.22.2.tgz#b9c6612040938c37cfa85f250cb6ee5a0a055135"
+  integrity sha512-TF/hvrM2wv3rSLWkBbLCjBGax6y5EaO5t6cevM+i/VMX140M+ls63O/8AaoXAwjNo3udorNUhm0wbs1HE3QfRw==
   dependencies:
     "@salesforce/core" "^8.24.0"
     "@salesforce/kit" "^3.2.4"
     "@salesforce/source-deploy-retrieve" "^12.31.6"
     "@salesforce/types" "^1.5.0"
-    fast-xml-parser "^5.3.2"
+    fast-xml-parser "^5.3.4"
     nock "^13.5.6"
     yaml "^2.8.2"
 
@@ -2208,29 +2208,29 @@
     jszip "^3.10.1"
     object-treeify "^2"
 
-"@salesforce/plugin-agent@1.27.2":
-  version "1.27.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-agent/-/plugin-agent-1.27.2.tgz#d858d5092903a17fde47f8209ea171d685b540b2"
-  integrity sha512-8RWJQn7ZPNJxJBDk6W9AvbDp7Iq90DxXxX9g+6Q6J2qNQtmKEiDNCNBu8PQ1Gxt5W9eyHgYBcWI45+FbZCEidg==
+"@salesforce/plugin-agent@1.27.3":
+  version "1.27.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-agent/-/plugin-agent-1.27.3.tgz#b266378972a69c76af35af65c96e357d03bde53f"
+  integrity sha512-pzSjZzvpOQXiPApMGy8LXm2Tjd74wwt9rAM4juqwZFcypnmHsqneMsQUSU82kEDR6NMHd2dV9inS2Hbsiv8Muw==
   dependencies:
     "@inquirer/core" "^10.3.2"
     "@inquirer/prompts" "^7.10.1"
     "@oclif/core" "^4"
     "@oclif/multi-stage-output" "^0.8.29"
-    "@salesforce/agents" "^0.22.0"
+    "@salesforce/agents" "^0.22.1"
     "@salesforce/core" "^8.24.3"
-    "@salesforce/kit" "^3.2.3"
+    "@salesforce/kit" "^3.2.4"
     "@salesforce/sf-plugins-core" "^12.2.6"
     "@salesforce/source-deploy-retrieve" "^12.31.10"
     "@salesforce/types" "^1.5.0"
     ansis "^3.3.2"
-    fast-xml-parser "^4.5.1"
+    fast-xml-parser "^5.3.4"
     glob "^11.0.3"
     ink "5.0.1"
     ink-text-input "^6.0.0"
     inquirer-autocomplete-standalone "^0.8.1"
     react "^18.3.1"
-    yaml "^2.8.1"
+    yaml "^2.8.2"
 
 "@salesforce/plugin-apex@3.9.5":
   version "3.9.5"
@@ -2439,10 +2439,10 @@
     "@salesforce/sf-plugins-core" "^12.2.6"
     fast-levenshtein "^3.0.0"
 
-"@salesforce/plugin-sobject@1.4.81":
-  version "1.4.81"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-sobject/-/plugin-sobject-1.4.81.tgz#1249eec88246c185a80cc48ab16066dea5793d09"
-  integrity sha512-0LdzCv+I2G/crEuxxQyxdEDiygKkScLxcaF/udJwW3rTOcLPHjAr5Vih4dkphBiqPLJbrK+ehkSnbhk7SvBnXg==
+"@salesforce/plugin-sobject@1.4.82":
+  version "1.4.82"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-sobject/-/plugin-sobject-1.4.82.tgz#b7c7b2f2959f5085aa1ccff84d0354384ce0b059"
+  integrity sha512-RlrNhoDZEy8hJlMVtFpzYhq/0UDsE+TF7QQS+N0G1529XG+rIOEXTtrZ6KP248D5X6NRaBkHM5oDd52yIZXzYA==
   dependencies:
     "@inquirer/confirm" "^3.2.0"
     "@inquirer/input" "^2.3.0"
@@ -2452,7 +2452,7 @@
     "@salesforce/kit" "^3.2.4"
     "@salesforce/sf-plugins-core" "^11.3.12"
     fast-glob "^3.3.3"
-    fast-xml-parser "^4.5.3"
+    fast-xml-parser "^5.3.4"
     js2xmlparser "^4.0.2"
 
 "@salesforce/plugin-telemetry@3.6.71":
@@ -5898,14 +5898,14 @@ fast-xml-parser@5.2.5:
   dependencies:
     strnum "^2.1.0"
 
-fast-xml-parser@^4.5.1, fast-xml-parser@^4.5.3:
+fast-xml-parser@^4.5.3:
   version "4.5.3"
   resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-4.5.3.tgz#c54d6b35aa0f23dc1ea60b6c884340c006dc6efb"
   integrity sha512-RKihhV+SHsIUGXObeVy9AXiBbFwkVk7Syp8XgwN5U3JV416+Gwp/GO9i0JYKmikykgz/UHRrrV4ROuZEo/T0ig==
   dependencies:
     strnum "^1.1.1"
 
-fast-xml-parser@^5.3.2, fast-xml-parser@^5.3.4:
+fast-xml-parser@^5.3.4:
   version "5.3.4"
   resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-5.3.4.tgz#06f39aafffdbc97bef0321e626c7ddd06a043ecf"
   integrity sha512-EFd6afGmXlCx8H8WTZHhAoDaWaGyuIBoZJ2mknrNxug+aZKjkp0a0dlars9Izl+jF+7Gu1/5f/2h68cQpe0IiA==
