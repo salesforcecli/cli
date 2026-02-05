@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.122.6 linux-x64 node-v22.22.0
+@salesforce/cli/2.123.0 linux-x64 node-v22.22.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -248,7 +248,7 @@ EXAMPLES
     $ sf agent activate --api-name Resort_Manager --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.3/src/commands/agent/activate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/activate.ts)_
 
 ## `sf agent create`
 
@@ -315,7 +315,7 @@ EXAMPLES
     $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.3/src/commands/agent/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/create.ts)_
 
 ## `sf agent deactivate`
 
@@ -355,7 +355,7 @@ EXAMPLES
     $ sf agent deactivate --api-name Resort_Manager --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.3/src/commands/agent/deactivate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/deactivate.ts)_
 
 ## `sf agent generate agent-spec`
 
@@ -462,7 +462,7 @@ EXAMPLES
     $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.3/src/commands/agent/generate/agent-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/generate/agent-spec.ts)_
 
 ## `sf agent generate authoring-bundle`
 
@@ -471,18 +471,20 @@ Generate an authoring bundle from an existing agent spec YAML file.
 ```
 USAGE
   $ sf agent generate authoring-bundle -o <value> [--json] [--flags-dir <value>] [--api-name <value>] [--api-version <value>] [-f
-    <value>] [-d <value>] [-n <value>]
+    <value>] [--no-spec] [-d <value>] [-n <value>]
 
 FLAGS
   -d, --output-dir=<value>   Directory where the authoring bundle files are generated.
-  -f, --spec=<value>         Path to the agent spec YAML file; if not specified, the command provides a list that you
-                             can choose from.
+  -f, --spec=<value>         Path to the agent spec YAML file. If you don't specify the flag, the command provides a
+                             list that you can choose from. Use the --no-spec flag to skip using an agent spec entirely.
   -n, --name=<value>         Name (label) of the authoring bundle; if not specified, you're prompted for the name.
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
                              configuration variable is already set.
       --api-name=<value>     API name of the new authoring bundle; if not specified, the API name is derived from the
                              authoring bundle name (label); the API name can't exist in the org.
       --api-version=<value>  Override the api version used for api requests made by this command
+      --no-spec              Skip prompting for an agent spec and use the default Agent Script boilerplate in the
+                             generated authoring bundle.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
@@ -496,7 +498,9 @@ DESCRIPTION
 
   Use this command to generate a new authoring bundle based on an agent spec YAML file, which you create with the "agent
   generate agent-spec" command. The agent spec YAML file is a high-level description of the agent; it describes its
-  essence rather than exactly what it can do.
+  essence rather than exactly what it can do. The resulting Agent Script file is customized to reflect what's in the
+  agent spec file. You can also create an authoring bundle without an agent spec file by specifying the "--no-spec"
+  flag; in this case, the resulting Agent Script file is just the default boilerplate.
 
   The metadata type for authoring bundles is aiAuthoringBundle, which consist of a standard
   "<bundle-api-name>.bundle-meta.xml" metadata file and the Agent Script file (with extension ".agent"). When you run
@@ -516,6 +520,11 @@ EXAMPLES
 
     $ sf agent generate authoring-bundle
 
+  Generate an authoring bundle without using an agent spec file; give the bundle the label "My Authoring Bundle" and
+  use your default org:
+
+    $ sf agent generate authoring-bundle --no-spec --name "My Authoring Bundle"
+
   Generate an authoring bundle from the "specs/agentSpec.yaml" agent spec YAML file and give it the label "My
   Authoring Bundle"; use your default org:
 
@@ -528,7 +537,7 @@ EXAMPLES
       other-package-dir/main/default --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.3/src/commands/agent/generate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/generate/authoring-bundle.ts)_
 
 ## `sf agent generate template`
 
@@ -576,7 +585,7 @@ EXAMPLES
       force-app/main/default/bots/My_Awesome_Agent/My_Awesome_Agent.bot-meta.xml --agent-version 1
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.3/src/commands/agent/generate/template.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/generate/template.ts)_
 
 ## `sf agent generate test-spec`
 
@@ -637,7 +646,7 @@ EXAMPLES
       force-app//main/default/aiEvaluationDefinitions/Resort_Manager_Tests.aiEvaluationDefinition-meta.xml
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.3/src/commands/agent/generate/test-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/generate/test-spec.ts)_
 
 ## `sf agent preview`
 
@@ -710,7 +719,7 @@ EXAMPLES
     $ sf agent preview --use-live-actions --apex-debug --output-dir transcripts/my-preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.3/src/commands/agent/preview.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/preview.ts)_
 
 ## `sf agent publish authoring-bundle`
 
@@ -759,7 +768,7 @@ EXAMPLES
     $ sf agent publish authoring-bundle --api-name MyAuthoringbundle --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.3/src/commands/agent/publish/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/publish/authoring-bundle.ts)_
 
 ## `sf agent test create`
 
@@ -814,7 +823,7 @@ EXAMPLES
     $ sf agent test create --spec specs/Resort_Manager-testSpec.yaml --api-name Resort_Manager_Test --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.3/src/commands/agent/test/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/test/create.ts)_
 
 ## `sf agent test list`
 
@@ -849,7 +858,7 @@ EXAMPLES
     $ sf agent test list --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.3/src/commands/agent/test/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/test/list.ts)_
 
 ## `sf agent test results`
 
@@ -915,7 +924,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.3/src/commands/agent/test/results.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/test/results.ts)_
 
 ## `sf agent test resume`
 
@@ -988,7 +997,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.3/src/commands/agent/test/resume.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/test/resume.ts)_
 
 ## `sf agent test run`
 
@@ -1062,7 +1071,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.3/src/commands/agent/test/run.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/test/run.ts)_
 
 ## `sf agent validate authoring-bundle`
 
@@ -1109,7 +1118,7 @@ EXAMPLES
     $ sf agent validate authoring-bundle --api-name MyAuthoringBundle --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.3/src/commands/agent/validate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/validate/authoring-bundle.ts)_
 
 ## `sf alias list`
 
