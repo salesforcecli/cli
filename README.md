@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.123.0 linux-x64 node-v22.22.0
+@salesforce/cli/2.123.1 linux-x64 node-v22.22.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -50,6 +50,10 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf agent generate template`](#sf-agent-generate-template)
 - [`sf agent generate test-spec`](#sf-agent-generate-test-spec)
 - [`sf agent preview`](#sf-agent-preview)
+- [`sf agent preview end`](#sf-agent-preview-end)
+- [`sf agent preview send`](#sf-agent-preview-send)
+- [`sf agent preview sessions`](#sf-agent-preview-sessions)
+- [`sf agent preview start`](#sf-agent-preview-start)
 - [`sf agent publish authoring-bundle`](#sf-agent-publish-authoring-bundle)
 - [`sf agent test create`](#sf-agent-test-create)
 - [`sf agent test list`](#sf-agent-test-list)
@@ -60,9 +64,6 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf alias list`](#sf-alias-list)
 - [`sf alias set`](#sf-alias-set)
 - [`sf alias unset`](#sf-alias-unset)
-- [`sf analytics generate template`](#sf-analytics-generate-template)
-- [`sf apex generate class`](#sf-apex-generate-class)
-- [`sf apex generate trigger`](#sf-apex-generate-trigger)
 - [`sf apex get log`](#sf-apex-get-log)
 - [`sf apex get test`](#sf-apex-get-test)
 - [`sf apex list log`](#sf-apex-list-log)
@@ -104,11 +105,6 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf force data bulk upsert`](#sf-force-data-bulk-upsert)
 - [`sf help [COMMAND]`](#sf-help-command)
 - [`sf info releasenotes display`](#sf-info-releasenotes-display)
-- [`sf lightning generate app`](#sf-lightning-generate-app)
-- [`sf lightning generate component`](#sf-lightning-generate-component)
-- [`sf lightning generate event`](#sf-lightning-generate-event)
-- [`sf lightning generate interface`](#sf-lightning-generate-interface)
-- [`sf lightning generate test`](#sf-lightning-generate-test)
 - [`sf logic get test`](#sf-logic-get-test)
 - [`sf logic run test`](#sf-logic-run-test)
 - [`sf org assign permset`](#sf-org-assign-permset)
@@ -191,7 +187,6 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf project deploy resume`](#sf-project-deploy-resume)
 - [`sf project deploy start`](#sf-project-deploy-start)
 - [`sf project deploy validate`](#sf-project-deploy-validate)
-- [`sf project generate`](#sf-project-generate)
 - [`sf project generate manifest`](#sf-project-generate-manifest)
 - [`sf project list ignored`](#sf-project-list-ignored)
 - [`sf project reset tracking`](#sf-project-reset-tracking)
@@ -204,11 +199,21 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf search`](#sf-search)
 - [`sf sobject describe`](#sf-sobject-describe)
 - [`sf sobject list`](#sf-sobject-list)
-- [`sf static-resource generate`](#sf-static-resource-generate)
+- [`sf template generate analytics template`](#sf-template-generate-analytics-template)
+- [`sf template generate apex class`](#sf-template-generate-apex-class)
+- [`sf template generate apex trigger`](#sf-template-generate-apex-trigger)
+- [`sf template generate digital-experience site`](#sf-template-generate-digital-experience-site)
+- [`sf template generate lightning app`](#sf-template-generate-lightning-app)
+- [`sf template generate lightning component`](#sf-template-generate-lightning-component)
+- [`sf template generate lightning event`](#sf-template-generate-lightning-event)
+- [`sf template generate lightning interface`](#sf-template-generate-lightning-interface)
+- [`sf template generate lightning test`](#sf-template-generate-lightning-test)
+- [`sf template generate project`](#sf-template-generate-project)
+- [`sf template generate static-resource`](#sf-template-generate-static-resource)
+- [`sf template generate visualforce component`](#sf-template-generate-visualforce-component)
+- [`sf template generate visualforce page`](#sf-template-generate-visualforce-page)
 - [`sf update [CHANNEL]`](#sf-update-channel)
 - [`sf version`](#sf-version)
-- [`sf visualforce generate component`](#sf-visualforce-generate-component)
-- [`sf visualforce generate page`](#sf-visualforce-generate-page)
 - [`sf which`](#sf-which)
 
 ## `sf agent activate`
@@ -248,7 +253,7 @@ EXAMPLES
     $ sf agent activate --api-name Resort_Manager --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/activate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/activate.ts)_
 
 ## `sf agent create`
 
@@ -315,7 +320,7 @@ EXAMPLES
     $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/create.ts)_
 
 ## `sf agent deactivate`
 
@@ -355,7 +360,7 @@ EXAMPLES
     $ sf agent deactivate --api-name Resort_Manager --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/deactivate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/deactivate.ts)_
 
 ## `sf agent generate agent-spec`
 
@@ -462,7 +467,7 @@ EXAMPLES
     $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/generate/agent-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/generate/agent-spec.ts)_
 
 ## `sf agent generate authoring-bundle`
 
@@ -537,7 +542,7 @@ EXAMPLES
       other-package-dir/main/default --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/generate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/generate/authoring-bundle.ts)_
 
 ## `sf agent generate template`
 
@@ -585,7 +590,7 @@ EXAMPLES
       force-app/main/default/bots/My_Awesome_Agent/My_Awesome_Agent.bot-meta.xml --agent-version 1
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/generate/template.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/generate/template.ts)_
 
 ## `sf agent generate test-spec`
 
@@ -646,7 +651,7 @@ EXAMPLES
       force-app//main/default/aiEvaluationDefinitions/Resort_Manager_Tests.aiEvaluationDefinition-meta.xml
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/generate/test-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/generate/test-spec.ts)_
 
 ## `sf agent preview`
 
@@ -659,7 +664,7 @@ USAGE
 
 FLAGS
   -d, --output-dir=<value>        Directory where conversation transcripts are saved.
-  -n, --api-name=<value>          API name of the published and active agent you want to interact with.
+  -n, --api-name=<value>          API name of the activated published agent you want to interact with.
   -o, --target-org=<value>        (required) Username or alias of the target org. Not required if the `target-org`
                                   configuration variable is already set.
   -x, --apex-debug                Enable Apex debug logging during the agent preview conversation.
@@ -719,7 +724,210 @@ EXAMPLES
     $ sf agent preview --use-live-actions --apex-debug --output-dir transcripts/my-preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/preview.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/preview.ts)_
+
+## `sf agent preview end`
+
+End an existing programmatic agent preview session and get trace location.
+
+```
+USAGE
+  $ sf agent preview end -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [--session-id <value>] [-n
+    <value>] [--authoring-bundle <value>]
+
+FLAGS
+  -n, --api-name=<value>          API name of the activated published agent you want to preview.
+  -o, --target-org=<value>        (required) Username or alias of the target org. Not required if the `target-org`
+                                  configuration variable is already set.
+      --api-version=<value>       Override the api version used for api requests made by this command
+      --authoring-bundle=<value>  API name of the authoring bundle metadata component that contains the agent's Agent
+                                  Script file.
+      --session-id=<value>        Session ID outputted by "agent preview start". Not required when the agent has exactly
+                                  one active session. Run "agent preview sessions" to see the list of all sessions.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  End an existing programmatic agent preview session and get trace location.
+
+  You must have previously started a programmatic agent preview session with the "agent preview start" command to then
+  use this command to end it. This command also displays the local directory where the session trace files are stored.
+
+  The original "agent preview start" command outputs a session ID which you then use with the --session-id flag of this
+  command to end the session.  You don't have to specify the --session-id flag if an agent has only one active preview
+  session. You must also use either the --authoring-bundle or --api-name flag to specify the API name of the authoring
+  bundle or the published agent, respecitvely.  To find either API name, navigate to your package directory in your DX
+  project. The API name of an authoring bundle is the same as its directory name under the "aiAuthoringBundles" metadata
+  directory.  Similarly, the published agent's API name is the same as its directory name under the "Bots" metadata
+  directory.
+
+EXAMPLES
+  End a preview session of a published agent by specifying its session ID and API name ; use the default org:
+
+    $ sf agent preview end --session-id <SESSION_ID> --api-name My_Published_Agent
+
+  Similar to previous example, but don't specify a session ID; you get an error if the published agent has more than
+  one active session. Use the org with alias "my-dev-org":
+
+    $ sf agent preview end --api-name My_Published_Agent --target-org my-dev-org
+
+  End a preview session of an agent using its authoring bundle API name; you get an error if the agent has more than
+  one active session.
+
+    $ sf agent preview end --authoring-bundle My_Local_Agent
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/preview/end.ts)_
+
+## `sf agent preview send`
+
+Send a message to an existing agent preview session.
+
+```
+USAGE
+  $ sf agent preview send -o <value> -u <value> [--json] [--flags-dir <value>] [--api-version <value>] [--session-id
+    <value>] [-n <value>] [--authoring-bundle <value>]
+
+FLAGS
+  -n, --api-name=<value>          API name of the activated published agent you want to preview.
+  -o, --target-org=<value>        (required) Username or alias of the target org. Not required if the `target-org`
+                                  configuration variable is already set.
+  -u, --utterance=<value>         (required) Utterance to send to the agent, enclosed in double quotes.
+      --api-version=<value>       Override the api version used for api requests made by this command
+      --authoring-bundle=<value>  API name of the authoring bundle metadata component that contains the agent's Agent
+                                  Script file.
+      --session-id=<value>        Session ID outputted by "agent preview start". Not required when the agent has exactly
+                                  one active session. Run "agent preview sessions" to see list of all sessions.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Send a message to an existing agent preview session.
+
+  You must have previously started a programmatic agent preview session with the "agent preview start" command to then
+  use this command to send the agent a message (utterance). This command then displays the agent's response.
+
+  The original "agent preview start" command outputs a session ID which you then use with the --session-id flag of this
+  command to send a message.  You don't have to specify the --session-id flag if an agent has only one active preview
+  session. You must also use either the --authoring-bundle or --api-name flag to specify the API name of the authoring
+  bundle or the published agent, respecitvely.  To find either API name, navigate to your package directory in your DX
+  project. The API name of an authoring bundle is the same as its directory name under the "aiAuthoringBundles" metadata
+  directory.  Similarly, the published agent's API name is the same as its directory name under the "Bots" metadata
+  directory.
+
+EXAMPLES
+  Send a message to an activated published agent using its API name and session ID; use the default org:
+
+    $ sf agent preview send --utterance "What can you help me with?" --api-name My_Published_Agent --session-id \
+      <SESSION_ID>
+
+  Similar to previous example, but don't specify a session ID; you get an error if the agent has more than one active
+  session. Use the org with alias "my-dev-org":
+
+    $ sf agent preview send --utterance "What can you help me with?" --api-name My_Published_Agent --target-org \
+      my-dev-org
+
+  Send a message to an agent using its authoring bundle API name; you get an error if the agent has more than one
+  active session:
+
+    $ sf agent preview send --utterance "what can you help me with?" --authoring-bundle My_Local_Agent
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/preview/send.ts)_
+
+## `sf agent preview sessions`
+
+List all known programmatic agent preview sessions.
+
+```
+USAGE
+  $ sf agent preview sessions [--json] [--flags-dir <value>]
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  List all known programmatic agent preview sessions.
+
+  This command lists the agent preview sessions that were started with the "agent preview start" command and are still
+  in the local cache. Use this command to discover specific session IDs that you can pass to the "agent preview send" or
+  "agent preview end" commands with the --session-id flag.
+
+  Programmatic agent preview sessions can be started for both published activated agents and by using an agent's local
+  authoring bundle, which contains its Agent Script file.  In this command's output table, the Agent column contains
+  either the API name of the authoring bundle or the published agent, whichever was used when starting the session. In
+  the table, if the same API name has multiple rows with different session IDs, then it means that you previously
+  started multiple preview sessions with the associated agent.
+
+EXAMPLES
+  List all cached agent preview sessions:
+
+    $ sf agent preview sessions
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/preview/sessions.ts)_
+
+## `sf agent preview start`
+
+Start a programmatic agent preview session.
+
+```
+USAGE
+  $ sf agent preview start -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-n <value>]
+    [--authoring-bundle <value>] [--use-live-actions]
+
+FLAGS
+  -n, --api-name=<value>          API name of the activated published agent you want to preview.
+  -o, --target-org=<value>        (required) Username or alias of the target org. Not required if the `target-org`
+                                  configuration variable is already set.
+      --api-version=<value>       Override the api version used for api requests made by this command
+      --authoring-bundle=<value>  API name of the authoring bundle metadata component that contains the agent's Agent
+                                  Script file.
+      --use-live-actions          Use real actions in the org; if not specified, preview uses AI to simulate (mock)
+                                  actions.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Start a programmatic agent preview session.
+
+  This command outputs a session ID that you then use with the "agent preview send" command to send an utterance to the
+  agent.  Use the "agent preview sessions" command to list all active sessions and the "agent preview end" command to
+  end a specific session.
+
+  Identify the agent you want to start previewing with either the --authoring-bundle flag to specify a local authoring
+  bundle's API name or --api-name to specify an activated published agent's API name.  To find either API name, navigate
+  to your package directory in your DX project. The API name of an authoring bundle is the same as its directory name
+  under the "aiAuthoringBundles" metadata directory.  Similarly, the published agent's API name is the same as its
+  directory name under the "Bots" metadata directory.
+
+  When starting a preview session using the authoring bundle, which contains the agent's Agent Script file, the preview
+  uses mocked actions by default.  Specify --use-live-actions for live mode, which uses the real Apex classes, flows,
+  etc, in the org for the actions.
+
+EXAMPLES
+  Start a programmatic agent preview session by specifying an authoring bundle; uses mocked actions by default. Use
+  the org with alias "my-dev-org":
+
+    $ sf agent preview start --authoring-bundle My_Agent_Bundle --target-org my-dev-org
+
+  Similar to previous example but use live actions and the default org:
+
+    $ sf agent preview start --authoring-bundle My_Agent_Bundle --use-live-actions
+
+  Start a preview session with an activated published agent:
+
+    $ sf agent preview start --api-name My_Published_Agent
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/preview/start.ts)_
 
 ## `sf agent publish authoring-bundle`
 
@@ -768,7 +976,7 @@ EXAMPLES
     $ sf agent publish authoring-bundle --api-name MyAuthoringbundle --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/publish/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/publish/authoring-bundle.ts)_
 
 ## `sf agent test create`
 
@@ -823,7 +1031,7 @@ EXAMPLES
     $ sf agent test create --spec specs/Resort_Manager-testSpec.yaml --api-name Resort_Manager_Test --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/test/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/test/create.ts)_
 
 ## `sf agent test list`
 
@@ -858,7 +1066,7 @@ EXAMPLES
     $ sf agent test list --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/test/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/test/list.ts)_
 
 ## `sf agent test results`
 
@@ -924,7 +1132,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/test/results.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/test/results.ts)_
 
 ## `sf agent test resume`
 
@@ -997,7 +1205,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/test/resume.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/test/resume.ts)_
 
 ## `sf agent test run`
 
@@ -1071,7 +1279,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/test/run.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/test/run.ts)_
 
 ## `sf agent validate authoring-bundle`
 
@@ -1118,7 +1326,7 @@ EXAMPLES
     $ sf agent validate authoring-bundle --api-name MyAuthoringBundle --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.27.5/src/commands/agent/validate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.29.0/src/commands/agent/validate/authoring-bundle.ts)_
 
 ## `sf alias list`
 
@@ -1146,7 +1354,7 @@ EXAMPLES
     $ sf alias list
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.54/src/commands/alias/list.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.55/src/commands/alias/list.ts)_
 
 ## `sf alias set`
 
@@ -1195,7 +1403,7 @@ EXAMPLES
     $ sf alias set my-scratch-org test-ss0xut7txzxf@example.com
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.54/src/commands/alias/set.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.55/src/commands/alias/set.ts)_
 
 ## `sf alias unset`
 
@@ -1235,177 +1443,7 @@ EXAMPLES
     $ sf alias unset --all [--no-prompt]
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.54/src/commands/alias/unset.ts)_
-
-## `sf analytics generate template`
-
-Generate a simple Analytics template.
-
-```
-USAGE
-  $ sf analytics generate template -n <value> [--json] [--flags-dir <value>] [-d <value>] [--api-version <value>]
-
-FLAGS
-  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
-  -n, --name=<value>         (required) Name of the Analytics template.
-      --api-version=<value>  Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-DESCRIPTION
-  Generate a simple Analytics template.
-
-  The metadata files associated with the Analytics template must be contained in a parent directory called
-  "waveTemplates" in your package directory. Either run this command from an existing directory of this name, or use the
-  --output-dir flag to generate one or point to an existing one.
-
-ALIASES
-  $ sf force analytics template create
-
-EXAMPLES
-  Generate the metadata files for a simple Analytics template file called myTemplate in the
-  force-app/main/default/waveTemplates directory:
-
-    $ sf analytics generate template --name myTemplate --output-dir force-app/main/default/waveTemplates
-
-FLAG DESCRIPTIONS
-  -d, --output-dir=<value>  Directory for saving the created files.
-
-    The location can be an absolute path or relative to the current working directory. The default is the current
-    directory.
-```
-
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.4.7/src/commands/analytics/generate/template.ts)_
-
-## `sf apex generate class`
-
-Generate an Apex class.
-
-```
-USAGE
-  $ sf apex generate class -n <value> [--json] [--flags-dir <value>] [-t
-    ApexException|ApexUnitTest|BasicUnitTest|DefaultApexClass|InboundEmailService] [-d <value>] [--api-version <value>]
-
-FLAGS
-  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
-  -n, --name=<value>         (required) Name of the generated Apex class.
-  -t, --template=<option>    [default: DefaultApexClass] Template to use for file creation.
-                             <options: ApexException|ApexUnitTest|BasicUnitTest|DefaultApexClass|InboundEmailService>
-      --api-version=<value>  Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-DESCRIPTION
-  Generate an Apex class.
-
-  Generates the Apex *.cls file and associated metadata file. These files must be contained in a parent directory called
-  "classes" in your package directory. Either run this command from an existing directory of this name, or use the
-  --output-dir flag to generate one or point to an existing one.
-
-ALIASES
-  $ sf force apex class create
-
-EXAMPLES
-  Generate two metadata files associated with the MyClass Apex class (MyClass.cls and MyClass.cls-meta.xml) in the
-  current directory:
-
-    $ sf apex generate class --name MyClass
-
-  Similar to previous example, but generates the files in the "force-app/main/default/classes" directory:
-
-    $ sf apex generate class --name MyClass --output-dir force-app/main/default/classes
-
-FLAG DESCRIPTIONS
-  -d, --output-dir=<value>  Directory for saving the created files.
-
-    The location can be an absolute path or relative to the current working directory. The default is the current
-    directory.
-
-  -n, --name=<value>  Name of the generated Apex class.
-
-    The name can be up to 40 characters and must start with a letter.
-
-  -t, --template=ApexException|ApexUnitTest|BasicUnitTest|DefaultApexClass|InboundEmailService
-
-    Template to use for file creation.
-
-    Supplied parameter values or default values are filled into a copy of the template.
-```
-
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.4.7/src/commands/apex/generate/class.ts)_
-
-## `sf apex generate trigger`
-
-Generate an Apex trigger.
-
-```
-USAGE
-  $ sf apex generate trigger -n <value> [--json] [--flags-dir <value>] [-t ApexTrigger] [-d <value>] [--api-version
-    <value>] [-s <value>] [-e before insert|before update|before delete|after insert|after update|after delete|after
-    undelete...]
-
-FLAGS
-  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
-  -e, --event=<option>...    [default: before insert] Events that fire the trigger.
-                             <options: before insert|before update|before delete|after insert|after update|after
-                             delete|after undelete>
-  -n, --name=<value>         (required) Name of the generated Apex trigger
-  -s, --sobject=<value>      [default: SOBJECT] Salesforce object to generate a trigger on.
-  -t, --template=<option>    [default: ApexTrigger] Template to use for file creation.
-                             <options: ApexTrigger>
-      --api-version=<value>  Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-DESCRIPTION
-  Generate an Apex trigger.
-
-  Generates the Apex trigger *.trigger file and associated metadata file. These files must be contained in a parent
-  directory called "triggers" in your package directory. Either run this command from an existing directory of this
-  name, or use the --output-dir flag to generate one or point to an existing one.
-
-  If you don't specify the --sobject flag, the .trigger file contains the generic placeholder SOBJECT; replace it with
-  the Salesforce object you want to generate a trigger for. If you don't specify --event, "before insert" is used.
-
-ALIASES
-  $ sf force apex trigger create
-
-EXAMPLES
-  Generate two files associated with the MyTrigger Apex trigger (MyTrigger.trigger and MyTrigger.trigger-meta.xml) in
-  the current directory:
-
-    $ sf apex generate trigger --name MyTrigger
-
-  Similar to the previous example, but generate the files in the "force-app/main/default/triggers" directory:
-
-    $ sf apex generate trigger --name MyTrigger --output-dir force-app/main/default/triggers
-
-  Generate files for a trigger that fires on the Account object before and after an insert:
-
-    $ sf apex generate trigger --name MyTrigger --sobject Account --event "before insert,after insert"
-
-FLAG DESCRIPTIONS
-  -d, --output-dir=<value>  Directory for saving the created files.
-
-    The location can be an absolute path or relative to the current working directory. The default is the current
-    directory.
-
-  -n, --name=<value>  Name of the generated Apex trigger
-
-    The name can be up to 40 characters and must start with a letter.
-
-  -t, --template=ApexTrigger  Template to use for file creation.
-
-    Supplied parameter values or default values are filled into a copy of the template.
-```
-
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.4.7/src/commands/apex/generate/trigger.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.55/src/commands/alias/unset.ts)_
 
 ## `sf apex get log`
 
@@ -1461,7 +1499,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.5/src/commands/apex/get/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.6/src/commands/apex/get/log.ts)_
 
 ## `sf apex get test`
 
@@ -1521,7 +1559,7 @@ EXAMPLES
       me@myorg'
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.5/src/commands/apex/get/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.6/src/commands/apex/get/test.ts)_
 
 ## `sf apex list log`
 
@@ -1561,7 +1599,7 @@ EXAMPLES
     $ sf apex list log --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.5/src/commands/apex/list/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.6/src/commands/apex/list/log.ts)_
 
 ## `sf apex run`
 
@@ -1608,7 +1646,7 @@ EXAMPLES
     $ sf apex run
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.5/src/commands/apex/run.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.6/src/commands/apex/run.ts)_
 
 ## `sf apex run test`
 
@@ -1755,7 +1793,7 @@ FLAG DESCRIPTIONS
     --tests Test1 --tests Test2
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.5/src/commands/apex/run/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.6/src/commands/apex/run/test.ts)_
 
 ## `sf apex tail log`
 
@@ -1798,7 +1836,7 @@ EXAMPLES
     $ sf apex tail log --color --skip-trace-flag
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.5/src/commands/apex/tail/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.6/src/commands/apex/tail/log.ts)_
 
 ## `sf api request graphql`
 
@@ -1851,7 +1889,7 @@ EXAMPLES
     $ sf api request graphql --body example.txt --stream-to-file output.txt --include
 ```
 
-_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.8/src/commands/api/request/graphql.ts)_
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.9/src/commands/api/request/graphql.ts)_
 
 ## `sf api request rest [URL]`
 
@@ -1960,7 +1998,7 @@ FLAG DESCRIPTIONS
     https://github.com/salesforcecli/plugin-api/tree/main/test/test-files/data-project.
 ```
 
-_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.8/src/commands/api/request/rest.ts)_
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.9/src/commands/api/request/rest.ts)_
 
 ## `sf autocomplete [SHELL]`
 
@@ -2069,7 +2107,7 @@ CONFIGURATION VARIABLES
   org-capitalize-record-types    Whether record types are capitalized on scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.54/src/commands/config/get.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.55/src/commands/config/get.ts)_
 
 ## `sf config list`
 
@@ -2109,7 +2147,7 @@ EXAMPLES
     $ sf config list
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.54/src/commands/config/list.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.55/src/commands/config/list.ts)_
 
 ## `sf config set`
 
@@ -2178,7 +2216,7 @@ CONFIGURATION VARIABLES
   org-capitalize-record-types    Whether record types are capitalized on scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.54/src/commands/config/set.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.55/src/commands/config/set.ts)_
 
 ## `sf config unset`
 
@@ -2228,7 +2266,7 @@ CONFIGURATION VARIABLES
   org-capitalize-record-types    Whether record types are capitalized on scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.54/src/commands/config/unset.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.55/src/commands/config/unset.ts)_
 
 ## `sf data bulk results`
 
@@ -2273,7 +2311,7 @@ EXAMPLES
     $ sf data bulk results --job-id 7507i000fake341G --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/bulk/results.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/bulk/results.ts)_
 
 ## `sf data create file`
 
@@ -2322,7 +2360,7 @@ EXAMPLES
     $ sf data create file --file path/to/astro.png --parent-id a03fakeLoJWPIA3
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/create/file.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/create/file.ts)_
 
 ## `sf data create record`
 
@@ -2378,7 +2416,7 @@ EXAMPLES
       TracedEntityId=01p17000000R6bLAAS"
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/create/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/create/record.ts)_
 
 ## `sf data delete bulk`
 
@@ -2437,7 +2475,7 @@ FLAG DESCRIPTIONS
     and can be enabled only by a system administrator.
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/delete/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/delete/bulk.ts)_
 
 ## `sf data delete record`
 
@@ -2498,7 +2536,7 @@ EXAMPLES
     $ sf data delete record --use-tooling-api --sobject TraceFlag --record-id 7tf8c
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/delete/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/delete/record.ts)_
 
 ## `sf data delete resume`
 
@@ -2537,7 +2575,7 @@ EXAMPLES
     $ sf data delete resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/delete/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/delete/resume.ts)_
 
 ## `sf data export bulk`
 
@@ -2604,7 +2642,7 @@ EXAMPLES
       --result-format json --wait 10 --all-rows
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/export/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/export/bulk.ts)_
 
 ## `sf data export resume`
 
@@ -2643,7 +2681,7 @@ EXAMPLES
     $ sf data export resume --use-most-recent
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/export/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/export/resume.ts)_
 
 ## `sf data export tree`
 
@@ -2703,7 +2741,7 @@ EXAMPLES
       my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/export/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/export/tree.ts)_
 
 ## `sf data get record`
 
@@ -2767,7 +2805,7 @@ EXAMPLES
     $ sf data get record --use-tooling-api --sobject TraceFlag --record-id 7tf8c
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/get/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/get/record.ts)_
 
 ## `sf data import bulk`
 
@@ -2819,7 +2857,7 @@ EXAMPLES
     $ sf data import bulk --file accounts.csv --sobject Account --wait 10 --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/import/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/import/bulk.ts)_
 
 ## `sf data import resume`
 
@@ -2855,7 +2893,7 @@ EXAMPLES
     $ sf data import resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/import/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/import/resume.ts)_
 
 ## `sf data import tree`
 
@@ -2919,7 +2957,7 @@ FLAG DESCRIPTIONS
     - files(array) - Files: An array of files paths to load
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/import/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/import/tree.ts)_
 
 ## `sf data query`
 
@@ -2972,7 +3010,7 @@ EXAMPLES
     $ sf data query --query "SELECT Name FROM ApexTrigger" --use-tooling-api
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/query.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/query.ts)_
 
 ## `sf data resume`
 
@@ -3009,7 +3047,7 @@ EXAMPLES
     $ sf data resume --job-id 750xx000000005sAAA --batch-id 751xx000000005nAAA
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/resume.ts)_
 
 ## `sf data search`
 
@@ -3059,7 +3097,7 @@ EXAMPLES
     $ sf data search --file query.txt --target-org my-scratch --result-format csv
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/search.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/search.ts)_
 
 ## `sf data update bulk`
 
@@ -3114,7 +3152,7 @@ EXAMPLES
     $ sf data update bulk --file accounts.csv --sobject Account --wait 10 --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/update/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/update/bulk.ts)_
 
 ## `sf data update record`
 
@@ -3176,7 +3214,7 @@ EXAMPLES
       "ExpirationDate=2017-12-01T00:58:04.000+0000"
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/update/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/update/record.ts)_
 
 ## `sf data update resume`
 
@@ -3215,7 +3253,7 @@ EXAMPLES
     $ sf data update resume --use-most-recent
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/update/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/update/resume.ts)_
 
 ## `sf data upsert bulk`
 
@@ -3271,7 +3309,7 @@ EXAMPLES
       my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/upsert/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/upsert/bulk.ts)_
 
 ## `sf data upsert resume`
 
@@ -3310,7 +3348,7 @@ EXAMPLES
     $ sf data upsert resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/data/upsert/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/data/upsert/resume.ts)_
 
 ## `sf doctor`
 
@@ -3358,7 +3396,7 @@ EXAMPLES
     $ sf doctor --plugin @salesforce/plugin-source
 ```
 
-_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.4.100/src/commands/doctor.ts)_
+_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.4.101/src/commands/doctor.ts)_
 
 ## `sf force data bulk delete`
 
@@ -3405,7 +3443,7 @@ EXAMPLES
     $ sf force data bulk delete --sobject MyObject__c --file files/delete.csv --wait 5 --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/force/data/bulk/delete.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/force/data/bulk/delete.ts)_
 
 ## `sf force data bulk status`
 
@@ -3442,7 +3480,7 @@ EXAMPLES
     $ sf force data bulk status --job-id 750xx000000005sAAA --batch-id 751xx000000005nAAA --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/force/data/bulk/status.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/force/data/bulk/status.ts)_
 
 ## `sf force data bulk upsert`
 
@@ -3500,7 +3538,7 @@ EXAMPLES
       --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.67/src/commands/force/data/bulk/upsert.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/4.0.68/src/commands/force/data/bulk/upsert.ts)_
 
 ## `sf help [COMMAND]`
 
@@ -3560,296 +3598,7 @@ EXAMPLES
     $ sf info releasenotes display --version latest
 ```
 
-_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.4.100/src/commands/info/releasenotes/display.ts)_
-
-## `sf lightning generate app`
-
-Generate a Lightning App.
-
-```
-USAGE
-  $ sf lightning generate app -n <value> [--json] [--flags-dir <value>] [-t DefaultLightningApp] [-d <value>] [--api-version
-    <value>]
-
-FLAGS
-  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
-  -n, --name=<value>         (required) Name of the generated Lightning App.
-  -t, --template=<option>    [default: DefaultLightningApp] Template to use for file creation.
-                             <options: DefaultLightningApp>
-      --api-version=<value>  Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-DESCRIPTION
-  Generate a Lightning App.
-
-  Generates a Lightning App bundle in the specified directory or the current working directory. The bundle consists of
-  multiple files in a folder with the designated name.
-
-ALIASES
-  $ sf force lightning app create
-
-EXAMPLES
-  Generate the metadata files for a Lightning app bundle called "myapp" in the current directory:
-
-    $ sf lightning generate app --name myapp
-
-  Similar to the previous example, but generate the files in the "force-app/main/default/aura" directory:
-
-    $ sf lightning generate app --name myapp --output-dir force-app/main/default/aura
-
-FLAG DESCRIPTIONS
-  -d, --output-dir=<value>  Directory for saving the created files.
-
-    The location can be an absolute path or relative to the current working directory. The default is the current
-    directory.
-
-  -n, --name=<value>  Name of the generated Lightning App.
-
-    The name can be up to 40 characters and must start with a letter.
-
-  -t, --template=DefaultLightningApp  Template to use for file creation.
-
-    Supplied parameter values or default values are filled into a copy of the template.
-```
-
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.4.7/src/commands/lightning/generate/app.ts)_
-
-## `sf lightning generate component`
-
-Generate a bundle for an Aura component or a Lightning web component.
-
-```
-USAGE
-  $ sf lightning generate component -n <value> [--json] [--flags-dir <value>] [-t
-    default|analyticsDashboard|analyticsDashboardWithStep] [-d <value>] [--api-version <value>] [--type aura|lwc]
-
-FLAGS
-  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
-  -n, --name=<value>         (required) Name of the generated Lightning Component.
-  -t, --template=<option>    [default: default] Template to use for file creation.
-                             <options: default|analyticsDashboard|analyticsDashboardWithStep>
-      --api-version=<value>  Override the api version used for api requests made by this command
-      --type=<option>        [default: aura] Type of the component bundle.
-                             <options: aura|lwc>
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-DESCRIPTION
-  Generate a bundle for an Aura component or a Lightning web component.
-
-  Generates the bundle in the specified directory or the current working directory. The bundle consists of multiple
-  files in a directory with the designated name. Lightning web components are contained in the directory with name
-  "lwc", Aura components in "aura".
-
-  To generate a Lightning web component, pass "--type lwc" to the command. If you don’t specify --type, Salesforce CLI
-  generates an Aura component by default.
-
-ALIASES
-  $ sf force lightning component create
-
-EXAMPLES
-  Generate the metadata files for an Aura component bundle in the current directory:
-
-    $ sf lightning generate component --name mycomponent
-
-  Generate a Lightning web component bundle in the current directory:
-
-    $ sf lightning generate component --name mycomponent --type lwc
-
-  Generate an Aura component bundle in the "force-app/main/default/aura" directory:
-
-    $ sf lightning generate component --name mycomponent --output-dir force-app/main/default/aura
-
-  Generate a Lightning web component bundle in the "force-app/main/default/lwc" directory:
-
-    $ sf lightning generate component --name mycomponent --type lwc --output-dir force-app/main/default/lwc
-
-FLAG DESCRIPTIONS
-  -d, --output-dir=<value>  Directory for saving the created files.
-
-    The location can be an absolute path or relative to the current working directory. The default is the current
-    directory.
-
-  -n, --name=<value>  Name of the generated Lightning Component.
-
-    The name can be up to 40 characters and must start with a letter.
-
-  -t, --template=default|analyticsDashboard|analyticsDashboardWithStep  Template to use for file creation.
-
-    Supplied parameter values or default values are filled into a copy of the template.
-```
-
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.4.7/src/commands/lightning/generate/component.ts)_
-
-## `sf lightning generate event`
-
-Generate a Lightning Event.
-
-```
-USAGE
-  $ sf lightning generate event -n <value> [--json] [--flags-dir <value>] [-t DefaultLightningEvt] [-d <value>] [--api-version
-    <value>]
-
-FLAGS
-  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
-  -n, --name=<value>         (required) Name of the generated Lightning Event.
-  -t, --template=<option>    [default: DefaultLightningEvt] Template to use for file creation.
-                             <options: DefaultLightningEvt>
-      --api-version=<value>  Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-DESCRIPTION
-  Generate a Lightning Event.
-
-  Generates a Lightning Event bundle in the specified directory or the current working directory. The bundle consists of
-  multiple files in a folder with the designated name.
-
-ALIASES
-  $ sf force lightning event create
-
-EXAMPLES
-  Generate the metadata files for a Lightning event bundle called "myevent" in the current directory:
-
-    $ sf lightning generate event --name myevent
-
-  Similar to previous example, but generate the files in the "force-app/main/default/aura" directory:
-
-    $ sf lightning generate event --name myevent --output-dir force-app/main/default/aura
-
-FLAG DESCRIPTIONS
-  -d, --output-dir=<value>  Directory for saving the created files.
-
-    The location can be an absolute path or relative to the current working directory. The default is the current
-    directory.
-
-  -n, --name=<value>  Name of the generated Lightning Event.
-
-    The name can be up to 40 characters and must start with a letter.
-
-  -t, --template=DefaultLightningEvt  Template to use for file creation.
-
-    Supplied parameter values or default values are filled into a copy of the template.
-```
-
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.4.7/src/commands/lightning/generate/event.ts)_
-
-## `sf lightning generate interface`
-
-Generate a Lightning Interface.
-
-```
-USAGE
-  $ sf lightning generate interface -n <value> [--json] [--flags-dir <value>] [-t DefaultLightningIntf] [-d <value>]
-    [--api-version <value>]
-
-FLAGS
-  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
-  -n, --name=<value>         (required) Name of the generated Lightning Interface.
-  -t, --template=<option>    [default: DefaultLightningIntf] Template to use for file creation.
-                             <options: DefaultLightningIntf>
-      --api-version=<value>  Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-DESCRIPTION
-  Generate a Lightning Interface.
-
-  Generates a Lightning Interface bundle in the specified directory or the current working directory. The bundle
-  consists of multiple files in a folder with the designated name.
-
-ALIASES
-  $ sf force lightning interface create
-
-EXAMPLES
-  Generate the metadata files for a Lightning interface bundle called "myinterface" in the current directory:
-
-    $ sf lightning generate interface --name myinterface
-
-  Similar to the previous example but generate the files in the "force-app/main/default/aura" directory:
-
-    $ sf lightning generate interface --name myinterface --output-dir force-app/main/default/aura
-
-FLAG DESCRIPTIONS
-  -d, --output-dir=<value>  Directory for saving the created files.
-
-    The location can be an absolute path or relative to the current working directory. The default is the current
-    directory.
-
-  -n, --name=<value>  Name of the generated Lightning Interface.
-
-    The name can be up to 40 characters and must start with a letter.
-
-  -t, --template=DefaultLightningIntf  Template to use for file creation.
-
-    Supplied parameter values or default values are filled into a copy of the template.
-```
-
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.4.7/src/commands/lightning/generate/interface.ts)_
-
-## `sf lightning generate test`
-
-Generate a Lightning test.
-
-```
-USAGE
-  $ sf lightning generate test -n <value> [--json] [--flags-dir <value>] [-t DefaultLightningTest] [-d <value>]
-    [--api-version <value>]
-
-FLAGS
-  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
-  -n, --name=<value>         (required) Name of the generated Lightning Test.
-  -t, --template=<option>    [default: DefaultLightningTest] Template to use for file creation.
-                             <options: DefaultLightningTest>
-      --api-version=<value>  Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-DESCRIPTION
-  Generate a Lightning test.
-
-  Generates the test in the specified directory or the current working directory. The .resource file and associated
-  metadata file are generated.
-
-ALIASES
-  $ sf force lightning test create
-
-EXAMPLES
-  Generate the metadata files for the Lightning test called MyLightningTest in the current directory:
-
-    $ sf lightning generate test --name MyLightningTest
-
-  Similar to the previous example but generate the files in the "force-app/main/default/lightningTests" directory:
-
-    $ sf lightning generate test --name MyLightningTest --output-dir force-app/main/default/lightningTests
-
-FLAG DESCRIPTIONS
-  -d, --output-dir=<value>  Directory for saving the created files.
-
-    The location can be an absolute path or relative to the current working directory. The default is the current
-    directory.
-
-  -n, --name=<value>  Name of the generated Lightning Test.
-
-    Name of the new Lightning test; can be up to 40 characters and must start with a letter.
-
-  -t, --template=DefaultLightningTest  Template to use for file creation.
-
-    Supplied parameter values or default values are filled into a copy of the template.
-```
-
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.4.7/src/commands/lightning/generate/test.ts)_
+_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/3.4.101/src/commands/info/releasenotes/display.ts)_
 
 ## `sf logic get test`
 
@@ -3897,7 +3646,7 @@ EXAMPLES
     $ sf logic get test --test-run-id <test run id> --result-format junit --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.5/src/commands/logic/get/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.6/src/commands/logic/get/test.ts)_
 
 ## `sf logic run test`
 
@@ -4019,7 +3768,7 @@ FLAG DESCRIPTIONS
     --tests Test1 --tests Test2
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.5/src/commands/logic/run/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/3.9.6/src/commands/logic/run/test.ts)_
 
 ## `sf org assign permset`
 
@@ -4065,7 +3814,7 @@ EXAMPLES
     $ sf org assign permset --name DreamHouse --on-behalf-of user1@my.org --on-behalf-of user2 --on-behalf-of user
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.48/src/commands/org/assign/permset.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.49/src/commands/org/assign/permset.ts)_
 
 ## `sf org assign permsetlicense`
 
@@ -4112,7 +3861,7 @@ EXAMPLES
       user3
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.48/src/commands/org/assign/permsetlicense.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.49/src/commands/org/assign/permsetlicense.ts)_
 
 ## `sf org create sandbox`
 
@@ -4246,7 +3995,7 @@ FLAG DESCRIPTIONS
     You can specify either --source-sandbox-name or --source-id when cloning an existing sandbox, but not both.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.64/src/commands/org/create/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.66/src/commands/org/create/sandbox.ts)_
 
 ## `sf org create scratch`
 
@@ -4428,7 +4177,7 @@ FLAG DESCRIPTIONS
     Omit this flag to have Salesforce generate a unique username for your org.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.64/src/commands/org/create/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.66/src/commands/org/create/scratch.ts)_
 
 ## `sf org create user`
 
@@ -4536,7 +4285,7 @@ FLAG DESCRIPTIONS
     might be different than what you specify in the definition file.
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.48/src/commands/org/create/user.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.49/src/commands/org/create/user.ts)_
 
 ## `sf org delete sandbox`
 
@@ -4582,7 +4331,7 @@ EXAMPLES
     $ sf org delete sandbox --target-org my-sandbox --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.64/src/commands/org/delete/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.66/src/commands/org/delete/sandbox.ts)_
 
 ## `sf org delete scratch`
 
@@ -4626,7 +4375,7 @@ EXAMPLES
     $ sf org delete scratch --target-org my-scratch-org --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.64/src/commands/org/delete/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.66/src/commands/org/delete/scratch.ts)_
 
 ## `sf org disable tracking`
 
@@ -4665,7 +4414,7 @@ EXAMPLES
     $ sf org disable tracking
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.64/src/commands/org/disable/tracking.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.66/src/commands/org/disable/tracking.ts)_
 
 ## `sf org display`
 
@@ -4710,7 +4459,7 @@ EXAMPLES
     $ sf org display --target-org TestOrg1 --verbose
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.64/src/commands/org/display.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.66/src/commands/org/display.ts)_
 
 ## `sf org display user`
 
@@ -4749,7 +4498,7 @@ EXAMPLES
     $ sf org display user --target-org me@my.org --json
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.48/src/commands/org/display/user.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.49/src/commands/org/display/user.ts)_
 
 ## `sf org enable tracking`
 
@@ -4791,7 +4540,7 @@ EXAMPLES
     $ sf org enable tracking
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.64/src/commands/org/enable/tracking.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.66/src/commands/org/enable/tracking.ts)_
 
 ## `sf org generate password`
 
@@ -4858,7 +4607,7 @@ EXAMPLES
     $ sf org generate password --on-behalf-of user1@my.org --on-behalf-of user2@my.org --on-behalf-of user3@my.org
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.48/src/commands/org/generate/password.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.49/src/commands/org/generate/password.ts)_
 
 ## `sf org list`
 
@@ -4897,7 +4646,7 @@ EXAMPLES
     $ sf org list --clean
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.64/src/commands/org/list.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.66/src/commands/org/list.ts)_
 
 ## `sf org list auth`
 
@@ -4929,7 +4678,7 @@ EXAMPLES
     $ sf org list auth
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/4.1.4/src/commands/org/list/auth.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/4.1.5/src/commands/org/list/auth.ts)_
 
 ## `sf org list limits`
 
@@ -4969,7 +4718,7 @@ EXAMPLES
     $ sf org list limits --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.3.74/src/commands/org/list/limits.ts)_
+_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.3.75/src/commands/org/list/limits.ts)_
 
 ## `sf org list metadata`
 
@@ -5036,7 +4785,7 @@ FLAG DESCRIPTIONS
     Examples of metadata types that use folders are Dashboard, Document, EmailTemplate, and Report.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.64/src/commands/org/list/metadata.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.66/src/commands/org/list/metadata.ts)_
 
 ## `sf org list metadata-types`
 
@@ -5091,7 +4840,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.64/src/commands/org/list/metadata-types.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.66/src/commands/org/list/metadata-types.ts)_
 
 ## `sf org list sobject record-counts`
 
@@ -5137,7 +4886,7 @@ EXAMPLES
     $ sf org list sobject record-counts --sobject Account --sobject Lead --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.3.74/src/commands/org/list/sobject/record-counts.ts)_
+_See code: [@salesforce/plugin-limits](https://github.com/salesforcecli/plugin-limits/blob/3.3.75/src/commands/org/list/sobject/record-counts.ts)_
 
 ## `sf org list users`
 
@@ -5175,7 +4924,7 @@ EXAMPLES
     $ sf org list users --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.48/src/commands/org/list/users.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/3.6.49/src/commands/org/list/users.ts)_
 
 ## `sf org login access-token`
 
@@ -5229,7 +4978,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/4.1.4/src/commands/org/login/access-token.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/4.1.5/src/commands/org/login/access-token.ts)_
 
 ## `sf org login jwt`
 
@@ -5320,7 +5069,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/4.1.4/src/commands/org/login/jwt.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/4.1.5/src/commands/org/login/jwt.ts)_
 
 ## `sf org login sfdx-url`
 
@@ -5390,7 +5139,7 @@ EXAMPLES
   $ echo url | sf org login sfdx-url --sfdx-url-stdin
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/4.1.4/src/commands/org/login/sfdx-url.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/4.1.5/src/commands/org/login/sfdx-url.ts)_
 
 ## `sf org login web`
 
@@ -5495,7 +5244,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/4.1.4/src/commands/org/login/web.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/4.1.5/src/commands/org/login/web.ts)_
 
 ## `sf org logout`
 
@@ -5561,7 +5310,7 @@ FLAG DESCRIPTIONS
     All orgs includes Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/4.1.4/src/commands/org/logout.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/4.1.5/src/commands/org/logout.ts)_
 
 ## `sf org open`
 
@@ -5637,7 +5386,7 @@ EXAMPLES
     $ sf org open --source-file force-app/main/default/bots/Coral_Cloud_Agent/Coral_Cloud_Agent.bot-meta.xml
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.64/src/commands/org/open.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.66/src/commands/org/open.ts)_
 
 ## `sf org open agent`
 
@@ -5688,7 +5437,7 @@ EXAMPLES
     $ sf org open agent --target-org MyTestOrg1 --browser firefox --api-name Coral_Cloud_Agent
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.64/src/commands/org/open/agent.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.66/src/commands/org/open/agent.ts)_
 
 ## `sf org open authoring-bundle`
 
@@ -5734,7 +5483,7 @@ EXAMPLES
     $ sf org open authoring-bundle --target-org MyTestOrg1 --browser firefox
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.64/src/commands/org/open/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.66/src/commands/org/open/authoring-bundle.ts)_
 
 ## `sf org refresh sandbox`
 
@@ -5837,7 +5586,7 @@ FLAG DESCRIPTIONS
     You can specify either --source-sandbox-name or --source-id when refreshing an existing sandbox, but not both.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.64/src/commands/org/refresh/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.66/src/commands/org/refresh/sandbox.ts)_
 
 ## `sf org resume sandbox`
 
@@ -5900,7 +5649,7 @@ FLAG DESCRIPTIONS
     returns the job ID. To resume checking the sandbox creation, rerun this command.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.64/src/commands/org/resume/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.66/src/commands/org/resume/sandbox.ts)_
 
 ## `sf org resume scratch`
 
@@ -5953,7 +5702,7 @@ FLAG DESCRIPTIONS
     returns the job ID. To resume checking the scratch creation, rerun this command.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.64/src/commands/org/resume/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/5.9.66/src/commands/org/resume/scratch.ts)_
 
 ## `sf package convert`
 
@@ -6050,7 +5799,7 @@ FLAG DESCRIPTIONS
     --installation-key-bypass flag is required.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/convert.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/convert.ts)_
 
 ## `sf package create`
 
@@ -6129,7 +5878,7 @@ FLAG DESCRIPTIONS
     Org-Dependent Unlocked Packages" in the Salesforce DX Developer Guide.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/create.ts)_
 
 ## `sf package delete`
 
@@ -6171,7 +5920,7 @@ EXAMPLES
     $ sf package delete --package 0Ho... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/delete.ts)_
 
 ## `sf package install`
 
@@ -6270,7 +6019,7 @@ FLAG DESCRIPTIONS
     - Delete: Delete removed components, except for custom objects and custom fields, that don't have dependencies.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/install.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/install.ts)_
 
 ## `sf package install report`
 
@@ -6303,7 +6052,7 @@ EXAMPLES
     $ sf package install report --request-id 0Hf... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/install/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/install/report.ts)_
 
 ## `sf package installed list`
 
@@ -6335,7 +6084,7 @@ EXAMPLES
     $ sf package installed list --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/installed/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/installed/list.ts)_
 
 ## `sf package list`
 
@@ -6373,7 +6122,7 @@ EXAMPLES
     $ sf package list --target-dev-hub devhub@example.com --verbose
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/list.ts)_
 
 ## `sf package push-upgrade abort`
 
@@ -6412,7 +6161,7 @@ EXAMPLES
     $ sf package push-upgrade abort --push-request-id 0DV... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/push-upgrade/abort.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/push-upgrade/abort.ts)_
 
 ## `sf package push-upgrade list`
 
@@ -6471,7 +6220,7 @@ EXAMPLES
     $ sf package push-upgrade list --package 033xyz –-status Failed
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/push-upgrade/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/push-upgrade/list.ts)_
 
 ## `sf package push-upgrade report`
 
@@ -6513,7 +6262,7 @@ EXAMPLES
     $ sf package push-upgrade report --push-request-id 0DV... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/push-upgrade/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/push-upgrade/report.ts)_
 
 ## `sf package push-upgrade schedule`
 
@@ -6600,7 +6349,7 @@ FLAG DESCRIPTIONS
     Overrides the value of the target-dev-hub configuration variable, if set.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/push-upgrade/schedule.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/push-upgrade/schedule.ts)_
 
 ## `sf package uninstall`
 
@@ -6648,7 +6397,7 @@ EXAMPLES
     $ sf package uninstall --package "Undesirable Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/uninstall.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/uninstall.ts)_
 
 ## `sf package uninstall report`
 
@@ -6681,7 +6430,7 @@ EXAMPLES
     $ sf package uninstall report --request-id 06y... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/uninstall/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/uninstall/report.ts)_
 
 ## `sf package update`
 
@@ -6749,7 +6498,7 @@ FLAG DESCRIPTIONS
     the Installed Packages page. Only released package versions can be set as the recommended version.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/update.ts)_
 
 ## `sf package version create`
 
@@ -6759,9 +6508,9 @@ Create a package version in the Dev Hub org.
 USAGE
   $ sf package version create -v <value> [--json] [--flags-dir <value>] [--api-version <value>] [-b <value>] [-c |
     --skip-validation] [-f <value>] [-k <value>] [-x] [-p <value>] [-d <value>] [--post-install-script <value>]
-    [--post-install-url <value>] [--releasenotes-url <value>] [--skip-ancestor-check] [--async-validation | ] [-t
-    <value>] [--uninstall-script <value>] [-e <value>] [-a <value>] [-n <value>] [-w <value>] [--language <value>]
-    [--verbose]
+    [--post-install-url <value>] [--releasenotes-url <value>] [--skip-ancestor-check] [--async-validation | ]
+    [--generate-pkg-zip] [-t <value>] [--uninstall-script <value>] [-e <value>] [-a <value>] [-n <value>] [-w <value>]
+    [--language <value>] [--verbose]
 
 FLAGS
   -a, --version-name=<value>         Name of the package version to be created; overrides the sfdx-project.json value.
@@ -6788,12 +6537,14 @@ FLAGS
                                      --installation-key-bypass is required)
       --api-version=<value>          Override the api version used for api requests made by this command
       --async-validation             Return a new package version before completing package validations.
+      --generate-pkg-zip             Generate a package ZIP file that you can use for debugging or to examine the
+                                     package contents.
       --language=<value>             Language for the package.
       --post-install-script=<value>  Name of the post-install script; applies to managed packages only.
       --post-install-url=<value>     Post-install instructions URL.
       --releasenotes-url=<value>     Release notes URL.
-      --skip-ancestor-check          Overrides ancestry requirements, which allows you to specify a package ancestor
-                                     that isn’t the highest released package version.
+      --skip-ancestor-check          Override ancestry requirements, which allows you to specify a package ancestor that
+                                     isn’t the highest released package version.
       --skip-validation              Skip validation during package version creation; you can’t promote unvalidated
                                      package versions.
       --uninstall-script=<value>     Uninstall script name; applies to managed packages only.
@@ -6924,7 +6675,7 @@ FLAG DESCRIPTIONS
     periods of no output from commands.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/version/create.ts)_
 
 ## `sf package version create list`
 
@@ -6985,7 +6736,7 @@ EXAMPLES
     $ sf package version create list --created-last-days 0 --status Success
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/version/create/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/version/create/list.ts)_
 
 ## `sf package version create report`
 
@@ -7028,7 +6779,7 @@ EXAMPLES
     $ sf package version create report --package-create-request-id 08c... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/version/create/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/version/create/report.ts)_
 
 ## `sf package version delete`
 
@@ -7069,7 +6820,7 @@ EXAMPLES
     $ sf package version delete --package 04t... --target-org devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/version/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/version/delete.ts)_
 
 ## `sf package version displayancestry`
 
@@ -7129,7 +6880,7 @@ FLAG DESCRIPTIONS
     You can use the DOT code output in graph visualization software to create tree visualizations.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/version/displayancestry.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/version/displayancestry.ts)_
 
 ## `sf package version displaydependencies`
 
@@ -7191,7 +6942,7 @@ FLAG DESCRIPTIONS
     package, which must be installed last.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/version/displaydependencies.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/version/displaydependencies.ts)_
 
 ## `sf package version list`
 
@@ -7267,7 +7018,7 @@ EXAMPLES
     $ sf package version list --packages exp-mgr,exp-mgr-util --released --modified-last-days 0
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/version/list.ts)_
 
 ## `sf package version promote`
 
@@ -7311,7 +7062,7 @@ EXAMPLES
     $ sf package version promote --package "Awesome Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/version/promote.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/version/promote.ts)_
 
 ## `sf package version report`
 
@@ -7351,7 +7102,7 @@ EXAMPLES
     $ sf package version report --package "Your Package Alias" --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/version/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/version/report.ts)_
 
 ## `sf package version retrieve`
 
@@ -7396,7 +7147,7 @@ EXAMPLES
     $ sf package version retrieve --package 04tXXX --output-dir my-directory/ --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/version/retrieve.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/version/retrieve.ts)_
 
 ## `sf package version update`
 
@@ -7449,7 +7200,7 @@ EXAMPLES
     $ sf package version update --package 04t... --version-description "New Package Version Description"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package/version/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package/version/update.ts)_
 
 ## `sf package1 version create`
 
@@ -7516,7 +7267,7 @@ FLAG DESCRIPTIONS
     subscribers.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package1/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package1/version/create.ts)_
 
 ## `sf package1 version create get`
 
@@ -7549,7 +7300,7 @@ EXAMPLES
     $ sf package1 version create get --request-id 0HD... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package1/version/create/get.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package1/version/create/get.ts)_
 
 ## `sf package1 version display`
 
@@ -7583,7 +7334,7 @@ EXAMPLES
     $ sf package1 version display --package-version-id 04t... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package1/version/display.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package1/version/display.ts)_
 
 ## `sf package1 version list`
 
@@ -7621,7 +7372,7 @@ FLAG DESCRIPTIONS
     If not specified, shows all versions for all packages (managed and unmanaged) in the org.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.24.11/src/commands/package1/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.25.1/src/commands/package1/version/list.ts)_
 
 ## `sf plugins`
 
@@ -7644,7 +7395,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.55/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.56/src/commands/plugins/index.ts)_
 
 ## `sf plugins discover`
 
@@ -7662,7 +7413,7 @@ EXAMPLES
   $ sf plugins discover
 ```
 
-_See code: [@salesforce/plugin-marketplace](https://github.com/salesforcecli/plugin-marketplace/blob/1.3.8/src/commands/plugins/discover.ts)_
+_See code: [@salesforce/plugin-marketplace](https://github.com/salesforcecli/plugin-marketplace/blob/1.3.10/src/commands/plugins/discover.ts)_
 
 ## `sf plugins:inspect PLUGIN...`
 
@@ -7689,7 +7440,7 @@ EXAMPLES
   $ sf plugins inspect @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.55/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.56/src/commands/plugins/inspect.ts)_
 
 ## `sf plugins install PLUGIN`
 
@@ -7738,7 +7489,7 @@ EXAMPLES
     $ sf plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.55/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.56/src/commands/plugins/install.ts)_
 
 ## `sf plugins link PATH`
 
@@ -7769,7 +7520,7 @@ EXAMPLES
   $ sf plugins link @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.55/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.56/src/commands/plugins/link.ts)_
 
 ## `sf plugins reset`
 
@@ -7784,7 +7535,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.55/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.56/src/commands/plugins/reset.ts)_
 
 ## `sf plugins trust verify`
 
@@ -7841,7 +7592,7 @@ EXAMPLES
   $ sf plugins uninstall @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.55/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.56/src/commands/plugins/uninstall.ts)_
 
 ## `sf plugins update`
 
@@ -7859,7 +7610,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.55/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.56/src/commands/plugins/update.ts)_
 
 ## `sf project convert mdapi`
 
@@ -7922,7 +7673,7 @@ FLAG DESCRIPTIONS
     If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.7/src/commands/project/convert/mdapi.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.8/src/commands/project/convert/mdapi.ts)_
 
 ## `sf project convert source`
 
@@ -7995,7 +7746,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.7/src/commands/project/convert/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.8/src/commands/project/convert/source.ts)_
 
 ## `sf project convert source-behavior`
 
@@ -8054,7 +7805,7 @@ EXAMPLES
     $ sf project convert source-behavior --behavior decomposePermissionSetBeta --dry-run --preserve-temp-dir
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.7/src/commands/project/convert/source-behavior.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.8/src/commands/project/convert/source-behavior.ts)_
 
 ## `sf project delete source`
 
@@ -8207,7 +7958,7 @@ FLAG DESCRIPTIONS
     - Separate the test names with spaces: --tests Test1 Test2 "Test With Space"
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.7/src/commands/project/delete/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.8/src/commands/project/delete/source.ts)_
 
 ## `sf project delete tracking`
 
@@ -8244,7 +7995,7 @@ EXAMPLES
     $ sf project delete tracking --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.7/src/commands/project/delete/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.8/src/commands/project/delete/tracking.ts)_
 
 ## `sf project deploy cancel`
 
@@ -8316,7 +8067,7 @@ FLAG DESCRIPTIONS
     project deploy report".
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.7/src/commands/project/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.8/src/commands/project/deploy/cancel.ts)_
 
 ## `sf project deploy preview`
 
@@ -8399,7 +8150,7 @@ FLAG DESCRIPTIONS
     All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.7/src/commands/project/deploy/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.8/src/commands/project/deploy/preview.ts)_
 
 ## `sf project deploy quick`
 
@@ -8492,7 +8243,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.7/src/commands/project/deploy/quick.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.8/src/commands/project/deploy/quick.ts)_
 
 ## `sf project deploy report`
 
@@ -8584,7 +8335,7 @@ FLAG DESCRIPTIONS
     --coverage-formatters lcov --coverage-formatters clover
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.7/src/commands/project/deploy/report.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.8/src/commands/project/deploy/report.ts)_
 
 ## `sf project deploy resume`
 
@@ -8681,7 +8432,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.7/src/commands/project/deploy/resume.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.8/src/commands/project/deploy/resume.ts)_
 
 ## `sf project deploy start`
 
@@ -8947,7 +8698,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.7/src/commands/project/deploy/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.8/src/commands/project/deploy/start.ts)_
 
 ## `sf project deploy validate`
 
@@ -9151,112 +8902,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.7/src/commands/project/deploy/validate.ts)_
-
-## `sf project generate`
-
-Generate a Salesforce DX project.
-
-```
-USAGE
-  $ sf project generate -n <value> [--json] [--flags-dir <value>] [-t standard|empty|analytics] [-d <value>] [-s
-    <value>] [-p <value>] [-x] [--api-version <value>]
-
-FLAGS
-  -d, --output-dir=<value>           [default: .] Directory for saving the created files.
-  -n, --name=<value>                 (required) Name of the generated project.
-  -p, --default-package-dir=<value>  [default: force-app] Default package directory name.
-  -s, --namespace=<value>            Namespace associated with this project and any connected scratch orgs.
-  -t, --template=<option>            [default: standard] Template to use for project creation.
-                                     <options: standard|empty|analytics>
-  -x, --manifest                     Generate a manifest (package.xml) for change-set based development.
-      --api-version=<value>          Will set this version as sourceApiVersion in the sfdx-project.json file
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-DESCRIPTION
-  Generate a Salesforce DX project.
-
-  A Salesforce DX project has a specific structure and a configuration file (sfdx-project.json) that identifies the
-  directory as a Salesforce DX project. This command generates the necessary configuration files and directories to get
-  you started.
-
-  By default, the generated sfdx-project.json file sets the sourceApiVersion property to the default API version
-  currently used by Salesforce CLI. To specify a different version, set the apiVersion configuration variable. For
-  example: "sf config set apiVersion=57.0 --global".
-
-ALIASES
-  $ sf force project create
-
-EXAMPLES
-  Generate a project called "mywork":
-
-    $ sf project generate --name mywork
-
-  Similar to previous example, but generate the files in a directory called "myapp":
-
-    $ sf project generate --name mywork --default-package-dir myapp
-
-  Similar to prevoius example, but also generate a default package.xml manifest file:
-
-    $ sf project generate --name mywork --default-package-dir myapp --manifest
-
-  Generate a project with the minimum files and directories:
-
-    $ sf project generate --name mywork --template empty
-
-FLAG DESCRIPTIONS
-  -d, --output-dir=<value>  Directory for saving the created files.
-
-    The location can be an absolute path or relative to the current working directory. The default is the current
-    directory.
-
-  -n, --name=<value>  Name of the generated project.
-
-    Generates a project directory with this name; any valid directory name is accepted. Also sets the "name" property in
-    the sfdx-project.json file to this name.
-
-  -p, --default-package-dir=<value>  Default package directory name.
-
-    Metadata items such as classes and Lightning bundles are placed inside this folder.
-
-  -t, --template=standard|empty|analytics  Template to use for project creation.
-
-    The template determines the sample configuration files and directories that this command generates. For example, the
-    empty template provides these files and directory to get you started.
-
-    - .forceignore
-    - config/project-scratch-def.json
-    - sfdx-project.json
-    - package.json
-    - force-app (basic source directory structure)
-
-    The standard template provides a complete force-app directory structure so you know where to put your source. It
-    also provides additional files and scripts, especially useful when using Salesforce Extensions for VS Code. For
-    example:
-
-    - .gitignore: Use Git for version control.
-    - .prettierrc and .prettierignore: Use Prettier to format your Aura components.
-    - .vscode/extensions.json: When launched, Visual Studio Code, prompts you to install the recommended extensions for
-    your project.
-    - .vscode/launch.json: Configures Replay Debugger.
-    - .vscode/settings.json: Additional configuration settings.
-
-    The analytics template provides similar files and the force-app/main/default/waveTemplates directory.
-
-  -x, --manifest  Generate a manifest (package.xml) for change-set based development.
-
-    Generates a default manifest (package.xml) for fetching Apex, Visualforce, Lightning components, and static
-    resources.
-
-  --api-version=<value>  Will set this version as sourceApiVersion in the sfdx-project.json file
-
-    Override the api version used for api requests made by this command
-```
-
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.4.7/src/commands/project/generate.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.8/src/commands/project/deploy/validate.ts)_
 
 ## `sf project generate manifest`
 
@@ -9352,7 +8998,7 @@ EXAMPLES
     $ sf project generate manifest --from-org test@myorg.com --excluded-metadata StandardValueSet
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.7/src/commands/project/generate/manifest.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.8/src/commands/project/generate/manifest.ts)_
 
 ## `sf project list ignored`
 
@@ -9394,7 +9040,7 @@ EXAMPLES
     $ sf project list ignored --source-dir package.xml
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.7/src/commands/project/list/ignored.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.8/src/commands/project/list/ignored.ts)_
 
 ## `sf project reset tracking`
 
@@ -9443,7 +9089,7 @@ EXAMPLES
     $ sf project reset tracking --revision 30
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.7/src/commands/project/reset/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.8/src/commands/project/reset/tracking.ts)_
 
 ## `sf project retrieve preview`
 
@@ -9497,7 +9143,7 @@ FLAG DESCRIPTIONS
     production orgs.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.7/src/commands/project/retrieve/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.8/src/commands/project/retrieve/preview.ts)_
 
 ## `sf project retrieve start`
 
@@ -9678,7 +9324,7 @@ ENVIRONMENT VARIABLES
   SF_USE_PROGRESS_BAR  Set to false to disable the progress bar when running the metadata deploy command.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.7/src/commands/project/retrieve/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.8/src/commands/project/retrieve/start.ts)_
 
 ## `sf schema generate field`
 
@@ -9885,7 +9531,7 @@ DESCRIPTION
   Once you select a command, hit enter and it will show the help for that command.
 ```
 
-_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/1.2.37/src/commands/search.ts)_
+_See code: [@oclif/plugin-search](https://github.com/oclif/plugin-search/blob/1.2.38/src/commands/search.ts)_
 
 ## `sf sobject describe`
 
@@ -9932,7 +9578,7 @@ EXAMPLES
     $ sf sobject describe --sobject ApexCodeCoverage --use-tooling-api
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.90/src/commands/sobject/describe.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.91/src/commands/sobject/describe.ts)_
 
 ## `sf sobject list`
 
@@ -9971,16 +9617,640 @@ EXAMPLES
     $ sf sobject list --sobject custom --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.90/src/commands/sobject/list.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/3.3.91/src/commands/sobject/list.ts)_
 
-## `sf static-resource generate`
+## `sf template generate analytics template`
+
+Generate a simple Analytics template.
+
+```
+USAGE
+  $ sf template generate analytics template -n <value> [--json] [--flags-dir <value>] [-d <value>] [--api-version
+  <value>]
+
+FLAGS
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -n, --name=<value>         (required) Name of the Analytics template.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Generate a simple Analytics template.
+
+  The metadata files associated with the Analytics template must be contained in a parent directory called
+  "waveTemplates" in your package directory. Either run this command from an existing directory of this name, or use the
+  --output-dir flag to generate one or point to an existing one.
+
+ALIASES
+  $ sf force analytics template create
+  $ sf analytics generate template
+
+EXAMPLES
+  Generate the metadata files for a simple Analytics template file called myTemplate in the
+  force-app/main/default/waveTemplates directory:
+
+    $ sf template generate analytics template --name myTemplate --output-dir force-app/main/default/waveTemplates
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory for saving the created files.
+
+    The location can be an absolute path or relative to the current working directory. The default is the current
+    directory.
+```
+
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.0/src/commands/template/generate/analytics/template.ts)_
+
+## `sf template generate apex class`
+
+Generate an Apex class.
+
+```
+USAGE
+  $ sf template generate apex class -n <value> [--json] [--flags-dir <value>] [-t
+    ApexException|ApexUnitTest|BasicUnitTest|DefaultApexClass|InboundEmailService] [-d <value>] [--api-version <value>]
+
+FLAGS
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -n, --name=<value>         (required) Name of the generated Apex class.
+  -t, --template=<option>    [default: DefaultApexClass] Template to use for file creation.
+                             <options: ApexException|ApexUnitTest|BasicUnitTest|DefaultApexClass|InboundEmailService>
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Generate an Apex class.
+
+  Generates the Apex *.cls file and associated metadata file. These files must be contained in a parent directory called
+  "classes" in your package directory. Either run this command from an existing directory of this name, or use the
+  --output-dir flag to generate one or point to an existing one.
+
+ALIASES
+  $ sf force apex class create
+  $ sf apex generate class
+
+EXAMPLES
+  Generate two metadata files associated with the MyClass Apex class (MyClass.cls and MyClass.cls-meta.xml) in the
+  current directory:
+
+    $ sf template generate apex class --name MyClass
+
+  Similar to previous example, but generates the files in the "force-app/main/default/classes" directory:
+
+    $ sf template generate apex class --name MyClass --output-dir force-app/main/default/classes
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory for saving the created files.
+
+    The location can be an absolute path or relative to the current working directory. The default is the current
+    directory.
+
+  -n, --name=<value>  Name of the generated Apex class.
+
+    The name can be up to 40 characters and must start with a letter.
+
+  -t, --template=ApexException|ApexUnitTest|BasicUnitTest|DefaultApexClass|InboundEmailService
+
+    Template to use for file creation.
+
+    Supplied parameter values or default values are filled into a copy of the template.
+```
+
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.0/src/commands/template/generate/apex/class.ts)_
+
+## `sf template generate apex trigger`
+
+Generate an Apex trigger.
+
+```
+USAGE
+  $ sf template generate apex trigger -n <value> [--json] [--flags-dir <value>] [-t ApexTrigger] [-d <value>] [--api-version
+    <value>] [-s <value>] [-e before insert|before update|before delete|after insert|after update|after delete|after
+    undelete...]
+
+FLAGS
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -e, --event=<option>...    [default: before insert] Events that fire the trigger.
+                             <options: before insert|before update|before delete|after insert|after update|after
+                             delete|after undelete>
+  -n, --name=<value>         (required) Name of the generated Apex trigger
+  -s, --sobject=<value>      [default: SOBJECT] Salesforce object to generate a trigger on.
+  -t, --template=<option>    [default: ApexTrigger] Template to use for file creation.
+                             <options: ApexTrigger>
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Generate an Apex trigger.
+
+  Generates the Apex trigger *.trigger file and associated metadata file. These files must be contained in a parent
+  directory called "triggers" in your package directory. Either run this command from an existing directory of this
+  name, or use the --output-dir flag to generate one or point to an existing one.
+
+  If you don't specify the --sobject flag, the .trigger file contains the generic placeholder SOBJECT; replace it with
+  the Salesforce object you want to generate a trigger for. If you don't specify --event, "before insert" is used.
+
+ALIASES
+  $ sf force apex trigger create
+  $ sf apex generate trigger
+
+EXAMPLES
+  Generate two files associated with the MyTrigger Apex trigger (MyTrigger.trigger and MyTrigger.trigger-meta.xml) in
+  the current directory:
+
+    $ sf template generate apex trigger --name MyTrigger
+
+  Similar to the previous example, but generate the files in the "force-app/main/default/triggers" directory:
+
+    $ sf template generate apex trigger --name MyTrigger --output-dir force-app/main/default/triggers
+
+  Generate files for a trigger that fires on the Account object before and after an insert:
+
+    $ sf template generate apex trigger --name MyTrigger --sobject Account --event "before insert,after insert"
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory for saving the created files.
+
+    The location can be an absolute path or relative to the current working directory. The default is the current
+    directory.
+
+  -n, --name=<value>  Name of the generated Apex trigger
+
+    The name can be up to 40 characters and must start with a letter.
+
+  -t, --template=ApexTrigger  Template to use for file creation.
+
+    Supplied parameter values or default values are filled into a copy of the template.
+```
+
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.0/src/commands/template/generate/apex/trigger.ts)_
+
+## `sf template generate digital-experience site`
+
+Generate an Experience Cloud site.
+
+```
+USAGE
+  $ sf template generate digital-experience site -n <value> -t BuildYourOwnLWR [--json] [--flags-dir <value>] [-o <value>] [-p <value>] [-e
+    <value>] [-d <value>]
+
+FLAGS
+  -d, --output-dir=<value>       Directory to generate the site files in.
+  -e, --admin-email=<value>      Email address for the site administrator. Defaults to the username of the currently
+                                 authenticated user.
+  -n, --name=<value>             (required) Name of the Experience Cloud site to generate.
+  -o, --target-org=<value>       Username or alias of the target org.
+  -p, --url-path-prefix=<value>  URL path prefix for the site; must contain only alphanumeric characters.
+  -t, --template=<option>        (required) Template to use when generating the site.
+                                 <options: BuildYourOwnLWR>
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Generate an Experience Cloud site.
+
+  Creates an Experience Cloud site with the specified template, name, and URL path prefix. The site includes all
+  necessary metadata files, including DigitalExperienceConfig, DigitalExperienceBundle, Network, and CustomSite.
+
+EXAMPLES
+  Generate an Experience Cloud site using the BuildYourOwnLWR template. The site is called "mysite" and has the URL
+  path prefix "mysite":
+
+    $ sf template generate digital-experience site --template BuildYourOwnLWR --name mysite --url-path-prefix mysite
+
+  Generate an Experience Cloud site like the last example, but generate the files into the specified output directory:
+
+    $ sf template generate digital-experience site --template BuildYourOwnLWR --name mysite --url-path-prefix mysite \
+      --output-dir force-app/main/default
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory to generate the site files in.
+
+    The location can be an absolute path or relative to the current working directory. If not specified, the command
+    reads your sfdx-project.json file and uses the default package directory. When running outside a Salesforce DX
+    project, defaults to the current directory.
+```
+
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.0/src/commands/template/generate/digital-experience/site.ts)_
+
+## `sf template generate lightning app`
+
+Generate a Lightning App.
+
+```
+USAGE
+  $ sf template generate lightning app -n <value> [--json] [--flags-dir <value>] [-t DefaultLightningApp] [-d <value>] [--api-version
+    <value>]
+
+FLAGS
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -n, --name=<value>         (required) Name of the generated Lightning App.
+  -t, --template=<option>    [default: DefaultLightningApp] Template to use for file creation.
+                             <options: DefaultLightningApp>
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Generate a Lightning App.
+
+  Generates a Lightning App bundle in the specified directory or the current working directory. The bundle consists of
+  multiple files in a folder with the designated name.
+
+ALIASES
+  $ sf force lightning app create
+  $ sf lightning generate app
+
+EXAMPLES
+  Generate the metadata files for a Lightning app bundle called "myapp" in the current directory:
+
+    $ sf template generate lightning app --name myapp
+
+  Similar to the previous example, but generate the files in the "force-app/main/default/aura" directory:
+
+    $ sf template generate lightning app --name myapp --output-dir force-app/main/default/aura
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory for saving the created files.
+
+    The location can be an absolute path or relative to the current working directory. The default is the current
+    directory.
+
+  -n, --name=<value>  Name of the generated Lightning App.
+
+    The name can be up to 40 characters and must start with a letter.
+
+  -t, --template=DefaultLightningApp  Template to use for file creation.
+
+    Supplied parameter values or default values are filled into a copy of the template.
+```
+
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.0/src/commands/template/generate/lightning/app.ts)_
+
+## `sf template generate lightning component`
+
+Generate a bundle for an Aura component or a Lightning web component.
+
+```
+USAGE
+  $ sf template generate lightning component -n <value> [--json] [--flags-dir <value>] [-t
+    default|analyticsDashboard|analyticsDashboardWithStep] [-d <value>] [--api-version <value>] [--type aura|lwc]
+
+FLAGS
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -n, --name=<value>         (required) Name of the generated Lightning Component.
+  -t, --template=<option>    [default: default] Template to use for file creation.
+                             <options: default|analyticsDashboard|analyticsDashboardWithStep>
+      --api-version=<value>  Override the api version used for api requests made by this command
+      --type=<option>        [default: aura] Type of the component bundle.
+                             <options: aura|lwc>
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Generate a bundle for an Aura component or a Lightning web component.
+
+  Generates the bundle in the specified directory or the current working directory. The bundle consists of multiple
+  files in a directory with the designated name. Lightning web components are contained in the directory with name
+  "lwc", Aura components in "aura".
+
+  To generate a Lightning web component, pass "--type lwc" to the command. If you don’t specify --type, Salesforce CLI
+  generates an Aura component by default.
+
+ALIASES
+  $ sf force lightning component create
+  $ sf lightning generate component
+
+EXAMPLES
+  Generate the metadata files for an Aura component bundle in the current directory:
+
+    $ sf template generate lightning component --name mycomponent
+
+  Generate a Lightning web component bundle in the current directory:
+
+    $ sf template generate lightning component --name mycomponent --type lwc
+
+  Generate an Aura component bundle in the "force-app/main/default/aura" directory:
+
+    $ sf template generate lightning component --name mycomponent --output-dir force-app/main/default/aura
+
+  Generate a Lightning web component bundle in the "force-app/main/default/lwc" directory:
+
+    $ sf template generate lightning component --name mycomponent --type lwc --output-dir force-app/main/default/lwc
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory for saving the created files.
+
+    The location can be an absolute path or relative to the current working directory. The default is the current
+    directory.
+
+  -n, --name=<value>  Name of the generated Lightning Component.
+
+    The name can be up to 40 characters and must start with a letter.
+
+  -t, --template=default|analyticsDashboard|analyticsDashboardWithStep  Template to use for file creation.
+
+    Supplied parameter values or default values are filled into a copy of the template.
+```
+
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.0/src/commands/template/generate/lightning/component.ts)_
+
+## `sf template generate lightning event`
+
+Generate a Lightning Event.
+
+```
+USAGE
+  $ sf template generate lightning event -n <value> [--json] [--flags-dir <value>] [-t DefaultLightningEvt] [-d <value>] [--api-version
+    <value>]
+
+FLAGS
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -n, --name=<value>         (required) Name of the generated Lightning Event.
+  -t, --template=<option>    [default: DefaultLightningEvt] Template to use for file creation.
+                             <options: DefaultLightningEvt>
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Generate a Lightning Event.
+
+  Generates a Lightning Event bundle in the specified directory or the current working directory. The bundle consists of
+  multiple files in a folder with the designated name.
+
+ALIASES
+  $ sf force lightning event create
+  $ sf lightning generate event
+
+EXAMPLES
+  Generate the metadata files for a Lightning event bundle called "myevent" in the current directory:
+
+    $ sf template generate lightning event --name myevent
+
+  Similar to previous example, but generate the files in the "force-app/main/default/aura" directory:
+
+    $ sf template generate lightning event --name myevent --output-dir force-app/main/default/aura
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory for saving the created files.
+
+    The location can be an absolute path or relative to the current working directory. The default is the current
+    directory.
+
+  -n, --name=<value>  Name of the generated Lightning Event.
+
+    The name can be up to 40 characters and must start with a letter.
+
+  -t, --template=DefaultLightningEvt  Template to use for file creation.
+
+    Supplied parameter values or default values are filled into a copy of the template.
+```
+
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.0/src/commands/template/generate/lightning/event.ts)_
+
+## `sf template generate lightning interface`
+
+Generate a Lightning Interface.
+
+```
+USAGE
+  $ sf template generate lightning interface -n <value> [--json] [--flags-dir <value>] [-t DefaultLightningIntf] [-d <value>]
+    [--api-version <value>]
+
+FLAGS
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -n, --name=<value>         (required) Name of the generated Lightning Interface.
+  -t, --template=<option>    [default: DefaultLightningIntf] Template to use for file creation.
+                             <options: DefaultLightningIntf>
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Generate a Lightning Interface.
+
+  Generates a Lightning Interface bundle in the specified directory or the current working directory. The bundle
+  consists of multiple files in a folder with the designated name.
+
+ALIASES
+  $ sf force lightning interface create
+  $ sf lightning generate interface
+
+EXAMPLES
+  Generate the metadata files for a Lightning interface bundle called "myinterface" in the current directory:
+
+    $ sf template generate lightning interface --name myinterface
+
+  Similar to the previous example but generate the files in the "force-app/main/default/aura" directory:
+
+    $ sf template generate lightning interface --name myinterface --output-dir force-app/main/default/aura
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory for saving the created files.
+
+    The location can be an absolute path or relative to the current working directory. The default is the current
+    directory.
+
+  -n, --name=<value>  Name of the generated Lightning Interface.
+
+    The name can be up to 40 characters and must start with a letter.
+
+  -t, --template=DefaultLightningIntf  Template to use for file creation.
+
+    Supplied parameter values or default values are filled into a copy of the template.
+```
+
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.0/src/commands/template/generate/lightning/interface.ts)_
+
+## `sf template generate lightning test`
+
+Generate a Lightning test.
+
+```
+USAGE
+  $ sf template generate lightning test -n <value> [--json] [--flags-dir <value>] [-t DefaultLightningTest] [-d <value>]
+    [--api-version <value>]
+
+FLAGS
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -n, --name=<value>         (required) Name of the generated Lightning Test.
+  -t, --template=<option>    [default: DefaultLightningTest] Template to use for file creation.
+                             <options: DefaultLightningTest>
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Generate a Lightning test.
+
+  Generates the test in the specified directory or the current working directory. The .resource file and associated
+  metadata file are generated.
+
+ALIASES
+  $ sf force lightning test create
+  $ sf lightning generate test
+
+EXAMPLES
+  Generate the metadata files for the Lightning test called MyLightningTest in the current directory:
+
+    $ sf template generate lightning test --name MyLightningTest
+
+  Similar to the previous example but generate the files in the "force-app/main/default/lightningTests" directory:
+
+    $ sf template generate lightning test --name MyLightningTest --output-dir force-app/main/default/lightningTests
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory for saving the created files.
+
+    The location can be an absolute path or relative to the current working directory. The default is the current
+    directory.
+
+  -n, --name=<value>  Name of the generated Lightning Test.
+
+    Name of the new Lightning test; can be up to 40 characters and must start with a letter.
+
+  -t, --template=DefaultLightningTest  Template to use for file creation.
+
+    Supplied parameter values or default values are filled into a copy of the template.
+```
+
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.0/src/commands/template/generate/lightning/test.ts)_
+
+## `sf template generate project`
+
+Generate a Salesforce DX project.
+
+```
+USAGE
+  $ sf template generate project -n <value> [--json] [--flags-dir <value>] [-t standard|empty|analytics] [-d <value>] [-s
+    <value>] [-p <value>] [-x] [--api-version <value>]
+
+FLAGS
+  -d, --output-dir=<value>           [default: .] Directory for saving the created files.
+  -n, --name=<value>                 (required) Name of the generated project.
+  -p, --default-package-dir=<value>  [default: force-app] Default package directory name.
+  -s, --namespace=<value>            Namespace associated with this project and any connected scratch orgs.
+  -t, --template=<option>            [default: standard] Template to use for project creation.
+                                     <options: standard|empty|analytics>
+  -x, --manifest                     Generate a manifest (package.xml) for change-set based development.
+      --api-version=<value>          Will set this version as sourceApiVersion in the sfdx-project.json file
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Generate a Salesforce DX project.
+
+  A Salesforce DX project has a specific structure and a configuration file (sfdx-project.json) that identifies the
+  directory as a Salesforce DX project. This command generates the necessary configuration files and directories to get
+  you started.
+
+  By default, the generated sfdx-project.json file sets the sourceApiVersion property to the default API version
+  currently used by Salesforce CLI. To specify a different version, set the apiVersion configuration variable. For
+  example: "sf config set apiVersion=57.0 --global".
+
+ALIASES
+  $ sf force project create
+  $ sf project generate
+
+EXAMPLES
+  Generate a project called "mywork":
+
+    $ sf template generate project --name mywork
+
+  Similar to previous example, but generate the files in a directory called "myapp":
+
+    $ sf template generate project --name mywork --default-package-dir myapp
+
+  Similar to prevoius example, but also generate a default package.xml manifest file:
+
+    $ sf template generate project --name mywork --default-package-dir myapp --manifest
+
+  Generate a project with the minimum files and directories:
+
+    $ sf template generate project --name mywork --template empty
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory for saving the created files.
+
+    The location can be an absolute path or relative to the current working directory. The default is the current
+    directory.
+
+  -n, --name=<value>  Name of the generated project.
+
+    Generates a project directory with this name; any valid directory name is accepted. Also sets the "name" property in
+    the sfdx-project.json file to this name.
+
+  -p, --default-package-dir=<value>  Default package directory name.
+
+    Metadata items such as classes and Lightning bundles are placed inside this folder.
+
+  -t, --template=standard|empty|analytics  Template to use for project creation.
+
+    The template determines the sample configuration files and directories that this command generates. For example, the
+    empty template provides these files and directory to get you started.
+
+    - .forceignore
+    - config/project-scratch-def.json
+    - sfdx-project.json
+    - package.json
+    - force-app (basic source directory structure)
+
+    The standard template provides a complete force-app directory structure so you know where to put your source. It
+    also provides additional files and scripts, especially useful when using Salesforce Extensions for VS Code. For
+    example:
+
+    - .gitignore: Use Git for version control.
+    - .prettierrc and .prettierignore: Use Prettier to format your Aura components.
+    - .vscode/extensions.json: When launched, Visual Studio Code, prompts you to install the recommended extensions for
+    your project.
+    - .vscode/launch.json: Configures Replay Debugger.
+    - .vscode/settings.json: Additional configuration settings.
+
+    The analytics template provides similar files and the force-app/main/default/waveTemplates directory.
+
+  -x, --manifest  Generate a manifest (package.xml) for change-set based development.
+
+    Generates a default manifest (package.xml) for fetching Apex, Visualforce, Lightning components, and static
+    resources.
+
+  --api-version=<value>  Will set this version as sourceApiVersion in the sfdx-project.json file
+
+    Override the api version used for api requests made by this command
+```
+
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.0/src/commands/template/generate/project/index.ts)_
+
+## `sf template generate static-resource`
 
 Generate a static resource.
 
 ```
 USAGE
-  $ sf static-resource generate -n <value> [--json] [--flags-dir <value>] [--type <value>] [-d <value>] [--api-version
-  <value>]
+  $ sf template generate static-resource -n <value> [--json] [--flags-dir <value>] [--type <value>] [-d <value>]
+  [--api-version <value>]
 
 FLAGS
   -d, --output-dir=<value>   [default: .] Directory for saving the created files.
@@ -10002,19 +10272,20 @@ DESCRIPTION
 
 ALIASES
   $ sf force staticresource create
+  $ sf static-resource generate
 
 EXAMPLES
   Generate the metadata file for a static resource called MyResource in the current directory:
 
-    $ sf static-resource generate --name MyResource
+    $ sf template generate static-resource --name MyResource
 
   Similar to previous example, but specifies a MIME type of application/json:
 
-    $ sf static-resource generate --name MyResource --type application/json
+    $ sf template generate static-resource --name MyResource --type application/json
 
   Generate the resource file in the "force-app/main/default/staticresources" directory:
 
-    $ sf static-resource generate --name MyResource --output-dir force-app/main/default/staticresources
+    $ sf template generate static-resource --name MyResource --output-dir force-app/main/default/staticresources
 
 FLAG DESCRIPTIONS
   -d, --output-dir=<value>  Directory for saving the created files.
@@ -10033,7 +10304,115 @@ FLAG DESCRIPTIONS
     etc.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.4.7/src/commands/static-resource/generate.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.0/src/commands/template/generate/static-resource/index.ts)_
+
+## `sf template generate visualforce component`
+
+Generate a Visualforce Component.
+
+```
+USAGE
+  $ sf template generate visualforce component -n <value> -l <value> [--json] [--flags-dir <value>] [-t DefaultVFComponent] [-d <value>]
+    [--api-version <value>]
+
+FLAGS
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -l, --label=<value>        (required) Visualforce Component label.
+  -n, --name=<value>         (required) Name of the generated Visualforce Component.
+  -t, --template=<option>    [default: DefaultVFComponent] Template to use for file creation.
+                             <options: DefaultVFComponent>
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Generate a Visualforce Component.
+
+  The command generates the .Component file and associated metadata file in the specified directory or the current
+  working directory by default.
+
+ALIASES
+  $ sf force visualforce component create
+  $ sf visualforce generate component
+
+EXAMPLES
+  Generate the metadata files for a Visualforce component in the current directory:
+
+    $ sf template generate visualforce component --name mycomponent --label mylabel
+
+  Similar to previous example, but generate the files in the directory "force-app/main/default/components":
+
+    $ sf template generate visualforce component --name mycomponent --label mylabel --output-dir components
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory for saving the created files.
+
+    The location can be an absolute path or relative to the current working directory. The default is the current
+    directory.
+
+  -n, --name=<value>  Name of the generated Visualforce Component.
+
+    The name can be up to 40 characters and must start with a letter.
+
+  -t, --template=DefaultVFComponent  Template to use for file creation.
+
+    Supplied parameter values or default values are filled into a copy of the template.
+```
+
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.0/src/commands/template/generate/visualforce/component.ts)_
+
+## `sf template generate visualforce page`
+
+Generate a Visualforce Page.
+
+```
+USAGE
+  $ sf template generate visualforce page -n <value> -l <value> [--json] [--flags-dir <value>] [-d <value>]
+  [--api-version <value>]
+
+FLAGS
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -l, --label=<value>        (required) Visualforce Page label.
+  -n, --name=<value>         (required) Name of the generated Visualforce Page.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Generate a Visualforce Page.
+
+  The command generates the .Page file and associated metadata file in the specified directory or the current working
+  directory by default.
+
+ALIASES
+  $ sf force visualforce page create
+  $ sf visualforce generate page
+
+EXAMPLES
+  Generate the metadata files for a Visualforce page in the current directory:
+
+    $ sf template generate visualforce page --name mypage --label mylabel
+
+  Similar to previous example, but generate the files in the directory "force-app/main/default/pages":
+
+    $ sf template generate visualforce page --name mypage --label mylabel --output-dir pages
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory for saving the created files.
+
+    The location can be an absolute path or relative to the current working directory. The default is the current
+    directory.
+
+  -n, --name=<value>  Name of the generated Visualforce Page.
+
+    The name can be up to 40 characters and must start with a letter.
+```
+
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.0/src/commands/template/generate/visualforce/page.ts)_
 
 ## `sf update [CHANNEL]`
 
@@ -10071,7 +10450,7 @@ EXAMPLES
     $ sf update --available
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.7.18/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.7.19/src/commands/update.ts)_
 
 ## `sf version`
 
@@ -10092,112 +10471,6 @@ FLAG DESCRIPTIONS
 ```
 
 _See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.2.36/src/commands/version.ts)_
-
-## `sf visualforce generate component`
-
-Generate a Visualforce Component.
-
-```
-USAGE
-  $ sf visualforce generate component -n <value> -l <value> [--json] [--flags-dir <value>] [-t DefaultVFComponent] [-d <value>]
-    [--api-version <value>]
-
-FLAGS
-  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
-  -l, --label=<value>        (required) Visualforce Component label.
-  -n, --name=<value>         (required) Name of the generated Visualforce Component.
-  -t, --template=<option>    [default: DefaultVFComponent] Template to use for file creation.
-                             <options: DefaultVFComponent>
-      --api-version=<value>  Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-DESCRIPTION
-  Generate a Visualforce Component.
-
-  The command generates the .Component file and associated metadata file in the specified directory or the current
-  working directory by default.
-
-ALIASES
-  $ sf force visualforce component create
-
-EXAMPLES
-  Generate the metadata files for a Visualforce component in the current directory:
-
-    $ sf visualforce generate component --name mycomponent --label mylabel
-
-  Similar to previous example, but generate the files in the directory "force-app/main/default/components":
-
-    $ sf visualforce generate component --name mycomponent --label mylabel --output-dir components
-
-FLAG DESCRIPTIONS
-  -d, --output-dir=<value>  Directory for saving the created files.
-
-    The location can be an absolute path or relative to the current working directory. The default is the current
-    directory.
-
-  -n, --name=<value>  Name of the generated Visualforce Component.
-
-    The name can be up to 40 characters and must start with a letter.
-
-  -t, --template=DefaultVFComponent  Template to use for file creation.
-
-    Supplied parameter values or default values are filled into a copy of the template.
-```
-
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.4.7/src/commands/visualforce/generate/component.ts)_
-
-## `sf visualforce generate page`
-
-Generate a Visualforce Page.
-
-```
-USAGE
-  $ sf visualforce generate page -n <value> -l <value> [--json] [--flags-dir <value>] [-d <value>] [--api-version
-  <value>]
-
-FLAGS
-  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
-  -l, --label=<value>        (required) Visualforce Page label.
-  -n, --name=<value>         (required) Name of the generated Visualforce Page.
-      --api-version=<value>  Override the api version used for api requests made by this command
-
-GLOBAL FLAGS
-  --flags-dir=<value>  Import flag values from a directory.
-  --json               Format output as json.
-
-DESCRIPTION
-  Generate a Visualforce Page.
-
-  The command generates the .Page file and associated metadata file in the specified directory or the current working
-  directory by default.
-
-ALIASES
-  $ sf force visualforce page create
-
-EXAMPLES
-  Generate the metadata files for a Visualforce page in the current directory:
-
-    $ sf visualforce generate page --name mypage --label mylabel
-
-  Similar to previous example, but generate the files in the directory "force-app/main/default/pages":
-
-    $ sf visualforce generate page --name mypage --label mylabel --output-dir pages
-
-FLAG DESCRIPTIONS
-  -d, --output-dir=<value>  Directory for saving the created files.
-
-    The location can be an absolute path or relative to the current working directory. The default is the current
-    directory.
-
-  -n, --name=<value>  Name of the generated Visualforce Page.
-
-    The name can be up to 40 characters and must start with a letter.
-```
-
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.4.7/src/commands/visualforce/generate/page.ts)_
 
 ## `sf which`
 
