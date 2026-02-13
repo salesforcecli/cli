@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.124.0 linux-x64 node-v22.22.0
+@salesforce/cli/2.124.1 linux-x64 node-v22.22.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -203,6 +203,7 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf template generate apex class`](#sf-template-generate-apex-class)
 - [`sf template generate apex trigger`](#sf-template-generate-apex-trigger)
 - [`sf template generate digital-experience site`](#sf-template-generate-digital-experience-site)
+- [`sf template generate flexipage`](#sf-template-generate-flexipage)
 - [`sf template generate lightning app`](#sf-template-generate-lightning-app)
 - [`sf template generate lightning component`](#sf-template-generate-lightning-component)
 - [`sf template generate lightning event`](#sf-template-generate-lightning-event)
@@ -1889,7 +1890,7 @@ EXAMPLES
     $ sf api request graphql --body example.txt --stream-to-file output.txt --include
 ```
 
-_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.9/src/commands/api/request/graphql.ts)_
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.10/src/commands/api/request/graphql.ts)_
 
 ## `sf api request rest [URL]`
 
@@ -1998,7 +1999,7 @@ FLAG DESCRIPTIONS
     https://github.com/salesforcecli/plugin-api/tree/main/test/test-files/data-project.
 ```
 
-_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.9/src/commands/api/request/rest.ts)_
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.10/src/commands/api/request/rest.ts)_
 
 ## `sf autocomplete [SHELL]`
 
@@ -9661,7 +9662,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.1/src/commands/template/generate/analytics/template.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.8.0/src/commands/template/generate/analytics/template.ts)_
 
 ## `sf template generate apex class`
 
@@ -9721,7 +9722,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.1/src/commands/template/generate/apex/class.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.8.0/src/commands/template/generate/apex/class.ts)_
 
 ## `sf template generate apex trigger`
 
@@ -9791,7 +9792,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.1/src/commands/template/generate/apex/trigger.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.8.0/src/commands/template/generate/apex/trigger.ts)_
 
 ## `sf template generate digital-experience site`
 
@@ -9841,7 +9842,89 @@ FLAG DESCRIPTIONS
     project, defaults to the current directory.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.1/src/commands/template/generate/digital-experience/site.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.8.0/src/commands/template/generate/digital-experience/site.ts)_
+
+## `sf template generate flexipage`
+
+Generate a FlexiPage, also known as a Lightning page.
+
+```
+USAGE
+  $ sf template generate flexipage -n <value> -t RecordPage|AppPage|HomePage [--json] [--flags-dir <value>] [-d <value>]
+    [--api-version <value>] [--label <value>] [--description <value>] [-s <value>] [--primary-field <value>]
+    [--secondary-fields <value>...] [--detail-fields <value>...]
+
+FLAGS
+  -d, --output-dir=<value>           [default: .] Directory for saving the created files.
+  -n, --name=<value>                 (required) Name of the FlexiPage.
+  -s, --sobject=<value>              API name of the Salesforce object; required when creating a RecordPage.
+  -t, --template=<option>            (required) Template type for the FlexiPage.
+                                     <options: RecordPage|AppPage|HomePage>
+      --api-version=<value>          Override the api version used for api requests made by this command
+      --description=<value>          Description for the FlexiPage, which provides context about its purpose.
+      --detail-fields=<value>...     Fields to display in the Details tab. Specify multiple fields separated by commas.
+                                     Fields are split into two columns. Used only with RecordPage.
+      --label=<value>                Label of this FlexiPage; if not specified, uses the FlexiPage name as the label.
+      --primary-field=<value>        Primary field for the dynamic highlights header; typically 'Name'. Used only with
+                                     RecordPage.
+      --secondary-fields=<value>...  Secondary fields shown in the dynamic highlights header. Specify multiple fields
+                                     separated by commas. Maximum of 11 fields. Used only with RecordPage.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Generate a FlexiPage, also known as a Lightning page.
+
+  FlexiPages are the metadata types associated with a Lightning page. A Lightning page represents a customizable screen
+  made up of regions containing Lightning components.
+
+  You can use this command to generate these types of FlexiPages; specify the type with the --template flag:
+
+  - AppPage: A Lightning page used as the home page for a custom app or a standalone application page.
+  - HomePage: A Lightning page used to override the Home page in Lightning Experience.
+  - RecordPage: A Lightning page used to override an object record page in Lightning Experience. Requires that you
+  specify the object name with the --sobject flag.
+
+EXAMPLES
+  Generate a RecordPage FlexiPage for the Account object in the current directory:
+
+    $ sf template generate flexipage --name Account_Record_Page --template RecordPage --sobject Account
+
+  Generate an AppPage FlexiPage in the "force-app/main/default/flexipages" directory:
+
+    $ sf template generate flexipage --name Sales_Dashboard --template AppPage --output-dir \
+      force-app/main/default/flexipages
+
+  Generate a HomePage FlexiPage with a custom label:
+
+    $ sf template generate flexipage --name Custom_Home --template HomePage --label "Sales Home Page"
+
+  Generate a RecordPage with dynamic highlights and detail fields:
+
+    $ sf template generate flexipage --name Property_Page --template RecordPage --sobject Rental_Property__c \
+      --primary-field Name --secondary-fields Property_Address__c,City__c --detail-fields \
+      Name,Property_Address__c,City__c,Monthly_Rent__c,Bedrooms__c
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory for saving the created files.
+
+    The location can be an absolute path or relative to the current working directory. The default is the current
+    directory.
+
+  -n, --name=<value>  Name of the FlexiPage.
+
+    The name can contain only alphanumeric characters, must start with a letter, and can't end with an underscore or
+    contain two consecutive underscores.
+
+  -s, --sobject=<value>  API name of the Salesforce object; required when creating a RecordPage.
+
+    For RecordPage FlexiPages, you must specify the associated object API name, such as 'Account', 'Opportunity', or
+    'Custom_Object__c'. This sets the `sobjectType` field in the FlexiPage metadata.
+```
+
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.8.0/src/commands/template/generate/flexipage/index.ts)_
 
 ## `sf template generate lightning app`
 
@@ -9897,7 +9980,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.1/src/commands/template/generate/lightning/app.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.8.0/src/commands/template/generate/lightning/app.ts)_
 
 ## `sf template generate lightning component`
 
@@ -9967,7 +10050,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.1/src/commands/template/generate/lightning/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.8.0/src/commands/template/generate/lightning/component.ts)_
 
 ## `sf template generate lightning event`
 
@@ -10023,7 +10106,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.1/src/commands/template/generate/lightning/event.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.8.0/src/commands/template/generate/lightning/event.ts)_
 
 ## `sf template generate lightning interface`
 
@@ -10079,7 +10162,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.1/src/commands/template/generate/lightning/interface.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.8.0/src/commands/template/generate/lightning/interface.ts)_
 
 ## `sf template generate lightning test`
 
@@ -10135,7 +10218,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.1/src/commands/template/generate/lightning/test.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.8.0/src/commands/template/generate/lightning/test.ts)_
 
 ## `sf template generate project`
 
@@ -10241,7 +10324,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.1/src/commands/template/generate/project/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.8.0/src/commands/template/generate/project/index.ts)_
 
 ## `sf template generate static-resource`
 
@@ -10304,7 +10387,7 @@ FLAG DESCRIPTIONS
     etc.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.1/src/commands/template/generate/static-resource/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.8.0/src/commands/template/generate/static-resource/index.ts)_
 
 ## `sf template generate visualforce component`
 
@@ -10361,7 +10444,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.1/src/commands/template/generate/visualforce/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.8.0/src/commands/template/generate/visualforce/component.ts)_
 
 ## `sf template generate visualforce page`
 
@@ -10412,7 +10495,7 @@ FLAG DESCRIPTIONS
     The name can be up to 40 characters and must start with a letter.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.7.1/src/commands/template/generate/visualforce/page.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.8.0/src/commands/template/generate/visualforce/page.ts)_
 
 ## `sf update [CHANNEL]`
 
