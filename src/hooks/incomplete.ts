@@ -41,7 +41,6 @@ async function determineCommand(config: Interfaces.Config, matches: Command.Load
   });
 
   const timeout = setTimeout(60_000, undefined, { ref: false }).then(() => {
-    answer.cancel();
     throw new SfError('Prompt timed out.');
   });
   return Promise.race([answer, timeout]);
