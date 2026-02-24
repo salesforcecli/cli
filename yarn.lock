@@ -2180,10 +2180,10 @@
   dependencies:
     "@salesforce/ts-types" "^2.0.12"
 
-"@salesforce/o11y-reporter@1.7.3":
-  version "1.7.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/o11y-reporter/-/o11y-reporter-1.7.3.tgz#14e58bc511fa3529077eff7e6712182574c52a1c"
-  integrity sha512-Krd2EgHYrTW1j1Wo5q+4kya6F7WjGvJsD4oUKzefLRw92Pb5b7aMorLFsKMEvLTZSGmTZZClLmQMap0gLOV6qw==
+"@salesforce/o11y-reporter@1.8.1":
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/o11y-reporter/-/o11y-reporter-1.8.1.tgz#19470752359a1931f207ecea98511451cfa626d7"
+  integrity sha512-zXfFWoNBxkBDPq96X7wJuO2E6T+VsY9sWVfqVnqA2bMrw4ix8hWkXa6IdEytXMCe8mMsaXwGD4Iua0WNzrYhWA==
   dependencies:
     o11y "^258.7.0"
     o11y_schema "256.154.0"
@@ -2455,16 +2455,16 @@
     fast-xml-parser "^5.3.4"
     js2xmlparser "^4.0.2"
 
-"@salesforce/plugin-telemetry@3.7.2":
-  version "3.7.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.7.2.tgz#ed84293ff992052aacede31c44e7045401505764"
-  integrity sha512-nfnYjeZecSUK5njxGRshrok6BdQgndxvWIaqW0uSf0ReVTFmeR8tFYmx8NtKyA3tnrXvYcuyUmTncBdVHR2yBQ==
+"@salesforce/plugin-telemetry@3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.8.0.tgz#99187b8dc60035950b1067135f1463b1a6510f36"
+  integrity sha512-P9lING4AqNwQpzf3MUbxxDapQgqVe7xOcDNaxcH/9atAOuOWZ7ENSHjdQhM/wyDgkoW0ui51AnX1Y6rDq+VQpA==
   dependencies:
     "@oclif/core" "^4.8.0"
     "@salesforce/core" "^8.25.1"
     "@salesforce/kit" "^3.2.4"
     "@salesforce/sf-plugins-core" "^12"
-    "@salesforce/telemetry" "^6.6.0"
+    "@salesforce/telemetry" "^6.7.0"
     "@salesforce/ts-types" "^2.0.12"
     debug "^4.4.3"
 
@@ -2582,17 +2582,17 @@
     isomorphic-git "^1.34.2"
     ts-retry-promise "^0.8.1"
 
-"@salesforce/telemetry@^6.6.0":
-  version "6.6.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-6.6.1.tgz#e0f153022b4861d8590911c32350c0a201973e4e"
-  integrity sha512-7zWvGM3lco9d74Uv9K8ftzfrJlhAHbkrbsvRTjEQ7sUzfVKapxtEE17VQkbViXAK/2UU2kV8txVOgwCWUJZHzA==
+"@salesforce/telemetry@^6.7.0":
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/telemetry/-/telemetry-6.7.0.tgz#1485c08ff90ff1d77e875e0f33ab1f1f5bd59176"
+  integrity sha512-kXORutBjNGzahq98qjDFaxW7kKRlb0ErcxjQhY/2yvuXmmv3zdtT1NTljVAQHfHl3Y7TDREDNbTFT+ZEFBk8sw==
   dependencies:
-    "@salesforce/core" "^8.25.1"
+    "@salesforce/core" "^8.26.2"
     "@salesforce/kit" "^3.2.4"
-    "@salesforce/o11y-reporter" "1.7.3"
+    "@salesforce/o11y-reporter" "1.8.1"
     applicationinsights "^2.9.8"
     got "^11"
-    o11y_schema "^260.41.0"
+    o11y_schema "^260.46.0"
     proxy-agent "^6.5.0"
 
 "@salesforce/templates@^65.5.9":
@@ -8846,10 +8846,10 @@ o11y_schema@256.154.0:
   resolved "https://registry.yarnpkg.com/o11y_schema/-/o11y_schema-256.154.0.tgz#1f2f94f1e42d07e62a3e18e09b026345b057dc0c"
   integrity sha512-czvU/9cibyZptbr0gLJSM70U7zLlhWC2D2L5e9nOG84Wnqmn4F5YzVjrH1ZQzAzDbBbtbeU6WTS3F/SHqtMQ5g==
 
-o11y_schema@^260.41.0:
-  version "260.44.0"
-  resolved "https://registry.yarnpkg.com/o11y_schema/-/o11y_schema-260.44.0.tgz#f44612ae5587efc5c8c58662a2ff549bdf9bfeb9"
-  integrity sha512-JedjLmiTwPyHy/O7jPgQG/WXr4L9Mc717YN7TjsTZ3NAFynrnhV7ecjYvumXNK2IKN2KwcYn/Xqa1nYAHMjeWQ==
+o11y_schema@^260.46.0:
+  version "260.46.0"
+  resolved "https://registry.yarnpkg.com/o11y_schema/-/o11y_schema-260.46.0.tgz#e8cbbc8bdd02c719b9ba8cf6ab553e5cfd8bcf02"
+  integrity sha512-bTj57h7Pgww07IzdlPeIz2Ee5Zaf4VxcKa3hBxJkOetNTIFsXO2QyL1ZCB5xLhDguSqQIAvwt/A9IpuWndOZoQ==
 
 object-hash@^3.0.0:
   version "3.0.0"
