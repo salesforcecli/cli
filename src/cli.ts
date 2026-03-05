@@ -40,6 +40,9 @@ export const UPDATE_DISABLED_DEMO =
   'Manual and automatic CLI updates have been disabled in DEMO mode. ' +
   'To check for a new version, unset the environment variable SF_ENV.';
 
+/**
+ * Adding JSDoc header to this method, just because
+ */
 export function configureAutoUpdate(envars: Env): void {
   if (envars.isDemoMode()) {
     // Disable autoupdates in demo mode
