@@ -21,5 +21,8 @@ const customLogger = (namespace: string): Interfaces.Logger => {
   };
 };
 
+/**
+ * JSDocing this constant
+ */
 export const logger = customLogger('sf:oclif');
 export const sfStartupLogger = customLogger('sf-startup');
