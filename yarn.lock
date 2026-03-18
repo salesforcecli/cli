@@ -2156,10 +2156,10 @@
     jszip "^3.10.1"
     object-treeify "^2"
 
-"@salesforce/plugin-agent@1.32.3":
-  version "1.32.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-agent/-/plugin-agent-1.32.3.tgz#1b9976564082f939bbf1a22cdbe5a8f61735ab75"
-  integrity sha512-WBDrckQoZlJ42X8l5qujLYckXV3QxyoWRTfwtOIBJ4zJz5hiGZVrk8udgofQy5thiEHka2H1+ZRoo9a81iFBEA==
+"@salesforce/plugin-agent@1.32.4":
+  version "1.32.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-agent/-/plugin-agent-1.32.4.tgz#566688ea0b90149d1bb9797f12b92a95e2191652"
+  integrity sha512-s0yG0f9cSHTN8zg0GsQ4RoRIeaGi1twnv9jROeIFOeRrPq0D9XGJt/Vs4uxxRiSkbNfl/67k1EX4V7ijitM+yA==
   dependencies:
     "@inquirer/core" "^10.3.2"
     "@inquirer/prompts" "^7.10.1"
@@ -2172,7 +2172,7 @@
     "@salesforce/source-deploy-retrieve" "^12.31.14"
     "@salesforce/types" "^1.6.0"
     ansis "^3.3.2"
-    fast-xml-parser "^5.5.5"
+    fast-xml-parser "^5.5.6"
     glob "^11.0.3"
     ink "5.0.1"
     ink-text-input "^6.0.0"
@@ -2388,10 +2388,10 @@
     "@salesforce/sf-plugins-core" "^12.2.6"
     fast-levenshtein "^3.0.0"
 
-"@salesforce/plugin-sobject@1.4.85":
-  version "1.4.85"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-sobject/-/plugin-sobject-1.4.85.tgz#829dad51b6f12fddd16a5da129e8f6b79e74c26d"
-  integrity sha512-vfI0rwOTGrOz6gExV86ZrK0RdwWPRpR6lo00VqceH3KnMYPlkbKi8b3UWsQqru8cGUIN0mPY7e+7qdZaYKmyzg==
+"@salesforce/plugin-sobject@1.4.86":
+  version "1.4.86"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-sobject/-/plugin-sobject-1.4.86.tgz#a87b7ca1c98319cda9525a77bfaa1d14ddf03b66"
+  integrity sha512-hU95LU3Ekc6yzXFQUFKcO8DUvUF4wO9gTC6j7U+YCsFkdyz1eR5zXyfhkemzxlDZKHgay/vGSWrwYUElu8krIA==
   dependencies:
     "@inquirer/confirm" "^3.2.0"
     "@inquirer/input" "^2.3.0"
@@ -2401,7 +2401,7 @@
     "@salesforce/kit" "^3.2.4"
     "@salesforce/sf-plugins-core" "^11.3.12"
     fast-glob "^3.3.3"
-    fast-xml-parser "^5.3.8"
+    fast-xml-parser "^5.5.6"
     js2xmlparser "^4.0.2"
 
 "@salesforce/plugin-telemetry@3.8.3":
@@ -5869,7 +5869,7 @@ fast-xml-parser@5.4.1:
     fast-xml-builder "^1.0.0"
     strnum "^2.1.2"
 
-fast-xml-parser@^5.3.4, fast-xml-parser@^5.3.6, fast-xml-parser@^5.3.8, fast-xml-parser@^5.5.5:
+fast-xml-parser@^5.3.4, fast-xml-parser@^5.3.6, fast-xml-parser@^5.3.8, fast-xml-parser@^5.5.6:
   version "5.5.6"
   resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-5.5.6.tgz#6fc61f5ae06a55a1f058abd6a4f4b5d3e9972cd0"
   integrity sha512-3+fdZyBRVg29n4rXP0joHthhcHdPUHaIC16cuyyd1iLsuaO6Vea36MPrxgAzbZna8lhvZeRL8Bc9GP56/J9xEw==
