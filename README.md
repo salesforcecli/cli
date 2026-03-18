@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.128.4 linux-x64 node-v22.22.1
+@salesforce/cli/2.128.5 linux-x64 node-v22.22.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -264,7 +264,7 @@ EXAMPLES
     $ sf agent activate --api-name Resort_Manager --version 2 --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/activate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/activate.ts)_
 
 ## `sf agent create`
 
@@ -331,7 +331,7 @@ EXAMPLES
     $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/create.ts)_
 
 ## `sf agent deactivate`
 
@@ -372,7 +372,7 @@ EXAMPLES
     $ sf agent deactivate --api-name Resort_Manager --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/deactivate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/deactivate.ts)_
 
 ## `sf agent generate agent-spec`
 
@@ -479,7 +479,7 @@ EXAMPLES
     $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/generate/agent-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/generate/agent-spec.ts)_
 
 ## `sf agent generate authoring-bundle`
 
@@ -556,7 +556,7 @@ EXAMPLES
       other-package-dir/main/default --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/generate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/generate/authoring-bundle.ts)_
 
 ## `sf agent generate template`
 
@@ -604,7 +604,7 @@ EXAMPLES
       force-app/main/default/bots/My_Awesome_Agent/My_Awesome_Agent.bot-meta.xml --agent-version 1
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/generate/template.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/generate/template.ts)_
 
 ## `sf agent generate test-spec`
 
@@ -669,7 +669,7 @@ EXAMPLES
       force-app//main/default/aiEvaluationDefinitions/Resort_Manager_Tests.aiEvaluationDefinition-meta.xml
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/generate/test-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/generate/test-spec.ts)_
 
 ## `sf agent preview`
 
@@ -742,7 +742,7 @@ EXAMPLES
     $ sf agent preview --use-live-actions --apex-debug --output-dir transcripts/my-preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/preview.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/preview.ts)_
 
 ## `sf agent preview end`
 
@@ -797,7 +797,7 @@ EXAMPLES
     $ sf agent preview end --authoring-bundle My_Local_Agent
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/preview/end.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/preview/end.ts)_
 
 ## `sf agent preview send`
 
@@ -855,7 +855,7 @@ EXAMPLES
     $ sf agent preview send --utterance "what can you help me with?" --authoring-bundle My_Local_Agent
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/preview/send.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/preview/send.ts)_
 
 ## `sf agent preview sessions`
 
@@ -888,7 +888,7 @@ EXAMPLES
     $ sf agent preview sessions
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/preview/sessions.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/preview/sessions.ts)_
 
 ## `sf agent preview start`
 
@@ -945,7 +945,7 @@ EXAMPLES
     $ sf agent preview start --api-name My_Published_Agent
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/preview/start.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/preview/start.ts)_
 
 ## `sf agent publish authoring-bundle`
 
@@ -994,7 +994,7 @@ EXAMPLES
     $ sf agent publish authoring-bundle --api-name MyAuthoringbundle --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/publish/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/publish/authoring-bundle.ts)_
 
 ## `sf agent test create`
 
@@ -1049,7 +1049,7 @@ EXAMPLES
     $ sf agent test create --spec specs/Resort_Manager-testSpec.yaml --api-name Resort_Manager_Test --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/test/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/test/create.ts)_
 
 ## `sf agent test list`
 
@@ -1084,7 +1084,7 @@ EXAMPLES
     $ sf agent test list --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/test/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/test/list.ts)_
 
 ## `sf agent test results`
 
@@ -1150,7 +1150,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/test/results.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/test/results.ts)_
 
 ## `sf agent test resume`
 
@@ -1223,7 +1223,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/test/resume.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/test/resume.ts)_
 
 ## `sf agent test run`
 
@@ -1297,7 +1297,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/test/run.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/test/run.ts)_
 
 ## `sf agent validate authoring-bundle`
 
@@ -1344,7 +1344,7 @@ EXAMPLES
     $ sf agent validate authoring-bundle --api-name MyAuthoringBundle --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.3/src/commands/agent/validate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.4/src/commands/agent/validate/authoring-bundle.ts)_
 
 ## `sf alias list`
 
@@ -9396,7 +9396,7 @@ FLAG DESCRIPTIONS
     If you don't specify this flag, the command prompts you to choose from your local objects.
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.85/src/commands/schema/generate/field.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.86/src/commands/schema/generate/field.ts)_
 
 ## `sf schema generate platformevent`
 
@@ -9428,7 +9428,7 @@ EXAMPLES
     $ sf schema generate platformevent --label "My Platform Event"
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.85/src/commands/schema/generate/platformevent.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.86/src/commands/schema/generate/platformevent.ts)_
 
 ## `sf schema generate sobject`
 
@@ -9485,7 +9485,7 @@ FLAG DESCRIPTIONS
     - Streaming API: With Bulk API and Sharing, classifies the custom object as an Enterprise Application object.
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.85/src/commands/schema/generate/sobject.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.86/src/commands/schema/generate/sobject.ts)_
 
 ## `sf schema generate tab`
 
@@ -9533,7 +9533,7 @@ FLAG DESCRIPTIONS
     The API name for a custom object always ends in `__c`, such as `MyObject__c`.
 ```
 
-_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.85/src/commands/schema/generate/tab.ts)_
+_See code: [@salesforce/plugin-sobject](https://github.com/salesforcecli/plugin-sobject/blob/1.4.86/src/commands/schema/generate/tab.ts)_
 
 ## `sf search`
 
