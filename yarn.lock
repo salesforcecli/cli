@@ -1769,10 +1769,10 @@
     ansi-escapes "^7.3.0"
     inquirer-autocomplete-standalone "^0.8.1"
 
-"@oclif/plugin-update@4.7.26":
-  version "4.7.26"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.7.26.tgz#a3488ce45cb84790c20b1bde72290a73a74696f2"
-  integrity sha512-OXsQ8fTzKJ93dajKG1SJfApvlY0RkcmKO1HSlX2rBRDL6XHwPEoClVni7tW1s66CW+jfR6cQpkVxMqQx4D2UZA==
+"@oclif/plugin-update@4.7.27":
+  version "4.7.27"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.7.27.tgz#c65313c0829528f4c9cc3692841c93153c279ece"
+  integrity sha512-/zxfP8PhxgcJIw0sIsQWer9IFaNGPyF5hpKgmWecYmnLJt4TyqClgYJjWiotkQ2tQTpQWy/GcK0ffJhbwmEIgA==
   dependencies:
     "@inquirer/select" "^2.5.0"
     "@oclif/core" "^4"
@@ -2280,21 +2280,21 @@
     undici "^7.24.5"
     zod "^4.3.6"
 
-"@salesforce/plugin-deploy-retrieve@3.24.17":
-  version "3.24.17"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.24.17.tgz#2ea99840b685ebd54c502614b224f425904e5879"
-  integrity sha512-Hoc6jio0SgIa1rjbe+Bynrwc0LbjGDYyAjh3POWuOOYRypaRkYUUcZ50dddoCtP5ovldPSvOXLn0qjiod90BlQ==
+"@salesforce/plugin-deploy-retrieve@3.24.18":
+  version "3.24.18"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.24.18.tgz#1b588ea83238afcc38859167cd5b5eff9f8018bd"
+  integrity sha512-XfaW2LDVy1CQpmm8KwtVAkmo0D1QNyXEHUe3lmCoVqlGM0xjH8eQLYp/V5VR9iX7l8zpXtzHc2mMskhpEaJcDg==
   dependencies:
     "@inquirer/prompts" "^7.8.3"
     "@oclif/core" "^4.8.4"
     "@oclif/multi-stage-output" "^0.8.28"
     "@salesforce/apex-node" "^8.3.5"
-    "@salesforce/core" "^8.27.0"
+    "@salesforce/core" "^8.27.1"
     "@salesforce/kit" "^3.2.4"
     "@salesforce/plugin-info" "^3.4.93"
-    "@salesforce/sf-plugins-core" "^12.2.5"
-    "@salesforce/source-deploy-retrieve" "^12.31.21"
-    "@salesforce/source-tracking" "^7.8.6"
+    "@salesforce/sf-plugins-core" "^12.2.6"
+    "@salesforce/source-deploy-retrieve" "^12.31.25"
+    "@salesforce/source-tracking" "^7.8.7"
     "@salesforce/ts-types" "^2.0.12"
     ansis "^3.17.0"
     terminal-link "^3.0.0"
@@ -2488,7 +2488,7 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.10.3.tgz#52c867fdd60679cf216110aa49542b7ad391f5d1"
   integrity sha512-FKfvtrYTcvTXE9advzS25/DEY9yJhEyLvStm++eQFtnAaX1pe4G3oGHgiQ0q55BM5+0AlCh0+0CVtQv1t4oJRA==
 
-"@salesforce/sf-plugins-core@12.2.6", "@salesforce/sf-plugins-core@^12", "@salesforce/sf-plugins-core@^12.2.0", "@salesforce/sf-plugins-core@^12.2.5", "@salesforce/sf-plugins-core@^12.2.6":
+"@salesforce/sf-plugins-core@12.2.6", "@salesforce/sf-plugins-core@^12", "@salesforce/sf-plugins-core@^12.2.0", "@salesforce/sf-plugins-core@^12.2.6":
   version "12.2.6"
   resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-12.2.6.tgz#856303e786f5fac1c6aa6dcd42f282cb1ac703e8"
   integrity sha512-EDKE72f/gGk9vL7KI9wsFO5wl/jFVvA2l5XBGR+6sJ1+FTMUbTGRMLObkkYJACk7bKvUFx00xdur2R6K8SWNvg==
@@ -2522,17 +2522,17 @@
     string-width "^7.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/source-deploy-retrieve@^12.31.11", "@salesforce/source-deploy-retrieve@^12.31.14", "@salesforce/source-deploy-retrieve@^12.31.20", "@salesforce/source-deploy-retrieve@^12.31.21", "@salesforce/source-deploy-retrieve@^12.31.23", "@salesforce/source-deploy-retrieve@^12.31.24":
-  version "12.31.24"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.31.24.tgz#06e74409bc95000703f1f158ac6b700fb975ee74"
-  integrity sha512-8folNyLjlzblAOAG7dxHuPJo4QDVU2nytxotHdHHhYk00djXr3CdchuGSVG/+2w0LO/zFZ68V17qpU2x1VqxXg==
+"@salesforce/source-deploy-retrieve@^12.31.11", "@salesforce/source-deploy-retrieve@^12.31.14", "@salesforce/source-deploy-retrieve@^12.31.23", "@salesforce/source-deploy-retrieve@^12.31.24", "@salesforce/source-deploy-retrieve@^12.31.25":
+  version "12.31.25"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.31.25.tgz#85bd5d8ef68682e5f4dbff72f5edac24cad9003b"
+  integrity sha512-X25mDbpb62BzpZ+g03MfTXckkblSdB1C06Wygd/MBO2bTs2Dg4+5m9yJxTUEzHVe1w8bGuyrZFzkjwzfLhvpZQ==
   dependencies:
-    "@salesforce/core" "^8.27.0"
+    "@salesforce/core" "^8.27.1"
     "@salesforce/kit" "^3.2.4"
     "@salesforce/ts-types" "^2.0.12"
     "@salesforce/types" "^1.6.0"
     fast-levenshtein "^3.0.0"
-    fast-xml-parser "^5.3.6"
+    fast-xml-parser "^5.5.7"
     got "^11.8.6"
     graceful-fs "^4.2.11"
     ignore "^5.3.2"
@@ -2542,16 +2542,16 @@
     proxy-agent "^6.4.0"
     yaml "^2.8.1"
 
-"@salesforce/source-tracking@^7.8.6":
-  version "7.8.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-tracking/-/source-tracking-7.8.6.tgz#9f22ab741d8a37bed32bb741825311881f093524"
-  integrity sha512-aI2HAcMAOz8KQev3DNBptMLpgpMVsVpY8G9V3Mhdql28fg5OmBE5cMxhXcKHhMvSgpZbcEn4+d0ykdzQUl1nxQ==
+"@salesforce/source-tracking@^7.8.7":
+  version "7.8.7"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-tracking/-/source-tracking-7.8.7.tgz#3220073fc0e46888d05f69f5fc1be7d8345fee3d"
+  integrity sha512-blCcFaW/kOh8fTNaM/NYKKjYZ4Jb6YuCELgkVNr0v41DAWY71/3Xir5A9Cnm3FPZ1rus2givRReXTY7HTEf2PQ==
   dependencies:
-    "@salesforce/core" "^8.27.0"
+    "@salesforce/core" "^8.27.1"
     "@salesforce/kit" "^3.2.4"
-    "@salesforce/source-deploy-retrieve" "^12.31.20"
+    "@salesforce/source-deploy-retrieve" "^12.31.23"
     "@salesforce/ts-types" "^2.0.12"
-    fast-xml-parser "^5.3.8"
+    fast-xml-parser "^5.5.7"
     graceful-fs "^4.2.11"
     isomorphic-git "^1.34.2"
     ts-retry-promise "^0.8.1"
@@ -5886,7 +5886,7 @@ fast-xml-builder@^1.1.4:
   dependencies:
     path-expression-matcher "^1.1.3"
 
-fast-xml-parser@5.5.8, fast-xml-parser@^5.3.6, fast-xml-parser@^5.3.8, fast-xml-parser@^5.5.7, fast-xml-parser@^5.5.8:
+fast-xml-parser@5.5.8, fast-xml-parser@^5.3.6, fast-xml-parser@^5.5.7, fast-xml-parser@^5.5.8:
   version "5.5.8"
   resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-5.5.8.tgz#929571ed8c5eb96e6d9bd572ba14fc4b84875716"
   integrity sha512-Z7Fh2nVQSb2d+poDViM063ix2ZGt9jmY1nWhPfHBOK2Hgnb/OW3P4Et3P/81SEej0J7QbWtJqxO05h8QYfK7LQ==
