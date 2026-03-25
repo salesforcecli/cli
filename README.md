@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.129.7 linux-x64 node-v22.22.1
+@salesforce/cli/2.129.8 linux-x64 node-v22.22.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -265,7 +265,7 @@ EXAMPLES
     $ sf agent activate --api-name Resort_Manager --version 2 --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/activate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/activate.ts)_
 
 ## `sf agent create`
 
@@ -332,7 +332,7 @@ EXAMPLES
     $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/create.ts)_
 
 ## `sf agent deactivate`
 
@@ -373,7 +373,7 @@ EXAMPLES
     $ sf agent deactivate --api-name Resort_Manager --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/deactivate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/deactivate.ts)_
 
 ## `sf agent generate agent-spec`
 
@@ -480,7 +480,7 @@ EXAMPLES
     $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/generate/agent-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/generate/agent-spec.ts)_
 
 ## `sf agent generate authoring-bundle`
 
@@ -557,18 +557,22 @@ EXAMPLES
       other-package-dir/main/default --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/generate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/generate/authoring-bundle.ts)_
 
 ## `sf agent generate template`
 
-Generate an agent template from an existing agent in your DX project so you can then package the template in a managed package.
+Generate an agent template from an existing agent in your DX project so you can then package the template in a second-generation managed package.
 
 ```
 USAGE
-  $ sf agent generate template --agent-version <value> -f <value> [--json] [--flags-dir <value>] [--api-version <value>]
+  $ sf agent generate template -s <value> --agent-version <value> -f <value> [--json] [--flags-dir <value>] [--api-version
+    <value>] [-r <value>]
 
 FLAGS
   -f, --agent-file=<value>     (required) Path to an agent (Bot) metadata file.
+  -r, --output-dir=<value>     Directory where the generated BotTemplate and GenAiPlannerBundle files are saved.
+  -s, --source-org=<value>     (required) Username or alias of the namespaced scratch org that contains the agent which
+                               this template is based on.
       --agent-version=<value>  (required) Version of the agent (BotVersion).
       --api-version=<value>    Override the api version used for api requests made by this command
 
@@ -577,35 +581,45 @@ GLOBAL FLAGS
   --json               Format output as json.
 
 DESCRIPTION
-  Generate an agent template from an existing agent in your DX project so you can then package the template in a managed
-  package.
+  Generate an agent template from an existing agent in your DX project so you can then package the template in a
+  second-generation managed package.
+
+  WARNING: This command doesn't work for agents that were created from an Agent Script file. In other words, you can't
+  currently package an agent template for agents that use Agent Script.
 
   At a high-level, agents are defined by the Bot, BotVersion, and GenAiPlannerBundle metadata types. The
   GenAiPlannerBundle type in turn defines the agent's topics and actions. This command uses the metadata files for these
-  three types, located in your local DX project, to generate a BotTemplate file for a specific agent (Bot). You then use
-  the BotTemplate file, along with the GenAiPlannerBundle file that references the BotTemplate, to package the template
-  in a managed package that you can share between orgs or on AppExchange.
+  three types, located in your local DX project, to generate a BotTemplate metadata file for a specific agent (Bot). You
+  then use the BotTemplate metadata file, along with the GenAiPlannerBundle metadata file that references the
+  BotTemplate, to package the template in a managed package that you can share between orgs or on AppExchange.
 
   Use the --agent-file flag to specify the relative or full pathname of the Bot metadata file, such as
   force-app/main/default/bots/My_Awesome_Agent/My_Awesome_Agent.bot-meta.xml. A single Bot can have multiple
-  BotVersions, so use the --agent-version flag to specify the version. The corresponding BotVersion file must exist
-  locally. For example, if you specify "--agent-version 4", then the file
+  BotVersions, so use the --agent-version flag to specify the version. The corresponding BotVersion metadata file must
+  exist locally. For example, if you specify "--agent-version 4", then the file
   force-app/main/default/bots/My_Awesome_Agent/v4.botVersion-meta.xml must exist.
 
-  The new BotTemplate file is generated in the "botTemplates" directory in your local package directory, and has the
-  name <Agent_API_name>_v<Version>_Template.botTemplate-meta.xml, such as
-  force-app/main/default/botTemplates/My_Awesome_Agent_v4_Template.botTemplate-meta.xml. The command displays the full
-  pathname of the generated files when it completes.
+  The new BotTemplate metadata file is generated in the "botTemplates" directory in the output directory specified with
+  the --output-dir flag, and has the name <Agent_API_name>\_v<Version>\_Template.botTemplate-meta.xml, such as
+  my-package/botTemplates/My_Awesome_Agent_v4_Template.botTemplate-meta.xml. The command displays the full pathname of
+  the generated files when it completes.
+
+  See "Develop and Package Agent Templates Using Scratch Orgs"
+  (https://developer.salesforce.com/docs/atlas.en-us.pkg2_dev.meta/pkg2_dev/dev2gp_package_agent_templates.htm) for
+  details about the complete process, which includes using a scratch org to create and test the agent, retrieving the
+  agent metadata to your DX project, running this command to create the agent template, and then packaging the template.
 
 EXAMPLES
-  Generate an agent template from a Bot metadata file in your DX project that corresponds to the My_Awesome_Agent
-  agent; use version 1 of the agent.
+  Generate an agent template from the My_Awesome_Agent Bot metadata file in your DX project and save the BotTemplate
+  and GenAiPlannerBundle to the specified directory; use version 1 of the agent. The agent that the template is based
+  on is in the org with alias "my-scratch-org":
 
     $ sf agent generate template --agent-file \
-      force-app/main/default/bots/My_Awesome_Agent/My_Awesome_Agent.bot-meta.xml --agent-version 1
+      force-app/main/default/bots/My_Awesome_Agent/My_Awesome_Agent.bot-meta.xml --agent-version 1 --output-dir \
+      my-package --source-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/generate/template.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/generate/template.ts)_
 
 ## `sf agent generate test-spec`
 
@@ -670,7 +684,7 @@ EXAMPLES
       force-app//main/default/aiEvaluationDefinitions/Resort_Manager_Tests.aiEvaluationDefinition-meta.xml
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/generate/test-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/generate/test-spec.ts)_
 
 ## `sf agent preview`
 
@@ -743,7 +757,7 @@ EXAMPLES
     $ sf agent preview --use-live-actions --apex-debug --output-dir transcripts/my-preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/preview.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/preview.ts)_
 
 ## `sf agent preview end`
 
@@ -798,7 +812,7 @@ EXAMPLES
     $ sf agent preview end --authoring-bundle My_Local_Agent
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/preview/end.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/preview/end.ts)_
 
 ## `sf agent preview send`
 
@@ -856,7 +870,7 @@ EXAMPLES
     $ sf agent preview send --utterance "what can you help me with?" --authoring-bundle My_Local_Agent
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/preview/send.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/preview/send.ts)_
 
 ## `sf agent preview sessions`
 
@@ -889,7 +903,7 @@ EXAMPLES
     $ sf agent preview sessions
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/preview/sessions.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/preview/sessions.ts)_
 
 ## `sf agent preview start`
 
@@ -946,7 +960,7 @@ EXAMPLES
     $ sf agent preview start --api-name My_Published_Agent
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/preview/start.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/preview/start.ts)_
 
 ## `sf agent publish authoring-bundle`
 
@@ -995,7 +1009,7 @@ EXAMPLES
     $ sf agent publish authoring-bundle --api-name MyAuthoringbundle --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/publish/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/publish/authoring-bundle.ts)_
 
 ## `sf agent test create`
 
@@ -1050,7 +1064,7 @@ EXAMPLES
     $ sf agent test create --spec specs/Resort_Manager-testSpec.yaml --api-name Resort_Manager_Test --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/test/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/test/create.ts)_
 
 ## `sf agent test list`
 
@@ -1085,7 +1099,7 @@ EXAMPLES
     $ sf agent test list --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/test/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/test/list.ts)_
 
 ## `sf agent test results`
 
@@ -1151,7 +1165,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/test/results.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/test/results.ts)_
 
 ## `sf agent test resume`
 
@@ -1224,7 +1238,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/test/resume.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/test/resume.ts)_
 
 ## `sf agent test run`
 
@@ -1298,7 +1312,7 @@ FLAG DESCRIPTIONS
     expression when using custom evaluations.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/test/run.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/test/run.ts)_
 
 ## `sf agent validate authoring-bundle`
 
@@ -1345,7 +1359,7 @@ EXAMPLES
     $ sf agent validate authoring-bundle --api-name MyAuthoringBundle --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.10/src/commands/agent/validate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.32.11/src/commands/agent/validate/authoring-bundle.ts)_
 
 ## `sf alias list`
 
