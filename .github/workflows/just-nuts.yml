@@ -34,6 +34,7 @@ jobs:
           - salesforcecli/plugin-sobject
           - salesforcecli/plugin-templates
           - salesforcecli/plugin-user
+          - salesforcecli/plugin-trust
     uses: ./.github/workflows/just-nut.yml
     with:
       repository: ${{ matrix.repository }}
