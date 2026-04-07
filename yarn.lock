@@ -1769,10 +1769,10 @@
     ansi-escapes "^7.3.0"
     inquirer-autocomplete-standalone "^0.8.1"
 
-"@oclif/plugin-update@4.7.29":
-  version "4.7.29"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.7.29.tgz#efd831c825bba9543503ad500f815a7c053cac67"
-  integrity sha512-wSN7fdJ39OGR+AMBgq3SysXiwssIpNmCNJUXhnTsacHbBkrHHap5gNRiVWvfnQ/51geaIRZWMtGzwoEzW6osew==
+"@oclif/plugin-update@4.7.30":
+  version "4.7.30"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.7.30.tgz#babbbb02919f123c339a667b35cda0b792eef0da"
+  integrity sha512-dN5/m2IVtlUcZqGfbK6U8kGT4WQqPYCUac6CpeiuJ7hPF8qVkeDpQ/zG3mRFe2xBLVpjKkuP7fdZutj0O3Xk8Q==
   dependencies:
     "@inquirer/select" "^2.5.0"
     "@oclif/core" "^4"
@@ -2260,13 +2260,13 @@
     debug "^4.4.0"
     handlebars "^4.7.8"
 
-"@salesforce/plugin-data@4.0.87":
-  version "4.0.87"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-4.0.87.tgz#07f49e936fdd9b02cc43c8834e311fb27e09f41f"
-  integrity sha512-99es8pvGtdrBqnXXzJZJEiFtJRmPlEG5ynJryRlAN1aIdWg6zm4/j+DjEWDTu9KRCK8FsDKXQL3wUDW1NOWkMw==
+"@salesforce/plugin-data@4.0.89":
+  version "4.0.89"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-4.0.89.tgz#41356fa2aff1712279b84fb3f5e2fef1bb871365"
+  integrity sha512-uOgp2Skl6jsS7kZ8K0E52VFjeok9hNEgWLa0X+NMAYFSiJfI2TRihB5nSTvmRWKjz4XZVGy4KaBgZBqBoJ3NGQ==
   dependencies:
     "@jsforce/jsforce-node" "^3.10.14"
-    "@oclif/multi-stage-output" "^0.8.30"
+    "@oclif/multi-stage-output" "^0.8.34"
     "@salesforce/core" "^8.28.1"
     "@salesforce/kit" "^3.2.6"
     "@salesforce/sf-plugins-core" "^12.2.6"
@@ -2277,7 +2277,7 @@
     csv-stringify "^6.6.0"
     form-data "^4.0.5"
     terminal-link "^3.0.0"
-    undici "^7.24.5"
+    undici "^7.24.7"
     zod "^4.3.6"
 
 "@salesforce/plugin-deploy-retrieve@3.24.27":
@@ -11058,10 +11058,10 @@ undici-types@~7.8.0:
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-7.8.0.tgz#de00b85b710c54122e44fbfd911f8d70174cd294"
   integrity sha512-9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==
 
-undici@^7.24.5:
-  version "7.24.5"
-  resolved "https://registry.yarnpkg.com/undici/-/undici-7.24.5.tgz#7debcf5623df2d1cb469b6face01645d9c852ae2"
-  integrity sha512-3IWdCpjgxp15CbJnsi/Y9TCDE7HWVN19j1hmzVhoAkY/+CJx449tVxT5wZc1Gwg8J+P0LWvzlBzxYRnHJ+1i7Q==
+undici@^7.24.7:
+  version "7.24.7"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-7.24.7.tgz#af9535341bbe80625ca403a02418477a5c6a8760"
+  integrity sha512-H/nlJ/h0ggGC+uRL3ovD+G0i4bqhvsDOpbDv7At5eFLlj2b41L8QliGbnl2H7SnDiYhENphh1tQFJZf+MyfLsQ==
 
 unicorn-magic@^0.1.0:
   version "0.1.0"
