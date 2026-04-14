@@ -15,4 +15,4 @@ jobs:
           node-version: 'latest'
           cache: yarn
       - run: npm install --global @salesforce/cli
-      - run: sf plugins install sfdx-git-delta
+      - run: echo y | sf plugins install sfdx-git-delta
