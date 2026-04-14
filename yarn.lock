@@ -2333,10 +2333,10 @@
     debug "^4.4.3"
     handlebars "^4.7.9"
 
-"@salesforce/plugin-data@4.0.90":
-  version "4.0.90"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-4.0.90.tgz#32d36939bfe331b7f42985de594762d6a4470f09"
-  integrity sha512-qdmTHirS8/X9SeA4KEoeDlm37xsw0E+0/E+/fgLItTtUvmn+bdVueeUwA20IuSaxXa8vzZHYkBJtTtqjEYuyQQ==
+"@salesforce/plugin-data@4.0.91":
+  version "4.0.91"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-4.0.91.tgz#a352001610e5332fc23355f4ad8dac6025a43a48"
+  integrity sha512-+s/+2rt/NX0PvWUpQKnVmoYOV3OdfLq9POB6NuT6Qy4SafC60ENnUOl+q6vJdEHuOsKJVAp9nPhAPMwCwAb1Ow==
   dependencies:
     "@jsforce/jsforce-node" "^3.10.14"
     "@oclif/multi-stage-output" "^0.8.36"
@@ -2347,7 +2347,7 @@
     ansis "^3.16.0"
     change-case "^5.4.4"
     csv-parse "^5.6.0"
-    csv-stringify "^6.6.0"
+    csv-stringify "^6.7.0"
     form-data "^4.0.5"
     terminal-link "^3.0.0"
     undici "^7.24.7"
@@ -5040,10 +5040,10 @@ csv-parse@^5.5.2, csv-parse@^5.6.0:
   resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-5.6.0.tgz#219beace2a3e9f28929999d2aa417d3fb3071c7f"
   integrity sha512-l3nz3euub2QMg5ouu5U09Ew9Wf6/wQ8I++ch1loQ0ljmzhmfZYrH9fflS22i/PQEvsPvxCwxgz5q7UB8K1JO4Q==
 
-csv-stringify@^6.6.0:
-  version "6.6.0"
-  resolved "https://registry.yarnpkg.com/csv-stringify/-/csv-stringify-6.6.0.tgz#d384859cfb71d0a4a73c5bcc36a4daf5440cb033"
-  integrity sha512-YW32lKOmIBgbxtu3g5SaiqWNwa/9ISQt2EcgOq0+RAIFufFp9is6tqNnKahqE5kuKvrnYAzs28r+s6pXJR8Vcw==
+csv-stringify@^6.6.0, csv-stringify@^6.7.0:
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/csv-stringify/-/csv-stringify-6.7.0.tgz#74c657f278e7ac6ebc8f6812d098dfe0ea0b7e14"
+  integrity sha512-UdtziYp5HuTz7e5j8Nvq+a/3HQo+2/aJZ9xntNTpmRRIg/3YYqDVgiS9fvAhtNbnyfbv2ZBe0bqCHqzhE7FqWQ==
 
 dargs@^7.0.0:
   version "7.0.0"
