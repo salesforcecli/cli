@@ -1925,10 +1925,10 @@
     "@oclif/core" "^4"
     ansis "^3.17.0"
 
-"@oclif/table@^0.5.4":
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/@oclif/table/-/table-0.5.4.tgz#a6b9845c50bcaeb15d7cfcb1dee36cc8078446e6"
-  integrity sha512-tIW7JTfO/t19cfOZofxEi16GAV12osvuSwdDHQ6ltIYtNeDyT8vJqdqo5NmyKNNwUy6V1DoGsVhJtPTFabR4hg==
+"@oclif/table@^0.5.4", "@oclif/table@^0.5.5":
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/@oclif/table/-/table-0.5.5.tgz#bbe455aa636d95ae99723efac9ede1884adb891f"
+  integrity sha512-ppjPNFf5bL28KiiMIxyDwXhGJ3ke7MFg532k8bkaInavv84zRgoLhc+5ocZMX1EPToqgSsZAn8bQhaZz07enww==
   dependencies:
     "@types/react" "^18.3.12"
     change-case "^5.4.4"
@@ -1937,6 +1937,7 @@
     natural-orderby "^3.0.2"
     object-hash "^3.0.0"
     react "^18.3.1"
+    string-width "^8.2.0"
     strip-ansi "^7.1.2"
     wrap-ansi "^9.0.2"
 
@@ -2568,10 +2569,10 @@
     "@salesforce/ts-types" "^2.0.12"
     debug "^4.4.3"
 
-"@salesforce/plugin-templates@56.16.2":
-  version "56.16.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-templates/-/plugin-templates-56.16.2.tgz#a6b7178351bbb9ac9b57bd9877fe4de9f8308d5f"
-  integrity sha512-U4C0gIRytppQWJJ2b97LbR+7A+bD1HMHEbr6Pp4CDs/MupFbkEBeRvPisJtQ7rs1/h6oZ+IJW2CRDYu5Mq/loA==
+"@salesforce/plugin-templates@56.16.3":
+  version "56.16.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-templates/-/plugin-templates-56.16.3.tgz#29c6496b57426c531e9dd65c5a8f57dd4a91e463"
+  integrity sha512-/eift3FLVeie6wBevXXS9yJit2I7eSTbwglyaBzFEI7pFyyaM4pcwy3en5EatJohXBKZfvdjCs614unDKS2BRw==
   dependencies:
     "@salesforce/core" "^8.28.4"
     "@salesforce/sf-plugins-core" "^12"
@@ -2614,15 +2615,15 @@
   resolved "https://registry.yarnpkg.com/@salesforce/schemas/-/schemas-1.10.3.tgz#52c867fdd60679cf216110aa49542b7ad391f5d1"
   integrity sha512-FKfvtrYTcvTXE9advzS25/DEY9yJhEyLvStm++eQFtnAaX1pe4G3oGHgiQ0q55BM5+0AlCh0+0CVtQv1t4oJRA==
 
-"@salesforce/sf-plugins-core@12.2.7", "@salesforce/sf-plugins-core@^12", "@salesforce/sf-plugins-core@^12.2.6":
-  version "12.2.7"
-  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-12.2.7.tgz#636c7e424d6f21a648207a3299285109d2bd2fd8"
-  integrity sha512-ivxPbrTCkexd+2HwUegsxmbPU4myMLribKDVaBcdgkRn73jewZ7yoRG3Ome3f9TfJfOk9XLhSXt+nU1L08YpBg==
+"@salesforce/sf-plugins-core@12.2.10", "@salesforce/sf-plugins-core@^12", "@salesforce/sf-plugins-core@^12.2.6":
+  version "12.2.10"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-12.2.10.tgz#b3c121ebbded3f9632f4c9cf96e906cdd1448323"
+  integrity sha512-Rx6dbyKb1u08Fjcan8ZDhUkb073CBLRVEPH2KllZWclQRMa5gzcvmuB3uXhUXK5l0paH5o4g0CojgbNqEKhS9g==
   dependencies:
     "@inquirer/confirm" "^6.0.12"
     "@inquirer/password" "^5.0.12"
     "@oclif/core" "^4.10.6"
-    "@oclif/table" "^0.5.4"
+    "@oclif/table" "^0.5.5"
     "@salesforce/core" "^8.28.4"
     "@salesforce/kit" "^3.2.3"
     "@salesforce/ts-types" "^2.0.12"
@@ -6251,10 +6252,10 @@ get-caller-file@^2.0.1, get-caller-file@^2.0.5:
   resolved "https://registry.npmjs.org/get-caller-file/-/get-caller-file-2.0.5.tgz"
   integrity sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==
 
-get-east-asian-width@^1.0.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/get-east-asian-width/-/get-east-asian-width-1.2.0.tgz#5e6ebd9baee6fb8b7b6bd505221065f0cd91f64e"
-  integrity sha512-2nk+7SIVb14QrgXFHcm84tD4bKQz0RxPuMT8Ag5KPOq7J5fEmAg0UbXdTOSHqNuHSU28k55qnceesxXRZGzKWA==
+get-east-asian-width@^1.0.0, get-east-asian-width@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/get-east-asian-width/-/get-east-asian-width-1.5.0.tgz#ce7008fe345edcf5497a6f557cfa54bc318a9ce7"
+  integrity sha512-CQ+bEO+Tva/qlmw24dCejulK5pMzVnUOFOijVogd3KQs07HnRIgp8TGipvCCRT06xeYEbpbgwaCxglFyiuIcmA==
 
 get-func-name@^2.0.1, get-func-name@^2.0.2:
   version "2.0.2"
@@ -10502,6 +10503,14 @@ string-width@^7.0.0, string-width@^7.2.0:
     emoji-regex "^10.3.0"
     get-east-asian-width "^1.0.0"
     strip-ansi "^7.1.0"
+
+string-width@^8.2.0:
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/string-width/-/string-width-8.2.1.tgz#165089cfa527cc88fbc23dd73313f5e334af1ea1"
+  integrity sha512-IIaP0g3iy9Cyy18w3M9YcaDudujEAVHKt3a3QJg1+sr/oX96TbaGUubG0hJyCjCBThFH+tFpcIyoUHUn1ogaLA==
+  dependencies:
+    get-east-asian-width "^1.5.0"
+    strip-ansi "^7.1.2"
 
 string.prototype.trim@^1.2.9:
   version "1.2.9"
