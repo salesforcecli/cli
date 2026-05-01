@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.134.0 linux-x64 node-v22.22.2
+@salesforce/cli/2.134.1 linux-x64 node-v22.22.2
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -173,6 +173,9 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf plugins install PLUGIN`](#sf-plugins-install-plugin)
 - [`sf plugins link PATH`](#sf-plugins-link-path)
 - [`sf plugins reset`](#sf-plugins-reset)
+- [`sf plugins trust allowlist add`](#sf-plugins-trust-allowlist-add)
+- [`sf plugins trust allowlist list`](#sf-plugins-trust-allowlist-list)
+- [`sf plugins trust allowlist remove`](#sf-plugins-trust-allowlist-remove)
 - [`sf plugins trust verify`](#sf-plugins-trust-verify)
 - [`sf plugins uninstall [PLUGIN]`](#sf-plugins-uninstall-plugin)
 - [`sf plugins update`](#sf-plugins-update)
@@ -7781,6 +7784,108 @@ FLAGS
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.62/src/commands/plugins/reset.ts)_
 
+## `sf plugins trust allowlist add`
+
+Add plugins to the plugin allowlist.
+
+```
+USAGE
+  $ sf plugins trust allowlist add -n <value>... [--json] [--flags-dir <value>]
+
+FLAGS
+  -n, --name=<value>...  (required) The npm name of the plugin to add to the allowlist. Add multiple plugins by
+                         specifying the `--name` flag multiple times.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Add plugins to the plugin allowlist.
+
+  The plugin allowlist lets users automatically install a plugin without being prompted, even when the plugin is
+  unsigned.
+
+  This command adds one or more plugins to the `unsignedPluginAllowList.json` file, creating the file if it doesn't
+  exist. Plugins already present in the allowlist are skipped.
+
+EXAMPLES
+  Add a single plugin to the allowlist:
+
+    $ sf plugins trust allowlist add --name @scope/my-plugin
+
+  Add multiple plugins to the allowlist:
+
+    $ sf plugins trust allowlist add --name @scope/my-plugin --name another-plugin
+```
+
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.8.0/src/commands/plugins/trust/allowlist/add.ts)_
+
+## `sf plugins trust allowlist list`
+
+List the plugins on the plugin allowlist.
+
+```
+USAGE
+  $ sf plugins trust allowlist list [--json] [--flags-dir <value>]
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  List the plugins on the plugin allowlist.
+
+  The plugin allowlist lets users automatically install a plugin without being prompted, even when the plugin is
+  unsigned.
+
+  This command prints the contents of the `unsignedPluginAllowList.json` file as a table.
+
+EXAMPLES
+  List all plugins on the allowlist:
+
+    $ sf plugins trust allowlist list
+```
+
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.8.0/src/commands/plugins/trust/allowlist/list.ts)_
+
+## `sf plugins trust allowlist remove`
+
+Remove plugins from the plugin allowlist.
+
+```
+USAGE
+  $ sf plugins trust allowlist remove -n <value>... [--json] [--flags-dir <value>]
+
+FLAGS
+  -n, --name=<value>...  (required) The npm name of the plugin to remove from the allowlist. Remove multiple plugins by
+                         specifying the `--name` flag multiple times.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Remove plugins from the plugin allowlist.
+
+  The plugin allowlist lets users automatically install a plugin without being prompted, even when the plugin is
+  unsigned.
+
+  This command removes one or more plugins from the `unsignedPluginAllowList.json` file. Plugins not present in the
+  allowlist are skipped.
+
+EXAMPLES
+  Remove a single plugin from the allowlist:
+
+    $ sf plugins trust allowlist remove --name @scope/my-plugin
+
+  Remove multiple plugins from the allowlist:
+
+    $ sf plugins trust allowlist remove --name @scope/my-plugin --name another-plugin
+```
+
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.8.0/src/commands/plugins/trust/allowlist/remove.ts)_
+
 ## `sf plugins trust verify`
 
 Validate a digital signature.
@@ -7808,7 +7913,7 @@ EXAMPLES
   $ sf plugins trust verify --npm @scope/npmName
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.7.127/src/commands/plugins/trust/verify.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.8.0/src/commands/plugins/trust/verify.ts)_
 
 ## `sf plugins uninstall [PLUGIN]`
 
