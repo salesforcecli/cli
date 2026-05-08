@@ -1742,10 +1742,10 @@
     node-gyp "^12.1.0"
     proc-log "^6.0.0"
 
-"@oclif/core@4.11.0", "@oclif/core@^4", "@oclif/core@^4.0.27", "@oclif/core@^4.10.4", "@oclif/core@^4.10.5", "@oclif/core@^4.10.6", "@oclif/core@^4.11.0":
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.11.0.tgz#262102cbdabfe0f83eba5381a4ffcd34d779921a"
-  integrity sha512-nTkRMgxFlIKQIIYGvhO2JMsLSQ1aHPHblHfFgxgoBrGK8Ao/8wxc4eNOIv/+t8dMXliZd7mREVr6la4aXXXg5A==
+"@oclif/core@4.11.1", "@oclif/core@^4", "@oclif/core@^4.0.27", "@oclif/core@^4.10.4", "@oclif/core@^4.10.5", "@oclif/core@^4.10.6", "@oclif/core@^4.11.0":
+  version "4.11.1"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.11.1.tgz#f72284b4e14c4a3f47a9952ed2234f000fc23536"
+  integrity sha512-+N5yqeoOKPnT0p+ZJiNutMILsZukZrEpsVup24XERla594EkGSWS9tiCqRfvzr1xfvf/AhM9pb0yPaf8L3Y9Uw==
   dependencies:
     ansi-escapes "^4.3.2"
     ansis "^3.17.0"
@@ -1855,10 +1855,10 @@
     ansis "^3.17.0"
     fast-levenshtein "^3.0.0"
 
-"@oclif/plugin-plugins@5.4.63":
-  version "5.4.63"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-5.4.63.tgz#ec11da85cda820aa0361dd7b6a6a869e505d7634"
-  integrity sha512-PZ/NKMFwmlLu5iWR0KlcdqX7k8fHc1hZhFDgzCVrEPbMiEwRDGifKiDTwGcXiLsSpsKhL1BY11FEeA1jz/NRQw==
+"@oclif/plugin-plugins@5.4.64":
+  version "5.4.64"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-5.4.64.tgz#0ddeb9b7c9b10f36da62d8e93ad5f39481d8f09e"
+  integrity sha512-7Pxy6O5qdF6eCgf1KrAUGecQ/BJ/2jnhTvgmUqhlKhznZ/zc/t+dNrlJc9Ig0gqvFARrtquFzMeEGddQf7fdfw==
   dependencies:
     "@oclif/core" "^4.11.0"
     ansis "^3.17.0"
@@ -2165,18 +2165,18 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==
 
-"@salesforce/agents@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/agents/-/agents-1.4.0.tgz#69c3e3e9d29b9596aadf99f94774c9c8713e34ca"
-  integrity sha512-NaiGUSjcyK0Wsy0n5pFuouHqOYH1KJEpgm605NqCaiOMAA3zn0pWZDHE9I75ymGqpvOXSHGDFNrUhKYPain9ZA==
+"@salesforce/agents@^1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/agents/-/agents-1.5.2.tgz#b81baa29c872f0b230468721a80a261e499972e4"
+  integrity sha512-eFy2IBw+43W3Xqbg2MbilG5Deet242FeHYt+z2JRRa73Um7+3wfI9b53haahnjZ6uCdqcYp6DYKVT037IyK1WA==
   dependencies:
-    "@salesforce/core" "^8.28.3"
+    "@salesforce/core" "^8.29.0"
     "@salesforce/kit" "^3.2.6"
-    "@salesforce/source-deploy-retrieve" "^12.32.7"
+    "@salesforce/source-deploy-retrieve" "^12.35.1"
     "@salesforce/types" "^1.7.1"
-    fast-xml-parser "^5.6.0"
+    fast-xml-parser "^5.7.2"
     nock "^13.5.6"
-    yaml "^2.8.3"
+    yaml "^2.8.4"
 
 "@salesforce/apex-node@^8.4.22":
   version "8.4.22"
@@ -2306,20 +2306,20 @@
     jszip "^3.10.1"
     object-treeify "^2"
 
-"@salesforce/plugin-agent@1.35.0":
-  version "1.35.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-agent/-/plugin-agent-1.35.0.tgz#9ead47d6088c627d49f6503bc6eaa645c529599f"
-  integrity sha512-NCJ7mHHD9LO1jZgUjTeN4qmx9Ppds2VZv97P1qnAFNbgrn3/72ADIjUFNaba+8RL56e1DFPIAL36BNS+xGMvZQ==
+"@salesforce/plugin-agent@1.37.0":
+  version "1.37.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-agent/-/plugin-agent-1.37.0.tgz#d610d8aa9bc15f98de2dcbba191d58e4499d10ce"
+  integrity sha512-YpKRZY67TkHN7YPUo2WxUFtYYzz8YM44xIHSvOVHDVWV2JxVOmA91/OVvibPoZk6ylDNvvrCaysseclqNtrB2w==
   dependencies:
     "@inquirer/core" "^10.3.2"
     "@inquirer/prompts" "^7.10.1"
     "@oclif/core" "^4"
     "@oclif/multi-stage-output" "^0.8.36"
-    "@salesforce/agents" "^1.4.0"
+    "@salesforce/agents" "^1.5.2"
     "@salesforce/core" "^8.28.3"
     "@salesforce/kit" "^3.2.6"
     "@salesforce/sf-plugins-core" "^12.2.6"
-    "@salesforce/source-deploy-retrieve" "^12.32.8"
+    "@salesforce/source-deploy-retrieve" "^12.35.3"
     "@salesforce/types" "^1.7.1"
     ansis "^3.3.2"
     fast-xml-parser "^5.7.1"
@@ -2341,10 +2341,10 @@
     "@salesforce/sf-plugins-core" "^12.2.6"
     ansis "^3.3.1"
 
-"@salesforce/plugin-api@1.3.23":
-  version "1.3.23"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-api/-/plugin-api-1.3.23.tgz#e5e869cc33d241352897b3918012f7cfebbcd5ec"
-  integrity sha512-9+FoJV8Y0veZKbay8rd5Xho0x58NnbHvu0gtMGUWVbMS361h9EX58PdrVACMu3yqu+OK33p+kXBWn44rzY8mfQ==
+"@salesforce/plugin-api@1.3.25":
+  version "1.3.25"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-api/-/plugin-api-1.3.25.tgz#36d6b07c8e8c02c2e8ed822a3322253f9eaa967d"
+  integrity sha512-JYL5Cistmk9PTOxGVmwLbMPHdsnuv4BUUpWRQO3yHnC8SrU12OWfsy1x1InLsMP1BAUcuwtSc6FQqHcV7RbshA==
   dependencies:
     "@oclif/core" "^4"
     "@salesforce/core" "^8.28.3"
@@ -2405,10 +2405,10 @@
     undici "^7.25.0"
     zod "^4.4.2"
 
-"@salesforce/plugin-deploy-retrieve@3.24.41":
-  version "3.24.41"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.24.41.tgz#d0da362ec647f8c53dd68ba9649bffcc6f619aad"
-  integrity sha512-QyiuQLaHXR+u9d8UjDogqX+FPL7FWFi728rCKeg67T5OysVo7BFTTDtTPQ6qQoP/eNRscSLXK9PZyGciYlrEMQ==
+"@salesforce/plugin-deploy-retrieve@3.24.42":
+  version "3.24.42"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-3.24.42.tgz#1c83d398293739600fd0529011951006cc95c963"
+  integrity sha512-apjG9+8ypSbQu3WbMbMzAyZiqh5jMSTo1i/p85Kz7qL97eurpg2ncHQ7yHj4KhS2G6aTWVGy9DMpaQSNWoSOdQ==
   dependencies:
     "@inquirer/prompts" "^7.8.3"
     "@oclif/core" "^4.10.5"
@@ -2450,10 +2450,10 @@
     "@salesforce/core" "^8.29.0"
     "@salesforce/sf-plugins-core" "^12.2.10"
 
-"@salesforce/plugin-marketplace@1.3.20":
-  version "1.3.20"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-marketplace/-/plugin-marketplace-1.3.20.tgz#d8d61b3136142a8d7edb4e6115d201d79e41bf82"
-  integrity sha512-1BwtZw/47wZhxAF7K5tm4NhbwtVOGxfPml/n9PcHLdKNMS7Y8dlWwXGMfYvPMOQPhCrgAqRyRsNZCxeR73JYgA==
+"@salesforce/plugin-marketplace@1.3.22":
+  version "1.3.22"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-marketplace/-/plugin-marketplace-1.3.22.tgz#6f20640946418323df84ef761958070cc164f29b"
+  integrity sha512-UsUJUl8tK7FimV+Pc9vBDe0aCioGYeTibXfNp5fX2CxT4MmFjbma++adMR6f33YSEU11mBaj34mq4VS8cYWc2w==
   dependencies:
     "@salesforce/core" "^8.29.0"
     "@salesforce/kit" "^3.2.4"
@@ -2461,10 +2461,10 @@
     got "^13.0.0"
     proxy-agent "^6.5.0"
 
-"@salesforce/plugin-org@5.10.6":
-  version "5.10.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-5.10.6.tgz#6c53dfdd60b7be2fc6ad605580837eba11de81e3"
-  integrity sha512-XQJdk4RJoSAzSXd4bBEFrHHBAnG8j0Cb4kgYAmiXGBUovcmxhgDjY2Ep/TiAHGMdKzRH/9VtBRyIpabg3n7YiA==
+"@salesforce/plugin-org@5.10.8":
+  version "5.10.8"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-5.10.8.tgz#1b7e4b0976da86604f7e3326a2dd26276f462c4f"
+  integrity sha512-sBzupN0cwlJh3Hm903cifnRkart7Le3o05P7reFEFjOr3yxNO9U5URP2hJXIfiNTaLcRm3D8+FJ0H1/5XHQHiA==
   dependencies:
     "@oclif/core" "^4.10.6"
     "@oclif/multi-stage-output" "^0.8.30"
@@ -2479,10 +2479,10 @@
     open "^10.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-packaging@2.27.10":
-  version "2.27.10"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.27.10.tgz#f23668daadc6fc95e616ee85c0e4307d03ce9b34"
-  integrity sha512-mpydleYxGD45GgGRgpffdRyk+dGyvWVcFSRIGwhBI0pyNd8obnuwbaesVjIcLv3ihKooVcQtQ2jTtcle1q8J/A==
+"@salesforce/plugin-packaging@2.27.13":
+  version "2.27.13"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.27.13.tgz#24ac960dc961c96a59a585750e128494388bee1c"
+  integrity sha512-VATwRumyR/ASFVoL+aAo+QOzM8mxixJyDfoLPN+EZ4a669QGRif5OMqvTUrey5fbIcE0NjDIQRG4ZsYyU6D72Q==
   dependencies:
     "@oclif/core" "^4"
     "@salesforce/core" "^8.29.0"
@@ -2556,10 +2556,10 @@
     fast-xml-parser "^5.7.2"
     js2xmlparser "^4.0.2"
 
-"@salesforce/plugin-telemetry@3.8.16":
-  version "3.8.16"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.8.16.tgz#97d186bc7ba6b0e294c9d5090df986b80bd5fa61"
-  integrity sha512-7HLM/bCeSJ9IfN+MedA/0j9aTTnVVtrJp6YIySYjFAVPrlajD/0leThO05AUZM8DNultMHNnvxEjhXyNhDP02Q==
+"@salesforce/plugin-telemetry@3.8.17":
+  version "3.8.17"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-3.8.17.tgz#6d79e642b6977ea1359a0d4227202af8980ed647"
+  integrity sha512-dveidlP7OpV0bM5jD8Rd6dQu+LHVsuEoT2AXAZwXEmTj99rzA0BxYDvDRGKFo3IUuwxJDwgxuyIuyi3O49kT5Q==
   dependencies:
     "@oclif/core" "^4.10.5"
     "@salesforce/core" "^8.27.1"
@@ -2578,10 +2578,10 @@
     "@salesforce/sf-plugins-core" "^12"
     "@salesforce/templates" "^66.7.12"
 
-"@salesforce/plugin-trust@3.8.1", "@salesforce/plugin-trust@^3.7.89":
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-3.8.1.tgz#dcdf26abaad0ba30d135879e4df3375e7977d0a8"
-  integrity sha512-SqAQo2x0Rqo03pLWvLGHo4ynG29EXg5K4oHUanRTB/EFD82431rxJW++fpNOrdT/4S4MtnaL043vJuUeoyHN2g==
+"@salesforce/plugin-trust@3.8.2", "@salesforce/plugin-trust@^3.7.89":
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-3.8.2.tgz#3b320d9e73bc92305d649be0736095796d3d53bb"
+  integrity sha512-ZVyRsbIEmX0hOY2B1ZreWvTkWdsndmVWWPwyF5eveuJyS32nIi/gO3bsAMvAiM3ygfzJlG0YnGfYdEZKurnZ7w==
   dependencies:
     "@oclif/core" "^4"
     "@salesforce/core" "^8.28.1"
@@ -2649,10 +2649,10 @@
     string-width "^7.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/source-deploy-retrieve@^12.32.7", "@salesforce/source-deploy-retrieve@^12.32.8", "@salesforce/source-deploy-retrieve@^12.34.2", "@salesforce/source-deploy-retrieve@^12.35.0", "@salesforce/source-deploy-retrieve@^12.35.1":
-  version "12.35.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.35.1.tgz#36c87a1d1d481ff7ad75ae01b7a6df4c788375ba"
-  integrity sha512-BOhoSu38KTmOZCIfoRELQpI0UxmL4wkkrqWxarodtaObaMmw5a14l8dgralxHgX1Y8DyBaA9nekCxxLopQKLFA==
+"@salesforce/source-deploy-retrieve@^12.32.7", "@salesforce/source-deploy-retrieve@^12.34.2", "@salesforce/source-deploy-retrieve@^12.35.0", "@salesforce/source-deploy-retrieve@^12.35.1", "@salesforce/source-deploy-retrieve@^12.35.3":
+  version "12.35.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-12.35.4.tgz#e2b4dc2270a1759f26c13ecf390ad37be03d4c94"
+  integrity sha512-Wuz+qD11ek6DfHNk2gH7shfxjjk98nSGRh/0kY5a4dJz2lslDJIHFIiMoocT7O1Wl0i6qAS85NOek9Z3xWteGw==
   dependencies:
     "@salesforce/core" "^8.29.0"
     "@salesforce/kit" "^3.2.4"
@@ -5968,7 +5968,7 @@ fast-xml-parser@5.5.8:
     path-expression-matcher "^1.2.0"
     strnum "^2.2.0"
 
-fast-xml-parser@^5.5.6, fast-xml-parser@^5.5.7, fast-xml-parser@^5.6.0, fast-xml-parser@^5.7.1, fast-xml-parser@^5.7.2:
+fast-xml-parser@^5.5.6, fast-xml-parser@^5.5.7, fast-xml-parser@^5.7.1, fast-xml-parser@^5.7.2:
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-5.7.2.tgz#fecd0b054c6c132fc03dab994a413da781e0eb9f"
   integrity sha512-P7oW7tLbYnhOLQk/Gv7cZgzgMPP/XN03K02/Jy6Y/NHzyIAIpxuZIM/YqAkfiXFPxA2CTm7NtCijK9EDu09u2w==
