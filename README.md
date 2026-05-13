@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.135.5 linux-x64 node-v22.22.2
+@salesforce/cli/2.135.6 linux-x64 node-v22.22.2
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -281,7 +281,7 @@ ERROR CODES
   ActivationFailed (4)  Failed to activate the agent due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/activate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/activate.ts)_
 
 ## `sf agent create`
 
@@ -348,7 +348,7 @@ EXAMPLES
     $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/create.ts)_
 
 ## `sf agent deactivate`
 
@@ -397,7 +397,7 @@ ERROR CODES
   DeactivationFailed (4)  Failed to deactivate the agent due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/deactivate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/deactivate.ts)_
 
 ## `sf agent generate agent-spec`
 
@@ -504,7 +504,7 @@ EXAMPLES
     $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/generate/agent-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/generate/agent-spec.ts)_
 
 ## `sf agent generate authoring-bundle`
 
@@ -581,7 +581,7 @@ EXAMPLES
       other-package-dir/main/default --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/generate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/generate/authoring-bundle.ts)_
 
 ## `sf agent generate template`
 
@@ -643,7 +643,7 @@ EXAMPLES
       my-package --source-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/generate/template.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/generate/template.ts)_
 
 ## `sf agent generate test-spec`
 
@@ -708,7 +708,7 @@ EXAMPLES
       force-app//main/default/aiEvaluationDefinitions/Resort_Manager_Tests.aiEvaluationDefinition-meta.xml
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/generate/test-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/generate/test-spec.ts)_
 
 ## `sf agent preview`
 
@@ -781,7 +781,7 @@ EXAMPLES
     $ sf agent preview --use-live-actions --apex-debug --output-dir transcripts/my-preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/preview.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/preview.ts)_
 
 ## `sf agent preview end`
 
@@ -865,7 +865,7 @@ ERROR CODES
   SessionAmbiguous (5)           Multiple preview sessions found; specify --session-id to choose one.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/preview/end.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/preview/end.ts)_
 
 ## `sf agent preview send`
 
@@ -932,7 +932,7 @@ ERROR CODES
   SessionAmbiguous (5)   Multiple preview sessions found; specify --session-id to choose one.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/preview/send.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/preview/send.ts)_
 
 ## `sf agent preview sessions`
 
@@ -968,7 +968,7 @@ ERROR CODES
   Succeeded (0)  Sessions listed successfully (or empty list if no active sessions).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/preview/sessions.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/preview/sessions.ts)_
 
 ## `sf agent preview start`
 
@@ -1044,7 +1044,7 @@ ERROR CODES
   PreviewStartFailed (4)  Preview session failed to start due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/preview/start.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/preview/start.ts)_
 
 ## `sf agent publish authoring-bundle`
 
@@ -1108,7 +1108,7 @@ ERROR CODES
   Failed (1)     Compilation errors found in the Agent Script file.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/publish/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/publish/authoring-bundle.ts)_
 
 ## `sf agent test create`
 
@@ -1172,7 +1172,7 @@ ERROR CODES
   DeploymentFailed (4)  Deployment failed due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/test/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/test/create.ts)_
 
 ## `sf agent test list`
 
@@ -1214,7 +1214,7 @@ ERROR CODES
   Failed (4)     Failed to retrieve agent tests due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/test/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/test/list.ts)_
 
 ## `sf agent test results`
 
@@ -1298,7 +1298,7 @@ ERROR CODES
   Failed (4)     Failed to retrieve results due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/test/results.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/test/results.ts)_
 
 ## `sf agent test resume`
 
@@ -1391,7 +1391,7 @@ ERROR CODES
   OperationFailed (4)  Failed to poll test due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/test/resume.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/test/resume.ts)_
 
 ## `sf agent test run`
 
@@ -1484,11 +1484,11 @@ ERROR CODES
   OperationFailed (4)  Failed to start or poll test due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/test/run.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/test/run.ts)_
 
 ## `sf agent test run-eval`
 
-Run evaluation tests against an Agentforce agent.
+Run rich evaluation tests against an Agentforce agent.
 
 ```
 USAGE
@@ -1496,8 +1496,8 @@ USAGE
     [--result-format json|human|junit|tap] [--batch-size <value>] [--no-normalize]
 
 FLAGS
-  -n, --api-name=<value>        Agent DeveloperName (also called API name) to resolve agent_id and agent_version_id.
-                                Auto-inferred from the YAML spec's subjectName.
+  -n, --api-name=<value>        Agent API name (also called DeveloperName) used to resolve agent_id and
+                                agent_version_id. Auto-inferred from the YAML spec's subjectName.
   -o, --target-org=<value>      (required) Username or alias of the target org. Not required if the `target-org`
                                 configuration variable is already set.
   -s, --spec=<value>            (required) Path to test spec file (YAML or JSON). Supports reading from stdin when
@@ -1513,45 +1513,48 @@ GLOBAL FLAGS
   --json               Format output as json.
 
 DESCRIPTION
-  Run evaluation tests against an Agentforce agent.
+  Run rich evaluation tests against an Agentforce agent.
 
-  Execute rich evaluation tests against an Agentforce agent using the Einstein Evaluation API. Supports both YAML test
-  specs (same format as `sf agent generate test-spec`) and JSON payloads.
+  Specify the tests you want to run with one of these inputs to the --spec flag:
 
-  When you provide a YAML test spec, the command automatically translates test cases into Evaluation API calls and
-  infers the agent name from the spec's `subjectName` field. This means you can use the same test spec with both `sf
-  agent test run` and `sf agent test run-eval`. YAML test specs also support contextVariables, which allow you to inject
-  contextual data (such as CaseId or RoutableId) into agent sessions for testing with different contexts.
+  - YAML test spec generated by the `agent generate test-spec` CLI command
+  - JSON payload
 
-  When you provide a JSON payload, it's sent directly to the API with optional normalization. The normalizer
-  auto-corrects common field name mistakes, converts shorthand references to JSONPath, and injects defaults. Use
-  `--no-normalize` to disable this auto-normalization. JSON payloads can also include context_variables on
-  agent.create_session steps for the same contextual testing capabilities.
+  When you provide a YAML test spec, this command automatically translates test cases into internal state-based
+  evaluation framework calls and infers the agent name from the test spec's `subjectName` field. As a result, you can
+  use the same test spec with both the `agent test run` and `agent test run-eval` commands. YAML test specs also support
+  context variables, which allow you to inject contextual data (such as CaseId or RoutableId) into agent sessions for
+  testing with different contexts.
 
-  Supports 8+ evaluator types, including topic routing assertions, action invocation checks, string/numeric assertions,
-  semantic similarity scoring, and LLM-based quality ratings.
+  When you provide a JSON payload, it's sent directly to the evaluation framework with optional normalization. The
+  normalizer auto-corrects common field name mistakes, converts shorthand references to JSONPath, and injects defaults.
+  Use `--no-normalize` to disable this auto-normalization. JSON payloads can also include context_variables on
+  agent.create_session steps for the same contextual testing capabilities as when you use a YAML test spec.
+
+  This command supports more than 8 evaluator types, including subagent routing assertions, action invocation checks,
+  string/numeric assertions, semantic similarity scoring, and LLM-based quality ratings.
 
 EXAMPLES
   Run tests using a YAML test spec on the org with alias "my-org":
 
-    $ sf agent test run-eval --spec tests/my-agent-testSpec.yaml --target-org my-org
+    $ sf agent test run-eval --spec specs/my-agent-testSpec.yaml --target-org my-org
 
   Run tests using a YAML spec with explicit agent name override; use your default org:
 
-    $ sf agent test run-eval --spec tests/my-agent-testSpec.yaml --api-name My_Agent --target-org my-org
+    $ sf agent test run-eval --spec specs/my-agent-testSpec.yaml --api-name My_Agent
 
   Run tests using a JSON payload:
 
-    $ sf agent test run-eval --spec tests/eval-payload.json --target-org my-org
+    $ sf agent test run-eval --spec specs/eval-payload.json --target-org my-org
 
   Run tests and output results in JUnit format; useful for continuous integration and deployment (CI/CD):
 
-    $ sf agent test run-eval --spec tests/my-agent-testSpec.yaml --target-org my-org --result-format junit
+    $ sf agent test run-eval --spec specs/my-agent-testSpec.yaml --target-org my-org --result-format junit
 
   Run tests with contextVariables to inject contextual data into agent sessions (add contextVariables to test cases in
   your YAML spec):
 
-    $ sf agent test run-eval --spec tests/agent-with-context.yaml --target-org my-org
+    $ sf agent test run-eval --spec specs/agent-with-context.yaml --target-org my-org
 
   Pipe JSON payload from stdin (--spec flag is automatically populated from stdin):
   $ echo '{"tests":[...]}' | sf agent test run-eval --spec --target-org my-org
@@ -1566,11 +1569,11 @@ ERROR CODES
   OperationFailed (4)  Failed to execute tests due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/test/run-eval.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/test/run-eval.ts)_
 
 ## `sf agent trace delete`
 
-Delete agent preview trace files.
+Delete trace files from an agent preview session.
 
 ```
 USAGE
@@ -1578,28 +1581,34 @@ USAGE
     [--no-prompt]
 
 FLAGS
-  -a, --agent=<value>       Only delete traces for this agent name (substring match). Matches against the name used when
-                            starting the session, whether that's an authoring bundle or a published agent API name.
+  -a, --agent=<value>       API name of the agent used to filter the list of trace files you want to delete. Matches
+                            against the API name used when starting the session, either an authoring bundle or a
+                            published agent API name.
       --no-prompt           Skip the confirmation prompt and delete immediately.
-      --older-than=<value>  Only delete traces older than this duration. Accepts a number followed by a unit: m/minutes,
-                            h/hours, d/days, w/weeks (e.g. 7d, 24h, 2w).
-      --session-id=<value>  Only delete traces from this session ID.
+      --older-than=<value>  Duration used to filter the list of trace files; only files older than the duration are
+                            deleted. Accepts a number followed by a unit: m/minutes, h/hours, d/days, w/weeks. Examples:
+                            7d, 24h, 2w.
+      --session-id=<value>  Session ID used to filter the list of trace files you want to delete. Use the "agent preview
+                            sessions" CLI command to list all known agent preview sessions along with their session IDs.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
   --json               Format output as json.
 
 DESCRIPTION
-  Delete agent preview trace files.
+  Delete trace files from an agent preview session.
 
-  Deletes trace files recorded during agent preview sessions. By default, shows a preview of what will be deleted and
-  prompts for confirmation. Use --no-prompt to skip confirmation.
+  When you run an agent preview conversation (either interactive or programmatic), trace files are automatically
+  recorded and saved in your local DX project. Use this command to delete some or all of the trace files.
 
-  Without filters, deletes all traces for all agents and sessions. Use flags to narrow the scope: filter by agent name
-  (--agent), by session (--session-id), or by age (--older-than).
+  By default, this command shows a preview of what will be deleted and prompts for confirmation. Use --no-prompt to skip
+  confirmation.
+
+  Without filters, this comamnd deletes all trace files for all agents and sessions. Use flags to narrow the scope:
+  filter by agent API name (--agent), by session (--session-id), or by age (--older-than).
 
 EXAMPLES
-  Delete all traces for all agents and sessions (with confirmation prompt):
+  Delete all traces for all agents and sessions; prompt for confirmation:
 
     $ sf agent trace delete
 
@@ -1615,11 +1624,11 @@ EXAMPLES
 
     $ sf agent trace delete --older-than 7d
 
-  Delete traces older than 24 hours for a specific agent, no prompt:
+  Delete traces older than 24 hours for a specific agent; don't prompt for confirmation:
 
     $ sf agent trace delete --agent My_Agent --older-than 24h --no-prompt
 
-  Delete all traces without confirmation:
+  Delete all traces for all agents and sessions; don't prompt for confirmation:
 
     $ sf agent trace delete --no-prompt
 
@@ -1627,20 +1636,22 @@ ERROR CODES
   Succeeded (0)  Traces deleted successfully (or no traces matched).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/trace/delete.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/trace/delete.ts)_
 
 ## `sf agent trace list`
 
-List the trace files that were recorded during all agent preview sessions.
+List the available trace files that were recorded during all agent preview sessions.
 
 ```
 USAGE
   $ sf agent trace list [--json] [--flags-dir <value>] [--session-id <value>] [-a <value>] [--since <value>]
 
 FLAGS
-  -a, --agent=<value>       Only show traces for this agent name (substring match). Matches against the name used when
-                            starting the session, whether that's an authoring bundle or a published agent API name.
-      --session-id=<value>  Session ID used to filter the list of trace files.
+  -a, --agent=<value>       API name of the agent used to filter the list of available trace files. Matches against the
+                            API name used when starting the session, either an authoring bundle or a published agent API
+                            name.
+      --session-id=<value>  Session ID used to filter the list of trace files. Use the "agent preview sessions" CLI
+                            command to list all known agent preview sessions along with their session IDs.
       --since=<value>       Date used to filter the list of trace files; only those recorded on or after the date are
                             listed.
 
@@ -1649,33 +1660,34 @@ GLOBAL FLAGS
   --json               Format output as json.
 
 DESCRIPTION
-  List the trace files that were recorded during all agent preview sessions.
+  List the available trace files that were recorded during all agent preview sessions.
 
-  Lists trace files recorded during agent preview sessions. By default, lists all traces for all agents and all of their
-  sessions. Use flags to narrow results: filter by agent name (--agent), by session (--session-id), or by date
+  When you run an agent preview conversation (either interactive or programmatic), trace files are automatically
+  recorded and saved in your local DX project. By default, this command lists all trace files for all agents and all of
+  their sessions. Use flags to narrow results: filter by agent name (--agent), by session (--session-id), or by date
   (--since).
 
   Each row in the output corresponds to one trace file, which in turn corresponds to one agent session. The Agent column
   shows the authoring bundle or API name used when starting the session.
 
 EXAMPLES
-  List all traces for all agents and sessions:
+  List all trace files for all agents and sessions:
 
     $ sf agent trace list
 
-  List all traces for a specific agent:
+  List all trace files for a specific agent:
 
     $ sf agent trace list --agent My_Agent
 
-  List traces for a specific session:
+  List trace files for a specific session:
 
     $ sf agent trace list --session-id <SESSION_ID>
 
-  List traces recorded on or after April 20, 2026 (date-only, interpreted as UTC midnight):
+  List trace files recorded on or after April 20, 2026 (date-only, interpreted as UTC midnight):
 
     $ sf agent trace list --since 2026-04-20
 
-  List traces recorded on or after a specific UTC time:
+  List trace files recorded on or after a specific UTC time:
 
     $ sf agent trace list --since 2026-04-20T14:00:00Z
 
@@ -1697,11 +1709,11 @@ ERROR CODES
   Succeeded (0)  Trace files listed successfully (or empty list if none found).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/trace/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/trace/list.ts)_
 
 ## `sf agent trace read`
 
-Read and analyze trace files from an agent preview session.
+Read trace files from an agent preview session.
 
 ```
 USAGE
@@ -1709,43 +1721,58 @@ USAGE
     actions|grounding|routing|errors] [-t <value>]
 
 FLAGS
-  -d, --dimension=<option>  Dimension to drill into when using --format detail. One of: actions, grounding, routing,
-                            errors. Required when --format is detail.
+  -d, --dimension=<option>  Dimension to drill into when using "--format detail"; used to filter and organize the trace
+                            data to answer a specific type of question.
                             <options: actions|grounding|routing|errors>
-  -f, --format=<option>     [default: summary] Output format: summary (default), detail, or raw. Use detail with
-                            --dimension to drill into a specific aspect of the trace.
+  -f, --format=<option>     [default: summary] Output format of the trace data; specifies the level of detail you want
+                            in the trace files.
                             <options: summary|detail|raw>
-  -s, --session-id=<value>  (required) Session ID to read traces for.
-  -t, --turn=<value>        Scope output to this conversation turn number.
+  -s, --session-id=<value>  (required) Session ID to read traces for. Use the "agent preview sessions" CLI command to
+                            list all known agent preview sessions along with their session IDs
+  -t, --turn=<value>        Turn number for which you want trace data. A turn is a single utterance or response in a
+                            conversation, starting with 1.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
   --json               Format output as json.
 
 DESCRIPTION
-  Read and analyze trace files from an agent preview session.
+  Read trace files from an agent preview session.
 
-  Reads trace files recorded during an agent preview session and outputs them in one of three formats.
+  When you run an agent preview conversation (either interactive or programmatic), trace files are automatically
+  recorded and saved in your local DX project. Each turn (utterance or response) of a conversation creates trace data.
+  Use this command to view trace data for a specific preview session, so you can then analyze the trace data to observe,
+  monitor, investigate, and troubleshoot agent events and behavior.
 
-  **--format summary** (default): A per-turn narrative showing topic routing, actions executed, and the agent's
-  response. Use this to quickly understand what happened in a session.
+  Use the --format flag to specify one of these formats of the outputted trace data:
 
-  **--format detail**: Diagnostic drill-down into a specific dimension (--dimension required). Filters output to only
-  the trace steps relevant to that dimension, minimizing noise.
+  - summary (Default): A per-turn narrative showing topic routing, actions executed, and the agent's response. Use this
+  to quickly understand what happened in a preview session.
+  - detail: Diagnostic drill-down into a specific dimension. Filters output to only the trace steps relevant to that
+  dimension, minimizing noise.
+  - raw: Unprocessed trace JSON. Use this as a fallback when the trace schema has changed or you need to perform custom
+  analysis.
 
-  **--format raw**: Unprocessed trace JSON. Use this as a fallback when the trace schema has changed or you need to
-  perform custom analysis.
+  If you specify "--format detail", you must also specify a dimension with the --dimension flag. Dimensions are a way to
+  slice and analyze the agent execution trace from a specific angle or concern. Instead of looking at the raw sequence
+  of everything that happened, each dimension filters and organizes the trace data to answer a specific type of
+  question. These are the available dimensions and the information they provide:
 
-  Available dimensions for --format detail: actions, grounding, routing, errors.
-
-  Use --turn N to scope output to a single conversation turn.
+  - actions: The actions the agent executed. Includes action name, input parameters, output, and latency. Use this
+  dimension to understand what the agent actually did when answering an utterance in the preview session.
+  - grounding: The reasoning steps used by the LLM. Use this dimension to see how the agent "thought" about the problem
+  - the AI reasoning that determined which actions to take.
+  - routing: How the agent navigated between subagents. Use this dimension to understand conversation flow - when and
+  why the agent switched between different subagents or contexts during the conversation.
+  - errors: Aggregates all errors during the session. Use this dimension to quickly identify and debug issues across all
+  steps.
 
 EXAMPLES
-  Show a session summary (all turns):
+  Show a session trace summary for all turns in the session with the specified ID:
 
     $ sf agent trace read --session-id <SESSION_ID>
 
-  Show summary for a single turn:
+  Show a trace summary for the second turn (utterance or response) of the conversation:
 
     $ sf agent trace read --session-id <SESSION_ID> --turn 2
 
@@ -1753,7 +1780,7 @@ EXAMPLES
 
     $ sf agent trace read --session-id <SESSION_ID> --format detail --dimension actions
 
-  Drill into routing decisions for a specific turn:
+  Drill into routing decisions for the first turn of the conversation:
 
     $ sf agent trace read --session-id <SESSION_ID> --format detail --dimension routing --turn 1
 
@@ -1770,7 +1797,7 @@ EXAMPLES
     $ sf agent trace read --session-id <SESSION_ID> --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/trace/read.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/trace/read.ts)_
 
 ## `sf agent validate authoring-bundle`
 
@@ -1827,7 +1854,7 @@ ERROR CODES
   ServerError (3)  Validation/compilation API returned HTTP 500. A server error occurred during compilation.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.39.0/src/commands/agent/validate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.1/src/commands/agent/validate/authoring-bundle.ts)_
 
 ## `sf alias list`
 
@@ -8378,7 +8405,7 @@ FLAG DESCRIPTIONS
     If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.44/src/commands/project/convert/mdapi.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.45/src/commands/project/convert/mdapi.ts)_
 
 ## `sf project convert source`
 
@@ -8451,7 +8478,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.44/src/commands/project/convert/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.45/src/commands/project/convert/source.ts)_
 
 ## `sf project convert source-behavior`
 
@@ -8510,7 +8537,7 @@ EXAMPLES
     $ sf project convert source-behavior --behavior decomposePermissionSetBeta --dry-run --preserve-temp-dir
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.44/src/commands/project/convert/source-behavior.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.45/src/commands/project/convert/source-behavior.ts)_
 
 ## `sf project delete source`
 
@@ -8663,7 +8690,7 @@ FLAG DESCRIPTIONS
     - Separate the test names with spaces: --tests Test1 Test2 "Test With Space"
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.44/src/commands/project/delete/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.45/src/commands/project/delete/source.ts)_
 
 ## `sf project delete tracking`
 
@@ -8700,7 +8727,7 @@ EXAMPLES
     $ sf project delete tracking --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.44/src/commands/project/delete/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.45/src/commands/project/delete/tracking.ts)_
 
 ## `sf project deploy cancel`
 
@@ -8772,7 +8799,7 @@ FLAG DESCRIPTIONS
     project deploy report".
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.44/src/commands/project/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.45/src/commands/project/deploy/cancel.ts)_
 
 ## `sf project deploy preview`
 
@@ -8855,7 +8882,7 @@ FLAG DESCRIPTIONS
     All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.44/src/commands/project/deploy/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.45/src/commands/project/deploy/preview.ts)_
 
 ## `sf project deploy quick`
 
@@ -8948,7 +8975,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.44/src/commands/project/deploy/quick.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.45/src/commands/project/deploy/quick.ts)_
 
 ## `sf project deploy report`
 
@@ -9040,7 +9067,7 @@ FLAG DESCRIPTIONS
     --coverage-formatters lcov --coverage-formatters clover
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.44/src/commands/project/deploy/report.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.45/src/commands/project/deploy/report.ts)_
 
 ## `sf project deploy resume`
 
@@ -9137,7 +9164,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.44/src/commands/project/deploy/resume.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.45/src/commands/project/deploy/resume.ts)_
 
 ## `sf project deploy start`
 
@@ -9403,7 +9430,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.44/src/commands/project/deploy/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.45/src/commands/project/deploy/start.ts)_
 
 ## `sf project deploy validate`
 
@@ -9607,7 +9634,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.44/src/commands/project/deploy/validate.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.45/src/commands/project/deploy/validate.ts)_
 
 ## `sf project generate manifest`
 
@@ -9703,7 +9730,7 @@ EXAMPLES
     $ sf project generate manifest --from-org test@myorg.com --excluded-metadata StandardValueSet
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.44/src/commands/project/generate/manifest.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.45/src/commands/project/generate/manifest.ts)_
 
 ## `sf project list ignored`
 
@@ -9745,7 +9772,7 @@ EXAMPLES
     $ sf project list ignored --source-dir package.xml
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.44/src/commands/project/list/ignored.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.45/src/commands/project/list/ignored.ts)_
 
 ## `sf project reset tracking`
 
@@ -9794,7 +9821,7 @@ EXAMPLES
     $ sf project reset tracking --revision 30
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.44/src/commands/project/reset/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.45/src/commands/project/reset/tracking.ts)_
 
 ## `sf project retrieve preview`
 
@@ -9848,7 +9875,7 @@ FLAG DESCRIPTIONS
     production orgs.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.44/src/commands/project/retrieve/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.45/src/commands/project/retrieve/preview.ts)_
 
 ## `sf project retrieve start`
 
@@ -10029,7 +10056,7 @@ ENVIRONMENT VARIABLES
   SF_USE_PROGRESS_BAR  Set to false to disable the progress bar when running the metadata deploy command.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.44/src/commands/project/retrieve/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/3.24.45/src/commands/project/retrieve/start.ts)_
 
 ## `sf schema generate field`
 
