@@ -1554,7 +1554,7 @@
     node-gyp "^12.1.0"
     proc-log "^6.0.0"
 
-"@oclif/core@4.11.4", "@oclif/core@^4", "@oclif/core@^4.10.4", "@oclif/core@^4.10.5", "@oclif/core@^4.11.2", "@oclif/core@^4.11.3", "@oclif/core@^4.11.4":
+"@oclif/core@4.11.4", "@oclif/core@^4", "@oclif/core@^4.10.4", "@oclif/core@^4.10.5", "@oclif/core@^4.11.3", "@oclif/core@^4.11.4":
   version "4.11.4"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.11.4.tgz#14082760c0b8e677331aeba3f32e6bf75e2556c0"
   integrity sha512-URwiQ5ALx/sJ2iH4vzXEd+H4K6NAI7LRs6Jag3hrgKEpGmaE6alfRC8qjO4GIgb6A3ACaJumqP9twi/M9ywdHQ==
@@ -1693,7 +1693,7 @@
     "@oclif/core" "^4"
     ansis "^3.17.0"
 
-"@oclif/plugin-warn-if-update-available@3.1.65", "@oclif/plugin-warn-if-update-available@^3.1.57":
+"@oclif/plugin-warn-if-update-available@3.1.65", "@oclif/plugin-warn-if-update-available@^3.1.65":
   version "3.1.65"
   resolved "https://registry.yarnpkg.com/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-3.1.65.tgz#21cb740ccec5ebfef1666c0e46480d97b5687fe4"
   integrity sha512-HcSJc8SeCVUBHwc063xDL0LcpdjcamAISlisSX14VDDYQayMantvtVNOo9PmciwYpXRXfAykeH1z066YkA9JvQ==
@@ -8346,20 +8346,20 @@ obliterator@^2.0.1:
   resolved "https://registry.npmjs.org/obliterator/-/obliterator-2.0.4.tgz"
   integrity sha512-lgHwxlxV1qIg1Eap7LgIeoBWIMFibOjbrYPIPJZcI1mmGAI2m3lNYpK12Y+GBdPQ0U1hRwSord7GIaawz962qQ==
 
-oclif@^4.23.8:
-  version "4.23.8"
-  resolved "https://registry.yarnpkg.com/oclif/-/oclif-4.23.8.tgz#550e491a1bc1cc537a840297b30c02599a5b4653"
-  integrity sha512-RCkfr76RxLzJbrcCL/4zkkzToYzofLnJgxczK4QrUjbBpHRiYNcBt8S1QoAIsWoeavaPp+7BoXI9r28tcKNjWg==
+oclif@^4.23.10:
+  version "4.23.10"
+  resolved "https://registry.yarnpkg.com/oclif/-/oclif-4.23.10.tgz#55bd82ea1c5bbed58dd2e034b33cd94b79563832"
+  integrity sha512-foZYNmCjgFo0HJzbfY9oz8IgNs4aCPVbe51gnauM646mOy+C9WzoQS5iJyCzRiuJvS4fFrONG0BrjWiCFjtlGQ==
   dependencies:
     "@aws-sdk/client-cloudfront" "^3.1009.0"
     "@aws-sdk/client-s3" "^3.1053.0"
     "@inquirer/confirm" "^3.1.22"
     "@inquirer/input" "^2.2.4"
     "@inquirer/select" "^2.5.0"
-    "@oclif/core" "^4.11.2"
+    "@oclif/core" "^4.11.4"
     "@oclif/plugin-help" "^6.2.49"
     "@oclif/plugin-not-found" "^3.2.85"
-    "@oclif/plugin-warn-if-update-available" "^3.1.57"
+    "@oclif/plugin-warn-if-update-available" "^3.1.65"
     ansis "^3.16.0"
     async-retry "^1.3.3"
     change-case "^4"
