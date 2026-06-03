@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.138.5 linux-x64 node-v22.22.3
+@salesforce/cli/2.138.6 linux-x64 node-v22.22.3
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -43,6 +43,16 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 <!-- commands -->
 
 - [`sf agent activate`](#sf-agent-activate)
+- [`sf agent adl create`](#sf-agent-adl-create)
+- [`sf agent adl delete`](#sf-agent-adl-delete)
+- [`sf agent adl file add`](#sf-agent-adl-file-add)
+- [`sf agent adl file delete`](#sf-agent-adl-file-delete)
+- [`sf agent adl file list`](#sf-agent-adl-file-list)
+- [`sf agent adl get`](#sf-agent-adl-get)
+- [`sf agent adl list`](#sf-agent-adl-list)
+- [`sf agent adl status`](#sf-agent-adl-status)
+- [`sf agent adl update`](#sf-agent-adl-update)
+- [`sf agent adl upload`](#sf-agent-adl-upload)
 - [`sf agent create`](#sf-agent-create)
 - [`sf agent deactivate`](#sf-agent-deactivate)
 - [`sf agent generate agent-spec`](#sf-agent-generate-agent-spec)
@@ -284,7 +294,389 @@ ERROR CODES
   ActivationFailed (4)  Failed to activate the agent due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/activate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/activate.ts)_
+
+## `sf agent adl create`
+
+Create an Agentforce Data Library.
+
+```
+USAGE
+  $ sf agent adl create -o <value> -n <value> --developer-name <value> --source-type sfdrive|knowledge|retriever
+    [--json] [--flags-dir <value>] [--api-version <value>] [--description <value>] [--index-mode basic|enhanced]
+    [--retriever-id <value>] [--primary-index-field1 <value>] [--primary-index-field2 <value>]
+
+FLAGS
+  -n, --name=<value>                  (required) Display name for the data library (max 80 characters).
+  -o, --target-org=<value>            (required) Username or alias of the target org. Not required if the `target-org`
+                                      configuration variable is already set.
+      --api-version=<value>           Override the api version used for api requests made by this command
+      --description=<value>           Description of the data library (max 255 characters).
+      --developer-name=<value>        (required) API name for the data library (max 80 characters, alphanumeric and
+                                      underscores only, must start with a letter).
+      --index-mode=<option>           Index mode for SFDRIVE libraries: basic or enhanced.
+                                      <options: basic|enhanced>
+      --primary-index-field1=<value>  Primary index field 1 for KNOWLEDGE libraries (required, immutable after
+                                      creation).
+      --primary-index-field2=<value>  Primary index field 2 for KNOWLEDGE libraries (required, immutable after
+                                      creation).
+      --retriever-id=<value>          ID of an active Custom Retriever (required for RETRIEVER source type; retriever
+                                      must be active).
+      --source-type=<option>          (required) Type of grounding source: sfdrive (file upload), knowledge (Salesforce
+                                      Knowledge articles), or retriever (existing active Custom Retriever).
+                                      <options: sfdrive|knowledge|retriever>
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Create an Agentforce Data Library.
+
+  Creates a new data library in the target org. The --source-type flag determines the type of library: SFDRIVE (file
+  upload), KNOWLEDGE (Salesforce Knowledge articles), or RETRIEVER (existing active Custom Retriever).
+
+EXAMPLES
+  Create an SFDRIVE library:
+
+    $ sf agent adl create --target-org myOrg --name "My Docs" --developer-name My_Docs --source-type sfdrive
+
+  Create a KNOWLEDGE library with index fields:
+
+    $ sf agent adl create --target-org myOrg --name "KB Library" --developer-name KB_Library --source-type knowledge \
+      --primary-index-field1 Title --primary-index-field2 Summary
+
+  Create a RETRIEVER library:
+
+    $ sf agent adl create --target-org myOrg --name "Existing Retriever" --developer-name Existing_Retriever \
+      --source-type retriever --retriever-id 0ppXX0000000001
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/create.ts)_
+
+## `sf agent adl delete`
+
+Delete an Agentforce Data Library.
+
+```
+USAGE
+  $ sf agent adl delete -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
+
+FLAGS
+  -i, --library-id=<value>   (required) Agentforce Data Library ID (18-char Salesforce ID with prefix 1JD).
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Delete an Agentforce Data Library.
+
+  Permanently deletes a data library and all associated files and indexing data.
+
+EXAMPLES
+  Delete a data library:
+
+    $ sf agent adl delete --library-id 1JDSG000007IbWX4A0 --target-org myOrg
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/delete.ts)_
+
+## `sf agent adl file add`
+
+Add files to an existing Agentforce Data Library.
+
+```
+USAGE
+  $ sf agent adl file add -o <value> -i <value> -f <value> [--json] [--flags-dir <value>] [--api-version <value>]
+
+FLAGS
+  -f, --file=<value>         (required) Path to the file to add to the library.
+  -i, --library-id=<value>   (required) Agentforce Data Library ID (18-char Salesforce ID with prefix 1JD).
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Add files to an existing Agentforce Data Library.
+
+  Adds one or more files to an existing SFDRIVE data library and triggers SearchIndex re-hydration. This is the day-2
+  operation for adding files to an already-provisioned library.
+
+  Constraints: at least 1 file required, no duplicate file names in a batch, maximum 1000 files per library.
+
+EXAMPLES
+  Add a file to an existing library:
+
+    $ sf agent adl file add --library-id 1JDSG000007IbWX4A0 --file ./docs/new-guide.pdf --target-org myOrg
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/file/add.ts)_
+
+## `sf agent adl file delete`
+
+Delete a file from an Agentforce Data Library.
+
+```
+USAGE
+  $ sf agent adl file delete -o <value> -i <value> --file-id <value> [--json] [--flags-dir <value>] [--api-version
+  <value>]
+
+FLAGS
+  -i, --library-id=<value>   (required) Agentforce Data Library ID (18-char Salesforce ID with prefix 1JD).
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-version=<value>  Override the api version used for api requests made by this command
+      --file-id=<value>      (required) ID of the file to delete (AiGroundingFileRef record ID).
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Delete a file from an Agentforce Data Library.
+
+  Permanently removes a file from an SFDRIVE data library and triggers re-indexing of the search index.
+
+EXAMPLES
+  Delete a file from a data library:
+
+    $ sf agent adl file delete --library-id 1JDSG000007IbWX4A0 --file-id a1B2C3D4E5F6G7H8I9 --target-org myOrg
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/file/delete.ts)_
+
+## `sf agent adl file list`
+
+List files in an Agentforce Data Library.
+
+```
+USAGE
+  $ sf agent adl file list -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
+
+FLAGS
+  -i, --library-id=<value>   (required) Agentforce Data Library ID (18-char Salesforce ID with prefix 1JD).
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  List files in an Agentforce Data Library.
+
+  Returns the list of files in an SFDRIVE library including file name, size, and creation date.
+
+EXAMPLES
+  List files in a data library:
+
+    $ sf agent adl file list --library-id 1JDSG000007IbWX4A0 --target-org myOrg
+
+  List files and output as JSON:
+
+    $ sf agent adl file list --library-id 1JDSG000007IbWX4A0 --target-org myOrg --json
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/file/list.ts)_
+
+## `sf agent adl get`
+
+Get details of an Agentforce Data Library.
+
+```
+USAGE
+  $ sf agent adl get -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
+
+FLAGS
+  -i, --library-id=<value>   (required) Agentforce Data Library ID (18-char Salesforce ID with prefix 1JD).
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Get details of an Agentforce Data Library.
+
+  Returns the full detail of a data library including its grounding source configuration, status, and retriever ID.
+
+EXAMPLES
+  Get details of a data library:
+
+    $ sf agent adl get --library-id 1JDSG000007IbWX4A0 --target-org myOrg
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/get.ts)_
+
+## `sf agent adl list`
+
+List Agentforce Data Libraries in an org.
+
+```
+USAGE
+  $ sf agent adl list -o <value> [--json] [--flags-dir <value>] [--api-version <value>]
+
+FLAGS
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  List Agentforce Data Libraries in an org.
+
+  Returns all data libraries in the target org, including their source type, status, and library ID.
+
+EXAMPLES
+  List all data libraries in the default target org:
+
+    $ sf agent adl list --target-org myOrg
+
+  List data libraries and output as JSON:
+
+    $ sf agent adl list --target-org myOrg --json
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/list.ts)_
+
+## `sf agent adl status`
+
+Get indexing status of an Agentforce Data Library.
+
+```
+USAGE
+  $ sf agent adl status -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>]
+
+FLAGS
+  -i, --library-id=<value>   (required) Agentforce Data Library ID (18-char Salesforce ID with prefix 1JD).
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Get indexing status of an Agentforce Data Library.
+
+  Returns the current indexing status including stage details (DATA_LAKE_OBJECT, SEARCH_INDEX, RETRIEVER) and any
+  errors.
+
+EXAMPLES
+  Get status of a data library:
+
+    $ sf agent adl status --library-id 1JDSG000007IbWX4A0 --target-org myOrg
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/status.ts)_
+
+## `sf agent adl update`
+
+Update an Agentforce Data Library.
+
+```
+USAGE
+  $ sf agent adl update -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>] [-n <value>]
+    [--description <value>] [--content-fields <value>] [--restrict-to-public-articles]
+
+FLAGS
+  -i, --library-id=<value>                (required) Agentforce Data Library ID (18-char Salesforce ID with prefix 1JD).
+  -n, --name=<value>                      New display name for the data library (max 80 characters).
+  -o, --target-org=<value>                (required) Username or alias of the target org. Not required if the
+                                          `target-org` configuration variable is already set.
+      --api-version=<value>               Override the api version used for api requests made by this command
+      --content-fields=<value>            Comma-separated list of content fields for KNOWLEDGE libraries (triggers
+                                          re-indexing).
+      --description=<value>               New description for the data library (max 255 characters).
+      --[no-]restrict-to-public-articles  Restrict to public Knowledge articles only (KNOWLEDGE libraries, triggers
+                                          re-indexing).
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Update an Agentforce Data Library.
+
+  Updates the label, description, or other mutable properties of an existing data library.
+
+EXAMPLES
+  Update the label of a data library:
+
+    $ sf agent adl update --library-id 1JDSG000007IbWX4A0 --name "New Name" --target-org myOrg
+
+  Update the description:
+
+    $ sf agent adl update --library-id 1JDSG000007IbWX4A0 --description "Updated description" --target-org myOrg
+
+  Update Knowledge library content fields (triggers re-indexing):
+
+    $ sf agent adl update --library-id 1JDSG000007IbWX4A0 --content-fields "Answer**c,Summary**c" --target-org myOrg
+
+  Restrict Knowledge library to public articles:
+
+    $ sf agent adl update --library-id 1JDSG000007IbWX4A0 --restrict-to-public-articles --target-org myOrg
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/update.ts)_
+
+## `sf agent adl upload`
+
+Upload a file to an SFDRIVE Agentforce Data Library.
+
+```
+USAGE
+  $ sf agent adl upload -o <value> -i <value> -f <value> [--json] [--flags-dir <value>] [--api-version <value>] [-w
+    <value>]
+
+FLAGS
+  -f, --file=<value>         (required) Path to the file to upload.
+  -i, --library-id=<value>   (required) Agentforce Data Library ID (18-char Salesforce ID with prefix 1JD).
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
+  -w, --wait=<value>         Number of minutes to wait for indexing to complete. If not specified, returns after
+                             triggering indexing.
+      --api-version=<value>  Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Upload a file to an SFDRIVE Agentforce Data Library.
+
+  Performs the multi-step upload workflow: checks upload readiness, obtains a pre-signed S3 URL, uploads the file,
+  triggers indexing, and optionally polls until the library is ready (retrieverId is populated).
+
+  This command only works with SFDRIVE libraries. KNOWLEDGE libraries index automatically after creation, and RETRIEVER
+  libraries require no file upload.
+
+EXAMPLES
+  Upload a file and wait for indexing to complete:
+
+    $ sf agent adl upload --library-id 1JDSG000007IbWX4A0 --file ./docs/guide.pdf --target-org myOrg --wait 10
+
+  Upload a file without waiting:
+
+    $ sf agent adl upload --library-id 1JDSG000007IbWX4A0 --file ./docs/guide.pdf --target-org myOrg
+```
+
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/upload.ts)_
 
 ## `sf agent create`
 
@@ -351,7 +743,7 @@ EXAMPLES
     $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/create.ts)_
 
 ## `sf agent deactivate`
 
@@ -400,7 +792,7 @@ ERROR CODES
   DeactivationFailed (4)  Failed to deactivate the agent due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/deactivate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/deactivate.ts)_
 
 ## `sf agent generate agent-spec`
 
@@ -507,7 +899,7 @@ EXAMPLES
     $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/generate/agent-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/generate/agent-spec.ts)_
 
 ## `sf agent generate authoring-bundle`
 
@@ -584,7 +976,7 @@ EXAMPLES
       other-package-dir/main/default --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/generate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/generate/authoring-bundle.ts)_
 
 ## `sf agent generate template`
 
@@ -646,7 +1038,7 @@ EXAMPLES
       my-package --source-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/generate/template.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/generate/template.ts)_
 
 ## `sf agent generate test-spec`
 
@@ -711,7 +1103,7 @@ EXAMPLES
       force-app//main/default/aiEvaluationDefinitions/Resort_Manager_Tests.aiEvaluationDefinition-meta.xml
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/generate/test-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/generate/test-spec.ts)_
 
 ## `sf agent preview`
 
@@ -784,7 +1176,7 @@ EXAMPLES
     $ sf agent preview --use-live-actions --apex-debug --output-dir transcripts/my-preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/preview.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/preview.ts)_
 
 ## `sf agent preview end`
 
@@ -868,7 +1260,7 @@ ERROR CODES
   SessionAmbiguous (5)           Multiple preview sessions found; specify --session-id to choose one.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/preview/end.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/preview/end.ts)_
 
 ## `sf agent preview send`
 
@@ -935,7 +1327,7 @@ ERROR CODES
   SessionAmbiguous (5)   Multiple preview sessions found; specify --session-id to choose one.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/preview/send.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/preview/send.ts)_
 
 ## `sf agent preview sessions`
 
@@ -971,7 +1363,7 @@ ERROR CODES
   Succeeded (0)  Sessions listed successfully (or empty list if no active sessions).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/preview/sessions.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/preview/sessions.ts)_
 
 ## `sf agent preview start`
 
@@ -1047,7 +1439,7 @@ ERROR CODES
   PreviewStartFailed (4)  Preview session failed to start due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/preview/start.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/preview/start.ts)_
 
 ## `sf agent publish authoring-bundle`
 
@@ -1111,7 +1503,7 @@ ERROR CODES
   Failed (1)     Compilation errors found in the Agent Script file.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/publish/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/publish/authoring-bundle.ts)_
 
 ## `sf agent test create`
 
@@ -1120,17 +1512,19 @@ Create an agent test in your org using a local test spec YAML file.
 ```
 USAGE
   $ sf agent test create -o <value> [--json] [--flags-dir <value>] [--api-name <value>] [--spec <value>] [--api-version
-    <value>] [--preview] [--force-overwrite]
+    <value>] [--preview] [--force-overwrite] [--test-runner agentforce-studio|testing-center]
 
 FLAGS
-  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
-                             configuration variable is already set.
-      --api-name=<value>     API name of the new test; the API name must not exist in the org.
-      --api-version=<value>  Override the api version used for api requests made by this command
-      --force-overwrite      Don't prompt for confirmation when overwriting an existing test (based on API name) in your
-                             org.
-      --preview              Preview the test metadata file (AiEvaluationDefinition) without deploying to your org.
-      --spec=<value>         Path to the test spec YAML file.
+  -o, --target-org=<value>    (required) Username or alias of the target org. Not required if the `target-org`
+                              configuration variable is already set.
+      --api-name=<value>      API name of the new test; the API name must not exist in the org.
+      --api-version=<value>   Override the api version used for api requests made by this command
+      --force-overwrite       Don't prompt for confirmation when overwriting an existing test (based on API name) in
+                              your org.
+      --preview               Preview the test metadata file without deploying to your org.
+      --spec=<value>          Path to the test spec YAML file.
+      --test-runner=<option>  Explicitly specify which test runner to use (agentforce-studio or testing-center).
+                              <options: agentforce-studio|testing-center>
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
@@ -1144,8 +1538,9 @@ DESCRIPTION
   to this command with the --spec flag, or run this command with no flags to be prompted.
 
   When this command completes, your org contains the new agent test, which you can view and edit using the Testing
-  Center UI. This command also retrieves the metadata component (AiEvaluationDefinition) associated with the new test to
-  your local Salesforce DX project and displays its filename.
+  Center UI (legacy) or Agentforce Studio (NGT). This command also retrieves the metadata component associated with the
+  new test to your local Salesforce DX project and displays its filename. By default, the legacy AiEvaluationDefinition
+  is created; use --test-runner agentforce-studio to author an AiTestingDefinition (NGT) instead.
 
   After you've created the test in the org, use the "agent test run" command to run it.
 
@@ -1165,6 +1560,20 @@ EXAMPLES
 
     $ sf agent test create --spec specs/Resort_Manager-testSpec.yaml --api-name Resort_Manager_Test --preview
 
+  Author an Agentforce Studio (NGT) test from an NGT-shaped YAML; writes an AiTestingDefinition metadata file:
+
+    $ sf agent test create --spec specs/ReturnsCheckout.ngt.yaml --api-name Returns_Checkout --test-runner \
+      agentforce-studio --target-org my-org
+
+FLAG DESCRIPTIONS
+  --test-runner=agentforce-studio|testing-center
+
+    Explicitly specify which test runner to use (agentforce-studio or testing-center).
+
+    By default, the command automatically detects which test runner to use based on the test definition metadata type in
+    your org. Use this flag to explicitly specify the runner type. 'agentforce-studio' uses AiTestingDefinition
+    metadata. 'testing-center' uses AiEvaluationDefinition metadata.
+
 ENVIRONMENT VARIABLES
   SF_TARGET_ORG  Username or alias of your default org. Overrides the target-org configuration variable.
 
@@ -1175,7 +1584,7 @@ ERROR CODES
   DeploymentFailed (4)  Deployment failed due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/test/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/test/create.ts)_
 
 ## `sf agent test list`
 
@@ -1217,7 +1626,7 @@ ERROR CODES
   Failed (4)     Failed to retrieve agent tests due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/test/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/test/list.ts)_
 
 ## `sf agent test results`
 
@@ -1301,7 +1710,7 @@ ERROR CODES
   Failed (4)     Failed to retrieve results due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/test/results.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/test/results.ts)_
 
 ## `sf agent test resume`
 
@@ -1394,7 +1803,7 @@ ERROR CODES
   OperationFailed (4)  Failed to poll test due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/test/resume.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/test/resume.ts)_
 
 ## `sf agent test run`
 
@@ -1487,7 +1896,7 @@ ERROR CODES
   OperationFailed (4)  Failed to start or poll test due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/test/run.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/test/run.ts)_
 
 ## `sf agent test run-eval`
 
@@ -1572,7 +1981,7 @@ ERROR CODES
   OperationFailed (4)  Failed to execute tests due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/test/run-eval.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/test/run-eval.ts)_
 
 ## `sf agent trace delete`
 
@@ -1639,7 +2048,7 @@ ERROR CODES
   Succeeded (0)  Traces deleted successfully (or no traces matched).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/trace/delete.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/trace/delete.ts)_
 
 ## `sf agent trace list`
 
@@ -1712,7 +2121,7 @@ ERROR CODES
   Succeeded (0)  Trace files listed successfully (or empty list if none found).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/trace/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/trace/list.ts)_
 
 ## `sf agent trace read`
 
@@ -1800,7 +2209,7 @@ EXAMPLES
     $ sf agent trace read --session-id <SESSION_ID> --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/trace/read.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/trace/read.ts)_
 
 ## `sf agent validate authoring-bundle`
 
@@ -1857,7 +2266,7 @@ ERROR CODES
   ServerError (3)  Validation/compilation API returned HTTP 500. A server error occurred during compilation.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.40.5/src/commands/agent/validate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/validate/authoring-bundle.ts)_
 
 ## `sf alias list`
 
@@ -10518,7 +10927,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.17.7/src/commands/template/generate/analytics/template.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.0/src/commands/template/generate/analytics/template.ts)_
 
 ## `sf template generate apex class`
 
@@ -10578,7 +10987,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.17.7/src/commands/template/generate/apex/class.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.0/src/commands/template/generate/apex/class.ts)_
 
 ## `sf template generate apex trigger`
 
@@ -10648,7 +11057,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.17.7/src/commands/template/generate/apex/trigger.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.0/src/commands/template/generate/apex/trigger.ts)_
 
 ## `sf template generate digital-experience site`
 
@@ -10702,7 +11111,7 @@ FLAG DESCRIPTIONS
     project, defaults to the current directory.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.17.7/src/commands/template/generate/digital-experience/site.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.0/src/commands/template/generate/digital-experience/site.ts)_
 
 ## `sf template generate flexipage`
 
@@ -10784,7 +11193,7 @@ FLAG DESCRIPTIONS
     'Custom_Object__c'. This sets the `sobjectType` field in the FlexiPage metadata.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.17.7/src/commands/template/generate/flexipage/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.0/src/commands/template/generate/flexipage/index.ts)_
 
 ## `sf template generate lightning app`
 
@@ -10842,7 +11251,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.17.7/src/commands/template/generate/lightning/app.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.0/src/commands/template/generate/lightning/app.ts)_
 
 ## `sf template generate lightning component`
 
@@ -10919,7 +11328,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.17.7/src/commands/template/generate/lightning/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.0/src/commands/template/generate/lightning/component.ts)_
 
 ## `sf template generate lightning event`
 
@@ -10977,7 +11386,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.17.7/src/commands/template/generate/lightning/event.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.0/src/commands/template/generate/lightning/event.ts)_
 
 ## `sf template generate lightning interface`
 
@@ -11035,7 +11444,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.17.7/src/commands/template/generate/lightning/interface.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.0/src/commands/template/generate/lightning/interface.ts)_
 
 ## `sf template generate lightning test`
 
@@ -11093,7 +11502,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.17.7/src/commands/template/generate/lightning/test.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.0/src/commands/template/generate/lightning/test.ts)_
 
 ## `sf template generate project`
 
@@ -11219,7 +11628,7 @@ FLAG DESCRIPTIONS
     server-side type stripping.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.17.7/src/commands/template/generate/project/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.0/src/commands/template/generate/project/index.ts)_
 
 ## `sf template generate static-resource`
 
@@ -11282,7 +11691,7 @@ FLAG DESCRIPTIONS
     etc.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.17.7/src/commands/template/generate/static-resource/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.0/src/commands/template/generate/static-resource/index.ts)_
 
 ## `sf template generate ui-bundle`
 
@@ -11366,7 +11775,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.17.7/src/commands/template/generate/ui-bundle/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.0/src/commands/template/generate/ui-bundle/index.ts)_
 
 ## `sf template generate visualforce component`
 
@@ -11423,7 +11832,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.17.7/src/commands/template/generate/visualforce/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.0/src/commands/template/generate/visualforce/component.ts)_
 
 ## `sf template generate visualforce page`
 
@@ -11474,7 +11883,7 @@ FLAG DESCRIPTIONS
     The name can be up to 40 characters and must start with a letter.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.17.7/src/commands/template/generate/visualforce/page.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.0/src/commands/template/generate/visualforce/page.ts)_
 
 ## `sf update [CHANNEL]`
 
