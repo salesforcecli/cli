@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.139.0 linux-x64 node-v22.22.3
+@salesforce/cli/2.139.1 linux-x64 node-v22.22.3
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -294,7 +294,7 @@ ERROR CODES
   ActivationFailed (4)  Failed to activate the agent due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/activate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/activate.ts)_
 
 ## `sf agent adl create`
 
@@ -352,7 +352,7 @@ EXAMPLES
       --source-type retriever --retriever-id 0ppXX0000000001
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/adl/create.ts)_
 
 ## `sf agent adl delete`
 
@@ -383,7 +383,7 @@ EXAMPLES
     $ sf agent adl delete --library-id 1JDSG000007IbWX4A0 --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/delete.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/adl/delete.ts)_
 
 ## `sf agent adl file add`
 
@@ -391,10 +391,10 @@ Add files to an existing Agentforce Data Library.
 
 ```
 USAGE
-  $ sf agent adl file add -o <value> -i <value> -f <value> [--json] [--flags-dir <value>] [--api-version <value>]
+  $ sf agent adl file add -o <value> -i <value> -f <value>... [--json] [--flags-dir <value>] [--api-version <value>]
 
 FLAGS
-  -f, --file=<value>         (required) Path to the file to add to the library.
+  -f, --path=<value>...      (required) Path to file(s) to add. Specify multiple times for batch upload.
   -i, --library-id=<value>   (required) Agentforce Data Library ID (18-char Salesforce ID with prefix 1JD).
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
                              configuration variable is already set.
@@ -415,10 +415,14 @@ DESCRIPTION
 EXAMPLES
   Add a file to an existing library:
 
-    $ sf agent adl file add --library-id 1JDSG000007IbWX4A0 --file ./docs/new-guide.pdf --target-org myOrg
+    $ sf agent adl file add -i 1JDSG000007IbWX4A0 --path ./docs/new-guide.pdf --target-org myOrg
+
+  Add multiple files:
+
+    $ sf agent adl file add -i 1JDSG000007IbWX4A0 --path ./docs/guide.pdf --path ./docs/faq.txt --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/file/add.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/adl/file/add.ts)_
 
 ## `sf agent adl file delete`
 
@@ -451,7 +455,7 @@ EXAMPLES
     $ sf agent adl file delete --library-id 1JDSG000007IbWX4A0 --file-id a1B2C3D4E5F6G7H8I9 --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/file/delete.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/adl/file/delete.ts)_
 
 ## `sf agent adl file list`
 
@@ -486,7 +490,7 @@ EXAMPLES
     $ sf agent adl file list --library-id 1JDSG000007IbWX4A0 --target-org myOrg --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/file/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/adl/file/list.ts)_
 
 ## `sf agent adl get`
 
@@ -517,7 +521,7 @@ EXAMPLES
     $ sf agent adl get --library-id 1JDSG000007IbWX4A0 --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/get.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/adl/get.ts)_
 
 ## `sf agent adl list`
 
@@ -525,12 +529,15 @@ List Agentforce Data Libraries in an org.
 
 ```
 USAGE
-  $ sf agent adl list -o <value> [--json] [--flags-dir <value>] [--api-version <value>]
+  $ sf agent adl list -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [--source-type
+    sfdrive|knowledge|retriever]
 
 FLAGS
-  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
-                             configuration variable is already set.
-      --api-version=<value>  Override the api version used for api requests made by this command
+  -o, --target-org=<value>    (required) Username or alias of the target org. Not required if the `target-org`
+                              configuration variable is already set.
+      --api-version=<value>   Override the api version used for api requests made by this command
+      --source-type=<option>  Filter by source type: sfdrive, knowledge, or retriever.
+                              <options: sfdrive|knowledge|retriever>
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
@@ -551,7 +558,7 @@ EXAMPLES
     $ sf agent adl list --target-org myOrg --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/adl/list.ts)_
 
 ## `sf agent adl status`
 
@@ -583,7 +590,7 @@ EXAMPLES
     $ sf agent adl status --library-id 1JDSG000007IbWX4A0 --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/status.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/adl/status.ts)_
 
 ## `sf agent adl update`
 
@@ -592,7 +599,7 @@ Update an Agentforce Data Library.
 ```
 USAGE
   $ sf agent adl update -o <value> -i <value> [--json] [--flags-dir <value>] [--api-version <value>] [-n <value>]
-    [--description <value>] [--content-fields <value>] [--restrict-to-public-articles]
+    [--description <value>] [--content-fields <value>] [--restrict-to-public-articles] [--retriever-id <value>]
 
 FLAGS
   -i, --library-id=<value>                (required) Agentforce Data Library ID (18-char Salesforce ID with prefix 1JD).
@@ -605,6 +612,8 @@ FLAGS
       --description=<value>               New description for the data library (max 255 characters).
       --[no-]restrict-to-public-articles  Restrict to public Knowledge articles only (KNOWLEDGE libraries, triggers
                                           re-indexing).
+      --retriever-id=<value>              Swap the retriever for a RETRIEVER library (must be an active Custom Retriever
+                                          ID).
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
@@ -633,7 +642,7 @@ EXAMPLES
     $ sf agent adl update --library-id 1JDSG000007IbWX4A0 --restrict-to-public-articles --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/update.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/adl/update.ts)_
 
 ## `sf agent adl upload`
 
@@ -641,11 +650,11 @@ Upload a file to an SFDRIVE Agentforce Data Library.
 
 ```
 USAGE
-  $ sf agent adl upload -o <value> -i <value> -f <value> [--json] [--flags-dir <value>] [--api-version <value>] [-w
+  $ sf agent adl upload -o <value> -i <value> -f <value>... [--json] [--flags-dir <value>] [--api-version <value>] [-w
     <value>]
 
 FLAGS
-  -f, --file=<value>         (required) Path to the file to upload.
+  -f, --file=<value>...      (required) Path to the file to upload.
   -i, --library-id=<value>   (required) Agentforce Data Library ID (18-char Salesforce ID with prefix 1JD).
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
                              configuration variable is already set.
@@ -676,7 +685,7 @@ EXAMPLES
     $ sf agent adl upload --library-id 1JDSG000007IbWX4A0 --file ./docs/guide.pdf --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/adl/upload.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/adl/upload.ts)_
 
 ## `sf agent create`
 
@@ -743,7 +752,7 @@ EXAMPLES
     $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/create.ts)_
 
 ## `sf agent deactivate`
 
@@ -792,7 +801,7 @@ ERROR CODES
   DeactivationFailed (4)  Failed to deactivate the agent due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/deactivate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/deactivate.ts)_
 
 ## `sf agent generate agent-spec`
 
@@ -899,7 +908,7 @@ EXAMPLES
     $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/generate/agent-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/generate/agent-spec.ts)_
 
 ## `sf agent generate authoring-bundle`
 
@@ -976,7 +985,7 @@ EXAMPLES
       other-package-dir/main/default --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/generate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/generate/authoring-bundle.ts)_
 
 ## `sf agent generate template`
 
@@ -1038,7 +1047,7 @@ EXAMPLES
       my-package --source-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/generate/template.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/generate/template.ts)_
 
 ## `sf agent generate test-spec`
 
@@ -1103,7 +1112,7 @@ EXAMPLES
       force-app//main/default/aiEvaluationDefinitions/Resort_Manager_Tests.aiEvaluationDefinition-meta.xml
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/generate/test-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/generate/test-spec.ts)_
 
 ## `sf agent preview`
 
@@ -1176,7 +1185,7 @@ EXAMPLES
     $ sf agent preview --use-live-actions --apex-debug --output-dir transcripts/my-preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/preview.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/preview.ts)_
 
 ## `sf agent preview end`
 
@@ -1260,7 +1269,7 @@ ERROR CODES
   SessionAmbiguous (5)           Multiple preview sessions found; specify --session-id to choose one.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/preview/end.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/preview/end.ts)_
 
 ## `sf agent preview send`
 
@@ -1327,7 +1336,7 @@ ERROR CODES
   SessionAmbiguous (5)   Multiple preview sessions found; specify --session-id to choose one.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/preview/send.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/preview/send.ts)_
 
 ## `sf agent preview sessions`
 
@@ -1363,7 +1372,7 @@ ERROR CODES
   Succeeded (0)  Sessions listed successfully (or empty list if no active sessions).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/preview/sessions.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/preview/sessions.ts)_
 
 ## `sf agent preview start`
 
@@ -1439,7 +1448,7 @@ ERROR CODES
   PreviewStartFailed (4)  Preview session failed to start due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/preview/start.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/preview/start.ts)_
 
 ## `sf agent publish authoring-bundle`
 
@@ -1503,7 +1512,7 @@ ERROR CODES
   Failed (1)     Compilation errors found in the Agent Script file.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/publish/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/publish/authoring-bundle.ts)_
 
 ## `sf agent test create`
 
@@ -1584,7 +1593,7 @@ ERROR CODES
   DeploymentFailed (4)  Deployment failed due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/test/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/test/create.ts)_
 
 ## `sf agent test list`
 
@@ -1626,7 +1635,7 @@ ERROR CODES
   Failed (4)     Failed to retrieve agent tests due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/test/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/test/list.ts)_
 
 ## `sf agent test results`
 
@@ -1710,7 +1719,7 @@ ERROR CODES
   Failed (4)     Failed to retrieve results due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/test/results.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/test/results.ts)_
 
 ## `sf agent test resume`
 
@@ -1803,7 +1812,7 @@ ERROR CODES
   OperationFailed (4)  Failed to poll test due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/test/resume.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/test/resume.ts)_
 
 ## `sf agent test run`
 
@@ -1896,7 +1905,7 @@ ERROR CODES
   OperationFailed (4)  Failed to start or poll test due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/test/run.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/test/run.ts)_
 
 ## `sf agent test run-eval`
 
@@ -1981,7 +1990,7 @@ ERROR CODES
   OperationFailed (4)  Failed to execute tests due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/test/run-eval.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/test/run-eval.ts)_
 
 ## `sf agent trace delete`
 
@@ -2048,7 +2057,7 @@ ERROR CODES
   Succeeded (0)  Traces deleted successfully (or no traces matched).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/trace/delete.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/trace/delete.ts)_
 
 ## `sf agent trace list`
 
@@ -2121,7 +2130,7 @@ ERROR CODES
   Succeeded (0)  Trace files listed successfully (or empty list if none found).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/trace/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/trace/list.ts)_
 
 ## `sf agent trace read`
 
@@ -2209,7 +2218,7 @@ EXAMPLES
     $ sf agent trace read --session-id <SESSION_ID> --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/trace/read.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/trace/read.ts)_
 
 ## `sf agent validate authoring-bundle`
 
@@ -2266,7 +2275,7 @@ ERROR CODES
   ServerError (3)  Validation/compilation API returned HTTP 500. A server error occurred during compilation.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.0/src/commands/agent/validate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.42.1/src/commands/agent/validate/authoring-bundle.ts)_
 
 ## `sf alias list`
 
