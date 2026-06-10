@@ -2045,7 +2045,7 @@
     o11y "^264.5.0"
     o11y_schema "260.5.0"
 
-"@salesforce/packaging@^4.25.0":
+"@salesforce/packaging@^4.25.1":
   version "4.25.1"
   resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-4.25.1.tgz#f77b1aa59543b10ee01b0f2f2bd43aeaf7d6062c"
   integrity sha512-1HAqOzArffpDNmjlFhC7+XZhatmOoPZO7r5+W8oEUy+2wDEogCWvC4u2WEp9YThcg4cQAEYJ6dpXGbuZFgbw4Q==
@@ -2238,16 +2238,16 @@
     open "^10.2.0"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-packaging@2.29.0":
-  version "2.29.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.29.0.tgz#fe3f15efc335278af189bf30966d5e4772bebbb8"
-  integrity sha512-j+7K5SB/8SuSYopnREMcY847bXrX/CNH2Y/rknt+yxVyPOG8k7xsqKak9JGDVASDeA3aCGjmm+9DWRmFSxk5HA==
+"@salesforce/plugin-packaging@2.29.2":
+  version "2.29.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-2.29.2.tgz#b3f53463ed4fae6e1b0fc341e87ef26ffbc92c7a"
+  integrity sha512-4fJanKUN8I0vfJhDgGOK7nOYdAw7eBvqxhcIkq8dZ4sdh/2nqOz+gONCoFFprO8ECKjdbj5SFsc+e8zfvBOiAg==
   dependencies:
     "@oclif/core" "^4"
     "@salesforce/core" "^8.31.0"
     "@salesforce/kit" "^3.2.6"
-    "@salesforce/packaging" "^4.25.0"
-    "@salesforce/sf-plugins-core" "^12.2.22"
+    "@salesforce/packaging" "^4.25.1"
+    "@salesforce/sf-plugins-core" "^12.2.24"
     chalk "^5.6.2"
 
 "@salesforce/plugin-release-management@^5.8.21":
@@ -2328,14 +2328,14 @@
     "@salesforce/ts-types" "^2.0.12"
     debug "^4.4.3"
 
-"@salesforce/plugin-templates@56.18.1":
-  version "56.18.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-templates/-/plugin-templates-56.18.1.tgz#f66ce0dc607c11d1e9aaf9300295e07e054bb722"
-  integrity sha512-ZHtNka7AON1KLepysidkny4dNP5oO5oTVdyM5bZU7CFaSbZKmn1BeppXIVl4AW5fdk/SFtmRfUZqG1HJZWn+hg==
+"@salesforce/plugin-templates@56.18.2":
+  version "56.18.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-templates/-/plugin-templates-56.18.2.tgz#28981c4aa408423deac5db0a3785f58fe68ebfd1"
+  integrity sha512-mDr4DveFZvPG6pT1RfEHDfvKUMNfe7mo1xAHZVVpjwm3btvjVYhFrJhOpNiHivMPFclwNGYVR1+Ra6KiAdNz9A==
   dependencies:
     "@salesforce/core" "^8.31.0"
     "@salesforce/sf-plugins-core" "^12"
-    "@salesforce/templates" "^66.9.1"
+    "@salesforce/templates" "^66.9.3"
 
 "@salesforce/plugin-trust@3.8.15", "@salesforce/plugin-trust@^3.7.89":
   version "3.8.15"
@@ -2437,10 +2437,10 @@
     o11y_schema "^260.65.0"
     proxy-agent "^6.5.0"
 
-"@salesforce/templates@^66.9.1":
-  version "66.9.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-66.9.1.tgz#a6bb811a8ad7d33f662e0451574d39d8d320a7b2"
-  integrity sha512-3Z0cSqhSjH8NqmHjlJJXcaGIuzzVSi49TRo7JG9X9wsUS2exuTaEf8KN6N4dU11nUA03DlwxPM9d3bkUC8RzHQ==
+"@salesforce/templates@^66.9.3":
+  version "66.9.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-66.9.3.tgz#56e2d44c671c2fdfe38cedefbb58a0d9e4bb8f0d"
+  integrity sha512-7HFQK6Jg/lkJqKIRysxHvT16Cgu32abDK2lyPpPTCo/ksz46LQxhCrIl9bTUjkPk5w6BdJ+4fPUqFTwcmv7MOw==
   dependencies:
     "@salesforce/kit" "^3.2.6"
     ejs "^3.1.10"
@@ -2448,7 +2448,7 @@
     hpagent "^1.2.0"
     mime-types "^3.0.2"
     proxy-from-env "^1.1.0"
-    tar "^7.5.15"
+    tar "^7.5.16"
     tslib "^2.8.1"
 
 "@salesforce/ts-sinon@^1.4.34":
@@ -9971,10 +9971,10 @@ tar-stream@^2.1.4:
     inherits "^2.0.3"
     readable-stream "^3.1.1"
 
-tar@^7.4.3, tar@^7.5.1, tar@^7.5.15, tar@^7.5.4:
-  version "7.5.15"
-  resolved "https://registry.yarnpkg.com/tar/-/tar-7.5.15.tgz#afe6d1316cddf614a566e3813e42fe01aed46fee"
-  integrity sha512-dzGK0boVlC4W5QFuQN1EFSl3bIDYsk7Tj40U6eIBnK2k/8ml7TZ5agbI5j5+qnoVcAA+rNtBml8SEiLxZpNqRQ==
+tar@^7.4.3, tar@^7.5.1, tar@^7.5.15, tar@^7.5.16, tar@^7.5.4:
+  version "7.5.16"
+  resolved "https://registry.yarnpkg.com/tar/-/tar-7.5.16.tgz#f11e063afed4554f758049d082909e37d6b53ced"
+  integrity sha512-56adEpPMouktRlBLXiaYFFzZ/3+JXa8P9n7WbR+ibIjtviN55mEaOkiysCnPnWm+7kkui1Dn8J9l+g6zV8731w==
   dependencies:
     "@isaacs/fs-minipass" "^4.0.0"
     chownr "^3.0.0"
