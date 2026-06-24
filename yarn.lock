@@ -1143,10 +1143,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@jsforce/jsforce-node@3.10.17-dev.0", "@jsforce/jsforce-node@^3.10.15", "@jsforce/jsforce-node@^3.10.16", "@jsforce/jsforce-node@^3.10.17-dev.0":
-  version "3.10.17-dev.0"
-  resolved "https://registry.yarnpkg.com/@jsforce/jsforce-node/-/jsforce-node-3.10.17-dev.0.tgz#fe534e16c04a4accf1296b5eb9d90fb447d7d253"
-  integrity sha512-mnJ9PxnD+3UVh8y8iY+VhlzxDZv5KWBvkDtS+ubKPSDqECtIOgkuD2hJX7u35nUCGg8+Sj/H48vnA6MSG52Dfw==
+"@jsforce/jsforce-node@3.10.16", "@jsforce/jsforce-node@^3.10.13", "@jsforce/jsforce-node@^3.10.15", "@jsforce/jsforce-node@^3.10.16", "@jsforce/jsforce-node@^3.10.17-dev.0":
+  version "3.10.16"
+  resolved "https://registry.yarnpkg.com/@jsforce/jsforce-node/-/jsforce-node-3.10.16.tgz#a7f320896b5d3ff98dce8048a2a26f5c561d8f16"
+  integrity sha512-Fh5Op3vgyWMmPhjsr0d50AwPj6X9rsUNiJOPqA2OmJmv3HduIRY8tK+nc/IdtkOGdYXDk09q1cu0PG5pGERGgA==
   dependencies:
     "@sindresorhus/is" "^4"
     base64url "^3.0.1"
@@ -1156,7 +1156,7 @@
     form-data "^4.0.4"
     https-proxy-agent "^5.0.0"
     multistream "^3.1.0"
-    undici "^8.5.0"
+    node-fetch "^2.6.1"
     xml2js "^0.6.2"
 
 "@jsonjoy.com/base64@^1.1.2":
@@ -1876,7 +1876,32 @@
     strip-ansi "6.0.1"
     ts-retry-promise "^0.8.1"
 
-"@salesforce/core@^8.25.1", "@salesforce/core@^8.28.3", "@salesforce/core@^8.29.1", "@salesforce/core@^8.30.0", "@salesforce/core@^8.30.3", "@salesforce/core@^8.31.0", "@salesforce/core@^8.31.1", "@salesforce/core@^8.31.2", "@salesforce/core@^8.31.3-dev.1":
+"@salesforce/core@8.31.2", "@salesforce/core@^8.25.1", "@salesforce/core@^8.28.3", "@salesforce/core@^8.29.1", "@salesforce/core@^8.30.0", "@salesforce/core@^8.30.3", "@salesforce/core@^8.31.0", "@salesforce/core@^8.31.1", "@salesforce/core@^8.31.2":
+  version "8.31.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.31.2.tgz#968448f423b553f726f42c27da6b55c4ec7eb93a"
+  integrity sha512-naqnq7Z+gbl1LdnyNvrGrNUoeMUQtCOsnrS6DfqeuLMJTFqcL9Dq0/od+xcuqi0+l7HTyH0/gU1BQitWpd1rag==
+  dependencies:
+    "@jsforce/jsforce-node" "^3.10.13"
+    "@salesforce/kit" "^3.2.4"
+    "@salesforce/ts-types" "^2.0.12"
+    ajv "^8.18.0"
+    change-case "^4.1.2"
+    fast-levenshtein "^3.0.0"
+    faye "^1.4.1"
+    form-data "^4.0.5"
+    js2xmlparser "^4.0.1"
+    jsonwebtoken "9.0.3"
+    jszip "3.10.1"
+    memfs "4.38.1"
+    pino "^9.7.0"
+    pino-abstract-transport "^1.2.0"
+    pino-pretty "^11.3.0"
+    proper-lockfile "^4.1.2"
+    semver "^7.8.0"
+    ts-retry-promise "^0.8.1"
+    zod "^4.1.12"
+
+"@salesforce/core@^8.31.3-dev.1":
   version "8.31.3-dev.1"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.31.3-dev.1.tgz#521f234a22142b13ac34f0bfb52fe96372edfdd7"
   integrity sha512-qsvNLHXUaitNu98ucTqP53kXClfivamuBZXjusAGRemlCIit3vL39gVVbuz76XgI2/o5yRCiB8DOM+UhF9ItDg==
@@ -7803,9 +7828,9 @@ node-emoji@^1.10.0:
   dependencies:
     lodash "^4.17.21"
 
-node-fetch@^2.6.9:
+node-fetch@^2.6.1, node-fetch@^2.6.9:
   version "2.7.0"
-  resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-2.7.0.tgz"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.7.0.tgz#d0f0fa6e3e2dc1d27efcd8ad99d550bda94d187d"
   integrity sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==
   dependencies:
     whatwg-url "^5.0.0"
@@ -10260,11 +10285,6 @@ undici@^7.28.0:
   version "7.28.0"
   resolved "https://registry.yarnpkg.com/undici/-/undici-7.28.0.tgz#97d64564198b285bc281f0e8e29597e3d11fe7ec"
   integrity sha512-cRZYrTDwWznlnRiPjggAGxZXanty6M8RV1ff8Wm4LWXBp7/IG8v5DnOm74DtUBp9OONpK75YlPnIjQqX0dBDtA==
-
-undici@^8.5.0:
-  version "8.5.0"
-  resolved "https://registry.yarnpkg.com/undici/-/undici-8.5.0.tgz#31ba9021a3d84c15e61cc5e28be2d7c451e66a66"
-  integrity sha512-xamtWoB1EshgjpmlXd7GGm2VfdDtw1+rD8uhry8pSNW3If6S8E0m2T2+orSKeZXEn/aPJMviCpDBA65WJt8zhg==
 
 unicorn-magic@^0.1.0:
   version "0.1.0"
