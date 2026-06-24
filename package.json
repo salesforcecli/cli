@@ -157,7 +157,7 @@
     "@oclif/plugin-version": "2.2.49",
     "@oclif/plugin-warn-if-update-available": "3.1.67",
     "@oclif/plugin-which": "3.2.57",
-    "@salesforce/core": "^8.28.0",
+    "@salesforce/core": "^8.31.3-dev.1",
     "@salesforce/kit": "^3.1.6",
     "@salesforce/plugin-agent": "1.42.1",
     "@salesforce/plugin-apex": "3.9.38",
@@ -213,7 +213,8 @@
     "@salesforce/plugin-user"
   ],
   "resolutions": {
-    "@salesforce/schemas": "1.10.3"
+    "@salesforce/schemas": "1.10.3",
+    "@jsforce/jsforce-node": "3.10.17-dev.0"
   },
   "repository": "salesforcecli/cli",
   "scripts": {
