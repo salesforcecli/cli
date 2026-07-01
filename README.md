@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.142.5 linux-x64 node-v22.23.0
+@salesforce/cli/2.142.6 linux-x64 node-v22.23.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -7385,7 +7385,7 @@ FLAG DESCRIPTIONS
     --installation-key-bypass flag is required.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/convert.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/convert.ts)_
 
 ## `sf package create`
 
@@ -7464,7 +7464,7 @@ FLAG DESCRIPTIONS
     Org-Dependent Unlocked Packages" in the Salesforce DX Developer Guide.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/create.ts)_
 
 ## `sf package delete`
 
@@ -7506,7 +7506,7 @@ EXAMPLES
     $ sf package delete --package 0Ho... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/delete.ts)_
 
 ## `sf package install`
 
@@ -7605,7 +7605,7 @@ FLAG DESCRIPTIONS
     - Delete: Delete removed components, except for custom objects and custom fields, that don't have dependencies.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/install.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/install.ts)_
 
 ## `sf package install report`
 
@@ -7638,7 +7638,7 @@ EXAMPLES
     $ sf package install report --request-id 0Hf... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/install/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/install/report.ts)_
 
 ## `sf package installed list`
 
@@ -7670,7 +7670,7 @@ EXAMPLES
     $ sf package installed list --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/installed/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/installed/list.ts)_
 
 ## `sf package list`
 
@@ -7708,7 +7708,7 @@ EXAMPLES
     $ sf package list --target-dev-hub devhub@example.com --verbose
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/list.ts)_
 
 ## `sf package push-upgrade abort`
 
@@ -7747,7 +7747,7 @@ EXAMPLES
     $ sf package push-upgrade abort --push-request-id 0DV... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/push-upgrade/abort.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/push-upgrade/abort.ts)_
 
 ## `sf package push-upgrade list`
 
@@ -7806,7 +7806,7 @@ EXAMPLES
     $ sf package push-upgrade list --package 033xyz –-status Failed
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/push-upgrade/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/push-upgrade/list.ts)_
 
 ## `sf package push-upgrade report`
 
@@ -7848,7 +7848,7 @@ EXAMPLES
     $ sf package push-upgrade report --push-request-id 0DV... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/push-upgrade/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/push-upgrade/report.ts)_
 
 ## `sf package push-upgrade schedule`
 
@@ -7935,7 +7935,7 @@ FLAG DESCRIPTIONS
     Overrides the value of the target-dev-hub configuration variable, if set.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/push-upgrade/schedule.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/push-upgrade/schedule.ts)_
 
 ## `sf package uninstall`
 
@@ -7983,7 +7983,7 @@ EXAMPLES
     $ sf package uninstall --package "Undesirable Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/uninstall.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/uninstall.ts)_
 
 ## `sf package uninstall report`
 
@@ -8016,7 +8016,7 @@ EXAMPLES
     $ sf package uninstall report --request-id 06y... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/uninstall/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/uninstall/report.ts)_
 
 ## `sf package update`
 
@@ -8084,7 +8084,7 @@ FLAG DESCRIPTIONS
     the Installed Packages page. Only released package versions can be set as the recommended version.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/update.ts)_
 
 ## `sf package version create`
 
@@ -8261,7 +8261,7 @@ FLAG DESCRIPTIONS
     periods of no output from commands.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/version/create.ts)_
 
 ## `sf package version create list`
 
@@ -8322,7 +8322,7 @@ EXAMPLES
     $ sf package version create list --created-last-days 0 --status Success
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/version/create/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/version/create/list.ts)_
 
 ## `sf package version create report`
 
@@ -8365,7 +8365,7 @@ EXAMPLES
     $ sf package version create report --package-create-request-id 08c... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/version/create/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/version/create/report.ts)_
 
 ## `sf package version delete`
 
@@ -8406,7 +8406,7 @@ EXAMPLES
     $ sf package version delete --package 04t... --target-org devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/version/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/version/delete.ts)_
 
 ## `sf package version displayancestry`
 
@@ -8466,7 +8466,7 @@ FLAG DESCRIPTIONS
     You can use the DOT code output in graph visualization software to create tree visualizations.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/version/displayancestry.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/version/displayancestry.ts)_
 
 ## `sf package version displaydependencies`
 
@@ -8474,20 +8474,21 @@ Display the dependency graph for an unlocked or 2GP managed package version.
 
 ```
 USAGE
-  $ sf package version displaydependencies -v <value> -p <value> [--json] [--flags-dir <value>] [--api-version <value>] [--edge-direction
-    root-first|root-last] [--verbose]
+  $ sf package version displaydependencies -v <value> -p <value> [--json] [--flags-dir <value>] [--api-version <value>] [-k <value>]
+    [--edge-direction root-first|root-last] [--verbose]
 
 FLAGS
-  -p, --package=<value>          (required) ID or alias of the package version (starts with 04t) or the package version
-                                 create request (starts with 08c) to display the dependency graph for.
-  -v, --target-dev-hub=<value>   (required) Username or alias of the Dev Hub org. Not required if the `target-dev-hub`
-                                 configuration variable is already set.
-      --api-version=<value>      Override the api version used for api requests made by this command
-      --edge-direction=<option>  [default: root-first] Order (root-first or root-last) in which the dependencies are
-                                 displayed.
-                                 <options: root-first|root-last>
-      --verbose                  Display both the package version ID (starts with 04t) and the version number
-                                 (major.minor.patch.build) in each node.
+  -k, --installation-key=<value>  Installation key for a key-protected package version (starts with 04t).
+  -p, --package=<value>           (required) ID or alias of the package version (starts with 04t) or the package version
+                                  create request (starts with 08c) to display the dependency graph for.
+  -v, --target-dev-hub=<value>    (required) Username or alias of the Dev Hub org. Not required if the `target-dev-hub`
+                                  configuration variable is already set.
+      --api-version=<value>       Override the api version used for api requests made by this command
+      --edge-direction=<option>   [default: root-first] Order (root-first or root-last) in which the dependencies are
+                                  displayed.
+                                  <options: root-first|root-last>
+      --verbose                   Display both the package version ID (starts with 04t) and the version number
+                                  (major.minor.patch.build) in each node.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
@@ -8510,6 +8511,10 @@ EXAMPLES
 
     $ sf package version displaydependencies --package 08c...
 
+  Display the dependency graph for a key-protected package version:
+
+    $ sf package version displaydependencies --package 04t... --installation-key "my installation key"
+
 FLAG DESCRIPTIONS
   -p, --package=<value>
 
@@ -8528,7 +8533,7 @@ FLAG DESCRIPTIONS
     package, which must be installed last.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/version/displaydependencies.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/version/displaydependencies.ts)_
 
 ## `sf package version list`
 
@@ -8604,7 +8609,7 @@ EXAMPLES
     $ sf package version list --packages exp-mgr,exp-mgr-util --released --modified-last-days 0
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/version/list.ts)_
 
 ## `sf package version promote`
 
@@ -8648,7 +8653,7 @@ EXAMPLES
     $ sf package version promote --package "Awesome Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/version/promote.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/version/promote.ts)_
 
 ## `sf package version report`
 
@@ -8688,7 +8693,7 @@ EXAMPLES
     $ sf package version report --package "Your Package Alias" --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/version/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/version/report.ts)_
 
 ## `sf package version retrieve`
 
@@ -8733,7 +8738,7 @@ EXAMPLES
     $ sf package version retrieve --package 04tXXX --output-dir my-directory/ --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/version/retrieve.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/version/retrieve.ts)_
 
 ## `sf package version update`
 
@@ -8786,7 +8791,7 @@ EXAMPLES
     $ sf package version update --package 04t... --version-description "New Package Version Description"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package/version/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package/version/update.ts)_
 
 ## `sf package1 version create`
 
@@ -8853,7 +8858,7 @@ FLAG DESCRIPTIONS
     subscribers.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package1/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package1/version/create.ts)_
 
 ## `sf package1 version create get`
 
@@ -8886,7 +8891,7 @@ EXAMPLES
     $ sf package1 version create get --request-id 0HD... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package1/version/create/get.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package1/version/create/get.ts)_
 
 ## `sf package1 version display`
 
@@ -8920,7 +8925,7 @@ EXAMPLES
     $ sf package1 version display --package-version-id 04t... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package1/version/display.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package1/version/display.ts)_
 
 ## `sf package1 version list`
 
@@ -8958,7 +8963,7 @@ FLAG DESCRIPTIONS
     If not specified, shows all versions for all packages (managed and unmanaged) in the org.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.29.6/src/commands/package1/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.1/src/commands/package1/version/list.ts)_
 
 ## `sf plugins`
 
@@ -11349,7 +11354,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.9/src/commands/template/generate/analytics/template.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.12/src/commands/template/generate/analytics/template.ts)_
 
 ## `sf template generate apex class`
 
@@ -11409,7 +11414,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.9/src/commands/template/generate/apex/class.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.12/src/commands/template/generate/apex/class.ts)_
 
 ## `sf template generate apex trigger`
 
@@ -11479,7 +11484,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.9/src/commands/template/generate/apex/trigger.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.12/src/commands/template/generate/apex/trigger.ts)_
 
 ## `sf template generate digital-experience site`
 
@@ -11533,7 +11538,7 @@ FLAG DESCRIPTIONS
     project, defaults to the current directory.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.9/src/commands/template/generate/digital-experience/site.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.12/src/commands/template/generate/digital-experience/site.ts)_
 
 ## `sf template generate flexipage`
 
@@ -11615,7 +11620,7 @@ FLAG DESCRIPTIONS
     'Custom_Object__c'. This sets the `sobjectType` field in the FlexiPage metadata.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.9/src/commands/template/generate/flexipage/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.12/src/commands/template/generate/flexipage/index.ts)_
 
 ## `sf template generate lightning app`
 
@@ -11673,7 +11678,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.9/src/commands/template/generate/lightning/app.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.12/src/commands/template/generate/lightning/app.ts)_
 
 ## `sf template generate lightning component`
 
@@ -11750,7 +11755,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.9/src/commands/template/generate/lightning/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.12/src/commands/template/generate/lightning/component.ts)_
 
 ## `sf template generate lightning event`
 
@@ -11808,7 +11813,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.9/src/commands/template/generate/lightning/event.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.12/src/commands/template/generate/lightning/event.ts)_
 
 ## `sf template generate lightning interface`
 
@@ -11866,7 +11871,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.9/src/commands/template/generate/lightning/interface.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.12/src/commands/template/generate/lightning/interface.ts)_
 
 ## `sf template generate lightning test`
 
@@ -11924,7 +11929,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.9/src/commands/template/generate/lightning/test.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.12/src/commands/template/generate/lightning/test.ts)_
 
 ## `sf template generate project`
 
@@ -12050,7 +12055,7 @@ FLAG DESCRIPTIONS
     server-side type stripping.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.9/src/commands/template/generate/project/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.12/src/commands/template/generate/project/index.ts)_
 
 ## `sf template generate static-resource`
 
@@ -12113,23 +12118,23 @@ FLAG DESCRIPTIONS
     etc.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.9/src/commands/template/generate/static-resource/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.12/src/commands/template/generate/static-resource/index.ts)_
 
 ## `sf template generate ui-bundle`
 
-Generate a UI bundle, which contains the code and metadata to build a UI experience that uses non-native Salesforce frameworks, such as React.
+Generate a UI bundle, which contains the code and metadata to build a UI experience that uses non-native Salesforce frameworks, such as React or Angular.
 
 ```
 USAGE
-  $ sf template generate ui-bundle -n <value> [--json] [--flags-dir <value>] [-t default|reactbasic] [-l <value>] [-d <value>]
-    [--api-version <value>]
+  $ sf template generate ui-bundle -n <value> [--json] [--flags-dir <value>] [-t default|reactbasic|angularbasic] [-l <value>]
+    [-d <value>] [--api-version <value>]
 
 FLAGS
   -d, --output-dir=<value>   Directory into which the files are created.
   -l, --label=<value>        Master label for the UI bundle.
   -n, --name=<value>         (required) API name of the generated UI bundle.
   -t, --template=<option>    [default: default] Template to use when creating the files for a specific UI framework.
-                             <options: default|reactbasic>
+                             <options: default|reactbasic|angularbasic>
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
@@ -12138,7 +12143,7 @@ GLOBAL FLAGS
 
 DESCRIPTION
   Generate a UI bundle, which contains the code and metadata to build a UI experience that uses non-native Salesforce
-  frameworks, such as React.
+  frameworks, such as React or Angular.
 
   Salesforce provides native UI frameworks, such as Lighting Web Components (LWC), to build applications that run on the
   Salesforce Platform. But you can also use non-native JavaScript- or TypeScript-based UI frameworks, such as React, to
@@ -12149,8 +12154,9 @@ DESCRIPTION
   MyUiBundle, then the files are generated into a "uiBundles/MyUiBundle" directory. Use the --output-dir flag to specify
   a different directory.
 
-  Use the --template flag for generating the files to get started with a speciic UI framework, such as React. Check out
-  the README.md file in the generated "uiBundles/<bundlename>" directory for more information about the template.
+  Use the --template flag for generating the files to get started with a specific UI framework, such as React or
+  Angular. Check out the README.md file in the generated "uiBundles/<bundlename>" directory for more information about
+  the template.
 
 EXAMPLES
   Generate a UI bundle called MyUiBundle in the current directory:
@@ -12160,6 +12166,10 @@ EXAMPLES
   Generate a React-based UI bundle:
 
     $ sf template generate ui-bundle --name MyReactApp --template reactbasic
+
+  Generate an Angular-based UI bundle:
+
+    $ sf template generate ui-bundle --name MyAngularApp --template angularbasic
 
   Generate the React-based UI bundle in the "force-app/main/default/uiBundles" directory:
 
@@ -12192,12 +12202,12 @@ FLAG DESCRIPTIONS
     This name can contain only underscores and alphanumeric characters, and must be unique in your org. It must begin
     with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores.
 
-  -t, --template=default|reactbasic  Template to use when creating the files for a specific UI framework.
+  -t, --template=default|reactbasic|angularbasic  Template to use when creating the files for a specific UI framework.
 
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.9/src/commands/template/generate/ui-bundle/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.12/src/commands/template/generate/ui-bundle/index.ts)_
 
 ## `sf template generate visualforce component`
 
@@ -12254,7 +12264,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.9/src/commands/template/generate/visualforce/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.12/src/commands/template/generate/visualforce/component.ts)_
 
 ## `sf template generate visualforce page`
 
@@ -12305,7 +12315,7 @@ FLAG DESCRIPTIONS
     The name can be up to 40 characters and must start with a letter.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.9/src/commands/template/generate/visualforce/page.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/56.18.12/src/commands/template/generate/visualforce/page.ts)_
 
 ## `sf update [CHANNEL]`
 
@@ -12343,7 +12353,7 @@ EXAMPLES
     $ sf update --available
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.7.53/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/4.7.54/src/commands/update.ts)_
 
 ## `sf version`
 
