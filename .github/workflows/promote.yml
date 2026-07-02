@@ -115,6 +115,7 @@ jobs:
           SF_CHANGE_CASE_CONFIGURATION_ITEM: ${{ secrets.SF_CHANGE_CASE_CONFIGURATION_ITEM }}
           SVC_CLI_BOT_GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
           githubTag: ${{ inputs.version }}
+          nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
 
       - name: Check open-ctc status
         if: always()
@@ -205,6 +206,7 @@ jobs:
     secrets: inherit
     with:
       changeCaseId: ${{ needs.open-ctc-or-skip.outputs.changeCaseId }}
+      nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
 
   ctcCloseFail:
     needs: [open-ctc-or-skip, npm-promote, docker-promote, oclif-promote]
@@ -213,4 +215,5 @@ jobs:
     secrets: inherit
     with:
       changeCaseId: ${{ needs.open-ctc-or-skip.outputs.changeCaseId }}
+      nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
       status: Not Implemented
