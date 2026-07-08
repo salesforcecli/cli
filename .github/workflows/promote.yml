@@ -115,6 +115,7 @@ jobs:
           SF_CHANGE_CASE_CONFIGURATION_ITEM: ${{ secrets.SF_CHANGE_CASE_CONFIGURATION_ITEM }}
           SVC_CLI_BOT_GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
           githubTag: ${{ inputs.version }}
+          nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
 
       - name: Check open-ctc status
         if: always()
@@ -200,17 +201,19 @@ jobs:
 
   ctcCloseSuccess:
     needs: [open-ctc-or-skip, npm-promote, docker-promote, oclif-promote]
-    if: needs.open-ctc-or-skip.result == 'success' && needs.open-ctc-or-skip.outputs.changeCaseId && needs.npm-promote.result == 'success' && needs.docker-promote.result == 'success' && needs.docker-promote.result == 'success' && needs.oclif-promote.result == 'success'
+    if: needs.open-ctc-or-skip.result == 'success' && needs.open-ctc-or-skip.outputs.changeCaseId && needs.npm-promote.result == 'success' && needs.docker-promote.result == 'success' && needs.oclif-promote.result == 'success'
     uses: salesforcecli/github-workflows/.github/workflows/ctcClose.yml@main
     secrets: inherit
     with:
       changeCaseId: ${{ needs.open-ctc-or-skip.outputs.changeCaseId }}
+      nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
 
   ctcCloseFail:
     needs: [open-ctc-or-skip, npm-promote, docker-promote, oclif-promote]
-    if: always() && needs.open-ctc-or-skip.outputs.changeCaseId && (needs.open-ctc-or-skip.result != 'success' || needs.npm-promote.result != 'success' || needs.docker-promote.result != 'success' || needs.docker-promote.result != 'success' || needs.oclif-promote.result != 'success')
+    if: always() && needs.open-ctc-or-skip.outputs.changeCaseId && (needs.open-ctc-or-skip.result != 'success' || needs.npm-promote.result != 'success' || needs.docker-promote.result != 'success' || needs.oclif-promote.result != 'success')
     uses: salesforcecli/github-workflows/.github/workflows/ctcClose.yml@main
     secrets: inherit
     with:
       changeCaseId: ${{ needs.open-ctc-or-skip.outputs.changeCaseId }}
+      nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
       status: Not Implemented
