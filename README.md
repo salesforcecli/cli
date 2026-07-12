@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.144.2 linux-x64 node-v22.23.1
+@salesforce/cli/2.144.3 linux-x64 node-v22.23.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -2748,7 +2748,7 @@ EXAMPLES
     $ sf alias list
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.92/src/commands/alias/list.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.93/src/commands/alias/list.ts)_
 
 ## `sf alias set`
 
@@ -2797,7 +2797,7 @@ EXAMPLES
     $ sf alias set my-scratch-org test-ss0xut7txzxf@example.com
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.92/src/commands/alias/set.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.93/src/commands/alias/set.ts)_
 
 ## `sf alias unset`
 
@@ -2837,7 +2837,7 @@ EXAMPLES
     $ sf alias unset --all [--no-prompt]
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.92/src/commands/alias/unset.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.93/src/commands/alias/unset.ts)_
 
 ## `sf apex get log`
 
@@ -3501,7 +3501,7 @@ CONFIGURATION VARIABLES
   org-capitalize-record-types    Whether record types are capitalized on scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.92/src/commands/config/get.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.93/src/commands/config/get.ts)_
 
 ## `sf config list`
 
@@ -3541,7 +3541,7 @@ EXAMPLES
     $ sf config list
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.92/src/commands/config/list.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.93/src/commands/config/list.ts)_
 
 ## `sf config set`
 
@@ -3610,7 +3610,7 @@ CONFIGURATION VARIABLES
   org-capitalize-record-types    Whether record types are capitalized on scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.92/src/commands/config/set.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.93/src/commands/config/set.ts)_
 
 ## `sf config unset`
 
@@ -3660,7 +3660,7 @@ CONFIGURATION VARIABLES
   org-capitalize-record-types    Whether record types are capitalized on scratch org creation.
 ```
 
-_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.92/src/commands/config/unset.ts)_
+_See code: [@salesforce/plugin-settings](https://github.com/salesforcecli/plugin-settings/blob/2.4.93/src/commands/config/unset.ts)_
 
 ## `sf data bulk results`
 
@@ -9195,7 +9195,7 @@ EXAMPLES
     $ sf plugins trust allowlist add --name @scope/my-plugin --name another-plugin
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.8.33/src/commands/plugins/trust/allowlist/add.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.8.34/src/commands/plugins/trust/allowlist/add.ts)_
 
 ## `sf plugins trust allowlist list`
 
@@ -9223,7 +9223,7 @@ EXAMPLES
     $ sf plugins trust allowlist list
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.8.33/src/commands/plugins/trust/allowlist/list.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.8.34/src/commands/plugins/trust/allowlist/list.ts)_
 
 ## `sf plugins trust allowlist remove`
 
@@ -9260,7 +9260,7 @@ EXAMPLES
     $ sf plugins trust allowlist remove --name @scope/my-plugin --name another-plugin
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.8.33/src/commands/plugins/trust/allowlist/remove.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.8.34/src/commands/plugins/trust/allowlist/remove.ts)_
 
 ## `sf plugins trust verify`
 
@@ -9289,7 +9289,7 @@ EXAMPLES
   $ sf plugins trust verify --npm @scope/npmName
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.8.33/src/commands/plugins/trust/verify.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/3.8.34/src/commands/plugins/trust/verify.ts)_
 
 ## `sf plugins uninstall [PLUGIN]`
 
