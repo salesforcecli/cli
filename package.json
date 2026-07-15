@@ -10,7 +10,7 @@
   "homepage": "https://github.com/forcedotcom/cli",
   "bugs": "https://github.com/forcedotcom/cli/issues",
   "engines": {
-    "node": ">=18.6.0"
+    "node": ">=22.0.0"
   },
   "packageManager": "yarn@1.22.19",
   "files": [
@@ -233,7 +233,7 @@
     "pack:tarballs": "oclif pack:tarballs --xz --parallel --prune-lockfiles",
     "pack:tarballs:sequential": "oclif pack:tarballs --xz --prune-lockfiles",
     "pack:verify": "sf-release cli:tarballs:verify --cli sf --windows-username-buffer 34",
-    "pack:win": "oclif pack:win --prune-lockfiles --defender-exclusion unchecked",
+    "pack:win": "oclif pack:win --targets win32-x64,win32-arm64 --prune-lockfiles --defender-exclusion unchecked",
     "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
     "preinstall": "node ./scripts/preinstall.js",
     "prepack": "sf-prepack",
