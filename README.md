@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.145.1 linux-x64 node-v22.23.1
+@salesforce/cli/2.145.2 linux-x64 node-v22.23.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -3283,7 +3283,7 @@ EXAMPLES
     $ sf api request graphql --body example.txt --stream-to-file output.txt --include
 ```
 
-_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.48/src/commands/api/request/graphql.ts)_
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.49/src/commands/api/request/graphql.ts)_
 
 ## `sf api request rest [URL]`
 
@@ -3392,7 +3392,7 @@ FLAG DESCRIPTIONS
     https://github.com/salesforcecli/plugin-api/tree/main/test/test-files/data-project.
 ```
 
-_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.48/src/commands/api/request/rest.ts)_
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/1.3.49/src/commands/api/request/rest.ts)_
 
 ## `sf autocomplete [SHELL]`
 
