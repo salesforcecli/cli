@@ -1320,10 +1320,10 @@
     node-gyp "^12.1.0"
     proc-log "^6.0.0"
 
-"@oclif/core@4.11.14", "@oclif/core@^4", "@oclif/core@^4.10.4", "@oclif/core@^4.11.11", "@oclif/core@^4.11.14", "@oclif/core@^4.11.4", "@oclif/core@^4.11.7":
-  version "4.11.14"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.11.14.tgz#45cc28d78a5ea2ac9d1586c57e537771394da44c"
-  integrity sha512-cZ5Ktd+rT0PO+o7KBH4vRFTgg+xMLf8F41WK39p8MkXEViZA/Qqe+4lzZT6102zgUxMORET1HtF9t5w8CB3tnQ==
+"@oclif/core@4.12.0", "@oclif/core@^4", "@oclif/core@^4.10.4", "@oclif/core@^4.11.11", "@oclif/core@^4.11.14", "@oclif/core@^4.11.4", "@oclif/core@^4.11.7":
+  version "4.12.0"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.12.0.tgz#f86248afce539b94ee306af7cd0db30888349594"
+  integrity sha512-xoUX6ZDixfyHSkllriITpq/3kA78E/oXOliz4em+De6qe22kg2CcKN9KKxMB4NyD4U1SFUsd0tfnG9uyeV5P7w==
   dependencies:
     ansi-escapes "^4.3.2"
     ansis "^3.17.0"
@@ -1435,10 +1435,10 @@
     ansi-escapes "^7.3.0"
     inquirer-autocomplete-standalone "^0.8.1"
 
-"@oclif/plugin-update@4.7.54":
-  version "4.7.54"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.7.54.tgz#cf7b4195535c01b051d30089119e4cf8147e6f42"
-  integrity sha512-YzXP4kcscjX5KWDI5rGos+Z8K46apnTUySlss1hWRo0K1YxxOBnemdGbydMZqukOYDzE4BzUx/20l4LqWHa5OA==
+"@oclif/plugin-update@4.7.55":
+  version "4.7.55"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-4.7.55.tgz#5666fc6771468b784e868aef718738274d34f862"
+  integrity sha512-zGytfFpazPHRleh26xrNh9cLhKAxQf6lOr5MkfMEYQzkRqMmb1F9BVUntSgb7VWVZJhdIvo7zqBLaXbcONR7hQ==
   dependencies:
     "@inquirer/select" "^2.5.0"
     "@oclif/core" "^4"
@@ -2141,14 +2141,14 @@
     "@salesforce/ts-types" "^2.0.12"
     debug "^4.4.3"
 
-"@salesforce/plugin-templates@56.18.18":
-  version "56.18.18"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-templates/-/plugin-templates-56.18.18.tgz#b798f0d7ffd1eedc835e0db7e3f11ea4feee2376"
-  integrity sha512-C88/1CR6/X0zPfmNuJKardurtZnWvY7guJLmmidK6lq6XxDlzrFosqZjli2cJDDc+famOJSb+JDu5CxQXis8Xw==
+"@salesforce/plugin-templates@56.19.0":
+  version "56.19.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-templates/-/plugin-templates-56.19.0.tgz#0b653d18acaa60ff0250a6c492842330d59e43d7"
+  integrity sha512-vsjAzCyB9HcqI51gQ+CWsFk1rcSNw/FBdaSCTgi+YHbIyX1ATCLy15qw7e+5Km3mMW20xf5o0TZQKiR97DMxiw==
   dependencies:
     "@salesforce/core" "^8.32.4"
     "@salesforce/sf-plugins-core" "^12"
-    "@salesforce/templates" "^66.11.0"
+    "@salesforce/templates" "^66.13.0"
 
 "@salesforce/plugin-trust@3.8.38", "@salesforce/plugin-trust@^3.7.89":
   version "3.8.38"
@@ -2251,10 +2251,10 @@
     o11y_schema "^260.65.0"
     proxy-agent "^6.5.0"
 
-"@salesforce/templates@^66.11.0":
-  version "66.11.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-66.11.0.tgz#d16cf5b1b836a96796b4b2f05ad6e196ed3d8785"
-  integrity sha512-xUJfj6AjKCgj2qkblFqji2YFuaoz33DBq7yTGfQBM5CEabcd64mHjRwq43/7F6CZZ1nGtpD4ys+Mb6MeLsIvvg==
+"@salesforce/templates@^66.13.0":
+  version "66.13.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-66.13.0.tgz#0d484f8981ba5e5e34f277a242c75f6acb880eb0"
+  integrity sha512-ACuTEIk0C9sksoZW/8F1RR0LEyyw4er0ovpb8KKJtlocvJCmbiQHMInAoRnwFciW2AjIS0iL+XJlNmO9mLPBCA==
   dependencies:
     "@salesforce/kit" "^3.2.6"
     ejs "^3.1.10"
@@ -2262,7 +2262,7 @@
     hpagent "^1.2.0"
     mime-types "^3.0.2"
     proxy-from-env "^1.1.0"
-    tar "^7.5.19"
+    tar "^7.5.20"
     tslib "^2.8.1"
 
 "@salesforce/ts-sinon@^1.4.36":
@@ -9745,10 +9745,10 @@ tar-stream@^2.1.4:
     inherits "^2.0.3"
     readable-stream "^3.1.1"
 
-tar@^7.4.3, tar@^7.5.1, tar@^7.5.19, tar@^7.5.4:
-  version "7.5.19"
-  resolved "https://registry.yarnpkg.com/tar/-/tar-7.5.19.tgz#d8915e6b717f8036a79d839ca9448198b002b0a7"
-  integrity sha512-4LeEWl96twnS2Q7Bz4MGqgazLqO+hJN63GZxXoIqh1T3VweYD997gbU1ItNsQafqqXTXd5WFyFdReLtwvRBNiw==
+tar@^7.4.3, tar@^7.5.1, tar@^7.5.19, tar@^7.5.20, tar@^7.5.4:
+  version "7.5.21"
+  resolved "https://registry.yarnpkg.com/tar/-/tar-7.5.21.tgz#b3405af2eb493523ce4379f531e9ebda0601bc59"
+  integrity sha512-XdhtCvlMywwxpCW8YEq3lOXBJpUPTR2OHHcwLPO3HwsJqOHa2Ok/oJ7ruGzp+JrKoRPVCzJwAdEjqLW/vNRPHA==
   dependencies:
     "@isaacs/fs-minipass" "^4.0.0"
     chownr "^3.0.0"
