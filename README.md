@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.146.2 linux-x64 node-v22.23.1
+@salesforce/cli/2.146.3 linux-x64 node-v22.23.1
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -302,7 +302,7 @@ ERROR CODES
   ActivationFailed (4)  Failed to activate the agent due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/activate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/activate.ts)_
 
 ## `sf agent adl create`
 
@@ -374,7 +374,7 @@ EXAMPLES
       --source-type retriever --retriever-id 0ppXX0000000001
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/adl/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/adl/create.ts)_
 
 ## `sf agent adl delete`
 
@@ -405,7 +405,7 @@ EXAMPLES
     $ sf agent adl delete --library-id 1JDSG000007IbWX4A0 --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/adl/delete.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/adl/delete.ts)_
 
 ## `sf agent adl file add`
 
@@ -447,7 +447,7 @@ EXAMPLES
     $ sf agent adl file add -i 1JDSG000007IbWX4A0 --path ./docs/guide.pdf --path ./docs/faq.txt --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/adl/file/add.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/adl/file/add.ts)_
 
 ## `sf agent adl file delete`
 
@@ -480,7 +480,7 @@ EXAMPLES
     $ sf agent adl file delete --library-id 1JDSG000007IbWX4A0 --file-id a1B2C3D4E5F6G7H8I9 --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/adl/file/delete.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/adl/file/delete.ts)_
 
 ## `sf agent adl file list`
 
@@ -520,7 +520,7 @@ EXAMPLES
     $ sf agent adl file list --library-id 1JDSG000007IbWX4A0 --target-org myOrg --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/adl/file/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/adl/file/list.ts)_
 
 ## `sf agent adl get`
 
@@ -551,7 +551,7 @@ EXAMPLES
     $ sf agent adl get --library-id 1JDSG000007IbWX4A0 --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/adl/get.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/adl/get.ts)_
 
 ## `sf agent adl list`
 
@@ -588,7 +588,7 @@ EXAMPLES
     $ sf agent adl list --target-org myOrg --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/adl/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/adl/list.ts)_
 
 ## `sf agent adl status`
 
@@ -623,7 +623,7 @@ EXAMPLES
     $ sf agent adl status --library-id 1JDSG000007IbWX4A0 --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/adl/status.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/adl/status.ts)_
 
 ## `sf agent adl update`
 
@@ -678,7 +678,7 @@ EXAMPLES
     $ sf agent adl update --library-id 1JDSG000007IbWX4A0 --restrict-to-public-articles --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/adl/update.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/adl/update.ts)_
 
 ## `sf agent adl upload`
 
@@ -725,7 +725,7 @@ EXAMPLES
     $ sf agent adl upload --library-id 1JDSG000007IbWX4A0 --file ./docs/guide.pdf --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/adl/upload.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/adl/upload.ts)_
 
 ## `sf agent create`
 
@@ -792,7 +792,7 @@ EXAMPLES
     $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/create.ts)_
 
 ## `sf agent deactivate`
 
@@ -841,7 +841,7 @@ ERROR CODES
   DeactivationFailed (4)  Failed to deactivate the agent due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/deactivate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/deactivate.ts)_
 
 ## `sf agent generate agent-spec`
 
@@ -948,7 +948,7 @@ EXAMPLES
     $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/generate/agent-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/generate/agent-spec.ts)_
 
 ## `sf agent generate authoring-bundle`
 
@@ -1025,7 +1025,7 @@ EXAMPLES
       other-package-dir/main/default --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/generate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/generate/authoring-bundle.ts)_
 
 ## `sf agent generate template`
 
@@ -1087,7 +1087,7 @@ EXAMPLES
       my-package --source-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/generate/template.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/generate/template.ts)_
 
 ## `sf agent generate test-spec`
 
@@ -1176,7 +1176,7 @@ FLAG DESCRIPTIONS
     metadata. 'testing-center' uses AiEvaluationDefinition metadata.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/generate/test-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/generate/test-spec.ts)_
 
 ## `sf agent mcp asset list`
 
@@ -1212,7 +1212,7 @@ EXAMPLES
     $ sf agent mcp asset list --target-org myOrg --mcp-server-id 0XSxx0000000001 --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/mcp/asset/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/mcp/asset/list.ts)_
 
 ## `sf agent mcp asset replace`
 
@@ -1261,7 +1261,7 @@ EXAMPLES
   cat assets.json | sf agent mcp asset replace --mcp-server-id 0XSxx0000000001 --assets - --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/mcp/asset/replace.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/mcp/asset/replace.ts)_
 
 ## `sf agent mcp create`
 
@@ -1309,7 +1309,7 @@ EXAMPLES
   cat secret.txt | sf agent mcp create --name myServer --server-url https://mcp.example.com --auth-type OAUTH --identity-provider myIdp --client-id abc123 --client-secret - --scope "read write" --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/mcp/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/mcp/create.ts)_
 
 ## `sf agent mcp delete`
 
@@ -1347,7 +1347,7 @@ EXAMPLES
     $ sf agent mcp delete --mcp-server-id 0XSxx0000000001 --target-org myOrg --no-prompt
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/mcp/delete.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/mcp/delete.ts)_
 
 ## `sf agent mcp fetch`
 
@@ -1384,7 +1384,7 @@ EXAMPLES
     $ sf agent mcp fetch --target-org myOrg --mcp-server-id 0XSxx0000000001 --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/mcp/fetch.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/mcp/fetch.ts)_
 
 ## `sf agent mcp get`
 
@@ -1420,7 +1420,7 @@ EXAMPLES
     $ sf agent mcp get --target-org myOrg --mcp-server-id 0Mx000000000001 --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/mcp/get.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/mcp/get.ts)_
 
 ## `sf agent mcp list`
 
@@ -1462,7 +1462,7 @@ EXAMPLES
     $ sf agent mcp list --target-org myOrg --type EXTERNAL --status ACTIVE --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/mcp/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/mcp/list.ts)_
 
 ## `sf agent mcp update`
 
@@ -1513,7 +1513,7 @@ EXAMPLES
   cat secret.txt | sf agent mcp update --mcp-server-id 0XSxx0000000001 --server-url https://mcp.example.com --auth-type OAUTH --identity-provider MyIdp --client-id abc --client-secret - --scope "read write" --target-org myOrg --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/mcp/update.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/mcp/update.ts)_
 
 ## `sf agent preview`
 
@@ -1608,7 +1608,7 @@ FLAG DESCRIPTIONS
     will see null. (3) Type defaults to Text.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/preview.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/preview.ts)_
 
 ## `sf agent preview end`
 
@@ -1692,7 +1692,7 @@ ERROR CODES
   SessionAmbiguous (5)           Multiple preview sessions found; specify --session-id to choose one.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/preview/end.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/preview/end.ts)_
 
 ## `sf agent preview send`
 
@@ -1759,7 +1759,7 @@ ERROR CODES
   SessionAmbiguous (5)   Multiple preview sessions found; specify --session-id to choose one.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/preview/send.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/preview/send.ts)_
 
 ## `sf agent preview sessions`
 
@@ -1795,7 +1795,7 @@ ERROR CODES
   Succeeded (0)  Sessions listed successfully (or empty list if no active sessions).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/preview/sessions.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/preview/sessions.ts)_
 
 ## `sf agent preview start`
 
@@ -1893,7 +1893,7 @@ ERROR CODES
   PreviewStartFailed (4)  Preview session failed to start due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/preview/start.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/preview/start.ts)_
 
 ## `sf agent publish authoring-bundle`
 
@@ -1957,7 +1957,7 @@ ERROR CODES
   Failed (1)     Compilation errors found in the Agent Script file.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/publish/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/publish/authoring-bundle.ts)_
 
 ## `sf agent test create`
 
@@ -2038,7 +2038,7 @@ ERROR CODES
   DeploymentFailed (4)  Deployment failed due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/test/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/test/create.ts)_
 
 ## `sf agent test list`
 
@@ -2080,7 +2080,7 @@ ERROR CODES
   Failed (4)     Failed to retrieve agent tests due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/test/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/test/list.ts)_
 
 ## `sf agent test results`
 
@@ -2164,7 +2164,7 @@ ERROR CODES
   Failed (4)     Failed to retrieve results due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/test/results.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/test/results.ts)_
 
 ## `sf agent test resume`
 
@@ -2257,7 +2257,7 @@ ERROR CODES
   OperationFailed (4)  Failed to poll test due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/test/resume.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/test/resume.ts)_
 
 ## `sf agent test run`
 
@@ -2350,7 +2350,7 @@ ERROR CODES
   OperationFailed (4)  Failed to start or poll test due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/test/run.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/test/run.ts)_
 
 ## `sf agent test run-eval`
 
@@ -2435,7 +2435,7 @@ ERROR CODES
   OperationFailed (4)  Failed to execute tests due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/test/run-eval.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/test/run-eval.ts)_
 
 ## `sf agent trace delete`
 
@@ -2502,7 +2502,7 @@ ERROR CODES
   Succeeded (0)  Traces deleted successfully (or no traces matched).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/trace/delete.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/trace/delete.ts)_
 
 ## `sf agent trace list`
 
@@ -2575,7 +2575,7 @@ ERROR CODES
   Succeeded (0)  Trace files listed successfully (or empty list if none found).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/trace/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/trace/list.ts)_
 
 ## `sf agent trace read`
 
@@ -2663,7 +2663,7 @@ EXAMPLES
     $ sf agent trace read --session-id <SESSION_ID> --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/trace/read.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/trace/read.ts)_
 
 ## `sf agent validate authoring-bundle`
 
@@ -2720,7 +2720,7 @@ ERROR CODES
   ServerError (3)  Validation/compilation API returned HTTP 500. A server error occurred during compilation.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.44.5/src/commands/agent/validate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/1.45.0/src/commands/agent/validate/authoring-bundle.ts)_
 
 ## `sf alias list`
 
@@ -7420,7 +7420,7 @@ FLAG DESCRIPTIONS
     --installation-key-bypass flag is required.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/convert.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/convert.ts)_
 
 ## `sf package create`
 
@@ -7499,7 +7499,7 @@ FLAG DESCRIPTIONS
     Org-Dependent Unlocked Packages" in the Salesforce DX Developer Guide.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/create.ts)_
 
 ## `sf package delete`
 
@@ -7541,7 +7541,7 @@ EXAMPLES
     $ sf package delete --package 0Ho... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/delete.ts)_
 
 ## `sf package install`
 
@@ -7640,7 +7640,7 @@ FLAG DESCRIPTIONS
     - Delete: Delete removed components, except for custom objects and custom fields, that don't have dependencies.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/install.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/install.ts)_
 
 ## `sf package install report`
 
@@ -7673,7 +7673,7 @@ EXAMPLES
     $ sf package install report --request-id 0Hf... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/install/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/install/report.ts)_
 
 ## `sf package installed list`
 
@@ -7705,7 +7705,7 @@ EXAMPLES
     $ sf package installed list --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/installed/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/installed/list.ts)_
 
 ## `sf package list`
 
@@ -7743,7 +7743,7 @@ EXAMPLES
     $ sf package list --target-dev-hub devhub@example.com --verbose
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/list.ts)_
 
 ## `sf package push-upgrade abort`
 
@@ -7782,7 +7782,7 @@ EXAMPLES
     $ sf package push-upgrade abort --push-request-id 0DV... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/push-upgrade/abort.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/push-upgrade/abort.ts)_
 
 ## `sf package push-upgrade list`
 
@@ -7841,7 +7841,7 @@ EXAMPLES
     $ sf package push-upgrade list --package 033xyz –-status Failed
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/push-upgrade/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/push-upgrade/list.ts)_
 
 ## `sf package push-upgrade report`
 
@@ -7883,7 +7883,7 @@ EXAMPLES
     $ sf package push-upgrade report --push-request-id 0DV... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/push-upgrade/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/push-upgrade/report.ts)_
 
 ## `sf package push-upgrade schedule`
 
@@ -7970,7 +7970,7 @@ FLAG DESCRIPTIONS
     Overrides the value of the target-dev-hub configuration variable, if set.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/push-upgrade/schedule.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/push-upgrade/schedule.ts)_
 
 ## `sf package uninstall`
 
@@ -8018,7 +8018,7 @@ EXAMPLES
     $ sf package uninstall --package "Undesirable Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/uninstall.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/uninstall.ts)_
 
 ## `sf package uninstall report`
 
@@ -8051,7 +8051,7 @@ EXAMPLES
     $ sf package uninstall report --request-id 06y... --target-org me@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/uninstall/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/uninstall/report.ts)_
 
 ## `sf package update`
 
@@ -8119,7 +8119,7 @@ FLAG DESCRIPTIONS
     the Installed Packages page. Only released package versions can be set as the recommended version.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/update.ts)_
 
 ## `sf package version create`
 
@@ -8296,7 +8296,7 @@ FLAG DESCRIPTIONS
     periods of no output from commands.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/version/create.ts)_
 
 ## `sf package version create list`
 
@@ -8357,7 +8357,7 @@ EXAMPLES
     $ sf package version create list --created-last-days 0 --status Success
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/version/create/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/version/create/list.ts)_
 
 ## `sf package version create report`
 
@@ -8400,7 +8400,7 @@ EXAMPLES
     $ sf package version create report --package-create-request-id 08c... --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/version/create/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/version/create/report.ts)_
 
 ## `sf package version delete`
 
@@ -8441,7 +8441,7 @@ EXAMPLES
     $ sf package version delete --package 04t... --target-org devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/version/delete.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/version/delete.ts)_
 
 ## `sf package version displayancestry`
 
@@ -8501,7 +8501,7 @@ FLAG DESCRIPTIONS
     You can use the DOT code output in graph visualization software to create tree visualizations.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/version/displayancestry.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/version/displayancestry.ts)_
 
 ## `sf package version displaydependencies`
 
@@ -8568,7 +8568,7 @@ FLAG DESCRIPTIONS
     package, which must be installed last.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/version/displaydependencies.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/version/displaydependencies.ts)_
 
 ## `sf package version list`
 
@@ -8644,7 +8644,7 @@ EXAMPLES
     $ sf package version list --packages exp-mgr,exp-mgr-util --released --modified-last-days 0
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/version/list.ts)_
 
 ## `sf package version promote`
 
@@ -8688,7 +8688,7 @@ EXAMPLES
     $ sf package version promote --package "Awesome Package Alias"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/version/promote.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/version/promote.ts)_
 
 ## `sf package version report`
 
@@ -8728,7 +8728,7 @@ EXAMPLES
     $ sf package version report --package "Your Package Alias" --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/version/report.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/version/report.ts)_
 
 ## `sf package version retrieve`
 
@@ -8773,7 +8773,7 @@ EXAMPLES
     $ sf package version retrieve --package 04tXXX --output-dir my-directory/ --target-dev-hub devhub@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/version/retrieve.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/version/retrieve.ts)_
 
 ## `sf package version update`
 
@@ -8826,7 +8826,7 @@ EXAMPLES
     $ sf package version update --package 04t... --version-description "New Package Version Description"
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package/version/update.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package/version/update.ts)_
 
 ## `sf package1 version create`
 
@@ -8893,7 +8893,7 @@ FLAG DESCRIPTIONS
     subscribers.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package1/version/create.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package1/version/create.ts)_
 
 ## `sf package1 version create get`
 
@@ -8926,7 +8926,7 @@ EXAMPLES
     $ sf package1 version create get --request-id 0HD... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package1/version/create/get.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package1/version/create/get.ts)_
 
 ## `sf package1 version display`
 
@@ -8960,7 +8960,7 @@ EXAMPLES
     $ sf package1 version display --package-version-id 04t... --target-org myorg@example.com
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package1/version/display.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package1/version/display.ts)_
 
 ## `sf package1 version list`
 
@@ -8998,7 +8998,7 @@ FLAG DESCRIPTIONS
     If not specified, shows all versions for all packages (managed and unmanaged) in the org.
 ```
 
-_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.5/src/commands/package1/version/list.ts)_
+_See code: [@salesforce/plugin-packaging](https://github.com/salesforcecli/plugin-packaging/blob/2.30.6/src/commands/package1/version/list.ts)_
 
 ## `sf plugins`
 
