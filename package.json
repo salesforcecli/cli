@@ -221,6 +221,7 @@
   "repository": "salesforcecli/cli",
   "scripts": {
     "build": "wireit",
+    "channel:promote": "sf-release channel:promote",
     "clean": "sf-clean",
     "clean-all": "sf-clean all",
     "compile": "wireit",
