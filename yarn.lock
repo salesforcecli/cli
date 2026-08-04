@@ -2017,10 +2017,10 @@
     debug "^4.4.3"
     handlebars "^4.7.9"
 
-"@salesforce/plugin-data@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-5.0.0.tgz#738ea8f59ca767c9e0ad24bf7ddf6e426f1bb395"
-  integrity sha512-e43ZEN+oCywBhzL4d6k4nRoM7h/MOi9YFLTyl3xCN+uJkZmbJR6V+/vgZK7NjeJi8Y5+P6iXMKh0Dw5LU1MSrg==
+"@salesforce/plugin-data@5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-5.0.1.tgz#392e482829901f6641944c25fbfa749e0115c194"
+  integrity sha512-rkP2FMkRNrIt1234hnQu/BF2nJB+aQJuqTviGENOo2t/FFrtqz7sOI463AyMuEOfZAXSudJZRbDVOKEe0/nxGA==
   dependencies:
     "@jsforce/jsforce-node" "^3.10.15"
     "@oclif/multi-stage-output" "^0.8.44"
@@ -2034,7 +2034,7 @@
     csv-stringify "^6.7.0"
     form-data "^4.0.6"
     terminal-link "^3.0.0"
-    undici "^7.28.0"
+    undici "^7.29.0"
     zod "^4.4.3"
 
 "@salesforce/plugin-deploy-retrieve@4.0.1":
@@ -10408,7 +10408,7 @@ undici@^6.25.0:
   resolved "https://registry.yarnpkg.com/undici/-/undici-6.28.0.tgz#9f0e385744fef5021d6596c5bccd783f61193c1c"
   integrity sha512-LIY910g9TI13YS95lrMFrs8Rm/u/irgHeTWoKCoteeJ04CUJ92eEfj0rVn+7VKMPBpUPiUoBKfhNyLI23EE/KA==
 
-undici@^7.28.0:
+undici@^7.29.0:
   version "7.29.0"
   resolved "https://registry.yarnpkg.com/undici/-/undici-7.29.0.tgz#ae0f6f62e06e057a9cbb7b2b5fde2bb74f791b8f"
   integrity sha512-IDxfleLmmbSskfWSUATiN1nfn2rDuvnMOqb5CWR92iIfojA0Ud+ulOAAEQ57LPr9rWmsreUyf5lwyao+7GNNVw==
