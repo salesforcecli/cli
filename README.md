@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.147.7 linux-x64 node-v24.18.0
+@salesforce/cli/2.148.0 linux-x64 node-v24.18.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -9198,7 +9198,7 @@ EXAMPLES
     $ sf plugins trust allowlist add --name @scope/my-plugin --name another-plugin
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.2/src/commands/plugins/trust/allowlist/add.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.4/src/commands/plugins/trust/allowlist/add.ts)_
 
 ## `sf plugins trust allowlist list`
 
@@ -9226,7 +9226,7 @@ EXAMPLES
     $ sf plugins trust allowlist list
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.2/src/commands/plugins/trust/allowlist/list.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.4/src/commands/plugins/trust/allowlist/list.ts)_
 
 ## `sf plugins trust allowlist remove`
 
@@ -9263,7 +9263,7 @@ EXAMPLES
     $ sf plugins trust allowlist remove --name @scope/my-plugin --name another-plugin
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.2/src/commands/plugins/trust/allowlist/remove.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.4/src/commands/plugins/trust/allowlist/remove.ts)_
 
 ## `sf plugins trust verify`
 
@@ -9292,7 +9292,7 @@ EXAMPLES
   $ sf plugins trust verify --npm @scope/npmName
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.2/src/commands/plugins/trust/verify.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.4/src/commands/plugins/trust/verify.ts)_
 
 ## `sf plugins uninstall [PLUGIN]`
 
