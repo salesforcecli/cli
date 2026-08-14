@@ -1457,13 +1457,14 @@
     semver "^7.8.5"
     tar-fs "^2.1.5"
 
-"@oclif/plugin-version@2.2.56":
-  version "2.2.56"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-version/-/plugin-version-2.2.56.tgz#c1b7fa5e547752369dffe7b60eeead12c755a981"
-  integrity sha512-F06RXrIcLC1yi1K0qw1KCNjjOp9dcKd2w/qniiii9RCMQGEkzqmNIC2QKtr2O0Htm5nQhQUVAXKMAb7AeoZ3qQ==
+"@oclif/plugin-version@2.2.57":
+  version "2.2.57"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-version/-/plugin-version-2.2.57.tgz#51ac800e5106e62b1b90982a58d175063937a373"
+  integrity sha512-URa9qyPA7Fl/QB7FIBMHaYKOgg47qcNhx4DQWszmuK1GmT1UHbQ+KvkU33n29vDMUS/kEfcXLmBPQ6cWj6d2pA==
   dependencies:
     "@oclif/core" "^4"
     ansis "^3.17.0"
+    which "^4"
 
 "@oclif/plugin-warn-if-update-available@3.1.73", "@oclif/plugin-warn-if-update-available@^3.1.67":
   version "3.1.73"
@@ -1988,10 +1989,10 @@
     got "^13.0.0"
     proxy-agent "^6.5.0"
 
-"@salesforce/plugin-auth@5.0.4":
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-5.0.4.tgz#188eb78ca16739345a6b6358d6d59d9db32b90b9"
-  integrity sha512-KGy7UInfGsE9XELmcNG8hkaDoYiZNFoxsj7N9RdVnJrhfR+0btMAenvp4Ey9V/LvORXuHn3FeI3fnedYWtTtlA==
+"@salesforce/plugin-auth@5.0.5":
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-5.0.5.tgz#3de0bd772769ae11c9deaa297fff3a6c02859790"
+  integrity sha512-bYDx/yo8l8Qc6BZP3S5yu4c0XpBeZQJ8XPPM7SLeiTSj54trIXnUvPOL0xdx7DWgdoxmJt6hzDn004enM1NxEA==
   dependencies:
     "@inquirer/checkbox" "^2.5.0"
     "@inquirer/select" "^2.5.0"
@@ -2002,6 +2003,7 @@
     "@salesforce/sf-plugins-core" "^13.0.0"
     "@salesforce/ts-types" "^3.0.0"
     open "^10.2.0"
+    which "^4"
 
 "@salesforce/plugin-command-reference@^3.1.122":
   version "3.1.128"
@@ -2037,29 +2039,29 @@
     undici "^7.29.0"
     zod "^4.4.3"
 
-"@salesforce/plugin-deploy-retrieve@4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-4.1.0.tgz#54f0d02fc5add330a90974542bd75ae52ee33701"
-  integrity sha512-Ad6Pat0ls3guPyxRdLXKEBM3cvYvCdra3aODqQHFuU7WrnVYZvgzuUs0uDoUh/qdijy8acX4kPpYF8lAnkqlZw==
+"@salesforce/plugin-deploy-retrieve@4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-4.1.1.tgz#5abbe18a77721a19e9773a5e3edc723cb8a88446"
+  integrity sha512-yZkng4hk+ipB+i5jAOO5tG9w/94G5SaEtXe3VLGzgjPUrcE5eWFi7DIesnLb3YQ94oWUAQE31xuLeqIsdJ5Nrg==
   dependencies:
     "@inquirer/prompts" "^7.8.3"
     "@oclif/core" "^4.11.14"
     "@oclif/multi-stage-output" "^0.8.42"
     "@salesforce/apex-node" "^9.0.0"
-    "@salesforce/core" "^9.0.0"
+    "@salesforce/core" "^9.1.2"
     "@salesforce/kit" "^4.0.0"
     "@salesforce/plugin-info" "^4.0.0"
     "@salesforce/sf-plugins-core" "^13.0.0"
-    "@salesforce/source-deploy-retrieve" "^13.1.0"
-    "@salesforce/source-tracking" "^8.0.0"
+    "@salesforce/source-deploy-retrieve" "^13.1.1"
+    "@salesforce/source-tracking" "^8.1.0"
     "@salesforce/ts-types" "^3.0.0"
     ansis "^3.17.0"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-info@4.0.5", "@salesforce/plugin-info@^4.0.0", "@salesforce/plugin-info@^4.0.4":
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-4.0.5.tgz#344d2b434e6ddb3965830b74bf498c505041a000"
-  integrity sha512-uU+ozywEXq+pwTal+hVKt/Mg/uln0ZD7EFYv7z5gFIaL4Qsrrd/YeqPu2Larorxvy7d8NoXQ6UZEdF0pvd85iw==
+"@salesforce/plugin-info@4.0.6", "@salesforce/plugin-info@^4.0.0", "@salesforce/plugin-info@^4.0.4":
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-4.0.6.tgz#5932838c48fe4768ad6b97676de57a412bb7e15d"
+  integrity sha512-NF8pJaBIBX7InYjVmekb12wkAj5wUaASw/fLRU1JiNZXq3PJxDPZtLCVlAXBaNdWKaKc6Po0FXAojDMcdL+H5w==
   dependencies:
     "@inquirer/input" "^2.3.0"
     "@jsforce/jsforce-node" "^3.10.19"
@@ -2073,6 +2075,7 @@
     open "^10.2.0"
     proxy-agent "^6.5.0"
     semver "^7.8.1"
+    which "^4"
 
 "@salesforce/plugin-limits@4.0.3":
   version "4.0.3"
@@ -2281,10 +2284,10 @@
     cli-progress "^3.12.0"
     terminal-link "^3.0.0"
 
-"@salesforce/source-deploy-retrieve@^13.0.0", "@salesforce/source-deploy-retrieve@^13.0.1", "@salesforce/source-deploy-retrieve@^13.1.0":
-  version "13.1.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-13.1.0.tgz#f9f0427e46bcca60bd39974779bf816e17357ca1"
-  integrity sha512-oSOuinhSMkP1t1F0IzwX6NKgcirSl2ROV2v4GcYb1QOp0tFS9NGpofNMuViTFNoxmBdvrKv5mUT19OdrBMyeWw==
+"@salesforce/source-deploy-retrieve@^13.0.0", "@salesforce/source-deploy-retrieve@^13.0.1", "@salesforce/source-deploy-retrieve@^13.1.1":
+  version "13.1.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-13.1.1.tgz#1f23b52f1630143b9b5770b55f5d65cef35279d1"
+  integrity sha512-MjA3sJrjUBIK948x+frmc+/s/Pzc/sakvilBsxXbg5ITXexcmDi25nWM1h90RXdLwS3ejT7GIZCwxlzrnDzugw==
   dependencies:
     "@salesforce/core" "^9.0.0"
     "@salesforce/kit" "^4.0.0"
@@ -2301,14 +2304,14 @@
     proxy-agent "^6.5.0"
     yaml "^2.9.0"
 
-"@salesforce/source-tracking@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-tracking/-/source-tracking-8.0.0.tgz#ea120bb7429e88cff3e11a1aa1c320eef1138d90"
-  integrity sha512-/UaIARJ9q5O/dDZUqS0lSgbU1SPr8cGlXIVci84YA5TkY4fzhTA6CAEXcTFhGBPilvYmU9GzJqFWwo0N/UNhFg==
+"@salesforce/source-tracking@^8.1.0":
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-tracking/-/source-tracking-8.1.0.tgz#d79b62c6fbacdfe3afcc6e3bcbaaa4d804fb47b9"
+  integrity sha512-ookx5YVI4ddEkNWwSkqPrXU5MKXkcuGig0rW7FzBtDnpIZU8q3+elilIJ5PI/YXBAIpUZl69Alsjh6+Bl7ZqeA==
   dependencies:
-    "@salesforce/core" "^9.0.0"
+    "@salesforce/core" "^9.1.2"
     "@salesforce/kit" "^4.0.0"
-    "@salesforce/source-deploy-retrieve" "^13.0.0"
+    "@salesforce/source-deploy-retrieve" "^13.1.1"
     "@salesforce/ts-types" "^3.0.0"
     fast-xml-parser "^5.5.7"
     graceful-fs "^4.2.11"
@@ -10649,7 +10652,7 @@ which@^2.0.1:
   dependencies:
     isexe "^2.0.0"
 
-which@^4.0.0:
+which@^4, which@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/which/-/which-4.0.0.tgz#cd60b5e74503a3fbcfbf6cd6b4138a8bae644c1a"
   integrity sha512-GlaYyEb07DPxYCKhKzplCWBJtvxZcZMrL+4UkrTSJHHPyZU4mYYTv3qaOe77H7EODLSSopAUFAc6W8U4yqvscg==
