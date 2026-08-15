@@ -1326,20 +1326,19 @@
     node-gyp "^12.1.0"
     proc-log "^6.0.0"
 
-"@oclif/core@4.13.3", "@oclif/core@^4", "@oclif/core@^4.11.11", "@oclif/core@^4.11.14", "@oclif/core@^4.11.4", "@oclif/core@^4.13.0", "@oclif/core@^4.13.2", "@oclif/core@^4.13.3":
-  version "4.13.3"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.13.3.tgz#856aa8c48d65e711574dca2955eb0b29d86c1a74"
-  integrity sha512-wBp2igI2KVwq2ZmpnfmGtOROo7aXZIr3OEtAS16g1wHFBqyEuswL+9K50NJWJvlpAmxd+4dVj/ycawXESU3wQQ==
+"@oclif/core@4.13.5", "@oclif/core@^4", "@oclif/core@^4.11.11", "@oclif/core@^4.11.14", "@oclif/core@^4.11.4", "@oclif/core@^4.13.0", "@oclif/core@^4.13.2", "@oclif/core@^4.13.3":
+  version "4.13.5"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.13.5.tgz#9b0d85d9f8680781f78eca515aaf22b1b88e1cc9"
+  integrity sha512-KcbWlSO+s0Yr9c5wHNC6Npqdh46iJ8t9wCWW19yipT0QmnfZjoTqqqJ1DoP6s3i5P1z5cG35AqS17KL3b20Klw==
   dependencies:
     ansi-escapes "^4.3.2"
     ansis "^3.17.0"
     clean-stack "^3.0.1"
     cli-spinners "^2.9.2"
     debug "^4.4.3"
-    ejs "^3.1.10"
+    ejs "^6"
     get-package-type "^0.1.0"
     indent-string "^4.0.0"
-    is-wsl "^2.2.0"
     lilconfig "^3.1.3"
     minimatch "^10.2.5"
     semver "^7.8.1"
@@ -1349,6 +1348,7 @@
     widest-line "^3.1.0"
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
+    wsl-utils "^0.4.0"
 
 "@oclif/multi-stage-output@^0.8.36", "@oclif/multi-stage-output@^0.8.42", "@oclif/multi-stage-output@^0.8.44":
   version "0.8.44"
@@ -1415,10 +1415,10 @@
     ansis "^3.17.0"
     fast-levenshtein "^3.0.0"
 
-"@oclif/plugin-plugins@5.4.86":
-  version "5.4.86"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-5.4.86.tgz#67c6e8c4a4c459431671bb20dfa4cb4ffe01511b"
-  integrity sha512-znwK8zjnhg/ECQwLW8hhmPd/FBTcg+XhesxZfhpBohfIK934YokoiHJ4qwGb5ccaxQ6xV7ihpfJBy9tcNlkK4Q==
+"@oclif/plugin-plugins@5.4.87":
+  version "5.4.87"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-5.4.87.tgz#b2cf192c0873ae51b6563c57e2d01280e8ce13f8"
+  integrity sha512-ym2/26p7J9O5POKjHOysJLSNcpWZK5mxzY3gwFYBaSgQRsjFRBdkZ8d7NcHOuES/E4ZnoP5Q3iNu+v4uhvNTDw==
   dependencies:
     "@oclif/core" "^4.13.0"
     ansis "^3.17.0"
@@ -1767,10 +1767,10 @@
   resolved "https://registry.yarnpkg.com/@rtsao/scc/-/scc-1.1.0.tgz#927dd2fae9bc3361403ac2c7a00c32ddce9ad7e8"
   integrity sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==
 
-"@salesforce/agents@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/agents/-/agents-2.0.1.tgz#032c97245e2295a7fb035c73e3a967d66795c55d"
-  integrity sha512-kouvkSPi5MLT1BWOUhsPxZhpqBgN8qshRefn3WU6D74nZI8Crv0Tj0clelmEWMcZXhkiJf+Cznrpyu+2SI5O8w==
+"@salesforce/agents@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/agents/-/agents-2.0.2.tgz#3d747995ee0e7383fa6bab072fdc0e1de04d6b33"
+  integrity sha512-9MOWualHDUaz7oonZXF06Gb5lnY4HzY65sGWrQMa2Waj3uGeY0mLiPQZhHY7Q0HzzwTc00AvAkDBqt6vEsmaQg==
   dependencies:
     "@salesforce/core" "^9.0.0"
     "@salesforce/kit" "^4.0.0"
@@ -1939,16 +1939,16 @@
     jszip "^3.10.1"
     object-treeify "^2"
 
-"@salesforce/plugin-agent@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-agent/-/plugin-agent-2.0.1.tgz#a982a1094ef08da28a4bc1cd2892f2c608a47c43"
-  integrity sha512-0ZoNPPeMGoGdp6Er9VtcX0QVt6LtTpzndYkrXpE/p5bcBbadzkEowifvp3aeNFaEkDCElegHHpsnzgONeJiaFA==
+"@salesforce/plugin-agent@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-agent/-/plugin-agent-2.0.2.tgz#de1b05f6f5094795b5b140686652a83404475ba8"
+  integrity sha512-sJVMHxOzziPXt+FkzCeU4/xOGISL7Sd759KHA8fDRMckapHiIlAUOmn+bWeFx9saALnvchGo1J4b8+OkW27y0w==
   dependencies:
     "@inquirer/core" "^10.3.2"
     "@inquirer/prompts" "^7.10.1"
     "@oclif/core" "^4"
     "@oclif/multi-stage-output" "^0.8.36"
-    "@salesforce/agents" "^2.0.1"
+    "@salesforce/agents" "^2.0.2"
     "@salesforce/core" "^9.0.0"
     "@salesforce/kit" "^4.0.0"
     "@salesforce/sf-plugins-core" "^13.0.0"
@@ -2205,14 +2205,14 @@
     "@salesforce/ts-types" "^3.0.0"
     debug "^4.4.3"
 
-"@salesforce/plugin-templates@57.0.6":
-  version "57.0.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-templates/-/plugin-templates-57.0.6.tgz#8db0d96b730c34452126307434ba61cd027aa63c"
-  integrity sha512-viq7A+r3QlBgLyOxZi9pnu9ObkS9osJrRDhKRYa471seDATauNlkQCSyhfgIKiwjc+JpUFc+DmpyjK0uRyRY8w==
+"@salesforce/plugin-templates@57.0.7":
+  version "57.0.7"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-templates/-/plugin-templates-57.0.7.tgz#caa2686839f9866edcd81f27b28040ac047b2c08"
+  integrity sha512-d7wBCnlJTVDJ338KIEY2/j9rLPUni+QbP30sixM67lBTu0mNSIl8d8RSlaso4h5fhpJraoaR6UIDv3LiXxIKQQ==
   dependencies:
     "@salesforce/core" "^9.1.0"
     "@salesforce/sf-plugins-core" "^13.0.0"
-    "@salesforce/templates" "^66.13.6"
+    "@salesforce/templates" "^66.13.7"
 
 "@salesforce/plugin-trust@4.0.8", "@salesforce/plugin-trust@^4.0.1":
   version "4.0.8"
@@ -2331,10 +2331,10 @@
     o11y_schema "^260.65.0"
     proxy-agent "^6.5.0"
 
-"@salesforce/templates@^66.13.6":
-  version "66.13.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-66.13.6.tgz#7674c0ac10cc588f1ef65e1fbbfb46187e0707f3"
-  integrity sha512-X6kM74bfZ5Zm5YM13LRuqt1cc+LvIn1ltXtG/P8J0ocebIMK4miyZwAQtAtQyIQF/VtGOXIPlgbyFPnZ7xl9MA==
+"@salesforce/templates@^66.13.7":
+  version "66.13.7"
+  resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-66.13.7.tgz#90af06fad6a7941cda696c90dac952633390e84d"
+  integrity sha512-JGmZ0qXNCbc99bIGgwkmAey1MQ/w2rC22gY1yLj2ajDQpYN8FpwqtyhJrDbQtWbRpFMXhK5Bp7krpyBqotY+tQ==
   dependencies:
     "@salesforce/kit" "^3.2.6"
     ejs "^3.1.10"
@@ -4602,6 +4602,11 @@ ejs@^3.1.10:
   dependencies:
     jake "^10.8.5"
 
+ejs@^6:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/ejs/-/ejs-6.0.1.tgz#88ea8ce00335c3575d7c3602dd76e84b0bd60f43"
+  integrity sha512-UaaM14yby8U3k02ihS1Bmj5Kz2d7CCQM1scxpgs4Mhkq8F1wR2gl3+Ts4h5Ne4Mnt7M9m4Dw7jsuMr3+xO4vZA==
+
 electron-to-chromium@^1.5.393:
   version "1.5.398"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.398.tgz#9d4d979344ac762840293e3eacbebed34228aa16"
@@ -6317,11 +6322,6 @@ is-date-object@^1.1.0:
     call-bound "^1.0.2"
     has-tostringtag "^1.0.2"
 
-is-docker@^2.0.0:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/is-docker/-/is-docker-2.2.1.tgz#33eeabe23cfe86f14bde4408a02c0cfb853acdaa"
-  integrity sha512-F+i2BKsFrH66iaUFc0woD8sLy8getkwTwtOBjvs56Cx4CgJDeKQeqfz8wAYiSb8JOprWhHH5p77PbmYCvvUuXQ==
-
 is-docker@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/is-docker/-/is-docker-3.0.0.tgz#90093aa3106277d8a77a5910dbae71747e15a200"
@@ -6548,13 +6548,6 @@ is-windows@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-windows/-/is-windows-1.0.2.tgz#d1850eb9791ecd18e6182ce12a30f396634bb19d"
   integrity sha512-eXK1UInq2bPmjyX6e3VHIzMLobc4J94i4AWn+Hpq3OU5KkrRC96OAcR3PRJ/pGu6m8TRnBHP9dkXQVsT/COVIA==
-
-is-wsl@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/is-wsl/-/is-wsl-2.2.0.tgz#74a4c76e77ca9fd3f932f290c17ea326cd157271"
-  integrity sha512-fKzAra0rGJUUBwGBgNkHZuToZcn+TtXHpeCgmkMJMMYx1sQDYaCSyjJBSCa2nH1DGm7s3n1oBnohoVTBaN7Lww==
-  dependencies:
-    is-docker "^2.0.0"
 
 is-wsl@^3.1.0, is-wsl@^3.1.1:
   version "3.1.1"
@@ -8729,6 +8722,11 @@ postcss-selector-parser@^7.0.0:
     cssesc "^3.0.0"
     util-deprecate "^1.0.2"
 
+powershell-utils@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/powershell-utils/-/powershell-utils-0.1.0.tgz#5a42c9a824fb4f2f251ccb41aaae73314f5d6ac2"
+  integrity sha512-dM0jVuXJPsDN6DvRpea484tCUaMiXWjuCn++HGTqUWzGDjv5tZkEZldAJ/UMlqRYGFrD/etByo4/xOuC/snX2A==
+
 prelude-ls@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
@@ -10791,6 +10789,14 @@ wsl-utils@^0.1.0:
   integrity sha512-h3Fbisa2nKGPxCpm89Hk33lBLsnaGBvctQopaBSOW/uIs6FTe1ATyAnKFJrzVs9vpGdsTe73WF3V4lIsk4Gacw==
   dependencies:
     is-wsl "^3.1.0"
+
+wsl-utils@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/wsl-utils/-/wsl-utils-0.4.0.tgz#58334dda6892a81d7acc80417cd6f141a8074958"
+  integrity sha512-9YmF+2sFEd+T7TkwlmE337F0IVzfDvDknhtpBQxxXzEOfgPphGlFYpyx0cTuCIFj8/p+sqwBYAeGxOMNSzPPDA==
+  dependencies:
+    is-wsl "^3.1.0"
+    powershell-utils "^0.1.0"
 
 xml-naming@^0.3.0:
   version "0.3.0"
