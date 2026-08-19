@@ -209,6 +209,8 @@ jobs:
     with:
       changeCaseId: ${{ needs.open-ctc-or-skip.outputs.changeCaseId }}
       nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
+      package-manager: yarn
+      cache-dependency-path: yarn.lock
 
   ctcCloseFail:
     needs: [open-ctc-or-skip, npm-promote, docker-promote, oclif-promote]
@@ -218,4 +220,6 @@ jobs:
     with:
       changeCaseId: ${{ needs.open-ctc-or-skip.outputs.changeCaseId }}
       nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
+      package-manager: yarn
+      cache-dependency-path: yarn.lock
       status: Not Implemented
