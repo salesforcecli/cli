@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.148.3 linux-x64 node-v24.18.0
+@salesforce/cli/2.149.9 linux-x64 node-v24.19.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -302,7 +302,7 @@ ERROR CODES
   ActivationFailed (4)  Failed to activate the agent due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/activate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/activate.ts)_
 
 ## `sf agent adl create`
 
@@ -374,7 +374,7 @@ EXAMPLES
       --source-type retriever --retriever-id 0ppXX0000000001
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/adl/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/adl/create.ts)_
 
 ## `sf agent adl delete`
 
@@ -405,7 +405,7 @@ EXAMPLES
     $ sf agent adl delete --library-id 1JDSG000007IbWX4A0 --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/adl/delete.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/adl/delete.ts)_
 
 ## `sf agent adl file add`
 
@@ -447,7 +447,7 @@ EXAMPLES
     $ sf agent adl file add -i 1JDSG000007IbWX4A0 --path ./docs/guide.pdf --path ./docs/faq.txt --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/adl/file/add.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/adl/file/add.ts)_
 
 ## `sf agent adl file delete`
 
@@ -480,7 +480,7 @@ EXAMPLES
     $ sf agent adl file delete --library-id 1JDSG000007IbWX4A0 --file-id a1B2C3D4E5F6G7H8I9 --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/adl/file/delete.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/adl/file/delete.ts)_
 
 ## `sf agent adl file list`
 
@@ -520,7 +520,7 @@ EXAMPLES
     $ sf agent adl file list --library-id 1JDSG000007IbWX4A0 --target-org myOrg --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/adl/file/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/adl/file/list.ts)_
 
 ## `sf agent adl get`
 
@@ -551,7 +551,7 @@ EXAMPLES
     $ sf agent adl get --library-id 1JDSG000007IbWX4A0 --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/adl/get.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/adl/get.ts)_
 
 ## `sf agent adl list`
 
@@ -588,7 +588,7 @@ EXAMPLES
     $ sf agent adl list --target-org myOrg --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/adl/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/adl/list.ts)_
 
 ## `sf agent adl status`
 
@@ -623,7 +623,7 @@ EXAMPLES
     $ sf agent adl status --library-id 1JDSG000007IbWX4A0 --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/adl/status.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/adl/status.ts)_
 
 ## `sf agent adl update`
 
@@ -678,7 +678,7 @@ EXAMPLES
     $ sf agent adl update --library-id 1JDSG000007IbWX4A0 --restrict-to-public-articles --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/adl/update.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/adl/update.ts)_
 
 ## `sf agent adl upload`
 
@@ -725,7 +725,7 @@ EXAMPLES
     $ sf agent adl upload --library-id 1JDSG000007IbWX4A0 --file ./docs/guide.pdf --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/adl/upload.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/adl/upload.ts)_
 
 ## `sf agent create`
 
@@ -792,7 +792,7 @@ EXAMPLES
     $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/create.ts)_
 
 ## `sf agent deactivate`
 
@@ -841,7 +841,7 @@ ERROR CODES
   DeactivationFailed (4)  Failed to deactivate the agent due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/deactivate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/deactivate.ts)_
 
 ## `sf agent generate agent-spec`
 
@@ -948,7 +948,7 @@ EXAMPLES
     $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/generate/agent-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/generate/agent-spec.ts)_
 
 ## `sf agent generate authoring-bundle`
 
@@ -1025,7 +1025,7 @@ EXAMPLES
       other-package-dir/main/default --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/generate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/generate/authoring-bundle.ts)_
 
 ## `sf agent generate template`
 
@@ -1087,7 +1087,7 @@ EXAMPLES
       my-package --source-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/generate/template.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/generate/template.ts)_
 
 ## `sf agent generate test-spec`
 
@@ -1176,7 +1176,7 @@ FLAG DESCRIPTIONS
     metadata. 'testing-center' uses AiEvaluationDefinition metadata.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/generate/test-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/generate/test-spec.ts)_
 
 ## `sf agent mcp asset list`
 
@@ -1212,7 +1212,7 @@ EXAMPLES
     $ sf agent mcp asset list --target-org myOrg --mcp-server-id 0XSxx0000000001 --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/mcp/asset/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/mcp/asset/list.ts)_
 
 ## `sf agent mcp asset replace`
 
@@ -1261,7 +1261,7 @@ EXAMPLES
   cat assets.json | sf agent mcp asset replace --mcp-server-id 0XSxx0000000001 --assets - --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/mcp/asset/replace.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/mcp/asset/replace.ts)_
 
 ## `sf agent mcp create`
 
@@ -1309,7 +1309,7 @@ EXAMPLES
   cat secret.txt | sf agent mcp create --name myServer --server-url https://mcp.example.com --auth-type OAUTH --identity-provider myIdp --client-id abc123 --client-secret - --scope "read write" --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/mcp/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/mcp/create.ts)_
 
 ## `sf agent mcp delete`
 
@@ -1347,7 +1347,7 @@ EXAMPLES
     $ sf agent mcp delete --mcp-server-id 0XSxx0000000001 --target-org myOrg --no-prompt
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/mcp/delete.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/mcp/delete.ts)_
 
 ## `sf agent mcp fetch`
 
@@ -1384,7 +1384,7 @@ EXAMPLES
     $ sf agent mcp fetch --target-org myOrg --mcp-server-id 0XSxx0000000001 --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/mcp/fetch.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/mcp/fetch.ts)_
 
 ## `sf agent mcp get`
 
@@ -1420,7 +1420,7 @@ EXAMPLES
     $ sf agent mcp get --target-org myOrg --mcp-server-id 0Mx000000000001 --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/mcp/get.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/mcp/get.ts)_
 
 ## `sf agent mcp list`
 
@@ -1462,7 +1462,7 @@ EXAMPLES
     $ sf agent mcp list --target-org myOrg --type EXTERNAL --status ACTIVE --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/mcp/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/mcp/list.ts)_
 
 ## `sf agent mcp update`
 
@@ -1513,7 +1513,7 @@ EXAMPLES
   cat secret.txt | sf agent mcp update --mcp-server-id 0XSxx0000000001 --server-url https://mcp.example.com --auth-type OAUTH --identity-provider MyIdp --client-id abc --client-secret - --scope "read write" --target-org myOrg --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/mcp/update.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/mcp/update.ts)_
 
 ## `sf agent preview`
 
@@ -1608,7 +1608,7 @@ FLAG DESCRIPTIONS
     will see null. (3) Type defaults to Text.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/preview.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/preview.ts)_
 
 ## `sf agent preview end`
 
@@ -1692,7 +1692,7 @@ ERROR CODES
   SessionAmbiguous (5)           Multiple preview sessions found; specify --session-id to choose one.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/preview/end.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/preview/end.ts)_
 
 ## `sf agent preview send`
 
@@ -1759,7 +1759,7 @@ ERROR CODES
   SessionAmbiguous (5)   Multiple preview sessions found; specify --session-id to choose one.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/preview/send.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/preview/send.ts)_
 
 ## `sf agent preview sessions`
 
@@ -1795,7 +1795,7 @@ ERROR CODES
   Succeeded (0)  Sessions listed successfully (or empty list if no active sessions).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/preview/sessions.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/preview/sessions.ts)_
 
 ## `sf agent preview start`
 
@@ -1893,7 +1893,7 @@ ERROR CODES
   PreviewStartFailed (4)  Preview session failed to start due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/preview/start.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/preview/start.ts)_
 
 ## `sf agent publish authoring-bundle`
 
@@ -1957,7 +1957,7 @@ ERROR CODES
   Failed (1)     Compilation errors found in the Agent Script file.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/publish/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/publish/authoring-bundle.ts)_
 
 ## `sf agent test create`
 
@@ -2038,7 +2038,7 @@ ERROR CODES
   DeploymentFailed (4)  Deployment failed due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/test/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/test/create.ts)_
 
 ## `sf agent test list`
 
@@ -2080,7 +2080,7 @@ ERROR CODES
   Failed (4)     Failed to retrieve agent tests due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/test/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/test/list.ts)_
 
 ## `sf agent test results`
 
@@ -2164,7 +2164,7 @@ ERROR CODES
   Failed (4)     Failed to retrieve results due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/test/results.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/test/results.ts)_
 
 ## `sf agent test resume`
 
@@ -2257,7 +2257,7 @@ ERROR CODES
   OperationFailed (4)  Failed to poll test due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/test/resume.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/test/resume.ts)_
 
 ## `sf agent test run`
 
@@ -2350,7 +2350,7 @@ ERROR CODES
   OperationFailed (4)  Failed to start or poll test due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/test/run.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/test/run.ts)_
 
 ## `sf agent test run-eval`
 
@@ -2435,7 +2435,7 @@ ERROR CODES
   OperationFailed (4)  Failed to execute tests due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/test/run-eval.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/test/run-eval.ts)_
 
 ## `sf agent trace delete`
 
@@ -2502,7 +2502,7 @@ ERROR CODES
   Succeeded (0)  Traces deleted successfully (or no traces matched).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/trace/delete.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/trace/delete.ts)_
 
 ## `sf agent trace list`
 
@@ -2575,7 +2575,7 @@ ERROR CODES
   Succeeded (0)  Trace files listed successfully (or empty list if none found).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/trace/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/trace/list.ts)_
 
 ## `sf agent trace read`
 
@@ -2663,7 +2663,7 @@ EXAMPLES
     $ sf agent trace read --session-id <SESSION_ID> --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/trace/read.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/trace/read.ts)_
 
 ## `sf agent validate authoring-bundle`
 
@@ -2720,7 +2720,7 @@ ERROR CODES
   ServerError (3)  Validation/compilation API returned HTTP 500. A server error occurred during compilation.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.1/src/commands/agent/validate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.0.3/src/commands/agent/validate/authoring-bundle.ts)_
 
 ## `sf alias list`
 
@@ -3283,7 +3283,7 @@ EXAMPLES
     $ sf api request graphql --body example.txt --stream-to-file output.txt --include
 ```
 
-_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/2.0.8/src/commands/api/request/graphql.ts)_
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/2.0.9/src/commands/api/request/graphql.ts)_
 
 ## `sf api request rest [URL]`
 
@@ -3393,7 +3393,7 @@ FLAG DESCRIPTIONS
     https://github.com/salesforcecli/plugin-api/tree/main/test/test-files/data-project.
 ```
 
-_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/2.0.8/src/commands/api/request/rest.ts)_
+_See code: [@salesforce/plugin-api](https://github.com/salesforcecli/plugin-api/blob/2.0.9/src/commands/api/request/rest.ts)_
 
 ## `sf autocomplete [SHELL]`
 
@@ -3706,7 +3706,7 @@ EXAMPLES
     $ sf data bulk results --job-id 7507i000fake341G --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/bulk/results.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/bulk/results.ts)_
 
 ## `sf data create file`
 
@@ -3755,7 +3755,7 @@ EXAMPLES
     $ sf data create file --file path/to/astro.png --parent-id a03fakeLoJWPIA3
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/create/file.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/create/file.ts)_
 
 ## `sf data create record`
 
@@ -3814,7 +3814,7 @@ EXAMPLES
       TracedEntityId=01p17000000R6bLAAS"
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/create/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/create/record.ts)_
 
 ## `sf data delete bulk`
 
@@ -3873,7 +3873,7 @@ FLAG DESCRIPTIONS
     and can be enabled only by a system administrator.
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/delete/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/delete/bulk.ts)_
 
 ## `sf data delete record`
 
@@ -3934,7 +3934,7 @@ EXAMPLES
     $ sf data delete record --use-tooling-api --sobject TraceFlag --record-id 7tf8c
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/delete/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/delete/record.ts)_
 
 ## `sf data delete resume`
 
@@ -3973,7 +3973,7 @@ EXAMPLES
     $ sf data delete resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/delete/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/delete/resume.ts)_
 
 ## `sf data export bulk`
 
@@ -4040,7 +4040,7 @@ EXAMPLES
       --result-format json --wait 10 --all-rows
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/export/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/export/bulk.ts)_
 
 ## `sf data export resume`
 
@@ -4079,7 +4079,7 @@ EXAMPLES
     $ sf data export resume --use-most-recent
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/export/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/export/resume.ts)_
 
 ## `sf data export tree`
 
@@ -4139,7 +4139,7 @@ EXAMPLES
       my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/export/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/export/tree.ts)_
 
 ## `sf data get record`
 
@@ -4203,7 +4203,7 @@ EXAMPLES
     $ sf data get record --use-tooling-api --sobject TraceFlag --record-id 7tf8c
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/get/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/get/record.ts)_
 
 ## `sf data import bulk`
 
@@ -4255,7 +4255,7 @@ EXAMPLES
     $ sf data import bulk --file accounts.csv --sobject Account --wait 10 --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/import/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/import/bulk.ts)_
 
 ## `sf data import resume`
 
@@ -4291,7 +4291,7 @@ EXAMPLES
     $ sf data import resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/import/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/import/resume.ts)_
 
 ## `sf data import tree`
 
@@ -4355,7 +4355,7 @@ FLAG DESCRIPTIONS
     - files(array) - Files: An array of files paths to load
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/import/tree.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/import/tree.ts)_
 
 ## `sf data query`
 
@@ -4408,7 +4408,7 @@ EXAMPLES
     $ sf data query --query "SELECT Name FROM ApexTrigger" --use-tooling-api
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/query.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/query.ts)_
 
 ## `sf data resume`
 
@@ -4445,7 +4445,7 @@ EXAMPLES
     $ sf data resume --job-id 750xx000000005sAAA --batch-id 751xx000000005nAAA
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/resume.ts)_
 
 ## `sf data search`
 
@@ -4495,7 +4495,7 @@ EXAMPLES
     $ sf data search --file query.txt --target-org my-scratch --result-format csv
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/search.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/search.ts)_
 
 ## `sf data update bulk`
 
@@ -4550,7 +4550,7 @@ EXAMPLES
     $ sf data update bulk --file accounts.csv --sobject Account --wait 10 --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/update/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/update/bulk.ts)_
 
 ## `sf data update record`
 
@@ -4614,7 +4614,7 @@ EXAMPLES
       "ExpirationDate=2017-12-01T00:58:04.000+0000"
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/update/record.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/update/record.ts)_
 
 ## `sf data update resume`
 
@@ -4653,7 +4653,7 @@ EXAMPLES
     $ sf data update resume --use-most-recent
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/update/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/update/resume.ts)_
 
 ## `sf data upsert bulk`
 
@@ -4709,7 +4709,7 @@ EXAMPLES
       my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/upsert/bulk.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/upsert/bulk.ts)_
 
 ## `sf data upsert resume`
 
@@ -4748,7 +4748,7 @@ EXAMPLES
     $ sf data upsert resume --use-most-recent --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/data/upsert/resume.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/data/upsert/resume.ts)_
 
 ## `sf doctor`
 
@@ -4796,7 +4796,7 @@ EXAMPLES
     $ sf doctor --plugin @salesforce/plugin-source
 ```
 
-_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/4.0.5/src/commands/doctor.ts)_
+_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/4.0.9/src/commands/doctor.ts)_
 
 ## `sf force data bulk delete`
 
@@ -4843,7 +4843,7 @@ EXAMPLES
     $ sf force data bulk delete --sobject MyObject__c --file files/delete.csv --wait 5 --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/force/data/bulk/delete.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/force/data/bulk/delete.ts)_
 
 ## `sf force data bulk status`
 
@@ -4880,7 +4880,7 @@ EXAMPLES
     $ sf force data bulk status --job-id 750xx000000005sAAA --batch-id 751xx000000005nAAA --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/force/data/bulk/status.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/force/data/bulk/status.ts)_
 
 ## `sf force data bulk upsert`
 
@@ -4938,7 +4938,7 @@ EXAMPLES
       --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.2/src/commands/force/data/bulk/upsert.ts)_
+_See code: [@salesforce/plugin-data](https://github.com/salesforcecli/plugin-data/blob/5.1.5/src/commands/force/data/bulk/upsert.ts)_
 
 ## `sf help [COMMAND]`
 
@@ -4998,7 +4998,7 @@ EXAMPLES
     $ sf info releasenotes display --version latest
 ```
 
-_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/4.0.5/src/commands/info/releasenotes/display.ts)_
+_See code: [@salesforce/plugin-info](https://github.com/salesforcecli/plugin-info/blob/4.0.9/src/commands/info/releasenotes/display.ts)_
 
 ## `sf logic get test`
 
@@ -5214,7 +5214,7 @@ EXAMPLES
     $ sf org assign permset --name DreamHouse --on-behalf-of user1@my.org --on-behalf-of user2 --on-behalf-of user
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/5.0.0/src/commands/org/assign/permset.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/5.0.1/src/commands/org/assign/permset.ts)_
 
 ## `sf org assign permsetlicense`
 
@@ -5261,7 +5261,7 @@ EXAMPLES
       user3
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/5.0.0/src/commands/org/assign/permsetlicense.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/5.0.1/src/commands/org/assign/permsetlicense.ts)_
 
 ## `sf org auth show-access-token`
 
@@ -5304,7 +5304,7 @@ EXAMPLES
     $ sf org auth show-access-token --target-org my-org --json
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/auth/show-access-token.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/auth/show-access-token.ts)_
 
 ## `sf org auth show-sfdx-auth-url`
 
@@ -5348,7 +5348,7 @@ EXAMPLES
     $ sf org auth show-sfdx-auth-url --target-org my-org --json
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/auth/show-sfdx-auth-url.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/auth/show-sfdx-auth-url.ts)_
 
 ## `sf org auth show-user-password`
 
@@ -5395,7 +5395,7 @@ EXAMPLES
     $ sf org auth show-user-password --target-org my-org --json
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/auth/show-user-password.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/auth/show-user-password.ts)_
 
 ## `sf org create agent-user`
 
@@ -5473,7 +5473,7 @@ FLAG DESCRIPTIONS
     "agent.user.<GUID>@your-org-domain.com".
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/create/agent-user.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/create/agent-user.ts)_
 
 ## `sf org create sandbox`
 
@@ -5607,7 +5607,7 @@ FLAG DESCRIPTIONS
     You can specify either --source-sandbox-name or --source-id when cloning an existing sandbox, but not both.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/create/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/create/sandbox.ts)_
 
 ## `sf org create scratch`
 
@@ -5789,7 +5789,7 @@ FLAG DESCRIPTIONS
     Omit this flag to have Salesforce generate a unique username for your org.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/create/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/create/scratch.ts)_
 
 ## `sf org create user`
 
@@ -5897,7 +5897,7 @@ FLAG DESCRIPTIONS
     might be different than what you specify in the definition file.
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/5.0.0/src/commands/org/create/user.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/5.0.1/src/commands/org/create/user.ts)_
 
 ## `sf org delete sandbox`
 
@@ -5943,7 +5943,7 @@ EXAMPLES
     $ sf org delete sandbox --target-org my-sandbox --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/delete/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/delete/sandbox.ts)_
 
 ## `sf org delete scratch`
 
@@ -5987,7 +5987,7 @@ EXAMPLES
     $ sf org delete scratch --target-org my-scratch-org --no-prompt
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/delete/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/delete/scratch.ts)_
 
 ## `sf org disable tracking`
 
@@ -6026,7 +6026,7 @@ EXAMPLES
     $ sf org disable tracking
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/disable/tracking.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/disable/tracking.ts)_
 
 ## `sf org display`
 
@@ -6071,7 +6071,7 @@ EXAMPLES
     $ sf org display --target-org TestOrg1 --verbose
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/display.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/display.ts)_
 
 ## `sf org display user`
 
@@ -6109,7 +6109,7 @@ EXAMPLES
     $ sf org display user --target-org me@my.org --json
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/5.0.0/src/commands/org/display/user.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/5.0.1/src/commands/org/display/user.ts)_
 
 ## `sf org enable tracking`
 
@@ -6151,7 +6151,7 @@ EXAMPLES
     $ sf org enable tracking
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/enable/tracking.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/enable/tracking.ts)_
 
 ## `sf org generate password`
 
@@ -6215,7 +6215,7 @@ EXAMPLES
     $ sf org generate password --on-behalf-of user1@my.org --on-behalf-of user2@my.org --on-behalf-of user3@my.org
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/5.0.0/src/commands/org/generate/password.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/5.0.1/src/commands/org/generate/password.ts)_
 
 ## `sf org list`
 
@@ -6254,7 +6254,7 @@ EXAMPLES
     $ sf org list --clean
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/list.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/list.ts)_
 
 ## `sf org list auth`
 
@@ -6286,7 +6286,7 @@ EXAMPLES
     $ sf org list auth
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/5.0.4/src/commands/org/list/auth.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/5.0.6/src/commands/org/list/auth.ts)_
 
 ## `sf org list limits`
 
@@ -6393,7 +6393,7 @@ FLAG DESCRIPTIONS
     Examples of metadata types that use folders are Dashboard, Document, EmailTemplate, and Report.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/list/metadata.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/list/metadata.ts)_
 
 ## `sf org list metadata-types`
 
@@ -6448,7 +6448,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/list/metadata-types.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/list/metadata-types.ts)_
 
 ## `sf org list sobject record-counts`
 
@@ -6532,7 +6532,7 @@ EXAMPLES
     $ sf org list users --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/5.0.0/src/commands/org/list/users.ts)_
+_See code: [@salesforce/plugin-user](https://github.com/salesforcecli/plugin-user/blob/5.0.1/src/commands/org/list/users.ts)_
 
 ## `sf org login access-token`
 
@@ -6589,7 +6589,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/5.0.4/src/commands/org/login/access-token.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/5.0.6/src/commands/org/login/access-token.ts)_
 
 ## `sf org login jwt`
 
@@ -6680,7 +6680,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/5.0.4/src/commands/org/login/jwt.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/5.0.6/src/commands/org/login/jwt.ts)_
 
 ## `sf org login sfdx-url`
 
@@ -6750,7 +6750,7 @@ EXAMPLES
   $ echo url | sf org login sfdx-url --sfdx-url-stdin
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/5.0.4/src/commands/org/login/sfdx-url.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/5.0.6/src/commands/org/login/sfdx-url.ts)_
 
 ## `sf org login web`
 
@@ -6855,7 +6855,7 @@ FLAG DESCRIPTIONS
     To specify a sandbox, set --instance-url to "https://<MyDomainName>--<SandboxName>.sandbox.my.salesforce.com".
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/5.0.4/src/commands/org/login/web.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/5.0.6/src/commands/org/login/web.ts)_
 
 ## `sf org logout`
 
@@ -6921,7 +6921,7 @@ FLAG DESCRIPTIONS
     All orgs includes Dev Hubs, sandboxes, DE orgs, and expired, deleted, and unknown-status scratch orgs.
 ```
 
-_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/5.0.4/src/commands/org/logout.ts)_
+_See code: [@salesforce/plugin-auth](https://github.com/salesforcecli/plugin-auth/blob/5.0.6/src/commands/org/logout.ts)_
 
 ## `sf org open`
 
@@ -6997,7 +6997,7 @@ EXAMPLES
     $ sf org open --source-file force-app/main/default/bots/Coral_Cloud_Agent/Coral_Cloud_Agent.bot-meta.xml
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/open.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/open.ts)_
 
 ## `sf org open agent`
 
@@ -7061,7 +7061,7 @@ EXAMPLES
     $ sf org open agent --authoring-bundle Coral_Cloud_Agent --version 1
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/open/agent.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/open/agent.ts)_
 
 ## `sf org open authoring-bundle`
 
@@ -7107,7 +7107,7 @@ EXAMPLES
     $ sf org open authoring-bundle --target-org MyTestOrg1 --browser firefox
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/open/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/open/authoring-bundle.ts)_
 
 ## `sf org refresh sandbox`
 
@@ -7210,7 +7210,7 @@ FLAG DESCRIPTIONS
     You can specify either --source-sandbox-name or --source-id when refreshing an existing sandbox, but not both.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/refresh/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/refresh/sandbox.ts)_
 
 ## `sf org resume sandbox`
 
@@ -7273,7 +7273,7 @@ FLAG DESCRIPTIONS
     returns the job ID. To resume checking the sandbox creation, rerun this command.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/resume/sandbox.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/resume/sandbox.ts)_
 
 ## `sf org resume scratch`
 
@@ -7326,7 +7326,7 @@ FLAG DESCRIPTIONS
     returns the job ID. To resume checking the scratch creation, rerun this command.
 ```
 
-_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.7/src/commands/org/resume/scratch.ts)_
+_See code: [@salesforce/plugin-org](https://github.com/salesforcecli/plugin-org/blob/6.0.9/src/commands/org/resume/scratch.ts)_
 
 ## `sf package convert`
 
@@ -9024,7 +9024,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.86/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.87/src/commands/plugins/index.ts)_
 
 ## `sf plugins discover`
 
@@ -9042,7 +9042,7 @@ EXAMPLES
   $ sf plugins discover
 ```
 
-_See code: [@salesforce/plugin-marketplace](https://github.com/salesforcecli/plugin-marketplace/blob/2.0.4/src/commands/plugins/discover.ts)_
+_See code: [@salesforce/plugin-marketplace](https://github.com/salesforcecli/plugin-marketplace/blob/2.0.5/src/commands/plugins/discover.ts)_
 
 ## `sf plugins:inspect PLUGIN...`
 
@@ -9069,7 +9069,7 @@ EXAMPLES
   $ sf plugins inspect @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.86/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.87/src/commands/plugins/inspect.ts)_
 
 ## `sf plugins install PLUGIN`
 
@@ -9118,7 +9118,7 @@ EXAMPLES
     $ sf plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.86/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.87/src/commands/plugins/install.ts)_
 
 ## `sf plugins link PATH`
 
@@ -9149,7 +9149,7 @@ EXAMPLES
   $ sf plugins link @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.86/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.87/src/commands/plugins/link.ts)_
 
 ## `sf plugins reset`
 
@@ -9164,7 +9164,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.86/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.87/src/commands/plugins/reset.ts)_
 
 ## `sf plugins trust allowlist add`
 
@@ -9201,7 +9201,7 @@ EXAMPLES
     $ sf plugins trust allowlist add --name @scope/my-plugin --name another-plugin
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.7/src/commands/plugins/trust/allowlist/add.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.9/src/commands/plugins/trust/allowlist/add.ts)_
 
 ## `sf plugins trust allowlist list`
 
@@ -9229,7 +9229,7 @@ EXAMPLES
     $ sf plugins trust allowlist list
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.7/src/commands/plugins/trust/allowlist/list.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.9/src/commands/plugins/trust/allowlist/list.ts)_
 
 ## `sf plugins trust allowlist remove`
 
@@ -9266,7 +9266,7 @@ EXAMPLES
     $ sf plugins trust allowlist remove --name @scope/my-plugin --name another-plugin
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.7/src/commands/plugins/trust/allowlist/remove.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.9/src/commands/plugins/trust/allowlist/remove.ts)_
 
 ## `sf plugins trust verify`
 
@@ -9295,7 +9295,7 @@ EXAMPLES
   $ sf plugins trust verify --npm @scope/npmName
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.7/src/commands/plugins/trust/verify.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.9/src/commands/plugins/trust/verify.ts)_
 
 ## `sf plugins uninstall [PLUGIN]`
 
@@ -9323,7 +9323,7 @@ EXAMPLES
   $ sf plugins uninstall @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.86/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.87/src/commands/plugins/uninstall.ts)_
 
 ## `sf plugins update`
 
@@ -9341,7 +9341,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.86/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/5.4.87/src/commands/plugins/update.ts)_
 
 ## `sf project convert mdapi`
 
@@ -9404,7 +9404,7 @@ FLAG DESCRIPTIONS
     If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.0.2/src/commands/project/convert/mdapi.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.1.2/src/commands/project/convert/mdapi.ts)_
 
 ## `sf project convert source`
 
@@ -9477,7 +9477,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.0.2/src/commands/project/convert/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.1.2/src/commands/project/convert/source.ts)_
 
 ## `sf project convert source-behavior`
 
@@ -9536,7 +9536,7 @@ EXAMPLES
     $ sf project convert source-behavior --behavior decomposePermissionSetBeta --dry-run --preserve-temp-dir
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.0.2/src/commands/project/convert/source-behavior.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.1.2/src/commands/project/convert/source-behavior.ts)_
 
 ## `sf project delete source`
 
@@ -9689,7 +9689,7 @@ FLAG DESCRIPTIONS
     - Separate the test names with spaces: --tests Test1 Test2 "Test With Space"
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.0.2/src/commands/project/delete/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.1.2/src/commands/project/delete/source.ts)_
 
 ## `sf project delete tracking`
 
@@ -9726,7 +9726,7 @@ EXAMPLES
     $ sf project delete tracking --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.0.2/src/commands/project/delete/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.1.2/src/commands/project/delete/tracking.ts)_
 
 ## `sf project deploy cancel`
 
@@ -9798,7 +9798,7 @@ FLAG DESCRIPTIONS
     project deploy report".
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.0.2/src/commands/project/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.1.2/src/commands/project/deploy/cancel.ts)_
 
 ## `sf project deploy preview`
 
@@ -9881,7 +9881,7 @@ FLAG DESCRIPTIONS
     All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.0.2/src/commands/project/deploy/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.1.2/src/commands/project/deploy/preview.ts)_
 
 ## `sf project deploy quick`
 
@@ -9974,7 +9974,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.0.2/src/commands/project/deploy/quick.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.1.2/src/commands/project/deploy/quick.ts)_
 
 ## `sf project deploy report`
 
@@ -10066,7 +10066,7 @@ FLAG DESCRIPTIONS
     --coverage-formatters lcov --coverage-formatters clover
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.0.2/src/commands/project/deploy/report.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.1.2/src/commands/project/deploy/report.ts)_
 
 ## `sf project deploy resume`
 
@@ -10163,7 +10163,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.0.2/src/commands/project/deploy/resume.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.1.2/src/commands/project/deploy/resume.ts)_
 
 ## `sf project deploy start`
 
@@ -10429,7 +10429,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.0.2/src/commands/project/deploy/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.1.2/src/commands/project/deploy/start.ts)_
 
 ## `sf project deploy validate`
 
@@ -10633,7 +10633,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.0.2/src/commands/project/deploy/validate.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.1.2/src/commands/project/deploy/validate.ts)_
 
 ## `sf project generate manifest`
 
@@ -10729,7 +10729,7 @@ EXAMPLES
     $ sf project generate manifest --from-org test@myorg.com --excluded-metadata StandardValueSet
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.0.2/src/commands/project/generate/manifest.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.1.2/src/commands/project/generate/manifest.ts)_
 
 ## `sf project list ignored`
 
@@ -10771,7 +10771,7 @@ EXAMPLES
     $ sf project list ignored --source-dir package.xml
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.0.2/src/commands/project/list/ignored.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.1.2/src/commands/project/list/ignored.ts)_
 
 ## `sf project reset tracking`
 
@@ -10820,7 +10820,7 @@ EXAMPLES
     $ sf project reset tracking --revision 30
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.0.2/src/commands/project/reset/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.1.2/src/commands/project/reset/tracking.ts)_
 
 ## `sf project retrieve preview`
 
@@ -10874,7 +10874,7 @@ FLAG DESCRIPTIONS
     production orgs.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.0.2/src/commands/project/retrieve/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.1.2/src/commands/project/retrieve/preview.ts)_
 
 ## `sf project retrieve start`
 
@@ -10883,24 +10883,27 @@ Retrieve metadata from an org to your local project.
 ```
 USAGE
   $ sf project retrieve start -o <value> [--json] [--flags-dir <value>] [-a <value>] [-c] [-x <value> | -m <value>... | -d
-    <value>...] [-r <value> | -n <value>... | ] [--single-package -t <value>] [-w <value>] [-z ] [--zip-file-name
-    <value> ]
+    <value>...] [--root-type-with-dependencies Bot|AiAgentDefinitionVersion...] [-r <value> | -n <value>... | ]
+    [--single-package -t <value>] [-w <value>] [-z ] [--zip-file-name <value> ]
 
 FLAGS
-  -a, --api-version=<value>      Target API version for the retrieve.
-  -c, --ignore-conflicts         Ignore conflicts and retrieve and save files to your local filesystem, even if they
-                                 overwrite your local changes.
-  -d, --source-dir=<value>...    File paths for source to retrieve from the org.
-  -m, --metadata=<value>...      Metadata component names to retrieve. Wildcards (`*`) supported as long as you use
-                                 quotes, such as `ApexClass:MyClass*`.
-  -n, --package-name=<value>...  Package names to retrieve. Use of this flag is for reference only; don't use it to
-                                 retrieve packaged metadata for development.
-  -o, --target-org=<value>       (required) Username or alias of the target org. Not required if the `target-org`
-                                 configuration variable is already set.
-  -r, --output-dir=<value>       Directory root for the retrieved source files.
-  -w, --wait=<value>             [default: 33 minutes] Number of minutes to wait for the command to complete and display
-                                 results to the terminal window.
-  -x, --manifest=<value>         File path for the manifest (package.xml) that specifies the components to retrieve.
+  -a, --api-version=<value>                      Target API version for the retrieve.
+  -c, --ignore-conflicts                         Ignore conflicts and retrieve and save files to your local filesystem,
+                                                 even if they overwrite your local changes.
+  -d, --source-dir=<value>...                    File paths for source to retrieve from the org.
+  -m, --metadata=<value>...                      Metadata component names to retrieve. Wildcards (`*`) supported as long
+                                                 as you use quotes, such as `ApexClass:MyClass*`.
+  -n, --package-name=<value>...                  Package names to retrieve. Use of this flag is for reference only;
+                                                 don't use it to retrieve packaged metadata for development.
+  -o, --target-org=<value>                       (required) Username or alias of the target org. Not required if the
+                                                 `target-org` configuration variable is already set.
+  -r, --output-dir=<value>                       Directory root for the retrieved source files.
+  -w, --wait=<value>                             [default: 33 minutes] Number of minutes to wait for the command to
+                                                 complete and display results to the terminal window.
+  -x, --manifest=<value>                         File path for the manifest (package.xml) that specifies the components
+                                                 to retrieve.
+      --root-type-with-dependencies=<option>...  Metadata type whose dependent types should also be retrieved.
+                                                 <options: Bot|AiAgentDefinitionVersion>
 
 METADATA API FORMAT FLAGS
   -t, --target-metadata-dir=<value>  Directory that will contain the retrieved metadata format files or ZIP.
@@ -10961,6 +10964,11 @@ EXAMPLES
   string "MyApex":
 
     $ sf project retrieve start --metadata 'ApexClass:MyApex*'
+
+  Retrieve the source files in the "force-app" directory; if any of the retrieved metadata is of type "Bot", also
+  retrieve all dependent components of the Bot, such as GenAiPlannerBundles, GenAiPlugins, and GenAiFunctions:
+
+    $ sf project retrieve start --source-dir force-app -root-type-with-dependencies Bot
 
   Retrieve a custom object called ExcitingObject that's in the SBQQ namespace:
 
@@ -11055,7 +11063,7 @@ ENVIRONMENT VARIABLES
   SF_USE_PROGRESS_BAR  Set to false to disable the progress bar when running the metadata deploy command.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.0.2/src/commands/project/retrieve/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.1.2/src/commands/project/retrieve/start.ts)_
 
 ## `sf schema generate field`
 
@@ -11309,7 +11317,7 @@ EXAMPLES
     $ sf sobject describe --sobject ApexCodeCoverage --use-tooling-api
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/4.0.4/src/commands/sobject/describe.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/4.0.5/src/commands/sobject/describe.ts)_
 
 ## `sf sobject list`
 
@@ -11348,7 +11356,7 @@ EXAMPLES
     $ sf sobject list --sobject custom --target-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/4.0.4/src/commands/sobject/list.ts)_
+_See code: [@salesforce/plugin-schema](https://github.com/salesforcecli/plugin-schema/blob/4.0.5/src/commands/sobject/list.ts)_
 
 ## `sf template generate analytics template`
 
@@ -11392,7 +11400,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.6/src/commands/template/generate/analytics/template.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.9/src/commands/template/generate/analytics/template.ts)_
 
 ## `sf template generate apex class`
 
@@ -11454,7 +11462,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.6/src/commands/template/generate/apex/class.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.9/src/commands/template/generate/apex/class.ts)_
 
 ## `sf template generate apex trigger`
 
@@ -11524,7 +11532,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.6/src/commands/template/generate/apex/trigger.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.9/src/commands/template/generate/apex/trigger.ts)_
 
 ## `sf template generate digital-experience site`
 
@@ -11578,7 +11586,7 @@ FLAG DESCRIPTIONS
     project, defaults to the current directory.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.6/src/commands/template/generate/digital-experience/site.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.9/src/commands/template/generate/digital-experience/site.ts)_
 
 ## `sf template generate flexipage`
 
@@ -11660,7 +11668,7 @@ FLAG DESCRIPTIONS
     'Custom_Object__c'. This sets the `sobjectType` field in the FlexiPage metadata.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.6/src/commands/template/generate/flexipage/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.9/src/commands/template/generate/flexipage/index.ts)_
 
 ## `sf template generate lightning app`
 
@@ -11718,7 +11726,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.6/src/commands/template/generate/lightning/app.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.9/src/commands/template/generate/lightning/app.ts)_
 
 ## `sf template generate lightning component`
 
@@ -11795,7 +11803,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.6/src/commands/template/generate/lightning/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.9/src/commands/template/generate/lightning/component.ts)_
 
 ## `sf template generate lightning event`
 
@@ -11853,7 +11861,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.6/src/commands/template/generate/lightning/event.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.9/src/commands/template/generate/lightning/event.ts)_
 
 ## `sf template generate lightning interface`
 
@@ -11911,7 +11919,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.6/src/commands/template/generate/lightning/interface.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.9/src/commands/template/generate/lightning/interface.ts)_
 
 ## `sf template generate lightning test`
 
@@ -11969,7 +11977,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.6/src/commands/template/generate/lightning/test.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.9/src/commands/template/generate/lightning/test.ts)_
 
 ## `sf template generate project`
 
@@ -12101,7 +12109,7 @@ FLAG DESCRIPTIONS
     server-side type stripping.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.6/src/commands/template/generate/project/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.9/src/commands/template/generate/project/index.ts)_
 
 ## `sf template generate static-resource`
 
@@ -12164,7 +12172,7 @@ FLAG DESCRIPTIONS
     etc.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.6/src/commands/template/generate/static-resource/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.9/src/commands/template/generate/static-resource/index.ts)_
 
 ## `sf template generate ui-bundle`
 
@@ -12253,7 +12261,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.6/src/commands/template/generate/ui-bundle/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.9/src/commands/template/generate/ui-bundle/index.ts)_
 
 ## `sf template generate visualforce component`
 
@@ -12310,7 +12318,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.6/src/commands/template/generate/visualforce/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.9/src/commands/template/generate/visualforce/component.ts)_
 
 ## `sf template generate visualforce page`
 
@@ -12361,7 +12369,7 @@ FLAG DESCRIPTIONS
     The name can be up to 40 characters and must start with a letter.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.6/src/commands/template/generate/visualforce/page.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.0.9/src/commands/template/generate/visualforce/page.ts)_
 
 ## `sf update [CHANNEL]`
 
@@ -12419,7 +12427,7 @@ FLAG DESCRIPTIONS
     Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
 ```
 
-_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.2.56/src/commands/version.ts)_
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/2.2.57/src/commands/version.ts)_
 
 ## `sf which`
 
