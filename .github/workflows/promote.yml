@@ -116,6 +116,8 @@ jobs:
           SVC_CLI_BOT_GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
           githubTag: ${{ inputs.version }}
           nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
+          package-manager: yarn
+          cache-dependency-path: yarn.lock
 
       - name: Check open-ctc status
         if: always()
