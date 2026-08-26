@@ -1067,10 +1067,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@jsforce/jsforce-node@^3.10.15", "@jsforce/jsforce-node@^3.10.17", "@jsforce/jsforce-node@^3.10.19", "@jsforce/jsforce-node@^3.10.22":
-  version "3.10.22"
-  resolved "https://registry.yarnpkg.com/@jsforce/jsforce-node/-/jsforce-node-3.10.22.tgz#b15d0bfa8280dff3d2b6d5a833a6febb6bef138c"
-  integrity sha512-4TLjnvTlBW59NmNSsRRV5dDEepQGfBKVD0WWQlJUJwkU0d5FFxo8GbfNmCOXkjjYAe1wv7SuvMzJKcLZHU6qyw==
+"@jsforce/jsforce-node@^3.10.17", "@jsforce/jsforce-node@^3.10.19", "@jsforce/jsforce-node@^3.10.22", "@jsforce/jsforce-node@^3.10.23":
+  version "3.10.23"
+  resolved "https://registry.yarnpkg.com/@jsforce/jsforce-node/-/jsforce-node-3.10.23.tgz#464be5621ee638a29d3bd43d97ade5b16470118f"
+  integrity sha512-sepBNb9Bt0vSdXqZqq97p/EP8NJjjOnDQoRmiH2Lcm/nsznQsrsUttoNmNxfxrRubuJTIL9m4H1I7uOb8HrgRg==
   dependencies:
     "@sindresorhus/is" "^4"
     base64url "^3.0.1"
@@ -1835,12 +1835,12 @@
     ts-retry-promise "^0.8.1"
     zod "^4.1.12"
 
-"@salesforce/core@^9.0.0", "@salesforce/core@^9.1.0", "@salesforce/core@^9.1.2", "@salesforce/core@^9.1.4":
-  version "9.1.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-9.1.4.tgz#264a618f962b7306794d5a7a42698bdb7dec6d04"
-  integrity sha512-S4VZ0xstYOAs5dwt7EDGkuFZA8rddy0wmuPTGjsIhgAPzuq3I5lKyBNwqXMMxdhBcWi+P4cXccHLpOYivgdrXQ==
+"@salesforce/core@^9.0.0", "@salesforce/core@^9.1.0", "@salesforce/core@^9.1.2", "@salesforce/core@^9.1.4", "@salesforce/core@^9.1.7":
+  version "9.1.7"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-9.1.7.tgz#6084959bfab927d062cf4ef39d261b9a6e655cb0"
+  integrity sha512-6ecm8k3RQ5lLZ8ecv4kuY9ORpdZ5vceQO/QEDkEIfg+XbT3k10lMztX6/Q0lM6EmeNGT8xqwbdHaYvcKhCwyDQ==
   dependencies:
-    "@jsforce/jsforce-node" "^3.10.22"
+    "@jsforce/jsforce-node" "^3.10.23"
     "@salesforce/kit" "^4.0.0"
     "@salesforce/ts-types" "^3.0.0"
     ajv "^8.18.0"
@@ -2019,16 +2019,16 @@
     debug "^4.4.3"
     handlebars "^4.7.9"
 
-"@salesforce/plugin-data@5.1.6":
-  version "5.1.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-5.1.6.tgz#87042f6bc646595a5e8abee1aef84524842299a6"
-  integrity sha512-mRSvepUpwgCb0bJtwldPX31RD571Bd2Lha/Yqeyp8YT0zRKITjCPd9e17vMkvSjHjWd2ftB6178EVZqThO5RDQ==
+"@salesforce/plugin-data@5.1.7":
+  version "5.1.7"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-5.1.7.tgz#da9cfa7a2250e1950bfdcc16abdbdac445cf7191"
+  integrity sha512-1eTux7FYdVBO4u4JwQvvkR1J5KPEdLcrTEMTnXh6yQ+EKxAq4CTAtwSGzk77pA9Y2GtLjAKIVpxQlLhkkq9HBg==
   dependencies:
-    "@jsforce/jsforce-node" "^3.10.15"
+    "@jsforce/jsforce-node" "^3.10.23"
     "@oclif/multi-stage-output" "^0.8.44"
-    "@salesforce/core" "^9.1.2"
+    "@salesforce/core" "^9.1.7"
     "@salesforce/kit" "^4.0.0"
-    "@salesforce/sf-plugins-core" "^13.0.0"
+    "@salesforce/sf-plugins-core" "^13.0.3"
     "@salesforce/ts-types" "^3.0.1"
     ansis "^3.16.0"
     change-case "^5.4.4"
@@ -2096,16 +2096,16 @@
     got "^13.0.0"
     proxy-agent "^6.5.0"
 
-"@salesforce/plugin-org@6.0.10":
-  version "6.0.10"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-6.0.10.tgz#9520fee4dd16054bb270e5a72e174cced7289582"
-  integrity sha512-tbOhB1IkUfEh2+QvDv8sU6EdQaATwEr9qdJ8/8ppCeLcWe3x/EwOmFov6zmKyGOOMdcvf0hxKkX8KYIYslINYQ==
+"@salesforce/plugin-org@6.0.11":
+  version "6.0.11"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-6.0.11.tgz#76d311e42cb201865cdc7110eaea614c6257d8da"
+  integrity sha512-dwG/RYZdxM2WPLRn5D3/oKmPKGyBrwSO+7+2yny0xjtGGdh6LKhlEXPhyFicv9Yy9/FZXpEoZqQA7iZN9dpuJA==
   dependencies:
     "@oclif/core" "^4.13.3"
     "@oclif/multi-stage-output" "^0.8.44"
-    "@salesforce/core" "^9.1.2"
+    "@salesforce/core" "^9.1.7"
     "@salesforce/kit" "^4.0.0"
-    "@salesforce/sf-plugins-core" "^13.0.0"
+    "@salesforce/sf-plugins-core" "^13.0.3"
     "@salesforce/source-deploy-retrieve" "^13.0.1"
     "@salesforce/ts-types" "^3.0.1"
     ansis "^3.16.0"
