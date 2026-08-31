@@ -2,7 +2,7 @@ name: validate-pr
 
 on:
   pull_request:
-    types: [opened, reopened, edited]
+    types: [opened, reopened, edited, synchronize]
     # only applies to PRs that intent to be released to the public
     branches:
       - main
