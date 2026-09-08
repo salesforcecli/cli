@@ -60,9 +60,12 @@ jobs:
       TESTKIT_EXECUTABLE_PATH: sf
       TESTKIT_AUTH_URL: ${{ secrets.TESTKIT_AUTH_URL}}
       TESTKIT_HUB_USERNAME: ${{ secrets.TESTKIT_HUB_USERNAME}}
-      TESTKIT_JWT_CLIENT_ID: ${{ secrets.TESTKIT_JWT_CLIENT_ID}}
-      TESTKIT_JWT_KEY: ${{ secrets.TESTKIT_JWT_KEY}}
-      TESTKIT_HUB_INSTANCE: ${{ secrets.TESTKIT_HUB_INSTANCE}}
+      # JWTBAT: disabled JWT env vars to force AUTH_URL strategy so NUTs
+      # authenticate through the JWT-based-access-token-enabled connected app.
+      # Revert by uncommenting these three lines.
+      # TESTKIT_JWT_CLIENT_ID: ${{ secrets.TESTKIT_JWT_CLIENT_ID}}
+      # TESTKIT_JWT_KEY: ${{ secrets.TESTKIT_JWT_KEY}}
+      # TESTKIT_HUB_INSTANCE: ${{ secrets.TESTKIT_HUB_INSTANCE}}
       ONEGP_TESTKIT_AUTH_URL: ${{ secrets.ONEGP_TESTKIT_AUTH_URL }}
       TESTKIT_SETUP_RETRIES: 2
       SF_DISABLE_TELEMETRY: true
