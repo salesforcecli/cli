@@ -25,6 +25,16 @@ on:
         description: 'install JIT plugin before running tests'
         type: boolean
         default: false
+      devhub-environment:
+        required: false
+        description: 'GitHub Environment whose secrets override the default TESTKIT_* credentials. Leave empty to use org-level secrets.'
+        type: string
+        default: ''
+      max-retries:
+        required: false
+        description: 'Maximum number of retry attempts for the NUT command (default: 3)'
+        type: number
+        default: 3
   workflow_call:
     inputs:
       channel-or-version:
@@ -50,11 +60,22 @@ on:
         description: 'install JIT plugin before running tests'
         type: boolean
         default: false
+      devhub-environment:
+        required: false
+        description: 'GitHub Environment whose secrets override the default TESTKIT_* credentials. Leave empty to use org-level secrets.'
+        type: string
+        default: ''
+      max-retries:
+        required: false
+        description: 'Maximum number of retry attempts for the NUT command (default: 3)'
+        type: number
+        default: 3
 
 jobs:
   just-nut:
     name: ${{inputs.repository}}
     runs-on: ${{inputs.os}}
+    environment: ${{ inputs.devhub-environment || '' }}
     env:
       GITHUB_TOKEN: ${{ secrets.SVC_CLI_BOT_GITHUB_TOKEN }}
       TESTKIT_EXECUTABLE_PATH: sf
@@ -99,5 +120,6 @@ jobs:
       - name: Run NUT (with retries)
         uses: salesforcecli/github-workflows/.github/actions/retry@main
         with:
+          max_attempts: ${{ inputs.max-retries }}
           retry_wait_seconds: 1800
           command: ${{ inputs.command }}

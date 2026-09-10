@@ -7,12 +7,22 @@ on:
         required: true
         description: Version or channel of the CLI to test against (nightly, latest-rc, 2.1.1)
         type: string
+      devhub-environment:
+        required: false
+        description: 'GitHub Environment whose secrets override the default TESTKIT_* credentials. Leave empty to use org-level secrets.'
+        type: string
+        default: ''
   workflow_call:
     inputs:
       channel-or-version:
         required: true
         description: Version or channel of the CLI to test against (nightly, latest-rc, 2.1.1)
         type: string
+      devhub-environment:
+        required: false
+        description: 'GitHub Environment whose secrets override the default TESTKIT_* credentials. Leave empty to use org-level secrets.'
+        type: string
+        default: ''
 
 jobs:
   # plugins that use yarn:test:nuts
@@ -40,6 +50,7 @@ jobs:
       repository: ${{ matrix.repository }}
       channel-or-version: ${{ inputs.channel-or-version }}
       os: ${{ matrix.os }}
+      devhub-environment: ${{ inputs.devhub-environment }}
     secrets: inherit
 
   jit:
@@ -66,6 +77,7 @@ jobs:
       channel-or-version: ${{ inputs.channel-or-version }}
       os: ${{ matrix.os }}
       jit: true
+      devhub-environment: ${{ inputs.devhub-environment }}
     secrets: inherit
 
   packaging:
@@ -83,6 +95,7 @@ jobs:
       channel-or-version: ${{ inputs.channel-or-version }}
       os: ${{ matrix.os }}
       command: ${{ matrix.command }}
+      devhub-environment: ${{ inputs.devhub-environment }}
     secrets: inherit
 
   deploy-retrieve:
@@ -111,6 +124,7 @@ jobs:
       channel-or-version: ${{ inputs.channel-or-version }}
       os: ${{ matrix.os }}
       command: ${{ matrix.command }}
+      devhub-environment: ${{ inputs.devhub-environment }}
     secrets: inherit
 
   data:
@@ -134,4 +148,5 @@ jobs:
       channel-or-version: ${{ inputs.channel-or-version }}
       os: ${{ matrix.os }}
       command: ${{ matrix.command }}
+      devhub-environment: ${{ inputs.devhub-environment }}
     secrets: inherit
