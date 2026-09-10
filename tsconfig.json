@@ -2,10 +2,12 @@
   "extends": "@salesforce/dev-config/tsconfig-strict-esm",
   "compilerOptions": {
     "outDir": "dist",
+    "rootDir": "./src",
     "skipLibCheck": true,
     "module": "Node16",
     "target": "es2021",
-    "moduleResolution": "node16"
+    "moduleResolution": "node16",
+    "types": ["mocha"]
   },
   "include": ["./src/**/*.ts"],
   "ts-node": {
