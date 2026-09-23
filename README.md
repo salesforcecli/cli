@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.152.12 linux-x64 node-v24.20.0
+@salesforce/cli/2.152.13 linux-x64 node-v24.20.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -241,6 +241,7 @@ See [architecture page](ARCHITECTURE.md) for diagrams of the Salesforce CLI.
 - [`sf template generate project`](#sf-template-generate-project)
 - [`sf template generate static-resource`](#sf-template-generate-static-resource)
 - [`sf template generate ui-bundle`](#sf-template-generate-ui-bundle)
+- [`sf template generate ui-embedding`](#sf-template-generate-ui-embedding)
 - [`sf template generate visualforce component`](#sf-template-generate-visualforce-component)
 - [`sf template generate visualforce page`](#sf-template-generate-visualforce-page)
 - [`sf update [CHANNEL]`](#sf-update-channel)
@@ -302,7 +303,7 @@ ERROR CODES
   ActivationFailed (4)  Failed to activate the agent due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/activate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/activate.ts)_
 
 ## `sf agent adl create`
 
@@ -374,7 +375,7 @@ EXAMPLES
       --source-type retriever --retriever-id 0ppXX0000000001
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/adl/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/adl/create.ts)_
 
 ## `sf agent adl delete`
 
@@ -405,7 +406,7 @@ EXAMPLES
     $ sf agent adl delete --library-id 1JDSG000007IbWX4A0 --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/adl/delete.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/adl/delete.ts)_
 
 ## `sf agent adl file add`
 
@@ -447,7 +448,7 @@ EXAMPLES
     $ sf agent adl file add -i 1JDSG000007IbWX4A0 --path ./docs/guide.pdf --path ./docs/faq.txt --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/adl/file/add.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/adl/file/add.ts)_
 
 ## `sf agent adl file delete`
 
@@ -480,7 +481,7 @@ EXAMPLES
     $ sf agent adl file delete --library-id 1JDSG000007IbWX4A0 --file-id a1B2C3D4E5F6G7H8I9 --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/adl/file/delete.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/adl/file/delete.ts)_
 
 ## `sf agent adl file list`
 
@@ -520,7 +521,7 @@ EXAMPLES
     $ sf agent adl file list --library-id 1JDSG000007IbWX4A0 --target-org myOrg --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/adl/file/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/adl/file/list.ts)_
 
 ## `sf agent adl get`
 
@@ -551,7 +552,7 @@ EXAMPLES
     $ sf agent adl get --library-id 1JDSG000007IbWX4A0 --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/adl/get.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/adl/get.ts)_
 
 ## `sf agent adl list`
 
@@ -588,7 +589,7 @@ EXAMPLES
     $ sf agent adl list --target-org myOrg --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/adl/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/adl/list.ts)_
 
 ## `sf agent adl status`
 
@@ -623,7 +624,7 @@ EXAMPLES
     $ sf agent adl status --library-id 1JDSG000007IbWX4A0 --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/adl/status.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/adl/status.ts)_
 
 ## `sf agent adl update`
 
@@ -678,7 +679,7 @@ EXAMPLES
     $ sf agent adl update --library-id 1JDSG000007IbWX4A0 --restrict-to-public-articles --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/adl/update.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/adl/update.ts)_
 
 ## `sf agent adl upload`
 
@@ -725,7 +726,7 @@ EXAMPLES
     $ sf agent adl upload --library-id 1JDSG000007IbWX4A0 --file ./docs/guide.pdf --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/adl/upload.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/adl/upload.ts)_
 
 ## `sf agent create`
 
@@ -792,7 +793,7 @@ EXAMPLES
     $ sf agent create --name "Resort Manager" --spec specs/resortManagerAgent.yaml --preview
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/create.ts)_
 
 ## `sf agent deactivate`
 
@@ -841,7 +842,7 @@ ERROR CODES
   DeactivationFailed (4)  Failed to deactivate the agent due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/deactivate.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/deactivate.ts)_
 
 ## `sf agent generate agent-spec`
 
@@ -948,7 +949,7 @@ EXAMPLES
     $ sf agent generate agent-spec --tone formal --agent-user resortmanager@myorg.com
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/generate/agent-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/generate/agent-spec.ts)_
 
 ## `sf agent generate authoring-bundle`
 
@@ -1025,7 +1026,7 @@ EXAMPLES
       other-package-dir/main/default --target-org my-dev-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/generate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/generate/authoring-bundle.ts)_
 
 ## `sf agent generate template`
 
@@ -1087,7 +1088,7 @@ EXAMPLES
       my-package --source-org my-scratch-org
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/generate/template.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/generate/template.ts)_
 
 ## `sf agent generate test-spec`
 
@@ -1176,7 +1177,7 @@ FLAG DESCRIPTIONS
     metadata. 'testing-center' uses AiEvaluationDefinition metadata.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/generate/test-spec.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/generate/test-spec.ts)_
 
 ## `sf agent mcp asset list`
 
@@ -1212,7 +1213,7 @@ EXAMPLES
     $ sf agent mcp asset list --target-org myOrg --mcp-server-id 0XSxx0000000001 --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/mcp/asset/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/mcp/asset/list.ts)_
 
 ## `sf agent mcp asset replace`
 
@@ -1261,7 +1262,7 @@ EXAMPLES
   cat assets.json | sf agent mcp asset replace --mcp-server-id 0XSxx0000000001 --assets - --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/mcp/asset/replace.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/mcp/asset/replace.ts)_
 
 ## `sf agent mcp create`
 
@@ -1309,7 +1310,7 @@ EXAMPLES
   cat secret.txt | sf agent mcp create --name myServer --server-url https://mcp.example.com --auth-type OAUTH --identity-provider myIdp --client-id abc123 --client-secret - --scope "read write" --target-org myOrg
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/mcp/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/mcp/create.ts)_
 
 ## `sf agent mcp delete`
 
@@ -1347,7 +1348,7 @@ EXAMPLES
     $ sf agent mcp delete --mcp-server-id 0XSxx0000000001 --target-org myOrg --no-prompt
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/mcp/delete.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/mcp/delete.ts)_
 
 ## `sf agent mcp fetch`
 
@@ -1384,7 +1385,7 @@ EXAMPLES
     $ sf agent mcp fetch --target-org myOrg --mcp-server-id 0XSxx0000000001 --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/mcp/fetch.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/mcp/fetch.ts)_
 
 ## `sf agent mcp get`
 
@@ -1420,7 +1421,7 @@ EXAMPLES
     $ sf agent mcp get --target-org myOrg --mcp-server-id 0Mx000000000001 --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/mcp/get.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/mcp/get.ts)_
 
 ## `sf agent mcp list`
 
@@ -1462,7 +1463,7 @@ EXAMPLES
     $ sf agent mcp list --target-org myOrg --type EXTERNAL --status ACTIVE --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/mcp/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/mcp/list.ts)_
 
 ## `sf agent mcp update`
 
@@ -1513,7 +1514,7 @@ EXAMPLES
   cat secret.txt | sf agent mcp update --mcp-server-id 0XSxx0000000001 --server-url https://mcp.example.com --auth-type OAUTH --identity-provider MyIdp --client-id abc --client-secret - --scope "read write" --target-org myOrg --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/mcp/update.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/mcp/update.ts)_
 
 ## `sf agent preview`
 
@@ -1522,20 +1523,21 @@ Interact with an agent to preview how it responds to your statements, questions,
 ```
 USAGE
   $ sf agent preview -o <value> [--flags-dir <value>] [--api-version <value>] [-n <value>] [--authoring-bundle
-    <value>] [-d <value>] [-x] [--use-live-actions] [--context-variables <value>...]
+    <value>] [-d <value>] [-x] [--use-live-actions] [--context-variables <value>...] [--context-variables-json <value>]
 
 FLAGS
-  -d, --output-dir=<value>            Directory where conversation transcripts are saved.
-  -n, --api-name=<value>              API name of the activated published agent you want to interact with.
-  -o, --target-org=<value>            (required) Username or alias of the target org. Not required if the `target-org`
-                                      configuration variable is already set.
-  -x, --apex-debug                    Enable Apex debug logging during the agent preview conversation.
-      --api-version=<value>           Override the api version used for api requests made by this command
-      --authoring-bundle=<value>      API name of the authoring bundle metadata component that contains the agent's
-                                      Agent Script file.
-      --context-variables=<value>...  Session variables for the agent preview session, in the form Name=Value.
-      --use-live-actions              Use real actions in the org; if not specified, preview uses AI to simulate (mock)
-                                      actions.
+  -d, --output-dir=<value>              Directory where conversation transcripts are saved.
+  -n, --api-name=<value>                API name of the activated published agent you want to interact with.
+  -o, --target-org=<value>              (required) Username or alias of the target org. Not required if the `target-org`
+                                        configuration variable is already set.
+  -x, --apex-debug                      Enable Apex debug logging during the agent preview conversation.
+      --api-version=<value>             Override the api version used for api requests made by this command
+      --authoring-bundle=<value>        API name of the authoring bundle metadata component that contains the agent's
+                                        Agent Script file.
+      --context-variables=<value>...    Session variables for the agent preview session, in the form Name=Value.
+      --context-variables-json=<value>  Typed session variables for the agent preview session, as a JSON array.
+      --use-live-actions                Use real actions in the org; if not specified, preview uses AI to simulate
+                                        (mock) actions.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
@@ -1605,10 +1607,30 @@ FLAG DESCRIPTIONS
 
     Tips: (1) Quote the whole value in single quotes so $Context isn't shell-expanded. (2) Names are sent verbatim — a
     bare name is treated as a state variable, not a linked context variable, so live actions that bind via $Context.Name
-    will see null. (3) Type defaults to Text.
+    will see null. (3) Type is always Text; to send a typed variable, use --context-variables-json.
+
+  --context-variables-json=<value>  Typed session variables for the agent preview session, as a JSON array.
+
+    Sets typed variables on the agent preview session. Use this instead of --context-variables when a variable is not
+    Text, for example a boolean-gated route (available when @variables.myFlag == True) that needs a real Boolean, or a
+    Number, Object, List, or Json value.
+
+    The value is a JSON array of objects, each with a "name", a "type", and an optional "value". The "type" is one of
+    Text, Date, DateTime, Money, Ref, Boolean, Number, Object, List, or Json. The JSON type of "value" must match
+    "type": Boolean takes a boolean, Number takes a number, the string types take a string, Object and List take an
+    array, and Json takes an object.
+
+    Example: --context-variables-json
+    '[{"name":"probeGate","type":"Boolean","value":true},{"name":"retryCount","type":"Number","value":3}]'.
+
+    You can pass both --context-variables and --context-variables-json in the same command. When the same variable name
+    appears in both, the --context-variables-json value wins.
+
+    Tip: names follow the same rules as --context-variables. Use the "$Context." prefix for linked context variables,
+    and a bare name for state variables.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/preview.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/preview.ts)_
 
 ## `sf agent preview end`
 
@@ -1692,7 +1714,7 @@ ERROR CODES
   SessionAmbiguous (5)           Multiple preview sessions found; specify --session-id to choose one.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/preview/end.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/preview/end.ts)_
 
 ## `sf agent preview send`
 
@@ -1759,7 +1781,7 @@ ERROR CODES
   SessionAmbiguous (5)   Multiple preview sessions found; specify --session-id to choose one.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/preview/send.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/preview/send.ts)_
 
 ## `sf agent preview sessions`
 
@@ -1795,7 +1817,7 @@ ERROR CODES
   Succeeded (0)  Sessions listed successfully (or empty list if no active sessions).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/preview/sessions.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/preview/sessions.ts)_
 
 ## `sf agent preview start`
 
@@ -1805,19 +1827,21 @@ Start a programmatic agent preview session.
 USAGE
   $ sf agent preview start -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-n <value>]
     [--authoring-bundle <value>] [--use-live-actions | --simulate-actions] [--context-variables <value>...]
+    [--context-variables-json <value>]
 
 FLAGS
-  -n, --api-name=<value>              API name of the activated published agent you want to preview.
-  -o, --target-org=<value>            (required) Username or alias of the target org. Not required if the `target-org`
-                                      configuration variable is already set.
-      --api-version=<value>           Override the api version used for api requests made by this command
-      --authoring-bundle=<value>      API name of the authoring bundle metadata component that contains the agent's
-                                      Agent Script file.
-      --context-variables=<value>...  Session variables for the agent preview session, in the form Name=Value.
-      --simulate-actions              Use AI to simulate action execution instead of calling real actions. Required with
-                                      --authoring-bundle.
-      --use-live-actions              Execute real actions in the org (Apex classes, flows, etc.). Required with
-                                      --authoring-bundle.
+  -n, --api-name=<value>                API name of the activated published agent you want to preview.
+  -o, --target-org=<value>              (required) Username or alias of the target org. Not required if the `target-org`
+                                        configuration variable is already set.
+      --api-version=<value>             Override the api version used for api requests made by this command
+      --authoring-bundle=<value>        API name of the authoring bundle metadata component that contains the agent's
+                                        Agent Script file.
+      --context-variables=<value>...    Session variables for the agent preview session, in the form Name=Value.
+      --context-variables-json=<value>  Typed session variables for the agent preview session, as a JSON array.
+      --simulate-actions                Use AI to simulate action execution instead of calling real actions. Required
+                                        with --authoring-bundle.
+      --use-live-actions                Execute real actions in the org (Apex classes, flows, etc.). Required with
+                                        --authoring-bundle.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
@@ -1879,7 +1903,27 @@ FLAG DESCRIPTIONS
 
     Tips: (1) Quote the whole value in single quotes so $Context isn't shell-expanded. (2) Names are sent verbatim — a
     bare name is treated as a state variable, not a linked context variable, so live actions that bind via $Context.Name
-    will see null. (3) Type defaults to Text.
+    will see null. (3) Type is always Text; to send a typed variable, use --context-variables-json.
+
+  --context-variables-json=<value>  Typed session variables for the agent preview session, as a JSON array.
+
+    Sets typed variables on the agent preview session. Use this instead of --context-variables when a variable is not
+    Text, for example a boolean-gated route (available when @variables.myFlag == True) that needs a real Boolean, or a
+    Number, Object, List, or Json value.
+
+    The value is a JSON array of objects, each with a "name", a "type", and an optional "value". The "type" is one of
+    Text, Date, DateTime, Money, Ref, Boolean, Number, Object, List, or Json. The JSON type of "value" must match
+    "type": Boolean takes a boolean, Number takes a number, the string types take a string, Object and List take an
+    array, and Json takes an object.
+
+    Example: --context-variables-json
+    '[{"name":"probeGate","type":"Boolean","value":true},{"name":"retryCount","type":"Number","value":3}]'.
+
+    You can pass both --context-variables and --context-variables-json in the same command. When the same variable name
+    appears in both, the --context-variables-json value wins.
+
+    Tip: names follow the same rules as --context-variables. Use the "$Context." prefix for linked context variables,
+    and a bare name for state variables.
 
 ENVIRONMENT VARIABLES
   SF_TARGET_ORG  Username or alias of your default org. Overrides the target-org configuration variable.
@@ -1893,7 +1937,7 @@ ERROR CODES
   PreviewStartFailed (4)  Preview session failed to start due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/preview/start.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/preview/start.ts)_
 
 ## `sf agent publish authoring-bundle`
 
@@ -1957,7 +2001,7 @@ ERROR CODES
   Failed (1)     Compilation errors found in the Agent Script file.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/publish/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/publish/authoring-bundle.ts)_
 
 ## `sf agent test create`
 
@@ -2038,7 +2082,7 @@ ERROR CODES
   DeploymentFailed (4)  Deployment failed due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/test/create.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/test/create.ts)_
 
 ## `sf agent test list`
 
@@ -2080,7 +2124,7 @@ ERROR CODES
   Failed (4)     Failed to retrieve agent tests due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/test/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/test/list.ts)_
 
 ## `sf agent test results`
 
@@ -2164,7 +2208,7 @@ ERROR CODES
   Failed (4)     Failed to retrieve results due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/test/results.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/test/results.ts)_
 
 ## `sf agent test resume`
 
@@ -2257,7 +2301,7 @@ ERROR CODES
   OperationFailed (4)  Failed to poll test due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/test/resume.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/test/resume.ts)_
 
 ## `sf agent test run`
 
@@ -2350,7 +2394,7 @@ ERROR CODES
   OperationFailed (4)  Failed to start or poll test due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/test/run.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/test/run.ts)_
 
 ## `sf agent test run-eval`
 
@@ -2435,7 +2479,7 @@ ERROR CODES
   OperationFailed (4)  Failed to execute tests due to API or network errors.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/test/run-eval.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/test/run-eval.ts)_
 
 ## `sf agent trace delete`
 
@@ -2502,7 +2546,7 @@ ERROR CODES
   Succeeded (0)  Traces deleted successfully (or no traces matched).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/trace/delete.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/trace/delete.ts)_
 
 ## `sf agent trace list`
 
@@ -2575,7 +2619,7 @@ ERROR CODES
   Succeeded (0)  Trace files listed successfully (or empty list if none found).
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/trace/list.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/trace/list.ts)_
 
 ## `sf agent trace read`
 
@@ -2663,7 +2707,7 @@ EXAMPLES
     $ sf agent trace read --session-id <SESSION_ID> --json
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/trace/read.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/trace/read.ts)_
 
 ## `sf agent validate authoring-bundle`
 
@@ -2720,7 +2764,7 @@ ERROR CODES
   ServerError (3)  Validation/compilation API returned HTTP 500. A server error occurred during compilation.
 ```
 
-_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.1.1/src/commands/agent/validate/authoring-bundle.ts)_
+_See code: [@salesforce/plugin-agent](https://github.com/salesforcecli/plugin-agent/blob/2.2.2/src/commands/agent/validate/authoring-bundle.ts)_
 
 ## `sf alias list`
 
@@ -2893,7 +2937,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.1.2/src/commands/apex/get/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.2.0/src/commands/apex/get/log.ts)_
 
 ## `sf apex get test`
 
@@ -2953,7 +2997,7 @@ EXAMPLES
       me@myorg'
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.1.2/src/commands/apex/get/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.2.0/src/commands/apex/get/test.ts)_
 
 ## `sf apex list log`
 
@@ -2993,7 +3037,7 @@ EXAMPLES
     $ sf apex list log --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.1.2/src/commands/apex/list/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.2.0/src/commands/apex/list/log.ts)_
 
 ## `sf apex run`
 
@@ -3001,13 +3045,18 @@ Execute anonymous Apex code entered on the command line or from a local file.
 
 ```
 USAGE
-  $ sf apex run -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-f <value>]
+  $ sf apex run -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-f <value>] [-d
+    NONE|DEBUGONLY|DB|PROFILING|CALLOUT|DETAIL | --category-level <value>...]
 
 FLAGS
-  -f, --file=<value>         Path to a local file that contains Apex code.
-  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
-                             configuration variable is already set.
-      --api-version=<value>  Override the api version used for api requests made by this command
+  -d, --debug-level=<option>       Debug level to use for the debug log that's generated in the org.
+                                   <options: NONE|DEBUGONLY|DB|PROFILING|CALLOUT|DETAIL>
+  -f, --file=<value>               Path to a local file that contains Apex code.
+  -o, --target-org=<value>         (required) Username or alias of the target org. Not required if the `target-org`
+                                   configuration variable is already set.
+      --api-version=<value>        Override the api version used for api requests made by this command
+      --category-level=<value>...  Log level for a specific log category in the debug log generated in the org. Use the
+                                   format: Category=Level.
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
@@ -3038,9 +3087,38 @@ EXAMPLES
   the prompt, start type Apex code and press the Enter key after each line. Press CTRL+D when finished.
 
     $ sf apex run
+
+  Execute the Apex code and generate a debug log with maximum detail:
+
+    $ sf apex run --file ~/test.apex --debug-level DETAIL
+
+  Execute the Apex code and generate a debug log with fine-grained control over specific log categories:
+
+    $ sf apex run --file ~/test.apex --category-level Apex_code=FINEST --category-level Db=FINE
+
+FLAG DESCRIPTIONS
+  -d, --debug-level=NONE|DEBUGONLY|DB|PROFILING|CALLOUT|DETAIL
+
+    Debug level to use for the debug log that's generated in the org.
+
+    Sets the debug log level for the anonymous Apex execution. Defaults to DEBUGONLY if not specified. Mutually
+    exclusive with --category-level.
+
+  --category-level=<value>...
+
+    Log level for a specific log category in the debug log generated in the org. Use the format: Category=Level.
+
+    Use this flag to set individual log category levels for fine-grained control over the debug log. Use this format:
+    Category=Level, such as Apex_code=FINEST.
+
+    Valid categories: Db, Workflow, Validation, Callout, Apex_code, Apex_profiling, Visualforce, System, Wave, Nba, All.
+
+    Valid levels: NONE, ERROR, WARN, INFO, DEBUG, FINE, FINER, FINEST.
+
+    Can be specified multiple times. Mutually exclusive with --debug-level.
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.1.2/src/commands/apex/run.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.2.0/src/commands/apex/run.ts)_
 
 ## `sf apex run test`
 
@@ -3187,7 +3265,7 @@ FLAG DESCRIPTIONS
     --tests Test1 --tests Test2
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.1.2/src/commands/apex/run/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.2.0/src/commands/apex/run/test.ts)_
 
 ## `sf apex tail log`
 
@@ -3230,7 +3308,7 @@ EXAMPLES
     $ sf apex tail log --color --skip-trace-flag
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.1.2/src/commands/apex/tail/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.2.0/src/commands/apex/tail/log.ts)_
 
 ## `sf api request graphql`
 
@@ -3424,7 +3502,7 @@ EXAMPLES
   $ sf autocomplete --refresh-cache
 ```
 
-_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/4.0.0/src/commands/autocomplete/index.ts)_
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/4.0.1/src/commands/autocomplete/index.ts)_
 
 ## `sf commands`
 
@@ -5046,7 +5124,7 @@ EXAMPLES
     $ sf logic get test --test-run-id <test run id> --result-format junit --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.1.2/src/commands/logic/get/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.2.0/src/commands/logic/get/test.ts)_
 
 ## `sf logic run test`
 
@@ -5168,7 +5246,7 @@ FLAG DESCRIPTIONS
     --tests Test1 --tests Test2
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.1.2/src/commands/logic/run/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.2.0/src/commands/logic/run/test.ts)_
 
 ## `sf org assign permset`
 
@@ -9021,7 +9099,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.0/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.1/src/commands/plugins/index.ts)_
 
 ## `sf plugins discover`
 
@@ -9066,7 +9144,7 @@ EXAMPLES
   $ sf plugins inspect @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.0/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.1/src/commands/plugins/inspect.ts)_
 
 ## `sf plugins install PLUGIN`
 
@@ -9115,7 +9193,7 @@ EXAMPLES
     $ sf plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.0/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.1/src/commands/plugins/install.ts)_
 
 ## `sf plugins link PATH`
 
@@ -9146,7 +9224,7 @@ EXAMPLES
   $ sf plugins link @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.0/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.1/src/commands/plugins/link.ts)_
 
 ## `sf plugins reset`
 
@@ -9161,7 +9239,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.0/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.1/src/commands/plugins/reset.ts)_
 
 ## `sf plugins trust allowlist add`
 
@@ -9198,7 +9276,7 @@ EXAMPLES
     $ sf plugins trust allowlist add --name @scope/my-plugin --name another-plugin
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.11/src/commands/plugins/trust/allowlist/add.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.12/src/commands/plugins/trust/allowlist/add.ts)_
 
 ## `sf plugins trust allowlist list`
 
@@ -9226,7 +9304,7 @@ EXAMPLES
     $ sf plugins trust allowlist list
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.11/src/commands/plugins/trust/allowlist/list.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.12/src/commands/plugins/trust/allowlist/list.ts)_
 
 ## `sf plugins trust allowlist remove`
 
@@ -9263,7 +9341,7 @@ EXAMPLES
     $ sf plugins trust allowlist remove --name @scope/my-plugin --name another-plugin
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.11/src/commands/plugins/trust/allowlist/remove.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.12/src/commands/plugins/trust/allowlist/remove.ts)_
 
 ## `sf plugins trust verify`
 
@@ -9292,7 +9370,7 @@ EXAMPLES
   $ sf plugins trust verify --npm @scope/npmName
 ```
 
-_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.11/src/commands/plugins/trust/verify.ts)_
+_See code: [@salesforce/plugin-trust](https://github.com/salesforcecli/plugin-trust/blob/4.0.12/src/commands/plugins/trust/verify.ts)_
 
 ## `sf plugins uninstall [PLUGIN]`
 
@@ -9320,7 +9398,7 @@ EXAMPLES
   $ sf plugins uninstall @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.0/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.1/src/commands/plugins/uninstall.ts)_
 
 ## `sf plugins update`
 
@@ -9338,7 +9416,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.0/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.1/src/commands/plugins/update.ts)_
 
 ## `sf project convert mdapi`
 
@@ -11397,7 +11475,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.1.2/src/commands/template/generate/analytics/template.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.3.0/src/commands/template/generate/analytics/template.ts)_
 
 ## `sf template generate apex class`
 
@@ -11459,7 +11537,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.1.2/src/commands/template/generate/apex/class.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.3.0/src/commands/template/generate/apex/class.ts)_
 
 ## `sf template generate apex trigger`
 
@@ -11529,7 +11607,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.1.2/src/commands/template/generate/apex/trigger.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.3.0/src/commands/template/generate/apex/trigger.ts)_
 
 ## `sf template generate digital-experience site`
 
@@ -11583,7 +11661,7 @@ FLAG DESCRIPTIONS
     project, defaults to the current directory.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.1.2/src/commands/template/generate/digital-experience/site.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.3.0/src/commands/template/generate/digital-experience/site.ts)_
 
 ## `sf template generate flexipage`
 
@@ -11665,7 +11743,7 @@ FLAG DESCRIPTIONS
     'Custom_Object__c'. This sets the `sobjectType` field in the FlexiPage metadata.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.1.2/src/commands/template/generate/flexipage/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.3.0/src/commands/template/generate/flexipage/index.ts)_
 
 ## `sf template generate lightning app`
 
@@ -11723,7 +11801,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.1.2/src/commands/template/generate/lightning/app.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.3.0/src/commands/template/generate/lightning/app.ts)_
 
 ## `sf template generate lightning component`
 
@@ -11800,7 +11878,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.1.2/src/commands/template/generate/lightning/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.3.0/src/commands/template/generate/lightning/component.ts)_
 
 ## `sf template generate lightning event`
 
@@ -11858,7 +11936,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.1.2/src/commands/template/generate/lightning/event.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.3.0/src/commands/template/generate/lightning/event.ts)_
 
 ## `sf template generate lightning interface`
 
@@ -11916,7 +11994,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.1.2/src/commands/template/generate/lightning/interface.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.3.0/src/commands/template/generate/lightning/interface.ts)_
 
 ## `sf template generate lightning test`
 
@@ -11974,7 +12052,7 @@ FLAG DESCRIPTIONS
     field in the DX project's "sfdx-project.json" file.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.1.2/src/commands/template/generate/lightning/test.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.3.0/src/commands/template/generate/lightning/test.ts)_
 
 ## `sf template generate project`
 
@@ -12106,7 +12184,7 @@ FLAG DESCRIPTIONS
     server-side type stripping.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.1.2/src/commands/template/generate/project/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.3.0/src/commands/template/generate/project/index.ts)_
 
 ## `sf template generate static-resource`
 
@@ -12169,7 +12247,7 @@ FLAG DESCRIPTIONS
     etc.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.1.2/src/commands/template/generate/static-resource/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.3.0/src/commands/template/generate/static-resource/index.ts)_
 
 ## `sf template generate ui-bundle`
 
@@ -12258,7 +12336,86 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.1.2/src/commands/template/generate/ui-bundle/index.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.3.0/src/commands/template/generate/ui-bundle/index.ts)_
+
+## `sf template generate ui-embedding`
+
+Generate a Lightning Web Component (LWC) bundle that wraps the <lightning-ui-embedding> base component.
+
+```
+USAGE
+  $ sf template generate ui-embedding -n <value> -s <value> --sandbox
+    allow-forms|allow-modals|allow-orientation-lock|allow-pointer-lock|allow-popups|allow-popups-to-escape-sandbox|allow
+    -presentation|allow-same-origin|allow-scripts|allow-storage-access-by-user-activation|allow-top-navigation|allow-top
+    -navigation-by-user-activation... --title <value> [--json] [--flags-dir <value>] [-d <value>] [--api-version
+    <value>]
+
+FLAGS
+  -d, --output-dir=<value>   [default: .] Directory for saving the created files.
+  -n, --name=<value>         (required) Name of the generated component; must be in PascalCase format.
+  -s, --src=<value>          (required) Absolute HTTPS URL that the iframe will load.
+      --api-version=<value>  Override the api version used for api requests made by this command
+      --sandbox=<option>...  (required) Iframe sandbox token. Specify this flag multiple times to set more than one
+                             token.
+                             <options: allow-forms|allow-modals|allow-orientation-lock|allow-pointer-lock|allow-popups|a
+                             llow-popups-to-escape-sandbox|allow-presentation|allow-same-origin|allow-scripts|allow-stor
+                             age-access-by-user-activation|allow-top-navigation|allow-top-navigation-by-user-activation>
+      --title=<value>        (required) Accessible title for the embedded iframe.
+
+GLOBAL FLAGS
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
+
+DESCRIPTION
+  Generate a Lightning Web Component (LWC) bundle that wraps the <lightning-ui-embedding> base component.
+
+  The generated LWC bundle consumes the first-party <lightning-ui-embedding> component, which is pre-wired with the
+  three required attributes: the embedding URL (--src), iframe sandbox tokens, and an accessible iframe title (--title).
+
+  The generated LWC bundle contains four files (.html, .js, .js-meta.xml, .css) in a directory named with the camelCased
+  component name. The bundle must live under a parent folder named "lwc".
+
+EXAMPLES
+  Generate an embedding wrapper LWC in the current directory:
+
+    $ sf template generate ui-embedding --name MyEmbeddingWrapper --src https://app.example.com --sandbox \
+      allow-forms --title "Expense Report Embedding"
+
+  Generate an embedding wrapper LWC in the "force-app/main/default/lwc" directory with multiple sandbox tokens:
+
+    $ sf template generate ui-embedding --name MyEmbeddingWrapper --src https://app.example.com --sandbox \
+      allow-forms --sandbox allow-scripts --title "Expense Report Embedding" --output-dir force-app/main/default/lwc
+
+FLAG DESCRIPTIONS
+  -d, --output-dir=<value>  Directory for saving the created files.
+
+    The location can be an absolute path or relative to the current working directory. The default is the current
+    directory.
+
+  -n, --name=<value>  Name of the generated component; must be in PascalCase format.
+
+    The component name is also used (camelCased) as the LWC folder name and file stem. Must contain only alphanumeric
+    characters and start with a letter.
+
+  -s, --src=<value>  Absolute HTTPS URL that the iframe will load.
+
+    The URL is bound to the <lightning-ui-embedding> "src" attribute as a reactive property in the generated LWC. Must
+    use HTTPS; plain HTTP is allowed only for localhost or 127.0.0.1 (for local development).
+
+  --sandbox=allow-forms|allow-modals|allow-orientation-lock|allow-pointer-lock|allow-popups|allow-popups-to-escape-sandbox|allow-presentation|allow-same-origin|allow-scripts|allow-storage-access-by-user-activation|allow-top-navigation|allow-top-navigation-by-user-activation...
+
+    Iframe sandbox token. Specify this flag multiple times to set more than one token.
+
+    Each token is written into the space-separated "sandbox" attribute on <lightning-ui-embedding>. Only W3C-defined
+    sandbox tokens are accepted.
+
+  --title=<value>  Accessible title for the embedded iframe.
+
+    Written to the "shell-title" attribute on <lightning-ui-embedding> and used as the iframe's accessible name
+    (announced by screen readers).
+```
+
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.3.0/src/commands/template/generate/ui-embedding/index.ts)_
 
 ## `sf template generate visualforce component`
 
@@ -12315,7 +12472,7 @@ FLAG DESCRIPTIONS
     Supplied parameter values or default values are filled into a copy of the template.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.1.2/src/commands/template/generate/visualforce/component.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.3.0/src/commands/template/generate/visualforce/component.ts)_
 
 ## `sf template generate visualforce page`
 
@@ -12366,7 +12523,7 @@ FLAG DESCRIPTIONS
     The name can be up to 40 characters and must start with a letter.
 ```
 
-_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.1.2/src/commands/template/generate/visualforce/page.ts)_
+_See code: [@salesforce/plugin-templates](https://github.com/salesforcecli/plugin-templates/blob/57.3.0/src/commands/template/generate/visualforce/page.ts)_
 
 ## `sf update [CHANNEL]`
 
