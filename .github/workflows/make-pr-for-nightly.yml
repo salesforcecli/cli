@@ -101,6 +101,7 @@ jobs:
           INPUT_ONLY: ${{ inputs.only }}
 
       - name: Build nightly PR (minor)
+        # $ONLY_FLAG is intentionally unquoted — it must word-split into two args (--only <value>)
         run: sf-release cli:release:build --start-from-github-ref main $ONLY_FLAG --label nightly-automerge --release-channel nightly
         env:
           ONLY_FLAG: ${{ inputs.only && format('--only {0}', inputs.only) || '' }}
@@ -108,6 +109,7 @@ jobs:
         if: ${{ fromJSON(steps.package-json-semver-info.outputs.minor) == fromJSON(steps.latest-rc-semver-info.outputs.minor) }}
 
       - name: Build nightly PR (patch)
+        # $ONLY_FLAG is intentionally unquoted — it must word-split into two args (--only <value>)
         run: sf-release cli:release:build --start-from-github-ref main --patch $ONLY_FLAG --label nightly-automerge --release-channel nightly
         env:
           ONLY_FLAG: ${{ inputs.only && format('--only {0}', inputs.only) || '' }}
