@@ -89,15 +89,27 @@ jobs:
       - name: Fetch all branches
         run: git fetch
 
-      # --only input using a "ternary-ish": https://github.com/actions/runner/issues/409#issuecomment-752775072
-      # ${{ x && 'ifTrue' || 'ifFalse'  }}
+      - name: Validate inputs
+        if: ${{ inputs.only != '' }}
+        shell: bash
+        run: |
+          if [[ ! "$INPUT_ONLY" =~ ^[@a-zA-Z0-9/_,.~-]+$ ]]; then
+            echo "::error::'only' input contains invalid characters. Must be a comma-separated list of package names."
+            exit 1
+          fi
+        env:
+          INPUT_ONLY: ${{ inputs.only }}
 
       - name: Build nightly PR (minor)
-        run: sf-release cli:release:build --start-from-github-ref main ${{ inputs.only && format('--only {0}', inputs.only) || '' }} --label nightly-automerge --release-channel nightly
+        run: sf-release cli:release:build --start-from-github-ref main $ONLY_FLAG --label nightly-automerge --release-channel nightly
+        env:
+          ONLY_FLAG: ${{ inputs.only && format('--only {0}', inputs.only) || '' }}
         # If the package.json 'minor' IS EQUAL TO the latest-rc 'minor', we want to bump 'minor'
         if: ${{ fromJSON(steps.package-json-semver-info.outputs.minor) == fromJSON(steps.latest-rc-semver-info.outputs.minor) }}
 
       - name: Build nightly PR (patch)
-        run: sf-release cli:release:build --start-from-github-ref main --patch ${{ inputs.only && format('--only {0}', inputs.only) || '' }} --label nightly-automerge --release-channel nightly
+        run: sf-release cli:release:build --start-from-github-ref main --patch $ONLY_FLAG --label nightly-automerge --release-channel nightly
+        env:
+          ONLY_FLAG: ${{ inputs.only && format('--only {0}', inputs.only) || '' }}
         # If the package.json 'minor' IS GREATER THAN the latest-rc 'minor', we want to bump 'patch'
         if: ${{ fromJSON(steps.package-json-semver-info.outputs.minor) > fromJSON(steps.latest-rc-semver-info.outputs.minor) }}
