@@ -1453,10 +1453,10 @@
     node-gyp "^12.1.0"
     proc-log "^6.0.0"
 
-"@oclif/core@5.0.0", "@oclif/core@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-5.0.0.tgz#1c91d74bc6e6a41aa9617aff2c938029e97a68b2"
-  integrity sha512-24ZsN528VButCtvqjBoHw7cEpqXZZILH7Zp0d8oFKrWbqU2BqYrxLd5aGU8LyqRev7CCjAHg+/m1Bewz4V7AmQ==
+"@oclif/core@5.0.1", "@oclif/core@^5.0.0":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-5.0.1.tgz#55f7fa2c518116c0cd1bccbd0cd3d388fb314995"
+  integrity sha512-vJajq85xNxu6lheUEJ046lh9V61EAAGGDn1H+EOJzFL528iEr2iVY0OyHZjDmRteT/SvhlQbfhRpugKnCsT4yw==
   dependencies:
     ansi-escapes "^4.3.2"
     ansis "^3.17.0"
@@ -1592,10 +1592,10 @@
     ansi-escapes "^7.3.0"
     inquirer-autocomplete-standalone "^0.8.1"
 
-"@oclif/plugin-update@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-5.0.0.tgz#3ed37fe13259b797d1487311faae1618f965a15f"
-  integrity sha512-D7lua7YCCXeNxWnpfqIG40VP8H4uq/lDzBkPWui24u33GJzb2UTRKpslTXzI4DkeukAFcU3X7r9uNuzai9RZfQ==
+"@oclif/plugin-update@5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-update/-/plugin-update-5.0.1.tgz#9aaec59413de1df59e2436034584818d8af76f65"
+  integrity sha512-g+csh+RNv/FAnTVbbAjtl+TrWGJeBWWX+bOVVrvlBtx1vpcKI363NaZPPa99xzrqckcQItU7tKBgLrvPRBbxzw==
   dependencies:
     "@inquirer/select" "^2.5.0"
     "@oclif/core" "^5.0.0"
@@ -2262,22 +2262,22 @@
     got "^13.0.0"
     proxy-agent "^6.5.0"
 
-"@salesforce/plugin-org@6.0.13":
-  version "6.0.13"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-6.0.13.tgz#1a237e960e8313edd426d2827a331c5c4773ad3c"
-  integrity sha512-G9rZb5buvzGjGuokwbZArRnqfkrLL+FdRkua3RvcEENo7syJ6k8SnEpm0w4C+ijQs2drWhotwC9hBWJ9eAqVXw==
+"@salesforce/plugin-org@6.0.15":
+  version "6.0.15"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-org/-/plugin-org-6.0.15.tgz#ed9c96046ee825e686d32dadd554b63f87552f0f"
+  integrity sha512-/7+HG71QUE5SgeJ7aY1ikQwSurM5Fy4/vr6xpFqeXPA7H4xxBnCQU2jC4cBQKiXGhCuEeGw00drxsihlMZ2nkg==
   dependencies:
     "@oclif/core" "^5.0.0"
     "@oclif/multi-stage-output" "^1.0.0"
-    "@salesforce/core" "^9.1.9"
+    "@salesforce/core" "^9.1.11"
     "@salesforce/kit" "^4.0.0"
     "@salesforce/sf-plugins-core" "^13.0.4"
-    "@salesforce/source-deploy-retrieve" "^13.3.0"
-    "@salesforce/ts-types" "^3.0.1"
+    "@salesforce/source-deploy-retrieve" "^13.3.1"
+    "@salesforce/ts-types" "^3.2.0"
     ansis "^3.16.0"
     change-case "^5.4.4"
     is-wsl "^3.1.1"
-    open "^11.0.1"
+    open "^11.0.3"
     terminal-link "^3.0.0"
 
 "@salesforce/plugin-packaging@3.0.7":
@@ -2356,10 +2356,10 @@
     fast-xml-parser "^5.10.1"
     js2xmlparser "^4.0.2"
 
-"@salesforce/plugin-telemetry@4.0.7":
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-4.0.7.tgz#3bc7d4180d1a8c4c8531c0229db7cdac2567c83f"
-  integrity sha512-z4wFhlWg4bp5/3S8WanxfxFmuMfNtBwsuRxU+CU3ZgPzFjMe83JO2GUGF439djFaa4dAq+V6QnxM0SggBLfNaQ==
+"@salesforce/plugin-telemetry@4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-4.1.0.tgz#ab1a1a0c91515ae6834c3f191fd82532ec5d616c"
+  integrity sha512-pYFdNTpd1JxLk42srYInDPxI15DyOEKHedYnhYmERelltjyRa2Mg8iy3T6P8lkcBB4EaTREyoMgrMepmMPkrKw==
   dependencies:
     "@oclif/core" "^5.0.0"
     "@salesforce/core" "^9.0.0"
@@ -2448,7 +2448,7 @@
     cli-progress "^3.12.0"
     terminal-link "^3.0.0"
 
-"@salesforce/source-deploy-retrieve@^13.0.0", "@salesforce/source-deploy-retrieve@^13.1.1", "@salesforce/source-deploy-retrieve@^13.3.0":
+"@salesforce/source-deploy-retrieve@^13.0.0", "@salesforce/source-deploy-retrieve@^13.1.1", "@salesforce/source-deploy-retrieve@^13.3.0", "@salesforce/source-deploy-retrieve@^13.3.1":
   version "13.4.0"
   resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-13.4.0.tgz#d63375263ecb01aebc66b62bd1cbead202492f6b"
   integrity sha512-6qSxudnqiiz5FgvSm1CjVHf/We+x6gV5uzhFH3fDRlF1xqCWUaLsuAxfRmwmxG9Q8ESqEdUnLgXLV3aZQbHYkw==
@@ -4551,7 +4551,7 @@ default-browser-id@^5.0.0:
   resolved "https://registry.yarnpkg.com/default-browser-id/-/default-browser-id-5.0.1.tgz#f7a7ccb8f5104bf8e0f71ba3b1ccfa5eafdb21e8"
   integrity sha512-x1VCxdX4t+8wVfd1so/9w+vQ4vx7lKd2Qp5tDRutErwmR85OgmfX7RlLRMWafRMY7hbEiXIbudNrjOAPa/hL8Q==
 
-default-browser@^5.2.1, default-browser@^5.4.0:
+default-browser@^5.2.1, default-browser@^5.5.1:
   version "5.5.1"
   resolved "https://registry.yarnpkg.com/default-browser/-/default-browser-5.5.1.tgz#1790affc52680fbb11e17cab2752d69aa2a37d2c"
   integrity sha512-m1pAzaJgZ/gssEqlOhJkPJp8Xly7QyW6xcrkUa2KKcDeDSEMP7X8xipU3snUcfisTQx0w1AGae+9UtJSfVnXGw==
@@ -8058,16 +8058,16 @@ open@^10.2.0:
     is-inside-container "^1.0.0"
     wsl-utils "^0.1.0"
 
-open@^11.0.0, open@^11.0.1:
-  version "11.0.1"
-  resolved "https://registry.yarnpkg.com/open/-/open-11.0.1.tgz#aabc32fa311acc8c0d7855938eb94583249c31bd"
-  integrity sha512-NzwMUB6C1D0+Kd+9iMS/H4k+Ck3cTX6Ckyfr/gAGlmvSE1LUQZnEZvWBi4PYmMwH/S5SMeTXnE+9uAz8uF+pWw==
+open@^11.0.0, open@^11.0.3:
+  version "11.0.4"
+  resolved "https://registry.yarnpkg.com/open/-/open-11.0.4.tgz#10d20dfdb558c71e5149b2d789ad6995caf697ca"
+  integrity sha512-++Zlftm0kVLPmzC06t6epuWmcRMDbI4z5P3NNX979WA/k23+NtSOynEGzsVfZwguKw2mi5umVgnBlJQMwRz4Pg==
   dependencies:
-    default-browser "^5.4.0"
+    default-browser "^5.5.1"
     define-lazy-prop "^3.0.0"
     is-in-ssh "^1.0.0"
     is-inside-container "^1.0.0"
-    powershell-utils "^0.2.0"
+    powershell-utils "^0.2.1"
     wsl-utils "^1.0.0"
 
 optionator@^0.9.3:
@@ -8522,10 +8522,10 @@ powershell-utils@^0.1.0:
   resolved "https://registry.yarnpkg.com/powershell-utils/-/powershell-utils-0.1.0.tgz#5a42c9a824fb4f2f251ccb41aaae73314f5d6ac2"
   integrity sha512-dM0jVuXJPsDN6DvRpea484tCUaMiXWjuCn++HGTqUWzGDjv5tZkEZldAJ/UMlqRYGFrD/etByo4/xOuC/snX2A==
 
-powershell-utils@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/powershell-utils/-/powershell-utils-0.2.0.tgz#bb075dcadc1564f3bd80fddda4f0a481ccbdcf36"
-  integrity sha512-ZlsFlG7MtSFCoc5xreOvBAozCJ6Pf06opgJjh9ONEv418xpZSAzNjstD36C6+JwOnfSqOW/9uDkqKjezTdxZhw==
+powershell-utils@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/powershell-utils/-/powershell-utils-0.2.1.tgz#0853016f5b3c12d52b9571c8fe8059677d9ddbe2"
+  integrity sha512-C+y9x90UElAddDZmV4qOx9W53B61PO7cIqWz2dQsWlwswuq4mr8NEwytdGKboYbQlGZ3awrkTeNvcZiZNHnQ8A==
 
 prelude-ls@^1.2.1:
   version "1.2.1"
