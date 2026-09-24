@@ -93,7 +93,7 @@ jobs:
         if: ${{ inputs.only != '' }}
         shell: bash
         run: |
-          if [[ ! "$INPUT_ONLY" =~ ^[@a-zA-Z0-9/_,.~-]+$ ]]; then
+          if [[ ! "$INPUT_ONLY" =~ ^[@a-zA-Z0-9/_,.-]+$ ]]; then
             echo "::error::'only' input contains invalid characters. Must be a comma-separated list of package names."
             exit 1
           fi
