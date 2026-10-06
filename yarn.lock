@@ -2130,10 +2130,10 @@
     react "^19.3.0"
     yaml "^2.9.0"
 
-"@salesforce/plugin-apex@4.3.2":
-  version "4.3.2"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-apex/-/plugin-apex-4.3.2.tgz#9581b522719635e78f65872ac83b8f272e7aa764"
-  integrity sha512-LaIw8B90p0OGwEpCHGfZNmO8mXEOaQWQrRufNCXlKUc2AMHtEwiAQaa/0Vvro0tJxObYMMEQbojtDHDlVNa9rQ==
+"@salesforce/plugin-apex@4.3.4":
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-apex/-/plugin-apex-4.3.4.tgz#019d827f4b931670482cb2a445f98179386af077"
+  integrity sha512-a5Jf95p5Vad7BZSkO5tSs9DpFMdNXhzQITo8WbroNBxUnYk0/Kt9YDNDNztDvStC4OrbRseaDoFDkcDRIQ/ZIA==
   dependencies:
     "@salesforce/apex-node" "^9.1.0"
     "@salesforce/core" "^9.1.10"
@@ -2156,10 +2156,10 @@
     got "^13.0.0"
     proxy-agent "^6.5.0"
 
-"@salesforce/plugin-auth@5.0.11":
-  version "5.0.11"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-5.0.11.tgz#07e1a5a842add18b6cfdc7c0cff7cde69c904da1"
-  integrity sha512-FFSK82uKEBI2mq3cFln5vMBu4xFULFGrLoV7qqwWo6e3cvKwvN3U+JyWKXrwbGERrlwnx5OXNxske7Xkhml8MA==
+"@salesforce/plugin-auth@5.0.12":
+  version "5.0.12"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-5.0.12.tgz#a809f0c616c5aa17887c622c099e1a01bd2c2a1d"
+  integrity sha512-v21kqper/lWg7vn4rQbZb3Z6SwDarkpPIr8mbWwOp/qSh8vhOMf78fzLWWYuMdfZq3GXIGH0HRufe2OMBf+CfA==
   dependencies:
     "@inquirer/checkbox" "^2.5.0"
     "@inquirer/select" "^2.5.0"
@@ -2186,10 +2186,10 @@
     debug "^4.4.3"
     handlebars "^4.7.9"
 
-"@salesforce/plugin-data@5.1.9":
-  version "5.1.9"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-5.1.9.tgz#64bd9dd5edb56b105cd4fbaf994576428cffe603"
-  integrity sha512-mxzmrWtC5Fd+p34/HDoZ8i6srn4bv5CiEQ2UfIKfQGbC6B1LThDI6XYeR7uMK2cinh1quXrfq+YXtAhmUTyJPQ==
+"@salesforce/plugin-data@5.1.10":
+  version "5.1.10"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-5.1.10.tgz#e5836b3774b80915f905857757375ea7777e0232"
+  integrity sha512-XVu9t8eecEmfZ2bMsdkW6bDFFEjMQaQ4RX9+7kVw6/L6QwzTLjlOo7piczMSmJ+ikgpgTsI87bx6mqiKMV6pXw==
   dependencies:
     "@jsforce/jsforce-node" "^3.10.25"
     "@oclif/multi-stage-output" "^1.0.0"
@@ -2203,13 +2203,13 @@
     csv-stringify "^6.8.3"
     form-data "^4.0.6"
     terminal-link "^3.0.0"
-    undici "^7.29.0"
+    undici "^7.30.0"
     zod "^4.6.0"
 
-"@salesforce/plugin-deploy-retrieve@4.2.4":
-  version "4.2.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-4.2.4.tgz#2cd69e6971a582ff5613aa11470df5efc4822976"
-  integrity sha512-tAAG5W0xYbQihm0ix355ynEoCw+XbgM+YYW8U3DPx+loGXDv2dmFhL/XWlUoEH0EqNSd3kBMF+GKrTbNsuPYJw==
+"@salesforce/plugin-deploy-retrieve@4.2.5":
+  version "4.2.5"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-4.2.5.tgz#3c8517d889fcd439e785bbeb743bf23e752a02e3"
+  integrity sha512-2D8bsZYBpT9EjqEAHbostDccUHE9tGwG/PjA362NghsywI/33FrKqMJDQ9uKiCJsiigBFFcaydJS+Uk60n1hVQ==
   dependencies:
     "@inquirer/prompts" "^7.8.3"
     "@oclif/core" "^5.0.0"
@@ -2225,10 +2225,10 @@
     ansis "^3.17.0"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-info@4.0.11", "@salesforce/plugin-info@^4.0.10", "@salesforce/plugin-info@^4.0.4":
-  version "4.0.11"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-4.0.11.tgz#f05b45a298741d16f514356ae658a8ca0f8fbf00"
-  integrity sha512-aqd9WunSpDKtBGqo5j1hnlUCAb1HLMU2fmFYhVI5EzFry89H7pSQFcu1foKxsUr8HkvRROYDmswLL2a/yM6o5Q==
+"@salesforce/plugin-info@4.0.13", "@salesforce/plugin-info@^4.0.10", "@salesforce/plugin-info@^4.0.4":
+  version "4.0.13"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-info/-/plugin-info-4.0.13.tgz#8ebfb6bd566ecf657bc35ca27e546fde698ab5f2"
+  integrity sha512-Kgjxi9H5j1+kia4zIHfAj5kNxZwllCZz0WjbdBpUXODlwxF2q7hWiW3GNkgkz8saXL6nihRYjURur8p+fVTgiw==
   dependencies:
     "@inquirer/prompts" "^7.10.1"
     "@jsforce/jsforce-node" "^3.10.25"
@@ -10019,10 +10019,10 @@ undici@^6.25.0:
   resolved "https://registry.yarnpkg.com/undici/-/undici-6.28.0.tgz#9f0e385744fef5021d6596c5bccd783f61193c1c"
   integrity sha512-LIY910g9TI13YS95lrMFrs8Rm/u/irgHeTWoKCoteeJ04CUJ92eEfj0rVn+7VKMPBpUPiUoBKfhNyLI23EE/KA==
 
-undici@^7.29.0:
-  version "7.29.0"
-  resolved "https://registry.yarnpkg.com/undici/-/undici-7.29.0.tgz#ae0f6f62e06e057a9cbb7b2b5fde2bb74f791b8f"
-  integrity sha512-IDxfleLmmbSskfWSUATiN1nfn2rDuvnMOqb5CWR92iIfojA0Ud+ulOAAEQ57LPr9rWmsreUyf5lwyao+7GNNVw==
+undici@^7.30.0:
+  version "7.30.0"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-7.30.0.tgz#64a947266eb7e21dbeac8b99f8720feef308bbe0"
+  integrity sha512-dkrQXeHSaoamnItlYbmzG0wFYrM0ZwDxCIg0A7aKjTyyhh9svRzCNFEzV+Vm05/yehjCzjDZ31KXfGEjYSztDQ==
 
 undici@^8.11.0:
   version "8.11.2"
