@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.154.3",
+  "version": "2.154.4",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run.js",
@@ -164,7 +164,7 @@
     "@salesforce/plugin-api": "2.0.12",
     "@salesforce/plugin-auth": "5.0.12",
     "@salesforce/plugin-data": "5.1.10",
-    "@salesforce/plugin-deploy-retrieve": "4.2.5",
+    "@salesforce/plugin-deploy-retrieve": "4.2.6",
     "@salesforce/plugin-info": "4.0.13",
     "@salesforce/plugin-limits": "4.0.6",
     "@salesforce/plugin-marketplace": "2.0.7",
@@ -214,8 +214,8 @@
   ],
   "resolutions": {
     "@salesforce/schemas": "1.10.3",
-    "@opentelemetry/core": "2.11.0",
-    "@opentelemetry/resources": "2.11.0",
+    "@opentelemetry/core": "2.12.0",
+    "@opentelemetry/resources": "2.12.0",
     "@opentelemetry/semantic-conventions": "1.43.0"
   },
   "repository": "salesforcecli/cli",
