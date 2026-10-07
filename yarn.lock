@@ -1782,10 +1782,10 @@
   resolved "https://registry.yarnpkg.com/@opentelemetry/api/-/api-1.9.1.tgz#c1b0346de336ba55af2d5a7970882037baedec05"
   integrity sha512-gLyJlPHPZYdAk1JENA9LeHejZe1Ti77/pTeFm/nMXmQH/HFZlcS/O2XJB+L8fkbrNSqhdtlvjBVjxwUYanNH5Q==
 
-"@opentelemetry/core@1.30.1", "@opentelemetry/core@2.10.0", "@opentelemetry/core@2.11.0", "@opentelemetry/core@^1.19.0", "@opentelemetry/core@^2.0.0":
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/core/-/core-2.11.0.tgz#97849d3808bba652568b7d53e20c9fc38bcb7c49"
-  integrity sha512-7YP44XH0tV6+Mb54x2YGf84i7yi+31MBZlE8JwvozkxyTvXbSp10X7cI7YE49ChJ3shMJoBmCJF3+1QFBJctGA==
+"@opentelemetry/core@1.30.1", "@opentelemetry/core@2.10.0", "@opentelemetry/core@2.12.0", "@opentelemetry/core@^1.19.0", "@opentelemetry/core@^2.0.0":
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/@opentelemetry/core/-/core-2.12.0.tgz#b44e9806111f066a2df578e37fc88ef46ccdfe20"
+  integrity sha512-1HsSAuvT4/my0QrXWsyXFdWjKaPeCHsismKZgEEIb8NK13LP6DrMRlsUbvD/0F9mDWK3xDom9AMv3IscxgOnOQ==
   dependencies:
     "@opentelemetry/semantic-conventions" "^1.29.0"
 
@@ -1798,12 +1798,12 @@
     import-in-the-middle "^2.0.0"
     require-in-the-middle "^8.0.0"
 
-"@opentelemetry/resources@1.30.1", "@opentelemetry/resources@2.10.0", "@opentelemetry/resources@2.11.0":
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/resources/-/resources-2.11.0.tgz#b4e60ba92a4f122dc979f3402aea9713a98eac5b"
-  integrity sha512-Ie7+8q8MDF4FAEQCKVMTx3ReUvxiIAgIiiW3c9JdmP8+HMcDy20puT+AHjexnExgnbvBxjQ9fjkFDWrikJ2jQA==
+"@opentelemetry/resources@1.30.1", "@opentelemetry/resources@2.10.0", "@opentelemetry/resources@2.12.0":
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/@opentelemetry/resources/-/resources-2.12.0.tgz#3a0fceb16c44d4d024f25f3f76eb773a7df67847"
+  integrity sha512-+rSRoOdln6NhXTVcBdHSlZxJDNzwxadeweK2ltZO3tVtfp6aklABc06xclDk6ovRR+EiGgIcSbh/6NgjFhnb3A==
   dependencies:
-    "@opentelemetry/core" "2.11.0"
+    "@opentelemetry/core" "2.12.0"
     "@opentelemetry/semantic-conventions" "^1.29.0"
 
 "@opentelemetry/sdk-trace-base@2.10.0":
@@ -2206,10 +2206,10 @@
     undici "^7.30.0"
     zod "^4.6.0"
 
-"@salesforce/plugin-deploy-retrieve@4.2.5":
-  version "4.2.5"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-4.2.5.tgz#3c8517d889fcd439e785bbeb743bf23e752a02e3"
-  integrity sha512-2D8bsZYBpT9EjqEAHbostDccUHE9tGwG/PjA362NghsywI/33FrKqMJDQ9uKiCJsiigBFFcaydJS+Uk60n1hVQ==
+"@salesforce/plugin-deploy-retrieve@4.2.6":
+  version "4.2.6"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-deploy-retrieve/-/plugin-deploy-retrieve-4.2.6.tgz#700e0eec719fc7a82b6232220ed5d68f3367136d"
+  integrity sha512-1JLkQTTuAMpSCAy48us/r6p94TIFWeCoFVzKWj/sVTdbVq+t/7t+dRcn4WY6gZnNO4FxtWQ87jVvZokjTZgasg==
   dependencies:
     "@inquirer/prompts" "^7.8.3"
     "@oclif/core" "^5.0.0"
@@ -2219,7 +2219,7 @@
     "@salesforce/kit" "^4.0.0"
     "@salesforce/plugin-info" "^4.0.10"
     "@salesforce/sf-plugins-core" "^13.0.4"
-    "@salesforce/source-deploy-retrieve" "^13.4.3"
+    "@salesforce/source-deploy-retrieve" "^13.4.4"
     "@salesforce/source-tracking" "^8.1.1"
     "@salesforce/ts-types" "^3.2.0"
     ansis "^3.17.0"
@@ -2449,10 +2449,10 @@
     cli-progress "^3.12.0"
     terminal-link "^3.0.0"
 
-"@salesforce/source-deploy-retrieve@^13.0.0", "@salesforce/source-deploy-retrieve@^13.1.1", "@salesforce/source-deploy-retrieve@^13.3.0", "@salesforce/source-deploy-retrieve@^13.3.1", "@salesforce/source-deploy-retrieve@^13.4.3":
-  version "13.4.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-13.4.3.tgz#5fb0517f42d37d96a2ce7097cd7afaf5046093dd"
-  integrity sha512-Oj6tqoJDjV1QySUNPVWpg9eqAySP360z24DP4+bbxvvHqU+QEm08Z1/3eowRXSlwB4mUaJJBbraHTkSCycRRaw==
+"@salesforce/source-deploy-retrieve@^13.0.0", "@salesforce/source-deploy-retrieve@^13.1.1", "@salesforce/source-deploy-retrieve@^13.3.0", "@salesforce/source-deploy-retrieve@^13.3.1", "@salesforce/source-deploy-retrieve@^13.4.4":
+  version "13.4.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/source-deploy-retrieve/-/source-deploy-retrieve-13.4.4.tgz#6dd851566d79f6bbcadec2f21e95967707e28fa5"
+  integrity sha512-zx+rUyYFtu7B3hTyXy2muhawTkXpG4eIU/BQaafX/Ku0Lki7fu+Oa0GErQdycMXuGrTyMWhCd8q+Jl3obA2rug==
   dependencies:
     "@salesforce/core" "^9.2.2"
     "@salesforce/kit" "^4.0.0"
