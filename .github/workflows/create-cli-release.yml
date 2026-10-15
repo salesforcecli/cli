@@ -51,10 +51,14 @@ jobs:
           STEPS_S3_RELEASE_CHANNEL_S3_CHANNEL: ${{ steps.s3-release-channel.outputs.s3-channel }}
 
   npm-release:
+    permissions:
+      id-token: write
+      contents: read
     uses: salesforcecli/github-workflows/.github/workflows/npmPublish.yml@main
     needs: [get-channel]
     secrets: inherit
     with:
+      trustedPublishing: true
       tag: ${{ needs.get-channel.outputs.channel }}
       githubTag: ${{ github.event.release.tag_name }}
       nodeVersion: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
