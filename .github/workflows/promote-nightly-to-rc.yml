@@ -18,6 +18,9 @@ jobs:
   promote:
     # Only run on 'workflow_dispatch' or if the 'workflow_run' was successful
     if: ${{ !github.event.workflow_run || github.event.workflow_run.conclusion == 'success' }}
+    permissions:
+      id-token: write
+      contents: read
     uses: ./.github/workflows/promote.yml
     secrets: inherit
     with:
