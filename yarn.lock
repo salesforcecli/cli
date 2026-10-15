@@ -1584,12 +1584,12 @@
     which "^4.0.0"
     yarn "^1.22.22"
 
-"@oclif/plugin-search@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-search/-/plugin-search-2.0.0.tgz#3fefb086b3217d71e91a5d0351f4345399822004"
-  integrity sha512-RDAeladtvJSs+nzFWMkg+kl4eNnR7KNUJM5brymGK/7N7e0RcnDPVYzGqQJcIEzNmbzoHwDHioDwwoer+yLM+g==
+"@oclif/plugin-search@2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-search/-/plugin-search-2.0.4.tgz#8390c8cba35634b3138185d2016f58a094f384d4"
+  integrity sha512-Gchh5fdIivAUd5prfhZU4mw1RNYPHVUiyVy80U3dHqLj38XiUWIXZ36dV6+lkaawq1NUOsyK1tkjigJwTxaAbA==
   dependencies:
-    "@oclif/core" "^5.0.0"
+    "@oclif/core" "^5.1.2"
     ansi-escapes "^7.3.0"
     inquirer-autocomplete-standalone "^0.8.1"
 
@@ -2186,10 +2186,10 @@
     debug "^4.4.3"
     handlebars "^4.7.9"
 
-"@salesforce/plugin-data@5.1.16":
-  version "5.1.16"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-5.1.16.tgz#8ca872c78dc4a02b7f5879a46b105329ff2c1cc6"
-  integrity sha512-uWUZCWuEAeVU8nH0jG9ppBb375trXKhylOF+zHN0adrruVYk8aTQBWmTna7WPZVB3PI0Gt0IClp1K4TE/adQug==
+"@salesforce/plugin-data@5.1.17":
+  version "5.1.17"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-data/-/plugin-data-5.1.17.tgz#b70067a47625ed8739a8e7a2d0a5eb841a7c44c7"
+  integrity sha512-PjdKEAVvjMz8OGAFT/KW5g6qhCmCbRCJuQM9O/veaMJqHXofUvGGzlTCr1q+39A9ODwWVcFkIuCygUFKz9eJ8Q==
   dependencies:
     "@jsforce/jsforce-node" "^3.10.25"
     "@oclif/multi-stage-output" "^1.0.0"
@@ -2203,7 +2203,7 @@
     csv-stringify "^6.8.3"
     form-data "^4.0.6"
     terminal-link "^3.0.0"
-    undici "^7.30.0"
+    undici "^8.12.2"
     zod "^4.6.5"
 
 "@salesforce/plugin-deploy-retrieve@4.2.15":
@@ -2370,19 +2370,19 @@
     "@salesforce/ts-types" "^3.0.1"
     debug "^4.4.3"
 
-"@salesforce/plugin-templates@57.4.6":
-  version "57.4.6"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-templates/-/plugin-templates-57.4.6.tgz#1e9dd7b7095fb449d6c9d6995060599f8fddaaf9"
-  integrity sha512-vmdkziXfki46dOTxsfNXnZX24CzdHkawToNX//dedixfaOh33bgmuyogmp8AoGX2+0oQ6rFDoMr6IMQ78hLD8g==
+"@salesforce/plugin-templates@57.4.7":
+  version "57.4.7"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-templates/-/plugin-templates-57.4.7.tgz#b228fd0f0bd0cbc1af436d00c8e96e1f19ff0951"
+  integrity sha512-ovIj5omtr2SgQ44je1pfiRm94P7J4hTfTS2gtFbXKKnAuhorDcW2Hv3wkkC5DK3PFh6ENPKt4p1lTob5hy+rfQ==
   dependencies:
     "@salesforce/core" "^9.2.0"
     "@salesforce/sf-plugins-core" "^13.0.5"
-    "@salesforce/templates" "^66.16.0"
+    "@salesforce/templates" "^66.17.2"
 
-"@salesforce/plugin-trust@4.0.20", "@salesforce/plugin-trust@^4.0.11":
-  version "4.0.20"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-4.0.20.tgz#f5c5ad6a14684dee38d662eb3db19a7cb80aa2d7"
-  integrity sha512-42/Au0fyM1ZulyfeGT7yIJLRfebN1aCyISteYBNNtR69ZtTHbK0aKmhst6fVV27hhfNNKP8xHYu6j/QtmzF5SQ==
+"@salesforce/plugin-trust@4.0.21", "@salesforce/plugin-trust@^4.0.11":
+  version "4.0.21"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-trust/-/plugin-trust-4.0.21.tgz#764eddc859efbdb35a9e0c1c73957e306d67ea21"
+  integrity sha512-hhopSzb28Y/TejLYvG603S/EXF2ASU/bs6S7HUJ8Bm9JP7BE2WavtXxyzy+F1sNv+bymFsbfXIxptoOw9Bsa9A==
   dependencies:
     "@oclif/core" "^5.0.0"
     "@salesforce/core" "^9.1.0"
@@ -2496,10 +2496,10 @@
     o11y_schema "^260.65.0"
     proxy-agent "^6.5.0"
 
-"@salesforce/templates@^66.16.0":
-  version "66.16.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-66.16.0.tgz#afe4e928334cd4553ce93b20957fb186c14de6ec"
-  integrity sha512-eJyqw9x0gAIl+rhKKeyOJ0lmQrYSHaz932EErn84pugewSYUjvomTgDUjKHqUrqgJA4yOciav8lQ/gkK2sC3AQ==
+"@salesforce/templates@^66.17.2":
+  version "66.17.2"
+  resolved "https://registry.yarnpkg.com/@salesforce/templates/-/templates-66.17.2.tgz#ba615bc3f2195c93ac5f3f8feaeccb512236914e"
+  integrity sha512-6TU/NHWVPIgjG4FDwrJ3En+1n3OFRVTEkwWPyh6JSR7LkH/Iwmi1kuHyrHVNi8m0TCJZxBxNrZ2qdrL9CJuOIw==
   dependencies:
     "@salesforce/kit" "^4.0.0"
     ejs "^3.1.10"
@@ -9461,7 +9461,16 @@ stack-utils@^2.0.6:
   dependencies:
     escape-string-regexp "^2.0.0"
 
-"string-width-cjs@npm:string-width@^4.2.0", string-width@^4.0.0, string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
+"string-width-cjs@npm:string-width@^4.2.0":
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
+  integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
+  dependencies:
+    emoji-regex "^8.0.0"
+    is-fullwidth-code-point "^3.0.0"
+    strip-ansi "^6.0.1"
+
+string-width@^4.0.0, string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -9510,7 +9519,14 @@ string_decoder@~1.1.1:
   dependencies:
     safe-buffer "~5.1.0"
 
-"strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@6.0.1, strip-ansi@^6, strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+"strip-ansi-cjs@npm:strip-ansi@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
+  integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
+  dependencies:
+    ansi-regex "^5.0.1"
+
+strip-ansi@6.0.1, strip-ansi@^6, strip-ansi@^6.0.0, strip-ansi@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
@@ -10005,15 +10021,10 @@ undici@^6.25.0:
   resolved "https://registry.yarnpkg.com/undici/-/undici-6.28.0.tgz#9f0e385744fef5021d6596c5bccd783f61193c1c"
   integrity sha512-LIY910g9TI13YS95lrMFrs8Rm/u/irgHeTWoKCoteeJ04CUJ92eEfj0rVn+7VKMPBpUPiUoBKfhNyLI23EE/KA==
 
-undici@^7.30.0:
-  version "7.30.0"
-  resolved "https://registry.yarnpkg.com/undici/-/undici-7.30.0.tgz#64a947266eb7e21dbeac8b99f8720feef308bbe0"
-  integrity sha512-dkrQXeHSaoamnItlYbmzG0wFYrM0ZwDxCIg0A7aKjTyyhh9svRzCNFEzV+Vm05/yehjCzjDZ31KXfGEjYSztDQ==
-
-undici@^8.11.0:
-  version "8.11.2"
-  resolved "https://registry.yarnpkg.com/undici/-/undici-8.11.2.tgz#b8f6f6504384ae535c8e46f8403fd8075f011d46"
-  integrity sha512-u4UB2/IrKdU6lFxumHmmo1a3fCQO5tzQllRorfoRS63txhrB7xTpSn1PftwC4qEHkOaqP95fCWW4lJzwErwzhQ==
+undici@^8.11.0, undici@^8.12.2:
+  version "8.12.2"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-8.12.2.tgz#e869237430adcc5de6bca798c94edd7db9dac5ac"
+  integrity sha512-XtuDWVdqTLr3NAxm2ly9/hU6kUsJOgGh1RASzMBbsw6aWCOaQzHdW+QQDfdERjfJ2V5vL5pRPa4RetO9UfivDg==
 
 unicorn-magic@^0.3.0:
   version "0.3.0"
@@ -10291,7 +10302,7 @@ workerpool@^6.5.1:
   resolved "https://registry.yarnpkg.com/workerpool/-/workerpool-6.5.1.tgz#060f73b39d0caf97c6db64da004cd01b4c099544"
   integrity sha512-Fs4dNYcsdpYSAfVxhnl1L5zTksjvOJxtC5hzMNl+1t9B8hTJTdKDyZ5ju7ztgPy+ft9tBFXoOlDNiOT9WUXZlA==
 
-"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
@@ -10312,6 +10323,15 @@ wrap-ansi@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-6.2.0.tgz#e9393ba07102e6c91a3b221478f0257cd2856e53"
   integrity sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==
+  dependencies:
+    ansi-styles "^4.0.0"
+    string-width "^4.1.0"
+    strip-ansi "^6.0.0"
+
+wrap-ansi@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
+  integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
   dependencies:
     ansi-styles "^4.0.0"
     string-width "^4.1.0"
