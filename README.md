@@ -25,7 +25,7 @@ $ npm install -g @salesforce/cli
 $ sf COMMAND
 running command...
 $ sf (--version|-v)
-@salesforce/cli/2.155.7 linux-x64 node-v24.21.0
+@salesforce/cli/2.156.0 linux-x64 node-v24.21.0
 $ sf --help [COMMAND]
 USAGE
   $ sf COMMAND
@@ -2916,7 +2916,7 @@ EXAMPLES
     $ sf apex get compile-status --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.3/src/commands/apex/get/compile-status.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.4/src/commands/apex/get/compile-status.ts)_
 
 ## `sf apex get log`
 
@@ -2972,7 +2972,7 @@ FLAG DESCRIPTIONS
     directory.
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.3/src/commands/apex/get/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.4/src/commands/apex/get/log.ts)_
 
 ## `sf apex get test`
 
@@ -3032,7 +3032,7 @@ EXAMPLES
       me@myorg'
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.3/src/commands/apex/get/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.4/src/commands/apex/get/test.ts)_
 
 ## `sf apex list log`
 
@@ -3072,7 +3072,7 @@ EXAMPLES
     $ sf apex list log --target-org me@my.org
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.3/src/commands/apex/list/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.4/src/commands/apex/list/log.ts)_
 
 ## `sf apex run`
 
@@ -3153,7 +3153,7 @@ FLAG DESCRIPTIONS
     Can be specified multiple times. Mutually exclusive with --debug-level.
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.3/src/commands/apex/run.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.4/src/commands/apex/run.ts)_
 
 ## `sf apex run test`
 
@@ -3300,7 +3300,7 @@ FLAG DESCRIPTIONS
     --tests Test1 --tests Test2
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.3/src/commands/apex/run/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.4/src/commands/apex/run/test.ts)_
 
 ## `sf apex tail log`
 
@@ -3343,7 +3343,7 @@ EXAMPLES
     $ sf apex tail log --color --skip-trace-flag
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.3/src/commands/apex/tail/log.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.4/src/commands/apex/tail/log.ts)_
 
 ## `sf apex trace create`
 
@@ -3409,7 +3409,7 @@ EXAMPLES
       --duration 60 --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.3/src/commands/apex/trace/create.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.4/src/commands/apex/trace/create.ts)_
 
 ## `sf apex trace delete`
 
@@ -3444,7 +3444,7 @@ EXAMPLES
     $ sf apex trace delete --trace-flag-id 7tf000000000001AAA --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.3/src/commands/apex/trace/delete.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.4/src/commands/apex/trace/delete.ts)_
 
 ## `sf apex trace list`
 
@@ -3479,7 +3479,7 @@ EXAMPLES
     $ sf apex trace list --target-org my-org
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.3/src/commands/apex/trace/list.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.4/src/commands/apex/trace/list.ts)_
 
 ## `sf api request graphql`
 
@@ -5295,7 +5295,7 @@ EXAMPLES
     $ sf logic get test --test-run-id <test run id> --result-format junit --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.3/src/commands/logic/get/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.4/src/commands/logic/get/test.ts)_
 
 ## `sf logic run test`
 
@@ -5417,7 +5417,7 @@ FLAG DESCRIPTIONS
     --tests Test1 --tests Test2
 ```
 
-_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.3/src/commands/logic/run/test.ts)_
+_See code: [@salesforce/plugin-apex](https://github.com/salesforcecli/plugin-apex/blob/4.4.4/src/commands/logic/run/test.ts)_
 
 ## `sf org assign permset`
 
@@ -9270,7 +9270,7 @@ EXAMPLES
   $ sf plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.7/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.8/src/commands/plugins/index.ts)_
 
 ## `sf plugins discover`
 
@@ -9315,7 +9315,7 @@ EXAMPLES
   $ sf plugins inspect @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.7/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.8/src/commands/plugins/inspect.ts)_
 
 ## `sf plugins install PLUGIN`
 
@@ -9364,7 +9364,7 @@ EXAMPLES
     $ sf plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.7/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.8/src/commands/plugins/install.ts)_
 
 ## `sf plugins link PATH`
 
@@ -9395,7 +9395,7 @@ EXAMPLES
   $ sf plugins link @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.7/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.8/src/commands/plugins/link.ts)_
 
 ## `sf plugins reset`
 
@@ -9410,7 +9410,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.7/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.8/src/commands/plugins/reset.ts)_
 
 ## `sf plugins trust allowlist add`
 
@@ -9569,7 +9569,7 @@ EXAMPLES
   $ sf plugins uninstall @salesforce/plugin-packaging
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.7/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.8/src/commands/plugins/uninstall.ts)_
 
 ## `sf plugins update`
 
@@ -9587,7 +9587,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.7/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/7.0.8/src/commands/plugins/update.ts)_
 
 ## `sf project convert mdapi`
 
@@ -9650,7 +9650,7 @@ FLAG DESCRIPTIONS
     If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.14/src/commands/project/convert/mdapi.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.15/src/commands/project/convert/mdapi.ts)_
 
 ## `sf project convert source`
 
@@ -9723,7 +9723,7 @@ FLAG DESCRIPTIONS
     Override the api version used for api requests made by this command
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.14/src/commands/project/convert/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.15/src/commands/project/convert/source.ts)_
 
 ## `sf project convert source-behavior`
 
@@ -9782,7 +9782,7 @@ EXAMPLES
     $ sf project convert source-behavior --behavior decomposePermissionSetBeta --dry-run --preserve-temp-dir
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.14/src/commands/project/convert/source-behavior.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.15/src/commands/project/convert/source-behavior.ts)_
 
 ## `sf project delete source`
 
@@ -9935,7 +9935,7 @@ FLAG DESCRIPTIONS
     - Separate the test names with spaces: --tests Test1 Test2 "Test With Space"
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.14/src/commands/project/delete/source.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.15/src/commands/project/delete/source.ts)_
 
 ## `sf project delete tracking`
 
@@ -9972,7 +9972,7 @@ EXAMPLES
     $ sf project delete tracking --target-org my-scratch
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.14/src/commands/project/delete/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.15/src/commands/project/delete/tracking.ts)_
 
 ## `sf project deploy cancel`
 
@@ -10044,7 +10044,7 @@ FLAG DESCRIPTIONS
     project deploy report".
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.14/src/commands/project/deploy/cancel.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.15/src/commands/project/deploy/cancel.ts)_
 
 ## `sf project deploy preview`
 
@@ -10127,7 +10127,7 @@ FLAG DESCRIPTIONS
     All child components are included. If you specify this flag, don’t specify --metadata or --source-dir.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.14/src/commands/project/deploy/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.15/src/commands/project/deploy/preview.ts)_
 
 ## `sf project deploy quick`
 
@@ -10220,7 +10220,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.14/src/commands/project/deploy/quick.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.15/src/commands/project/deploy/quick.ts)_
 
 ## `sf project deploy report`
 
@@ -10312,7 +10312,7 @@ FLAG DESCRIPTIONS
     --coverage-formatters lcov --coverage-formatters clover
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.14/src/commands/project/deploy/report.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.15/src/commands/project/deploy/report.ts)_
 
 ## `sf project deploy resume`
 
@@ -10409,7 +10409,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.14/src/commands/project/deploy/resume.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.15/src/commands/project/deploy/resume.ts)_
 
 ## `sf project deploy start`
 
@@ -10675,7 +10675,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.14/src/commands/project/deploy/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.15/src/commands/project/deploy/start.ts)_
 
 ## `sf project deploy validate`
 
@@ -10879,7 +10879,7 @@ ERROR CODES
   Canceling (69)         The deploy is being canceled.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.14/src/commands/project/deploy/validate.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.15/src/commands/project/deploy/validate.ts)_
 
 ## `sf project generate manifest`
 
@@ -10975,7 +10975,7 @@ EXAMPLES
     $ sf project generate manifest --from-org test@myorg.com --excluded-metadata StandardValueSet
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.14/src/commands/project/generate/manifest.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.15/src/commands/project/generate/manifest.ts)_
 
 ## `sf project list ignored`
 
@@ -11017,7 +11017,7 @@ EXAMPLES
     $ sf project list ignored --source-dir package.xml
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.14/src/commands/project/list/ignored.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.15/src/commands/project/list/ignored.ts)_
 
 ## `sf project reset tracking`
 
@@ -11066,7 +11066,7 @@ EXAMPLES
     $ sf project reset tracking --revision 30
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.14/src/commands/project/reset/tracking.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.15/src/commands/project/reset/tracking.ts)_
 
 ## `sf project retrieve preview`
 
@@ -11120,7 +11120,7 @@ FLAG DESCRIPTIONS
     production orgs.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.14/src/commands/project/retrieve/preview.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.15/src/commands/project/retrieve/preview.ts)_
 
 ## `sf project retrieve start`
 
@@ -11309,7 +11309,7 @@ ENVIRONMENT VARIABLES
   SF_USE_PROGRESS_BAR  Set to false to disable the progress bar when running the metadata deploy command.
 ```
 
-_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.14/src/commands/project/retrieve/start.ts)_
+_See code: [@salesforce/plugin-deploy-retrieve](https://github.com/salesforcecli/plugin-deploy-retrieve/blob/4.2.15/src/commands/project/retrieve/start.ts)_
 
 ## `sf schema generate field`
 
