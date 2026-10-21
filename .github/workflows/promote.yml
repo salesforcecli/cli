@@ -170,9 +170,7 @@ jobs:
         with:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
       # NOTE: If you try to use yarn here, it will use the wrong registry and throw 401s
-      - run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-          npm dist-tag add "@salesforce/cli@$NEEDS_GET_PACKAGE_INFO_VERSION" "$INPUTS_NEW_CHANNEL"
+      - run: npm dist-tag add "@salesforce/cli@$NEEDS_GET_PACKAGE_INFO_VERSION" "$INPUTS_NEW_CHANNEL"
         env:
           NEEDS_GET_PACKAGE_INFO_VERSION: ${{ needs.get-package-info.outputs.version }}
           INPUTS_NEW_CHANNEL: ${{ inputs.new-channel }}
