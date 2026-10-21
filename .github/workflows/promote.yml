@@ -165,6 +165,9 @@ jobs:
     needs: [open-ctc-or-skip, get-package-info]
     if: success()
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - uses: actions/setup-node@v4
         with:
