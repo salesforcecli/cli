@@ -172,6 +172,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
+      - name: Upgrade npm for trusted publishing
+        # dist-tag with Trusted publishing (OIDC) requires npm >= 11.21.0, newer than the npm bundled with Node LTS.
+        run: npm install -g npm@latest
       # NOTE: If you try to use yarn here, it will use the wrong registry and throw 401s
       - run: npm dist-tag add "@salesforce/cli@$NEEDS_GET_PACKAGE_INFO_VERSION" "$INPUTS_NEW_CHANNEL"
         env:
