@@ -2252,10 +2252,10 @@
     "@salesforce/core" "^9.2.0"
     "@salesforce/sf-plugins-core" "^13.0.4"
 
-"@salesforce/plugin-marketplace@2.0.18":
-  version "2.0.18"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-marketplace/-/plugin-marketplace-2.0.18.tgz#9cc40cac2efaf501d8243add907e8e1a4eae8333"
-  integrity sha512-N/8s4796ndns4MpQqtF22Rwu0YYNQCWU/GrnlAPwglSvfhOm7FyhI+TZ7ogvzHLH/SVNtJ5SEC3KylG33gfDtw==
+"@salesforce/plugin-marketplace@2.0.19":
+  version "2.0.19"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-marketplace/-/plugin-marketplace-2.0.19.tgz#be32858a845e6d57093f9bcefdb8087aac5fd128"
+  integrity sha512-cvMDRjxUsgxOUziUypuKHjKBhIlIL08Zw4quZJ/pcXViIw0shTDwCcfXp2RUU/cixEWjPspAiaYI8rMJcXCt0w==
   dependencies:
     "@salesforce/core" "^9.2.0"
     "@salesforce/kit" "^4.0.1"
@@ -2343,24 +2343,24 @@
     "@salesforce/sf-plugins-core" "^13.0.7"
     fast-levenshtein "^3.0.0"
 
-"@salesforce/plugin-sobject@2.0.13":
-  version "2.0.13"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-sobject/-/plugin-sobject-2.0.13.tgz#7d33a767d7351f102771ad300673b9fd6001d67b"
-  integrity sha512-Q3lIVgILKCxDUdKgMyiIwnZfSeDFeTXDdCa5IfN0aQxNL9RotznY+LlKV7eTaU3JpSqG6eUk6B074AjEIVYX5Q==
+"@salesforce/plugin-sobject@2.0.14":
+  version "2.0.14"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-sobject/-/plugin-sobject-2.0.14.tgz#602dc43e63649bf2dc3acbc8a069c28bed2b7237"
+  integrity sha512-8QLgc024FXLiJQ84AM6bSan/Dn8xkfHwc60wuR190nW8lC36LcTwaC+YHTWnejRQSINVBRU2bZ+RYCchCh5+Bw==
   dependencies:
     "@inquirer/prompts" "^7.10.1"
     "@oclif/core" "^5.0.0"
     "@salesforce/core" "^9.1.0"
     "@salesforce/kit" "^4.0.1"
     "@salesforce/sf-plugins-core" "^13.0.4"
-    fast-glob "^3.3.3"
     fast-xml-parser "^5.10.1"
     js2xmlparser "^4.0.2"
+    tinyglobby "^0.2.17"
 
-"@salesforce/plugin-telemetry@4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-4.2.1.tgz#ba2808e01a3b67183181ba592e7c37410bb0cca1"
-  integrity sha512-XPSsCFWID9fvWH/+NJEyLW8SVOYhOGzikykVImzEeH+uNHWq3FAJfbj2GeWZmZHUR4AeRxoUcD0tauWe1cpUsg==
+"@salesforce/plugin-telemetry@4.2.3":
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-telemetry/-/plugin-telemetry-4.2.3.tgz#a9e4ffbe81eeafb4068e7d9c78c1f92f39b35232"
+  integrity sha512-5H8gNk6Cr7tKTwIJ6hiRQEFsd0zVtfXsNRdZO2ks1Y2EcUrvzIzuiDIZuLucMXQ/w/m2QA1WQ7b0O6dfCJfJwQ==
   dependencies:
     "@oclif/core" "^5.0.0"
     "@salesforce/core" "^9.0.0"
