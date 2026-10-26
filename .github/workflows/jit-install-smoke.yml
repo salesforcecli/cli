@@ -12,6 +12,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
+          check-latest: true
           cache: yarn
       - run: yarn install
       - run: yarn build
@@ -55,6 +56,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
+          check-latest: true
 
       - uses: salesforcecli/github-workflows/.github/actions/yarnInstallWithRetries@main
         with:

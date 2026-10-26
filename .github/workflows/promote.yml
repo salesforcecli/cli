@@ -172,6 +172,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
+          check-latest: true
       - name: Upgrade npm for trusted publishing
         # dist-tag with Trusted publishing (OIDC) requires npm >= 11.21.0, newer than the npm bundled with Node LTS.
         run: npm install -g npm@latest
@@ -191,6 +192,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
+          check-latest: true
           cache: yarn
 
       - uses: salesforcecli/github-workflows/.github/actions/yarnInstallWithRetries@main
