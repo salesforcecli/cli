@@ -48,6 +48,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
+          check-latest: true
 
       - run: npm install -g @salesforce/plugin-release-management --omit=dev
 

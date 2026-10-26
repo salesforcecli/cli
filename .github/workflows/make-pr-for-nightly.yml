@@ -31,6 +31,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ vars.NODE_VERSION_OVERRIDE || 'lts/*' }}
+          check-latest: true
 
       - name: Look up sf latest-rc version
         uses: salesforcecli/github-workflows/.github/actions/versionInfo@main
