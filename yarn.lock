@@ -2086,10 +2086,10 @@
     o11y "^264.18.0"
     o11y_schema "^264.84.0"
 
-"@salesforce/packaging@^5.0.14":
-  version "5.0.20"
-  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-5.0.20.tgz#b7c9f339caa1f566dbac98ea469bb5aea30d11d1"
-  integrity sha512-nkVfGmeQ4x+4N/4PE+Ep9U2FKMY6yDirGEwRAFCrQspo7LmmQAFiIpItr4PRjRH7ZKshVGHCxOwIw0vYEe/VYw==
+"@salesforce/packaging@^5.0.21":
+  version "5.0.26"
+  resolved "https://registry.yarnpkg.com/@salesforce/packaging/-/packaging-5.0.26.tgz#75551a94dfee09176bc4f854b022ef20350bb7ba"
+  integrity sha512-w8X/cRuDQn5liHdsrGo5pMa6RGX0O8kui/ehnfv/+QV1wOnUMT3kDj7Pq5DcWev9BOr7AL2dCD1okuWRNl2fsA==
   dependencies:
     "@jsforce/jsforce-node" "^3.10.25"
     "@salesforce/core" "^9.1.10"
@@ -2097,14 +2097,14 @@
     "@salesforce/schemas" "^1.10.3"
     "@salesforce/source-deploy-retrieve" "^13.3.1"
     "@salesforce/ts-types" "^3.2.0"
-    "@salesforce/types" "^1.8.0"
+    "@salesforce/types" "^1.9.0"
     fast-xml-parser "^5.11.2"
-    globby "^11"
     graphology "^0.26.0"
     graphology-traversal "^0.3.1"
     graphology-types "^0.24.7"
     jszip "^3.10.1"
     object-treeify "^2"
+    tinyglobby "^0.2.17"
 
 "@salesforce/plugin-agent@2.2.3":
   version "2.2.3"
@@ -2281,15 +2281,15 @@
     open "^11.0.4"
     terminal-link "^3.0.0"
 
-"@salesforce/plugin-packaging@3.0.16":
-  version "3.0.16"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-3.0.16.tgz#650afa7a240d2ccf2a5e1fb59dd85e8eccc098cc"
-  integrity sha512-5w79GVnS2Sq6YyeXPTk3UpwIwAhslVxpT5LarBjM+w7aM9KHAZJT9plJdQHIH8WQNvjvsGPR4xD6939U8Btfnw==
+"@salesforce/plugin-packaging@3.0.17":
+  version "3.0.17"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-packaging/-/plugin-packaging-3.0.17.tgz#d9663e1d47b16953ce9148768284cfe3804ccfc7"
+  integrity sha512-RAg0YzwNSH9nkCHPt3pkVOUjPsl6AOrUflbxt5CwyF89Zcu+X7ElEH+bHTpYXEf6luzF8x7LLR3HBuJbag32WQ==
   dependencies:
     "@oclif/core" "^5.0.0"
     "@salesforce/core" "^9.1.9"
     "@salesforce/kit" "^4.0.0"
-    "@salesforce/packaging" "^5.0.14"
+    "@salesforce/packaging" "^5.0.21"
     "@salesforce/sf-plugins-core" "^13.0.4"
     "@salesforce/ts-types" "^3.2.0"
     chalk "^5.6.2"
@@ -2529,10 +2529,15 @@
   resolved "https://registry.yarnpkg.com/@salesforce/ts-types/-/ts-types-3.2.2.tgz#954bee036a69acfbefeb83fec8c01d03d306e8bb"
   integrity sha512-3t+/+CzdL2RSOPUvakbg7ICKgu+y5r+lBKYjcVa5TzeLkAnWad8TH98qgurndLZLXHVyW3rA4AM0oTpH+TZZVA==
 
-"@salesforce/types@1.8.0", "@salesforce/types@^1.6.0", "@salesforce/types@^1.8.0":
+"@salesforce/types@1.8.0":
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/@salesforce/types/-/types-1.8.0.tgz#8d1d0be300129d8a97055f3e10f1ebf8d5e1fe48"
   integrity sha512-sliQcoI0XeR3YYUElIV3z93l7ZL9lDtnegVGbknBFbQKjN/oxH/PQSiM4imnXnModhFQSoe/V3mGXniASoLNvA==
+
+"@salesforce/types@^1.6.0", "@salesforce/types@^1.8.0", "@salesforce/types@^1.9.0":
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/types/-/types-1.9.0.tgz#2fe0099ff60278c849a34693fbfb9c449ddd7e9c"
+  integrity sha512-+VECX78jTYpeAHkv80C6uy86fbrNO/RplqxeLuasLV/rJF1NIYyFtrtAVqFlMvI8YwjQnyuprWOyzI8VF+Wi7g==
 
 "@shikijs/engine-oniguruma@^3.23.0":
   version "3.23.0"
@@ -3459,11 +3464,6 @@ array-ify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/array-ify/-/array-ify-1.0.0.tgz#9e528762b4a9066ad163a6962a364418e9626ece"
   integrity sha512-c5AMf34bKdvPhQ7tBGhqkgKNUzMr4WUs+WDtC2ZUGOUncbxKMTvqxYctiseW3+L4bA8ec+GcZ6/A/FW4m8ukng==
-
-array-union@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/array-union/-/array-union-2.1.0.tgz#b798420adbeb1de828d84acd8a2e23d3efe85e8d"
-  integrity sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==
 
 arrify@^1.0.1:
   version "1.0.1"
@@ -4654,13 +4654,6 @@ diff@^8.0.2:
   resolved "https://registry.yarnpkg.com/diff/-/diff-8.0.4.tgz#4f5baf3188b9b2431117b962eb20ba330fadf696"
   integrity sha512-DPi0FmjiSU5EvQV0++GFDOJ9ASQUVFh5kD+OzOnYdi7n3Wpm9hWWGfB/O2blfHcMVTL5WkQXSnRiK9makhrcnw==
 
-dir-glob@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/dir-glob/-/dir-glob-3.0.1.tgz#56dbf73d992a4a93ba1584f4534063fd2e41717f"
-  integrity sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==
-  dependencies:
-    path-type "^4.0.0"
-
 dom-serializer@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/dom-serializer/-/dom-serializer-2.0.0.tgz#e41b802e1eedf9f6cae183ce5e622d789d7d8e53"
@@ -5138,7 +5131,7 @@ fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
   integrity sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
 
-fast-glob@^3.2.11, fast-glob@^3.2.9, fast-glob@^3.3.2, fast-glob@^3.3.3:
+fast-glob@^3.2.11, fast-glob@^3.3.2, fast-glob@^3.3.3:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.3.3.tgz#d06d585ce8dba90a16b0505c543c3ccfb3aeb818"
   integrity sha512-7MptL8U0cqcFdzIzwOTHoilX9x5BrNqye7Z/LuC7kCMRio1EMSyqRK3BEAUD7sXRq4iT4AzTVuZdhgQ2TCvYLg==
@@ -5715,18 +5708,6 @@ globals@^17.7.0:
   version "17.12.0"
   resolved "https://registry.yarnpkg.com/globals/-/globals-17.12.0.tgz#910a368b8f093d3feb3f77a56dcefa05647d698e"
   integrity sha512-cezEd/DTyyht9cvSSURyygXPfy04GtWO/5e6ZPvH7fCtjKz9PYOmuawphw1Ctd1f6C+5JypXfGD7ahNMXvevBA==
-
-globby@^11:
-  version "11.1.0"
-  resolved "https://registry.yarnpkg.com/globby/-/globby-11.1.0.tgz#bd4be98bb042f83d796f7e3811991fbe82a0d34b"
-  integrity sha512-jhIXaOzy1sb8IyocaruWSn1TjmnBVs8Ayhcy83rmxNJ8q2uWKCAj3CnJY+KpGSXCueAPc0i05kVvVKtP1t9S3g==
-  dependencies:
-    array-union "^2.1.0"
-    dir-glob "^3.0.1"
-    fast-glob "^3.2.9"
-    ignore "^5.2.0"
-    merge2 "^1.4.1"
-    slash "^3.0.0"
 
 globby@^14.1.0:
   version "14.1.0"
@@ -7321,7 +7302,7 @@ merge-stream@^2.0.0:
   resolved "https://registry.yarnpkg.com/merge-stream/-/merge-stream-2.0.0.tgz#52823629a14dd00c9770fb6ad47dc6310f2c1f60"
   integrity sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==
 
-merge2@^1.3.0, merge2@^1.4.1:
+merge2@^1.3.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
@@ -9242,11 +9223,6 @@ sinon@^5.1.1:
     nise "^1.3.3"
     supports-color "^5.4.0"
     type-detect "^4.0.8"
-
-slash@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
-  integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
 slash@^5.1.0:
   version "5.1.0"
