@@ -1930,10 +1930,10 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.2.tgz#78d476333d85d5b1c792e257bca74ba080da49a4"
   integrity sha512-b1UQwcEZ4yCnMCD8DAL1VlbvBJE9/IX4FTIp7BG1xYpf29SLazLSrqUkj4w7Y5y7cCVP6E5tcqqcI0xemPkHug==
 
-"@salesforce/agents@^2.3.0":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/agents/-/agents-2.3.1.tgz#7fe3c25ae4656f0b7867a9cec120ea2959a98ee6"
-  integrity sha512-0rkaYPpXfmQVuGpcSLxZW+RxRKoiXfwFDB5SyyxLERKkxjlP84t9h4n7mdKb4QewT8hw7C9NgxcexIU6tObBJw==
+"@salesforce/agents@^2.3.3":
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@salesforce/agents/-/agents-2.3.3.tgz#6cc7b9dec25169a79eb60f5f8337f615203a6702"
+  integrity sha512-moionxUYXDGpeOInExfVQQwg+//raRRRnHLRelx8ryVrU2fjwrt7wHbombAH2LmrT/tFdkBWWDmSI/V5uPKTwA==
   dependencies:
     "@salesforce/core" "^9.0.0"
     "@salesforce/kit" "^4.0.0"
@@ -2106,16 +2106,16 @@
     object-treeify "^2"
     tinyglobby "^0.2.17"
 
-"@salesforce/plugin-agent@2.2.3":
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-agent/-/plugin-agent-2.2.3.tgz#61c66063e99c352030a509eae7db74d48a1d6df4"
-  integrity sha512-Yb8VCIxaYSBKL6M2rv9zetbxiFMGVT7P/bPx6x6U2Hd/2BnQPjPl5HROkwtg27iTaxn2baevdClDy0zjFamL7A==
+"@salesforce/plugin-agent@2.2.4":
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-agent/-/plugin-agent-2.2.4.tgz#6d44a00bbff1af9eb6e6abc05c198636bc537b93"
+  integrity sha512-Y+jQh1xAaTTTVjAc6BNvJZ//JtnK396OaZMT8jjEmRY0P3EJvFJ+iIYd9An2Hg9ehHSfeemrYzMQ3K8isHxDEA==
   dependencies:
     "@inquirer/core" "^10.3.2"
     "@inquirer/prompts" "^7.10.1"
     "@oclif/core" "^5.0.0"
     "@oclif/multi-stage-output" "^1.0.0"
-    "@salesforce/agents" "^2.3.0"
+    "@salesforce/agents" "^2.3.3"
     "@salesforce/core" "^9.1.9"
     "@salesforce/kit" "^4.0.0"
     "@salesforce/sf-plugins-core" "^13.0.0"
@@ -2130,10 +2130,10 @@
     react "^19.3.0"
     yaml "^2.9.0"
 
-"@salesforce/plugin-apex@4.4.4":
-  version "4.4.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-apex/-/plugin-apex-4.4.4.tgz#ea454689248a8ed5e296b703f1842009bbc4eabe"
-  integrity sha512-jkjlb1A6xbV7zQrbz9xnlFe0BRUaR5R0JdCi6sHOZ94+P/IXsep0RE2AvB1i5/wVBis0C+c7QnpRhoKEvBbThg==
+"@salesforce/plugin-apex@4.4.6":
+  version "4.4.6"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-apex/-/plugin-apex-4.4.6.tgz#52838f1253cd1b273aa527cc030e86f3af15a1b5"
+  integrity sha512-wvpX1yNPmVTjiHGfJyjagPg34/+caB7Kic02SBLfcUiBc3LYpLlHSRs6mC78tsCD3hyBrhp7x7Ux9fQaoGrkNw==
   dependencies:
     "@salesforce/apex-node" "^9.1.0"
     "@salesforce/core" "^9.1.10"
@@ -2156,10 +2156,10 @@
     got "^13.0.0"
     proxy-agent "^6.5.0"
 
-"@salesforce/plugin-auth@6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-6.0.0.tgz#7f6769f9f83873e056d5ea8e08be5313a6a0e72e"
-  integrity sha512-rzeF6WbtP4V0mYAsvz9pcOYVc8NKEEeg4eHQkR5lFYiAq0BWAuKAA4p4oh6DbsvOxJFiNxo06T3YrR9AV2asRQ==
+"@salesforce/plugin-auth@6.0.4":
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-auth/-/plugin-auth-6.0.4.tgz#88787ba7c5fb889c8ae2e077e20c7bb7226fd883"
+  integrity sha512-8ODBa3atu2x6LE00Ifm0AcTFbkqK+RV21BRx2smYo1tA4uBj4IJtx7K3yqBXw34BzoEXv91biLahqUZHWezsKg==
   dependencies:
     "@inquirer/checkbox" "^2.5.0"
     "@inquirer/select" "^2.5.0"
@@ -3582,10 +3582,10 @@ baseline-browser-mapping@^2.11.20:
   resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.11.22.tgz#d8b612f54517d8b3a31734623779e5ab8c5ff0b9"
   integrity sha512-pWc4w51fBFd7mav43/zKRC+RI6f4yfzQoVlfvE8dECePyfkn1bzLp01Fj0QACcyCZyFhiEMyD2qScfKRWgWibA==
 
-basic-ftp@6.2.3, basic-ftp@^5.0.2:
-  version "6.2.3"
-  resolved "https://registry.yarnpkg.com/basic-ftp/-/basic-ftp-6.2.3.tgz#452e25a101380a8c69cdf94d7da17e7fe7bccbaa"
-  integrity sha512-T7GYtQ2eKJUN5YORG7A8u2WfB9JMN0a4/wl3MI64qq2qTRfa3FXzoNq0DDojZDkDyStcL+TkfKsz4JHEZx5kGQ==
+basic-ftp@6.2.4, basic-ftp@^5.0.2:
+  version "6.2.4"
+  resolved "https://registry.yarnpkg.com/basic-ftp/-/basic-ftp-6.2.4.tgz#de4ea436b766326194cb756e0f1086e5d969f89d"
+  integrity sha512-6ACKOQxSlv5xka4i03ujfncNr9qp5yZNK3u0+yUFTAU4HfG5AeztCC9+R1I9dm8oq+1vt4RZ7cIRTBrdHqL2mw==
 
 before-after-hook@^3.0.2:
   version "3.0.2"
