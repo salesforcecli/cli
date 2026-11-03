@@ -179,7 +179,6 @@
     "ansis": "^3.12.0"
   },
   "bundleDependencies": [
-    "@inquirer/select",
     "@oclif/core",
     "@oclif/plugin-autocomplete",
     "@oclif/plugin-commands",
@@ -211,8 +210,7 @@
     "@salesforce/plugin-templates",
     "@salesforce/plugin-trust",
     "@salesforce/plugin-user",
-    "@salesforce/sf-plugins-core",
-    "ansis"
+    "@salesforce/sf-plugins-core"
   ],
   "pinnedDependencies": [
     "@oclif/core",
