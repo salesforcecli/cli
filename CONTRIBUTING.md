@@ -1,5 +1,6 @@
 ## Contributing
 
+1. Please read our [Code of Conduct](CODE_OF_CONDUCT.md).
 1. Please create a new issue [here](https://github.com/forcedotcom/cli/issues) before starting any work so that we can also offer suggestions or let you know if there is already an effort in progress.
 1. Fork this repository (external contributors) or branch off `main` (committers).
 1. Create a topic branch based on `main`. This is recommended but not required if contributing using a fork.
@@ -7,12 +8,6 @@
 1. Sign the Salesforce [CLA](#cla).
 1. The CLI team will review your pull request and provide feedback.
 1. Once merged, a new release of `@salesforce/cli` will be published to [npm](https://www.npmjs.com/package/@salesforce/cli).
-
-### One-Time Setup
-
-1. Install [Node.js](https://nodejs.org). Use the version specified in the `engines` field of package.json. If you work with multiple Node versions, consider using [nvm](https://github.com/nvm-sh/nvm).
-1. Install [Yarn](https://yarnpkg.com): `npm install --global yarn`
-1. Configure [git commit signing](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification).
 
 ### CLA
 
