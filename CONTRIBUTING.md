@@ -4,7 +4,6 @@
 1. Fork this repository (external contributors) or branch off `main` (committers).
 1. Create a topic branch based on `main`. This is recommended but not required if contributing using a fork.
 1. Edit the code in your fork/branch.
-1. Write appropriate tests for your changes. Try to achieve at least 95% code coverage on any new code. No pull request will be accepted without associated tests.
 1. Sign the Salesforce [CLA](#cla).
 1. The CLI team will review your pull request and provide feedback.
 1. Once merged, a new release of `@salesforce/cli` will be published to [npm](https://www.npmjs.com/package/@salesforce/cli).
