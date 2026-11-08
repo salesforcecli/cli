@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/cli",
   "description": "The Salesforce CLI",
-  "version": "2.159.2",
+  "version": "2.159.3",
   "author": "Salesforce",
   "bin": {
     "sf": "./bin/run.js",
@@ -75,13 +75,13 @@
     ],
     "jitPlugins": {
       "@salesforce/plugin-code-analyzer": "5.16.0",
-      "@salesforce/plugin-community": "4.0.22",
+      "@salesforce/plugin-community": "4.0.25",
       "@salesforce/plugin-custom-metadata": "4.0.19",
       "@salesforce/plugin-dev": "2.5.19",
       "@salesforce/plugin-devops-center": "2.3.7",
       "@salesforce/plugin-flow": "2.0.2",
       "@salesforce/plugin-lightning-dev": "6.2.22",
-      "@salesforce/plugin-signups": "3.0.13",
+      "@salesforce/plugin-signups": "3.0.15",
       "@salesforce/plugin-ui-bundle-dev": "1.2.5",
       "@salesforce/sfdx-plugin-lwc-test": "1.2.6"
     },
@@ -146,13 +146,13 @@
     "@inquirer/select": "^2.3.5",
     "@oclif/core": "5.1.11",
     "@oclif/plugin-autocomplete": "4.0.6",
-    "@oclif/plugin-commands": "5.0.9",
-    "@oclif/plugin-help": "7.0.6",
+    "@oclif/plugin-commands": "5.0.11",
+    "@oclif/plugin-help": "7.0.7",
     "@oclif/plugin-not-found": "4.0.7",
-    "@oclif/plugin-plugins": "7.0.15",
+    "@oclif/plugin-plugins": "7.0.16",
     "@oclif/plugin-search": "2.0.10",
     "@oclif/plugin-update": "5.0.10",
-    "@oclif/plugin-version": "3.0.7",
+    "@oclif/plugin-version": "3.0.10",
     "@oclif/plugin-warn-if-update-available": "4.0.5",
     "@oclif/plugin-which": "4.0.6",
     "@salesforce/core": "^9.2.0",
@@ -175,7 +175,7 @@
     "@salesforce/plugin-templates": "57.6.0",
     "@salesforce/plugin-trust": "4.1.2",
     "@salesforce/plugin-user": "6.0.11",
-    "@salesforce/sf-plugins-core": "13.0.8",
+    "@salesforce/sf-plugins-core": "13.0.9",
     "ansis": "^3.12.0"
   },
   "bundleDependencies": [
