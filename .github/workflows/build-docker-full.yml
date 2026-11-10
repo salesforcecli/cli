@@ -51,6 +51,22 @@ jobs:
         env:
           STEPS_SETUP_NODE_NODE_VERSION: ${{ steps.setup-node.outputs.node-version }}
 
+      - name: Wait for npm package availability
+        run: |
+          echo "Waiting for @salesforce/cli@$VERSION to be available on npm..."
+          for i in $(seq 1 30); do
+            if npm view "@salesforce/cli@$VERSION" version 2>/dev/null; then
+              echo "Package is available on npm"
+              exit 0
+            fi
+            echo "Attempt $i/30: not yet available, retrying in 10s..."
+            sleep 10
+          done
+          echo "Package not available after 5 minutes"
+          exit 1
+        env:
+          VERSION: ${{ inputs.version }}
+
       - name: Build and push Docker image
         uses: docker/build-push-action@ca052bb54ab0790a636c9b5f226502c73d547a25
         with:
