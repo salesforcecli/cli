@@ -2051,10 +2051,10 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.2.tgz#78d476333d85d5b1c792e257bca74ba080da49a4"
   integrity sha512-b1UQwcEZ4yCnMCD8DAL1VlbvBJE9/IX4FTIp7BG1xYpf29SLazLSrqUkj4w7Y5y7cCVP6E5tcqqcI0xemPkHug==
 
-"@salesforce/agents@^2.3.3":
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/@salesforce/agents/-/agents-2.3.3.tgz#6cc7b9dec25169a79eb60f5f8337f615203a6702"
-  integrity sha512-moionxUYXDGpeOInExfVQQwg+//raRRRnHLRelx8ryVrU2fjwrt7wHbombAH2LmrT/tFdkBWWDmSI/V5uPKTwA==
+"@salesforce/agents@^2.4.0":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/agents/-/agents-2.4.1.tgz#14a3cd1d12a144176231258d03f7357153d5f333"
+  integrity sha512-9Qz7aFxD6l/3/kl2dzPNVcBNjSTrmLFAItl2qmLxtUSMjPDlSJHWaEW3szyERqKZet81CMe50zYFHf1B7TGWhA==
   dependencies:
     "@salesforce/core" "^9.0.0"
     "@salesforce/kit" "^4.0.0"
@@ -2227,16 +2227,16 @@
     object-treeify "^2"
     tinyglobby "^0.2.17"
 
-"@salesforce/plugin-agent@2.2.4":
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-agent/-/plugin-agent-2.2.4.tgz#6d44a00bbff1af9eb6e6abc05c198636bc537b93"
-  integrity sha512-Y+jQh1xAaTTTVjAc6BNvJZ//JtnK396OaZMT8jjEmRY0P3EJvFJ+iIYd9An2Hg9ehHSfeemrYzMQ3K8isHxDEA==
+"@salesforce/plugin-agent@2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-agent/-/plugin-agent-2.3.0.tgz#0d81d5ee6b462a76f0e2993d673a5e40086822dd"
+  integrity sha512-jrtXhCWws4lO8Ll7lY5yMcx0fOWjJJtibeYDsh4fSztorXW7yEw7a/22WWtILphh2wNoj972jFIxUQjkqwafkA==
   dependencies:
     "@inquirer/core" "^10.3.2"
     "@inquirer/prompts" "^7.10.1"
     "@oclif/core" "^5.0.0"
     "@oclif/multi-stage-output" "^1.0.0"
-    "@salesforce/agents" "^2.3.3"
+    "@salesforce/agents" "^2.4.0"
     "@salesforce/core" "^9.1.9"
     "@salesforce/kit" "^4.0.0"
     "@salesforce/sf-plugins-core" "^13.0.0"
